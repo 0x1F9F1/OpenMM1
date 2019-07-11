@@ -44,6 +44,8 @@
 
 #include "hooking.h"
 
+#include "fsystem.h"
+
 // 0x541B10 | ?FQN@@YAPADPAD@Z
 inline char* FQN(char* arg1)
 {
@@ -65,12 +67,18 @@ inline extern_var(0x70F014, int32_t, LogOpenOn);
 struct PagerInfo_t
 {
 public:
+    void* m_PagerHandle {nullptr};
+    uint32_t m_Offset {0};
+    uint32_t m_Size {0};
+
     // 0x542150 | ?Read@PagerInfo_t@@QAEXPAXII@Z
     inline void Read(void* arg1, uint32_t arg2, uint32_t arg3)
     {
         return stub<member_func_t<void, PagerInfo_t, void*, uint32_t, uint32_t>>(0x542150, this, arg1, arg2, arg3);
     }
 };
+
+check_size(PagerInfo_t, 12);
 
 class HierFileSystem : FileSystem
 {
@@ -139,3 +147,5 @@ public:
         return stub<member_func_t<struct FileInfo*, HierFileSystem, struct FileInfo*>>(0x542080, this, arg1);
     }
 };
+
+check_size(HierFileSystem, 8);

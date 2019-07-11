@@ -34,6 +34,8 @@
 
 #include "hooking.h"
 
+#include "vector4.h"
+
 // 0x552C60 | ?GetBoundSphere@@YA?AVVector4@@HPAVVector3@@@Z
 inline class Vector4 GetBoundSphere(int32_t arg1, class Vector3* arg2)
 {

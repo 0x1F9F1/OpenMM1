@@ -37,17 +37,30 @@
 
 #include "hooking.h"
 
+#include "stream.h"
+
 struct VirtualStream : Stream
 {
 public:
+    Stream* m_pBaseStream {nullptr};
+    uint32_t m_DataOffset {0};
+    uint32_t m_FileSize {0};
+    void* m_Mutex {nullptr};
+
     // VirtualStream::`vftable' @ 0x595F68
 
     // 0x5436C0 | ??0VirtualStream@@QAE@PAVStream@@PAUVirtualFileInode@@PAXHPAVFileSystem@@@Z
     inline VirtualStream(
         class Stream* arg1, struct VirtualFileInode* arg2, void* arg3, int32_t arg4, class FileSystem* arg5)
+        : Stream(arg3, arg4, arg5)
     {
-        stub<member_func_t<void, VirtualStream, class Stream*, struct VirtualFileInode*, void*, int32_t,
-            class FileSystem*>>(0x5436C0, this, arg1, arg2, arg3, arg4, arg5);
+        // stub<member_func_t<void, VirtualStream, class Stream*, struct VirtualFileInode*, void*, int32_t,
+        //     class FileSystem*>>(0x5436C0, this, arg1, arg2, arg3, arg4, arg5);
+
+        (void) arg1;
+        (void) arg2;
+
+        unimplemented;
     }
 
     // 0x543780 | ??1VirtualStream@@UAE@XZ
@@ -99,3 +112,5 @@ public:
         return stub<member_func_t<int32_t, VirtualStream>>(0x5438B0, this);
     }
 };
+
+check_size(VirtualStream, 0x30);

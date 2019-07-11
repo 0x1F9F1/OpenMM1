@@ -42,9 +42,28 @@
 
 #include "hooking.h"
 
+#include "fsystem.h"
+
+struct VirtualFileInode
+{
+    uint32_t m_DataOffset;
+    uint32_t m_Flags1;
+    uint32_t m_Flags2;
+};
+
+check_size(VirtualFileInode, 12);
+
 class VirtualFileSystem : FileSystem
 {
 public:
+    Stream* m_pFileStream {nullptr};
+    uint32_t m_Magic {0};
+    uint32_t m_NodeCount {0};
+    uint32_t m_DirectoryCount {0};
+    uint32_t m_NameDataSize {0};
+    VirtualFileInode* m_pNodes {nullptr};
+    uint8_t* m_pNameData {nullptr};
+
     // VirtualFileSystem::`vftable' @ 0x595ED8
 
     // 0x5421D0 | ??0VirtualFileSystem@@QAE@PAVStream@@@Z
@@ -134,3 +153,5 @@ public:
         return stub<member_func_t<struct FileInfo*, VirtualFileSystem, struct FileInfo*>>(0x542880, this, arg1);
     }
 };
+
+check_size(VirtualFileSystem, 0x24);

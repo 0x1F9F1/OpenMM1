@@ -3,8 +3,8 @@ add_library(stream OBJECT
     filestream.h
     fsystem.cpp
     fsystem.h
-    # hfsystem.cpp
-    # hfsystem.h
+    hfsystem.cpp
+    hfsystem.h
     problems.cpp
     problems.h
     sparser.cpp
@@ -13,10 +13,10 @@ add_library(stream OBJECT
     stream.h
     token.cpp
     token.h
-    # vfsystem.cpp
-    # vfsystem.h
-    # vstream.cpp
-    # vstream.h
+    vfsystem.cpp
+    vfsystem.h
+    vstream.cpp
+    vstream.h
 )
 
 target_link_libraries(stream hooking)

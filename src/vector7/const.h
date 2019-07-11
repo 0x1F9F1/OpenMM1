@@ -73,6 +73,7 @@ inline extern_var(0x710A88, int32_t, MathSpeed);
 // 0x710A8C | ?OldMathSpeed@@3HA
 inline extern_var(0x710A8C, int32_t, OldMathSpeed);
 
+#if 0
 class FloatArray
 {
 public:
@@ -152,3 +153,4 @@ public:
         return stub<member_func_t<void, IntArray, class IntArray&>>(0x5552E0, this, arg1);
     }
 };
+#endif

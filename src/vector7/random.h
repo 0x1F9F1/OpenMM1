@@ -28,9 +28,14 @@
 
 #include "hooking.h"
 
+// An implementation of ran3 decribed in Numerical Recipes in C
 struct Random
 {
 public:
+    uint32_t x {0};
+    uint32_t y {0};
+    uint32_t buffer[56] {};
+
     // 0x548F90 | ?Seed@Random@@QAEXH@Z
     inline void Seed(int32_t arg1)
     {
@@ -49,3 +54,5 @@ public:
         return stub<member_func_t<float, Random, float, float>>(0x5490B0, this, arg1, arg2);
     }
 };
+
+check_size(Random, 0xE8);
