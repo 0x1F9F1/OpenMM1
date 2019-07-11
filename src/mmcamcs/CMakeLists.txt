@@ -1,30 +1,30 @@
 add_library(mmcamcs OBJECT
-    aicamcs.cpp
-    aicamcs.h
-    appcamcs.cpp
-    appcamcs.h
-    basecamcs.cpp
-    basecamcs.h
-    carcamcs.cpp
-    carcamcs.h
-    pointcamcs.cpp
-    pointcamcs.h
-    polarcamcs.cpp
-    polarcamcs.h
-    postcamcs.cpp
-    postcamcs.h
-    povcamcs.cpp
-    povcamcs.h
-    precamcs.cpp
-    precamcs.h
-    spline.cpp
-    spline.h
-    trackcamcs.cpp
-    trackcamcs.h
-    transitioncs.cpp
-    transitioncs.h
-    viewcs.cpp
-    viewcs.h
+    # aicamcs.cpp
+    # aicamcs.h
+    # appcamcs.cpp
+    # appcamcs.h
+    # basecamcs.cpp
+    # basecamcs.h
+    # carcamcs.cpp
+    # carcamcs.h
+    # pointcamcs.cpp
+    # pointcamcs.h
+    # polarcamcs.cpp
+    # polarcamcs.h
+    # postcamcs.cpp
+    # postcamcs.h
+    # povcamcs.cpp
+    # povcamcs.h
+    # precamcs.cpp
+    # precamcs.h
+    # spline.cpp
+    # spline.h
+    # trackcamcs.cpp
+    # trackcamcs.h
+    # transitioncs.cpp
+    # transitioncs.h
+    # viewcs.cpp
+    # viewcs.h
 )
 
 target_link_libraries(mmcamcs hooking)

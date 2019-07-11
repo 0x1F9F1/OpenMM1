@@ -1,30 +1,30 @@
 add_library(mmcity OBJECT
-    anim.cpp
-    anim.h
-    cellrend.cpp
-    cellrend.h
-    cullcity.cpp
-    cullcity.h
-    heap.cpp
-    heap.h
-    inst.cpp
-    inst.h
-    instchn.cpp
-    instchn.h
-    loader.cpp
-    loader.h
-    ped.cpp
-    ped.h
-    portal.cpp
-    portal.h
-    position.cpp
-    position.h
-    positions.cpp
-    positions.h
-    renderweb.cpp
-    renderweb.h
-    sky.cpp
-    sky.h
+    # anim.cpp
+    # anim.h
+    # cellrend.cpp
+    # cellrend.h
+    # cullcity.cpp
+    # cullcity.h
+    # heap.cpp
+    # heap.h
+    # inst.cpp
+    # inst.h
+    # instchn.cpp
+    # instchn.h
+    # loader.cpp
+    # loader.h
+    # ped.cpp
+    # ped.h
+    # portal.cpp
+    # portal.h
+    # position.cpp
+    # position.h
+    # positions.cpp
+    # positions.h
+    # renderweb.cpp
+    # renderweb.h
+    # sky.cpp
+    # sky.h
 )
 
 target_link_libraries(mmcity hooking)

@@ -709,6 +709,8 @@ backport_vtable_purecalls(vtables, class_hiers)
 
 collect_types_2(name_to_type, all_symbols)
 
+all_files = {}
+
 LICENSE_TXT = '''/*
     OpenMM1 - An Open Source Re-Implementation of Midtown Madness 1
     Copyright (C) 2019 Brick
@@ -739,14 +741,21 @@ if True:
         if not lib:
             lib = 'other'
 
-        if lib in ['data7:printer', 'arts7:node', 'arts7:cullable']:
-            continue
-
         lib_path = lib.replace(':', '\\')
         output_dir = os.path.normpath(SOURCE_DIR + '\\' + lib_path)
         parent_dir = os.path.dirname(output_dir)
 
+        if parent_dir not in all_files:
+            lib_name = parent_dir[len(SOURCE_DIR) + 1:].replace(':', '/')
+            all_files[parent_dir] = (lib_name, [ ])
+
+        all_files[parent_dir][1].append(output_dir + '.cpp')
+        all_files[parent_dir][1].append(output_dir + '.h')
+
         base_name = os.path.basename(output_dir)
+
+        if lib in ['data7:printer', 'arts7:node', 'arts7:cullable']:
+            continue
 
         if not os.path.exists(parent_dir):
             try:
@@ -789,6 +798,44 @@ if True:
             f.write(LICENSE_TXT)
             f.write('\n')
             f.write('#include "{}.h"\n'.format(base_name))
+
+    if False:
+        for lib_dir, (lib_name, files) in all_files.items():
+            with open(lib_dir + '\\CMakeLists.txt', 'w') as f:
+                if lib_dir == SOURCE_DIR:
+                    lib_name = 'midtown'
+
+                    f.write('cmake_minimum_required(VERSION 3.10 FATAL_ERROR)\n\n')
+
+                    for sub_dir, _ in sorted(all_files.items()):
+                        if sub_dir != SOURCE_DIR:
+                            f.write('# add_subdirectory(' + sub_dir[len(SOURCE_DIR) + 1:] + ')\n')
+                    f.write('\n')
+
+                    f.write('''add_library(hooking STATIC
+        hooking.cpp
+        hooking.h
+    )
+    target_link_libraries(hooking mem)
+    ''')
+                    f.write('\n')
+
+                f.write('add_library(' + lib_name + ' OBJECT\n')
+
+                for file in sorted(files):
+                    file = file[len(lib_dir) + 1:].replace('\\', '/')
+
+                    f.write('    # ' + file + '\n')
+
+                if lib_dir == SOURCE_DIR:
+                    f.write('\n')
+                    for _, (obj_name, _) in sorted(all_files.items()):
+                        if obj_name != '':
+                            f.write('    # $<TARGET_OBJECTS:' + obj_name + '>\n')
+
+                f.write(')\n')
+                f.write('\n')
+                f.write('target_link_libraries(' + lib_name + ' hooking)\n')
 else:
     print('All Symbols')
     for symbol in all_symbols.values():
