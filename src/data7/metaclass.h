@@ -153,4 +153,5 @@ public:
     static inline extern_var(0x711F48, class MetaClass, RootMetaClass);
 };
 
+check_size(MetaField, 0x10);
 check_size(MetaClass, 0x28);
