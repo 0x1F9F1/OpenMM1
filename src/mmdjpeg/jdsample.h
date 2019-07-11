@@ -18,7 +18,20 @@
 
 #pragma once
 
-// mmdjpeg:jdsample
+/*
+    mmdjpeg:jdsample
+
+    0x564260 | void __cdecl jinit_upsampler(struct jpeg_decompress_struct *) | ?jinit_upsampler@@YAXPAUjpeg_decompress_struct@@@Z
+    0x564470 | void __cdecl start_pass_upsample(struct jpeg_decompress_struct *) | ?start_pass_upsample@@YAXPAUjpeg_decompress_struct@@@Z
+    0x564490 | void __cdecl sep_upsample(struct jpeg_decompress_struct *,unsigned char * * *,unsigned int *,unsigned int,unsigned char * *,unsigned int *,unsigned int) | ?sep_upsample@@YAXPAUjpeg_decompress_struct@@PAPAPAEPAIIPAPAE2I@Z
+    0x564590 | void __cdecl fullsize_upsample(struct jpeg_decompress_struct *,struct jpeg_component_info *,unsigned char * *,unsigned char * * *) | ?fullsize_upsample@@YAXPAUjpeg_decompress_struct@@PAUjpeg_component_info@@PAPAEPAPAPAE@Z
+    0x5645A0 | void __cdecl noop_upsample(struct jpeg_decompress_struct *,struct jpeg_component_info *,unsigned char * *,unsigned char * * *) | ?noop_upsample@@YAXPAUjpeg_decompress_struct@@PAUjpeg_component_info@@PAPAEPAPAPAE@Z
+    0x5645B0 | void __cdecl int_upsample(struct jpeg_decompress_struct *,struct jpeg_component_info *,unsigned char * *,unsigned char * * *) | ?int_upsample@@YAXPAUjpeg_decompress_struct@@PAUjpeg_component_info@@PAPAEPAPAPAE@Z
+    0x5646B0 | void __cdecl h2v1_upsample(struct jpeg_decompress_struct *,struct jpeg_component_info *,unsigned char * *,unsigned char * * *) | ?h2v1_upsample@@YAXPAUjpeg_decompress_struct@@PAUjpeg_component_info@@PAPAEPAPAPAE@Z
+    0x564710 | void __cdecl h2v2_upsample(struct jpeg_decompress_struct *,struct jpeg_component_info *,unsigned char * *,unsigned char * * *) | ?h2v2_upsample@@YAXPAUjpeg_decompress_struct@@PAUjpeg_component_info@@PAPAEPAPAPAE@Z
+    0x5647A0 | void __cdecl h2v1_fancy_upsample(struct jpeg_decompress_struct *,struct jpeg_component_info *,unsigned char * *,unsigned char * * *) | ?h2v1_fancy_upsample@@YAXPAUjpeg_decompress_struct@@PAUjpeg_component_info@@PAPAEPAPAPAE@Z
+    0x564860 | void __cdecl h2v2_fancy_upsample(struct jpeg_decompress_struct *,struct jpeg_component_info *,unsigned char * *,unsigned char * * *) | ?h2v2_fancy_upsample@@YAXPAUjpeg_decompress_struct@@PAUjpeg_component_info@@PAPAEPAPAPAE@Z
+*/
 
 #include "hooking.h"
 

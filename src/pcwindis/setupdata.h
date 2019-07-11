@@ -18,7 +18,19 @@
 
 #pragma once
 
-// pcwindis:setupdata
+/*
+    pcwindis:setupdata
+
+    0x556460 | int __cdecl dxiResClosestMatch(int,int,int) | ?dxiResClosestMatch@@YAHHHH@Z
+    0x556510 | int __cdecl dxiResGetRecommended(int,int) | ?dxiResGetRecommended@@YAHHH@Z
+    0x5565B0 | int __cdecl dxiReadConfigFile(void) | ?dxiReadConfigFile@@YAHXZ
+    0x556920 | void __cdecl dxiWriteConfigFile(void) | ?dxiWriteConfigFile@@YAXXZ
+    0x5CD880 | int dxiRendererChoice | ?dxiRendererChoice@@3HA
+    0x710AC0 | struct dxiRendererInfo_t * dxiInfo | ?dxiInfo@@3PAUdxiRendererInfo_t@@A
+    0x711790 | int dxiRendererCount | ?dxiRendererCount@@3HA
+    0x556880 | void __cdecl strtoguid(struct _GUID *,char *) | ?strtoguid@@YAXPAU_GUID@@PAD@Z
+    0x556B20 | void __cdecl guidtostr(char *,struct _GUID *) | ?guidtostr@@YAXPADPAU_GUID@@@Z
+*/
 
 #include "hooking.h"
 

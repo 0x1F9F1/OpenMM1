@@ -18,7 +18,26 @@
 
 #pragma once
 
-// arts7:lamp
+/*
+    arts7:lamp
+
+    0x5126A0 | public: __thiscall asLamp::asLamp(void) | ??0asLamp@@QAE@XZ
+    0x512760 | public: virtual __thiscall asLamp::~asLamp(void) | ??1asLamp@@UAE@XZ
+    0x5127D0 | public: void __thiscall asLamp::SetColor(class Vector3 const &,float) | ?SetColor@asLamp@@QAEXABVVector3@@M@Z
+    0x512810 | public: void __thiscall asLamp::SetDistant(void) | ?SetDistant@asLamp@@QAEXXZ
+    0x512820 | public: void __thiscall asLamp::SetPoint(void) | ?SetPoint@asLamp@@QAEXXZ
+    0x512830 | public: virtual void __thiscall asLamp::Update(void) | ?Update@asLamp@@UAEXXZ
+    0x512920 | public: virtual void __thiscall asLamp::Cull(void) | ?Cull@asLamp@@UAEXXZ
+    0x512970 | public: void __thiscall asLamp::FileIO(class MiniParser *) | ?FileIO@asLamp@@QAEXPAVMiniParser@@@Z
+    0x512980 | private: void __thiscall asLamp::Regen(void) | ?Regen@asLamp@@AAEXXZ
+    0x5129A0 | public: void __thiscall asLamp::AddWidgets(class Bank *) | ?AddWidgets@asLamp@@QAEXPAVBank@@@Z
+    0x5129B0 | public: static void __cdecl asLamp::DeclareFields(void) | ?DeclareFields@asLamp@@SAXXZ
+    0x512B10 | public: virtual class MetaClass * __thiscall asLamp::GetClass(void) | ?GetClass@asLamp@@UAEPAVMetaClass@@XZ
+    0x595458 | const asLamp::`vftable' | ??_7asLamp@@6B@
+    0x6F2B98 | class MetaClass asLampMetaClass | ?asLampMetaClass@@3VMetaClass@@A
+    0x512A00 | void * __cdecl new_asLamp(int) | ?new_asLamp@@YAPAXH@Z
+    0x512AC0 | void __cdecl delete_asLamp(void *,int) | ?delete_asLamp@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,26 @@
 
 #pragma once
 
-// mmcityinfo:citylist
+/*
+    mmcityinfo:citylist
+
+    0x4C0110 | public: __thiscall mmCityList::mmCityList(void) | ??0mmCityList@@QAE@XZ
+    0x4C0130 | public: virtual __thiscall mmCityList::~mmCityList(void) | ??1mmCityList@@UAE@XZ
+    0x4C0190 | public: void __thiscall mmCityList::Init(int) | ?Init@mmCityList@@QAEXH@Z
+    0x4C01A0 | public: class mmCityInfo * __thiscall mmCityList::GetCityInfo(int) | ?GetCityInfo@mmCityList@@QAEPAVmmCityInfo@@H@Z
+    0x4C01D0 | public: class mmCityInfo * __thiscall mmCityList::GetCityInfo(char *) | ?GetCityInfo@mmCityList@@QAEPAVmmCityInfo@@PAD@Z
+    0x4C0250 | public: int __thiscall mmCityList::GetCityID(char *) | ?GetCityID@mmCityList@@QAEHPAD@Z
+    0x4C02D0 | public: void __thiscall mmCityList::SetCurrentCity(char *) | ?SetCurrentCity@mmCityList@@QAEXPAD@Z
+    0x4C02F0 | public: void __thiscall mmCityList::SetCurrentCity(int) | ?SetCurrentCity@mmCityList@@QAEXH@Z
+    0x4C0320 | public: class mmCityInfo * __thiscall mmCityList::GetCurrentCity(void) | ?GetCurrentCity@mmCityList@@QAEPAVmmCityInfo@@XZ
+    0x4C0330 | public: void __thiscall mmCityList::Load(char *) | ?Load@mmCityList@@QAEXPAD@Z
+    0x4C0460 | public: void __thiscall mmCityList::Print(void) | ?Print@mmCityList@@QAEXXZ
+    0x4C04A0 | public: void __thiscall mmCityList::LoadAll(void) | ?LoadAll@mmCityList@@QAEXXZ
+    0x4C0550 | public: virtual void * __thiscall mmCityList::`scalar deleting destructor'(unsigned int) | ??_GmmCityList@@UAEPAXI@Z
+    0x4C0550 | public: virtual void * __thiscall mmCityList::`vector deleting destructor'(unsigned int) | ??_EmmCityList@@UAEPAXI@Z
+    0x594404 | const mmCityList::`vftable' | ??_7mmCityList@@6B@
+    0x66A80C | class mmCityList * CityListPtr | ?CityListPtr@@3PAVmmCityList@@A
+*/
 
 #include "hooking.h"
 

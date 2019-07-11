@@ -18,7 +18,21 @@
 
 #pragma once
 
-// arts7:linear
+/*
+    arts7:linear
+
+    0x512B20 | public: __thiscall asLinearCS::asLinearCS(void) | ??0asLinearCS@@QAE@XZ
+    0x512B90 | public: virtual void __thiscall asLinearCS::Update(void) | ?Update@asLinearCS@@UAEXXZ
+    0x512C40 | public: virtual void __thiscall asLinearCS::Cull(void) | ?Cull@asLinearCS@@UAEXXZ
+    0x512C50 | public: void __thiscall asLinearCS::FileIO(class MiniParser *) | ?FileIO@asLinearCS@@QAEXPAVMiniParser@@@Z
+    0x512C60 | public: void __thiscall asLinearCS::AddWidgets(class Bank *) | ?AddWidgets@asLinearCS@@QAEXPAVBank@@@Z
+    0x512C70 | public: static void __cdecl asLinearCS::DeclareFields(void) | ?DeclareFields@asLinearCS@@SAXXZ
+    0x512E30 | public: virtual class MetaClass * __thiscall asLinearCS::GetClass(void) | ?GetClass@asLinearCS@@UAEPAVMetaClass@@XZ
+    0x595488 | const asLinearCS::`vftable' | ??_7asLinearCS@@6B@
+    0x6F2BC0 | class MetaClass asLinearCSMetaClass | ?asLinearCSMetaClass@@3VMetaClass@@A
+    0x512D10 | void * __cdecl new_asLinearCS(int) | ?new_asLinearCS@@YAPAXH@Z
+    0x512DE0 | void __cdecl delete_asLinearCS(void *,int) | ?delete_asLinearCS@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

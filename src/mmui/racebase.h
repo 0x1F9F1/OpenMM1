@@ -18,7 +18,33 @@
 
 #pragma once
 
-// mmui:racebase
+/*
+    mmui:racebase
+
+    0x49AF70 | public: __thiscall RaceMenuBase::RaceMenuBase(int) | ??0RaceMenuBase@@QAE@H@Z
+    0x49B0B0 | public: void __thiscall RaceMenuBase::Init(int) | ?Init@RaceMenuBase@@QAEXH@Z
+    0x49BE70 | public: virtual __thiscall RaceMenuBase::~RaceMenuBase(void) | ??1RaceMenuBase@@UAE@XZ
+    0x49BEF0 | public: void __thiscall RaceMenuBase::FocusDescription(int) | ?FocusDescription@RaceMenuBase@@QAEXH@Z
+    0x49BF20 | public: void __thiscall RaceMenuBase::WidgetOnOff(int,class uiWidget *) | ?WidgetOnOff@RaceMenuBase@@QAEXHPAVuiWidget@@@Z
+    0x49BF50 | public: void __thiscall RaceMenuBase::SetRW(void) | ?SetRW@RaceMenuBase@@QAEXXZ
+    0x49C220 | public: int __thiscall RaceMenuBase::IsEnvEnabled(void) | ?IsEnvEnabled@RaceMenuBase@@QAEHXZ
+    0x49C240 | public: void __thiscall RaceMenuBase::CheatCallback(void) | ?CheatCallback@RaceMenuBase@@QAEXXZ
+    0x49C250 | public: void __thiscall RaceMenuBase::SyncRaceState(void) | ?SyncRaceState@RaceMenuBase@@QAEXXZ
+    0x49C300 | public: void __thiscall RaceMenuBase::CityChange(void) | ?CityChange@RaceMenuBase@@QAEXXZ
+    0x49C4A0 | public: void __thiscall RaceMenuBase::GameCallback(void) | ?GameCallback@RaceMenuBase@@QAEXXZ
+    0x49C520 | public: void __thiscall RaceMenuBase::LapsCallback(void) | ?LapsCallback@RaceMenuBase@@QAEXXZ
+    0x49C530 | public: void __thiscall RaceMenuBase::WPCallback(void) | ?WPCallback@RaceMenuBase@@QAEXXZ
+    0x49C580 | public: void __thiscall RaceMenuBase::AICallback(void) | ?AICallback@RaceMenuBase@@QAEXXZ
+    0x49C5D0 | public: void __thiscall RaceMenuBase::WeatherCallback(void) | ?WeatherCallback@RaceMenuBase@@QAEXXZ
+    0x49C5E0 | public: void __thiscall RaceMenuBase::TimeCallback(void) | ?TimeCallback@RaceMenuBase@@QAEXXZ
+    0x49C5F0 | public: void __thiscall RaceMenuBase::ChangeLocalVals(void) | ?ChangeLocalVals@RaceMenuBase@@QAEXXZ
+    0x49C880 | public: void __thiscall RaceMenuBase::SetStateRace(void) | ?SetStateRace@RaceMenuBase@@QAEXXZ
+    0x49CC20 | public: virtual void * __thiscall RaceMenuBase::`vector deleting destructor'(unsigned int) | ??_ERaceMenuBase@@UAEPAXI@Z
+    0x49CC20 | public: virtual void * __thiscall RaceMenuBase::`scalar deleting destructor'(unsigned int) | ??_GRaceMenuBase@@UAEPAXI@Z
+    0x592AB8 | const RaceMenuBase::`vftable' | ??_7RaceMenuBase@@6B@
+    0x5AF708 | float GoldHPScale | ?GoldHPScale@@3MA
+    0x5AF70C | float GoldDamageScale | ?GoldDamageScale@@3MA
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,25 @@
 
 #pragma once
 
-// data7:hash
+/*
+    data7:hash
+
+    0x5599A0 | public: void __thiscall HashIterator::Begin(void) | ?Begin@HashIterator@@QAEXXZ
+    0x5599B0 | public: int __thiscall HashIterator::Next(void) | ?Next@HashIterator@@QAEHXZ
+    0x559A00 | public: void __thiscall HashTable::Init(int) | ?Init@HashTable@@QAEXH@Z
+    0x559A70 | public: void __thiscall HashTable::Kill(void) | ?Kill@HashTable@@QAEXXZ
+    0x559AE0 | public: void __thiscall HashTable::operator=(class HashTable &) | ??4HashTable@@QAEXAAV0@@Z
+    0x559B30 | public: int __thiscall HashTable::Insert(char *,void *) | ?Insert@HashTable@@QAEHPADPAX@Z
+    0x559C10 | public: int __thiscall HashTable::Delete(char *) | ?Delete@HashTable@@QAEHPAD@Z
+    0x559D50 | public: int __thiscall HashTable::Change(char *,char *) | ?Change@HashTable@@QAEHPAD0@Z
+    0x559D90 | public: void * __thiscall HashTable::Access(char *) | ?Access@HashTable@@QAEPAXPAD@Z
+    0x559E20 | private: int __thiscall HashTable::Hash(char *) | ?Hash@HashTable@@AAEHPAD@Z
+    0x559E60 | private: int __thiscall HashTable::ComputePrime(int) | ?ComputePrime@HashTable@@AAEHH@Z
+    0x559EB0 | private: void __thiscall HashTable::Recompute(int) | ?Recompute@HashTable@@AAEXH@Z
+    0x559F70 | public: static void __cdecl HashTable::KillAll(void) | ?KillAll@HashTable@@SAXXZ
+    0x559F90 | private: void __thiscall HashTable::RemoveMe(void) | ?RemoveMe@HashTable@@AAEXXZ
+    0x711F74 | private: static class HashTable * HashTable::First | ?First@HashTable@@0PAV1@A
+*/
 
 #include "hooking.h"
 

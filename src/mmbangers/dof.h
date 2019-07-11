@@ -18,27 +18,14 @@
 
 #pragma once
 
-// mmbangers:dof
+/*
+    mmbangers:dof
+
+    0x4BFD10 | public: virtual unsigned int __thiscall mmDofBangerInstance::SizeOf(void) | ?SizeOf@mmDofBangerInstance@@UAEIXZ
+    0x4BFD20 | public: int __thiscall mmDofBangerInstance::Init(char *,char *,int,class Matrix34 *,class Vector3 *) | ?Init@mmDofBangerInstance@@QAEHPAD0HPAVMatrix34@@PAVVector3@@@Z
+    0x4BFDD0 | public: virtual class Matrix34 & __fastcall mmFacadeBangerInstance::ToMatrix(class Matrix34 &) | ?ToMatrix@mmFacadeBangerInstance@@UAIAAVMatrix34@@AAV2@@Z
+    0x4BFE80 | public: virtual class Vector3 & __fastcall mmFacadeBangerInstance::GetPos(void) | ?GetPos@mmFacadeBangerInstance@@UAIAAVVector3@@XZ
+    0x4BFF00 | private: virtual void __fastcall mmGlassBangerInstance::Draw(int) | ?Draw@mmGlassBangerInstance@@EAIXH@Z
+*/
 
 #include "hooking.h"
-
-// 0x4BFDD0 | ?ToMatrix@mmFacadeBangerInstance@@UAIAAVMatrix34@@AAV2@@Z
-// Warning: Unordered virtual function
-virtual inline class Matrix34& ToMatrix(class Matrix34& arg1)
-{
-    return stub<cdecl_t<class Matrix34&, class Matrix34&>>(0x4BFDD0, arg1);
-}
-
-// 0x4BFE80 | ?GetPos@mmFacadeBangerInstance@@UAIAAVVector3@@XZ
-// Warning: Unordered virtual function
-virtual inline class Vector3& GetPos()
-{
-    return stub<cdecl_t<class Vector3&>>(0x4BFE80);
-}
-
-// 0x4BFF00 | ?Draw@mmGlassBangerInstance@@EAIXH@Z
-// Warning: Unordered virtual function
-virtual inline void Draw(int32_t arg1)
-{
-    return stub<cdecl_t<void, int32_t>>(0x4BFF00, arg1);
-}

@@ -18,7 +18,48 @@
 
 #pragma once
 
-// mmgame:game
+/*
+    mmgame:game
+
+    0x40B860 | public: __thiscall mmGame::mmGame(void) | ??0mmGame@@QAE@XZ
+    0x40B9F0 | public: int __thiscall mmGame::Init(void) | ?Init@mmGame@@QAEHXZ
+    0x40C8B0 | public: virtual void __thiscall mmGame::InitOtherPlayers(void) | ?InitOtherPlayers@mmGame@@UAEXXZ
+    0x40C9B0 | public: void __thiscall mmGame::CollideAIOpponents(void) | ?CollideAIOpponents@mmGame@@QAEXXZ
+    0x40CAB0 | public: virtual void __thiscall mmGame::InitGameStrings(void) | ?InitGameStrings@mmGame@@UAEXXZ
+    0x40CD90 | public: virtual __thiscall mmGame::~mmGame(void) | ??1mmGame@@UAE@XZ
+    0x40CF80 | public: void __thiscall mmGame::Stats(void) | ?Stats@mmGame@@QAEXXZ
+    0x40D060 | protected: void __thiscall mmGame::RespawnXYZ(class Vector3 &,float &) | ?RespawnXYZ@mmGame@@IAEXAAVVector3@@AAM@Z
+    0x40D160 | public: int __thiscall mmGame::IsPopupEnabled(void) | ?IsPopupEnabled@mmGame@@QAEHXZ
+    0x40D170 | public: virtual void __thiscall mmGame::Reset(void) | ?Reset@mmGame@@UAEXXZ
+    0x40D1D0 | public: virtual void __thiscall mmGame::Update(void) | ?Update@mmGame@@UAEXXZ
+    0x40D360 | public: virtual void __thiscall mmGame::DropThruCityHandler(void) | ?DropThruCityHandler@mmGame@@UAEXXZ
+    0x40D370 | public: virtual void __thiscall mmGame::HitWaterHandler(void) | ?HitWaterHandler@mmGame@@UAEXXZ
+    0x40D380 | public: virtual void __thiscall mmGame::UpdateDebugInput(void) | ?UpdateDebugInput@mmGame@@UAEXXZ
+    0x40D540 | public: virtual void __thiscall mmGame::UpdatePaused(void) | ?UpdatePaused@mmGame@@UAEXXZ
+    0x40D630 | public: void __thiscall mmGame::UpdateGameInput(void) | ?UpdateGameInput@mmGame@@QAEXXZ
+    0x40DAB0 | public: void __thiscall mmGame::UpdateSteeringBrakes(void) | ?UpdateSteeringBrakes@mmGame@@QAEXXZ
+    0x40DB90 | public: void __thiscall mmGame::SetIconsState(void) | ?SetIconsState@mmGame@@QAEXXZ
+    0x40DBB0 | public: void __thiscall mmGame::PlayerSetState(void) | ?PlayerSetState@mmGame@@QAEXXZ
+    0x40DCB0 | protected: int __thiscall mmGame::CalculateRaceScore(int,int) | ?CalculateRaceScore@mmGame@@IAEHHH@Z
+    0x40DD20 | public: virtual void __thiscall mmGame::SendChatMessage(char *) | ?SendChatMessage@mmGame@@UAEXPAD@Z
+    0x40E170 | public: int __thiscall mmGame::GetCDTrack(short) | ?GetCDTrack@mmGame@@QAEHF@Z
+    0x40E640 | private: virtual void __thiscall foobar::Update(void) | ?Update@foobar@@EAEXXZ
+    0x40E670 | private: virtual void __thiscall foobar::UpdatePaused(void) | ?UpdatePaused@foobar@@EAEXXZ
+    0x40E680 | public: static void __cdecl mmGame::DeclareFields(void) | ?DeclareFields@mmGame@@SAXXZ
+    0x40E720 | public: virtual class MetaClass * __thiscall mmGame::GetClass(void) | ?GetClass@mmGame@@UAEPAVMetaClass@@XZ
+    0x40E880 | public: virtual void * __thiscall mmGame::`vector deleting destructor'(unsigned int) | ??_EmmGame@@UAEPAXI@Z
+    0x40E880 | public: virtual void * __thiscall mmGame::`scalar deleting destructor'(unsigned int) | ??_GmmGame@@UAEPAXI@Z
+    0x40E8B0 | public: virtual void __thiscall mmGame::BeDone(void) | ?BeDone@mmGame@@UAEXXZ
+    0x58F600 | const mmGame::`vftable' | ??_7mmGame@@6B@
+    0x5A56B8 | float ProjectileY | ?ProjectileY@@3MA
+    0x5A56C0 | unsigned int * IconColor | ?IconColor@@3PAIA
+    0x609268 | char * LocPlayerName | ?LocPlayerName@@3PADA
+    0x609298 | class MetaClass mmGameMetaClass | ?mmGameMetaClass@@3VMetaClass@@A
+    0x6092C8 | class Vector3 ProjectileV | ?ProjectileV@@3VVector3@@A
+    0x6092EC | int masscycle | ?masscycle@@3HA
+    0x6092F0 | class mmBangerData * BangerProjectile | ?BangerProjectile@@3PAVmmBangerData@@A
+    0x40E6D0 | void __cdecl delete_mmGame(void *,int) | ?delete_mmGame@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

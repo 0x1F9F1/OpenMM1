@@ -18,7 +18,72 @@
 
 #pragma once
 
-// vector7:matrix34
+/*
+    vector7:matrix34
+
+    0x549AD0 | public: __thiscall Matrix34::Matrix34(class Matrix44 const &) | ??0Matrix34@@QAE@ABVMatrix44@@@Z
+    0x549B30 | public: void __thiscall Matrix34::Identity(void) | ?Identity@Matrix34@@QAEXXZ
+    0x549B60 | public: class Matrix34 __thiscall Matrix34::operator+(class Matrix34 const &) | ??HMatrix34@@QAE?AV0@ABV0@@Z
+    0x549C30 | public: class Matrix34 __thiscall Matrix34::operator-(class Matrix34 const &) | ??GMatrix34@@QAE?AV0@ABV0@@Z
+    0x549D00 | public: void __thiscall Matrix34::Dot(class Matrix34 const &,class Matrix34 const &) | ?Dot@Matrix34@@QAEXABV1@0@Z
+    0x549F20 | public: void __thiscall Matrix34::Dot3x3(class Matrix34 const &,class Matrix34 const &) | ?Dot3x3@Matrix34@@QAEXABV1@0@Z
+    0x54A0B0 | public: class Vector3 __thiscall Matrix34::SolveSVD(class Vector3 const &) const | ?SolveSVD@Matrix34@@QBE?AVVector3@@ABV2@@Z
+    0x54AD70 | public: float __thiscall Matrix34::Determinant(void) const | ?Determinant@Matrix34@@QBEMXZ
+    0x54AE20 | public: class Matrix34 __thiscall Matrix34::Inverse(void) const | ?Inverse@Matrix34@@QBE?AV1@XZ
+    0x54AFE0 | public: void __thiscall Matrix34::FastInverse(class Matrix34 const &) | ?FastInverse@Matrix34@@QAEXABV1@@Z
+    0x54B0E0 | public: void __thiscall Matrix34::FastInverseFull(class Matrix34 const &) | ?FastInverseFull@Matrix34@@QAEXABV1@@Z
+    0x54B380 | private: void __thiscall Matrix34::ArbitraryRotation(class Vector3 const &,float) | ?ArbitraryRotation@Matrix34@@AAEXABVVector3@@M@Z
+    0x54B830 | public: void __thiscall Matrix34::Rotate(class Vector3 const &,float) | ?Rotate@Matrix34@@QAEXABVVector3@@M@Z
+    0x54BE80 | public: void __thiscall Matrix34::RotateAbs(class Vector3 const &,float) | ?RotateAbs@Matrix34@@QAEXABVVector3@@M@Z
+    0x54C380 | public: void __thiscall Matrix34::RotateFull(class Vector3 const &,float) | ?RotateFull@Matrix34@@QAEXABVVector3@@M@Z
+    0x54CA60 | public: void __thiscall Matrix34::RotateToAbs(class Vector3 const &,class Vector3 const &,float) | ?RotateToAbs@Matrix34@@QAEXABVVector3@@0M@Z
+    0x54CCD0 | public: void __thiscall Matrix34::RotateToFull(class Vector3 const &,class Vector3 const &,float) | ?RotateToFull@Matrix34@@QAEXABVVector3@@0M@Z
+    0x54CD20 | public: void __thiscall Matrix34::RotateTo(class Vector3 const &,class Vector3 const &,float) | ?RotateTo@Matrix34@@QAEXABVVector3@@0M@Z
+    0x54CD50 | public: class Matrix34 __thiscall Matrix34::operator*(float) const | ??DMatrix34@@QBE?AV0@M@Z
+    0x54CE50 | class Matrix34 __cdecl operator*(float,class Matrix34 const &) | ??D@YA?AVMatrix34@@MABV0@@Z
+    0x54CF50 | public: void __thiscall Matrix34::Scale(float,float,float) | ?Scale@Matrix34@@QAEXMMM@Z
+    0x54CFD0 | public: void __thiscall Matrix34::ScaleAbs(float,float,float) | ?ScaleAbs@Matrix34@@QAEXMMM@Z
+    0x54D000 | public: void __thiscall Matrix34::Scale(float) | ?Scale@Matrix34@@QAEXM@Z
+    0x54D080 | public: void __thiscall Matrix34::ScaleAbs(float) | ?ScaleAbs@Matrix34@@QAEXM@Z
+    0x54D0B0 | public: void __thiscall Matrix34::ScaleFull(float,float,float) | ?ScaleFull@Matrix34@@QAEXMMM@Z
+    0x54D150 | public: void __thiscall Matrix34::ScaleFullAbs(float,float,float) | ?ScaleFullAbs@Matrix34@@QAEXMMM@Z
+    0x54D190 | public: void __thiscall Matrix34::ScaleFull(float) | ?ScaleFull@Matrix34@@QAEXM@Z
+    0x54D230 | public: void __thiscall Matrix34::ScaleFullAbs(float) | ?ScaleFullAbs@Matrix34@@QAEXM@Z
+    0x54D270 | public: void __thiscall Matrix34::ScaleVolume(float,char) | ?ScaleVolume@Matrix34@@QAEXMD@Z
+    0x54D370 | public: void __thiscall Matrix34::ScaleVolumeAbs(float,char) | ?ScaleVolumeAbs@Matrix34@@QAEXMD@Z
+    0x54D470 | public: void __thiscall Matrix34::Transform(class Vector3 const &,class Vector3 const &,float) | ?Transform@Matrix34@@QAEXABVVector3@@0M@Z
+    0x54D4E0 | public: void __thiscall Matrix34::Normalize(void) | ?Normalize@Matrix34@@QAEXXZ
+    0x54D600 | public: void __thiscall Matrix34::TrackBall(float,float,float,float,float) | ?TrackBall@Matrix34@@QAEXMMMMM@Z
+    0x54D8B0 | public: void __thiscall Matrix34::Transpose(class Matrix34 const &) | ?Transpose@Matrix34@@QAEXABV1@@Z
+    0x54D910 | public: float __thiscall Matrix34::Atan3(char,char) const | ?Atan3@Matrix34@@QBEMDD@Z
+    0x54DC90 | public: class Vector3 __thiscall Matrix34::GetEulers(char const *) const | ?GetEulers@Matrix34@@QBE?AVVector3@@PBD@Z
+    0x54E340 | public: class Vector3 __thiscall Matrix34::GetEulers(void) const | ?GetEulers@Matrix34@@QBE?AVVector3@@XZ
+    0x54E4E0 | public: void __thiscall Matrix34::FromEulers(class Vector3 const &,char const *) | ?FromEulers@Matrix34@@QAEXABVVector3@@PBD@Z
+    0x54EE40 | public: void __thiscall Matrix34::FromEulers(class Vector3 const &) | ?FromEulers@Matrix34@@QAEXABVVector3@@@Z
+    0x54F360 | public: void __thiscall Matrix34::FromQuaternion(class Quaternion const &) | ?FromQuaternion@Matrix34@@QAEXABVQuaternion@@@Z
+    0x54F490 | public: void __thiscall Matrix34::LookAt(class Vector3 const &,class Vector3 const &) | ?LookAt@Matrix34@@QAEXABVVector3@@0@Z
+    0x54F630 | public: void __thiscall Matrix34::PolarView(float,float,float,float) | ?PolarView@Matrix34@@QAEXMMMM@Z
+    0x54F690 | public: void __thiscall Matrix34::PolarView2(float,float,float,float) | ?PolarView2@Matrix34@@QAEXMMMM@Z
+    0x54F6F0 | public: void __thiscall Matrix34::PolarView(class Vector4 const &) | ?PolarView@Matrix34@@QAEXABVVector4@@@Z
+    0x54F710 | public: void __thiscall Matrix34::GetLookAt(class Vector3 *,class Vector3 *,float) const | ?GetLookAt@Matrix34@@QBEXPAVVector3@@0M@Z
+    0x54F7A0 | public: void __thiscall Matrix34::GetPolar(class Vector4 *,class Vector3 *,float) const | ?GetPolar@Matrix34@@QBEXPAVVector4@@PAVVector3@@M@Z
+    0x54F7E0 | public: unsigned int __thiscall Matrix34::RotEqual(class Matrix34 const &,float) const | ?RotEqual@Matrix34@@QBEIABV1@M@Z
+    0x54F840 | public: unsigned int __thiscall Matrix34::Equal(class Matrix34 const &,float) const | ?Equal@Matrix34@@QBEIABV1@M@Z
+    0x54F880 | public: void __thiscall Matrix34::CalcAppRates(float &,float &,class Matrix34 const &,float,float) | ?CalcAppRates@Matrix34@@QAEXAAM0ABV1@MM@Z
+    0x54F970 | public: int __thiscall Matrix34::Approach(class Matrix34 const &,float,float,float) | ?Approach@Matrix34@@QAEHABV1@MMM@Z
+    0x54FAC0 | public: int __thiscall Matrix34::Approach(class Matrix34 const &,float,float) | ?Approach@Matrix34@@QAEHABV1@MM@Z
+    0x54FC10 | public: void __thiscall Matrix34::Interpolate(class Matrix34 const &,class Matrix34 const &,float) | ?Interpolate@Matrix34@@QAEXABV1@0M@Z
+    0x54FD00 | public: void __thiscall Matrix34::Print(void) const | ?Print@Matrix34@@QBEXXZ
+    0x54FDC0 | public: static void __cdecl Matrix34::DeclareFields(void) | ?DeclareFields@Matrix34@@SAXXZ
+    0x54FF00 | public: static class MetaClass * __cdecl Matrix34::GetClass(void) | ?GetClass@Matrix34@@SAPAVMetaClass@@XZ
+    0x54FF10 | float __cdecl ASinf(float) | ?ASinf@@YAMM@Z
+    0x54FFB0 | float __cdecl asinf_fast(float) | ?asinf_fast@@YAMM@Z
+    0x54FFE0 | float __cdecl ATan2f(float,float) | ?ATan2f@@YAMMM@Z
+    0x7108D0 | class Matrix34 IDENTITY | ?IDENTITY@@3VMatrix34@@A
+    0x710900 | class MetaClass Matrix34MetaClass | ?Matrix34MetaClass@@3VMetaClass@@A
+    0x54FE60 | void * __cdecl new_Matrix34(int) | ?new_Matrix34@@YAPAXH@Z
+    0x54FEB0 | void __cdecl delete_Matrix34(void *,int) | ?delete_Matrix34@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

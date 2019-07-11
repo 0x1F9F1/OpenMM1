@@ -18,7 +18,16 @@
 
 #pragma once
 
-// agiworld:meshmodel
+/*
+    agiworld:meshmodel
+
+    0x502D50 | public: int __thiscall agiMeshModel::ModelGeometry(unsigned int,class bnAnimation *,int) | ?ModelGeometry@agiMeshModel@@QAEHIPAVbnAnimation@@H@Z
+    0x502E50 | public: int __thiscall agiMeshModel::ModelDraw(unsigned int,class agiLitAnimation *,int) | ?ModelDraw@agiMeshModel@@QAEHIPAVagiLitAnimation@@H@Z
+    0x502E70 | public: int __thiscall agiMeshModel::ModelDraw(unsigned int,class bnAnimation *,int) | ?ModelDraw@agiMeshModel@@QAEHIPAVbnAnimation@@H@Z
+    0x502ED0 | public: int __thiscall agiMeshModel::ModelDrawSkel(unsigned int,class bnAnimation *,int) | ?ModelDrawSkel@agiMeshModel@@QAEHIPAVbnAnimation@@H@Z
+    0x503090 | public: int __thiscall agiMeshModel::ModelDrawLit(void (__cdecl*)(unsigned char *,unsigned int *,unsigned int *,class agiMeshSet *),unsigned int,class agiLitAnimation *,int) | ?ModelDrawLit@agiMeshModel@@QAEHP6AXPAEPAI1PAVagiMeshSet@@@ZIPAVagiLitAnimation@@H@Z
+    0x503160 | public: __thiscall agiLitAnimation::agiLitAnimation(class agiMeshModel *,class bnAnimation *,class Stream *) | ??0agiLitAnimation@@QAE@PAVagiMeshModel@@PAVbnAnimation@@PAVStream@@@Z
+*/
 
 #include "hooking.h"
 

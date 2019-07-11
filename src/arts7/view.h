@@ -18,7 +18,30 @@
 
 #pragma once
 
-// arts7:view
+/*
+    arts7:view
+
+    0x515420 | public: __thiscall asViewCS::asViewCS(void) | ??0asViewCS@@QAE@XZ
+    0x515550 | public: void __thiscall asViewCS::SetAzimuth(void) | ?SetAzimuth@asViewCS@@QAEXXZ
+    0x5155B0 | public: virtual void __thiscall asViewCS::Reset(void) | ?Reset@asViewCS@@UAEXXZ
+    0x515780 | public: virtual void __thiscall asViewCS::Update(void) | ?Update@asViewCS@@UAEXXZ
+    0x515800 | public: void __thiscall asViewCS::UpdatePolar(void) | ?UpdatePolar@asViewCS@@QAEXXZ
+    0x515940 | public: void __thiscall asViewCS::UpdateRoam(void) | ?UpdateRoam@asViewCS@@QAEXXZ
+    0x515A50 | public: void __thiscall asViewCS::UpdatePOV(void) | ?UpdatePOV@asViewCS@@QAEXXZ
+    0x515AA0 | public: void __thiscall asViewCS::UpdateLookAt(void) | ?UpdateLookAt@asViewCS@@QAEXXZ
+    0x515B00 | public: void __thiscall asViewCS::UpdateTrack(void) | ?UpdateTrack@asViewCS@@QAEXXZ
+    0x515EC0 | public: void __thiscall asViewCS::UpdateStereo(void) | ?UpdateStereo@asViewCS@@QAEXXZ
+    0x515FF0 | public: void __thiscall asViewCS::FileIO(class MiniParser *) | ?FileIO@asViewCS@@QAEXPAVMiniParser@@@Z
+    0x516000 | public: void __thiscall asViewCS::AddWidgets(class Bank *) | ?AddWidgets@asViewCS@@QAEXPAVBank@@@Z
+    0x516010 | public: static void __cdecl asViewCS::DeclareFields(void) | ?DeclareFields@asViewCS@@SAXXZ
+    0x516180 | public: virtual class MetaClass * __thiscall asViewCS::GetClass(void) | ?GetClass@asViewCS@@UAEPAVMetaClass@@XZ
+    0x516190 | public: virtual void * __thiscall asViewCS::`vector deleting destructor'(unsigned int) | ??_EasViewCS@@UAEPAXI@Z
+    0x5161F0 | public: virtual __thiscall asViewCS::~asViewCS(void) | ??1asViewCS@@UAE@XZ
+    0x595598 | const asViewCS::`vftable' | ??_7asViewCS@@6B@
+    0x6F2C68 | class MetaClass asViewCSMetaClass | ?asViewCSMetaClass@@3VMetaClass@@A
+    0x516060 | void * __cdecl new_asViewCS(int) | ?new_asViewCS@@YAPAXH@Z
+    0x516130 | void __cdecl delete_asViewCS(void *,int) | ?delete_asViewCS@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,19 @@
 
 #pragma once
 
-// mmeffects:linespark
+/*
+    mmeffects:linespark
+
+    0x4F2AF0 | class asSparkLut * __cdecl GetSparkLut(char *) | ?GetSparkLut@@YAPAVasSparkLut@@PAD@Z
+    0x4F2B30 | public: void __thiscall asSparkLut::Init(char *) | ?Init@asSparkLut@@QAEXPAD@Z
+    0x4F2D00 | public: void __thiscall asLineSparks::Init(int,class asSparkLut *) | ?Init@asLineSparks@@QAEXHPAVasSparkLut@@@Z
+    0x4F2DF0 | public: void __thiscall asLineSparks::RadialBlast(int,class Vector3 &,class Vector3 &) | ?RadialBlast@asLineSparks@@QAEXHAAVVector3@@0@Z
+    0x4F3130 | public: void __thiscall asLineSparks::Update(void) | ?Update@asLineSparks@@QAEXXZ
+    0x4F3170 | public: void __thiscall asLineSparks::Update(float) | ?Update@asLineSparks@@QAEXM@Z
+    0x4F3340 | public: void __thiscall asLineSparks::Draw(void) | ?Draw@asLineSparks@@QAEXXZ
+    0x5B7B30 | private: static unsigned int * asSparkLut::BuiltinClut | ?BuiltinClut@asSparkLut@@0PAIA
+    0x67B8D0 | class HashTable SLH | ?SLH@@3VHashTable@@A
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,28 @@
 
 #pragma once
 
-// vector7:const
+/*
+    vector7:const
+
+    0x555020 | void __cdecl SetMathSpeedSlow(void) | ?SetMathSpeedSlow@@YAXXZ
+    0x555040 | void __cdecl SetMathSpeedMed(void) | ?SetMathSpeedMed@@YAXXZ
+    0x555060 | void __cdecl SetMathSpeedFast(void) | ?SetMathSpeedFast@@YAXXZ
+    0x555080 | void __cdecl ResetMathSpeed(void) | ?ResetMathSpeed@@YAXXZ
+    0x555090 | public: void __thiscall IntArray::Init(int) | ?Init@IntArray@@QAEXH@Z
+    0x555100 | public: void __thiscall IntArray::Delete(void) | ?Delete@IntArray@@QAEXXZ
+    0x555150 | private: void __thiscall IntArray::NewTable(int) | ?NewTable@IntArray@@AAEXH@Z
+    0x5551C0 | public: int & __thiscall IntArray::operator[](int) | ??AIntArray@@QAEAAHH@Z
+    0x555220 | public: void __thiscall IntArray::operator=(class IntArray &) | ??4IntArray@@QAEXAAV0@@Z
+    0x5552E0 | public: void __thiscall IntArray::BlockCopy(class IntArray &) | ?BlockCopy@IntArray@@QAEXAAV1@@Z
+    0x5553B0 | public: void __thiscall FloatArray::Init(int) | ?Init@FloatArray@@QAEXH@Z
+    0x555420 | public: void __thiscall FloatArray::Delete(void) | ?Delete@FloatArray@@QAEXXZ
+    0x555470 | private: void __thiscall FloatArray::NewTable(int) | ?NewTable@FloatArray@@AAEXH@Z
+    0x5554E0 | public: float & __thiscall FloatArray::operator[](int) | ??AFloatArray@@QAEAAMH@Z
+    0x555540 | public: void __thiscall FloatArray::operator=(class FloatArray &) | ??4FloatArray@@QAEXAAV0@@Z
+    0x555600 | public: void __thiscall FloatArray::BlockCopy(class FloatArray &) | ?BlockCopy@FloatArray@@QAEXAAV1@@Z
+    0x710A88 | int MathSpeed | ?MathSpeed@@3HA
+    0x710A8C | int OldMathSpeed | ?OldMathSpeed@@3HA
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,16 @@
 
 #pragma once
 
-// mmcar:netaddoncaraudio
+/*
+    mmcar:netaddoncaraudio
+
+    0x47C490 | public: __thiscall NetAddOnCarAudio::NetAddOnCarAudio(char *,short) | ??0NetAddOnCarAudio@@QAE@PADF@Z
+    0x47C5B0 | public: __thiscall NetAddOnCarAudio::~NetAddOnCarAudio(void) | ??1NetAddOnCarAudio@@QAE@XZ
+    0x47C600 | public: int __thiscall NetAddOnCarAudio::AssignSounds(class mmNetworkCarAudio *,short) | ?AssignSounds@NetAddOnCarAudio@@QAEHPAVmmNetworkCarAudio@@F@Z
+    0x47C690 | public: void __thiscall NetAddOnCarAudio::EchoOn(float) | ?EchoOn@NetAddOnCarAudio@@QAEXM@Z
+    0x47C6F0 | public: void __thiscall NetAddOnCarAudio::EchoOff(void) | ?EchoOff@NetAddOnCarAudio@@QAEXXZ
+    0x47C720 | public: void __thiscall NetAddOnCarAudio::Update(void) | ?Update@NetAddOnCarAudio@@QAEXXZ
+*/
 
 #include "hooking.h"
 

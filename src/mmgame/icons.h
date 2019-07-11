@@ -18,7 +18,19 @@
 
 #pragma once
 
-// mmgame:icons
+/*
+    mmgame:icons
+
+    0x41D4D0 | public: __thiscall mmIcons::mmIcons(void) | ??0mmIcons@@QAE@XZ
+    0x41D550 | public: virtual __thiscall mmIcons::~mmIcons(void) | ??1mmIcons@@UAE@XZ
+    0x41D5B0 | public: void __thiscall mmIcons::Init(class Matrix34 *,float,float) | ?Init@mmIcons@@QAEXPAVMatrix34@@MM@Z
+    0x41D5F0 | public: void __thiscall mmIcons::RegisterOpponents(struct OppIconInfo *,int,void *) | ?RegisterOpponents@mmIcons@@QAEXPAUOppIconInfo@@HPAX@Z
+    0x41D670 | public: virtual void __thiscall mmIcons::Update(void) | ?Update@mmIcons@@UAEXXZ
+    0x41D6B0 | public: virtual void __thiscall mmIcons::Cull(void) | ?Cull@mmIcons@@UAEXXZ
+    0x41DCB0 | public: virtual void * __thiscall mmIcons::`vector deleting destructor'(unsigned int) | ??_EmmIcons@@UAEPAXI@Z
+    0x41DCB0 | public: virtual void * __thiscall mmIcons::`scalar deleting destructor'(unsigned int) | ??_GmmIcons@@UAEPAXI@Z
+    0x58FC70 | const mmIcons::`vftable' | ??_7mmIcons@@6B@
+*/
 
 #include "hooking.h"
 

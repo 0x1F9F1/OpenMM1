@@ -18,7 +18,17 @@
 
 #pragma once
 
-// agi:palette
+/*
+    agi:palette
+
+    0x53DFB0 | public: __thiscall agiPalette::agiPalette(void) | ??0agiPalette@@QAE@XZ
+    0x53DFD0 | public: void __thiscall agiPalette::Kill(void) | ?Kill@agiPalette@@QAEXXZ
+    0x53E010 | public: void __thiscall agiPalette::Cube(void) | ?Cube@agiPalette@@QAEXXZ
+    0x53E0A0 | public: void __thiscall agiPalette::Load(char *) | ?Load@agiPalette@@QAEXPAD@Z
+    0x53E230 | public: unsigned int __thiscall agiPalette::GetColor(struct agiRgba) | ?GetColor@agiPalette@@QAEIUagiRgba@@@Z
+    0x53E2C0 | public: unsigned int __thiscall agiPalette::FindColor(struct agiRgba) | ?FindColor@agiPalette@@QAEIUagiRgba@@@Z
+    0x70E720 | class agiPalette agiPal | ?agiPal@@3VagiPalette@@A
+*/
 
 #include "hooking.h"
 

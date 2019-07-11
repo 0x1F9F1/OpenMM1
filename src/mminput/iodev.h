@@ -18,7 +18,30 @@
 
 #pragma once
 
-// mminput:iodev
+/*
+    mminput:iodev
+
+    0x4D7DC0 | public: __thiscall mmIODev::mmIODev(void) | ??0mmIODev@@QAE@XZ
+    0x4D7E00 | public: virtual __thiscall mmIODev::~mmIODev(void) | ??1mmIODev@@UAE@XZ
+    0x4D7E10 | public: void __thiscall mmIODev::Init(int,__int64) | ?Init@mmIODev@@QAEXH_J@Z
+    0x4D7E40 | public: void __thiscall mmIODev::Assign(int,int,int) | ?Assign@mmIODev@@QAEXHHH@Z
+    0x4D7F60 | public: int __thiscall mmIODev::operator==(union eqEvent *) | ??8mmIODev@@QAEHPATeqEvent@@@Z
+    0x4D7FC0 | int __cdecl ConvertDItoString(int,char *,int) | ?ConvertDItoString@@YAHHPADH@Z
+    0x4D8020 | public: void __thiscall mmIODev::GetDescription(char *) | ?GetDescription@mmIODev@@QAEXPAD@Z
+    0x4D82E0 | public: int __thiscall mmIODev::GetComponentType(int,int) | ?GetComponentType@mmIODev@@QAEHHH@Z
+    0x4D8350 | public: int __thiscall mmIODev::SanityCheckioType(int,int,int) | ?SanityCheckioType@mmIODev@@QAEHHHH@Z
+    0x4D83D0 | public: void __thiscall mmIODev::Print(int) | ?Print@mmIODev@@QAEXH@Z
+    0x4D84A0 | public: int __thiscall mmIODev::Write(class Stream *) | ?Write@mmIODev@@QAEHPAVStream@@@Z
+    0x4D8500 | public: int __thiscall mmIODev::WriteBinary(class Stream *) | ?WriteBinary@mmIODev@@QAEHPAVStream@@@Z
+    0x4D8550 | public: int __thiscall mmIODev::Read(class Stream *) | ?Read@mmIODev@@QAEHPAVStream@@@Z
+    0x4D85B0 | public: int __thiscall mmIODev::ReadBinary(class Stream *) | ?ReadBinary@mmIODev@@QAEHPAVStream@@@Z
+    0x4D8600 | public: static void __cdecl mmIODev::DeclareFields(void) | ?DeclareFields@mmIODev@@SAXXZ
+    0x4D87B0 | public: virtual class MetaClass * __thiscall mmIODev::GetClass(void) | ?GetClass@mmIODev@@UAEPAVMetaClass@@XZ
+    0x5947A0 | const mmIODev::`vftable' | ??_7mmIODev@@6B@
+    0x67B558 | class MetaClass mmIODevMetaClass | ?mmIODevMetaClass@@3VMetaClass@@A
+    0x4D8690 | void * __cdecl new_mmIODev(int) | ?new_mmIODev@@YAPAXH@Z
+    0x4D8760 | void __cdecl delete_mmIODev(void *,int) | ?delete_mmIODev@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

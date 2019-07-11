@@ -18,7 +18,20 @@
 
 #pragma once
 
-// vector7:trigmath
+/*
+    vector7:trigmath
+
+    0x554DA0 | float __cdecl tanf_fast(float) | ?tanf_fast@@YAMM@Z
+    0x554E10 | float __cdecl atanf_fast_large_values(float) | ?atanf_fast_large_values@@YAMM@Z
+    0x554E40 | float __cdecl atanf_fast(float) | ?atanf_fast@@YAMM@Z
+    0x554EC0 | float __cdecl atanf_faster(float) | ?atanf_faster@@YAMM@Z
+    0x554F20 | float __cdecl atan2f_fast(float,float) | ?atan2f_fast@@YAMMM@Z
+    0x554FA0 | float __cdecl atan2f_faster(float,float) | ?atan2f_faster@@YAMMM@Z
+    0x5C6A60 | float * asintable | ?asintable@@3PAMA
+    0x5CAD90 | float * TRIGMATH_COSTABLE | ?TRIGMATH_COSTABLE@@3PAMA
+    0x5CBDB8 | float * TRIGMATH_TANTABLE | ?TRIGMATH_TANTABLE@@3PAMA
+    0x5CCDE0 | float * TRIGMATH_ATANTABLE | ?TRIGMATH_ATANTABLE@@3PAMA
+*/
 
 #include "hooking.h"
 

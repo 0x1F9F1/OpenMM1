@@ -18,7 +18,16 @@
 
 #pragma once
 
-// mmai:addoncaraudio
+/*
+    mmai:addoncaraudio
+
+    0x4551C0 | public: __thiscall AddOnCarAudio::AddOnCarAudio(char *,short) | ??0AddOnCarAudio@@QAE@PADF@Z
+    0x4552F0 | public: __thiscall AddOnCarAudio::~AddOnCarAudio(void) | ??1AddOnCarAudio@@QAE@XZ
+    0x455340 | public: class AudSound * __thiscall AddOnCarAudio::GetEngineSoundPtr(short) | ?GetEngineSoundPtr@AddOnCarAudio@@QAEPAVAudSound@@F@Z
+    0x455360 | public: void __thiscall AddOnCarAudio::EchoOn(float) | ?EchoOn@AddOnCarAudio@@QAEXM@Z
+    0x4553B0 | public: void __thiscall AddOnCarAudio::EchoOff(void) | ?EchoOff@AddOnCarAudio@@QAEXXZ
+    0x4553E0 | public: void __thiscall AddOnCarAudio::Update(void) | ?Update@AddOnCarAudio@@QAEXXZ
+*/
 
 #include "hooking.h"
 

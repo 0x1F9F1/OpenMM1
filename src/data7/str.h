@@ -18,7 +18,44 @@
 
 #pragma once
 
-// data7:str
+/*
+    data7:str
+
+    0x55AE40 | public: __thiscall string::string(void) | ??0string@@QAE@XZ
+    0x55AE70 | public: class string __thiscall string::operator+(char const *) const | ??Hstring@@QBE?AV0@PBD@Z
+    0x55AFA0 | class string __cdecl operator+(char const *,class string const &) | ??H@YA?AVstring@@PBDABV0@@Z
+    0x55B0D0 | public: void __thiscall string::operator+=(char const *) | ??Ystring@@QAEXPBD@Z
+    0x55B1C0 | public: void __thiscall string::operator+=(char) | ??Ystring@@QAEXD@Z
+    0x55B260 | public: class string __thiscall string::operator-(char const *) const | ??Gstring@@QBE?AV0@PBD@Z
+    0x55B3C0 | public: void __thiscall string::operator-=(char const *) | ??Zstring@@QAEXPBD@Z
+    0x55B470 | public: void __thiscall string::MinusEqual(char) | ?MinusEqual@string@@QAEXD@Z
+    0x55B5C0 | public: int __thiscall string::Contains(class string &) const | ?Contains@string@@QBEHAAV1@@Z
+    0x55B660 | public: void __thiscall string::SaveName(class string const &,int,class string const &,class string const &) | ?SaveName@string@@QAEXABV1@H00@Z
+    0x55B830 | public: int __thiscall string::FindFile(class string const &,int,class string const &,class string const &) | ?FindFile@string@@QAEHABV1@H00@Z
+    0x55BBC0 | public: int __thiscall string::FileExists(void) const | ?FileExists@string@@QBEHXZ
+    0x55BBF0 | public: void __thiscall string::DirFileExt(class string &,class string &,class string &) const | ?DirFileExt@string@@QBEXAAV1@00@Z
+    0x55BE00 | public: int __thiscall string::CommaFile(void) const | ?CommaFile@string@@QBEHXZ
+    0x55C000 | public: class string __thiscall string::FileName(void) const | ?FileName@string@@QBE?AV1@XZ
+    0x55C160 | public: class string __thiscall string::Extension(void) const | ?Extension@string@@QBE?AV1@XZ
+    0x55C2B0 | public: void __thiscall string::ChangeExtension(class string const &) | ?ChangeExtension@string@@QAEXABV1@@Z
+    0x55C430 | public: void __thiscall string::RemoveExtension(void) | ?RemoveExtension@string@@QAEXXZ
+    0x55C470 | public: void __thiscall string::ExpandEnvs(void) | ?ExpandEnvs@string@@QAEXXZ
+    0x55C610 | public: class string __thiscall string::SubString(int) const | ?SubString@string@@QBE?AV1@H@Z
+    0x55C720 | public: int __thiscall string::NumSubStrings(void) const | ?NumSubStrings@string@@QBEHXZ
+    0x55C770 | public: int __thiscall string::IsNumeric(void) const | ?IsNumeric@string@@QBEHXZ
+    0x55C7C0 | public: void __thiscall StringArray::Init(int) | ?Init@StringArray@@QAEXH@Z
+    0x55C830 | public: void __thiscall StringArray::Delete(void) | ?Delete@StringArray@@QAEXXZ
+    0x55C890 | private: void __thiscall StringArray::NewTable(int) | ?NewTable@StringArray@@AAEXH@Z
+    0x55C900 | public: class string & __thiscall StringArray::operator[](int) | ??AStringArray@@QAEAAVstring@@H@Z
+    0x55C9B0 | public: void __thiscall StringArray::operator=(class StringArray &) | ??4StringArray@@QAEXAAV0@@Z
+    0x55CB50 | public: void __thiscall StringArray::BlockCopy(class StringArray &) | ?BlockCopy@StringArray@@QAEXAAV1@@Z
+    0x55CC80 | public: void __thiscall string::operator=(char const *) | ??4string@@QAEXPBD@Z
+    0x55CCE0 | public: class string __thiscall string::operator+(class string const &) const | ??Hstring@@QBE?AV0@ABV0@@Z
+    0x55CD10 | public: void * __thiscall string::`vector deleting destructor'(unsigned int) | ??_Estring@@QAEPAXI@Z
+    0x712320 | char * ProjPath | ?ProjPath@@3PADA
+    0x7123A0 | char * ImageExts | ?ImageExts@@3PADA
+    0x7124E8 | char * ExecPath | ?ExecPath@@3PADA
+*/
 
 #include "hooking.h"
 

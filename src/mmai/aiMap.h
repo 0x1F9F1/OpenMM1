@@ -18,7 +18,90 @@
 
 #pragma once
 
-// mmai:aiMap
+/*
+    mmai:aiMap
+
+    0x4307B0 | public: class aiPath * __thiscall aiMap::Path(int) | ?Path@aiMap@@QAEPAVaiPath@@H@Z
+    0x4307E0 | public: class aiIntersection * __thiscall aiMap::Intersection(int) | ?Intersection@aiMap@@QAEPAVaiIntersection@@H@Z
+    0x430810 | public: class aiVehicleAmbient * __thiscall aiMap::Vehicle(int) | ?Vehicle@aiMap@@QAEPAVaiVehicleAmbient@@H@Z
+    0x430850 | public: class aiVehiclePolice * __thiscall aiMap::Police(int) | ?Police@aiMap@@QAEPAVaiVehiclePolice@@H@Z
+    0x430890 | public: class aiVehicleOpponent * __thiscall aiMap::Opponent(int) | ?Opponent@aiMap@@QAEPAVaiVehicleOpponent@@H@Z
+    0x4308D0 | public: class aiPedestrian * __thiscall aiMap::Pedestrian(int) | ?Pedestrian@aiMap@@QAEPAVaiPedestrian@@H@Z
+    0x430910 | public: class Vector3 & __thiscall aiMap::PlayerPos(void) | ?PlayerPos@aiMap@@QAEAAVVector3@@XZ
+    0x430920 | public: __thiscall aiMap::aiMap(void) | ??0aiMap@@QAE@XZ
+    0x430940 | public: virtual __thiscall aiMap::~aiMap(void) | ??1aiMap@@UAE@XZ
+    0x430950 | public: void __thiscall aiMap::Clean(void) | ?Clean@aiMap@@QAEXXZ
+    0x430B80 | public: void __thiscall aiMap::Init(char *,char *,char *,class mmCar *) | ?Init@aiMap@@QAEXPAD00PAVmmCar@@@Z
+    0x4316F0 | private: void __thiscall aiMap::SaveBinary(char *) | ?SaveBinary@aiMap@@AAEXPAD@Z
+    0x431870 | private: void __thiscall aiMap::ReadBinary(char *) | ?ReadBinary@aiMap@@AAEXPAD@Z
+    0x431E70 | public: virtual void __thiscall aiMap::Reset(void) | ?Reset@aiMap@@UAEXXZ
+    0x4321B0 | public: virtual void __thiscall aiMap::Update(void) | ?Update@aiMap@@UAEXXZ
+    0x432530 | public: virtual void __thiscall aiMap::UpdatePaused(void) | ?UpdatePaused@aiMap@@UAEXXZ
+    0x432540 | public: virtual void __thiscall aiMap::Cull(void) | ?Cull@aiMap@@UAEXXZ
+    0x432550 | public: void __thiscall aiMap::DrawNextVisibleAmbient(void) | ?DrawNextVisibleAmbient@aiMap@@QAEXXZ
+    0x432570 | public: void __thiscall aiMap::AllwaysGreen(void) | ?AllwaysGreen@aiMap@@QAEXXZ
+    0x4325B0 | public: void __thiscall aiMap::AllwaysRed(void) | ?AllwaysRed@aiMap@@QAEXXZ
+    0x4325F0 | public: void __thiscall aiMap::DrawAppRoads(void) | ?DrawAppRoads@aiMap@@QAEXXZ
+    0x432610 | public: int __thiscall aiMap::MapComponent(class Vector3 &,short *,short *,short) | ?MapComponent@aiMap@@QAEHAAVVector3@@PAF1F@Z
+    0x432790 | public: int __thiscall aiMap::DetermineRoadPosInfo(class Matrix34 &,class aiRailSet *,short *,float *,short *,float *,int) | ?DetermineRoadPosInfo@aiMap@@QAEHAAVMatrix34@@PAVaiRailSet@@PAFPAM23H@Z
+    0x432930 | public: int __thiscall aiMap::DeterminePerpMapComponent(class Matrix34 &,class aiRailSet *,short *,short *,float *,float *,short *) | ?DeterminePerpMapComponent@aiMap@@QAEHAAVMatrix34@@PAVaiRailSet@@PAF2PAM32@Z
+    0x432B90 | public: int __thiscall aiMap::DetermineOppMapComponent(class Matrix34 &,class aiRailSet *,short *,short *,float *,float *,short *,float *,float,short,short) | ?DetermineOppMapComponent@aiMap@@QAEHAAVMatrix34@@PAVaiRailSet@@PAF2PAM323MFF@Z
+    0x434530 | public: int __thiscall aiMap::DetermineOppRoadPosInfo(class Vector3 &,class Vector3 &,class aiRailSet *,short *,float *,float *,int) | ?DetermineOppRoadPosInfo@aiMap@@QAEHAAVVector3@@0PAVaiRailSet@@PAFPAM3H@Z
+    0x434610 | public: int __thiscall aiMap::FindAmbAppRoad(int) | ?FindAmbAppRoad@aiMap@@QAEHH@Z
+    0x434660 | public: int __thiscall aiMap::FindPedAppRoad(int) | ?FindPedAppRoad@aiMap@@QAEHH@Z
+    0x4346B0 | public: class aiPath * __thiscall aiMap::PredictIntersectionPath(int,class Matrix34 &) | ?PredictIntersectionPath@aiMap@@QAEPAVaiPath@@HAAVMatrix34@@@Z
+    0x434890 | public: class aiPath * __thiscall aiMap::PredictAmbIntersectionPath(int,class Matrix34 &) | ?PredictAmbIntersectionPath@aiMap@@QAEPAVaiPath@@HAAVMatrix34@@@Z
+    0x434A80 | public: class aiPath * __thiscall aiMap::PredictAmbFreewayIntersectionPath(int,class Matrix34 &) | ?PredictAmbFreewayIntersectionPath@aiMap@@QAEPAVaiPath@@HAAVMatrix34@@@Z
+    0x434C90 | public: void __thiscall aiMap::Dump(void) | ?Dump@aiMap@@QAEXXZ
+    0x434DD0 | public: void __thiscall aiMap::GetCameraPos(void) | ?GetCameraPos@aiMap@@QAEXXZ
+    0x434E00 | private: class aiPath * __thiscall aiMap::AddAIPath(class mmRoadSect &,int,int) | ?AddAIPath@aiMap@@AAEPAVaiPath@@AAVmmRoadSect@@HH@Z
+    0x434F00 | public: class aiIntersection * __thiscall aiMap::AddIntersection(class Vector3 *) | ?AddIntersection@aiMap@@QAEPAVaiIntersection@@PAVVector3@@@Z
+    0x434F30 | private: class aiIntersection * __thiscall aiMap::ScanIntersections(class Vector3 &) | ?ScanIntersections@aiMap@@AAEPAVaiIntersection@@AAVVector3@@@Z
+    0x434FB0 | private: class aiIntersection * __thiscall aiMap::NewIntersection(class Vector3 &) | ?NewIntersection@aiMap@@AAEPAVaiIntersection@@AAVVector3@@@Z
+    0x435090 | private: void __thiscall aiMap::AddIntToAppRoadMap(class CArrayList *,int,float,struct asPortalCell * *,int) | ?AddIntToAppRoadMap@aiMap@@AAEXPAVCArrayList@@HMPAPAUasPortalCell@@H@Z
+    0x435110 | private: float __thiscall aiMap::RoadDensity(int,float,int) | ?RoadDensity@aiMap@@AAEMHMH@Z
+    0x435160 | private: int __thiscall aiMap::NumCars(int,float,float) | ?NumCars@aiMap@@AAEHHMM@Z
+    0x435190 | private: int __thiscall aiMap::FindRoad(class CArrayList *,int) | ?FindRoad@aiMap@@AAEHPAVCArrayList@@H@Z
+    0x4351D0 | public: int __thiscall aiMap::ChooseNextRandomLink(class aiRailSet *) | ?ChooseNextRandomLink@aiMap@@QAEHPAVaiRailSet@@@Z
+    0x435360 | public: int __thiscall aiMap::ChooseNextLeftStraightLink(class aiRailSet *) | ?ChooseNextLeftStraightLink@aiMap@@QAEHPAVaiRailSet@@@Z
+    0x4355D0 | public: int __thiscall aiMap::ChooseNextRightStraightLink(class aiRailSet *) | ?ChooseNextRightStraightLink@aiMap@@QAEHPAVaiRailSet@@@Z
+    0x435870 | public: int __thiscall aiMap::ChooseNextStraightLink(class aiRailSet *) | ?ChooseNextStraightLink@aiMap@@QAEHPAVaiRailSet@@@Z
+    0x435B80 | public: int __thiscall aiMap::ChooseNextLaneLink(class aiRailSet *) | ?ChooseNextLaneLink@aiMap@@QAEHPAVaiRailSet@@@Z
+    0x435C20 | public: int __thiscall aiMap::ChooseNextFreewayLink(class aiRailSet *) | ?ChooseNextFreewayLink@aiMap@@QAEHPAVaiRailSet@@@Z
+    0x435D30 | public: int __thiscall aiMap::ChooseNextRightStraightFreewayLink(class aiRailSet *) | ?ChooseNextRightStraightFreewayLink@aiMap@@QAEHPAVaiRailSet@@@Z
+    0x435EF0 | private: void __thiscall aiMap::AdjustPedestrians(int,int) | ?AdjustPedestrians@aiMap@@AAEXHH@Z
+    0x436290 | public: void __thiscall aiMap::AddPedestrian(class aiPedestrian *) | ?AddPedestrian@aiMap@@QAEXPAVaiPedestrian@@@Z
+    0x4362C0 | public: void __thiscall aiMap::RemovePedestrian(class aiPedestrian *) | ?RemovePedestrian@aiMap@@QAEXPAVaiPedestrian@@@Z
+    0x436330 | private: void __thiscall aiMap::AdjustAmbients(int,int) | ?AdjustAmbients@aiMap@@AAEXHH@Z
+    0x4367F0 | public: void __thiscall aiMap::AddAmbient(class aiVehicleSpline *) | ?AddAmbient@aiMap@@QAEXPAVaiVehicleSpline@@@Z
+    0x436830 | public: void __thiscall aiMap::RemoveAmbient(class aiVehicleSpline *) | ?RemoveAmbient@aiMap@@QAEXPAVaiVehicleSpline@@@Z
+    0x4368A0 | public: class aiPath * __thiscall aiMap::DetRdSegBetweenInts(class aiIntersection *,class aiIntersection *) | ?DetRdSegBetweenInts@aiMap@@QAEPAVaiPath@@PAVaiIntersection@@0@Z
+    0x436920 | public: int __thiscall aiMap::GoodRoadForCopStartPos(int) | ?GoodRoadForCopStartPos@aiMap@@QAEHH@Z
+    0x436970 | public: static void __cdecl aiMap::DeclareFields(void) | ?DeclareFields@aiMap@@SAXXZ
+    0x436AE0 | public: virtual class MetaClass * __thiscall aiMap::GetClass(void) | ?GetClass@aiMap@@UAEPAVMetaClass@@XZ
+    0x436C40 | public: void * __thiscall aiVehicleAmbient::`vector deleting destructor'(unsigned int) | ??_EaiVehicleAmbient@@QAEPAXI@Z
+    0x436CA0 | public: void * __thiscall aiVehiclePolice::`vector deleting destructor'(unsigned int) | ??_EaiVehiclePolice@@QAEPAXI@Z
+    0x436D00 | public: void * __thiscall aiVehicleOpponent::`vector deleting destructor'(unsigned int) | ??_EaiVehicleOpponent@@QAEPAXI@Z
+    0x436D60 | public: void * __thiscall aiPedestrian::`vector deleting destructor'(unsigned int) | ??_EaiPedestrian@@QAEPAXI@Z
+    0x436DC0 | public: void * __thiscall CArrayList::`vector deleting destructor'(unsigned int) | ??_ECArrayList@@QAEPAXI@Z
+    0x436E20 | float __cdecl Clamp(float,float,float) | ?Clamp@@YAMMMM@Z
+    0x436E50 | public: __thiscall Vector3::Vector3(float,float,float) | ??0Vector3@@QAE@MMM@Z
+    0x436E70 | public: virtual void * __thiscall aiMap::`vector deleting destructor'(unsigned int) | ??_EaiMap@@UAEPAXI@Z
+    0x436ED0 | public: __thiscall CArrayList::CArrayList(void) | ??0CArrayList@@QAE@XZ
+    0x590440 | const aiMap::`vftable' | ??_7aiMap@@6B@
+    0x609BD0 | float _fPedUpdate | ?_fPedUpdate@@3MA
+    0x609BD4 | float _fAmbientUpdate | ?_fAmbientUpdate@@3MA
+    0x609BD8 | float _fCopUpdate | ?_fCopUpdate@@3MA
+    0x609BE0 | int _nPedQty | ?_nPedQty@@3HA
+    0x609BE8 | class aiMap AIMAP | ?AIMAP@@3VaiMap@@A
+    0x609CA8 | class MetaClass aiMapMetaClass | ?aiMapMetaClass@@3VMetaClass@@A
+    0x609CD4 | int _nRdQty | ?_nRdQty@@3HA
+    0x609CD8 | float _fOppUpdate | ?_fOppUpdate@@3MA
+    0x609CDC | int _nAmbientQty | ?_nAmbientQty@@3HA
+    0x609CE8 | float _fTotUpdate | ?_fTotUpdate@@3MA
+    0x4369C0 | void * __cdecl new_aiMap(int) | ?new_aiMap@@YAPAXH@Z
+    0x436A90 | void __cdecl delete_aiMap(void *,int) | ?delete_aiMap@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

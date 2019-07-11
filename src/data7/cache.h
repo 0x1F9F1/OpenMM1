@@ -18,7 +18,27 @@
 
 #pragma once
 
-// data7:cache
+/*
+    data7:cache
+
+    0x558930 | public: __thiscall DataCache::DataCache(void) | ??0DataCache@@QAE@XZ
+    0x558940 | public: void __thiscall DataCache::Init(unsigned int,int,char *) | ?Init@DataCache@@QAEXIHPAD@Z
+    0x5589E0 | public: void __thiscall DataCache::Shutdown(void) | ?Shutdown@DataCache@@QAEXXZ
+    0x558A20 | private: void __thiscall DataCache::Unload(int) | ?Unload@DataCache@@AAEXH@Z
+    0x558B00 | private: void __thiscall DataCache::Relocate(struct DataCacheObject *,unsigned char *) | ?Relocate@DataCache@@AAEXPAUDataCacheObject@@PAE@Z
+    0x558B50 | public: int __thiscall DataCache::Lock(int *) | ?Lock@DataCache@@QAEHPAH@Z
+    0x558BF0 | public: void __thiscall DataCache::Unlock(int) | ?Unlock@DataCache@@QAEXH@Z
+    0x558C60 | public: void __thiscall DataCache::UnlockAndFree(int) | ?UnlockAndFree@DataCache@@QAEXH@Z
+    0x558D00 | private: void __thiscall DataCache::CleanEndOfHeap(void) | ?CleanEndOfHeap@DataCache@@AAEXXZ
+    0x558D70 | public: int __thiscall DataCache::BeginObject(int *,void (__cdecl*)(void *,int),void *,unsigned int) | ?BeginObject@DataCache@@QAEHPAHP6AXPAXH@Z1I@Z
+    0x558F20 | private: void __thiscall DataCache::InitObject(int,int *,void (__cdecl*)(void *,int),void *,unsigned char *,unsigned int) | ?InitObject@DataCache@@AAEXHPAHP6AXPAXH@Z1PAEI@Z
+    0x558FF0 | public: void __thiscall DataCache::EndObject(int) | ?EndObject@DataCache@@QAEXH@Z
+    0x559030 | public: void __thiscall DataCache::Flush(void) | ?Flush@DataCache@@QAEXXZ
+    0x5590B0 | public: void __thiscall DataCache::Age(void) | ?Age@DataCache@@QAEXXZ
+    0x559280 | public: void * __thiscall DataCache::Allocate(int,unsigned int) | ?Allocate@DataCache@@QAEPAXHI@Z
+    0x559330 | public: void __thiscall DataCache::GetStatus(unsigned int &,unsigned int &,unsigned int &) | ?GetStatus@DataCache@@QAEXAAI00@Z
+    0x711AC8 | class DataCache CACHE | ?CACHE@@3VDataCache@@A
+*/
 
 #include "hooking.h"
 

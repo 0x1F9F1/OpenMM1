@@ -18,7 +18,29 @@
 
 #pragma once
 
-// mmcamcs:viewcs
+/*
+    mmcamcs:viewcs
+
+    0x4EB5E0 | public: __thiscall mmViewCS::mmViewCS(void) | ??0mmViewCS@@QAE@XZ
+    0x4EB6A0 | public: virtual __thiscall mmViewCS::~mmViewCS(void) | ??1mmViewCS@@UAE@XZ
+    0x4EB6B0 | public: static class mmViewCS * __cdecl mmViewCS::Instance(class asCamera *) | ?Instance@mmViewCS@@SAPAV1@PAVasCamera@@@Z
+    0x4EB720 | public: void __thiscall mmViewCS::SetCurrentCam(class CarCamCS *) | ?SetCurrentCam@mmViewCS@@QAEXPAVCarCamCS@@@Z
+    0x4EB790 | public: int __thiscall mmViewCS::NewCam(class CarCamCS *,int,float,class Callback) | ?NewCam@mmViewCS@@QAEHPAVCarCamCS@@HMVCallback@@@Z
+    0x4EB840 | public: virtual void __thiscall mmViewCS::Update(void) | ?Update@mmViewCS@@UAEXXZ
+    0x4EB870 | public: void __thiscall mmViewCS::Init(void) | ?Init@mmViewCS@@QAEXXZ
+    0x4EB880 | public: void __thiscall mmViewCS::SetCamera(class asCamera *) | ?SetCamera@mmViewCS@@QAEXPAVasCamera@@@Z
+    0x4EB8D0 | public: virtual void __thiscall mmViewCS::Reset(void) | ?Reset@mmViewCS@@UAEXXZ
+    0x4EB930 | public: void __thiscall mmViewCS::ForceMatrixDelta(class Matrix34 const &) | ?ForceMatrixDelta@mmViewCS@@QAEXABVMatrix34@@@Z
+    0x4EB950 | public: void __thiscall mmViewCS::ForceMatrixDelta(class Vector3 const &) | ?ForceMatrixDelta@mmViewCS@@QAEXABVVector3@@@Z
+    0x4EB970 | public: void __thiscall mmViewCS::OneShot(void) | ?OneShot@mmViewCS@@QAEXXZ
+    0x4EB990 | public: static void __cdecl mmViewCS::DeclareFields(void) | ?DeclareFields@mmViewCS@@SAXXZ
+    0x4EBB00 | public: virtual class MetaClass * __thiscall mmViewCS::GetClass(void) | ?GetClass@mmViewCS@@UAEPAVMetaClass@@XZ
+    0x4EBB10 | public: virtual void * __thiscall mmViewCS::`vector deleting destructor'(unsigned int) | ??_EmmViewCS@@UAEPAXI@Z
+    0x594BA8 | const mmViewCS::`vftable' | ??_7mmViewCS@@6B@
+    0x67B670 | class MetaClass mmViewCSMetaClass | ?mmViewCSMetaClass@@3VMetaClass@@A
+    0x4EB9E0 | void * __cdecl new_mmViewCS(int) | ?new_mmViewCS@@YAPAXH@Z
+    0x4EBAB0 | void __cdecl delete_mmViewCS(void *,int) | ?delete_mmViewCS@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

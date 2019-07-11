@@ -18,7 +18,62 @@
 
 #pragma once
 
-// mmphysics:phys
+/*
+    mmphysics:phys
+
+    0x4C80E0 | public: void __thiscall mmPhysExec::DoUpdateAll(void) | ?DoUpdateAll@mmPhysExec@@QAEXXZ
+    0x4C82D0 | public: void __thiscall mmPhysExec::DoUpdatePlayerOnly(void) | ?DoUpdatePlayerOnly@mmPhysExec@@QAEXXZ
+    0x4C8510 | public: __thiscall mmPhysicsMGR::mmPhysicsMGR(void) | ??0mmPhysicsMGR@@QAE@XZ
+    0x4C8610 | public: virtual __thiscall mmPhysicsMGR::~mmPhysicsMGR(void) | ??1mmPhysicsMGR@@UAE@XZ
+    0x4C86A0 | public: void __thiscall mmPhysicsMGR::Init(class asInertialCS *,class mmViewCS *) | ?Init@mmPhysicsMGR@@QAEXPAVasInertialCS@@PAVmmViewCS@@@Z
+    0x4C86F0 | public: virtual void __thiscall mmPhysicsMGR::Reset(void) | ?Reset@mmPhysicsMGR@@UAEXXZ
+    0x4C8740 | public: void __thiscall mmPhysicsMGR::Shutdown(void) | ?Shutdown@mmPhysicsMGR@@QAEXXZ
+    0x4C8760 | public: void __thiscall mmPhysicsMGR::DeclareMover(class mmInstance *,int,int) | ?DeclareMover@mmPhysicsMGR@@QAEXPAVmmInstance@@HH@Z
+    0x4C8960 | public: void __thiscall mmPhysicsMGR::NewMover(class mmInstance *,class mmInstance *) | ?NewMover@mmPhysicsMGR@@QAEXPAVmmInstance@@0@Z
+    0x4C8A60 | public: void __thiscall mmPhysicsMGR::NewMover(class mmInstance *) | ?NewMover@mmPhysicsMGR@@QAEXPAVmmInstance@@@Z
+    0x4C8AE0 | public: void __thiscall mmPhysicsMGR::NewMover(class mmInstance *,class mmInstance *,class mmInstance *) | ?NewMover@mmPhysicsMGR@@QAEXPAVmmInstance@@00@Z
+    0x4C8C00 | public: void __thiscall mmPhysicsMGR::IgnoreMover(class mmInstance *) | ?IgnoreMover@mmPhysicsMGR@@QAEXPAVmmInstance@@@Z
+    0x4C8C50 | protected: void __thiscall mmPhysicsMGR::GatherRoomCollidables(int,short,int) | ?GatherRoomCollidables@mmPhysicsMGR@@IAEXHFH@Z
+    0x4C8D70 | protected: int __thiscall mmPhysicsMGR::ClosestNeighboringCullRoom(int) | ?ClosestNeighboringCullRoom@mmPhysicsMGR@@IAEHH@Z
+    0x4C8EC0 | protected: void __thiscall mmPhysicsMGR::GatherCollidables(int,int) | ?GatherCollidables@mmPhysicsMGR@@IAEXHH@Z
+    0x4C8F20 | public: void __thiscall mmPhysicsMGR::UpdateEverythingButPlayer(void) | ?UpdateEverythingButPlayer@mmPhysicsMGR@@QAEXXZ
+    0x4C9100 | public: virtual void __thiscall mmPhysicsMGR::Update(void) | ?Update@mmPhysicsMGR@@UAEXXZ
+    0x4C94B0 | public: virtual void __thiscall mmPhysicsMGR::UpdatePaused(void) | ?UpdatePaused@mmPhysicsMGR@@UAEXXZ
+    0x4C94E0 | protected: void __thiscall mmPhysicsMGR::DeclareBound(class mmBoundTemplate *) | ?DeclareBound@mmPhysicsMGR@@IAEXPAVmmBoundTemplate@@@Z
+    0x4C94F0 | public: virtual void __thiscall mmPhysicsMGR::Cull(void) | ?Cull@mmPhysicsMGR@@UAEXXZ
+    0x4C9540 | protected: int __thiscall mmPhysicsMGR::TrivialCollideInstances(class mmInstance *,class mmInstance *) | ?TrivialCollideInstances@mmPhysicsMGR@@IAEHPAVmmInstance@@0@Z
+    0x4C9760 | protected: int __thiscall mmPhysicsMGR::CollideInstances(class mmInstance *,class mmInstance *,int,int) | ?CollideInstances@mmPhysicsMGR@@IAEHPAVmmInstance@@0HH@Z
+    0x4C9C00 | protected: void __thiscall mmPhysicsMGR::CollideTerrain(class mmInstance *) | ?CollideTerrain@mmPhysicsMGR@@IAEXPAVmmInstance@@@Z
+    0x4CA0E0 | protected: int __thiscall mmPhysicsMGR::CollideProbe(short,class mmIntersection *,int) | ?CollideProbe@mmPhysicsMGR@@IAEHFPAVmmIntersection@@H@Z
+    0x4CA270 | public: int __thiscall mmPhysicsMGR::Collide(class mmIntersection *,int,short,short) | ?Collide@mmPhysicsMGR@@QAEHPAVmmIntersection@@HFF@Z
+    0x4CA390 | public: int __thiscall mmPhysicsMGR::CollideLOS(class mmIntersection *,int,short,short) | ?CollideLOS@mmPhysicsMGR@@QAEHPAVmmIntersection@@HFF@Z
+    0x4CA4F0 | int __cdecl FindIntersections(class mmIntersection *,int,class asBound *,class asBound *,class mmBoundTemplate *,class mmBoundTemplate *,class mmEdgeBodyIsect *,int,class mmEdgeBodyIsect *,int) | ?FindIntersections@@YAHPAVmmIntersection@@HPAVasBound@@1PAVmmBoundTemplate@@2PAVmmEdgeBodyIsect@@H3H@Z
+    0x4CB920 | void __cdecl DoEndPtSearch(int,class Vector3 const &,class mmEdgeBodyIsect *,int,class mmIntersection * *,int *,int) | ?DoEndPtSearch@@YAXHABVVector3@@PAVmmEdgeBodyIsect@@HPAPAVmmIntersection@@PAHH@Z
+    0x4CBF30 | void __cdecl DoEdgeEdge(class mmEdgeBodyIsect *,class mmIntersection * *,int *,int) | ?DoEdgeEdge@@YAXPAVmmEdgeBodyIsect@@PAPAVmmIntersection@@PAHH@Z
+    0x4CC010 | void __cdecl SegSegDistNorm(class Vector3 const &,class Vector3 const &,class Vector3 const &,class Vector3 const &,class Vector3 const &,class Vector3 const &,class Vector3 *,class Vector3 *,class Vector3 *,float *,int *) | ?SegSegDistNorm@@YAXABVVector3@@00000PAV1@11PAMPAH@Z
+    0x4CC530 | int __cdecl GetCollidePolyEdge(class Vector3 const &,class mmPolygon *,class mmBoundTemplate *,class asInertialCS *,class Vector3 const &,float,class Vector3 const &,class Vector3 const &,class Vector3 const &,class Vector3 const &,class Vector3 *,class Vector3 *,float *,int *,int *) | ?GetCollidePolyEdge@@YAHABVVector3@@PAVmmPolygon@@PAVmmBoundTemplate@@PAVasInertialCS@@0M0000PAV1@4PAMPAH6@Z
+    0x4CCC00 | public: void __thiscall mmPhysicsMGR::AddWidgets(class Bank *) | ?AddWidgets@mmPhysicsMGR@@QAEXPAVBank@@@Z
+    0x4CCC10 | public: static void __cdecl mmPhysicsMGR::DeclareFields(void) | ?DeclareFields@mmPhysicsMGR@@SAXXZ
+    0x4CCD90 | public: virtual class MetaClass * __thiscall mmPhysicsMGR::GetClass(void) | ?GetClass@mmPhysicsMGR@@UAEPAVMetaClass@@XZ
+    0x4CCDA0 | public: class Vector3 __thiscall Vector3::operator/(float) const | ??KVector3@@QBE?AV0@M@Z
+    0x4CCDE0 | int __cdecl testNoOverlap(float,float) | ?testNoOverlap@@YAHMM@Z
+    0x4CCE50 | public: virtual void * __thiscall mmPhysicsMGR::`vector deleting destructor'(unsigned int) | ??_EmmPhysicsMGR@@UAEPAXI@Z
+    0x4CCEB0 | public: virtual void __thiscall mmPhysExec::Update(void) | ?Update@mmPhysExec@@UAEXXZ
+    0x4CCED0 | public: virtual void * __thiscall mmPhysExec::`vector deleting destructor'(unsigned int) | ??_EmmPhysExec@@UAEPAXI@Z
+    0x4CCED0 | public: virtual void * __thiscall mmPhysExec::`scalar deleting destructor'(unsigned int) | ??_GmmPhysExec@@UAEPAXI@Z
+    0x4CCF00 | public: virtual __thiscall mmPhysExec::~mmPhysExec(void) | ??1mmPhysExec@@UAE@XZ
+    0x594500 | const mmPhysicsMGR::`vftable' | ??_7mmPhysicsMGR@@6B@
+    0x594530 | const mmPhysExec::`vftable' | ??_7mmPhysExec@@6B@
+    0x5B21CC | int CallImpactCallbacks | ?CallImpactCallbacks@@3HA
+    0x66A9C0 | class mmEdgeBodyIsect * EBISECTS | ?EBISECTS@@3PAVmmEdgeBodyIsect@@A
+    0x66C848 | class MetaClass mmPhysicsMGRMetaClass | ?mmPhysicsMGRMetaClass@@3VMetaClass@@A
+    0x679270 | protected: static class mmPhysicsMGR * mmPhysicsMGR::Instance | ?Instance@mmPhysicsMGR@@1PAV1@A
+    0x679284 | float PhysUpdate | ?PhysUpdate@@3MA
+    0x679288 | class mmIntersection * ISECTS | ?ISECTS@@3PAVmmIntersection@@A
+    0x67A988 | class mmPhysicsMGR PHYS | ?PHYS@@3VmmPhysicsMGR@@A
+    0x4CCC70 | void * __cdecl new_mmPhysicsMGR(int) | ?new_mmPhysicsMGR@@YAPAXH@Z
+    0x4CCD40 | void __cdecl delete_mmPhysicsMGR(void *,int) | ?delete_mmPhysicsMGR@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

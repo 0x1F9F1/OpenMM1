@@ -18,7 +18,17 @@
 
 #pragma once
 
-// vector7:algmath
+/*
+    vector7:algmath
+
+    0x552900 | float __cdecl Bias(float,float) | ?Bias@@YAMMM@Z
+    0x552950 | float __cdecl Gain(float,float) | ?Gain@@YAMMM@Z
+    0x5529D0 | float __cdecl logf_fast(float) | ?logf_fast@@YAMM@Z
+    0x552A60 | float __cdecl sqrtf_faster(float) | ?sqrtf_faster@@YAMM@Z
+    0x552AD0 | float __cdecl invsqrtf_fast(float) | ?invsqrtf_fast@@YAMM@Z
+    0x552B50 | float __cdecl expf_fast(float) | ?expf_fast@@YAMM@Z
+    0x552BE0 | float __cdecl expf_faster(float) | ?expf_faster@@YAMM@Z
+*/
 
 #include "hooking.h"
 

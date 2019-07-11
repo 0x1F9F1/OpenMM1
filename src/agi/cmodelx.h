@@ -18,7 +18,122 @@
 
 #pragma once
 
-// agi:cmodelx
+/*
+    agi:cmodelx
+
+    0x53E3C0 | public: __thiscall agiColorModelRGB555::agiColorModelRGB555(void) | ??0agiColorModelRGB555@@QAE@XZ
+    0x53E400 | public: virtual unsigned int __thiscall agiColorModelRGB555::GetColor(struct agiRgba) | ?GetColor@agiColorModelRGB555@@UAEIUagiRgba@@@Z
+    0x53E440 | public: virtual unsigned int __thiscall agiColorModelRGB555::FindColor(struct agiRgba) | ?FindColor@agiColorModelRGB555@@UAEIUagiRgba@@@Z
+    0x53E480 | public: virtual unsigned int __thiscall agiColorModelRGB555::Filter(unsigned int,unsigned int,unsigned int,unsigned int) | ?Filter@agiColorModelRGB555@@UAEIIIII@Z
+    0x53E510 | public: virtual unsigned int __thiscall agiColorModelRGB555::GetPixel(class agiSurfaceDesc *,int,int) | ?GetPixel@agiColorModelRGB555@@UAEIPAVagiSurfaceDesc@@HH@Z
+    0x53E530 | public: virtual void __thiscall agiColorModelRGB555::SetPixel(class agiSurfaceDesc *,int,int,unsigned int) | ?SetPixel@agiColorModelRGB555@@UAEXPAVagiSurfaceDesc@@HHI@Z
+    0x53E5A0 | public: __thiscall agiColorModelRGB565::agiColorModelRGB565(void) | ??0agiColorModelRGB565@@QAE@XZ
+    0x53E5E0 | public: virtual unsigned int __thiscall agiColorModelRGB565::GetColor(struct agiRgba) | ?GetColor@agiColorModelRGB565@@UAEIUagiRgba@@@Z
+    0x53E620 | public: virtual unsigned int __thiscall agiColorModelRGB565::FindColor(struct agiRgba) | ?FindColor@agiColorModelRGB565@@UAEIUagiRgba@@@Z
+    0x53E660 | public: virtual unsigned int __thiscall agiColorModelRGB565::Filter(unsigned int,unsigned int,unsigned int,unsigned int) | ?Filter@agiColorModelRGB565@@UAEIIIII@Z
+    0x53E6F0 | public: virtual unsigned int __thiscall agiColorModelRGB565::GetPixel(class agiSurfaceDesc *,int,int) | ?GetPixel@agiColorModelRGB565@@UAEIPAVagiSurfaceDesc@@HH@Z
+    0x53E710 | public: virtual void __thiscall agiColorModelRGB565::SetPixel(class agiSurfaceDesc *,int,int,unsigned int) | ?SetPixel@agiColorModelRGB565@@UAEXPAVagiSurfaceDesc@@HHI@Z
+    0x53E780 | public: __thiscall agiColorModelRGB555_Rev::agiColorModelRGB555_Rev(void) | ??0agiColorModelRGB555_Rev@@QAE@XZ
+    0x53E7C0 | public: virtual unsigned int __thiscall agiColorModelRGB555_Rev::GetColor(struct agiRgba) | ?GetColor@agiColorModelRGB555_Rev@@UAEIUagiRgba@@@Z
+    0x53E800 | public: virtual unsigned int __thiscall agiColorModelRGB555_Rev::FindColor(struct agiRgba) | ?FindColor@agiColorModelRGB555_Rev@@UAEIUagiRgba@@@Z
+    0x53E840 | public: virtual unsigned int __thiscall agiColorModelRGB555_Rev::Filter(unsigned int,unsigned int,unsigned int,unsigned int) | ?Filter@agiColorModelRGB555_Rev@@UAEIIIII@Z
+    0x53E8D0 | public: virtual unsigned int __thiscall agiColorModelRGB555_Rev::GetPixel(class agiSurfaceDesc *,int,int) | ?GetPixel@agiColorModelRGB555_Rev@@UAEIPAVagiSurfaceDesc@@HH@Z
+    0x53E8F0 | public: virtual void __thiscall agiColorModelRGB555_Rev::SetPixel(class agiSurfaceDesc *,int,int,unsigned int) | ?SetPixel@agiColorModelRGB555_Rev@@UAEXPAVagiSurfaceDesc@@HHI@Z
+    0x53E960 | public: __thiscall agiColorModelRGB565_Rev::agiColorModelRGB565_Rev(void) | ??0agiColorModelRGB565_Rev@@QAE@XZ
+    0x53E9A0 | public: virtual unsigned int __thiscall agiColorModelRGB565_Rev::GetColor(struct agiRgba) | ?GetColor@agiColorModelRGB565_Rev@@UAEIUagiRgba@@@Z
+    0x53E9E0 | public: virtual unsigned int __thiscall agiColorModelRGB565_Rev::FindColor(struct agiRgba) | ?FindColor@agiColorModelRGB565_Rev@@UAEIUagiRgba@@@Z
+    0x53EA20 | public: virtual unsigned int __thiscall agiColorModelRGB565_Rev::Filter(unsigned int,unsigned int,unsigned int,unsigned int) | ?Filter@agiColorModelRGB565_Rev@@UAEIIIII@Z
+    0x53EAB0 | public: virtual unsigned int __thiscall agiColorModelRGB565_Rev::GetPixel(class agiSurfaceDesc *,int,int) | ?GetPixel@agiColorModelRGB565_Rev@@UAEIPAVagiSurfaceDesc@@HH@Z
+    0x53EAD0 | public: virtual void __thiscall agiColorModelRGB565_Rev::SetPixel(class agiSurfaceDesc *,int,int,unsigned int) | ?SetPixel@agiColorModelRGB565_Rev@@UAEXPAVagiSurfaceDesc@@HHI@Z
+    0x53EB40 | public: __thiscall agiColorModelRGB888::agiColorModelRGB888(void) | ??0agiColorModelRGB888@@QAE@XZ
+    0x53EB80 | public: virtual unsigned int __thiscall agiColorModelRGB888::GetColor(struct agiRgba) | ?GetColor@agiColorModelRGB888@@UAEIUagiRgba@@@Z
+    0x53EBB0 | public: virtual unsigned int __thiscall agiColorModelRGB888::FindColor(struct agiRgba) | ?FindColor@agiColorModelRGB888@@UAEIUagiRgba@@@Z
+    0x53EBE0 | public: virtual unsigned int __thiscall agiColorModelRGB888::Filter(unsigned int,unsigned int,unsigned int,unsigned int) | ?Filter@agiColorModelRGB888@@UAEIIIII@Z
+    0x53EC60 | public: virtual unsigned int __thiscall agiColorModelRGB888::GetPixel(class agiSurfaceDesc *,int,int) | ?GetPixel@agiColorModelRGB888@@UAEIPAVagiSurfaceDesc@@HH@Z
+    0x53EC80 | public: virtual void __thiscall agiColorModelRGB888::SetPixel(class agiSurfaceDesc *,int,int,unsigned int) | ?SetPixel@agiColorModelRGB888@@UAEXPAVagiSurfaceDesc@@HHI@Z
+    0x53ECE0 | public: __thiscall agiColorModelRGB888_Rev::agiColorModelRGB888_Rev(void) | ??0agiColorModelRGB888_Rev@@QAE@XZ
+    0x53ED20 | public: virtual unsigned int __thiscall agiColorModelRGB888_Rev::GetColor(struct agiRgba) | ?GetColor@agiColorModelRGB888_Rev@@UAEIUagiRgba@@@Z
+    0x53ED50 | public: virtual unsigned int __thiscall agiColorModelRGB888_Rev::FindColor(struct agiRgba) | ?FindColor@agiColorModelRGB888_Rev@@UAEIUagiRgba@@@Z
+    0x53ED80 | public: virtual unsigned int __thiscall agiColorModelRGB888_Rev::Filter(unsigned int,unsigned int,unsigned int,unsigned int) | ?Filter@agiColorModelRGB888_Rev@@UAEIIIII@Z
+    0x53EE00 | public: virtual unsigned int __thiscall agiColorModelRGB888_Rev::GetPixel(class agiSurfaceDesc *,int,int) | ?GetPixel@agiColorModelRGB888_Rev@@UAEIPAVagiSurfaceDesc@@HH@Z
+    0x53EE20 | public: virtual void __thiscall agiColorModelRGB888_Rev::SetPixel(class agiSurfaceDesc *,int,int,unsigned int) | ?SetPixel@agiColorModelRGB888_Rev@@UAEXPAVagiSurfaceDesc@@HHI@Z
+    0x53EE80 | public: __thiscall agiColorModelRGBA5551::agiColorModelRGBA5551(void) | ??0agiColorModelRGBA5551@@QAE@XZ
+    0x53EED0 | public: virtual unsigned int __thiscall agiColorModelRGBA5551::GetColor(struct agiRgba) | ?GetColor@agiColorModelRGBA5551@@UAEIUagiRgba@@@Z
+    0x53EF20 | public: virtual unsigned int __thiscall agiColorModelRGBA5551::FindColor(struct agiRgba) | ?FindColor@agiColorModelRGBA5551@@UAEIUagiRgba@@@Z
+    0x53EF70 | public: virtual unsigned int __thiscall agiColorModelRGBA5551::Filter(unsigned int,unsigned int,unsigned int,unsigned int) | ?Filter@agiColorModelRGBA5551@@UAEIIIII@Z
+    0x53F030 | public: virtual unsigned int __thiscall agiColorModelRGBA5551::GetPixel(class agiSurfaceDesc *,int,int) | ?GetPixel@agiColorModelRGBA5551@@UAEIPAVagiSurfaceDesc@@HH@Z
+    0x53F050 | public: virtual void __thiscall agiColorModelRGBA5551::SetPixel(class agiSurfaceDesc *,int,int,unsigned int) | ?SetPixel@agiColorModelRGBA5551@@UAEXPAVagiSurfaceDesc@@HHI@Z
+    0x53F0C0 | public: __thiscall agiColorModelRGBA4444::agiColorModelRGBA4444(void) | ??0agiColorModelRGBA4444@@QAE@XZ
+    0x53F100 | public: virtual unsigned int __thiscall agiColorModelRGBA4444::GetColor(struct agiRgba) | ?GetColor@agiColorModelRGBA4444@@UAEIUagiRgba@@@Z
+    0x53F150 | public: virtual unsigned int __thiscall agiColorModelRGBA4444::FindColor(struct agiRgba) | ?FindColor@agiColorModelRGBA4444@@UAEIUagiRgba@@@Z
+    0x53F1A0 | public: virtual unsigned int __thiscall agiColorModelRGBA4444::Filter(unsigned int,unsigned int,unsigned int,unsigned int) | ?Filter@agiColorModelRGBA4444@@UAEIIIII@Z
+    0x53F260 | public: virtual unsigned int __thiscall agiColorModelRGBA4444::GetPixel(class agiSurfaceDesc *,int,int) | ?GetPixel@agiColorModelRGBA4444@@UAEIPAVagiSurfaceDesc@@HH@Z
+    0x53F280 | public: virtual void __thiscall agiColorModelRGBA4444::SetPixel(class agiSurfaceDesc *,int,int,unsigned int) | ?SetPixel@agiColorModelRGBA4444@@UAEXPAVagiSurfaceDesc@@HHI@Z
+    0x53F2F0 | public: __thiscall agiColorModelARGB::agiColorModelARGB(void) | ??0agiColorModelARGB@@QAE@XZ
+    0x53F330 | public: virtual unsigned int __thiscall agiColorModelARGB::GetColor(struct agiRgba) | ?GetColor@agiColorModelARGB@@UAEIUagiRgba@@@Z
+    0x53F370 | public: virtual unsigned int __thiscall agiColorModelARGB::FindColor(struct agiRgba) | ?FindColor@agiColorModelARGB@@UAEIUagiRgba@@@Z
+    0x53F3B0 | public: virtual unsigned int __thiscall agiColorModelARGB::Filter(unsigned int,unsigned int,unsigned int,unsigned int) | ?Filter@agiColorModelARGB@@UAEIIIII@Z
+    0x53F460 | public: virtual unsigned int __thiscall agiColorModelARGB::GetPixel(class agiSurfaceDesc *,int,int) | ?GetPixel@agiColorModelARGB@@UAEIPAVagiSurfaceDesc@@HH@Z
+    0x53F480 | public: virtual void __thiscall agiColorModelARGB::SetPixel(class agiSurfaceDesc *,int,int,unsigned int) | ?SetPixel@agiColorModelARGB@@UAEXPAVagiSurfaceDesc@@HHI@Z
+    0x53F4E0 | public: __thiscall agiColorModelABGR::agiColorModelABGR(void) | ??0agiColorModelABGR@@QAE@XZ
+    0x53F520 | public: virtual unsigned int __thiscall agiColorModelABGR::GetColor(struct agiRgba) | ?GetColor@agiColorModelABGR@@UAEIUagiRgba@@@Z
+    0x53F560 | public: virtual unsigned int __thiscall agiColorModelABGR::FindColor(struct agiRgba) | ?FindColor@agiColorModelABGR@@UAEIUagiRgba@@@Z
+    0x53F5A0 | public: virtual unsigned int __thiscall agiColorModelABGR::Filter(unsigned int,unsigned int,unsigned int,unsigned int) | ?Filter@agiColorModelABGR@@UAEIIIII@Z
+    0x53F640 | public: virtual unsigned int __thiscall agiColorModelABGR::GetPixel(class agiSurfaceDesc *,int,int) | ?GetPixel@agiColorModelABGR@@UAEIPAVagiSurfaceDesc@@HH@Z
+    0x53F660 | public: virtual void __thiscall agiColorModelABGR::SetPixel(class agiSurfaceDesc *,int,int,unsigned int) | ?SetPixel@agiColorModelABGR@@UAEXPAVagiSurfaceDesc@@HHI@Z
+    0x53F680 | public: static class agiColorModel * __cdecl agiColorModel::FindMatch(int,int,int,int) | ?FindMatch@agiColorModel@@SAPAV1@HHHH@Z
+    0x53F730 | public: static class agiColorModel * __cdecl agiColorModel::FindMatch(class agiSurfaceDesc *) | ?FindMatch@agiColorModel@@SAPAV1@PAVagiSurfaceDesc@@@Z
+    0x53F750 | public: virtual __thiscall agiColorModelRGB555::~agiColorModelRGB555(void) | ??1agiColorModelRGB555@@UAE@XZ
+    0x53F760 | public: virtual void * __thiscall agiColorModelRGB555::`scalar deleting destructor'(unsigned int) | ??_GagiColorModelRGB555@@UAEPAXI@Z
+    0x53F760 | public: virtual void * __thiscall agiColorModelRGB555::`vector deleting destructor'(unsigned int) | ??_EagiColorModelRGB555@@UAEPAXI@Z
+    0x53F790 | public: virtual __thiscall agiColorModelRGB565::~agiColorModelRGB565(void) | ??1agiColorModelRGB565@@UAE@XZ
+    0x53F7A0 | public: virtual void * __thiscall agiColorModelRGB565::`scalar deleting destructor'(unsigned int) | ??_GagiColorModelRGB565@@UAEPAXI@Z
+    0x53F7A0 | public: virtual void * __thiscall agiColorModelRGB565::`vector deleting destructor'(unsigned int) | ??_EagiColorModelRGB565@@UAEPAXI@Z
+    0x53F7D0 | public: virtual __thiscall agiColorModelRGB555_Rev::~agiColorModelRGB555_Rev(void) | ??1agiColorModelRGB555_Rev@@UAE@XZ
+    0x53F7E0 | public: virtual void * __thiscall agiColorModelRGB555_Rev::`scalar deleting destructor'(unsigned int) | ??_GagiColorModelRGB555_Rev@@UAEPAXI@Z
+    0x53F7E0 | public: virtual void * __thiscall agiColorModelRGB555_Rev::`vector deleting destructor'(unsigned int) | ??_EagiColorModelRGB555_Rev@@UAEPAXI@Z
+    0x53F810 | public: virtual __thiscall agiColorModelRGB565_Rev::~agiColorModelRGB565_Rev(void) | ??1agiColorModelRGB565_Rev@@UAE@XZ
+    0x53F820 | public: virtual void * __thiscall agiColorModelRGB565_Rev::`vector deleting destructor'(unsigned int) | ??_EagiColorModelRGB565_Rev@@UAEPAXI@Z
+    0x53F820 | public: virtual void * __thiscall agiColorModelRGB565_Rev::`scalar deleting destructor'(unsigned int) | ??_GagiColorModelRGB565_Rev@@UAEPAXI@Z
+    0x53F850 | public: virtual __thiscall agiColorModelRGB888::~agiColorModelRGB888(void) | ??1agiColorModelRGB888@@UAE@XZ
+    0x53F860 | public: virtual void * __thiscall agiColorModelRGB888::`vector deleting destructor'(unsigned int) | ??_EagiColorModelRGB888@@UAEPAXI@Z
+    0x53F860 | public: virtual void * __thiscall agiColorModelRGB888::`scalar deleting destructor'(unsigned int) | ??_GagiColorModelRGB888@@UAEPAXI@Z
+    0x53F890 | public: virtual __thiscall agiColorModelRGB888_Rev::~agiColorModelRGB888_Rev(void) | ??1agiColorModelRGB888_Rev@@UAE@XZ
+    0x53F8A0 | public: virtual void * __thiscall agiColorModelRGB888_Rev::`scalar deleting destructor'(unsigned int) | ??_GagiColorModelRGB888_Rev@@UAEPAXI@Z
+    0x53F8A0 | public: virtual void * __thiscall agiColorModelRGB888_Rev::`vector deleting destructor'(unsigned int) | ??_EagiColorModelRGB888_Rev@@UAEPAXI@Z
+    0x53F8D0 | public: virtual __thiscall agiColorModelRGBA5551::~agiColorModelRGBA5551(void) | ??1agiColorModelRGBA5551@@UAE@XZ
+    0x53F8E0 | public: virtual void * __thiscall agiColorModelRGBA5551::`scalar deleting destructor'(unsigned int) | ??_GagiColorModelRGBA5551@@UAEPAXI@Z
+    0x53F8E0 | public: virtual void * __thiscall agiColorModelRGBA5551::`vector deleting destructor'(unsigned int) | ??_EagiColorModelRGBA5551@@UAEPAXI@Z
+    0x53F910 | public: virtual __thiscall agiColorModelRGBA4444::~agiColorModelRGBA4444(void) | ??1agiColorModelRGBA4444@@UAE@XZ
+    0x53F920 | public: virtual void * __thiscall agiColorModelRGBA4444::`vector deleting destructor'(unsigned int) | ??_EagiColorModelRGBA4444@@UAEPAXI@Z
+    0x53F920 | public: virtual void * __thiscall agiColorModelRGBA4444::`scalar deleting destructor'(unsigned int) | ??_GagiColorModelRGBA4444@@UAEPAXI@Z
+    0x53F950 | public: virtual __thiscall agiColorModelARGB::~agiColorModelARGB(void) | ??1agiColorModelARGB@@UAE@XZ
+    0x53F960 | public: virtual void * __thiscall agiColorModelARGB::`scalar deleting destructor'(unsigned int) | ??_GagiColorModelARGB@@UAEPAXI@Z
+    0x53F960 | public: virtual void * __thiscall agiColorModelARGB::`vector deleting destructor'(unsigned int) | ??_EagiColorModelARGB@@UAEPAXI@Z
+    0x53F990 | public: virtual __thiscall agiColorModelABGR::~agiColorModelABGR(void) | ??1agiColorModelABGR@@UAE@XZ
+    0x53F9A0 | public: virtual void * __thiscall agiColorModelABGR::`scalar deleting destructor'(unsigned int) | ??_GagiColorModelABGR@@UAEPAXI@Z
+    0x53F9A0 | public: virtual void * __thiscall agiColorModelABGR::`vector deleting destructor'(unsigned int) | ??_EagiColorModelABGR@@UAEPAXI@Z
+    0x595CE8 | const agiColorModelRGB555::`vftable' | ??_7agiColorModelRGB555@@6B@
+    0x595D00 | const agiColorModelRGB565::`vftable' | ??_7agiColorModelRGB565@@6B@
+    0x595D18 | const agiColorModelRGB555_Rev::`vftable' | ??_7agiColorModelRGB555_Rev@@6B@
+    0x595D30 | const agiColorModelRGB565_Rev::`vftable' | ??_7agiColorModelRGB565_Rev@@6B@
+    0x595D48 | const agiColorModelRGB888::`vftable' | ??_7agiColorModelRGB888@@6B@
+    0x595D60 | const agiColorModelRGB888_Rev::`vftable' | ??_7agiColorModelRGB888_Rev@@6B@
+    0x595D78 | const agiColorModelRGBA5551::`vftable' | ??_7agiColorModelRGBA5551@@6B@
+    0x595D90 | const agiColorModelRGBA4444::`vftable' | ??_7agiColorModelRGBA4444@@6B@
+    0x595DA8 | const agiColorModelARGB::`vftable' | ??_7agiColorModelARGB@@6B@
+    0x595DC0 | const agiColorModelABGR::`vftable' | ??_7agiColorModelABGR@@6B@
+    0x70EB30 | class agiColorModelARGB ColorModelARGB | ?ColorModelARGB@@3VagiColorModelARGB@@A
+    0x70EB60 | class agiColorModelRGB565_Rev ColorModelRGB565_Rev | ?ColorModelRGB565_Rev@@3VagiColorModelRGB565_Rev@@A
+    0x70EB90 | class agiColorModelABGR ColorModelABGR | ?ColorModelABGR@@3VagiColorModelABGR@@A
+    0x70EBC0 | class agiColorModelRGB555_Rev ColorModelRGB555_Rev | ?ColorModelRGB555_Rev@@3VagiColorModelRGB555_Rev@@A
+    0x70EBF0 | class agiColorModelRGB888_Rev ColorModelRGB888_Rev | ?ColorModelRGB888_Rev@@3VagiColorModelRGB888_Rev@@A
+    0x70EC20 | class agiColorModelRGBA5551 ColorModelRGBA5551 | ?ColorModelRGBA5551@@3VagiColorModelRGBA5551@@A
+    0x70EC50 | class agiColorModelRGBA4444 ColorModelRGBA4444 | ?ColorModelRGBA4444@@3VagiColorModelRGBA4444@@A
+    0x70EC80 | class agiColorModelRGB888 ColorModelRGB888 | ?ColorModelRGB888@@3VagiColorModelRGB888@@A
+    0x70ECB0 | class agiColorModelRGB565 ColorModelRGB565 | ?ColorModelRGB565@@3VagiColorModelRGB565@@A
+    0x70ECE0 | class agiColorModelRGB555 ColorModelRGB555 | ?ColorModelRGB555@@3VagiColorModelRGB555@@A
+*/
 
 #include "hooking.h"
 

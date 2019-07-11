@@ -18,7 +18,33 @@
 
 #pragma once
 
-// arts7:cullmgr
+/*
+    arts7:cullmgr
+
+    0x511940 | public: __thiscall asCullManager::asCullManager(int,int) | ??0asCullManager@@QAE@HH@Z
+    0x511A20 | public: virtual __thiscall asCullManager::~asCullManager(void) | ??1asCullManager@@UAE@XZ
+    0x511AC0 | public: virtual void __thiscall asCullManager::Reset(void) | ?Reset@asCullManager@@UAEXXZ
+    0x511B20 | protected: void __thiscall asCullManager::DisplayVersionString(void) | ?DisplayVersionString@asCullManager@@IAEXXZ
+    0x511B40 | void __cdecl Statsf(char const *,...) | ?Statsf@@YAXPBDZZ
+    0x511BD0 | protected: void __thiscall asCullManager::PrintMiniStats(void) | ?PrintMiniStats@asCullManager@@IAEXXZ
+    0x511C60 | protected: void __thiscall asCullManager::PrintStats(void) | ?PrintStats@asCullManager@@IAEXXZ
+    0x511D60 | public: virtual void __thiscall asCullManager::Update(void) | ?Update@asCullManager@@UAEXXZ
+    0x512040 | public: virtual void __thiscall asCullManager::DeclareCamera(class asCamera *) | ?DeclareCamera@asCullManager@@UAEXPAVasCamera@@@Z
+    0x5120A0 | public: virtual void __thiscall asCullManager::DeclareCullable(class asCullable *) | ?DeclareCullable@asCullManager@@UAEXPAVasCullable@@@Z
+    0x512140 | public: virtual void __thiscall asCullManager::DeclareCullable2D(class asCullable *) | ?DeclareCullable2D@asCullManager@@UAEXPAVasCullable@@@Z
+    0x5121E0 | public: void __thiscall asCullManager::DeclareBitmap(class asCullable *,class agiBitmap *) | ?DeclareBitmap@asCullManager@@QAEXPAVasCullable@@PAVagiBitmap@@@Z
+    0x512250 | public: void __thiscall asCullManager::DeclarePrint(class asCullable *) | ?DeclarePrint@asCullManager@@QAEXPAVasCullable@@@Z
+    0x5122C0 | public: static void __cdecl asCullManager::DeclareFields(void) | ?DeclareFields@asCullManager@@SAXXZ
+    0x512440 | public: virtual class MetaClass * __thiscall asCullManager::GetClass(void) | ?GetClass@asCullManager@@UAEPAVMetaClass@@XZ
+    0x512450 | public: virtual void * __thiscall asCullManager::`vector deleting destructor'(unsigned int) | ??_EasCullManager@@UAEPAXI@Z
+    0x5124B0 | public: void __thiscall asCullManager::`default constructor closure'(void) | ??_FasCullManager@@QAEXXZ
+    0x5953F8 | const asCullManager::`vftable' | ??_7asCullManager@@6B@
+    0x6F2B2C | class asCullManager * CULLMGR | ?CULLMGR@@3PAVasCullManager@@A
+    0x6F2B40 | class MetaClass asCullManagerMetaClass | ?asCullManagerMetaClass@@3VMetaClass@@A
+    0x6F2B68 | float Update3D | ?Update3D@@3MA
+    0x512310 | void * __cdecl new_asCullManager(int) | ?new_asCullManager@@YAPAXH@Z
+    0x5123F0 | void __cdecl delete_asCullManager(void *,int) | ?delete_asCullManager@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

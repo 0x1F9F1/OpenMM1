@@ -18,7 +18,14 @@
 
 #pragma once
 
-// agiworld:getmesh
+/*
+    agiworld:getmesh
+
+    0x5026A0 | void __cdecl FixTexFlags(class agiTexParameters &) | ?FixTexFlags@@YAXAAVagiTexParameters@@@Z
+    0x502970 | class agiMeshSet * __cdecl GetMeshSet(char *,char *,class Vector3 *,int) | ?GetMeshSet@@YAPAVagiMeshSet@@PAD0PAVVector3@@H@Z
+    0x6A09AC | int IsSnowing | ?IsSnowing@@3HA
+    0x6A09D4 | char * MeshCurrentObject | ?MeshCurrentObject@@3PADA
+*/
 
 #include "hooking.h"
 

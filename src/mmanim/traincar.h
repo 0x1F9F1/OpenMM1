@@ -18,7 +18,19 @@
 
 #pragma once
 
-// mmanim:traincar
+/*
+    mmanim:traincar
+
+    0x4BC9F0 | public: __thiscall mmAnimTrainCar::mmAnimTrainCar(void) | ??0mmAnimTrainCar@@QAE@XZ
+    0x4BCA10 | public: virtual __thiscall mmAnimTrainCar::~mmAnimTrainCar(void) | ??1mmAnimTrainCar@@UAE@XZ
+    0x4BCA20 | public: void __thiscall mmAnimTrainCar::Init(char *,char *) | ?Init@mmAnimTrainCar@@QAEXPAD0@Z
+    0x4BCAA0 | public: void __thiscall mmAnimTrainCar::SetMatrix(class Matrix34 &) | ?SetMatrix@mmAnimTrainCar@@QAEXAAVMatrix34@@@Z
+    0x4BCAC0 | public: virtual void __fastcall mmAnimTrainCar::Draw(int) | ?Draw@mmAnimTrainCar@@UAIXH@Z
+    0x4BCB10 | public: virtual void __thiscall mmAnimTrainCar::Reset(void) | ?Reset@mmAnimTrainCar@@UAEXXZ
+    0x4BCB20 | public: void __thiscall mmAnimTrainCar::SetStart(float,float) | ?SetStart@mmAnimTrainCar@@QAEXMM@Z
+    0x4BCB50 | public: virtual void * __thiscall mmAnimTrainCar::`scalar deleting destructor'(unsigned int) | ??_GmmAnimTrainCar@@UAEPAXI@Z
+    0x5941F0 | const mmAnimTrainCar::`vftable' | ??_7mmAnimTrainCar@@6B@
+*/
 
 #include "hooking.h"
 

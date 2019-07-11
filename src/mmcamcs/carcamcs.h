@@ -18,7 +18,21 @@
 
 #pragma once
 
-// mmcamcs:carcamcs
+/*
+    mmcamcs:carcamcs
+
+    0x4ED750 | public: __thiscall CarCamCS::CarCamCS(void) | ??0CarCamCS@@QAE@XZ
+    0x4ED770 | public: virtual __thiscall CarCamCS::~CarCamCS(void) | ??1CarCamCS@@UAE@XZ
+    0x4ED780 | public: void __thiscall CarCamCS::Init(class mmCar *,char *) | ?Init@CarCamCS@@QAEXPAVmmCar@@PAD@Z
+    0x4ED7B0 | public: static void __cdecl CarCamCS::DeclareFields(void) | ?DeclareFields@CarCamCS@@SAXXZ
+    0x4ED920 | public: virtual class MetaClass * __thiscall CarCamCS::GetClass(void) | ?GetClass@CarCamCS@@UAEPAVMetaClass@@XZ
+    0x4ED960 | public: virtual void * __thiscall CarCamCS::`vector deleting destructor'(unsigned int) | ??_ECarCamCS@@UAEPAXI@Z
+    0x4ED9C0 | public: virtual void __thiscall BaseCamCS::MakeActive(void) | ?MakeActive@BaseCamCS@@UAEXXZ
+    0x594DE0 | const CarCamCS::`vftable' | ??_7CarCamCS@@6B@
+    0x67B790 | class MetaClass CarCamCSMetaClass | ?CarCamCSMetaClass@@3VMetaClass@@A
+    0x4ED800 | void * __cdecl new_CarCamCS(int) | ?new_CarCamCS@@YAPAXH@Z
+    0x4ED8D0 | void __cdecl delete_CarCamCS(void *,int) | ?delete_CarCamCS@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

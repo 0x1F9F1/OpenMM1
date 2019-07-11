@@ -18,7 +18,20 @@
 
 #pragma once
 
-// agisw:swddraw
+/*
+    agisw:swddraw
+
+    0x51CAF0 | void __cdecl ddAttach(int,int) | ?ddAttach@@YAXHH@Z
+    0x6F7DE0 | class agiSurfaceDesc swScreenDesc | ?swScreenDesc@@3VagiSurfaceDesc@@A
+    0x6F7E68 | unsigned char * swNibbleLut | ?swNibbleLut@@3PAEA
+    0x6F8070 | int bRenderToSystem | ?bRenderToSystem@@3HA
+    0x51CB60 | void __cdecl ddStart(void) | ?ddStart@@YAXXZ
+    0x51CC60 | void __cdecl ddEnd(void) | ?ddEnd@@YAXXZ
+    0x51CC80 | void __cdecl ddStartFrame(void) | ?ddStartFrame@@YAXXZ
+    0x51CC90 | void __cdecl ddStartScene(void) | ?ddStartScene@@YAXXZ
+    0x51CCD0 | void __cdecl ddEndScene(void) | ?ddEndScene@@YAXXZ
+    0x51CCF0 | void __cdecl ddEndFrame(void) | ?ddEndFrame@@YAXXZ
+*/
 
 #include "hooking.h"
 

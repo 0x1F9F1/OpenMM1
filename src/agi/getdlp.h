@@ -18,7 +18,17 @@
 
 #pragma once
 
-// agi:getdlp
+/*
+    agi:getdlp
+
+    0x538C50 | int __cdecl OutOfDate(char *,char *) | ?OutOfDate@@YAHPAD0@Z
+    0x538CB0 | void __cdecl CheckLibraries(void) | ?CheckLibraries@@YAXXZ
+    0x538DE0 | class DLPTemplate * __cdecl GetDLPTemplate(char *) | ?GetDLPTemplate@@YAPAVDLPTemplate@@PAD@Z
+    0x538EF0 | int __cdecl GetGroupVerts(char *,char *,class Vector3 *,int) | ?GetGroupVerts@@YAHPAD0PAVVector3@@H@Z
+    0x7024C0 | class HashTable DLPTemplateBadHash | ?DLPTemplateBadHash@@3VHashTable@@A
+    0x7024D0 | int FlagGetDLPTemplateCalls | ?FlagGetDLPTemplateCalls@@3HA
+    0x538D50 | int __cdecl LibOutOfDate(char *,char *) | ?LibOutOfDate@@YAHPAD0@Z
+*/
 
 #include "hooking.h"
 

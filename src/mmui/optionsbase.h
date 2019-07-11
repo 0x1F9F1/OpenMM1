@@ -18,7 +18,19 @@
 
 #pragma once
 
-// mmui:optionsbase
+/*
+    mmui:optionsbase
+
+    0x4A00B0 | public: __thiscall OptionsBase::OptionsBase(int) | ??0OptionsBase@@QAE@H@Z
+    0x4A0210 | public: void __thiscall OptionsBase::CreateTitle(struct LocString *) | ?CreateTitle@OptionsBase@@QAEXPAULocString@@@Z
+    0x4A0240 | public: virtual __thiscall OptionsBase::~OptionsBase(void) | ??1OptionsBase@@UAE@XZ
+    0x4A0290 | public: virtual void * __thiscall OptionsBase::`vector deleting destructor'(unsigned int) | ??_EOptionsBase@@UAEPAXI@Z
+    0x4A0290 | public: virtual void * __thiscall OptionsBase::`scalar deleting destructor'(unsigned int) | ??_GOptionsBase@@UAEPAXI@Z
+    0x4A02C0 | [thunk]: __thiscall `vcall'{68,{flat}}' }' | ??_9@$BEE@AE
+    0x4A02D0 | [thunk]: __thiscall `vcall'{72,{flat}}' }' | ??_9@$BEI@AE
+    0x4A02E0 | public: virtual void __thiscall OptionsBase::ResetDefaultAction(void) | ?ResetDefaultAction@OptionsBase@@UAEXXZ
+    0x592F88 | const OptionsBase::`vftable' | ??_7OptionsBase@@6B@
+*/
 
 #include "hooking.h"
 

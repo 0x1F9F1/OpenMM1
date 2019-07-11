@@ -18,7 +18,25 @@
 
 #pragma once
 
-// mmwidget:bm_label
+/*
+    mmwidget:bm_label
+
+    0x4A8F50 | public: __thiscall UIBMLabel::UIBMLabel(void) | ??0UIBMLabel@@QAE@XZ
+    0x4A8FC0 | public: virtual __thiscall UIBMLabel::~UIBMLabel(void) | ??1UIBMLabel@@UAE@XZ
+    0x4A9030 | public: void __thiscall UIBMLabel::Init(class string *,float,float,int *) | ?Init@UIBMLabel@@QAEXPAVstring@@MMPAH@Z
+    0x4A9110 | public: void __thiscall UIBMLabel::SetBitmapName(class string *) | ?SetBitmapName@UIBMLabel@@QAEXPAVstring@@@Z
+    0x4A91B0 | private: void __thiscall UIBMLabel::LoadBitmap(void) | ?LoadBitmap@UIBMLabel@@AAEXXZ
+    0x4A9290 | public: class agiBitmap * __thiscall UIBMLabel::CreateDummyBitmap(void) | ?CreateDummyBitmap@UIBMLabel@@QAEPAVagiBitmap@@XZ
+    0x4A92E0 | public: virtual void __thiscall UIBMLabel::Update(void) | ?Update@UIBMLabel@@UAEXXZ
+    0x4A9310 | public: virtual void __thiscall UIBMLabel::Cull(void) | ?Cull@UIBMLabel@@UAEXXZ
+    0x4A9340 | public: static void __cdecl UIBMLabel::DeclareFields(void) | ?DeclareFields@UIBMLabel@@SAXXZ
+    0x4A94B0 | public: virtual class MetaClass * __thiscall UIBMLabel::GetClass(void) | ?GetClass@UIBMLabel@@UAEPAVMetaClass@@XZ
+    0x4A94C0 | public: virtual void * __thiscall UIBMLabel::`vector deleting destructor'(unsigned int) | ??_EUIBMLabel@@UAEPAXI@Z
+    0x593348 | const UIBMLabel::`vftable' | ??_7UIBMLabel@@6B@
+    0x667CD0 | class MetaClass UIBMLabelMetaClass | ?UIBMLabelMetaClass@@3VMetaClass@@A
+    0x4A9390 | void * __cdecl new_UIBMLabel(int) | ?new_UIBMLabel@@YAPAXH@Z
+    0x4A9460 | void __cdecl delete_UIBMLabel(void *,int) | ?delete_UIBMLabel@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

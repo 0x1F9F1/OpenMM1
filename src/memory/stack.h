@@ -18,7 +18,19 @@
 
 #pragma once
 
-// memory:stack
+/*
+    memory:stack
+
+    0x50E0F0 | void __cdecl LookupAddress(char *,int) | ?LookupAddress@@YAXPADH@Z
+    0x50E480 | void __cdecl DoStackTraceback(int,int *) | ?DoStackTraceback@@YAXHPAH@Z
+    0x50E550 | void __cdecl StackTraceback(int) | ?StackTraceback@@YAXH@Z
+    0x50E570 | int __cdecl LogStackTraceback(int *,int) | ?LogStackTraceback@@YAHPAHH@Z
+    0x50E630 | void __cdecl DumpStackTraceback(int *,int) | ?DumpStackTraceback@@YAXPAHH@Z
+    0x50E680 | void __cdecl DebugLogInit(int) | ?DebugLogInit@@YAXH@Z
+    0x50E6C0 | void __cdecl DebugLogShutdown(void) | ?DebugLogShutdown@@YAXXZ
+    0x50E6E0 | void __cdecl DebugLog(int,void *,int) | ?DebugLog@@YAXHPAXH@Z
+    0x50E180 | void __cdecl InitMap(void) | ?InitMap@@YAXXZ
+*/
 
 #include "hooking.h"
 

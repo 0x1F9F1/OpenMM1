@@ -18,7 +18,22 @@
 
 #pragma once
 
-// mmcamcs:aicamcs
+/*
+    mmcamcs:aicamcs
+
+    0x4EC980 | public: __thiscall AICamCS::AICamCS(void) | ??0AICamCS@@QAE@XZ
+    0x4EC9B0 | public: void __thiscall AICamCS::Init(class mmCar *) | ?Init@AICamCS@@QAEXPAVmmCar@@@Z
+    0x4EC9C0 | public: virtual void __thiscall AICamCS::Reset(void) | ?Reset@AICamCS@@UAEXXZ
+    0x4EC9D0 | public: virtual void __thiscall AICamCS::MakeActive(void) | ?MakeActive@AICamCS@@UAEXXZ
+    0x4ECAE0 | public: virtual void __thiscall AICamCS::Update(void) | ?Update@AICamCS@@UAEXXZ
+    0x4ECE40 | public: static void __cdecl AICamCS::DeclareFields(void) | ?DeclareFields@AICamCS@@SAXXZ
+    0x4ECFB0 | public: virtual class MetaClass * __thiscall AICamCS::GetClass(void) | ?GetClass@AICamCS@@UAEPAVMetaClass@@XZ
+    0x4ECFF0 | public: virtual void * __thiscall AICamCS::`vector deleting destructor'(unsigned int) | ??_EAICamCS@@UAEPAXI@Z
+    0x594D10 | const AICamCS::`vftable' | ??_7AICamCS@@6B@
+    0x67B730 | class MetaClass AICamCSMetaClass | ?AICamCSMetaClass@@3VMetaClass@@A
+    0x4ECE90 | void * __cdecl new_AICamCS(int) | ?new_AICamCS@@YAPAXH@Z
+    0x4ECF60 | void __cdecl delete_AICamCS(void *,int) | ?delete_AICamCS@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

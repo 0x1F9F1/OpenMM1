@@ -18,7 +18,27 @@
 
 #pragma once
 
-// mmcar:roadff
+/*
+    mmcar:roadff
+
+    0x478530 | public: __thiscall mmCarRoadFF::mmCarRoadFF(void) | ??0mmCarRoadFF@@QAE@XZ
+    0x478570 | public: virtual __thiscall mmCarRoadFF::~mmCarRoadFF(void) | ??1mmCarRoadFF@@UAE@XZ
+    0x4785D0 | public: void __thiscall mmCarRoadFF::AssignProperties(float,int) | ?AssignProperties@mmCarRoadFF@@QAEXMH@Z
+    0x478670 | public: void __thiscall mmCarRoadFF::SetFGVals(float,float,float) | ?SetFGVals@mmCarRoadFF@@QAEXMMM@Z
+    0x478760 | public: void __thiscall mmCarRoadFF::Start(void) | ?Start@mmCarRoadFF@@QAEXXZ
+    0x478780 | public: void __thiscall mmCarRoadFF::Stop(void) | ?Stop@mmCarRoadFF@@QAEXXZ
+    0x478790 | public: virtual void __thiscall mmCarRoadFF::Reset(void) | ?Reset@mmCarRoadFF@@UAEXXZ
+    0x4787C0 | public: int __thiscall mmCarRoadFF::IsPlaying(void) | ?IsPlaying@mmCarRoadFF@@QAEHXZ
+    0x4787D0 | public: virtual void __thiscall mmCarRoadFF::Update(void) | ?Update@mmCarRoadFF@@UAEXXZ
+    0x478820 | public: void __thiscall mmCarRoadFF::UpdateVals(void) | ?UpdateVals@mmCarRoadFF@@QAEXXZ
+    0x478870 | public: static void __cdecl mmCarRoadFF::DeclareFields(void) | ?DeclareFields@mmCarRoadFF@@SAXXZ
+    0x4789D0 | public: virtual class MetaClass * __thiscall mmCarRoadFF::GetClass(void) | ?GetClass@mmCarRoadFF@@UAEPAVMetaClass@@XZ
+    0x4789E0 | public: virtual void * __thiscall mmCarRoadFF::`vector deleting destructor'(unsigned int) | ??_EmmCarRoadFF@@UAEPAXI@Z
+    0x591880 | const mmCarRoadFF::`vftable' | ??_7mmCarRoadFF@@6B@
+    0x60A4F8 | class MetaClass mmCarRoadFFMetaClass | ?mmCarRoadFFMetaClass@@3VMetaClass@@A
+    0x4788C0 | void * __cdecl new_mmCarRoadFF(int) | ?new_mmCarRoadFF@@YAPAXH@Z
+    0x478980 | void __cdecl delete_mmCarRoadFF(void *,int) | ?delete_mmCarRoadFF@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

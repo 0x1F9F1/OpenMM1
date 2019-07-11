@@ -18,7 +18,16 @@
 
 #pragma once
 
-// mmdjpeg:jdcoefct
+/*
+    mmdjpeg:jdcoefct
+
+    0x562FB0 | void __cdecl jinit_d_coef_controller(struct jpeg_decompress_struct *,unsigned char) | ?jinit_d_coef_controller@@YAXPAUjpeg_decompress_struct@@E@Z
+    0x563040 | void __cdecl start_input_pass(struct jpeg_decompress_struct *) | ?start_input_pass@@YAXPAUjpeg_decompress_struct@@@Z
+    0x563060 | void __cdecl start_iMCU_row(struct jpeg_decompress_struct *) | ?start_iMCU_row@@YAXPAUjpeg_decompress_struct@@@Z
+    0x5630C0 | void __cdecl start_output_pass(struct jpeg_decompress_struct *) | ?start_output_pass@@YAXPAUjpeg_decompress_struct@@@Z
+    0x5630E0 | int __cdecl decompress_onepass(struct jpeg_decompress_struct *,unsigned char * * *) | ?decompress_onepass@@YAHPAUjpeg_decompress_struct@@PAPAPAE@Z
+    0x563310 | int __cdecl dummy_consume_data(struct jpeg_decompress_struct *) | ?dummy_consume_data@@YAHPAUjpeg_decompress_struct@@@Z
+*/
 
 #include "hooking.h"
 

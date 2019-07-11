@@ -18,7 +18,19 @@
 
 #pragma once
 
-// mmcity:positions
+/*
+    mmcity:positions
+
+    0x485AA0 | void __cdecl InitPositions(void) | ?InitPositions@@YAXXZ
+    0x485AE0 | void __cdecl LoadPositions(char *) | ?LoadPositions@@YAXPAD@Z
+    0x485CA0 | int __cdecl GetPositionCount(void) | ?GetPositionCount@@YAHXZ
+    0x485CB0 | class Vector4 & __cdecl GetPositionVector4(int) | ?GetPositionVector4@@YAAAVVector4@@H@Z
+    0x485CE0 | void __cdecl DumpPositions(char *) | ?DumpPositions@@YAXPAD@Z
+    0x485DA0 | int __cdecl RecallPosition(int,class Matrix34 *,int *,char *) | ?RecallPosition@@YAHHPAVMatrix34@@PAHPAD@Z
+    0x485E30 | int __cdecl RegisterPosition(class Vector4 &,int,int,int,int,char *) | ?RegisterPosition@@YAHAAVVector4@@HHHHPAD@Z
+    0x485F90 | public: __thiscall position_t::~position_t(void) | ??1position_t@@QAE@XZ
+    0x60B1E8 | int DontClearPositions | ?DontClearPositions@@3HA
+*/
 
 #include "hooking.h"
 

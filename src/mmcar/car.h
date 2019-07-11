@@ -18,7 +18,38 @@
 
 #pragma once
 
-// mmcar:car
+/*
+    mmcar:car
+
+    0x46AFF0 | public: __thiscall mmCar::mmCar(void) | ??0mmCar@@QAE@XZ
+    0x46B110 | public: void __thiscall mmCar::TranslateFlags(int) | ?TranslateFlags@mmCar@@QAEXH@Z
+    0x46B170 | public: void __thiscall mmCar::ReleaseTrailer(void) | ?ReleaseTrailer@mmCar@@QAEXXZ
+    0x46B1A0 | public: void __thiscall mmCar::Init(char *,int,int) | ?Init@mmCar@@QAEXPADHH@Z
+    0x46B5D0 | public: void __thiscall mmCar::ReInit(char *,int) | ?ReInit@mmCar@@QAEXPADH@Z
+    0x46B800 | public: virtual void __thiscall mmCar::Reset(void) | ?Reset@mmCar@@UAEXXZ
+    0x46B8B0 | public: virtual void __thiscall mmCar::Update(void) | ?Update@mmCar@@UAEXXZ
+    0x46B8D0 | public: virtual void __thiscall mmCar::PostUpdate(void) | ?PostUpdate@mmCar@@UAEXXZ
+    0x46B9A0 | public: void __thiscall mmCar::EnableDriving(int) | ?EnableDriving@mmCar@@QAEXH@Z
+    0x46BA10 | public: int __thiscall mmCar::IsDrivingDisabled(void) | ?IsDrivingDisabled@mmCar@@QAEHXZ
+    0x46BA20 | public: void __thiscall mmCar::ToggleSiren(void) | ?ToggleSiren@mmCar@@QAEXXZ
+    0x46BA50 | public: void __thiscall mmCar::StartSiren(void) | ?StartSiren@mmCar@@QAEXXZ
+    0x46BA70 | public: void __thiscall mmCar::StopSiren(void) | ?StopSiren@mmCar@@QAEXXZ
+    0x46BA90 | public: void __thiscall mmCar::RemoveVehicleAudio(void) | ?RemoveVehicleAudio@mmCar@@QAEXXZ
+    0x46BAA0 | public: void __thiscall mmCar::ClearDamage(void) | ?ClearDamage@mmCar@@QAEXXZ
+    0x46BAE0 | public: void __thiscall mmCar::Impact(class mmIntersection *,class Vector3 *,float,int,class Vector3 *) | ?Impact@mmCar@@QAEXPAVmmIntersection@@PAVVector3@@MH1@Z
+    0x46BF10 | int __cdecl EggNameIndex(char *) | ?EggNameIndex@@YAHPAD@Z
+    0x46BF70 | public: char * __thiscall mmCar::VehNameRemap(char *,int) | ?VehNameRemap@mmCar@@QAEPADPADH@Z
+    0x46C210 | public: static void __cdecl mmCar::DeclareFields(void) | ?DeclareFields@mmCar@@SAXXZ
+    0x46C380 | public: virtual class MetaClass * __thiscall mmCar::GetClass(void) | ?GetClass@mmCar@@UAEPAVMetaClass@@XZ
+    0x46C3C0 | public: virtual void * __thiscall mmCar::`vector deleting destructor'(unsigned int) | ??_EmmCar@@UAEPAXI@Z
+    0x46C420 | public: virtual class asInertialCS * __thiscall mmCar::GetICS(void) | ?GetICS@mmCar@@UAEPAVasInertialCS@@XZ
+    0x46C430 | public: virtual class asBound * __thiscall mmCar::GetBound(void) | ?GetBound@mmCar@@UAEPAVasBound@@XZ
+    0x591140 | const mmCar::`vftable' | ??_7mmCar@@6B@
+    0x60A1D4 | float ffval | ?ffval@@3MA
+    0x60A1D8 | class MetaClass mmCarMetaClass | ?mmCarMetaClass@@3VMetaClass@@A
+    0x46C260 | void * __cdecl new_mmCar(int) | ?new_mmCar@@YAPAXH@Z
+    0x46C330 | void __cdecl delete_mmCar(void *,int) | ?delete_mmCar@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

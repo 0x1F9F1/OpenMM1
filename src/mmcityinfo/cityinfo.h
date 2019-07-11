@@ -18,7 +18,16 @@
 
 #pragma once
 
-// mmcityinfo:cityinfo
+/*
+    mmcityinfo:cityinfo
+
+    0x4C7960 | public: __thiscall mmCityInfo::mmCityInfo(void) | ??0mmCityInfo@@QAE@XZ
+    0x4C7980 | public: virtual __thiscall mmCityInfo::~mmCityInfo(void) | ??1mmCityInfo@@UAE@XZ
+    0x4C7990 | public: int __thiscall mmCityInfo::Load(char *) | ?Load@mmCityInfo@@QAEHPAD@Z
+    0x4C7CE0 | public: virtual void * __thiscall mmCityInfo::`vector deleting destructor'(unsigned int) | ??_EmmCityInfo@@UAEPAXI@Z
+    0x4C7CE0 | public: virtual void * __thiscall mmCityInfo::`scalar deleting destructor'(unsigned int) | ??_GmmCityInfo@@UAEPAXI@Z
+    0x5944B4 | const mmCityInfo::`vftable' | ??_7mmCityInfo@@6B@
+*/
 
 #include "hooking.h"
 

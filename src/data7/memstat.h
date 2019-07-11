@@ -18,7 +18,15 @@
 
 #pragma once
 
-// data7:memstat
+/*
+    data7:memstat
+
+    0x55A480 | void __cdecl BeginMemStat(char const *) | ?BeginMemStat@@YAXPBD@Z
+    0x55A510 | void __cdecl EndMemStat(void) | ?EndMemStat@@YAXXZ
+    0x5CE560 | int EnableMemStat | ?EnableMemStat@@3HA
+    0x711FC0 | int beginStackCount | ?beginStackCount@@3HA
+    0x55A4E0 | int __cdecl getMem(void) | ?getMem@@YAHXZ
+*/
 
 #include "hooking.h"
 

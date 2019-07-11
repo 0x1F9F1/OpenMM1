@@ -18,7 +18,22 @@
 
 #pragma once
 
-// mmphysics:aero
+/*
+    mmphysics:aero
+
+    0x4D2D00 | public: __thiscall asAero::asAero(void) | ??0asAero@@QAE@XZ
+    0x4D2D60 | public: virtual void __thiscall asAero::Update(void) | ?Update@asAero@@UAEXXZ
+    0x4D3220 | public: void __thiscall asAero::Load(class Stream *) | ?Load@asAero@@QAEXPAVStream@@@Z
+    0x4D32F0 | public: void __thiscall asAero::Save(class Stream *) | ?Save@asAero@@QAEXPAVStream@@@Z
+    0x4D3420 | public: void __thiscall asAero::AddWidgets(class Bank *) | ?AddWidgets@asAero@@QAEXPAVBank@@@Z
+    0x4D3430 | public: static void __cdecl asAero::DeclareFields(void) | ?DeclareFields@asAero@@SAXXZ
+    0x4D3600 | public: virtual class MetaClass * __thiscall asAero::GetClass(void) | ?GetClass@asAero@@UAEPAVMetaClass@@XZ
+    0x4D3610 | public: virtual void * __thiscall asAero::`vector deleting destructor'(unsigned int) | ??_EasAero@@UAEPAXI@Z
+    0x594700 | const asAero::`vftable' | ??_7asAero@@6B@
+    0x67B4C8 | class MetaClass asAeroMetaClass | ?asAeroMetaClass@@3VMetaClass@@A
+    0x4D34F0 | void * __cdecl new_asAero(int) | ?new_asAero@@YAPAXH@Z
+    0x4D35B0 | void __cdecl delete_asAero(void *,int) | ?delete_asAero@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,126 @@
 
 #pragma once
 
-// mmcity:inst
+/*
+    mmcity:inst
+
+    0x487F20 | public: __thiscall mmInstance::mmInstance(void) | ??0mmInstance@@QAE@XZ
+    0x487F50 | public: virtual __thiscall mmInstance::~mmInstance(void) | ??1mmInstance@@UAE@XZ
+    0x487F60 | public: virtual void __fastcall mmInstance::Relight(void) | ?Relight@mmInstance@@UAIXXZ
+    0x487F70 | public: virtual float __fastcall mmInstance::GetScale(void) | ?GetScale@mmInstance@@UAIMXZ
+    0x487F80 | public: virtual int __thiscall mmInstance::ComputeLod(float,float) | ?ComputeLod@mmInstance@@UAEHMM@Z
+    0x487FF0 | public: virtual void __fastcall mmInstance::Draw(int) | ?Draw@mmInstance@@UAIXH@Z
+    0x488040 | public: virtual void __fastcall mmInstance::DrawShadow(void) | ?DrawShadow@mmInstance@@UAIXXZ
+    0x488050 | public: virtual void __fastcall mmInstance::DrawGlow(void) | ?DrawGlow@mmInstance@@UAIXXZ
+    0x488060 | public: virtual int __thiscall mmInstance::Init(char *,class Vector3 &,class Vector3 &,int,char *) | ?Init@mmInstance@@UAEHPADAAVVector3@@1H0@Z
+    0x488100 | char * __cdecl formatf(char const *,...) | ?formatf@@YAPADPBDZZ
+    0x488120 | public: class agiMeshSet * __thiscall mmInstance::GetResidentMeshSet(int,int,int) | ?GetResidentMeshSet@mmInstance@@QAEPAVagiMeshSet@@HHH@Z
+    0x4881B0 | public: static int __cdecl mmInstance::GetMeshSetSet(char *,int,char *,class Vector3 *) | ?GetMeshSetSet@mmInstance@@SAHPADH0PAVVector3@@@Z
+    0x488620 | int __cdecl GetPolyInfo(class agiMeshSet *) | ?GetPolyInfo@@YAHPAVagiMeshSet@@@Z
+    0x488660 | public: virtual unsigned int __thiscall mmInstance::SizeOf(void) | ?SizeOf@mmInstance@@UAEIXZ
+    0x488670 | public: virtual void __thiscall mmInstance::Reset(void) | ?Reset@mmInstance@@UAEXXZ
+    0x488680 | public: static void __cdecl mmInstance::ResetAll(void) | ?ResetAll@mmInstance@@SAXXZ
+    0x488790 | public: void __thiscall mmInstance::InitMeshes(char *,int,char *,class Vector3 *) | ?InitMeshes@mmInstance@@QAEXPADH0PAVVector3@@@Z
+    0x4887D0 | public: void __thiscall mmInstance::AddMeshes(char *,int,char *,class Vector3 *) | ?AddMeshes@mmInstance@@QAEXPADH0PAVVector3@@@Z
+    0x4887F0 | public: __thiscall mmYInstance::mmYInstance(void) | ??0mmYInstance@@QAE@XZ
+    0x488820 | public: virtual __thiscall mmYInstance::~mmYInstance(void) | ??1mmYInstance@@UAE@XZ
+    0x488830 | public: virtual void __fastcall mmYInstance::FromMatrix(class Matrix34 const &) | ?FromMatrix@mmYInstance@@UAIXABVMatrix34@@@Z
+    0x488880 | public: virtual class Matrix34 & __fastcall mmYInstance::ToMatrix(class Matrix34 &) | ?ToMatrix@mmYInstance@@UAIAAVMatrix34@@AAV2@@Z
+    0x4888D0 | public: virtual class Vector3 & __fastcall mmYInstance::GetPos(void) | ?GetPos@mmYInstance@@UAIAAVVector3@@XZ
+    0x4888E0 | public: virtual unsigned int __thiscall mmYInstance::SizeOf(void) | ?SizeOf@mmYInstance@@UAEIXZ
+    0x4888F0 | public: __thiscall mmMatrixInstance::mmMatrixInstance(void) | ??0mmMatrixInstance@@QAE@XZ
+    0x488920 | public: virtual __thiscall mmMatrixInstance::~mmMatrixInstance(void) | ??1mmMatrixInstance@@UAE@XZ
+    0x488930 | public: virtual void __fastcall mmMatrixInstance::FromMatrix(class Matrix34 const &) | ?FromMatrix@mmMatrixInstance@@UAIXABVMatrix34@@@Z
+    0x488950 | public: virtual class Matrix34 & __fastcall mmMatrixInstance::ToMatrix(class Matrix34 &) | ?ToMatrix@mmMatrixInstance@@UAIAAVMatrix34@@AAV2@@Z
+    0x488960 | public: virtual class Vector3 & __fastcall mmMatrixInstance::GetPos(void) | ?GetPos@mmMatrixInstance@@UAIAAVVector3@@XZ
+    0x488970 | public: int __thiscall mmMatrixInstance::Init(char *,class Vector3 &,class Vector3 &,class Vector3 &,int,char *) | ?Init@mmMatrixInstance@@QAEHPADAAVVector3@@11H0@Z
+    0x488AA0 | public: virtual void __thiscall mmMatrixInstance::Hit(class mmInstance *) | ?Hit@mmMatrixInstance@@UAEXPAVmmInstance@@@Z
+    0x488AB0 | public: virtual unsigned int __thiscall mmMatrixInstance::SizeOf(void) | ?SizeOf@mmMatrixInstance@@UAEIXZ
+    0x488AC0 | public: __thiscall mmStaticInstance::mmStaticInstance(void) | ??0mmStaticInstance@@QAE@XZ
+    0x488AE0 | public: virtual __thiscall mmStaticInstance::~mmStaticInstance(void) | ??1mmStaticInstance@@UAE@XZ
+    0x488AF0 | public: int __thiscall mmStaticInstance::Init(char *,class Vector3 &,class Vector3 &,float,int,char *) | ?Init@mmStaticInstance@@QAEHPADAAVVector3@@1MH0@Z
+    0x488C70 | public: __thiscall mmFacadeInstance::mmFacadeInstance(void) | ??0mmFacadeInstance@@QAE@XZ
+    0x488C90 | public: virtual __thiscall mmFacadeInstance::~mmFacadeInstance(void) | ??1mmFacadeInstance@@UAE@XZ
+    0x488CA0 | public: static float __cdecl mmFacadeQuad::DoubleArea(class agiMeshSet *) | ?DoubleArea@mmFacadeQuad@@SAMPAVagiMeshSet@@@Z
+    0x488D00 | public: static int __cdecl mmFacadeQuad::Valid(class agiMeshSet *) | ?Valid@mmFacadeQuad@@SAHPAVagiMeshSet@@@Z
+    0x488D30 | public: __thiscall mmFacadeQuad::mmFacadeQuad(class agiMeshSet *,float,float) | ??0mmFacadeQuad@@QAE@PAVagiMeshSet@@MM@Z
+    0x489050 | public: void __thiscall mmFacadeQuad::DrawLit(void (__cdecl*)(unsigned char *,unsigned int *,unsigned int *,class agiMeshSet *),class agiMeshSet *) | ?DrawLit@mmFacadeQuad@@QAEXP6AXPAEPAI1PAVagiMeshSet@@@Z2@Z
+    0x4891A0 | public: int __thiscall mmFacadeInstance::InitFacade(char *,class Vector3 &,class Vector3 &,float,int,class Vector3 const &) | ?InitFacade@mmFacadeInstance@@QAEHPADAAVVector3@@1MHABV2@@Z
+    0x4894D0 | public: virtual float __fastcall mmFacadeInstance::GetScale(void) | ?GetScale@mmFacadeInstance@@UAIMXZ
+    0x4894E0 | public: virtual unsigned int __thiscall mmFacadeInstance::SizeOf(void) | ?SizeOf@mmFacadeInstance@@UAEIXZ
+    0x4894F0 | public: virtual void __fastcall mmFacadeInstance::Draw(int) | ?Draw@mmFacadeInstance@@UAIXH@Z
+    0x4896A0 | public: virtual unsigned int __thiscall mmStaticInstance::SizeOf(void) | ?SizeOf@mmStaticInstance@@UAEIXZ
+    0x4896B0 | public: virtual void __fastcall mmStaticInstance::Relight(void) | ?Relight@mmStaticInstance@@UAIXXZ
+    0x4896C0 | public: virtual void __fastcall mmStaticInstance::Draw(int) | ?Draw@mmStaticInstance@@UAIXH@Z
+    0x489710 | public: virtual unsigned int __thiscall mmShearInstance::SizeOf(void) | ?SizeOf@mmShearInstance@@UAEIXZ
+    0x489720 | public: int __thiscall mmShearInstance::Init(char *,class Vector3 &,class Vector3 &,float,int,char *) | ?Init@mmShearInstance@@QAEHPADAAVVector3@@1MH0@Z
+    0x4898E0 | public: virtual void __fastcall mmShearInstance::Draw(int) | ?Draw@mmShearInstance@@UAIXH@Z
+    0x489900 | public: virtual float __fastcall mmShearInstance::GetScale(void) | ?GetScale@mmShearInstance@@UAIMXZ
+    0x489910 | public: virtual unsigned int __thiscall mmBuildingInstance::SizeOf(void) | ?SizeOf@mmBuildingInstance@@UAEIXZ
+    0x489920 | public: int __thiscall mmBuildingInstance::Init(char *,class Vector3 &,class Vector3 &,class Vector3 &) | ?Init@mmBuildingInstance@@QAEHPADAAVVector3@@11@Z
+    0x489A60 | public: virtual float __fastcall mmBuildingInstance::GetScale(void) | ?GetScale@mmBuildingInstance@@UAIMXZ
+    0x489A70 | public: virtual void __fastcall mmBuildingInstance::Draw(int) | ?Draw@mmBuildingInstance@@UAIXH@Z
+    0x489B20 | public: void __thiscall mmInstance::DrawDropShadow(int,int,class Matrix34 const &) | ?DrawDropShadow@mmInstance@@QAEXHHABVMatrix34@@@Z
+    0x489DC0 | public: static void __cdecl mmInstance::DeclareFields(void) | ?DeclareFields@mmInstance@@SAXXZ
+    0x489E60 | public: virtual class MetaClass * __thiscall mmInstance::GetClass(void) | ?GetClass@mmInstance@@UAEPAVMetaClass@@XZ
+    0x489E70 | public: static void __cdecl mmYInstance::DeclareFields(void) | ?DeclareFields@mmYInstance@@SAXXZ
+    0x489F10 | public: virtual class MetaClass * __thiscall mmYInstance::GetClass(void) | ?GetClass@mmYInstance@@UAEPAVMetaClass@@XZ
+    0x489F20 | public: static void __cdecl mmMatrixInstance::DeclareFields(void) | ?DeclareFields@mmMatrixInstance@@SAXXZ
+    0x48A0A0 | public: virtual class MetaClass * __thiscall mmMatrixInstance::GetClass(void) | ?GetClass@mmMatrixInstance@@UAEPAVMetaClass@@XZ
+    0x48A0B0 | public: static void __cdecl mmShearInstance::DeclareFields(void) | ?DeclareFields@mmShearInstance@@SAXXZ
+    0x48A240 | public: virtual class MetaClass * __thiscall mmShearInstance::GetClass(void) | ?GetClass@mmShearInstance@@UAEPAVMetaClass@@XZ
+    0x48A250 | public: static void __cdecl mmBuildingInstance::DeclareFields(void) | ?DeclareFields@mmBuildingInstance@@SAXXZ
+    0x48A3E0 | public: virtual class MetaClass * __thiscall mmBuildingInstance::GetClass(void) | ?GetClass@mmBuildingInstance@@UAEPAVMetaClass@@XZ
+    0x48A3F0 | public: static void __cdecl mmStaticInstance::DeclareFields(void) | ?DeclareFields@mmStaticInstance@@SAXXZ
+    0x48A570 | public: virtual class MetaClass * __thiscall mmStaticInstance::GetClass(void) | ?GetClass@mmStaticInstance@@UAEPAVMetaClass@@XZ
+    0x48A580 | public: static void __cdecl mmFacadeInstance::DeclareFields(void) | ?DeclareFields@mmFacadeInstance@@SAXXZ
+    0x48A700 | public: virtual class MetaClass * __thiscall mmFacadeInstance::GetClass(void) | ?GetClass@mmFacadeInstance@@UAEPAVMetaClass@@XZ
+    0x48A710 | public: virtual void * __thiscall mmInstance::`scalar deleting destructor'(unsigned int) | ??_GmmInstance@@UAEPAXI@Z
+    0x48A710 | public: virtual void * __thiscall mmInstance::`vector deleting destructor'(unsigned int) | ??_EmmInstance@@UAEPAXI@Z
+    0x48A730 | public: virtual void * __thiscall mmYInstance::`vector deleting destructor'(unsigned int) | ??_EmmYInstance@@UAEPAXI@Z
+    0x48A730 | public: virtual void * __thiscall mmYInstance::`scalar deleting destructor'(unsigned int) | ??_GmmYInstance@@UAEPAXI@Z
+    0x48A750 | public: virtual void * __thiscall mmMatrixInstance::`vector deleting destructor'(unsigned int) | ??_EmmMatrixInstance@@UAEPAXI@Z
+    0x48A7B0 | public: virtual void * __thiscall mmShearInstance::`vector deleting destructor'(unsigned int) | ??_EmmShearInstance@@UAEPAXI@Z
+    0x48A810 | public: __thiscall mmShearInstance::mmShearInstance(void) | ??0mmShearInstance@@QAE@XZ
+    0x48A830 | public: virtual void * __thiscall mmBuildingInstance::`vector deleting destructor'(unsigned int) | ??_EmmBuildingInstance@@UAEPAXI@Z
+    0x48A890 | public: __thiscall mmBuildingInstance::mmBuildingInstance(void) | ??0mmBuildingInstance@@QAE@XZ
+    0x48A8B0 | public: virtual void * __thiscall mmStaticInstance::`vector deleting destructor'(unsigned int) | ??_EmmStaticInstance@@UAEPAXI@Z
+    0x48A910 | public: virtual void * __thiscall mmFacadeInstance::`vector deleting destructor'(unsigned int) | ??_EmmFacadeInstance@@UAEPAXI@Z
+    0x591EC0 | const mmInstance::`vftable' | ??_7mmInstance@@6B@
+    0x591F48 | const mmYInstance::`vftable' | ??_7mmYInstance@@6B@
+    0x591FA0 | const mmMatrixInstance::`vftable' | ??_7mmMatrixInstance@@6B@
+    0x592000 | const mmStaticInstance::`vftable' | ??_7mmStaticInstance@@6B@
+    0x592058 | const mmFacadeInstance::`vftable' | ??_7mmFacadeInstance@@6B@
+    0x5ADF08 | public: static float (* mmInstance::LodTable)[4][3] | ?LodTable@mmInstance@@2PAY132MA
+    0x64F830 | public: static char * * mmInstance::MeshSetNames | ?MeshSetNames@mmInstance@@2PAPADA
+    0x653830 | public: static void (__cdecl* mmInstance::DynamicLighter)(unsigned char *,unsigned int *,unsigned int *,class agiMeshSet *) | ?DynamicLighter@mmInstance@@2P6AXPAEPAI1PAVagiMeshSet@@@ZA
+    0x653838 | class MetaClass mmInstanceMetaClass | ?mmInstanceMetaClass@@3VMetaClass@@A
+    0x653860 | class mmHeap<int> mmInstanceHeap | ?mmInstanceHeap@@3V?$mmHeap@H@@A
+    0x653870 | public: static struct mmInstance::MeshSetTableEntry * mmInstance::MeshSetTable | ?MeshSetTable@mmInstance@@2PAUMeshSetTableEntry@1@A
+    0x667870 | class MetaClass mmMatrixInstanceMetaClass | ?mmMatrixInstanceMetaClass@@3VMetaClass@@A
+    0x667898 | public: static int mmInstance::ShowLights | ?ShowLights@mmInstance@@2HA
+    0x6678B0 | class MetaClass mmFacadeInstanceMetaClass | ?mmFacadeInstanceMetaClass@@3VMetaClass@@A
+    0x6678D8 | class MetaClass mmYInstanceMetaClass | ?mmYInstanceMetaClass@@3VMetaClass@@A
+    0x667908 | public: static int mmInstance::LodTableIndex | ?LodTableIndex@mmInstance@@2HA
+    0x667910 | class MetaClass mmBuildingInstanceMetaClass | ?mmBuildingInstanceMetaClass@@3VMetaClass@@A
+    0x6679C0 | public: static void (__cdecl* mmInstance::StaticLighter)(unsigned char *,unsigned int *,unsigned int *,class agiMeshSet *) | ?StaticLighter@mmInstance@@2P6AXPAEPAI1PAVagiMeshSet@@@ZA
+    0x6679C8 | class MetaClass mmShearInstanceMetaClass | ?mmShearInstanceMetaClass@@3VMetaClass@@A
+    0x6679F8 | class MetaClass mmStaticInstanceMetaClass | ?mmStaticInstanceMetaClass@@3VMetaClass@@A
+    0x667A30 | public: static int mmInstance::MeshSetSetCount | ?MeshSetSetCount@mmInstance@@2HA
+    0x488B50 | void __cdecl MatrixFromPoints(class Matrix34 &,class Vector3 &,class Vector3 &,float) | ?MatrixFromPoints@@YAXAAVMatrix34@@AAVVector3@@1M@Z
+    0x489E10 | void __cdecl delete_mmInstance(void *,int) | ?delete_mmInstance@@YAXPAXH@Z
+    0x489EC0 | void __cdecl delete_mmYInstance(void *,int) | ?delete_mmYInstance@@YAXPAXH@Z
+    0x489F70 | void * __cdecl new_mmMatrixInstance(int) | ?new_mmMatrixInstance@@YAPAXH@Z
+    0x48A050 | void __cdecl delete_mmMatrixInstance(void *,int) | ?delete_mmMatrixInstance@@YAXPAXH@Z
+    0x48A100 | void * __cdecl new_mmShearInstance(int) | ?new_mmShearInstance@@YAPAXH@Z
+    0x48A1F0 | void __cdecl delete_mmShearInstance(void *,int) | ?delete_mmShearInstance@@YAXPAXH@Z
+    0x48A2A0 | void * __cdecl new_mmBuildingInstance(int) | ?new_mmBuildingInstance@@YAPAXH@Z
+    0x48A390 | void __cdecl delete_mmBuildingInstance(void *,int) | ?delete_mmBuildingInstance@@YAXPAXH@Z
+    0x48A440 | void * __cdecl new_mmStaticInstance(int) | ?new_mmStaticInstance@@YAPAXH@Z
+    0x48A520 | void __cdecl delete_mmStaticInstance(void *,int) | ?delete_mmStaticInstance@@YAXPAXH@Z
+    0x48A5D0 | void * __cdecl new_mmFacadeInstance(int) | ?new_mmFacadeInstance@@YAPAXH@Z
+    0x48A6B0 | void __cdecl delete_mmFacadeInstance(void *,int) | ?delete_mmFacadeInstance@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

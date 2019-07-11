@@ -18,7 +18,43 @@
 
 #pragma once
 
-// mmwidget:bm_button
+/*
+    mmwidget:bm_button
+
+    0x4AB380 | public: __thiscall UIBMButton::UIBMButton(void) | ??0UIBMButton@@QAE@XZ
+    0x4AB420 | public: virtual __thiscall UIBMButton::~UIBMButton(void) | ??1UIBMButton@@UAE@XZ
+    0x4AB4A0 | public: void __thiscall UIBMButton::Init(char *,float,float,int,int,int *,int,int,struct LocString *,class Callback,class Callback) | ?Init@UIBMButton@@QAEXPADMMHHPAHHHPAULocString@@VCallback@@3@Z
+    0x4AB730 | public: void __thiscall UIBMButton::LoadBitmap(char *) | ?LoadBitmap@UIBMButton@@QAEXPAD@Z
+    0x4AB7A0 | public: int __thiscall UIBMButton::GetDiv(void) | ?GetDiv@UIBMButton@@QAEHXZ
+    0x4AB7D0 | public: class agiBitmap * __thiscall UIBMButton::CreateDummyBitmap(void) | ?CreateDummyBitmap@UIBMButton@@QAEPAVagiBitmap@@XZ
+    0x4AB830 | private: void __thiscall UIBMButton::GetSize(void) | ?GetSize@UIBMButton@@AAEXXZ
+    0x4AB860 | public: virtual void __thiscall UIBMButton::SetPosition(float,float) | ?SetPosition@UIBMButton@@UAEXMM@Z
+    0x4AB9D0 | public: void __thiscall UIBMButton::GetHitArea(float &,float &) | ?GetHitArea@UIBMButton@@QAEXAAM0@Z
+    0x4ABA30 | public: void __thiscall UIBMButton::DoToggle(void) | ?DoToggle@UIBMButton@@QAEXXZ
+    0x4ABAF0 | public: void __thiscall UIBMButton::Kill(void) | ?Kill@UIBMButton@@QAEXXZ
+    0x4ABB10 | public: void __thiscall UIBMButton::Unkill(void) | ?Unkill@UIBMButton@@QAEXXZ
+    0x4ABB50 | public: virtual void __thiscall UIBMButton::Switch(int) | ?Switch@UIBMButton@@UAEXH@Z
+    0x4ABC80 | public: virtual void __thiscall UIBMButton::Action(union eqEvent) | ?Action@UIBMButton@@UAEXTeqEvent@@@Z
+    0x4ABD30 | public: void __thiscall UIBMButton::MexOff(void) | ?MexOff@UIBMButton@@QAEXXZ
+    0x4ABD40 | public: void __thiscall UIBMButton::MexOn(void) | ?MexOn@UIBMButton@@QAEXXZ
+    0x4ABD80 | public: void __thiscall UIBMButton::MexToggle(void) | ?MexToggle@UIBMButton@@QAEXXZ
+    0x4ABDB0 | public: virtual void __thiscall UIBMButton::Update(void) | ?Update@UIBMButton@@UAEXXZ
+    0x4ABF40 | public: virtual char * __thiscall UIBMButton::ReturnDescription(void) | ?ReturnDescription@UIBMButton@@UAEPADXZ
+    0x4ABFF0 | public: virtual float __thiscall UIBMButton::GetScreenHeight(void) | ?GetScreenHeight@UIBMButton@@UAEMXZ
+    0x4AC000 | public: virtual void __thiscall UIBMButton::Cull(void) | ?Cull@UIBMButton@@UAEXXZ
+    0x4AC1B0 | private: static void __cdecl UIBMButton::AllocateSounds(void) | ?AllocateSounds@UIBMButton@@CAXXZ
+    0x4AC3A0 | private: void __thiscall UIBMButton::PlaySound(void) | ?PlaySound@UIBMButton@@AAEXXZ
+    0x4AC3D0 | public: static void __cdecl UIBMButton::DeclareFields(void) | ?DeclareFields@UIBMButton@@SAXXZ
+    0x4AC540 | public: virtual class MetaClass * __thiscall UIBMButton::GetClass(void) | ?GetClass@UIBMButton@@UAEPAVMetaClass@@XZ
+    0x4AC550 | public: virtual void __thiscall UIBMButton::Enable(void) | ?Enable@UIBMButton@@UAEXXZ
+    0x4AC570 | public: virtual void __thiscall UIBMButton::Disable(void) | ?Disable@UIBMButton@@UAEXXZ
+    0x4AC590 | public: virtual void * __thiscall UIBMButton::`vector deleting destructor'(unsigned int) | ??_EUIBMButton@@UAEPAXI@Z
+    0x593600 | const UIBMButton::`vftable' | ??_7UIBMButton@@6B@
+    0x667D00 | class MetaClass UIBMButtonMetaClass | ?UIBMButtonMetaClass@@3VMetaClass@@A
+    0x667D38 | private: static class AudSound * UIBMButton::s_pSound | ?s_pSound@UIBMButton@@0PAVAudSound@@A
+    0x4AC420 | void * __cdecl new_UIBMButton(int) | ?new_UIBMButton@@YAPAXH@Z
+    0x4AC4F0 | void __cdecl delete_UIBMButton(void *,int) | ?delete_UIBMButton@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

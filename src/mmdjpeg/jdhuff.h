@@ -18,7 +18,17 @@
 
 #pragma once
 
-// mmdjpeg:jdhuff
+/*
+    mmdjpeg:jdhuff
+
+    0x563320 | void __cdecl jpeg_make_d_derived_tbl(struct jpeg_decompress_struct *,unsigned char,int,struct d_derived_tbl * *) | ?jpeg_make_d_derived_tbl@@YAXPAUjpeg_decompress_struct@@EHPAPAUd_derived_tbl@@@Z
+    0x5635E0 | unsigned char __cdecl jpeg_fill_bit_buffer(struct bitread_working_state *,long,int,int) | ?jpeg_fill_bit_buffer@@YAEPAUbitread_working_state@@JHH@Z
+    0x563700 | int __cdecl jpeg_huff_decode(struct bitread_working_state *,long,int,struct d_derived_tbl *,int) | ?jpeg_huff_decode@@YAHPAUbitread_working_state@@JHPAUd_derived_tbl@@H@Z
+    0x563800 | void __cdecl jinit_huff_decoder(struct jpeg_decompress_struct *) | ?jinit_huff_decoder@@YAXPAUjpeg_decompress_struct@@@Z
+    0x563850 | void __cdecl start_pass_huff_decoder(struct jpeg_decompress_struct *) | ?start_pass_huff_decoder@@YAXPAUjpeg_decompress_struct@@@Z
+    0x5639B0 | unsigned char __cdecl decode_mcu(struct jpeg_decompress_struct *,short (* *)[64]) | ?decode_mcu@@YAEPAUjpeg_decompress_struct@@PAPAY0EA@F@Z
+    0x563DD0 | unsigned char __cdecl process_restart(struct jpeg_decompress_struct *) | ?process_restart@@YAEPAUjpeg_decompress_struct@@@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,24 @@
 
 #pragma once
 
-// mmcity:instchn
+/*
+    mmcity:instchn
+
+    0x485FA0 | public: __thiscall mmInstChain::mmInstChain(void) | ??0mmInstChain@@QAE@XZ
+    0x485FB0 | public: __thiscall mmInstChain::~mmInstChain(void) | ??1mmInstChain@@QAE@XZ
+    0x485FD0 | public: void __thiscall mmInstChain::Init(int) | ?Init@mmInstChain@@QAEXH@Z
+    0x486030 | public: void __thiscall mmInstChain::Parent(class mmInstance *,short) | ?Parent@mmInstChain@@QAEXPAVmmInstance@@F@Z
+    0x4860C0 | public: void __thiscall mmInstChain::Unparent(class mmInstance *) | ?Unparent@mmInstChain@@QAEXPAVmmInstance@@@Z
+    0x486160 | public: void __thiscall mmInstChain::Reparent(class mmInstance *,short) | ?Reparent@mmInstChain@@QAEXPAVmmInstance@@F@Z
+    0x486190 | public: void __thiscall mmInstChain::RelightEverything(void) | ?RelightEverything@mmInstChain@@QAEXXZ
+    0x4861B0 | public: void __thiscall mmInstChain::Relight(short) | ?Relight@mmInstChain@@QAEXF@Z
+    0x4861E0 | public: void __thiscall mmInstChain::Draw(short,short,unsigned int,int,float) | ?Draw@mmInstChain@@QAEXFFIHM@Z
+    0x5ADAA4 | int EnableSphereCull | ?EnableSphereCull@@3HA
+    0x64F7B0 | int WorstRoom | ?WorstRoom@@3HA
+    0x64F7B4 | int LabelInstances | ?LabelInstances@@3HA
+    0x64F7B8 | int WorstCount | ?WorstCount@@3HA
+    0x64F7BC | int NormalsOnInstances | ?NormalsOnInstances@@3HA
+*/
 
 #include "hooking.h"
 

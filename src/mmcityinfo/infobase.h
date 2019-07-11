@@ -18,7 +18,20 @@
 
 #pragma once
 
-// mmcityinfo:infobase
+/*
+    mmcityinfo:infobase
+
+    0x4C5800 | public: __thiscall mmInfoBase::mmInfoBase(void) | ??0mmInfoBase@@QAE@XZ
+    0x4C5830 | public: int __thiscall mmInfoBase::Load(char *) | ?Load@mmInfoBase@@QAEHPAD@Z
+    0x4C58E0 | public: int __thiscall mmInfoBase::Save(char *) | ?Save@mmInfoBase@@QAEHPAD@Z
+    0x4C5990 | public: void __thiscall mmInfoBase::SetIOPath(char *) | ?SetIOPath@mmInfoBase@@QAEXPAD@Z
+    0x4C59B0 | public: static void __cdecl mmInfoBase::DeclareFields(void) | ?DeclareFields@mmInfoBase@@SAXXZ
+    0x4C5B20 | public: virtual class MetaClass * __thiscall mmInfoBase::GetClass(void) | ?GetClass@mmInfoBase@@UAEPAVMetaClass@@XZ
+    0x4C5B30 | public: virtual void * __thiscall mmInfoBase::`vector deleting destructor'(unsigned int) | ??_EmmInfoBase@@UAEPAXI@Z
+    0x66A8F0 | class MetaClass mmInfoBaseMetaClass | ?mmInfoBaseMetaClass@@3VMetaClass@@A
+    0x4C5A00 | void * __cdecl new_mmInfoBase(int) | ?new_mmInfoBase@@YAPAXH@Z
+    0x4C5AD0 | void __cdecl delete_mmInfoBase(void *,int) | ?delete_mmInfoBase@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

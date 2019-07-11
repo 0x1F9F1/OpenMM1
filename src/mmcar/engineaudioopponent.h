@@ -18,7 +18,25 @@
 
 #pragma once
 
-// mmcar:engineaudioopponent
+/*
+    mmcar:engineaudioopponent
+
+    0x47C750 | public: __thiscall EngineAudioOpponent::EngineAudioOpponent(void) | ??0EngineAudioOpponent@@QAE@XZ
+    0x47C7B0 | public: virtual __thiscall EngineAudioOpponent::~EngineAudioOpponent(void) | ??1EngineAudioOpponent@@UAE@XZ
+    0x47C7E0 | public: void __thiscall EngineAudioOpponent::Init(void) | ?Init@EngineAudioOpponent@@QAEXXZ
+    0x47C850 | public: void __thiscall EngineAudioOpponent::Init(short) | ?Init@EngineAudioOpponent@@QAEXF@Z
+    0x47C890 | public: void __thiscall EngineAudioOpponent::UpdateRPM(float) | ?UpdateRPM@EngineAudioOpponent@@QAEXM@Z
+    0x47C960 | public: void __thiscall EngineAudioOpponent::ClearName(void) | ?ClearName@EngineAudioOpponent@@QAEXXZ
+    0x47C980 | public: void __thiscall EngineAudioOpponent::Enable3DMode(class Vector3 *) | ?Enable3DMode@EngineAudioOpponent@@QAEXPAVVector3@@@Z
+    0x47C9A0 | public: void __thiscall EngineAudioOpponent::Disable3DMode(void) | ?Disable3DMode@EngineAudioOpponent@@QAEXXZ
+    0x47C9B0 | public: static void __cdecl EngineAudioOpponent::DeclareFields(void) | ?DeclareFields@EngineAudioOpponent@@SAXXZ
+    0x47CBB0 | public: virtual class MetaClass * __thiscall EngineAudioOpponent::GetClass(void) | ?GetClass@EngineAudioOpponent@@UAEPAVMetaClass@@XZ
+    0x47CCE0 | public: virtual void * __thiscall EngineAudioOpponent::`vector deleting destructor'(unsigned int) | ??_EEngineAudioOpponent@@UAEPAXI@Z
+    0x5919D0 | const EngineAudioOpponent::`vftable' | ??_7EngineAudioOpponent@@6B@
+    0x60A5D0 | class MetaClass EngineAudioOpponentMetaClass | ?EngineAudioOpponentMetaClass@@3VMetaClass@@A
+    0x47CAA0 | void * __cdecl new_EngineAudioOpponent(int) | ?new_EngineAudioOpponent@@YAPAXH@Z
+    0x47CB60 | void __cdecl delete_EngineAudioOpponent(void *,int) | ?delete_EngineAudioOpponent@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

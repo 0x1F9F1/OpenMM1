@@ -18,7 +18,14 @@
 
 #pragma once
 
-// mmcar:surfaceaudioinfo
+/*
+    mmcar:surfaceaudioinfo
+
+    0x468A20 | void __cdecl SetClearSurfaceAudioInfos(void) | ?SetClearSurfaceAudioInfos@@YAXXZ
+    0x468C80 | void __cdecl SetRainSurfaceAudioInfos(void) | ?SetRainSurfaceAudioInfos@@YAXXZ
+    0x468EE0 | void __cdecl SetSnowSurfaceAudioInfos(void) | ?SetSnowSurfaceAudioInfos@@YAXXZ
+    0x60A080 | struct tagSurfaceAudioInfo * SURFACEAUDIOINFO | ?SURFACEAUDIOINFO@@3PAUtagSurfaceAudioInfo@@A
+*/
 
 #include "hooking.h"
 

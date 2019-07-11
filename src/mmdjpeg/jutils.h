@@ -18,7 +18,16 @@
 
 #pragma once
 
-// mmdjpeg:jutils
+/*
+    mmdjpeg:jutils
+
+    0x562740 | long __cdecl jdiv_round_up(long,long) | ?jdiv_round_up@@YAJJJ@Z
+    0x562760 | long __cdecl jround_up(long,long) | ?jround_up@@YAJJJ@Z
+    0x562780 | void __cdecl jcopy_sample_rows(unsigned char * *,int,unsigned char * *,int,int,unsigned int) | ?jcopy_sample_rows@@YAXPAPAEH0HHI@Z
+    0x5627D0 | void __cdecl jcopy_block_row(short (*)[64],short (*)[64],unsigned int) | ?jcopy_block_row@@YAXPAY0EA@F0I@Z
+    0x562800 | void __cdecl jzero_far(void *,unsigned int) | ?jzero_far@@YAXPAXI@Z
+    0x596600 | int const * const jpeg_natural_order | ?jpeg_natural_order@@3PBHB
+*/
 
 #include "hooking.h"
 

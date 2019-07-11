@@ -18,7 +18,11 @@
 
 #pragma once
 
-// pcwindis:dxmovie
+/*
+    pcwindis:dxmovie
+
+    0x556B90 | void __cdecl dxiPlayMovie(char *) | ?dxiPlayMovie@@YAXPAD@Z
+*/
 
 #include "hooking.h"
 

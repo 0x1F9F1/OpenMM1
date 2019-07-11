@@ -18,7 +18,75 @@
 
 #pragma once
 
-// mmaudio:sound
+/*
+    mmaudio:sound
+
+    0x4DF220 | public: __thiscall AudSound::AudSound(unsigned long,int,short) | ??0AudSound@@QAE@KHF@Z
+    0x4DF4F0 | public: virtual __thiscall AudSound::~AudSound(void) | ??1AudSound@@UAE@XZ
+    0x4DF630 | public: void __thiscall AudSound::SetPriority(int) | ?SetPriority@AudSound@@QAEXH@Z
+    0x4DF650 | public: void __thiscall AudSound::DeallocateSoundObjs(void) | ?DeallocateSoundObjs@AudSound@@QAEXXZ
+    0x4DF6B0 | public: void __thiscall AudSound::ReallocateSoundObjs(void) | ?ReallocateSoundObjs@AudSound@@QAEXXZ
+    0x4DF890 | public: int __thiscall AudSound::Load(char *,int) | ?Load@AudSound@@QAEHPADH@Z
+    0x4DFAE0 | public: int __thiscall AudSound::Load(int,int) | ?Load@AudSound@@QAEHHH@Z
+    0x4DFCD0 | public: void __thiscall AudSound::EnabledAction(void) | ?EnabledAction@AudSound@@QAEXXZ
+    0x4DFCF0 | public: void __thiscall AudSound::Enable(void) | ?Enable@AudSound@@QAEXXZ
+    0x4DFD00 | public: void __thiscall AudSound::Disable(void) | ?Disable@AudSound@@QAEXXZ
+    0x4DFD20 | public: virtual void __thiscall AudSound::Reset(void) | ?Reset@AudSound@@UAEXXZ
+    0x4DFD30 | public: virtual void __thiscall AudSound::Update(void) | ?Update@AudSound@@UAEXXZ
+    0x4DFDC0 | public: void __thiscall AudSound::Update3DSettings(void) | ?Update3DSettings@AudSound@@QAEXXZ
+    0x4DFF80 | public: void __thiscall AudSound::SetPlayPosition(unsigned long) | ?SetPlayPosition@AudSound@@QAEXK@Z
+    0x4DFFB0 | public: void __thiscall AudSound::PlayOnce(float,float) | ?PlayOnce@AudSound@@QAEXMM@Z
+    0x4E0090 | public: void __thiscall AudSound::PlayLoop(float,float) | ?PlayLoop@AudSound@@QAEXMM@Z
+    0x4E0170 | public: void __thiscall AudSound::Stop(void) | ?Stop@AudSound@@QAEXXZ
+    0x4E01B0 | public: void __thiscall AudSound::StopEchoBuffers(void) | ?StopEchoBuffers@AudSound@@QAEXXZ
+    0x4E01D0 | public: void __thiscall AudSound::SetFrequency(float,int) | ?SetFrequency@AudSound@@QAEXMH@Z
+    0x4E0250 | public: float __thiscall AudSound::GetFrequency(int) | ?GetFrequency@AudSound@@QAEMH@Z
+    0x4E0290 | public: void __thiscall AudSound::SetVolume(float,int) | ?SetVolume@AudSound@@QAEXMH@Z
+    0x4E0310 | public: void __thiscall AudSound::SetEAXReverbMix(float,int) | ?SetEAXReverbMix@AudSound@@QAEXMH@Z
+    0x4E0370 | public: float __thiscall AudSound::GetEAXReverbMix(int) | ?GetEAXReverbMix@AudSound@@QAEMH@Z
+    0x4E03D0 | public: void __thiscall AudSound::SetPan(float,int) | ?SetPan@AudSound@@QAEXMH@Z
+    0x4E0460 | public: void __thiscall AudSound::SetEchoPan(float) | ?SetEchoPan@AudSound@@QAEXM@Z
+    0x4E04C0 | public: void __thiscall AudSound::SetEchoFrequency(float,int) | ?SetEchoFrequency@AudSound@@QAEXMH@Z
+    0x4E0530 | public: void __thiscall AudSound::SetRamp(float,float) | ?SetRamp@AudSound@@QAEXMM@Z
+    0x4E0610 | public: void __thiscall AudSound::Set3DMode(unsigned long) | ?Set3DMode@AudSound@@QAEXK@Z
+    0x4E0640 | public: int __thiscall AudSound::IsPlaying(int) | ?IsPlaying@AudSound@@QAEHH@Z
+    0x4E0670 | public: float __thiscall AudSound::GetSampleTime(void) | ?GetSampleTime@AudSound@@QAEMXZ
+    0x4E0690 | public: void __thiscall AudSound::SetConeAngles(unsigned long,unsigned long) | ?SetConeAngles@AudSound@@QAEXKK@Z
+    0x4E06C0 | public: void __thiscall AudSound::SetConeOutsideVolume(long) | ?SetConeOutsideVolume@AudSound@@QAEXJ@Z
+    0x4E06F0 | public: void __thiscall AudSound::SetConeOrientation(class Vector3 *) | ?SetConeOrientation@AudSound@@QAEXPAVVector3@@@Z
+    0x4E0720 | public: void __thiscall AudSound::SetEchoAttenuation(float) | ?SetEchoAttenuation@AudSound@@QAEXM@Z
+    0x4E0760 | public: unsigned char __thiscall AudSound::EchoPending(void) | ?EchoPending@AudSound@@QAEEXZ
+    0x4E0780 | public: void __thiscall AudSound::SetChorusAttenuation(float) | ?SetChorusAttenuation@AudSound@@QAEXM@Z
+    0x4E07C0 | public: void __thiscall AudSound::SetChorusPitchMult(float) | ?SetChorusPitchMult@AudSound@@QAEXM@Z
+    0x4E0800 | public: void __thiscall AudSound::SetChorusPitchMult(float,float) | ?SetChorusPitchMult@AudSound@@QAEXMM@Z
+    0x4E0850 | public: void __thiscall AudSound::SetDelayTime(float) | ?SetDelayTime@AudSound@@QAEXM@Z
+    0x4E08A0 | public: void __thiscall AudSound::SetupOneShotLayerBuffers(int,float,int) | ?SetupOneShotLayerBuffers@AudSound@@QAEXHMH@Z
+    0x4E0910 | public: int __thiscall AudSound::ReadyOneShotLayerBuf(void) | ?ReadyOneShotLayerBuf@AudSound@@QAEHXZ
+    0x4E0940 | public: int __thiscall AudSound::AllOneShotLayersPlaying(void) | ?AllOneShotLayersPlaying@AudSound@@QAEHXZ
+    0x4E0970 | public: int __thiscall AudSound::GetEffect(void) | ?GetEffect@AudSound@@QAEHXZ
+    0x4E0990 | public: void __thiscall AudSound::SetEffect(int) | ?SetEffect@AudSound@@QAEXH@Z
+    0x4E0A00 | public: void __thiscall AudSound::DisableEffect(int) | ?DisableEffect@AudSound@@QAEXH@Z
+    0x4E0A50 | public: static unsigned long const __cdecl AudSound::Get2DFlags(void) | ?Get2DFlags@AudSound@@SA?BKXZ
+    0x4E0A70 | public: static unsigned long const __cdecl AudSound::GetSoft2DFlags(void) | ?GetSoft2DFlags@AudSound@@SA?BKXZ
+    0x4E0A90 | public: static unsigned long const __cdecl AudSound::GetFreqChange2DFlags(void) | ?GetFreqChange2DFlags@AudSound@@SA?BKXZ
+    0x4E0AB0 | public: static unsigned long const __cdecl AudSound::GetSoftFreqChange2DFlags(void) | ?GetSoftFreqChange2DFlags@AudSound@@SA?BKXZ
+    0x4E0AD0 | public: static unsigned long const __cdecl AudSound::Get3DFlags(void) | ?Get3DFlags@AudSound@@SA?BKXZ
+    0x4E0AE0 | public: static unsigned long const __cdecl AudSound::GetFreqChange3DFlags(void) | ?GetFreqChange3DFlags@AudSound@@SA?BKXZ
+    0x4E0AF0 | public: class CReverbBuffer * __thiscall AudSound::GetSecondaryEAXObj(int) | ?GetSecondaryEAXObj@AudSound@@QAEPAVCReverbBuffer@@H@Z
+    0x4E0B20 | public: void __thiscall AudSound::Enable3DMode(void) | ?Enable3DMode@AudSound@@QAEXXZ
+    0x4E0B60 | public: void __thiscall AudSound::Disable3DMode(void) | ?Disable3DMode@AudSound@@QAEXXZ
+    0x4E0BA0 | public: class SoundObj * __thiscall AudSound::GetCurrentSoundObj(void) | ?GetCurrentSoundObj@AudSound@@QAEPAVSoundObj@@XZ
+    0x4E0BB0 | public: float __thiscall AudSound::GetVolume(int) | ?GetVolume@AudSound@@QAEMH@Z
+    0x4E0BE0 | public: virtual void * __thiscall AudSound::`scalar deleting destructor'(unsigned int) | ??_GAudSound@@UAEPAXI@Z
+    0x4E0BE0 | public: virtual void * __thiscall AudSound::`vector deleting destructor'(unsigned int) | ??_EAudSound@@UAEPAXI@Z
+    0x594904 | private: static unsigned long const AudSound::s_DWDefault3DCtrlFlags | ?s_DWDefault3DCtrlFlags@AudSound@@0KB
+    0x594908 | private: static unsigned long const AudSound::s_DWDefault2DCtrlFlags | ?s_DWDefault2DCtrlFlags@AudSound@@0KB
+    0x59490C | private: static unsigned long const AudSound::s_DWFreqChange3DCtrlFlags | ?s_DWFreqChange3DCtrlFlags@AudSound@@0KB
+    0x594910 | private: static unsigned long const AudSound::s_DWFreqChange2DCtrlFlags | ?s_DWFreqChange2DCtrlFlags@AudSound@@0KB
+    0x594914 | private: static unsigned long const AudSound::s_DWSoft2DCtrlFlags | ?s_DWSoft2DCtrlFlags@AudSound@@0KB
+    0x594918 | private: static unsigned long const AudSound::s_DWSoftFreqChange2DCtrlFlags | ?s_DWSoftFreqChange2DCtrlFlags@AudSound@@0KB
+    0x594930 | const AudSound::`vftable' | ??_7AudSound@@6B@
+*/
 
 #include "hooking.h"
 

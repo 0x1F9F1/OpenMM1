@@ -18,7 +18,22 @@
 
 #pragma once
 
-// agi:refresh
+/*
+    agi:refresh
+
+    0x53A0A0 | public: __thiscall agiRefreshable::agiRefreshable(class agiPipeline *) | ??0agiRefreshable@@QAE@PAVagiPipeline@@@Z
+    0x53A0E0 | protected: virtual __thiscall agiRefreshable::~agiRefreshable(void) | ??1agiRefreshable@@MAE@XZ
+    0x53A120 | public: int __thiscall agiRefreshable::SafeBeginGfx(void) | ?SafeBeginGfx@agiRefreshable@@QAEHXZ
+    0x53A150 | public: virtual void __thiscall agiRefreshable::Restore(void) | ?Restore@agiRefreshable@@UAEXXZ
+    0x53A160 | public: void __thiscall agiRefreshable::AddRef(void) | ?AddRef@agiRefreshable@@QAEXXZ
+    0x53A180 | public: int __thiscall agiRefreshable::Release(void) | ?Release@agiRefreshable@@QAEHXZ
+    0x53A1B0 | private: void __thiscall agiRefreshable::ValidatePtr(char *) | ?ValidatePtr@agiRefreshable@@AAEXPAD@Z
+    0x53A210 | public: virtual char * __thiscall agiRefreshable::GetName(void) | ?GetName@agiRefreshable@@UAEPADXZ
+    0x53A220 | protected: virtual int __thiscall agiRefreshable::IsTexture(void) | ?IsTexture@agiRefreshable@@MAEHXZ
+    0x53A230 | protected: virtual void * __thiscall agiRefreshable::`vector deleting destructor'(unsigned int) | ??_EagiRefreshable@@MAEPAXI@Z
+    0x53A230 | protected: virtual void * __thiscall agiRefreshable::`scalar deleting destructor'(unsigned int) | ??_GagiRefreshable@@MAEPAXI@Z
+    0x595BE8 | const agiRefreshable::`vftable' | ??_7agiRefreshable@@6B@
+*/
 
 #include "hooking.h"
 

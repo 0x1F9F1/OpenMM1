@@ -18,7 +18,27 @@
 
 #pragma once
 
-// mmui:pu_results
+/*
+    mmui:pu_results
+
+    0x49CC50 | public: __thiscall PUResults::PUResults(int,float,float,float,float,char *) | ??0PUResults@@QAE@HMMMMPAD@Z
+    0x49CD80 | public: void __thiscall PUResults::Init320(void) | ?Init320@PUResults@@QAEXXZ
+    0x49D160 | public: void __thiscall PUResults::Init640(void) | ?Init640@PUResults@@QAEXXZ
+    0x49D590 | public: virtual __thiscall PUResults::~PUResults(void) | ??1PUResults@@UAE@XZ
+    0x49D5A0 | public: void __thiscall PUResults::AddTitle(struct LocString *,struct LocString *) | ?AddTitle@PUResults@@QAEXPAULocString@@0@Z
+    0x49D5D0 | public: virtual void __thiscall PUResults::Reset(void) | ?Reset@PUResults@@UAEXXZ
+    0x49D5E0 | public: void __thiscall PUResults::RosterRO(int) | ?RosterRO@PUResults@@QAEXH@Z
+    0x49D600 | public: void __thiscall PUResults::RestartRO(int) | ?RestartRO@PUResults@@QAEXH@Z
+    0x49D620 | public: void __thiscall PUResults::AddName(int,char *,float) | ?AddName@PUResults@@QAEXHPADM@Z
+    0x49D6D0 | public: void __thiscall PUResults::AddName(int,char *,int) | ?AddName@PUResults@@QAEXHPADH@Z
+    0x49D790 | public: void __thiscall PUResults::ClearNames(void) | ?ClearNames@PUResults@@QAEXXZ
+    0x49D800 | public: void __thiscall PUResults::DisableNextRace(void) | ?DisableNextRace@PUResults@@QAEXXZ
+    0x49D810 | public: void __thiscall PUResults::EnableNextRace(void) | ?EnableNextRace@PUResults@@QAEXXZ
+    0x49D820 | public: void __thiscall PUResults::SetMessage(struct LocString *) | ?SetMessage@PUResults@@QAEXPAULocString@@@Z
+    0x49D840 | public: virtual void * __thiscall PUResults::`vector deleting destructor'(unsigned int) | ??_EPUResults@@UAEPAXI@Z
+    0x49D840 | public: virtual void * __thiscall PUResults::`scalar deleting destructor'(unsigned int) | ??_GPUResults@@UAEPAXI@Z
+    0x592B50 | const PUResults::`vftable' | ??_7PUResults@@6B@
+*/
 
 #include "hooking.h"
 

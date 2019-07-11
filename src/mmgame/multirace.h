@@ -18,7 +18,32 @@
 
 #pragma once
 
-// mmgame:multirace
+/*
+    mmgame:multirace
+
+    0x41B820 | public: __thiscall mmMultiRace::mmMultiRace(void) | ??0mmMultiRace@@QAE@XZ
+    0x41B890 | public: virtual __thiscall mmMultiRace::~mmMultiRace(void) | ??1mmMultiRace@@UAE@XZ
+    0x41B950 | public: int __thiscall mmMultiRace::Init(void) | ?Init@mmMultiRace@@QAEHXZ
+    0x41BA90 | public: virtual void __thiscall mmMultiRace::InitMyPlayer(void) | ?InitMyPlayer@mmMultiRace@@UAEXXZ
+    0x41BB00 | public: virtual void __thiscall mmMultiRace::InitHUD(void) | ?InitHUD@mmMultiRace@@UAEXXZ
+    0x41BB60 | public: virtual void __thiscall mmMultiRace::InitGameObjects(void) | ?InitGameObjects@mmMultiRace@@UAEXXZ
+    0x41BE30 | public: virtual void __thiscall mmMultiRace::InitNetworkPlayers(void) | ?InitNetworkPlayers@mmMultiRace@@UAEXXZ
+    0x41C290 | public: virtual void __thiscall mmMultiRace::Reset(void) | ?Reset@mmMultiRace@@UAEXXZ
+    0x41C390 | public: void __thiscall mmMultiRace::ChangePlayerData(void) | ?ChangePlayerData@mmMultiRace@@QAEXXZ
+    0x41C3E0 | public: virtual void __thiscall mmMultiRace::UpdateGameInput(int) | ?UpdateGameInput@mmMultiRace@@UAEXH@Z
+    0x41C420 | public: virtual void __thiscall mmMultiRace::UpdateGame(void) | ?UpdateGame@mmMultiRace@@UAEXXZ
+    0x41CC10 | public: virtual void __thiscall mmMultiRace::SystemMessage(struct NETSYS_MSG *) | ?SystemMessage@mmMultiRace@@UAEXPAUNETSYS_MSG@@@Z
+    0x41CDF0 | public: virtual void __thiscall mmMultiRace::GameMessage(struct NETGAME_MSG *) | ?GameMessage@mmMultiRace@@UAEXPAUNETGAME_MSG@@@Z
+    0x41D150 | private: void __thiscall mmMultiRace::SendPlayerFinish(void) | ?SendPlayerFinish@mmMultiRace@@AAEXXZ
+    0x41D190 | public: static void __cdecl mmMultiRace::DeclareFields(void) | ?DeclareFields@mmMultiRace@@SAXXZ
+    0x41D300 | public: virtual class MetaClass * __thiscall mmMultiRace::GetClass(void) | ?GetClass@mmMultiRace@@UAEPAVMetaClass@@XZ
+    0x41D460 | public: virtual void * __thiscall mmMultiRace::`vector deleting destructor'(unsigned int) | ??_EmmMultiRace@@UAEPAXI@Z
+    0x41D4C0 | public: virtual class mmWaypoints * __thiscall mmMultiRace::GetWaypoints(void) | ?GetWaypoints@mmMultiRace@@UAEPAVmmWaypoints@@XZ
+    0x58FBC0 | const mmMultiRace::`vftable' | ??_7mmMultiRace@@6B@
+    0x6095B8 | class MetaClass mmMultiRaceMetaClass | ?mmMultiRaceMetaClass@@3VMetaClass@@A
+    0x41D1E0 | void * __cdecl new_mmMultiRace(int) | ?new_mmMultiRace@@YAPAXH@Z
+    0x41D2B0 | void __cdecl delete_mmMultiRace(void *,int) | ?delete_mmMultiRace@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

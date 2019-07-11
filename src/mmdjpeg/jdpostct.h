@@ -18,7 +18,13 @@
 
 #pragma once
 
-// mmdjpeg:jdpostct
+/*
+    mmdjpeg:jdpostct
+
+    0x5640C0 | void __cdecl jinit_d_post_controller(struct jpeg_decompress_struct *,unsigned char) | ?jinit_d_post_controller@@YAXPAUjpeg_decompress_struct@@E@Z
+    0x564140 | void __cdecl start_pass_dpost(struct jpeg_decompress_struct *,enum J_BUF_MODE) | ?start_pass_dpost@@YAXPAUjpeg_decompress_struct@@W4J_BUF_MODE@@@Z
+    0x5641E0 | void __cdecl post_process_1pass(struct jpeg_decompress_struct *,unsigned char * * *,unsigned int *,unsigned int,unsigned char * *,unsigned int *,unsigned int) | ?post_process_1pass@@YAXPAUjpeg_decompress_struct@@PAPAPAEPAIIPAPAE2I@Z
+*/
 
 #include "hooking.h"
 

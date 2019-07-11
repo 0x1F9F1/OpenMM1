@@ -18,7 +18,115 @@
 
 #pragma once
 
-// agiworld:meshrend
+/*
+    agiworld:meshrend
+
+    0x4F4B60 | void __cdecl SetClipMode(int) | ?SetClipMode@@YAXH@Z
+    0x4F4C00 | protected: static void __fastcall agiMeshSet::InitMtx(class agiViewParameters &,int) | ?InitMtx@agiMeshSet@@KIXAAVagiViewParameters@@H@Z
+    0x4F4ED0 | public: static void __cdecl agiMeshSet::InitLocalize(void) | ?InitLocalize@agiMeshSet@@SAXXZ
+    0x4F4F90 | public: static void __cdecl agiMeshSet::Localize(class Vector3 &,class Vector3 &) | ?Localize@agiMeshSet@@SAXAAVVector3@@0@Z
+    0x4F5040 | public: static void __cdecl agiMeshSet::LocalizeDirection(class Vector3 &,class Vector3 &) | ?LocalizeDirection@agiMeshSet@@SAXAAVVector3@@0@Z
+    0x4F50D0 | public: static void __fastcall agiMeshSet::Init(int) | ?Init@agiMeshSet@@SIXH@Z
+    0x4F5150 | protected: static void __fastcall agiMeshSet::ShadowInit(class Vector4 const &,class Vector3 const &) | ?ShadowInit@agiMeshSet@@KIXABVVector4@@ABVVector3@@@Z
+    0x4F5380 | protected: static void __fastcall agiMeshSet::InitViewport(class agiViewParameters &) | ?InitViewport@agiMeshSet@@KIXAAVagiViewParameters@@@Z
+    0x4F5590 | public: static void __cdecl agiMeshSet::SetFog(float,int) | ?SetFog@agiMeshSet@@SAXMH@Z
+    0x4F55C0 | protected: static void __fastcall agiMeshSet::Transform(class Vector4 *,class Vector3 *,int) | ?Transform@agiMeshSet@@KIXPAVVector4@@PAVVector3@@H@Z
+    0x4F5830 | protected: static void __fastcall agiMeshSet::ShadowTransform(class Vector4 *,class Vector3 *,int) | ?ShadowTransform@agiMeshSet@@KIXPAVVector4@@PAVVector3@@H@Z
+    0x4F5AC0 | protected: static unsigned int __fastcall agiMeshSet::TransformOutcode(unsigned char *,class Vector4 *,class Vector3 *,int) | ?TransformOutcode@agiMeshSet@@KIIPAEPAVVector4@@PAVVector3@@H@Z
+    0x4F5E60 | unsigned int __cdecl EyePlaneOutcode(unsigned char *,unsigned char,class Vector4 &,class Vector3 *,int) | ?EyePlaneOutcode@@YAIPAEEAAVVector4@@PAVVector3@@H@Z
+    0x4F5F00 | protected: static unsigned int __fastcall agiMeshSet::ShadowTransformOutcode(unsigned char *,class Vector4 *,class Vector3 *,int) | ?ShadowTransformOutcode@agiMeshSet@@KIIPAEPAVVector4@@PAVVector3@@H@Z
+    0x4F62C0 | void __fastcall begin_invert(class Vector4 *) | ?begin_invert@@YIXPAVVector4@@@Z
+    0x4F62D0 | void __fastcall end_invert(class Vector4 *) | ?end_invert@@YIXPAVVector4@@@Z
+    0x4F62E0 | private: void __thiscall agiMeshSet::BeginGfx(void) | ?BeginGfx@agiMeshSet@@AAEXXZ
+    0x4F62F0 | private: void __thiscall agiMeshSet::EndGfx(void) | ?EndGfx@agiMeshSet@@AAEXXZ
+    0x4F6300 | protected: void __thiscall agiMeshSet::ClipTri(int,int,int,int) | ?ClipTri@agiMeshSet@@IAEXHHHH@Z
+    0x4F7370 | public: int __thiscall agiMeshSet::Draw(unsigned int) | ?Draw@agiMeshSet@@QAEHI@Z
+    0x4F73E0 | public: void __thiscall agiMeshSet::DrawShadow(unsigned int,class Vector4 const &,class Vector3 const &) | ?DrawShadow@agiMeshSet@@QAEXIABVVector4@@ABVVector3@@@Z
+    0x4F7470 | public: int __thiscall agiMeshSet::DrawColor(unsigned int,unsigned int) | ?DrawColor@agiMeshSet@@QAEHII@Z
+    0x4F74E0 | public: int __thiscall agiMeshSet::DrawLit(void (__cdecl*)(unsigned char *,unsigned int *,unsigned int *,class agiMeshSet *),unsigned int,unsigned int *) | ?DrawLit@agiMeshSet@@QAEHP6AXPAEPAI1PAV1@@ZI1@Z
+    0x4F75A0 | public: void __thiscall agiMeshSet::DrawLitEnv(void (__cdecl*)(unsigned char *,unsigned int *,unsigned int *,class agiMeshSet *),class agiTexDef *,class Matrix34 &,unsigned int) | ?DrawLitEnv@agiMeshSet@@QAEXP6AXPAEPAI1PAV1@@ZPAVagiTexDef@@AAVMatrix34@@I@Z
+    0x4F76B0 | public: void __thiscall agiMeshSet::DrawLitSph(void (__cdecl*)(unsigned char *,unsigned int *,unsigned int *,class agiMeshSet *),class agiTexDef *,unsigned int) | ?DrawLitSph@agiMeshSet@@QAEXP6AXPAEPAI1PAV1@@ZPAVagiTexDef@@I@Z
+    0x4F7760 | public: int __thiscall agiMeshSet::Geometry(unsigned int,class Vector3 *,class Vector4 *) | ?Geometry@agiMeshSet@@QAEHIPAVVector3@@PAVVector4@@@Z
+    0x4F7D20 | public: int __thiscall agiMeshSet::ShadowGeometry(unsigned int,class Vector3 *,class Vector4 const &,class Vector3 const &) | ?ShadowGeometry@agiMeshSet@@QAEHIPAVVector3@@ABVVector4@@ABV2@@Z
+    0x4F8100 | public: void __thiscall agiMeshSet::FirstPass_SW_UV_CPV_DYNTEX(unsigned int *,class Vector2 *,unsigned int) | ?FirstPass_SW_UV_CPV_DYNTEX@agiMeshSet@@QAEXPAIPAVVector2@@I@Z
+    0x4F8700 | public: void __thiscall agiMeshSet::FirstPass_SW_UV_CPV_noDYNTEX(unsigned int *,class Vector2 *,unsigned int) | ?FirstPass_SW_UV_CPV_noDYNTEX@agiMeshSet@@QAEXPAIPAVVector2@@I@Z
+    0x4F8CE0 | public: void __thiscall agiMeshSet::FirstPass_SW_UV_noCPV_DYNTEX(unsigned int *,class Vector2 *,unsigned int) | ?FirstPass_SW_UV_noCPV_DYNTEX@agiMeshSet@@QAEXPAIPAVVector2@@I@Z
+    0x4F9100 | public: void __thiscall agiMeshSet::FirstPass_SW_UV_noCPV_noDYNTEX(unsigned int *,class Vector2 *,unsigned int) | ?FirstPass_SW_UV_noCPV_noDYNTEX@agiMeshSet@@QAEXPAIPAVVector2@@I@Z
+    0x4F9500 | public: void __thiscall agiMeshSet::FirstPass_SW_noUV_CPV_DYNTEX(unsigned int *,class Vector2 *,unsigned int) | ?FirstPass_SW_noUV_CPV_DYNTEX@agiMeshSet@@QAEXPAIPAVVector2@@I@Z
+    0x4F99B0 | public: void __thiscall agiMeshSet::FirstPass_SW_noUV_CPV_noDYNTEX(unsigned int *,class Vector2 *,unsigned int) | ?FirstPass_SW_noUV_CPV_noDYNTEX@agiMeshSet@@QAEXPAIPAVVector2@@I@Z
+    0x4F9E40 | public: void __thiscall agiMeshSet::FirstPass_SW_noUV_noCPV_DYNTEX(unsigned int *,class Vector2 *,unsigned int) | ?FirstPass_SW_noUV_noCPV_DYNTEX@agiMeshSet@@QAEXPAIPAVVector2@@I@Z
+    0x4FA110 | public: void __thiscall agiMeshSet::FirstPass_SW_noUV_noCPV_noDYNTEX(unsigned int *,class Vector2 *,unsigned int) | ?FirstPass_SW_noUV_noCPV_noDYNTEX@agiMeshSet@@QAEXPAIPAVVector2@@I@Z
+    0x4FA3C0 | public: void __thiscall agiMeshSet::FirstPass_HW_UV_CPV_DYNTEX(unsigned int *,class Vector2 *,unsigned int) | ?FirstPass_HW_UV_CPV_DYNTEX@agiMeshSet@@QAEXPAIPAVVector2@@I@Z
+    0x4FAB40 | public: void __thiscall agiMeshSet::FirstPass_HW_UV_CPV_noDYNTEX(unsigned int *,class Vector2 *,unsigned int) | ?FirstPass_HW_UV_CPV_noDYNTEX@agiMeshSet@@QAEXPAIPAVVector2@@I@Z
+    0x4FB2B0 | public: void __thiscall agiMeshSet::FirstPass_HW_UV_noCPV_DYNTEX(unsigned int *,class Vector2 *,unsigned int) | ?FirstPass_HW_UV_noCPV_DYNTEX@agiMeshSet@@QAEXPAIPAVVector2@@I@Z
+    0x4FB850 | public: void __thiscall agiMeshSet::FirstPass_HW_UV_noCPV_noDYNTEX(unsigned int *,class Vector2 *,unsigned int) | ?FirstPass_HW_UV_noCPV_noDYNTEX@agiMeshSet@@QAEXPAIPAVVector2@@I@Z
+    0x4FBDE0 | public: void __thiscall agiMeshSet::FirstPass_HW_noUV_CPV_DYNTEX(unsigned int *,class Vector2 *,unsigned int) | ?FirstPass_HW_noUV_CPV_DYNTEX@agiMeshSet@@QAEXPAIPAVVector2@@I@Z
+    0x4FC440 | public: void __thiscall agiMeshSet::FirstPass_HW_noUV_CPV_noDYNTEX(unsigned int *,class Vector2 *,unsigned int) | ?FirstPass_HW_noUV_CPV_noDYNTEX@agiMeshSet@@QAEXPAIPAVVector2@@I@Z
+    0x4FCA90 | public: void __thiscall agiMeshSet::FirstPass_HW_noUV_noCPV_DYNTEX(unsigned int *,class Vector2 *,unsigned int) | ?FirstPass_HW_noUV_noCPV_DYNTEX@agiMeshSet@@QAEXPAIPAVVector2@@I@Z
+    0x4FCF20 | public: void __thiscall agiMeshSet::FirstPass_HW_noUV_noCPV_noDYNTEX(unsigned int *,class Vector2 *,unsigned int) | ?FirstPass_HW_noUV_noCPV_noDYNTEX@agiMeshSet@@QAEXPAIPAVVector2@@I@Z
+    0x4FD390 | public: void __thiscall agiMeshSet::FirstPass(unsigned int *,class Vector2 *,unsigned int) | ?FirstPass@agiMeshSet@@QAEXPAIPAVVector2@@I@Z
+    0x4FD3E0 | public: void __thiscall agiMeshSet::MultiTexEnvMap(unsigned int *,unsigned int,class agiTexDef *,class Matrix34 &) | ?MultiTexEnvMap@agiMeshSet@@QAEXPAIIPAVagiTexDef@@AAVMatrix34@@@Z
+    0x4FDD50 | public: void __thiscall agiMeshSet::EnvMap(class Matrix34 &,class agiTexDef *,unsigned int) | ?EnvMap@agiMeshSet@@QAEXAAVMatrix34@@PAVagiTexDef@@I@Z
+    0x4FE3B0 | public: void __thiscall agiMeshSet::SphereMap(class agiTexDef *,unsigned int) | ?SphereMap@agiMeshSet@@QAEXPAVagiTexDef@@I@Z
+    0x4FED50 | public: void __thiscall agiMeshSet::DrawNormals(class Vector3 &) | ?DrawNormals@agiMeshSet@@QAEXAAVVector3@@@Z
+    0x4FED60 | public: void __thiscall agiMeshCardInfo::Init(int,struct agiMeshCardVertex *,int,int,int) | ?Init@agiMeshCardInfo@@QAEXHPAUagiMeshCardVertex@@HHH@Z
+    0x4FEF10 | public: static void __cdecl agiMeshSet::InitCards(struct agiMeshCardInfo &) | ?InitCards@agiMeshSet@@SAXAAUagiMeshCardInfo@@@Z
+    0x4FEF50 | public: static void __cdecl agiMeshSet::DrawCard(class Vector3 &,float,unsigned int,unsigned int,unsigned int) | ?DrawCard@agiMeshSet@@SAXAAVVector3@@MIII@Z
+    0x4FFA70 | public: static void __cdecl agiMeshSet::DrawLines(class Vector3 *,class Vector3 *,unsigned int *,int) | ?DrawLines@agiMeshSet@@SAXPAVVector3@@0PAIH@Z
+    0x4FFEC0 | public: static void __cdecl agiMeshSet::DrawWideLines(class Vector3 *,class Vector3 *,float *,unsigned int *,int) | ?DrawWideLines@agiMeshSet@@SAXPAVVector3@@0PAMPAIH@Z
+    0x500540 | public: void __thiscall agiPolySet::Triangle(int,int,int) | ?Triangle@agiPolySet@@QAEXHHH@Z
+    0x5B8054 | public: static float agiMeshSet::DepthScale | ?DepthScale@agiMeshSet@@2MA
+    0x5B8058 | public: static float agiMeshSet::DepthOffset | ?DepthOffset@agiMeshSet@@2MA
+    0x5B805C | float ShadowFudge | ?ShadowFudge@@3MA
+    0x5B8060 | unsigned int ShadowColor | ?ShadowColor@@3IA
+    0x5B8064 | unsigned int SphMapColor | ?SphMapColor@@3IA
+    0x5B80A8 | public: static struct agiMeshCardVertex * agiMeshSet::DefaultQuad | ?DefaultQuad@agiMeshSet@@2PAUagiMeshCardVertex@@A
+    0x5B80E8 | float MaxCardSize | ?MaxCardSize@@3MA
+    0x67BF10 | protected: static short * agiMeshSet::indexCounts | ?indexCounts@agiMeshSet@@1PAFA
+    0x67C114 | protected: static unsigned int agiMeshSet::MtxSerial | ?MtxSerial@agiMeshSet@@1IA
+    0x67C118 | public: static unsigned char * agiMeshSet::codes | ?codes@agiMeshSet@@2PAEA
+    0x680118 | public: static class Vector3 agiMeshSet::EyePos | ?EyePos@agiMeshSet@@2VVector3@@A
+    0x680128 | protected: static class Matrix34 agiMeshSet::M | ?M@agiMeshSet@@1VMatrix34@@A
+    0x680158 | protected: static float agiMeshSet::OffsX | ?OffsX@agiMeshSet@@1MA
+    0x683160 | protected: static float agiMeshSet::MaxY | ?MaxY@agiMeshSet@@1MA
+    0x683180 | public: static class Vector4 * agiMeshSet::HitEyePlanes | ?HitEyePlanes@agiMeshSet@@2PAVVector4@@A
+    0x6831A0 | public: static int agiMeshSet::EyePlaneCount | ?EyePlaneCount@agiMeshSet@@2HA
+    0x6831A4 | protected: static float agiMeshSet::MaxX | ?MaxX@agiMeshSet@@1MA
+    0x6831A8 | protected: static short * agiMeshSet::vertCounts | ?vertCounts@agiMeshSet@@1PAFA
+    0x6833A8 | protected: static float agiMeshSet::MinY | ?MinY@agiMeshSet@@1MA
+    0x6833AC | public: static int agiMeshSet::MirrorMode | ?MirrorMode@agiMeshSet@@2HA
+    0x6833F0 | protected: static unsigned char * agiMeshSet::fogout | ?fogout@agiMeshSet@@1PAEA
+    0x6873F0 | protected: static unsigned int agiMeshSet::ViewSerial | ?ViewSerial@agiMeshSet@@1IA
+    0x6873F4 | protected: static float agiMeshSet::ProjZW | ?ProjZW@agiMeshSet@@1MA
+    0x6873F8 | public: static int agiMeshSet::EyePlanesHit | ?EyePlanesHit@agiMeshSet@@2HA
+    0x687404 | protected: static float agiMeshSet::HalfWidth | ?HalfWidth@agiMeshSet@@1MA
+    0x687408 | protected: static short * agiMeshSet::nextFacet | ?nextFacet@agiMeshSet@@1PAFA
+    0x68F408 | protected: static float agiMeshSet::ProjZZ | ?ProjZZ@agiMeshSet@@1MA
+    0x68F410 | protected: static class Vector3 agiMeshSet::LocPos | ?LocPos@agiMeshSet@@1VVector3@@A
+    0x68F41C | public: static int agiMeshSet::FlipX | ?FlipX@agiMeshSet@@2HA
+    0x68F420 | public: static float agiMeshSet::FogValue | ?FogValue@agiMeshSet@@2MA
+    0x68F428 | protected: static short * agiMeshSet::firstFacet | ?firstFacet@agiMeshSet@@1PAFA
+    0x69F658 | protected: static float agiMeshSet::MinX | ?MinX@agiMeshSet@@1MA
+    0x69F660 | public: static class Vector4 * agiMeshSet::EyePlanes | ?EyePlanes@agiMeshSet@@2PAVVector4@@A
+    0x69F680 | protected: static float agiMeshSet::OffsY | ?OffsY@agiMeshSet@@1MA
+    0x69F684 | protected: static int agiMeshSet::AllowEyeBackfacing | ?AllowEyeBackfacing@agiMeshSet@@1HA
+    0x69F688 | protected: static float agiMeshSet::HalfHeight | ?HalfHeight@agiMeshSet@@1MA
+    0x69F68C | float MinCardSize | ?MinCardSize@@3MA
+    0x4F6650 | int __cdecl FullClip(struct CV *,struct CV *,int) | ?FullClip@@YAHPAUCV@@0H@Z
+    0x4F6700 | int __cdecl ClipNX(struct CV *,struct CV *,int) | ?ClipNX@@YAHPAUCV@@0H@Z
+    0x4F6820 | void __fastcall ClipNX(struct CV &,struct CV &) | ?ClipNX@@YIXAAUCV@@0@Z
+    0x4F6910 | int __cdecl ClipPX(struct CV *,struct CV *,int) | ?ClipPX@@YAHPAUCV@@0H@Z
+    0x4F6A30 | void __fastcall ClipPX(struct CV &,struct CV &) | ?ClipPX@@YIXAAUCV@@0@Z
+    0x4F6B20 | int __cdecl ClipNY(struct CV *,struct CV *,int) | ?ClipNY@@YAHPAUCV@@0H@Z
+    0x4F6C40 | void __fastcall ClipNY(struct CV &,struct CV &) | ?ClipNY@@YIXAAUCV@@0@Z
+    0x4F6D30 | int __cdecl ClipPY(struct CV *,struct CV *,int) | ?ClipPY@@YAHPAUCV@@0H@Z
+    0x4F6E50 | void __fastcall ClipPY(struct CV &,struct CV &) | ?ClipPY@@YIXAAUCV@@0@Z
+    0x4F6F30 | int __cdecl ClipNZ(struct CV *,struct CV *,int) | ?ClipNZ@@YAHPAUCV@@0H@Z
+    0x4F7050 | void __fastcall ClipNZ(struct CV &,struct CV &) | ?ClipNZ@@YIXAAUCV@@0@Z
+    0x4F7140 | int __cdecl ClipPZ(struct CV *,struct CV *,int) | ?ClipPZ@@YAHPAUCV@@0H@Z
+    0x4F7260 | void __fastcall ClipPZ(struct CV &,struct CV &) | ?ClipPZ@@YIXAAUCV@@0@Z
+    0x4F7340 | int __cdecl ZClipOnly(struct CV *,struct CV *,int) | ?ZClipOnly@@YAHPAUCV@@0H@Z
+*/
 
 #include "hooking.h"
 

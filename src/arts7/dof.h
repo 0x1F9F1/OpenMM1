@@ -18,7 +18,24 @@
 
 #pragma once
 
-// arts7:dof
+/*
+    arts7:dof
+
+    0x514980 | public: __thiscall asDofCS::asDofCS(void) | ??0asDofCS@@QAE@XZ
+    0x514A70 | public: void __thiscall asDofCS::operator=(class asDofCS const &) | ??4asDofCS@@QAEXABV0@@Z
+    0x514BB0 | public: virtual void __thiscall asDofCS::Reset(void) | ?Reset@asDofCS@@UAEXXZ
+    0x514BE0 | public: void __thiscall asDofCS::SetTime(float,float,int) | ?SetTime@asDofCS@@QAEXMMH@Z
+    0x514C50 | public: virtual void __thiscall asDofCS::Update(void) | ?Update@asDofCS@@UAEXXZ
+    0x515250 | public: void __thiscall asDofCS::FileIO(class MiniParser *) | ?FileIO@asDofCS@@QAEXPAVMiniParser@@@Z
+    0x515260 | public: void __thiscall asDofCS::AddWidgets(class Bank *) | ?AddWidgets@asDofCS@@QAEXPAVBank@@@Z
+    0x515270 | public: static void __cdecl asDofCS::DeclareFields(void) | ?DeclareFields@asDofCS@@SAXXZ
+    0x5153E0 | public: virtual class MetaClass * __thiscall asDofCS::GetClass(void) | ?GetClass@asDofCS@@UAEPAVMetaClass@@XZ
+    0x5153F0 | public: void __thiscall Vector3::Add(class Vector3 const &,class Vector3 const &) | ?Add@Vector3@@QAEXABV1@0@Z
+    0x595558 | const asDofCS::`vftable' | ??_7asDofCS@@6B@
+    0x6F2C40 | class MetaClass asDofCSMetaClass | ?asDofCSMetaClass@@3VMetaClass@@A
+    0x5152C0 | void * __cdecl new_asDofCS(int) | ?new_asDofCS@@YAPAXH@Z
+    0x515390 | void __cdecl delete_asDofCS(void *,int) | ?delete_asDofCS@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

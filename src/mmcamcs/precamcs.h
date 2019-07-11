@@ -18,7 +18,22 @@
 
 #pragma once
 
-// mmcamcs:precamcs
+/*
+    mmcamcs:precamcs
+
+    0x4EBFC0 | public: __thiscall PreCamCS::PreCamCS(void) | ??0PreCamCS@@QAE@XZ
+    0x4EC010 | public: void __thiscall PreCamCS::Init(class mmCar *) | ?Init@PreCamCS@@QAEXPAVmmCar@@@Z
+    0x4EC040 | public: virtual void __thiscall PreCamCS::Reset(void) | ?Reset@PreCamCS@@UAEXXZ
+    0x4EC050 | public: virtual void __thiscall PreCamCS::MakeActive(void) | ?MakeActive@PreCamCS@@UAEXXZ
+    0x4EC0A0 | public: virtual void __thiscall PreCamCS::Update(void) | ?Update@PreCamCS@@UAEXXZ
+    0x4EC100 | public: static void __cdecl PreCamCS::DeclareFields(void) | ?DeclareFields@PreCamCS@@SAXXZ
+    0x4EC270 | public: virtual class MetaClass * __thiscall PreCamCS::GetClass(void) | ?GetClass@PreCamCS@@UAEPAVMetaClass@@XZ
+    0x4EC2B0 | public: virtual void * __thiscall PreCamCS::`vector deleting destructor'(unsigned int) | ??_EPreCamCS@@UAEPAXI@Z
+    0x594C60 | const PreCamCS::`vftable' | ??_7PreCamCS@@6B@
+    0x67B6C8 | class MetaClass PreCamCSMetaClass | ?PreCamCSMetaClass@@3VMetaClass@@A
+    0x4EC150 | void * __cdecl new_PreCamCS(int) | ?new_PreCamCS@@YAPAXH@Z
+    0x4EC220 | void __cdecl delete_PreCamCS(void *,int) | ?delete_PreCamCS@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

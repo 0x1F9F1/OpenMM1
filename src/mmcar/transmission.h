@@ -18,7 +18,31 @@
 
 #pragma once
 
-// mmcar:transmission
+/*
+    mmcar:transmission
+
+    0x4683A0 | public: __thiscall mmTransmission::mmTransmission(void) | ??0mmTransmission@@QAE@XZ
+    0x468470 | public: void __thiscall mmTransmission::Init(class mmCarSim *) | ?Init@mmTransmission@@QAEXPAVmmCarSim@@@Z
+    0x4684B0 | public: virtual void __thiscall mmTransmission::Reset(void) | ?Reset@mmTransmission@@UAEXXZ
+    0x4684E0 | public: int __thiscall mmTransmission::Upshift(void) | ?Upshift@mmTransmission@@QAEHXZ
+    0x468510 | public: int __thiscall mmTransmission::Downshift(void) | ?Downshift@mmTransmission@@QAEHXZ
+    0x468530 | public: virtual void __thiscall mmTransmission::Update(void) | ?Update@mmTransmission@@UAEXXZ
+    0x468630 | public: void __thiscall mmTransmission::CopyTrans(void) | ?CopyTrans@mmTransmission@@QAEXXZ
+    0x468660 | public: void __thiscall mmTransmission::Automatic(int) | ?Automatic@mmTransmission@@QAEXH@Z
+    0x468680 | public: void __thiscall mmTransmission::SetReverse(void) | ?SetReverse@mmTransmission@@QAEXXZ
+    0x468690 | public: void __thiscall mmTransmission::SetDrive(void) | ?SetDrive@mmTransmission@@QAEXXZ
+    0x4686B0 | public: int __thiscall mmTransmission::GetCurrentGear(void) | ?GetCurrentGear@mmTransmission@@QAEHXZ
+    0x4686C0 | public: int __thiscall mmTransmission::SetCurrentGear(int) | ?SetCurrentGear@mmTransmission@@QAEHH@Z
+    0x468700 | public: static void __cdecl mmTransmission::DeclareFields(void) | ?DeclareFields@mmTransmission@@SAXXZ
+    0x468950 | public: virtual class MetaClass * __thiscall mmTransmission::GetClass(void) | ?GetClass@mmTransmission@@UAEPAVMetaClass@@XZ
+    0x468990 | struct MetaType * __cdecl ArrayOf(struct MetaType *,int) | ?ArrayOf@@YAPAUMetaType@@PAU1@H@Z
+    0x4689C0 | public: virtual void * __thiscall mmTransmission::`vector deleting destructor'(unsigned int) | ??_EmmTransmission@@UAEPAXI@Z
+    0x590F88 | const mmTransmission::`vftable' | ??_7mmTransmission@@6B@
+    0x590FB8 | const ArrayOfType::`vftable' | ??_7ArrayOfType@@6B@
+    0x60A058 | class MetaClass mmTransmissionMetaClass | ?mmTransmissionMetaClass@@3VMetaClass@@A
+    0x468830 | void * __cdecl new_mmTransmission(int) | ?new_mmTransmission@@YAPAXH@Z
+    0x468900 | void __cdecl delete_mmTransmission(void *,int) | ?delete_mmTransmission@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

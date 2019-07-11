@@ -18,7 +18,112 @@
 
 #pragma once
 
-// mmaudio:manager
+/*
+    mmaudio:manager
+
+    0x4DAD80 | public: __thiscall AudManager::AudManager(void) | ??0AudManager@@QAE@XZ
+    0x4DAEC0 | public: virtual __thiscall AudManager::~AudManager(void) | ??1AudManager@@UAE@XZ
+    0x4DB000 | public: void __thiscall AudManager::DeallocateADFRecord(int) | ?DeallocateADFRecord@AudManager@@QAEXH@Z
+    0x4DB030 | public: void __thiscall AudManager::SetNumChannels(int) | ?SetNumChannels@AudManager@@QAEXH@Z
+    0x4DB0F0 | public: int __thiscall AudManager::CheckPriority(int,int,int) | ?CheckPriority@AudManager@@QAEHHHH@Z
+    0x4DB390 | public: void __thiscall AudManager::RemoveSoundFromPlayList(class AudSound *) | ?RemoveSoundFromPlayList@AudManager@@QAEXPAVAudSound@@@Z
+    0x4DB3D0 | public: void __thiscall AudManager::RemoveSoundFromPlayList(int) | ?RemoveSoundFromPlayList@AudManager@@QAEXH@Z
+    0x4DB420 | public: virtual void __thiscall AudManager::Update(void) | ?Update@AudManager@@UAEXXZ
+    0x4DB450 | public: void __thiscall AudManager::Init(int,unsigned int,char *,short,short) | ?Init@AudManager@@QAEXHIPADFF@Z
+    0x4DB580 | public: void __thiscall AudManager::LoadUIADF(void) | ?LoadUIADF@AudManager@@QAEXXZ
+    0x4DB5E0 | public: void __thiscall AudManager::LoadCityADF(int,unsigned long) | ?LoadCityADF@AudManager@@QAEXHK@Z
+    0x4DB690 | public: void __thiscall AudManager::InitCityADF(int,unsigned long) | ?InitCityADF@AudManager@@QAEXHK@Z
+    0x4DB740 | public: void __thiscall AudManager::InitUIADF(int,unsigned long) | ?InitUIADF@AudManager@@QAEXHK@Z
+    0x4DB7D0 | public: void __thiscall AudManager::DeallocateUIADF(void) | ?DeallocateUIADF@AudManager@@QAEXXZ
+    0x4DB7E0 | public: void __thiscall AudManager::DeallocateCityADF(void) | ?DeallocateCityADF@AudManager@@QAEXXZ
+    0x4DB7F0 | public: void __thiscall AudManager::DeallocateDSound(short,short) | ?DeallocateDSound@AudManager@@QAEXFF@Z
+    0x4DB970 | public: void __thiscall AudManager::ReallocateDSound(char *,short,short) | ?ReallocateDSound@AudManager@@QAEXPADFF@Z
+    0x4DBB00 | public: void __thiscall AudManager::SetStereo(int) | ?SetStereo@AudManager@@QAEXH@Z
+    0x4DBB30 | public: void __thiscall AudManager::AttenuateAudSounds(float) | ?AttenuateAudSounds@AudManager@@QAEXM@Z
+    0x4DBBA0 | public: int __thiscall AudManager::AddSound(class AudSound *) | ?AddSound@AudManager@@QAEHPAVAudSound@@@Z
+    0x4DBC00 | public: int __thiscall AudManager::AddStream(class AudStream *) | ?AddStream@AudManager@@QAEHPAVAudStream@@@Z
+    0x4DBC50 | public: void __thiscall AudManager::RemoveSound(class AudSound *,int) | ?RemoveSound@AudManager@@QAEXPAVAudSound@@H@Z
+    0x4DBCC0 | public: void __thiscall AudManager::RemoveStream(class AudStream *,int) | ?RemoveStream@AudManager@@QAEXPAVAudStream@@H@Z
+    0x4DBD30 | public: virtual void __thiscall AudManager::Reset(void) | ?Reset@AudManager@@UAEXXZ
+    0x4DBD40 | public: void __thiscall AudManager::Enable(char *,short,short) | ?Enable@AudManager@@QAEXPADFF@Z
+    0x4DBDF0 | public: void __thiscall AudManager::Disable(short,short) | ?Disable@AudManager@@QAEXFF@Z
+    0x4DBEE0 | public: void __thiscall AudManager::StopAllSounds(void) | ?StopAllSounds@AudManager@@QAEXXZ
+    0x4DBF80 | public: void __thiscall AudManager::ZeroVolAllSounds(void) | ?ZeroVolAllSounds@AudManager@@QAEXXZ
+    0x4DBF90 | public: int __thiscall AudManager::PlayCDTrack(int,int) | ?PlayCDTrack@AudManager@@QAEHHH@Z
+    0x4DBFC0 | public: int __thiscall AudManager::PlayCDTrack(int,unsigned char,unsigned char,unsigned char,int) | ?PlayCDTrack@AudManager@@QAEHHEEEH@Z
+    0x4DC000 | public: int __thiscall AudManager::ResumeCDPlay(void) | ?ResumeCDPlay@AudManager@@QAEHXZ
+    0x4DC020 | public: short __thiscall AudManager::GetNumCDTracks(void) | ?GetNumCDTracks@AudManager@@QAEFXZ
+    0x4DC040 | public: unsigned char __thiscall AudManager::GetCDTrackNum(void) | ?GetCDTrackNum@AudManager@@QAEEXZ
+    0x4DC060 | public: short __thiscall AudManager::CDIsPlaying(void) | ?CDIsPlaying@AudManager@@QAEFXZ
+    0x4DC080 | public: void __thiscall AudManager::DisableCD(void) | ?DisableCD@AudManager@@QAEXXZ
+    0x4DC0A0 | public: void __thiscall AudManager::StopCD(void) | ?StopCD@AudManager@@QAEXXZ
+    0x4DC0C0 | public: int __thiscall AudManager::EnableCD(void) | ?EnableCD@AudManager@@QAEHXZ
+    0x4DC0F0 | public: void __thiscall AudManager::AssignWaveVolume(float) | ?AssignWaveVolume@AudManager@@QAEXM@Z
+    0x4DC110 | public: float __thiscall AudManager::GetWaveVolume(void) | ?GetWaveVolume@AudManager@@QAEMXZ
+    0x4DC130 | public: void __thiscall AudManager::AssignCDVolume(float) | ?AssignCDVolume@AudManager@@QAEXM@Z
+    0x4DC170 | public: void __thiscall AudManager::SetCDPlayMode(unsigned char) | ?SetCDPlayMode@AudManager@@QAEXE@Z
+    0x4DC1A0 | public: int __thiscall AudManager::CDIsEnabled(void) | ?CDIsEnabled@AudManager@@QAEHXZ
+    0x4DC1C0 | public: float __thiscall AudManager::GetCDVolume(void) | ?GetCDVolume@AudManager@@QAEMXZ
+    0x4DC1F0 | public: void __thiscall AudManager::AttenuateCDVolume(float) | ?AttenuateCDVolume@AudManager@@QAEXM@Z
+    0x4DC230 | public: void __thiscall AudManager::AssignWaveBalance(float) | ?AssignWaveBalance@AudManager@@QAEXM@Z
+    0x4DC250 | public: float __thiscall AudManager::GetWaveBalance(void) | ?GetWaveBalance@AudManager@@QAEMXZ
+    0x4DC270 | public: void __thiscall AudManager::AssignCDBalance(float) | ?AssignCDBalance@AudManager@@QAEXM@Z
+    0x4DC290 | public: float __thiscall AudManager::GetCDBalance(void) | ?GetCDBalance@AudManager@@QAEMXZ
+    0x4DC2C0 | public: int __thiscall AudManager::IsStereo(void) | ?IsStereo@AudManager@@QAEHXZ
+    0x4DC2D0 | public: void __thiscall AudManager::AddWidgets(class Bank *) | ?AddWidgets@AudManager@@QAEXPAVBank@@@Z
+    0x4DC2E0 | public: short __thiscall AudManager::Supports16Bit(void) | ?Supports16Bit@AudManager@@QAEFXZ
+    0x4DC2F0 | public: unsigned char __thiscall AudManager::CheckCDFile(char *) | ?CheckCDFile@AudManager@@QAEEPAD@Z
+    0x4DC310 | private: void __thiscall AudManager::Update3DCDMusic(void) | ?Update3DCDMusic@AudManager@@AAEXXZ
+    0x4DC470 | public: static unsigned int const __cdecl AudManager::GetUsingEAXMask(void) | ?GetUsingEAXMask@AudManager@@SA?BIXZ
+    0x4DC480 | public: unsigned int __thiscall AudManager::IsAlwaysEAX(void) | ?IsAlwaysEAX@AudManager@@QAEIXZ
+    0x4DC490 | public: void __thiscall AudManager::AlwaysEAX(unsigned int) | ?AlwaysEAX@AudManager@@QAEXI@Z
+    0x4DC4C0 | public: unsigned int __thiscall AudManager::EAXEnabled(void) | ?EAXEnabled@AudManager@@QAEIXZ
+    0x4DC4D0 | public: unsigned int __thiscall AudManager::DSound3DEnabled(void) | ?DSound3DEnabled@AudManager@@QAEIXZ
+    0x4DC4E0 | private: unsigned int __thiscall AudManager::CreateListenerSoundObj(void) | ?CreateListenerSoundObj@AudManager@@AAEIXZ
+    0x4DC620 | private: class CReverb * __thiscall AudManager::GetListenerEAXObj(void) | ?GetListenerEAXObj@AudManager@@AAEPAVCReverb@@XZ
+    0x4DC630 | public: int __thiscall AudManager::SetEAXPreset(unsigned long,float,float,float) | ?SetEAXPreset@AudManager@@QAEHKMMM@Z
+    0x4DC6B0 | public: int __thiscall AudManager::SetEAXPreset(struct EAX_REVERBPROPERTIES *) | ?SetEAXPreset@AudManager@@QAEHPAUEAX_REVERBPROPERTIES@@@Z
+    0x4DC720 | public: void __thiscall AudManager::GetEAXAll(struct EAX_REVERBPROPERTIES *) | ?GetEAXAll@AudManager@@QAEXPAUEAX_REVERBPROPERTIES@@@Z
+    0x4DC770 | public: int __thiscall AudManager::SetEAXEnvironmet(unsigned long) | ?SetEAXEnvironmet@AudManager@@QAEHK@Z
+    0x4DC7E0 | public: unsigned long __thiscall AudManager::GetEAXEnvironmet(void) | ?GetEAXEnvironmet@AudManager@@QAEKXZ
+    0x4DC830 | public: int __thiscall AudManager::SetEAXReverbVolume(float) | ?SetEAXReverbVolume@AudManager@@QAEHM@Z
+    0x4DC8A0 | public: float __thiscall AudManager::GetEAXReverbVolume(void) | ?GetEAXReverbVolume@AudManager@@QAEMXZ
+    0x4DC8F0 | public: int __thiscall AudManager::SetEAXDecayTime(float) | ?SetEAXDecayTime@AudManager@@QAEHM@Z
+    0x4DC960 | public: float __thiscall AudManager::GetEAXDecayTime(void) | ?GetEAXDecayTime@AudManager@@QAEMXZ
+    0x4DC9B0 | public: int __thiscall AudManager::SetEAXDamping(float) | ?SetEAXDamping@AudManager@@QAEHM@Z
+    0x4DCA20 | public: float __thiscall AudManager::GetEAXDamping(void) | ?GetEAXDamping@AudManager@@QAEMXZ
+    0x4DCA70 | public: virtual void __thiscall AudManager::UpdatePaused(void) | ?UpdatePaused@AudManager@@UAEXXZ
+    0x4DCA90 | public: void __thiscall AudManager::SetBitDepthAndSampleRate(int,unsigned long) | ?SetBitDepthAndSampleRate@AudManager@@QAEXHK@Z
+    0x4DCB20 | public: char * * __thiscall AudManager::GetDeviceNames(void) | ?GetDeviceNames@AudManager@@QAEPAPADXZ
+    0x4DCB40 | public: int __thiscall AudManager::GetNumDevices(void) | ?GetNumDevices@AudManager@@QAEHXZ
+    0x4DCB60 | public: char * __thiscall AudManager::GetActiveDeviceName(void) | ?GetActiveDeviceName@AudManager@@QAEPADXZ
+    0x4DCB80 | public: unsigned long __thiscall AudManager::GetNum3DHalBufs(void) | ?GetNum3DHalBufs@AudManager@@QAEKXZ
+    0x4DCB90 | public: static unsigned int const __cdecl AudManager::GetStereoOnMask(void) | ?GetStereoOnMask@AudManager@@SA?BIXZ
+    0x4DCBA0 | public: static unsigned int const __cdecl AudManager::GetHiResMask(void) | ?GetHiResMask@AudManager@@SA?BIXZ
+    0x4DCBB0 | public: static unsigned int const __cdecl AudManager::GetHiSampleSizeMask(void) | ?GetHiSampleSizeMask@AudManager@@SA?BIXZ
+    0x4DCBC0 | public: static unsigned int const __cdecl AudManager::GetEchoOnMask(void) | ?GetEchoOnMask@AudManager@@SA?BIXZ
+    0x4DCBD0 | public: static unsigned int const __cdecl AudManager::GetDSound3DMask(void) | ?GetDSound3DMask@AudManager@@SA?BIXZ
+    0x4DCBE0 | public: static unsigned int const __cdecl AudManager::GetSoundFXOnMask(void) | ?GetSoundFXOnMask@AudManager@@SA?BIXZ
+    0x4DCBF0 | public: static unsigned int const __cdecl AudManager::GetCDMusicOnMask(void) | ?GetCDMusicOnMask@AudManager@@SA?BIXZ
+    0x4DCC00 | public: static unsigned int const __cdecl AudManager::GetCommentaryOnMask(void) | ?GetCommentaryOnMask@AudManager@@SA?BIXZ
+    0x4DCC10 | public: void __thiscall AudManager::SetDeviceName(char *) | ?SetDeviceName@AudManager@@QAEXPAD@Z
+    0x4DCC50 | public: unsigned long __thiscall AudManager::GetCDPosition(unsigned char *,unsigned char *,unsigned char *,unsigned char *) | ?GetCDPosition@AudManager@@QAEKPAE000@Z
+    0x4DCC90 | public: class MixerCTL * __thiscall AudManager::GetMixerPtr(void) | ?GetMixerPtr@AudManager@@QAEPAVMixerCTL@@XZ
+    0x4DCCA0 | public: class mmVoiceCommentary * __thiscall AudManager::GetVoiceCommentaryPtr(void) | ?GetVoiceCommentaryPtr@AudManager@@QAEPAVmmVoiceCommentary@@XZ
+    0x4DCCB0 | public: void __thiscall AudManager::SetVoiceCommentaryPtr(class mmVoiceCommentary *) | ?SetVoiceCommentaryPtr@AudManager@@QAEXPAVmmVoiceCommentary@@@Z
+    0x4DCCC0 | public: void __thiscall AudManager::SetHwnd(struct HWND__ *) | ?SetHwnd@AudManager@@QAEXPAUHWND__@@@Z
+    0x4DCCE0 | void __cdecl DeactivateApplication(void) | ?DeactivateApplication@@YAXXZ
+    0x4DCD40 | void __cdecl RestoreApplication(void) | ?RestoreApplication@@YAXXZ
+    0x4DCD80 | public: static void __cdecl AudManager::DeclareFields(void) | ?DeclareFields@AudManager@@SAXXZ
+    0x4DCEF0 | public: virtual class MetaClass * __thiscall AudManager::GetClass(void) | ?GetClass@AudManager@@UAEPAVMetaClass@@XZ
+    0x4DCF00 | public: virtual void * __thiscall AudManager::`vector deleting destructor'(unsigned int) | ??_EAudManager@@UAEPAXI@Z
+    0x594840 | const AudManager::`vftable' | ??_7AudManager@@6B@
+    0x67B5C8 | class MetaClass AudManagerMetaClass | ?AudManagerMetaClass@@3VMetaClass@@A
+    0x67B5F0 | class AudManager * AUDMGRPTR | ?AUDMGRPTR@@3PAVAudManager@@A
+    0x4DCD30 | void __cdecl Debugf(char const *,...) | ?Debugf@@YAXPBDZZ
+    0x4DCDD0 | void * __cdecl new_AudManager(int) | ?new_AudManager@@YAPAXH@Z
+    0x4DCEA0 | void __cdecl delete_AudManager(void *,int) | ?delete_AudManager@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

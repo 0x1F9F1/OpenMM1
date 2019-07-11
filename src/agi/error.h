@@ -18,7 +18,13 @@
 
 #pragma once
 
-// agi:error
+/*
+    agi:error
+
+    0x53DD40 | char * __cdecl agiGetError(int) | ?agiGetError@@YAPADH@Z
+    0x53DDA0 | void __cdecl agiDisplayf(char const *,...) | ?agiDisplayf@@YAXPBDZZ
+    0x70E718 | int agiVerbose | ?agiVerbose@@3HA
+*/
 
 #include "hooking.h"
 

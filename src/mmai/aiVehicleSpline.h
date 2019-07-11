@@ -18,7 +18,47 @@
 
 #pragma once
 
-// mmai:aiVehicleSpline
+/*
+    mmai:aiVehicleSpline
+
+    0x452BA0 | public: __thiscall aiVehicleSpline::aiVehicleSpline(void) | ??0aiVehicleSpline@@QAE@XZ
+    0x452C10 | public: __thiscall aiVehicleSpline::~aiVehicleSpline(void) | ??1aiVehicleSpline@@QAE@XZ
+    0x452C80 | public: void __thiscall aiVehicleSpline::Init(char *,int) | ?Init@aiVehicleSpline@@QAEXPADH@Z
+    0x452F70 | public: virtual void __thiscall aiVehicleSpline::Reset(void) | ?Reset@aiVehicleSpline@@UAEXXZ
+    0x452FB0 | public: virtual void __thiscall aiVehicleSpline::Update(void) | ?Update@aiVehicleSpline@@UAEXXZ
+    0x453000 | public: void __thiscall aiVehicleSpline::ResetReactTicks(void) | ?ResetReactTicks@aiVehicleSpline@@QAEXXZ
+    0x453060 | public: void __thiscall aiVehicleSpline::SolvePositionAndOrientation(void) | ?SolvePositionAndOrientation@aiVehicleSpline@@QAEXXZ
+    0x453770 | public: void __thiscall aiVehicleSpline::SolveYPositionAndOrientation(void) | ?SolveYPositionAndOrientation@aiVehicleSpline@@QAEXXZ
+    0x453D00 | public: int __thiscall aiVehicleSpline::DetectPlayerForwardCollision(void) | ?DetectPlayerForwardCollision@aiVehicleSpline@@QAEHXZ
+    0x453DF0 | public: int __thiscall aiVehicleSpline::DetectPlayerTargetPtCollision(void) | ?DetectPlayerTargetPtCollision@aiVehicleSpline@@QAEHXZ
+    0x453F30 | public: int __thiscall aiVehicleSpline::DetectPlayerCollision(int,float) | ?DetectPlayerCollision@aiVehicleSpline@@QAEHHM@Z
+    0x454530 | public: int __thiscall aiVehicleSpline::DetectPlayerZoneCollision(void) | ?DetectPlayerZoneCollision@aiVehicleSpline@@QAEHXZ
+    0x454720 | public: int __thiscall aiVehicleSpline::IsThePlayerInFrontOfMe(void) | ?IsThePlayerInFrontOfMe@aiVehicleSpline@@QAEHXZ
+    0x454820 | public: int __thiscall aiVehicleSpline::IsAmbientBlockingPlayer(void) | ?IsAmbientBlockingPlayer@aiVehicleSpline@@QAEHXZ
+    0x454910 | public: void __thiscall aiVehicleSpline::AvoidPlayerCollision(void) | ?AvoidPlayerCollision@aiVehicleSpline@@QAEXXZ
+    0x454990 | public: int __thiscall aiVehicleSpline::WaitTime(void) | ?WaitTime@aiVehicleSpline@@QAEHXZ
+    0x4549B0 | public: float __thiscall aiVehicleSpline::TotLength(void) | ?TotLength@aiVehicleSpline@@QAEMXZ
+    0x4549C0 | public: virtual void __thiscall aiVehicleSpline::Impact(int) | ?Impact@aiVehicleSpline@@UAEXH@Z
+    0x4549D0 | public: float __thiscall aiVehicleSpline::DistanceToVehicle(class aiVehicleSpline *) | ?DistanceToVehicle@aiVehicleSpline@@QAEMPAV1@@Z
+    0x454CB0 | public: float __thiscall aiVehicleSpline::DistanceToIntersection(void) | ?DistanceToIntersection@aiVehicleSpline@@QAEMXZ
+    0x454D50 | public: void __thiscall aiVehicleSpline::Dump(void) | ?Dump@aiVehicleSpline@@QAEXXZ
+    0x454EB0 | public: void __thiscall aiVehicleSpline::AddWidgets(class Bank *) | ?AddWidgets@aiVehicleSpline@@QAEXPAVBank@@@Z
+    0x454EC0 | public: virtual void __thiscall aiVehicleSpline::DrawId(void) | ?DrawId@aiVehicleSpline@@UAEXXZ
+    0x454ED0 | public: static void __cdecl aiVehicleSpline::DeclareFields(void) | ?DeclareFields@aiVehicleSpline@@SAXXZ
+    0x455060 | public: virtual class MetaClass * __thiscall aiVehicleSpline::GetClass(void) | ?GetClass@aiVehicleSpline@@UAEPAVMetaClass@@XZ
+    0x4550A0 | public: class Vector3 __thiscall Vector3::operator%(class Vector3 const &) const | ??LVector3@@QBE?AV0@ABV0@@Z
+    0x4550F0 | public: void __thiscall Vector3::Scale(class Vector3 const &,float) | ?Scale@Vector3@@QAEXABV1@M@Z
+    0x455120 | public: void * __thiscall aiVehicleSpline::`vector deleting destructor'(unsigned int) | ??_EaiVehicleSpline@@QAEPAXI@Z
+    0x455180 | public: virtual int __thiscall aiVehicleSpline::Type(void) | ?Type@aiVehicleSpline@@UAEHXZ
+    0x455190 | public: virtual void * __thiscall aiVehicleInstance::`vector deleting destructor'(unsigned int) | ??_EaiVehicleInstance@@UAEPAXI@Z
+    0x455190 | public: virtual void * __thiscall aiVehicleInstance::`scalar deleting destructor'(unsigned int) | ??_GaiVehicleInstance@@UAEPAXI@Z
+    0x4551B0 | public: virtual __thiscall aiVehicleInstance::~aiVehicleInstance(void) | ??1aiVehicleInstance@@UAE@XZ
+    0x590A80 | const aiVehicleSpline::`vftable' | ??_7aiVehicleSpline@@6B@
+    0x590AA8 | const aiVehicleInstance::`vftable' | ??_7aiVehicleInstance@@6B@
+    0x609F40 | class MetaClass aiVehicleSplineMetaClass | ?aiVehicleSplineMetaClass@@3VMetaClass@@A
+    0x454F20 | void * __cdecl new_aiVehicleSpline(int) | ?new_aiVehicleSpline@@YAPAXH@Z
+    0x454FF0 | void __cdecl delete_aiVehicleSpline(void *,int) | ?delete_aiVehicleSpline@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

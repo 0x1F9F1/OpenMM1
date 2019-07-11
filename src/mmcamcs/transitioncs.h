@@ -18,7 +18,24 @@
 
 #pragma once
 
-// mmcamcs:transitioncs
+/*
+    mmcamcs:transitioncs
+
+    0x4ED9D0 | public: __thiscall TransitionCS::TransitionCS(void) | ??0TransitionCS@@QAE@XZ
+    0x4EDA60 | public: virtual __thiscall TransitionCS::~TransitionCS(void) | ??1TransitionCS@@UAE@XZ
+    0x4EDA70 | public: void __thiscall TransitionCS::Init(class mmCar *) | ?Init@TransitionCS@@QAEXPAVmmCar@@@Z
+    0x4EDA90 | public: virtual void __thiscall TransitionCS::Reset(void) | ?Reset@TransitionCS@@UAEXXZ
+    0x4EDAA0 | public: virtual void __thiscall TransitionCS::Update(void) | ?Update@TransitionCS@@UAEXXZ
+    0x4EE120 | public: virtual void __thiscall TransitionCS::ForceMatrixDelta(class Vector3 const &) | ?ForceMatrixDelta@TransitionCS@@UAEXABVVector3@@@Z
+    0x4EE150 | public: void __thiscall TransitionCS::NewTransition(class CarCamCS *,class CarCamCS *) | ?NewTransition@TransitionCS@@QAEXPAVCarCamCS@@0@Z
+    0x4EE180 | public: void __thiscall TransitionCS::NextTransition(class CarCamCS *) | ?NextTransition@TransitionCS@@QAEXPAVCarCamCS@@@Z
+    0x4EE1C0 | public: void __thiscall TransitionCS::StartTransition(void) | ?StartTransition@TransitionCS@@QAEXXZ
+    0x4EE230 | public: void __thiscall TransitionCS::StartNextTransition(void) | ?StartNextTransition@TransitionCS@@QAEXXZ
+    0x4EE270 | public: void __thiscall TransitionCS::ReverseTransition(void) | ?ReverseTransition@TransitionCS@@QAEXXZ
+    0x4EE2F0 | public: virtual void * __thiscall TransitionCS::`vector deleting destructor'(unsigned int) | ??_ETransitionCS@@UAEPAXI@Z
+    0x4EE2F0 | public: virtual void * __thiscall TransitionCS::`scalar deleting destructor'(unsigned int) | ??_GTransitionCS@@UAEPAXI@Z
+    0x594E68 | const TransitionCS::`vftable' | ??_7TransitionCS@@6B@
+*/
 
 #include "hooking.h"
 

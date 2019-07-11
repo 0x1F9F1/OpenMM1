@@ -18,7 +18,37 @@
 
 #pragma once
 
-// pcwindis:dxinit
+/*
+    pcwindis:dxinit
+
+    0x5556D0 | void __cdecl dxiWindowCreate(char *) | ?dxiWindowCreate@@YAXPAD@Z
+    0x5557B0 | int __cdecl dxiChangeDisplaySettings(int,int,int) | ?dxiChangeDisplaySettings@@YAHHHH@Z
+    0x555810 | void __cdecl dxiDirectDrawCreate(void) | ?dxiDirectDrawCreate@@YAXXZ
+    0x5558D0 | void __cdecl dxiSetDisplayMode(void) | ?dxiSetDisplayMode@@YAXXZ
+    0x555A10 | void __cdecl dxiDirectDrawSurfaceCreate(void) | ?dxiDirectDrawSurfaceCreate@@YAXXZ
+    0x555CE0 | void __cdecl dxiDirectDrawSurfaceDestroy(void) | ?dxiDirectDrawSurfaceDestroy@@YAXXZ
+    0x555D50 | void __cdecl dxiDirectInputCreate(void) | ?dxiDirectInputCreate@@YAXXZ
+    0x555D90 | void __cdecl dxiShutdown(void) | ?dxiShutdown@@YAXXZ
+    0x555E10 | void * __cdecl dxiMemoryAllocate(struct IDirectDrawSurface4 * *,unsigned int) | ?dxiMemoryAllocate@@YAPAXPAPAUIDirectDrawSurface4@@I@Z
+    0x556030 | void __cdecl dxiMemoryFree(struct IDirectDrawSurface4 *) | ?dxiMemoryFree@@YAXPAUIDirectDrawSurface4@@@Z
+    0x5560A0 | void __cdecl dxiInit(char *,int,char * *) | ?dxiInit@@YAXPADHPAPAD@Z
+    0x556140 | void __cdecl dxiScreenShot(char *) | ?dxiScreenShot@@YAXPAD@Z
+    0x5CD428 | int dxiWidth | ?dxiWidth@@3HA
+    0x5CD42C | int dxiHeight | ?dxiHeight@@3HA
+    0x5CD430 | int dxiDepth | ?dxiDepth@@3HA
+    0x5CD434 | int dxiFlags | ?dxiFlags@@3HA
+    0x710A90 | int dxiIcon | ?dxiIcon@@3HA
+    0x710A98 | struct IDirectDrawSurface4 * lpdsBack2 | ?lpdsBack2@@3PAUIDirectDrawSurface4@@A
+    0x710A9C | struct IDirectInputA * lpDI | ?lpDI@@3PAUIDirectInputA@@A
+    0x710AA0 | struct IDirectDraw4 * lpDD4 | ?lpDD4@@3PAUIDirectDraw4@@A
+    0x710AA4 | struct IDirectDrawSurface4 * lpdsFront | ?lpdsFront@@3PAUIDirectDrawSurface4@@A
+    0x710AA8 | struct HWND__ * hwndMain | ?hwndMain@@3PAUHWND__@@A
+    0x710AB0 | struct IDirectDrawSurface4 * lpdsBack | ?lpdsBack@@3PAUIDirectDrawSurface4@@A
+    0x710AB4 | struct IDirectDrawClipper * lpClip | ?lpClip@@3PAUIDirectDrawClipper@@A
+    0x710AB8 | struct IDirectDrawSurface4 * lpdsRend | ?lpdsRend@@3PAUIDirectDrawSurface4@@A
+    0x556380 | void __cdecl translate565(unsigned char *,unsigned short *,unsigned int) | ?translate565@@YAXPAEPAGI@Z
+    0x5563F0 | void __cdecl translate555(unsigned char *,unsigned short *,unsigned int) | ?translate555@@YAXPAEPAGI@Z
+*/
 
 #include "hooking.h"
 

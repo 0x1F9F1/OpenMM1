@@ -18,7 +18,22 @@
 
 #pragma once
 
-// mmanim:AnimTrigger
+/*
+    mmanim:AnimTrigger
+
+    0x4B8C70 | public: __thiscall mmAnimTrigger::mmAnimTrigger(void) | ??0mmAnimTrigger@@QAE@XZ
+    0x4B8C80 | public: __thiscall mmAnimTrigger::~mmAnimTrigger(void) | ??1mmAnimTrigger@@QAE@XZ
+    0x4B8C90 | public: void __thiscall mmAnimTrigger::Init(class mmInstance *,int) | ?Init@mmAnimTrigger@@QAEXPAVmmInstance@@H@Z
+    0x4B8CB0 | public: void __thiscall mmAnimTrigger::Init(class Vector3 *,float *) | ?Init@mmAnimTrigger@@QAEXPAVVector3@@PAM@Z
+    0x4B8CD0 | public: void __thiscall mmAnimTrigger::Init(int *,float) | ?Init@mmAnimTrigger@@QAEXPAHM@Z
+    0x4B8D00 | public: void __thiscall mmAnimTrigger::Init(float) | ?Init@mmAnimTrigger@@QAEXM@Z
+    0x4B8D20 | public: int __thiscall mmAnimTrigger::CheckCondition(void) | ?CheckCondition@mmAnimTrigger@@QAEHXZ
+    0x4B8D90 | public: int __thiscall mmAnimTrigger::CheckObjectHit(void) | ?CheckObjectHit@mmAnimTrigger@@QAEHXZ
+    0x4B8DB0 | public: int __thiscall mmAnimTrigger::CheckTimeDelay(void) | ?CheckTimeDelay@mmAnimTrigger@@QAEHXZ
+    0x4B8DE0 | public: int __thiscall mmAnimTrigger::CheckStateStatus(void) | ?CheckStateStatus@mmAnimTrigger@@QAEHXZ
+    0x4B8E30 | public: void __thiscall mmAnimTrigger::Reset(void) | ?Reset@mmAnimTrigger@@QAEXXZ
+    0x4B8E40 | public: int __thiscall mmAnimTrigger::CheckObjectDistance(void) | ?CheckObjectDistance@mmAnimTrigger@@QAEHXZ
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,17 @@
 
 #pragma once
 
-// mminput:effect
+/*
+    mminput:effect
+
+    0x4DA0B0 | int __stdcall inputEnumEffectTypeProc(struct DIEFFECTINFOA const *,void *) | ?inputEnumEffectTypeProc@@YGHPBUDIEFFECTINFOA@@PAX@Z
+    0x4DA110 | public: __thiscall mmEffectFF::mmEffectFF(void) | ??0mmEffectFF@@QAE@XZ
+    0x4DA180 | public: __thiscall mmEffectFF::~mmEffectFF(void) | ??1mmEffectFF@@QAE@XZ
+    0x4DA1A0 | public: virtual int __thiscall mmEffectFF::Play(void) | ?Play@mmEffectFF@@UAEHXZ
+    0x4DA1B0 | public: virtual int __thiscall mmEffectFF::Stop(void) | ?Stop@mmEffectFF@@UAEHXZ
+    0x4DA1C0 | public: virtual int __thiscall mmEffectFF::SetValues(float,float) | ?SetValues@mmEffectFF@@UAEHMM@Z
+    0x594808 | const mmEffectFF::`vftable' | ??_7mmEffectFF@@6B@
+*/
 
 #include "hooking.h"
 

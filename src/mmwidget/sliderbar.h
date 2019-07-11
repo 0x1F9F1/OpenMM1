@@ -18,7 +18,35 @@
 
 #pragma once
 
-// mmwidget:sliderbar
+/*
+    mmwidget:sliderbar
+
+    0x4B35E0 | public: __thiscall mmSlider::mmSlider(void) | ??0mmSlider@@QAE@XZ
+    0x4B3670 | public: virtual __thiscall mmSlider::~mmSlider(void) | ??1mmSlider@@UAE@XZ
+    0x4B3710 | public: void __thiscall mmSlider::Init(char *,class uiWidget *,float,float,float,float,int,float,float,int,int) | ?Init@mmSlider@@QAEXPADPAVuiWidget@@MMMMHMMHH@Z
+    0x4B3770 | public: void __thiscall mmSlider::LoadBitmap(char *) | ?LoadBitmap@mmSlider@@QAEXPAD@Z
+    0x4B3920 | public: void __thiscall mmSlider::SetReadWrite(int) | ?SetReadWrite@mmSlider@@QAEXH@Z
+    0x4B3940 | public: int __thiscall mmSlider::IsReadWrite(void) | ?IsReadWrite@mmSlider@@QAEHXZ
+    0x4B3950 | public: float __thiscall mmSlider::SetValue(float) | ?SetValue@mmSlider@@QAEMM@Z
+    0x4B39B0 | public: float __thiscall mmSlider::GetScreenHeight(void) | ?GetScreenHeight@mmSlider@@QAEMXZ
+    0x4B39E0 | public: float __thiscall mmSlider::FudgeWidth(void) | ?FudgeWidth@mmSlider@@QAEMXZ
+    0x4B3A10 | public: void __thiscall mmSlider::SetPosition(float,float) | ?SetPosition@mmSlider@@QAEXMM@Z
+    0x4B3A30 | public: void __thiscall mmSlider::GetSliderHotSpots(float &,float &,float &,float &,float &,float &) | ?GetSliderHotSpots@mmSlider@@QAEXAAM00000@Z
+    0x4B3B00 | public: void __thiscall mmSlider::UpdatePosition(void) | ?UpdatePosition@mmSlider@@QAEXXZ
+    0x4B3B30 | public: float __thiscall mmSlider::Inc(void) | ?Inc@mmSlider@@QAEMXZ
+    0x4B3B50 | public: float __thiscall mmSlider::Dec(void) | ?Dec@mmSlider@@QAEMXZ
+    0x4B3B70 | public: void __thiscall mmSlider::SetStep(float) | ?SetStep@mmSlider@@QAEXM@Z
+    0x4B3BF0 | public: void __thiscall mmSlider::SetRange(float,float) | ?SetRange@mmSlider@@QAEXMM@Z
+    0x4B3C60 | public: virtual void __thiscall mmSlider::Update(void) | ?Update@mmSlider@@UAEXXZ
+    0x4B3C80 | public: virtual void __thiscall mmSlider::Cull(void) | ?Cull@mmSlider@@UAEXXZ
+    0x4B3E40 | public: static void __cdecl mmSlider::DeclareFields(void) | ?DeclareFields@mmSlider@@SAXXZ
+    0x4B3FB0 | public: virtual class MetaClass * __thiscall mmSlider::GetClass(void) | ?GetClass@mmSlider@@UAEPAVMetaClass@@XZ
+    0x4B3FC0 | public: virtual void * __thiscall mmSlider::`vector deleting destructor'(unsigned int) | ??_EmmSlider@@UAEPAXI@Z
+    0x593D88 | const mmSlider::`vftable' | ??_7mmSlider@@6B@
+    0x667FC8 | class MetaClass mmSliderMetaClass | ?mmSliderMetaClass@@3VMetaClass@@A
+    0x4B3E90 | void * __cdecl new_mmSlider(int) | ?new_mmSlider@@YAPAXH@Z
+    0x4B3F60 | void __cdecl delete_mmSlider(void *,int) | ?delete_mmSlider@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

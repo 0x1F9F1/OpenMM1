@@ -576,15 +576,15 @@ def collect_class_syms(class_name, all_symbols, vtables):
 
     return class_syms
 
-def collect_classes(all_symbols, name_to_type, vtables, class_hiers, path_libs):
+def collect_classes(all_symbols, name_to_type, vtables, class_hiers, path_libs, function_libs):
     all_paths = dict()
 
     for class_name, class_type in name_to_type.items():
         all_paths[class_name] = class_type
 
-    for symbol in all_symbols.values():
-        if symbol.path not in all_paths:
-            all_paths[symbol.path] = 'namespace'
+    for lib in function_libs:
+        if lib not in all_paths:
+            all_paths[lib] = 'namespace'
 
     results = defaultdict(str)
 
@@ -731,7 +731,11 @@ LICENSE_TXT = '''/*
 SOURCE_DIR = os.path.normpath(os.path.realpath('../src'))
 
 if True:
-    for lib, b in collect_classes(all_symbols, name_to_type, vtables, class_hiers, path_libs).items():
+    libs_data = collect_classes(all_symbols, name_to_type, vtables, class_hiers, path_libs, function_libs)
+
+    for lib, symbols in function_libs.items():
+        lib_data = libs_data.get(lib, '')
+
         if not lib:
             lib = 'other'
 
@@ -754,9 +758,37 @@ if True:
             f.write(LICENSE_TXT)
             f.write('\n')
             f.write('#pragma once\n\n')
-            f.write('// {}\n\n'.format(lib))
+
+            sym_comment = ''
+
+            sym_comment += '/*\n'
+            sym_comment += '    ' + lib + '\n\n'
+
+            for sym_name, sym_addr in symbols:
+                sym_comment += '    '
+
+                if sym_addr is not None:
+                    sym_comment += '0x%06X | ' % (sym_addr)
+
+                demangled = demangle(sym_name)
+
+                if demangled is not None:
+                    sym_comment += demangled + ' | '
+
+                sym_comment += sym_name
+                sym_comment += '\n'
+
+            sym_comment += '*/\n\n'
+
+            f.write(sym_comment)
+
             f.write('#include "hooking.h"\n\n')
-            f.write(b)
+            f.write(lib_data)
+
+        with open(output_dir + '.cpp', 'w') as f:
+            f.write(LICENSE_TXT)
+            f.write('\n')
+            f.write('#include "{}.h"\n'.format(base_name))
 else:
     print('All Symbols')
     for symbol in all_symbols.values():

@@ -18,7 +18,19 @@
 
 #pragma once
 
-// mmcar:splash
+/*
+    mmcar:splash
+
+    0x4780C0 | public: __thiscall mmSplash::mmSplash(void) | ??0mmSplash@@QAE@XZ
+    0x478130 | public: virtual void __thiscall mmSplash::Reset(void) | ?Reset@mmSplash@@UAEXXZ
+    0x478140 | public: void __thiscall mmSplash::Init(class asInertialCS *,class Vector3,class Vector3) | ?Init@mmSplash@@QAEXPAVasInertialCS@@VVector3@@1@Z
+    0x4782A0 | public: void __thiscall mmSplash::Activate(float) | ?Activate@mmSplash@@QAEXM@Z
+    0x4782C0 | public: virtual void __thiscall mmSplash::Update(void) | ?Update@mmSplash@@UAEXXZ
+    0x478500 | public: virtual void * __thiscall mmSplash::`scalar deleting destructor'(unsigned int) | ??_GmmSplash@@UAEPAXI@Z
+    0x478500 | public: virtual void * __thiscall mmSplash::`vector deleting destructor'(unsigned int) | ??_EmmSplash@@UAEPAXI@Z
+    0x591820 | const mmSplash::`vftable' | ??_7mmSplash@@6B@
+    0x478120 | void __cdecl SplashCB(class mmSplash *) | ?SplashCB@@YAXPAVmmSplash@@@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,16 @@
 
 #pragma once
 
-// mmdjpeg:jerror
+/*
+    mmdjpeg:jerror
+
+    0x55F1B0 | struct jpeg_error_mgr * __cdecl jpeg_std_error(struct jpeg_error_mgr *) | ?jpeg_std_error@@YAPAUjpeg_error_mgr@@PAU1@@Z
+    0x55F200 | void __cdecl error_exit(struct jpeg_common_struct *) | ?error_exit@@YAXPAUjpeg_common_struct@@@Z
+    0x55F230 | void __cdecl output_message(struct jpeg_common_struct *) | ?output_message@@YAXPAUjpeg_common_struct@@@Z
+    0x55F270 | void __cdecl emit_message(struct jpeg_common_struct *,int) | ?emit_message@@YAXPAUjpeg_common_struct@@H@Z
+    0x55F2B0 | void __cdecl format_message(struct jpeg_common_struct *,char *) | ?format_message@@YAXPAUjpeg_common_struct@@PAD@Z
+    0x55F370 | void __cdecl reset_error_mgr(struct jpeg_common_struct *) | ?reset_error_mgr@@YAXPAUjpeg_common_struct@@@Z
+*/
 
 #include "hooking.h"
 

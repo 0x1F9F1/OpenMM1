@@ -18,7 +18,35 @@
 
 #pragma once
 
-// mmai:aiRailSet
+/*
+    mmai:aiRailSet
+
+    0x44D630 | public: __thiscall aiRailSet::aiRailSet(void) | ??0aiRailSet@@QAE@XZ
+    0x44D730 | public: __thiscall aiRailSet::~aiRailSet(void) | ??1aiRailSet@@QAE@XZ
+    0x44D740 | public: void __thiscall aiRailSet::CalcRailPosition(class Vector3 &,float) | ?CalcRailPosition@aiRailSet@@QAEXAAVVector3@@M@Z
+    0x44E140 | public: int __thiscall aiRailSet::CalcCopRailPosition(class Vector3 &,class Vector3 &,float,float) | ?CalcCopRailPosition@aiRailSet@@QAEHAAVVector3@@0MM@Z
+    0x450590 | public: int __thiscall aiRailSet::CalcRailState(float) | ?CalcRailState@aiRailSet@@QAEHM@Z
+    0x450BA0 | public: float __thiscall aiRailSet::CalcRailLength(void) | ?CalcRailLength@aiRailSet@@QAEMXZ
+    0x451090 | public: void __thiscall aiRailSet::CalcTurnIntersection(class Vector3 &,int,class aiPath *,class aiPath *) | ?CalcTurnIntersection@aiRailSet@@QAEXAAVVector3@@HPAVaiPath@@1@Z
+    0x4514A0 | public: void __thiscall aiRailSet::DrawTurn(float) | ?DrawTurn@aiRailSet@@QAEXM@Z
+    0x4514B0 | public: void __thiscall aiRailSet::CalcRailPosOrient(class Vector3 &,class Vector3 &,float) | ?CalcRailPosOrient@aiRailSet@@QAEXAAVVector3@@0M@Z
+    0x452050 | public: void __thiscall aiRailSet::SolveNextLane(void) | ?SolveNextLane@aiRailSet@@QAEXXZ
+    0x4520D0 | public: int __thiscall aiRailSet::SolveTurnType(class aiPath *,class aiPath *) | ?SolveTurnType@aiRailSet@@QAEHPAVaiPath@@0@Z
+    0x452290 | public: void __thiscall aiRailSet::CalcXZPosition(class Vector3 &,class Vector3 &,class Vector3 &,class Vector3 &,class Vector3 &,float) | ?CalcXZPosition@aiRailSet@@QAEXAAVVector3@@0000M@Z
+    0x4523A0 | public: void __thiscall aiRailSet::CalcXZDirection(class Vector3 &,class Vector3 &,class Vector3 &,class Vector3 &,class Vector3 &,float) | ?CalcXZDirection@aiRailSet@@QAEXAAVVector3@@0000M@Z
+    0x4524C0 | public: void __thiscall aiRailSet::CalcXZPosOrient(class Vector3 &,class Vector3 &,class Vector3 &,class Vector3 &,class Vector3 &,class Vector3 &,float) | ?CalcXZPosOrient@aiRailSet@@QAEXAAVVector3@@00000M@Z
+    0x452600 | public: void __thiscall aiRailSet::ComputeXZCurve(class Vector3 &,class Vector3 &,class Vector3 &,class Vector3 &) | ?ComputeXZCurve@aiRailSet@@QAEXAAVVector3@@000@Z
+    0x4526B0 | public: void __thiscall aiRailSet::ComputeXZCurve(class Vector3 &,class Vector3 &,class Vector3 &,class Vector3 &,class Vector4 &,class Vector4 &) | ?ComputeXZCurve@aiRailSet@@QAEXAAVVector3@@000AAVVector4@@1@Z
+    0x452750 | public: void __thiscall aiRailSet::SolveXZCurve(class Vector3 &,class Vector3 &,float) | ?SolveXZCurve@aiRailSet@@QAEXAAVVector3@@0M@Z
+    0x4527E0 | public: void __thiscall aiRailSet::SolveXZPosition(class Vector3 &,float) | ?SolveXZPosition@aiRailSet@@QAEXAAVVector3@@M@Z
+    0x452820 | public: void __thiscall aiRailSet::Dump(void) | ?Dump@aiRailSet@@QAEXXZ
+    0x452A60 | public: class Vector3 __thiscall Vector3::operator+(class Vector3 const &) const | ??HVector3@@QBE?AV0@ABV0@@Z
+    0x452A90 | public: class Vector3 __thiscall Vector3::operator*(float) const | ??DVector3@@QBE?AV0@M@Z
+    0x452AC0 | class Vector3 __cdecl operator*(float,class Vector3 const &) | ??D@YA?AVVector3@@MABV0@@Z
+    0x452B00 | public: float __thiscall Vector3::operator^(class Vector3 const &) const | ??TVector3@@QBEMABV0@@Z
+    0x452B30 | public: class Vector3 __thiscall Vector3::operator-(void) const | ??GVector3@@QBE?AV0@XZ
+    0x452B50 | public: class Vector3 * __thiscall aiPath::LBoundary(int) | ?LBoundary@aiPath@@QAEPAVVector3@@H@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,13 @@
 
 #pragma once
 
-// pcwindis:pcwindis
+/*
+    pcwindis:pcwindis
+
+    0x557F90 | long __stdcall MasterWindowProc(struct HWND__ *,unsigned int,unsigned int,long) | ?MasterWindowProc@@YGJPAUHWND__@@IIJ@Z
+    0x558010 | void __cdecl RegisterMap(char *,unsigned int *,int,class Dispatchable *) | ?RegisterMap@@YAXPADPAIHPAVDispatchable@@@Z
+    0x5580F0 | void __cdecl UnregisterMap(char *) | ?UnregisterMap@@YAXPAD@Z
+*/
 
 #include "hooking.h"
 

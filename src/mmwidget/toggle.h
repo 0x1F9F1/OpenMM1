@@ -18,7 +18,24 @@
 
 #pragma once
 
-// mmwidget:toggle
+/*
+    mmwidget:toggle
+
+    0x4B52B0 | public: __thiscall mmToggle::mmToggle(void) | ??0mmToggle@@QAE@XZ
+    0x4B52D0 | public: virtual __thiscall mmToggle::~mmToggle(void) | ??1mmToggle@@UAE@XZ
+    0x4B5330 | public: void __thiscall mmToggle::Init(char *,float,float,float,float) | ?Init@mmToggle@@QAEXPADMMMM@Z
+    0x4B53D0 | private: void __thiscall mmToggle::LoadBitmap(char *) | ?LoadBitmap@mmToggle@@AAEXPAD@Z
+    0x4B5420 | private: void __thiscall mmToggle::SetSize(float,float) | ?SetSize@mmToggle@@AAEXMM@Z
+    0x4B54D0 | public: virtual void __thiscall mmToggle::Update(void) | ?Update@mmToggle@@UAEXXZ
+    0x4B54F0 | public: virtual void __thiscall mmToggle::Cull(void) | ?Cull@mmToggle@@UAEXXZ
+    0x4B5570 | public: static void __cdecl mmToggle::DeclareFields(void) | ?DeclareFields@mmToggle@@SAXXZ
+    0x4B56D0 | public: virtual class MetaClass * __thiscall mmToggle::GetClass(void) | ?GetClass@mmToggle@@UAEPAVMetaClass@@XZ
+    0x4B56E0 | public: virtual void * __thiscall mmToggle::`vector deleting destructor'(unsigned int) | ??_EmmToggle@@UAEPAXI@Z
+    0x593E78 | const mmToggle::`vftable' | ??_7mmToggle@@6B@
+    0x668040 | class MetaClass mmToggleMetaClass | ?mmToggleMetaClass@@3VMetaClass@@A
+    0x4B55C0 | void * __cdecl new_mmToggle(int) | ?new_mmToggle@@YAPAXH@Z
+    0x4B5680 | void __cdecl delete_mmToggle(void *,int) | ?delete_mmToggle@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

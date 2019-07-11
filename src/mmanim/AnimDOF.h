@@ -18,7 +18,38 @@
 
 #pragma once
 
-// mmanim:AnimDOF
+/*
+    mmanim:AnimDOF
+
+    0x4B8EF0 | public: virtual void __fastcall mmDrawbridgeInstance::Draw(int) | ?Draw@mmDrawbridgeInstance@@UAIXH@Z
+    0x4B8FB0 | public: int __thiscall mmDrawbridgeInstance::InitBridge(char *,char *,int,class Matrix34 *,class Vector3 *) | ?InitBridge@mmDrawbridgeInstance@@QAEHPAD0HPAVMatrix34@@PAVVector3@@@Z
+    0x4B8FF0 | public: __thiscall mmAnimDOF::mmAnimDOF(void) | ??0mmAnimDOF@@QAE@XZ
+    0x4B9010 | public: __thiscall mmAnimDOF::~mmAnimDOF(void) | ??1mmAnimDOF@@QAE@XZ
+    0x4B9020 | public: int __thiscall mmAnimDOF::Init(class mmAnimTrigger *,char *,class Vector3 &,class Vector3 &,int,int *) | ?Init@mmAnimDOF@@QAEHPAVmmAnimTrigger@@PADAAVVector3@@2HPAH@Z
+    0x4B93A0 | public: void __thiscall mmAnimDOF::Reset(void) | ?Reset@mmAnimDOF@@QAEXXZ
+    0x4B93E0 | public: void __thiscall mmAnimDOF::Update(void) | ?Update@mmAnimDOF@@QAEXXZ
+    0x4B9600 | public: void __thiscall mmAnimDOF::SetSwitch(int) | ?SetSwitch@mmAnimDOF@@QAEXH@Z
+    0x4B9650 | public: void __thiscall mmAnimDOF::SetState(int) | ?SetState@mmAnimDOF@@QAEXH@Z
+    0x4B9690 | public: static void __cdecl mmAnimDOF::DeclareFields(void) | ?DeclareFields@mmAnimDOF@@SAXXZ
+    0x4B9820 | public: virtual class MetaClass * __thiscall mmAnimDOF::GetClass(void) | ?GetClass@mmAnimDOF@@UAEPAVMetaClass@@XZ
+    0x4B9830 | public: virtual void * __thiscall mmDrawbridgeInstance::`vector deleting destructor'(unsigned int) | ??_EmmDrawbridgeInstance@@UAEPAXI@Z
+    0x4B9830 | public: virtual void * __thiscall mmDrawbridgeInstance::`scalar deleting destructor'(unsigned int) | ??_GmmDrawbridgeInstance@@UAEPAXI@Z
+    0x4B9850 | public: virtual __thiscall mmDrawbridgeInstance::~mmDrawbridgeInstance(void) | ??1mmDrawbridgeInstance@@UAE@XZ
+    0x4B9860 | public: void * __thiscall mmAnimDOF::`vector deleting destructor'(unsigned int) | ??_EmmAnimDOF@@QAEPAXI@Z
+    0x4B98C0 | public: __thiscall mmUnhitBangerInstance::mmUnhitBangerInstance(void) | ??0mmUnhitBangerInstance@@QAE@XZ
+    0x4B98F0 | public: virtual void __fastcall mmDofBangerInstance::FromMatrix(class Matrix34 const &) | ?FromMatrix@mmDofBangerInstance@@UAIXABVMatrix34@@@Z
+    0x4B9900 | public: virtual class Matrix34 & __fastcall mmDofBangerInstance::ToMatrix(class Matrix34 &) | ?ToMatrix@mmDofBangerInstance@@UAIAAVMatrix34@@AAV2@@Z
+    0x4B9930 | public: virtual class Vector3 & __fastcall mmDofBangerInstance::GetPos(void) | ?GetPos@mmDofBangerInstance@@UAIAAVVector3@@XZ
+    0x4B9960 | public: virtual void * __thiscall mmDofBangerInstance::`scalar deleting destructor'(unsigned int) | ??_GmmDofBangerInstance@@UAEPAXI@Z
+    0x4B9960 | public: virtual void * __thiscall mmDofBangerInstance::`vector deleting destructor'(unsigned int) | ??_EmmDofBangerInstance@@UAEPAXI@Z
+    0x4B9980 | public: virtual __thiscall mmDofBangerInstance::~mmDofBangerInstance(void) | ??1mmDofBangerInstance@@UAE@XZ
+    0x594024 | const mmAnimDOF::`vftable' | ??_7mmAnimDOF@@6B@
+    0x594028 | const mmDofBangerInstance::`vftable' | ??_7mmDofBangerInstance@@6B@
+    0x594080 | const mmDrawbridgeInstance::`vftable' | ??_7mmDrawbridgeInstance@@6B@
+    0x668148 | class MetaClass mmAnimDOFMetaClass | ?mmAnimDOFMetaClass@@3VMetaClass@@A
+    0x4B96E0 | void * __cdecl new_mmAnimDOF(int) | ?new_mmAnimDOF@@YAPAXH@Z
+    0x4B97B0 | void __cdecl delete_mmAnimDOF(void *,int) | ?delete_mmAnimDOF@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

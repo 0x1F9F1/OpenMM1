@@ -18,7 +18,19 @@
 
 #pragma once
 
-// data7:base
+/*
+    data7:base
+
+    0x55AB00 | public: virtual char * __thiscall Base::GetTypeNameV(void) | ?GetTypeNameV@Base@@UAEPADXZ
+    0x55AB10 | public: char * __thiscall Base::GetTypeName(void) | ?GetTypeName@Base@@QAEPADXZ
+    0x55AB20 | public: virtual void __thiscall Base::BeforeSave(void) | ?BeforeSave@Base@@UAEXXZ
+    0x55AB30 | public: virtual void __thiscall Base::AfterLoad(void) | ?AfterLoad@Base@@UAEXXZ
+    0x55AB40 | public: virtual __thiscall Base::~Base(void) | ??1Base@@UAE@XZ
+    0x55AB50 | public: static void __cdecl Base::DeclareFields(void) | ?DeclareFields@Base@@SAXXZ
+    0x55ABF0 | public: virtual class MetaClass * __thiscall Base::GetClass(void) | ?GetClass@Base@@UAEPAVMetaClass@@XZ
+    0x712218 | class MetaClass BaseMetaClass | ?BaseMetaClass@@3VMetaClass@@A
+    0x55ABA0 | void __cdecl delete_Base(void *,int) | ?delete_Base@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

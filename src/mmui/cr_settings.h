@@ -18,7 +18,36 @@
 
 #pragma once
 
-// mmui:cr_settings
+/*
+    mmui:cr_settings
+
+    0x4954B0 | public: __thiscall CRSettings::CRSettings(int) | ??0CRSettings@@QAE@H@Z
+    0x495DF0 | public: virtual __thiscall CRSettings::~CRSettings(void) | ??1CRSettings@@UAE@XZ
+    0x495E70 | public: void __thiscall CRSettings::SettingsCB(void) | ?SettingsCB@CRSettings@@QAEXXZ
+    0x495E80 | public: void __thiscall CRSettings::SetTeam(void) | ?SetTeam@CRSettings@@QAEXXZ
+    0x495EA0 | public: void __thiscall CRSettings::SetTeamWidget(void) | ?SetTeamWidget@CRSettings@@QAEXXZ
+    0x495EB0 | public: void __thiscall CRSettings::SetHost(int) | ?SetHost@CRSettings@@QAEXH@Z
+    0x495FB0 | public: void __thiscall CRSettings::InitPlayerRecord(void) | ?InitPlayerRecord@CRSettings@@QAEXXZ
+    0x496080 | public: int __thiscall CRSettings::AddPlayerRecord(char *,int,int,char *) | ?AddPlayerRecord@CRSettings@@QAEHPADHH0@Z
+    0x4961C0 | public: void __thiscall CRSettings::SetPlayerScore(int,int) | ?SetPlayerScore@CRSettings@@QAEXHH@Z
+    0x496200 | public: void __thiscall CRSettings::ResetPlayerRecord(void) | ?ResetPlayerRecord@CRSettings@@QAEXXZ
+    0x496290 | public: void __thiscall CRSettings::SetLimitControl(void) | ?SetLimitControl@CRSettings@@QAEXXZ
+    0x4963F0 | public: int __thiscall CRSettings::EncodeCRData(void) | ?EncodeCRData@CRSettings@@QAEHXZ
+    0x496440 | public: void __thiscall CRSettings::DecodeCRData(int) | ?DecodeCRData@CRSettings@@QAEXH@Z
+    0x4964B0 | public: void __thiscall CRSettings::GetLimit(int &,int &) | ?GetLimit@CRSettings@@QAEXAAH0@Z
+    0x496500 | public: void __thiscall CRSettings::SetLimit(int &,int &) | ?SetLimit@CRSettings@@QAEXAAH0@Z
+    0x496580 | public: void __thiscall CRSettings::SetGoldMass(int) | ?SetGoldMass@CRSettings@@QAEXH@Z
+    0x4965B0 | public: int __thiscall CRSettings::GetGoldMass(void) | ?GetGoldMass@CRSettings@@QAEHXZ
+    0x4965C0 | public: int __thiscall CRSettings::GetLimitVal(int &) | ?GetLimitVal@CRSettings@@QAEHAAH@Z
+    0x496610 | public: int __thiscall CRSettings::GetGoldMassVal(void) | ?GetGoldMassVal@CRSettings@@QAEHXZ
+    0x496620 | public: void __thiscall CRSettings::SetGameClassCallback(void) | ?SetGameClassCallback@CRSettings@@QAEXXZ
+    0x496640 | public: void __thiscall CRSettings::SetTeamWidgets(void) | ?SetTeamWidgets@CRSettings@@QAEXXZ
+    0x4966C0 | public: virtual void * __thiscall CRSettings::`vector deleting destructor'(unsigned int) | ??_ECRSettings@@UAEPAXI@Z
+    0x4966C0 | public: virtual void * __thiscall CRSettings::`scalar deleting destructor'(unsigned int) | ??_GCRSettings@@UAEPAXI@Z
+    0x592700 | const CRSettings::`vftable' | ??_7CRSettings@@6B@
+    0x5AF040 | int * GameType_PenaltyTable | ?GameType_PenaltyTable@@3PAHA
+    0x5AF068 | int * Limit_ValueTable | ?Limit_ValueTable@@3PAHA
+*/
 
 #include "hooking.h"
 

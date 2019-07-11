@@ -18,7 +18,35 @@
 
 #pragma once
 
-// mmwidget:tdwidget
+/*
+    mmwidget:tdwidget
+
+    0x4B2EE0 | public: __thiscall TextDropWidget::TextDropWidget(void) | ??0TextDropWidget@@QAE@XZ
+    0x4B2F90 | public: virtual __thiscall TextDropWidget::~TextDropWidget(void) | ??1TextDropWidget@@UAE@XZ
+    0x4B3000 | public: void __thiscall TextDropWidget::Init(class asCamera *,void *,float,float,float,float,float,class string,int) | ?Init@TextDropWidget@@QAEXPAVasCamera@@PAXMMMMMVstring@@H@Z
+    0x4B30F0 | public: int __thiscall TextDropWidget::GetCount(void) | ?GetCount@TextDropWidget@@QAEHXZ
+    0x4B3100 | public: void __thiscall TextDropWidget::SetString(class string) | ?SetString@TextDropWidget@@QAEXVstring@@@Z
+    0x4B31C0 | public: int __thiscall TextDropWidget::SetValue(int) | ?SetValue@TextDropWidget@@QAEHH@Z
+    0x4B3260 | public: int __thiscall TextDropWidget::SetHighlight(int) | ?SetHighlight@TextDropWidget@@QAEHH@Z
+    0x4B32D0 | public: int __thiscall TextDropWidget::Inc(void) | ?Inc@TextDropWidget@@QAEHXZ
+    0x4B32E0 | public: int __thiscall TextDropWidget::Dec(void) | ?Dec@TextDropWidget@@QAEHXZ
+    0x4B32F0 | public: int __thiscall TextDropWidget::IncDrop(void) | ?IncDrop@TextDropWidget@@QAEHXZ
+    0x4B3320 | public: int __thiscall TextDropWidget::DecDrop(void) | ?DecDrop@TextDropWidget@@QAEHXZ
+    0x4B3350 | public: int __thiscall TextDropWidget::Capture(float,float) | ?Capture@TextDropWidget@@QAEHMM@Z
+    0x4B3390 | public: void __thiscall TextDropWidget::Switch(int,class Vector4 &) | ?Switch@TextDropWidget@@QAEXHAAVVector4@@@Z
+    0x4B33B0 | public: virtual void __thiscall TextDropWidget::Update(void) | ?Update@TextDropWidget@@UAEXXZ
+    0x4B33C0 | public: int __thiscall TextDropWidget::IsActive(void) | ?IsActive@TextDropWidget@@QAEHXZ
+    0x4B33D0 | public: void __thiscall TextDropWidget::SetActive(int) | ?SetActive@TextDropWidget@@QAEXH@Z
+    0x4B33E0 | public: void __thiscall TextDropWidget::SetDisabledMask(long) | ?SetDisabledMask@TextDropWidget@@QAEXJ@Z
+    0x4B3400 | public: long __thiscall TextDropWidget::GetDisabledMask(void) | ?GetDisabledMask@TextDropWidget@@QAEJXZ
+    0x4B3410 | public: static void __cdecl TextDropWidget::DeclareFields(void) | ?DeclareFields@TextDropWidget@@SAXXZ
+    0x4B3570 | public: virtual class MetaClass * __thiscall TextDropWidget::GetClass(void) | ?GetClass@TextDropWidget@@UAEPAVMetaClass@@XZ
+    0x4B3580 | public: virtual void * __thiscall TextDropWidget::`vector deleting destructor'(unsigned int) | ??_ETextDropWidget@@UAEPAXI@Z
+    0x593D48 | const TextDropWidget::`vftable' | ??_7TextDropWidget@@6B@
+    0x667FA0 | class MetaClass TextDropWidgetMetaClass | ?TextDropWidgetMetaClass@@3VMetaClass@@A
+    0x4B3460 | void * __cdecl new_TextDropWidget(int) | ?new_TextDropWidget@@YAPAXH@Z
+    0x4B3520 | void __cdecl delete_TextDropWidget(void *,int) | ?delete_TextDropWidget@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

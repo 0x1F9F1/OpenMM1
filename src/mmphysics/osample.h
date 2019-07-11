@@ -18,7 +18,22 @@
 
 #pragma once
 
-// mmphysics:osample
+/*
+    mmphysics:osample
+
+    0x4D1F00 | public: __thiscall asOverSample::asOverSample(void) | ??0asOverSample@@QAE@XZ
+    0x4D1F30 | public: void __thiscall asOverSample::RealTime(float) | ?RealTime@asOverSample@@QAEXM@Z
+    0x4D1F50 | public: virtual void __thiscall asOverSample::Update(void) | ?Update@asOverSample@@UAEXXZ
+    0x4D2010 | public: void __thiscall asOverSample::AddWidgets(class Bank *) | ?AddWidgets@asOverSample@@QAEXPAVBank@@@Z
+    0x4D2020 | public: static void __cdecl asOverSample::DeclareFields(void) | ?DeclareFields@asOverSample@@SAXXZ
+    0x4D21A0 | public: virtual class MetaClass * __thiscall asOverSample::GetClass(void) | ?GetClass@asOverSample@@UAEPAVMetaClass@@XZ
+    0x4D21B0 | public: virtual void * __thiscall asOverSample::`vector deleting destructor'(unsigned int) | ??_EasOverSample@@UAEPAXI@Z
+    0x594650 | const asOverSample::`vftable' | ??_7asOverSample@@6B@
+    0x67B438 | class MetaClass asOverSampleMetaClass | ?asOverSampleMetaClass@@3VMetaClass@@A
+    0x67B460 | int BenchOSample | ?BenchOSample@@3HA
+    0x4D2090 | void * __cdecl new_asOverSample(int) | ?new_asOverSample@@YAPAXH@Z
+    0x4D2150 | void __cdecl delete_asOverSample(void *,int) | ?delete_asOverSample@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,23 @@
 
 #pragma once
 
-// mmcamcs:postcamcs
+/*
+    mmcamcs:postcamcs
+
+    0x4EBB70 | public: __thiscall PostCamCS::PostCamCS(void) | ??0PostCamCS@@QAE@XZ
+    0x4EBBC0 | public: void __thiscall PostCamCS::Init(class mmCar *) | ?Init@PostCamCS@@QAEXPAVmmCar@@@Z
+    0x4EBBE0 | public: virtual void __thiscall PostCamCS::Reset(void) | ?Reset@PostCamCS@@UAEXXZ
+    0x4EBBF0 | public: virtual void __thiscall PostCamCS::MakeActive(void) | ?MakeActive@PostCamCS@@UAEXXZ
+    0x4EBC70 | public: virtual void __thiscall PostCamCS::Update(void) | ?Update@PostCamCS@@UAEXXZ
+    0x4EBDA0 | public: static void __cdecl PostCamCS::DeclareFields(void) | ?DeclareFields@PostCamCS@@SAXXZ
+    0x4EBF10 | public: virtual class MetaClass * __thiscall PostCamCS::GetClass(void) | ?GetClass@PostCamCS@@UAEPAVMetaClass@@XZ
+    0x4EBF50 | public: virtual void * __thiscall PostCamCS::`vector deleting destructor'(unsigned int) | ??_EPostCamCS@@UAEPAXI@Z
+    0x4EBFB0 | public: virtual void __thiscall BaseCamCS::UpdateInput(void) | ?UpdateInput@BaseCamCS@@UAEXXZ
+    0x594C18 | const PostCamCS::`vftable' | ??_7PostCamCS@@6B@
+    0x67B6A0 | class MetaClass PostCamCSMetaClass | ?PostCamCSMetaClass@@3VMetaClass@@A
+    0x4EBDF0 | void * __cdecl new_PostCamCS(int) | ?new_PostCamCS@@YAPAXH@Z
+    0x4EBEC0 | void __cdecl delete_PostCamCS(void *,int) | ?delete_PostCamCS@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

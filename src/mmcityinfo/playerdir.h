@@ -18,7 +18,38 @@
 
 #pragma once
 
-// mmcityinfo:playerdir
+/*
+    mmcityinfo:playerdir
+
+    0x4C3450 | public: __thiscall mmPlayerDirectory::mmPlayerDirectory(void) | ??0mmPlayerDirectory@@QAE@XZ
+    0x4C3490 | public: virtual __thiscall mmPlayerDirectory::~mmPlayerDirectory(void) | ??1mmPlayerDirectory@@UAE@XZ
+    0x4C34F0 | public: void __thiscall mmPlayerDirectory::NewDirectory(int) | ?NewDirectory@mmPlayerDirectory@@QAEXH@Z
+    0x4C3530 | public: void __thiscall mmPlayerDirectory::SetPlayer(int,char *,char *) | ?SetPlayer@mmPlayerDirectory@@QAEXHPAD0@Z
+    0x4C3560 | public: void __thiscall mmPlayerDirectory::SetLastPlayer(char *) | ?SetLastPlayer@mmPlayerDirectory@@QAEXPAD@Z
+    0x4C35B0 | public: char * __thiscall mmPlayerDirectory::GetPlayer(int) | ?GetPlayer@mmPlayerDirectory@@QAEPADH@Z
+    0x4C35E0 | public: int __thiscall mmPlayerDirectory::GetNumPlayers(void) | ?GetNumPlayers@mmPlayerDirectory@@QAEHXZ
+    0x4C35F0 | public: char * __thiscall mmPlayerDirectory::GetLastPlayer(void) | ?GetLastPlayer@mmPlayerDirectory@@QAEPADXZ
+    0x4C3620 | public: int __thiscall mmPlayerDirectory::AddPlayer(char *) | ?AddPlayer@mmPlayerDirectory@@QAEHPAD@Z
+    0x4C3760 | private: void __thiscall mmPlayerDirectory::CreatePlayer(char *,char *) | ?CreatePlayer@mmPlayerDirectory@@AAEXPAD0@Z
+    0x4C3870 | public: int __thiscall mmPlayerDirectory::FindPlayer(char *) | ?FindPlayer@mmPlayerDirectory@@QAEHPAD@Z
+    0x4C38E0 | public: char * __thiscall mmPlayerDirectory::GetFileName(char *) | ?GetFileName@mmPlayerDirectory@@QAEPADPAD@Z
+    0x4C3970 | public: char * __thiscall mmPlayerDirectory::GetPlayerName(char *) | ?GetPlayerName@mmPlayerDirectory@@QAEPADPAD@Z
+    0x4C3A00 | public: char * __thiscall mmPlayerDirectory::GetFileName(int) | ?GetFileName@mmPlayerDirectory@@QAEPADH@Z
+    0x4C3A30 | private: char * __thiscall mmPlayerDirectory::MakeFileName(void) | ?MakeFileName@mmPlayerDirectory@@AAEPADXZ
+    0x4C3AF0 | public: int __thiscall mmPlayerDirectory::RemovePlayer(char *) | ?RemovePlayer@mmPlayerDirectory@@QAEHPAD@Z
+    0x4C3BF0 | public: int __thiscall mmPlayerDirectory::Load(char *) | ?Load@mmPlayerDirectory@@QAEHPAD@Z
+    0x4C3C20 | public: int __thiscall mmPlayerDirectory::Save(char *,int) | ?Save@mmPlayerDirectory@@QAEHPADH@Z
+    0x4C3CC0 | public: int __thiscall mmPlayerDirectory::SaveBinary(char *) | ?SaveBinary@mmPlayerDirectory@@QAEHPAD@Z
+    0x4C3DC0 | public: int __thiscall mmPlayerDirectory::LoadBinary(char *) | ?LoadBinary@mmPlayerDirectory@@QAEHPAD@Z
+    0x4C3F00 | public: static void __cdecl mmPlayerDirectory::DeclareFields(void) | ?DeclareFields@mmPlayerDirectory@@SAXXZ
+    0x4C40D0 | public: virtual class MetaClass * __thiscall mmPlayerDirectory::GetClass(void) | ?GetClass@mmPlayerDirectory@@UAEPAVMetaClass@@XZ
+    0x4C40E0 | struct MetaType * __cdecl RefTo(struct MetaType *,int,int *) | ?RefTo@@YAPAUMetaType@@PAU1@HPAH@Z
+    0x4C4120 | public: virtual void * __thiscall mmPlayerDirectory::`vector deleting destructor'(unsigned int) | ??_EmmPlayerDirectory@@UAEPAXI@Z
+    0x594458 | const mmPlayerDirectory::`vftable' | ??_7mmPlayerDirectory@@6B@
+    0x66A870 | class MetaClass mmPlayerDirectoryMetaClass | ?mmPlayerDirectoryMetaClass@@3VMetaClass@@A
+    0x4C3FB0 | void * __cdecl new_mmPlayerDirectory(int) | ?new_mmPlayerDirectory@@YAPAXH@Z
+    0x4C4080 | void __cdecl delete_mmPlayerDirectory(void *,int) | ?delete_mmPlayerDirectory@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

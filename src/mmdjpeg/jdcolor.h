@@ -18,7 +18,18 @@
 
 #pragma once
 
-// mmdjpeg:jdcolor
+/*
+    mmdjpeg:jdcolor
+
+    0x5649B0 | void __cdecl jinit_color_deconverter(struct jpeg_decompress_struct *) | ?jinit_color_deconverter@@YAXPAUjpeg_decompress_struct@@@Z
+    0x564B80 | void __cdecl build_ycc_rgb_table(struct jpeg_decompress_struct *) | ?build_ycc_rgb_table@@YAXPAUjpeg_decompress_struct@@@Z
+    0x564C50 | void __cdecl ycc_rgb_convert(struct jpeg_decompress_struct *,unsigned char * * *,unsigned int,unsigned char * *,int) | ?ycc_rgb_convert@@YAXPAUjpeg_decompress_struct@@PAPAPAEIPAPAEH@Z
+    0x564D80 | void __cdecl null_convert(struct jpeg_decompress_struct *,unsigned char * * *,unsigned int,unsigned char * *,int) | ?null_convert@@YAXPAUjpeg_decompress_struct@@PAPAPAEIPAPAEH@Z
+    0x564E10 | void __cdecl grayscale_convert(struct jpeg_decompress_struct *,unsigned char * * *,unsigned int,unsigned char * *,int) | ?grayscale_convert@@YAXPAUjpeg_decompress_struct@@PAPAPAEIPAPAEH@Z
+    0x564E40 | void __cdecl gray_rgb_convert(struct jpeg_decompress_struct *,unsigned char * * *,unsigned int,unsigned char * *,int) | ?gray_rgb_convert@@YAXPAUjpeg_decompress_struct@@PAPAPAEIPAPAEH@Z
+    0x564EA0 | void __cdecl ycck_cmyk_convert(struct jpeg_decompress_struct *,unsigned char * * *,unsigned int,unsigned char * *,int) | ?ycck_cmyk_convert@@YAXPAUjpeg_decompress_struct@@PAPAPAEIPAPAEH@Z
+    0x565000 | void __cdecl start_pass_dcolor(struct jpeg_decompress_struct *) | ?start_pass_dcolor@@YAXPAUjpeg_decompress_struct@@@Z
+*/
 
 #include "hooking.h"
 

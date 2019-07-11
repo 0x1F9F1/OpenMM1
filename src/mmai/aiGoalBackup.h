@@ -18,7 +18,19 @@
 
 #pragma once
 
-// mmai:aiGoalBackup
+/*
+    mmai:aiGoalBackup
+
+    0x458470 | public: __thiscall aiGoalBackup::aiGoalBackup(class aiRailSet *,class mmCar *,short *) | ??0aiGoalBackup@@QAE@PAVaiRailSet@@PAVmmCar@@PAF@Z
+    0x4584A0 | public: __thiscall aiGoalBackup::~aiGoalBackup(void) | ??1aiGoalBackup@@QAE@XZ
+    0x4584B0 | public: virtual void __thiscall aiGoalBackup::Init(void) | ?Init@aiGoalBackup@@UAEXXZ
+    0x4584C0 | public: virtual int __thiscall aiGoalBackup::Context(void) | ?Context@aiGoalBackup@@UAEHXZ
+    0x4584D0 | public: virtual int __thiscall aiGoalBackup::Priority(void) | ?Priority@aiGoalBackup@@UAEHXZ
+    0x4584E0 | public: virtual void __thiscall aiGoalBackup::Reset(void) | ?Reset@aiGoalBackup@@UAEXXZ
+    0x458510 | public: virtual void __thiscall aiGoalBackup::Update(void) | ?Update@aiGoalBackup@@UAEXXZ
+    0x458850 | private: void __thiscall aiGoalBackup::FinishedBackingUp(void) | ?FinishedBackingUp@aiGoalBackup@@AAEXXZ
+    0x590BD8 | const aiGoalBackup::`vftable' | ??_7aiGoalBackup@@6B@
+*/
 
 #include "hooking.h"
 

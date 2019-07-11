@@ -18,7 +18,83 @@
 
 #pragma once
 
-// mmgame:hud
+/*
+    mmgame:hud
+
+    0x423DD0 | public: __thiscall mmHUD::mmHUD(void) | ??0mmHUD@@QAE@XZ
+    0x424210 | public: void __thiscall mmHUD::PostChatMessage(char *) | ?PostChatMessage@mmHUD@@QAEXPAD@Z
+    0x424270 | public: virtual void __thiscall mmHUD::ResChange(int,int) | ?ResChange@mmHUD@@UAEXHH@Z
+    0x424340 | public: virtual __thiscall mmHUD::~mmHUD(void) | ??1mmHUD@@UAE@XZ
+    0x4244D0 | public: void __thiscall mmHUD::StartTimers(void) | ?StartTimers@mmHUD@@QAEXXZ
+    0x4244F0 | public: void __thiscall mmHUD::StopTimers(void) | ?StopTimers@mmHUD@@QAEXXZ
+    0x424510 | public: void __thiscall mmHUD::ResetTimers(void) | ?ResetTimers@mmHUD@@QAEXXZ
+    0x424540 | public: void __thiscall mmHUD::ShowClockTime(void) | ?ShowClockTime@mmHUD@@QAEXXZ
+    0x424590 | public: void __thiscall mmHUD::Init(char *,class mmPlayer *) | ?Init@mmHUD@@QAEXPADPAVmmPlayer@@@Z
+    0x424870 | public: void __thiscall mmHUD::Enable(void) | ?Enable@mmHUD@@QAEXXZ
+    0x4248B0 | public: void __thiscall mmHUD::Disable(int) | ?Disable@mmHUD@@QAEXH@Z
+    0x424900 | public: void __thiscall mmHUD::Toggle(void) | ?Toggle@mmHUD@@QAEXXZ
+    0x424920 | public: void __thiscall mmHUD::ToggleExternalView(void) | ?ToggleExternalView@mmHUD@@QAEXXZ
+    0x424970 | public: void __thiscall mmHUD::ToggleDash(void) | ?ToggleDash@mmHUD@@QAEXXZ
+    0x4249B0 | public: void __thiscall mmHUD::ActivateDash(void) | ?ActivateDash@mmHUD@@QAEXXZ
+    0x4249E0 | public: void __thiscall mmHUD::DeactivateDash(void) | ?DeactivateDash@mmHUD@@QAEXXZ
+    0x424A10 | public: int __thiscall mmHUD::IsDashActive(void) | ?IsDashActive@mmHUD@@QAEHXZ
+    0x424A20 | public: virtual void __thiscall mmHUD::Reset(void) | ?Reset@mmHUD@@UAEXXZ
+    0x424A60 | public: virtual void __thiscall mmHUD::Update(void) | ?Update@mmHUD@@UAEXXZ
+    0x424DC0 | public: virtual void __thiscall mmHUD::UpdatePaused(void) | ?UpdatePaused@mmHUD@@UAEXXZ
+    0x424DF0 | public: void __thiscall mmHUD::ToggleMirror(void) | ?ToggleMirror@mmHUD@@QAEXXZ
+    0x424E10 | public: virtual void __thiscall mmHUD::Cull(void) | ?Cull@mmHUD@@UAEXXZ
+    0x424EE0 | public: void __thiscall mmHUD::SetStandings(int,int) | ?SetStandings@mmHUD@@QAEXHH@Z
+    0x424F20 | public: void __thiscall mmHUD::SetLapTime(int,float,int) | ?SetLapTime@mmHUD@@QAEXHMH@Z
+    0x424F60 | public: void __thiscall mmHUD::SetWPCleared(int,int) | ?SetWPCleared@mmHUD@@QAEXHH@Z
+    0x424F80 | public: void __thiscall mmHUD::SetMessage(struct LocString *,float,int) | ?SetMessage@mmHUD@@QAEXPAULocString@@MH@Z
+    0x424FC0 | public: void __thiscall mmHUD::SetMessage2(struct LocString *) | ?SetMessage2@mmHUD@@QAEXPAULocString@@@Z
+    0x424FF0 | public: void __thiscall mmHUD::SetScore(char *) | ?SetScore@mmHUD@@QAEXPAD@Z
+    0x425010 | public: void __thiscall mmHUD::AddPlayer(char *,unsigned long,int,int) | ?AddPlayer@mmHUD@@QAEXPADKHH@Z
+    0x425040 | public: void __thiscall mmHUD::SetScore(unsigned long,int) | ?SetScore@mmHUD@@QAEXKH@Z
+    0x425060 | public: void __thiscall mmHUD::RemovePlayer(unsigned long) | ?RemovePlayer@mmHUD@@QAEXK@Z
+    0x425080 | public: void __thiscall mmHUD::ActivateGold(void) | ?ActivateGold@mmHUD@@QAEXXZ
+    0x425090 | public: void __thiscall mmHUD::DeactivateGold(void) | ?DeactivateGold@mmHUD@@QAEXXZ
+    0x4250A0 | public: void __thiscall mmHUD::GetTime(char *,float) | ?GetTime@mmHUD@@QAEXPADM@Z
+    0x4250C0 | public: void __thiscall mmHUD::PlayNetAlert(void) | ?PlayNetAlert@mmHUD@@QAEXXZ
+    0x4250E0 | public: void __thiscall mmHUD::TogglePositionDisplay(int) | ?TogglePositionDisplay@mmHUD@@QAEXH@Z
+    0x425140 | public: void __thiscall mmHUD::GetPosHdg(class Vector4 &) | ?GetPosHdg@mmHUD@@QAEXAAVVector4@@@Z
+    0x4251D0 | public: void __thiscall mmHUD::RecordPosition(char *) | ?RecordPosition@mmHUD@@QAEXPAD@Z
+    0x425250 | public: __thiscall mmTimer::mmTimer(void) | ??0mmTimer@@QAE@XZ
+    0x425270 | public: virtual __thiscall mmTimer::~mmTimer(void) | ??1mmTimer@@UAE@XZ
+    0x425280 | public: void __thiscall mmTimer::Init(int,float) | ?Init@mmTimer@@QAEXHM@Z
+    0x4252A0 | public: float __thiscall mmTimer::GetTime(void) | ?GetTime@mmTimer@@QAEMXZ
+    0x4252B0 | public: virtual void __thiscall mmTimer::Update(void) | ?Update@mmTimer@@UAEXXZ
+    0x425300 | public: virtual void __thiscall mmTimer::Reset(void) | ?Reset@mmTimer@@UAEXXZ
+    0x425310 | public: void __thiscall mmTimer::Start(void) | ?Start@mmTimer@@QAEXXZ
+    0x425320 | public: void __thiscall mmTimer::Stop(void) | ?Stop@mmTimer@@QAEXXZ
+    0x425330 | public: void __thiscall mmTimer::StartStop(void) | ?StartStop@mmTimer@@QAEXXZ
+    0x425340 | public: __thiscall mmArrow::mmArrow(void) | ??0mmArrow@@QAE@XZ
+    0x4254C0 | public: virtual __thiscall mmArrow::~mmArrow(void) | ??1mmArrow@@UAE@XZ
+    0x425530 | public: void __thiscall mmArrow::Init(class Matrix34 *) | ?Init@mmArrow@@QAEXPAVMatrix34@@@Z
+    0x425540 | public: virtual void __thiscall mmArrow::Reset(void) | ?Reset@mmArrow@@UAEXXZ
+    0x425550 | public: void __thiscall mmArrow::SetInterest(class Vector3 *) | ?SetInterest@mmArrow@@QAEXPAVVector3@@@Z
+    0x425560 | private: void __thiscall mmArrow::ReColorArrow(int) | ?ReColorArrow@mmArrow@@AAEXH@Z
+    0x4255D0 | public: virtual void __thiscall mmArrow::Update(void) | ?Update@mmArrow@@UAEXXZ
+    0x4257D0 | public: static void __cdecl mmHUD::DeclareFields(void) | ?DeclareFields@mmHUD@@SAXXZ
+    0x425940 | public: virtual class MetaClass * __thiscall mmHUD::GetClass(void) | ?GetClass@mmHUD@@UAEPAVMetaClass@@XZ
+    0x425980 | public: virtual __thiscall mmExternalView::~mmExternalView(void) | ??1mmExternalView@@UAE@XZ
+    0x4259D0 | public: virtual __thiscall mmCDPlayer::~mmCDPlayer(void) | ??1mmCDPlayer@@UAE@XZ
+    0x425A30 | public: virtual void * __thiscall mmTimer::`vector deleting destructor'(unsigned int) | ??_EmmTimer@@UAEPAXI@Z
+    0x425A30 | public: virtual void * __thiscall mmTimer::`scalar deleting destructor'(unsigned int) | ??_GmmTimer@@UAEPAXI@Z
+    0x425A60 | public: virtual void * __thiscall mmArrow::`vector deleting destructor'(unsigned int) | ??_EmmArrow@@UAEPAXI@Z
+    0x425A60 | public: virtual void * __thiscall mmArrow::`scalar deleting destructor'(unsigned int) | ??_GmmArrow@@UAEPAXI@Z
+    0x425A90 | public: virtual void * __thiscall mmHUD::`vector deleting destructor'(unsigned int) | ??_EmmHUD@@UAEPAXI@Z
+    0x58FEB8 | const mmHUD::`vftable' | ??_7mmHUD@@6B@
+    0x58FEE8 | const mmTimer::`vftable' | ??_7mmTimer@@6B@
+    0x58FF18 | const mmArrow::`vftable' | ??_7mmArrow@@6B@
+    0x5A64C4 | float arotX | ?arotX@@3MA
+    0x5A64C8 | int FirstPrintTime | ?FirstPrintTime@@3HA
+    0x609A70 | float defmass | ?defmass@@3MA
+    0x609A80 | class MetaClass mmHUDMetaClass | ?mmHUDMetaClass@@3VMetaClass@@A
+    0x609AA8 | float LastResetTime | ?LastResetTime@@3MA
+    0x425820 | void * __cdecl new_mmHUD(int) | ?new_mmHUD@@YAPAXH@Z
+    0x4258F0 | void __cdecl delete_mmHUD(void *,int) | ?delete_mmHUD@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

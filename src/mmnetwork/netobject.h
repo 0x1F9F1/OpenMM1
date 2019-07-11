@@ -18,7 +18,17 @@
 
 #pragma once
 
-// mmnetwork:netobject
+/*
+    mmnetwork:netobject
+
+    0x482450 | public: __thiscall asNetObject::asNetObject(void) | ??0asNetObject@@QAE@XZ
+    0x482470 | public: virtual __thiscall asNetObject::~asNetObject(void) | ??1asNetObject@@UAE@XZ
+    0x482480 | public: virtual void __thiscall asNetObject::PositionUpdate(class Matrix34 *,class Vector3,float,float,float) | ?PositionUpdate@asNetObject@@UAEXPAVMatrix34@@VVector3@@MMM@Z
+    0x4824A0 | public: virtual void __thiscall asNetObject::Update(void) | ?Update@asNetObject@@UAEXXZ
+    0x4824B0 | public: virtual void * __thiscall asNetObject::`vector deleting destructor'(unsigned int) | ??_EasNetObject@@UAEPAXI@Z
+    0x4824B0 | public: virtual void * __thiscall asNetObject::`scalar deleting destructor'(unsigned int) | ??_GasNetObject@@UAEPAXI@Z
+    0x591AB0 | const asNetObject::`vftable' | ??_7asNetObject@@6B@
+*/
 
 #include "hooking.h"
 

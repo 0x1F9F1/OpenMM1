@@ -18,7 +18,71 @@
 
 #pragma once
 
-// mmcar:carsim
+/*
+    mmcar:carsim
+
+    0x4645B0 | void __cdecl IMPACTCB(class mmCarSim *,class asBound *,class mmIntersection *,class Vector3 *,float,class Vector3 *) | ?IMPACTCB@@YAXPAVmmCarSim@@PAVasBound@@PAVmmIntersection@@PAVVector3@@M3@Z
+    0x464610 | public: __thiscall mmCarSim::mmCarSim(void) | ??0mmCarSim@@QAE@XZ
+    0x464CB0 | public: int __thiscall mmCarSim::OnGround(void) | ?OnGround@mmCarSim@@QAEHXZ
+    0x464CF0 | public: static void __cdecl mmCarSim::SetGlobalTuning(float,float) | ?SetGlobalTuning@mmCarSim@@SAXMM@Z
+    0x464D00 | public: virtual __thiscall mmCarSim::~mmCarSim(void) | ??1mmCarSim@@UAE@XZ
+    0x465000 | public: void __thiscall mmCarSim::AddPlayerSpecifics(void) | ?AddPlayerSpecifics@mmCarSim@@QAEXXZ
+    0x465080 | public: void __thiscall mmCarSim::PlayHorn(void) | ?PlayHorn@mmCarSim@@QAEXXZ
+    0x4650F0 | public: void __thiscall mmCarSim::StopHorn(void) | ?StopHorn@mmCarSim@@QAEXXZ
+    0x465160 | public: void __thiscall mmCarSim::StartSiren(void) | ?StartSiren@mmCarSim@@QAEXXZ
+    0x465190 | public: void __thiscall mmCarSim::StopSiren(void) | ?StopSiren@mmCarSim@@QAEXXZ
+    0x4651C0 | public: void __thiscall mmCarSim::Init(char *,class mmCar *,int) | ?Init@mmCarSim@@QAEXPADPAVmmCar@@H@Z
+    0x4657E0 | public: void __thiscall mmCarSim::ReInit(char *) | ?ReInit@mmCarSim@@QAEXPAD@Z
+    0x465CE0 | public: void __thiscall mmCarSim::RestoreImpactParams(void) | ?RestoreImpactParams@mmCarSim@@QAEXXZ
+    0x465D00 | public: void __thiscall mmCarSim::SetHackedImpactParams(void) | ?SetHackedImpactParams@mmCarSim@@QAEXXZ
+    0x465D20 | public: void __thiscall mmCarSim::ReconfigureDrivetrain(void) | ?ReconfigureDrivetrain@mmCarSim@@QAEXXZ
+    0x465D40 | public: void __thiscall mmCarSim::ConfigureDrivetrain(void) | ?ConfigureDrivetrain@mmCarSim@@QAEXXZ
+    0x465FC0 | public: void __thiscall mmCarSim::UnconfigureDrivetrain(void) | ?UnconfigureDrivetrain@mmCarSim@@QAEXXZ
+    0x4661C0 | public: void __thiscall mmCarSim::SetResetPos(class Vector3 &) | ?SetResetPos@mmCarSim@@QAEXAAVVector3@@@Z
+    0x466200 | public: virtual void __thiscall mmCarSim::AfterLoad(void) | ?AfterLoad@mmCarSim@@UAEXXZ
+    0x4662C0 | public: virtual void __thiscall mmCarSim::BeforeSave(void) | ?BeforeSave@mmCarSim@@UAEXXZ
+    0x466340 | public: void __thiscall mmCarSim::UpdateICSParams(void) | ?UpdateICSParams@mmCarSim@@QAEXXZ
+    0x466370 | public: virtual void __thiscall mmCarSim::Reset(void) | ?Reset@mmCarSim@@UAEXXZ
+    0x466520 | public: virtual void __thiscall mmCarSim::Update(void) | ?Update@mmCarSim@@UAEXXZ
+    0x466D50 | public: void __thiscall mmCarSim::Explode(void) | ?Explode@mmCarSim@@QAEXXZ
+    0x466E30 | public: void __thiscall mmCarSim::UpdateExhaust(void) | ?UpdateExhaust@mmCarSim@@QAEXXZ
+    0x466F40 | public: void __thiscall mmCarSim::UpdateDamage(void) | ?UpdateDamage@mmCarSim@@QAEXXZ
+    0x4671F0 | public: void __thiscall mmCarSim::UpdateFF(void) | ?UpdateFF@mmCarSim@@QAEXXZ
+    0x4674B0 | public: int __thiscall mmCarSim::ShouldSkid(void) | ?ShouldSkid@mmCarSim@@QAEHXZ
+    0x467500 | public: void __thiscall mmCarSim::RemoveNetVehicleAudio(void) | ?RemoveNetVehicleAudio@mmCarSim@@QAEXXZ
+    0x467510 | public: void __thiscall mmCarSim::AddWidgets(class Bank *) | ?AddWidgets@mmCarSim@@QAEXPAVBank@@@Z
+    0x467520 | public: void __thiscall mmCarSim::InitPtx(void) | ?InitPtx@mmCarSim@@QAEXXZ
+    0x467A10 | public: void __thiscall mmCarSim::PlayImpactAudio(short,class mmIntersection *,class Vector3 *) | ?PlayImpactAudio@mmCarSim@@QAEXFPAVmmIntersection@@PAVVector3@@@Z
+    0x467B30 | public: static void __cdecl mmCarSim::DeclareFields(void) | ?DeclareFields@mmCarSim@@SAXXZ
+    0x468110 | public: virtual class MetaClass * __thiscall mmCarSim::GetClass(void) | ?GetClass@mmCarSim@@UAEPAVMetaClass@@XZ
+    0x468270 | public: virtual __thiscall mmStuck::~mmStuck(void) | ??1mmStuck@@UAE@XZ
+    0x468280 | public: virtual __thiscall mmSplash::~mmSplash(void) | ??1mmSplash@@UAE@XZ
+    0x468290 | public: virtual __thiscall asAero::~asAero(void) | ??1asAero@@UAE@XZ
+    0x4682A0 | public: virtual __thiscall mmForce::~mmForce(void) | ??1mmForce@@UAE@XZ
+    0x4682B0 | public: virtual __thiscall VehGyro::~VehGyro(void) | ??1VehGyro@@UAE@XZ
+    0x4682C0 | public: virtual __thiscall mmDrivetrain::~mmDrivetrain(void) | ??1mmDrivetrain@@UAE@XZ
+    0x4682D0 | public: virtual __thiscall mmWheel::~mmWheel(void) | ??1mmWheel@@UAE@XZ
+    0x4682E0 | public: virtual __thiscall mmAxle::~mmAxle(void) | ??1mmAxle@@UAE@XZ
+    0x4682F0 | public: virtual __thiscall mmShock::~mmShock(void) | ??1mmShock@@UAE@XZ
+    0x468300 | public: virtual __thiscall mmTransmission::~mmTransmission(void) | ??1mmTransmission@@UAE@XZ
+    0x468310 | struct MetaType * __cdecl Struct(class MetaClass *) | ?Struct@@YAPAUMetaType@@PAVMetaClass@@@Z
+    0x468340 | public: virtual void * __thiscall mmCarSim::`vector deleting destructor'(unsigned int) | ??_EmmCarSim@@UAEPAXI@Z
+    0x590F28 | const mmCarSim::`vftable' | ??_7mmCarSim@@6B@
+    0x590F58 | const StructType::`vftable' | ??_7StructType@@6B@
+    0x5A9F78 | float MetricFactor | ?MetricFactor@@3MA
+    0x5A9F7C | float WeatherFriction | ?WeatherFriction@@3MA
+    0x5A9F80 | int EnableSmoke | ?EnableSmoke@@3HA
+    0x609FE0 | class Vector3 PlayerPos | ?PlayerPos@@3VVector3@@A
+    0x609FF0 | class MetaClass mmCarSimMetaClass | ?mmCarSimMetaClass@@3VMetaClass@@A
+    0x60A018 | float HitWaterTimer | ?HitWaterTimer@@3MA
+    0x60A030 | public: static class agiTexDef * mmCarSim::GrassTex | ?GrassTex@mmCarSim@@2PAVagiTexDef@@A
+    0x60A034 | public: static class agiTexDef * mmCarSim::DirtTex | ?DirtTex@mmCarSim@@2PAVagiTexDef@@A
+    0x60A038 | public: static class agiTexDef * mmCarSim::SnowTex | ?SnowTex@mmCarSim@@2PAVagiTexDef@@A
+    0x60A03C | int ForceSmoke | ?ForceSmoke@@3HA
+    0x60A040 | public: static float mmCarSim::PlayerRawSteering | ?PlayerRawSteering@mmCarSim@@2MA
+    0x467FF0 | void * __cdecl new_mmCarSim(int) | ?new_mmCarSim@@YAPAXH@Z
+    0x4680C0 | void __cdecl delete_mmCarSim(void *,int) | ?delete_mmCarSim@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

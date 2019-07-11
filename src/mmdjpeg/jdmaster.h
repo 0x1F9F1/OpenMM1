@@ -18,7 +18,17 @@
 
 #pragma once
 
-// mmdjpeg:jdmaster
+/*
+    mmdjpeg:jdmaster
+
+    0x5622A0 | void __cdecl jpeg_calc_output_dimensions(struct jpeg_decompress_struct *) | ?jpeg_calc_output_dimensions@@YAXPAUjpeg_decompress_struct@@@Z
+    0x562360 | void __cdecl jinit_master_decompress(struct jpeg_decompress_struct *) | ?jinit_master_decompress@@YAXPAUjpeg_decompress_struct@@@Z
+    0x562350 | unsigned char __cdecl use_merged_upsample(struct jpeg_decompress_struct *) | ?use_merged_upsample@@YAEPAUjpeg_decompress_struct@@@Z
+    0x5623A0 | void __cdecl master_selection(struct jpeg_decompress_struct *) | ?master_selection@@YAXPAUjpeg_decompress_struct@@@Z
+    0x562540 | void __cdecl prepare_range_limit_table(struct jpeg_decompress_struct *) | ?prepare_range_limit_table@@YAXPAUjpeg_decompress_struct@@@Z
+    0x5625C0 | void __cdecl prepare_for_output_pass(struct jpeg_decompress_struct *) | ?prepare_for_output_pass@@YAXPAUjpeg_decompress_struct@@@Z
+    0x562710 | void __cdecl finish_output_pass(struct jpeg_decompress_struct *) | ?finish_output_pass@@YAXPAUjpeg_decompress_struct@@@Z
+*/
 
 #include "hooking.h"
 

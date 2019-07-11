@@ -18,7 +18,42 @@
 
 #pragma once
 
-// agiworld:meshlight
+/*
+    agiworld:meshlight
+
+    0x500700 | void __cdecl agiMeshLighterReset(void) | ?agiMeshLighterReset@@YAXXZ
+    0x5007F0 | void __cdecl agiMeshLighterQuarter(unsigned char *,unsigned int *,unsigned int *,class agiMeshSet *) | ?agiMeshLighterQuarter@@YAXPAEPAI1PAVagiMeshSet@@@Z
+    0x5009B0 | void __cdecl agiMeshLighterUpdateColors(void) | ?agiMeshLighterUpdateColors@@YAXXZ
+    0x500BA0 | void __cdecl agiMeshLighterTriple(unsigned char *,unsigned int *,unsigned int *,class agiMeshSet *) | ?agiMeshLighterTriple@@YAXPAEPAI1PAVagiMeshSet@@@Z
+    0x5010D0 | void __cdecl agiMeshPrelight(unsigned int *,class agiMeshSet *,class Matrix34 &) | ?agiMeshPrelight@@YAXPAIPAVagiMeshSet@@AAVMatrix34@@@Z
+    0x5012A0 | void __cdecl agiBeginCones(void) | ?agiBeginCones@@YAXXZ
+    0x5012B0 | void __cdecl agiDeclareCone(class Vector3 &,class Vector3 &,class Vector3 &,float,float,class Vector3 &,int) | ?agiDeclareCone@@YAXAAVVector3@@00MM0H@Z
+    0x501380 | void __cdecl agiConeLighter(unsigned char *,unsigned int *,unsigned int *,class agiMeshSet *) | ?agiConeLighter@@YAXPAEPAI1PAVagiMeshSet@@@Z
+    0x5019A0 | void __cdecl agiDrawCones(void) | ?agiDrawCones@@YAXXZ
+    0x5019E0 | void __cdecl agiMeshLighterSpecular(unsigned char *,unsigned int *,unsigned int *,class agiMeshSet *) | ?agiMeshLighterSpecular@@YAXPAEPAI1PAVagiMeshSet@@@Z
+    0x5B8530 | float agiMeshLighterMin | ?agiMeshLighterMin@@3MA
+    0x5B8534 | float agiMeshLighterMax | ?agiMeshLighterMax@@3MA
+    0x5B8538 | float agiMeshLighterConeRange2 | ?agiMeshLighterConeRange2@@3MA
+    0x5B8540 | float agiMeshLighterSpecularExponent | ?agiMeshLighterSpecularExponent@@3MA
+    0x69F6A0 | union mmx minus1 | ?minus1@@3Tmmx@@A
+    0x69F6A8 | class Vector3 agiMeshLighterSunColor | ?agiMeshLighterSunColor@@3VVector3@@A
+    0x69F6B8 | union mmx zero | ?zero@@3Tmmx@@A
+    0x69F6C0 | union mmx keyColor | ?keyColor@@3Tmmx@@A
+    0x6A08E0 | class Vector3 agiMeshLighterSun | ?agiMeshLighterSun@@3VVector3@@A
+    0x6A08F0 | class Vector3 agiMeshLighterFill1 | ?agiMeshLighterFill1@@3VVector3@@A
+    0x6A0900 | class Vector3 agiMeshLighterFill2 | ?agiMeshLighterFill2@@3VVector3@@A
+    0x6A0910 | class Vector3 agiMeshLighterSpecularColor | ?agiMeshLighterSpecularColor@@3VVector3@@A
+    0x6A0920 | union mmx unclampSSS_3_10 | ?unclampSSS_3_10@@3Tmmx@@A
+    0x6A0928 | class Vector3 agiMeshLighterAmbient | ?agiMeshLighterAmbient@@3VVector3@@A
+    0x6A0938 | union mmx ambColor | ?ambColor@@3Tmmx@@A
+    0x6A0940 | union mmx clampSSS_3_10 | ?clampSSS_3_10@@3Tmmx@@A
+    0x6A0948 | union mmx fill1Color | ?fill1Color@@3Tmmx@@A
+    0x6A0950 | class Vector3 agiMeshLighterFill2Color | ?agiMeshLighterFill2Color@@3VVector3@@A
+    0x6A0970 | class Vector3 agiMeshLighterFill1Color | ?agiMeshLighterFill1Color@@3VVector3@@A
+    0x6A0980 | union mmx fill2Color | ?fill2Color@@3Tmmx@@A
+    0x500FA0 | void __cdecl mmxTriple(unsigned int *,unsigned int *,int,unsigned char *,int) | ?mmxTriple@@YAXPAI0HPAEH@Z
+    0x501760 | void __cdecl agiInitCones(class Matrix34 &,float) | ?agiInitCones@@YAXAAVMatrix34@@M@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,15 @@
 
 #pragma once
 
-// stream:problems
+/*
+    stream:problems
+
+    0x542930 | void __cdecl InitProblems(void) | ?InitProblems@@YAXXZ
+    0x542990 | void __cdecl DumpProblems(void) | ?DumpProblems@@YAXXZ
+    0x542C80 | void __cdecl RegisterProblem(char *,char *,char *) | ?RegisterProblem@@YAXPAD00@Z
+    0x542EC0 | public: __thiscall problem_t::~problem_t(void) | ??1problem_t@@QAE@XZ
+    0x542BD0 | int __cdecl cmpProblem(void const *,void const *) | ?cmpProblem@@YAHPBX0@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,25 @@
 
 #pragma once
 
-// mmanim:AnimMgr
+/*
+    mmanim:AnimMgr
+
+    0x4B6020 | public: __thiscall mmAnimMgr::mmAnimMgr(void) | ??0mmAnimMgr@@QAE@XZ
+    0x4B60A0 | public: virtual __thiscall mmAnimMgr::~mmAnimMgr(void) | ??1mmAnimMgr@@UAE@XZ
+    0x4B6100 | public: int __thiscall mmAnimMgr::Init(char *,class mmInstance *,class mmInstance * *,int) | ?Init@mmAnimMgr@@QAEHPADPAVmmInstance@@PAPAV2@H@Z
+    0x4B62B0 | public: virtual void __thiscall mmAnimMgr::Update(void) | ?Update@mmAnimMgr@@UAEXXZ
+    0x4B62C0 | public: void __thiscall mmAnimMgr::TestDOFAct(int) | ?TestDOFAct@mmAnimMgr@@QAEXH@Z
+    0x4B62D0 | public: void __thiscall mmAnimMgr::AirlinerSwap(void) | ?AirlinerSwap@mmAnimMgr@@QAEXXZ
+    0x4B6310 | public: void __thiscall mmAnimMgr::UFOSwap(void) | ?UFOSwap@mmAnimMgr@@QAEXXZ
+    0x4B6350 | public: static void __cdecl mmAnimMgr::DeclareFields(void) | ?DeclareFields@mmAnimMgr@@SAXXZ
+    0x4B64C0 | public: virtual class MetaClass * __thiscall mmAnimMgr::GetClass(void) | ?GetClass@mmAnimMgr@@UAEPAVMetaClass@@XZ
+    0x4B64D0 | public: virtual void * __thiscall mmAnimSpline::`vector deleting destructor'(unsigned int) | ??_EmmAnimSpline@@UAEPAXI@Z
+    0x4B6530 | public: virtual void * __thiscall mmAnimMgr::`vector deleting destructor'(unsigned int) | ??_EmmAnimMgr@@UAEPAXI@Z
+    0x593EF8 | const mmAnimMgr::`vftable' | ??_7mmAnimMgr@@6B@
+    0x668090 | class MetaClass mmAnimMgrMetaClass | ?mmAnimMgrMetaClass@@3VMetaClass@@A
+    0x4B63A0 | void * __cdecl new_mmAnimMgr(int) | ?new_mmAnimMgr@@YAPAXH@Z
+    0x4B6470 | void __cdecl delete_mmAnimMgr(void *,int) | ?delete_mmAnimMgr@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

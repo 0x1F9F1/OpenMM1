@@ -18,7 +18,28 @@
 
 #pragma once
 
-// pcwindis:dxsetup
+/*
+    pcwindis:dxsetup
+
+    0x556DB0 | int __stdcall MultiMonCallback(struct _GUID *,char *,char *,void *,void *) | ?MultiMonCallback@@YGHPAU_GUID@@PAD1PAX2@Z
+    0x556DF0 | void __cdecl dxiConfig(int,char * *) | ?dxiConfig@@YAXHPAPAD@Z
+    0x7119A0 | int dxiCpuSpeed | ?dxiCpuSpeed@@3HA
+    0x5570C0 | void __cdecl NeedDX6(void) | ?NeedDX6@@YAXXZ
+    0x5570F0 | int __stdcall EnumCounter(struct _GUID *,char *,char *,void *) | ?EnumCounter@@YGHPAU_GUID@@PAD1PAX@Z
+    0x557110 | void __cdecl MyDirectDrawEnumerate(int (__stdcall*)(struct _GUID *,char *,char *,void *),void *) | ?MyDirectDrawEnumerate@@YAXP6GHPAU_GUID@@PAD1PAX@Z2@Z
+    0x557180 | void __cdecl EnumerateRenderers2(void) | ?EnumerateRenderers2@@YAXXZ
+    0x5572D0 | int __cdecl CheckSoftwareRenderer(struct IDirectDraw4 *,struct _GUID *) | ?CheckSoftwareRenderer@@YAHPAUIDirectDraw4@@PAU_GUID@@@Z
+    0x5573C0 | long __cdecl LockScreen(struct IDirectDraw4 *) | ?LockScreen@@YAJPAUIDirectDraw4@@@Z
+    0x557480 | void __cdecl UnlockScreen(void) | ?UnlockScreen@@YAXXZ
+    0x5574A0 | int __cdecl TestResolution(struct IDirectDraw4 *,struct dxiRendererInfo_t &) | ?TestResolution@@YAHPAUIDirectDraw4@@AAUdxiRendererInfo_t@@@Z
+    0x5578F0 | long __stdcall ModeCallback(struct _DDSURFACEDESC2 *,void *) | ?ModeCallback@@YGJPAU_DDSURFACEDESC2@@PAX@Z
+    0x557980 | long __stdcall EnumZ(struct _DDPIXELFORMAT *,void *) | ?EnumZ@@YGJPAU_DDPIXELFORMAT@@PAX@Z
+    0x5579B0 | void __cdecl AddRenderer(struct IDirectDraw4 *,struct _GUID *,char *) | ?AddRenderer@@YAXPAUIDirectDraw4@@PAU_GUID@@PAD@Z
+    0x557E00 | long __stdcall EnumTextures(struct _DDPIXELFORMAT *,void *) | ?EnumTextures@@YGJPAU_DDPIXELFORMAT@@PAX@Z
+    0x557E30 | int __cdecl NotLameChipset(unsigned long,unsigned long) | ?NotLameChipset@@YAHKK@Z
+    0x557E40 | unsigned int __cdecl GetSpecialFlags(unsigned long,unsigned long) | ?GetSpecialFlags@@YAIKK@Z
+    0x557F20 | int __stdcall Enumerator(struct _GUID *,char *,char *,void *) | ?Enumerator@@YGHPAU_GUID@@PAD1PAX@Z
+*/
 
 #include "hooking.h"
 

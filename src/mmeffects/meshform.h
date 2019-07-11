@@ -18,7 +18,22 @@
 
 #pragma once
 
-// mmeffects:meshform
+/*
+    mmeffects:meshform
+
+    0x4F18C0 | public: __thiscall asMeshSetForm::asMeshSetForm(void) | ??0asMeshSetForm@@QAE@XZ
+    0x4F18E0 | public: void __thiscall asMeshSetForm::SetShape(char *,char *,class Vector3 *) | ?SetShape@asMeshSetForm@@QAEXPAD0PAVVector3@@@Z
+    0x4F1920 | public: void __thiscall asMeshSetForm::SetZRead(int) | ?SetZRead@asMeshSetForm@@QAEXH@Z
+    0x4F1940 | public: void __thiscall asMeshSetForm::SetZWrite(int) | ?SetZWrite@asMeshSetForm@@QAEXH@Z
+    0x4F1960 | public: virtual void __thiscall asMeshSetForm::Update(void) | ?Update@asMeshSetForm@@UAEXXZ
+    0x4F1980 | public: virtual void __thiscall asMeshSetForm::Cull(void) | ?Cull@asMeshSetForm@@UAEXXZ
+    0x4F1A90 | public: virtual void * __thiscall asMeshSetForm::`scalar deleting destructor'(unsigned int) | ??_GasMeshSetForm@@UAEPAXI@Z
+    0x4F1A90 | public: virtual void * __thiscall asMeshSetForm::`vector deleting destructor'(unsigned int) | ??_EasMeshSetForm@@UAEPAXI@Z
+    0x4F1AC0 | public: virtual __thiscall asMeshSetForm::~asMeshSetForm(void) | ??1asMeshSetForm@@UAE@XZ
+    0x595068 | const asMeshSetForm::`vftable' | ??_7asMeshSetForm@@6B@
+    0x5B796C | public: static void (__cdecl* asMeshSetForm::Lighter)(unsigned char *,unsigned int *,unsigned int *,class agiMeshSet *) | ?Lighter@asMeshSetForm@@2P6AXPAEPAI1PAVagiMeshSet@@@ZA
+    0x67B870 | public: static class agiTexDef * asMeshSetForm::SphMapTex | ?SphMapTex@asMeshSetForm@@2PAVagiTexDef@@A
+*/
 
 #include "hooking.h"
 

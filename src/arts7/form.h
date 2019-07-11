@@ -18,7 +18,30 @@
 
 #pragma once
 
-// arts7:form
+/*
+    arts7:form
+
+    0x5142F0 | public: __thiscall asForm::asForm(void) | ??0asForm@@QAE@XZ
+    0x514310 | public: virtual __thiscall asForm::~asForm(void) | ??1asForm@@UAE@XZ
+    0x514370 | public: void __thiscall asForm::SetDLP(class DLP *) | ?SetDLP@asForm@@QAEXPAVDLP@@@Z
+    0x5143A0 | public: void __thiscall asForm::SetShape(char *,char *,class Vector3 *,int,int) | ?SetShape@asForm@@QAEXPAD0PAVVector3@@HH@Z
+    0x5143F0 | public: void __thiscall asForm::SetCull(int,float) | ?SetCull@asForm@@QAEXHM@Z
+    0x514410 | public: virtual void __thiscall asForm::Update(void) | ?Update@asForm@@UAEXXZ
+    0x514440 | public: virtual void __thiscall asForm::Cull(void) | ?Cull@asForm@@UAEXXZ
+    0x5144D0 | public: int __thiscall asForm::Visible(class asCamera *,class Matrix34 const &) const | ?Visible@asForm@@QBEHPAVasCamera@@ABVMatrix34@@@Z
+    0x514690 | public: class Vector3 __thiscall asForm::GetBoundMin(void) | ?GetBoundMin@asForm@@QAE?AVVector3@@XZ
+    0x5146E0 | public: class Vector3 __thiscall asForm::GetBoundMax(void) | ?GetBoundMax@asForm@@QAE?AVVector3@@XZ
+    0x514730 | public: class Vector4 __thiscall asForm::GetBoundSphere(void) | ?GetBoundSphere@asForm@@QAE?AVVector4@@XZ
+    0x514790 | public: void __thiscall asForm::FileIO(class MiniParser *) | ?FileIO@asForm@@QAEXPAVMiniParser@@@Z
+    0x5147A0 | public: void __thiscall asForm::AddWidgets(class Bank *) | ?AddWidgets@asForm@@QAEXPAVBank@@@Z
+    0x5147B0 | public: static void __cdecl asForm::DeclareFields(void) | ?DeclareFields@asForm@@SAXXZ
+    0x514910 | public: virtual class MetaClass * __thiscall asForm::GetClass(void) | ?GetClass@asForm@@UAEPAVMetaClass@@XZ
+    0x514920 | public: virtual void * __thiscall asForm::`vector deleting destructor'(unsigned int) | ??_EasForm@@UAEPAXI@Z
+    0x595520 | const asForm::`vftable' | ??_7asForm@@6B@
+    0x6F2C18 | class MetaClass asFormMetaClass | ?asFormMetaClass@@3VMetaClass@@A
+    0x514800 | void * __cdecl new_asForm(int) | ?new_asForm@@YAPAXH@Z
+    0x5148C0 | void __cdecl delete_asForm(void *,int) | ?delete_asForm@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

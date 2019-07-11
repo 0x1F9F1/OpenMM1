@@ -18,7 +18,27 @@
 
 #pragma once
 
-// vector7:vector2
+/*
+    vector7:vector2
+
+    0x553A80 | public: class Vector2 __thiscall Vector2::operator/(float) const | ??KVector2@@QBE?AV0@M@Z
+    0x553AE0 | public: class Vector2 __thiscall Vector2::operator~(void) const | ??SVector2@@QBE?AV0@XZ
+    0x553B50 | public: float __thiscall Vector2::Mag(void) const | ?Mag@Vector2@@QBEMXZ
+    0x553BD0 | public: float __thiscall Vector2::InvMag(void) const | ?InvMag@Vector2@@QBEMXZ
+    0x553C30 | public: void __thiscall Vector2Array::Init(int) | ?Init@Vector2Array@@QAEXH@Z
+    0x553CA0 | public: void __thiscall Vector2Array::Delete(void) | ?Delete@Vector2Array@@QAEXXZ
+    0x553CF0 | private: void __thiscall Vector2Array::NewTable(int) | ?NewTable@Vector2Array@@AAEXH@Z
+    0x553D60 | public: class Vector2 & __thiscall Vector2Array::operator[](int) | ??AVector2Array@@QAEAAVVector2@@H@Z
+    0x553DD0 | public: void __thiscall Vector2Array::operator=(class Vector2Array &) | ??4Vector2Array@@QAEXAAV0@@Z
+    0x553EB0 | public: void __thiscall Vector2Array::BlockCopy(class Vector2Array &) | ?BlockCopy@Vector2Array@@QAEXAAV1@@Z
+    0x553FB0 | public: virtual void __thiscall Vector2Type::Save(class MiniParser *,void *) | ?Save@Vector2Type@@UAEXPAVMiniParser@@PAX@Z
+    0x553FE0 | public: virtual void __thiscall Vector2Type::Load(class MiniParser *,void *) | ?Load@Vector2Type@@UAEXPAVMiniParser@@PAX@Z
+    0x554010 | public: virtual unsigned int __thiscall Vector2Type::SizeOf(void) | ?SizeOf@Vector2Type@@UAEIXZ
+    0x554020 | public: virtual void * __thiscall Vector2Type::New(int) | ?New@Vector2Type@@UAEPAXH@Z
+    0x554070 | public: virtual void __thiscall Vector2Type::Delete(void *,int) | ?Delete@Vector2Type@@UAEXPAXH@Z
+    0x596218 | const Vector2Type::`vftable' | ??_7Vector2Type@@6B@
+    0x710A84 | struct Vector2Type Vector2Inst | ?Vector2Inst@@3UVector2Type@@A
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,35 @@
 
 #pragma once
 
-// mmcamcs:trackcamcs
+/*
+    mmcamcs:trackcamcs
+
+    0x4E9510 | public: __thiscall TrackCamCS::TrackCamCS(void) | ??0TrackCamCS@@QAE@XZ
+    0x4E97B0 | public: virtual __thiscall TrackCamCS::~TrackCamCS(void) | ??1TrackCamCS@@UAE@XZ
+    0x4E9800 | public: virtual void __thiscall TrackCamCS::MakeActive(void) | ?MakeActive@TrackCamCS@@UAEXXZ
+    0x4E9840 | public: virtual void __thiscall TrackCamCS::AfterLoad(void) | ?AfterLoad@TrackCamCS@@UAEXXZ
+    0x4E9850 | public: virtual void __thiscall TrackCamCS::Reset(void) | ?Reset@TrackCamCS@@UAEXXZ
+    0x4E9890 | public: virtual void __thiscall TrackCamCS::Update(void) | ?Update@TrackCamCS@@UAEXXZ
+    0x4E9970 | public: virtual void __thiscall TrackCamCS::UpdateInput(void) | ?UpdateInput@TrackCamCS@@UAEXXZ
+    0x4E9980 | private: void __thiscall TrackCamCS::UpdateCar(void) | ?UpdateCar@TrackCamCS@@AAEXXZ
+    0x4E9B20 | private: void __thiscall TrackCamCS::UpdateHill(void) | ?UpdateHill@TrackCamCS@@AAEXXZ
+    0x4E9B30 | private: void __thiscall TrackCamCS::UpdateTrack(void) | ?UpdateTrack@TrackCamCS@@AAEXXZ
+    0x4EA460 | private: void __thiscall TrackCamCS::UpdateSwing(void) | ?UpdateSwing@TrackCamCS@@AAEXXZ
+    0x4EA840 | private: void __thiscall TrackCamCS::PreApproach(void) | ?PreApproach@TrackCamCS@@AAEXXZ
+    0x4EAA40 | private: void __thiscall TrackCamCS::MinMax(class Matrix34) | ?MinMax@TrackCamCS@@AAEXVMatrix34@@@Z
+    0x4EAC00 | private: void __thiscall TrackCamCS::Collide(class Vector3) | ?Collide@TrackCamCS@@AAEXVVector3@@@Z
+    0x4EB0A0 | public: void __thiscall TrackCamCS::SwingToRear(void) | ?SwingToRear@TrackCamCS@@QAEXXZ
+    0x4EB110 | private: void __thiscall TrackCamCS::Front(float) | ?Front@TrackCamCS@@AAEXM@Z
+    0x4EB190 | private: void __thiscall TrackCamCS::Rear(float) | ?Rear@TrackCamCS@@AAEXM@Z
+    0x4EB210 | public: static void __cdecl TrackCamCS::DeclareFields(void) | ?DeclareFields@TrackCamCS@@SAXXZ
+    0x4EB530 | public: virtual class MetaClass * __thiscall TrackCamCS::GetClass(void) | ?GetClass@TrackCamCS@@UAEPAVMetaClass@@XZ
+    0x4EB570 | public: virtual __thiscall Spline::~Spline(void) | ??1Spline@@UAE@XZ
+    0x4EB580 | public: virtual void * __thiscall TrackCamCS::`vector deleting destructor'(unsigned int) | ??_ETrackCamCS@@UAEPAXI@Z
+    0x594B68 | const TrackCamCS::`vftable' | ??_7TrackCamCS@@6B@
+    0x67B648 | class MetaClass TrackCamCSMetaClass | ?TrackCamCSMetaClass@@3VMetaClass@@A
+    0x4EB410 | void * __cdecl new_TrackCamCS(int) | ?new_TrackCamCS@@YAPAXH@Z
+    0x4EB4E0 | void __cdecl delete_TrackCamCS(void *,int) | ?delete_TrackCamCS@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

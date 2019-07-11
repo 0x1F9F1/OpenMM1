@@ -18,7 +18,33 @@
 
 #pragma once
 
-// mmwidget:vswidget
+/*
+    mmwidget:vswidget
+
+    0x4B4020 | public: __thiscall VSWidget::VSWidget(void) | ??0VSWidget@@QAE@XZ
+    0x4B40A0 | public: virtual __thiscall VSWidget::~VSWidget(void) | ??1VSWidget@@UAE@XZ
+    0x4B4120 | public: void __thiscall VSWidget::Init(float,float,float,float,int *,class Callback,int) | ?Init@VSWidget@@QAEXMMMMPAHVCallback@@H@Z
+    0x4B4180 | public: void __thiscall VSWidget::LoadBitmap(void) | ?LoadBitmap@VSWidget@@QAEXXZ
+    0x4B42D0 | public: void __thiscall VSWidget::CalcTroughRatio(float) | ?CalcTroughRatio@VSWidget@@QAEXM@Z
+    0x4B4350 | public: void __thiscall VSWidget::SetHotSpots(void) | ?SetHotSpots@VSWidget@@QAEXXZ
+    0x4B4400 | public: void __thiscall VSWidget::SyncData(void) | ?SyncData@VSWidget@@QAEXXZ
+    0x4B4440 | public: float __thiscall VSWidget::Inc(void) | ?Inc@VSWidget@@QAEMXZ
+    0x4B44A0 | public: float __thiscall VSWidget::Dec(void) | ?Dec@VSWidget@@QAEMXZ
+    0x4B4500 | public: void __thiscall VSWidget::SetStep(int,float) | ?SetStep@VSWidget@@QAEXHM@Z
+    0x4B4570 | public: void __thiscall VSWidget::SetTrough(float) | ?SetTrough@VSWidget@@QAEXM@Z
+    0x4B4600 | public: virtual void __thiscall VSWidget::Update(void) | ?Update@VSWidget@@UAEXXZ
+    0x4B4630 | public: void __thiscall VSWidget::Switch(int,float,float) | ?Switch@VSWidget@@QAEXHMM@Z
+    0x4B4680 | public: int __thiscall VSWidget::Action(union eqEvent,float,float,int) | ?Action@VSWidget@@QAEHTeqEvent@@MMH@Z
+    0x4B4730 | public: void __thiscall VSWidget::EvalMouseXY(float,float,int) | ?EvalMouseXY@VSWidget@@QAEXMMH@Z
+    0x4B48E0 | public: virtual void __thiscall VSWidget::Cull(void) | ?Cull@VSWidget@@UAEXXZ
+    0x4B4A60 | public: static void __cdecl VSWidget::DeclareFields(void) | ?DeclareFields@VSWidget@@SAXXZ
+    0x4B4BD0 | public: virtual class MetaClass * __thiscall VSWidget::GetClass(void) | ?GetClass@VSWidget@@UAEPAVMetaClass@@XZ
+    0x4B4BE0 | public: virtual void * __thiscall VSWidget::`vector deleting destructor'(unsigned int) | ??_EVSWidget@@UAEPAXI@Z
+    0x593DC8 | const VSWidget::`vftable' | ??_7VSWidget@@6B@
+    0x667FF0 | class MetaClass VSWidgetMetaClass | ?VSWidgetMetaClass@@3VMetaClass@@A
+    0x4B4AB0 | void * __cdecl new_VSWidget(int) | ?new_VSWidget@@YAPAXH@Z
+    0x4B4B80 | void __cdecl delete_VSWidget(void *,int) | ?delete_VSWidget@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,34 @@
 
 #pragma once
 
-// mmui:netarena
+/*
+    mmui:netarena
+
+    0x4966F0 | public: __thiscall NetArena::NetArena(int) | ??0NetArena@@QAE@H@Z
+    0x496CE0 | public: virtual __thiscall NetArena::~NetArena(void) | ??1NetArena@@UAE@XZ
+    0x496DA0 | public: virtual void __thiscall NetArena::PreSetup(void) | ?PreSetup@NetArena@@UAEXXZ
+    0x496DB0 | public: void __thiscall NetArena::EnablePlayButton(void) | ?EnablePlayButton@NetArena@@QAEXXZ
+    0x496DC0 | public: void __thiscall NetArena::DisablePlayButton(void) | ?DisablePlayButton@NetArena@@QAEXXZ
+    0x496DD0 | public: void __thiscall NetArena::ResetGameChat(void) | ?ResetGameChat@NetArena@@QAEXXZ
+    0x496E90 | public: void __thiscall NetArena::AddGameChatLine(char *) | ?AddGameChatLine@NetArena@@QAEXPAD@Z
+    0x496F40 | public: void __thiscall NetArena::PostChatMessages(void) | ?PostChatMessages@NetArena@@QAEXXZ
+    0x497010 | public: void __thiscall NetArena::ChatEntry(void) | ?ChatEntry@NetArena@@QAEXXZ
+    0x4970E0 | public: int __thiscall NetArena::RetrieveChatLine(char *) | ?RetrieveChatLine@NetArena@@QAEHPAD@Z
+    0x497130 | public: int __thiscall NetArena::FindRosterName(char *) | ?FindRosterName@NetArena@@QAEHPAD@Z
+    0x4971A0 | public: void __thiscall NetArena::AddRosterName(char *) | ?AddRosterName@NetArena@@QAEXPAD@Z
+    0x4971C0 | public: void __thiscall NetArena::AddRosterName(struct LocString *,struct LocString *,struct LocString *,unsigned long) | ?AddRosterName@NetArena@@QAEXPAULocString@@00K@Z
+    0x497360 | public: void __thiscall NetArena::RemoveRosterEntry(int) | ?RemoveRosterEntry@NetArena@@QAEXH@Z
+    0x497430 | public: void __thiscall NetArena::ResetRoster(void) | ?ResetRoster@NetArena@@QAEXXZ
+    0x497550 | public: void __thiscall NetArena::RemoveRosterName(char *) | ?RemoveRosterName@NetArena@@QAEXPAD@Z
+    0x497590 | public: void __thiscall NetArena::SetReady(unsigned long,int) | ?SetReady@NetArena@@QAEXKH@Z
+    0x4975E0 | public: char * __thiscall NetArena::GetRaceName(void) | ?GetRaceName@NetArena@@QAEPADXZ
+    0x4977F0 | public: void __thiscall NetArena::PostHostSettings(void) | ?PostHostSettings@NetArena@@QAEXXZ
+    0x4979B0 | public: void __thiscall NetArena::PostPlayerInfo(struct LocString *,struct LocString *,struct LocString *) | ?PostPlayerInfo@NetArena@@QAEXPAULocString@@00@Z
+    0x497A60 | public: void __thiscall NetArena::SetHost(int) | ?SetHost@NetArena@@QAEXH@Z
+    0x497AA0 | public: virtual void * __thiscall NetArena::`scalar deleting destructor'(unsigned int) | ??_GNetArena@@UAEPAXI@Z
+    0x497AA0 | public: virtual void * __thiscall NetArena::`vector deleting destructor'(unsigned int) | ??_ENetArena@@UAEPAXI@Z
+    0x592768 | const NetArena::`vftable' | ??_7NetArena@@6B@
+*/
 
 #include "hooking.h"
 

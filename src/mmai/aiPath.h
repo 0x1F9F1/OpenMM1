@@ -18,7 +18,56 @@
 
 #pragma once
 
-// mmai:aiPath
+/*
+    mmai:aiPath
+
+    0x436EE0 | public: __thiscall aiPath::aiPath(int) | ??0aiPath@@QAE@H@Z
+    0x436F10 | public: __thiscall aiPath::~aiPath(void) | ??1aiPath@@QAE@XZ
+    0x436FA0 | public: void __thiscall aiPath::Reset(void) | ?Reset@aiPath@@QAEXXZ
+    0x436FE0 | public: void __thiscall aiPath::UpdateAmbients(void) | ?UpdateAmbients@aiPath@@QAEXXZ
+    0x4370F0 | public: void __thiscall aiPath::UpdatePedestrians(void) | ?UpdatePedestrians@aiPath@@QAEXXZ
+    0x437190 | public: void __thiscall aiPath::ResetVehicleReactTicks(void) | ?ResetVehicleReactTicks@aiPath@@QAEXXZ
+    0x4371C0 | public: void __thiscall aiPath::AddPathVerts(class mmRoadSect &,int,int) | ?AddPathVerts@aiPath@@QAEXAAVmmRoadSect@@HH@Z
+    0x437B00 | public: void __thiscall aiPath::AddPathVerts(class Vector3 *,int) | ?AddPathVerts@aiPath@@QAEXPAVVector3@@H@Z
+    0x438160 | public: void __thiscall aiPath::CalcCenterVerts(class mmRoadSect &,int) | ?CalcCenterVerts@aiPath@@QAEXAAVmmRoadSect@@H@Z
+    0x4384A0 | public: void __thiscall aiPath::SaveBinary(class Stream *) | ?SaveBinary@aiPath@@QAEXPAVStream@@@Z
+    0x438710 | public: void __thiscall aiPath::ReadBinary(class Stream *) | ?ReadBinary@aiPath@@QAEXPAVStream@@@Z
+    0x438C10 | public: void __thiscall aiPath::Dump(void) | ?Dump@aiPath@@QAEXXZ
+    0x438CB0 | public: void __thiscall aiPath::AllwaysStop(int) | ?AllwaysStop@aiPath@@QAEXH@Z
+    0x438CD0 | public: void __thiscall aiPath::StopIncomingRoads(int) | ?StopIncomingRoads@aiPath@@QAEXH@Z
+    0x438D90 | public: void __thiscall aiPath::StopDestinationSources(int) | ?StopDestinationSources@aiPath@@QAEXH@Z
+    0x438E10 | public: void __thiscall aiPath::AllwaysGo(int) | ?AllwaysGo@aiPath@@QAEXH@Z
+    0x438E30 | public: float __thiscall aiPath::CenterLength(int,int) | ?CenterLength@aiPath@@QAEMHH@Z
+    0x438E50 | public: float __thiscall aiPath::SubSectionLength(int,int) | ?SubSectionLength@aiPath@@QAEMHH@Z
+    0x438E70 | public: float __thiscall aiPath::GetHeading(float,int) | ?GetHeading@aiPath@@QAEMMH@Z
+    0x438F40 | public: float __thiscall aiPath::SubSectionDist(float,int) | ?SubSectionDist@aiPath@@QAEMMH@Z
+    0x439000 | public: int __thiscall aiPath::CenterIndex(float) | ?CenterIndex@aiPath@@QAEHM@Z
+    0x4390A0 | public: void __thiscall aiPath::CenterPosition(float,class Vector3 &) | ?CenterPosition@aiPath@@QAEXMAAVVector3@@@Z
+    0x439170 | public: int __thiscall aiPath::Index(float,int) | ?Index@aiPath@@QAEHMH@Z
+    0x439220 | public: int __thiscall aiPath::Index(class Vector3 &) | ?Index@aiPath@@QAEHAAVVector3@@@Z
+    0x439330 | public: void __thiscall aiPath::RoadDistance(class Vector3 &,short *,float *,short,float *) | ?RoadDistance@aiPath@@QAEXAAVVector3@@PAFPAMF2@Z
+    0x4394D0 | public: int __thiscall aiPath::CenterDistance(class Vector3 &,short *,float *,float *) | ?CenterDistance@aiPath@@QAEHAAVVector3@@PAFPAM2@Z
+    0x4397F0 | public: void __thiscall aiPath::AmbientCenterDistance(class aiVehicleSpline *,float *,float *,float *,float *) | ?AmbientCenterDistance@aiPath@@QAEXPAVaiVehicleSpline@@PAM111@Z
+    0x439EE0 | public: void __thiscall aiPath::SubSectionPt(class Vector3 &,int,int,float) | ?SubSectionPt@aiPath@@QAEXAAVVector3@@HHM@Z
+    0x439F50 | public: void __thiscall aiPath::SubSectionDir(class Vector3 &,int,int,float) | ?SubSectionDir@aiPath@@QAEXAAVVector3@@HHM@Z
+    0x439FA0 | public: void __thiscall aiPath::IntersectionEntryPt(class Vector3 &,int,float) | ?IntersectionEntryPt@aiPath@@QAEXAAVVector3@@HM@Z
+    0x43A060 | public: void __thiscall aiPath::IntersectionEntryVector(class Vector3 &,float) | ?IntersectionEntryVector@aiPath@@QAEXAAVVector3@@M@Z
+    0x43A0D0 | public: void __thiscall aiPath::IntersectionExitVector(class Vector3 &,float) | ?IntersectionExitVector@aiPath@@QAEXAAVVector3@@M@Z
+    0x43A140 | public: int __thiscall aiPath::NumVehiclesAfterDist(int,float) | ?NumVehiclesAfterDist@aiPath@@QAEHHM@Z
+    0x43A190 | public: int __thiscall aiPath::ContinuityError(int) | ?ContinuityError@aiPath@@QAEHH@Z
+    0x43A1F0 | public: void __thiscall aiPath::PopVehicle(class aiVehicleSpline *,int) | ?PopVehicle@aiPath@@QAEXPAVaiVehicleSpline@@H@Z
+    0x43A2D0 | public: void __thiscall aiPath::PushVehicle(class aiVehicleSpline *,int) | ?PushVehicle@aiPath@@QAEXPAVaiVehicleSpline@@H@Z
+    0x43A340 | public: void __thiscall aiPath::AddVehicle(class aiVehicleSpline *,int,float) | ?AddVehicle@aiPath@@QAEXPAVaiVehicleSpline@@HM@Z
+    0x43A470 | public: int __thiscall aiPath::RemoveVehicle(class aiVehicleSpline *,int) | ?RemoveVehicle@aiPath@@QAEHPAVaiVehicleSpline@@H@Z
+    0x43A580 | public: int __thiscall aiPath::RoadCapacity(class aiVehicleSpline *,int) | ?RoadCapacity@aiPath@@QAEHPAVaiVehicleSpline@@H@Z
+    0x43A640 | public: void __thiscall aiPath::AddPedestrian(class aiPedestrian *) | ?AddPedestrian@aiPath@@QAEXPAVaiPedestrian@@@Z
+    0x43A680 | public: void __thiscall aiPath::RemovePedestrian(class aiPedestrian *) | ?RemovePedestrian@aiPath@@QAEXPAVaiPedestrian@@@Z
+    0x43A6F0 | public: void __thiscall aiPath::Blocked(int) | ?Blocked@aiPath@@QAEXH@Z
+    0x43A710 | public: class Vector3 * __thiscall aiPath::VertXDir(int) | ?VertXDir@aiPath@@QAEPAVVector3@@H@Z
+    0x43A760 | public: class Vector3 __thiscall Vector3::operator-(class Vector3 const &) const | ??GVector3@@QBE?AV0@ABV0@@Z
+    0x43A790 | public: class Vector3 * __thiscall aiPath::VertZDir(int) | ?VertZDir@aiPath@@QAEPAVVector3@@H@Z
+    0x43A7E0 | public: class Vector3 * __thiscall aiPath::CenterVertice(int) | ?CenterVertice@aiPath@@QAEPAVVector3@@H@Z
+*/
 
 #include "hooking.h"
 

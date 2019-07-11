@@ -18,7 +18,28 @@
 
 #pragma once
 
-// mmeffects:mmnumber
+/*
+    mmeffects:mmnumber
+
+    0x4F1440 | public: __thiscall mmNumberFont::mmNumberFont(char *) | ??0mmNumberFont@@QAE@PAD@Z
+    0x4F1470 | public: __thiscall mmNumberFont::~mmNumberFont(void) | ??1mmNumberFont@@QAE@XZ
+    0x4F14C0 | public: void __thiscall mmNumberFont::LoadFont(char *,int,unsigned int) | ?LoadFont@mmNumberFont@@QAEXPADHI@Z
+    0x4F1530 | public: void __thiscall mmNumberFont::LoadLocFont(char *,struct LocString *,int,unsigned int) | ?LoadLocFont@mmNumberFont@@QAEXPADPAULocString@@HI@Z
+    0x4F15A0 | public: __thiscall mmNumber::mmNumber(void) | ??0mmNumber@@QAE@XZ
+    0x4F15C0 | public: virtual __thiscall mmNumber::~mmNumber(void) | ??1mmNumber@@UAE@XZ
+    0x4F15D0 | public: void __thiscall mmNumber::Init(class mmNumberFont *,float,float) | ?Init@mmNumber@@QAEXPAVmmNumberFont@@MM@Z
+    0x4F15F0 | public: void __thiscall mmNumber::SetString(char *) | ?SetString@mmNumber@@QAEXPAD@Z
+    0x4F1620 | public: void __cdecl mmNumber::Printf(char const *,...) | ?Printf@mmNumber@@QAAXPBDZZ
+    0x4F1640 | public: virtual void __thiscall mmNumber::Update(void) | ?Update@mmNumber@@UAEXXZ
+    0x4F1660 | public: virtual void __thiscall mmNumber::Cull(void) | ?Cull@mmNumber@@UAEXXZ
+    0x4F1740 | public: void __thiscall mmNumber::AddWidgets(class Bank *) | ?AddWidgets@mmNumber@@QAEXPAVBank@@@Z
+    0x4F1750 | public: static void __cdecl mmNumber::DeclareFields(void) | ?DeclareFields@mmNumber@@SAXXZ
+    0x4F18B0 | public: virtual class MetaClass * __thiscall mmNumber::GetClass(void) | ?GetClass@mmNumber@@UAEPAVMetaClass@@XZ
+    0x595030 | const mmNumber::`vftable' | ??_7mmNumber@@6B@
+    0x67B848 | class MetaClass mmNumberMetaClass | ?mmNumberMetaClass@@3VMetaClass@@A
+    0x4F17A0 | void * __cdecl new_mmNumber(int) | ?new_mmNumber@@YAPAXH@Z
+    0x4F1860 | void __cdecl delete_mmNumber(void *,int) | ?delete_mmNumber@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,17 @@
 
 #pragma once
 
-// stream:sparser
+/*
+    stream:sparser
+
+    0x542EF0 | public: __thiscall StreamMiniParser::StreamMiniParser(char *,class Stream *) | ??0StreamMiniParser@@QAE@PADPAVStream@@@Z
+    0x542F20 | public: __thiscall StreamMiniParser::~StreamMiniParser(void) | ??1StreamMiniParser@@QAE@XZ
+    0x542F80 | public: virtual void __thiscall StreamMiniParser::RawPutCh(int) | ?RawPutCh@StreamMiniParser@@UAEXH@Z
+    0x542FC0 | public: virtual int __thiscall StreamMiniParser::RawGetCh(void) | ?RawGetCh@StreamMiniParser@@UAEHXZ
+    0x542FF0 | public: static void __cdecl StreamMiniParser::Load(class MetaClass *,char *,void *) | ?Load@StreamMiniParser@@SAXPAVMetaClass@@PADPAX@Z
+    0x5430A0 | public: static void __cdecl StreamMiniParser::Save(class MetaClass *,char *,void *) | ?Save@StreamMiniParser@@SAXPAVMetaClass@@PADPAX@Z
+    0x595F18 | const StreamMiniParser::`vftable' | ??_7StreamMiniParser@@6B@
+*/
 
 #include "hooking.h"
 

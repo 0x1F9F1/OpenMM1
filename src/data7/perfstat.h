@@ -18,7 +18,14 @@
 
 #pragma once
 
-// data7:perfstat
+/*
+    data7:perfstat
+
+    0x55CD70 | void __cdecl PerfInit(void) | ?PerfInit@@YAXXZ
+    0x55CDB0 | void __cdecl PerfShutdown(void) | ?PerfShutdown@@YAXXZ
+    0x55CDD0 | int __cdecl PerfLookup(char *) | ?PerfLookup@@YAHPAD@Z
+    0x55CE90 | unsigned int __cdecl PerfGetValue(int) | ?PerfGetValue@@YAIH@Z
+*/
 
 #include "hooking.h"
 

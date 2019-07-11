@@ -18,7 +18,34 @@
 
 #pragma once
 
-// mmcity:ped
+/*
+    mmcity:ped
+
+    0x48AB80 | public: __thiscall mmPed::mmPed(void) | ??0mmPed@@QAE@XZ
+    0x48ABA0 | public: void __thiscall mmPed::Init(char *,class Vector3 &) | ?Init@mmPed@@QAEXPADAAVVector3@@@Z
+    0x48AC30 | public: virtual __thiscall mmPed::~mmPed(void) | ??1mmPed@@UAE@XZ
+    0x48AC40 | public: void __thiscall mmPed::Update(void) | ?Update@mmPed@@QAEXXZ
+    0x48AC60 | public: virtual void __fastcall mmPed::Draw(int) | ?Draw@mmPed@@UAIXH@Z
+    0x48AC90 | public: virtual class Matrix34 & __fastcall mmPed::ToMatrix(class Matrix34 &) | ?ToMatrix@mmPed@@UAIAAVMatrix34@@AAV2@@Z
+    0x48ACE0 | public: __thiscall mmPedManager::mmPedManager(void) | ??0mmPedManager@@QAE@XZ
+    0x48AD00 | public: virtual __thiscall mmPedManager::~mmPedManager(void) | ??1mmPedManager@@UAE@XZ
+    0x48AD10 | public: void __thiscall mmPedManager::Init(int) | ?Init@mmPedManager@@QAEXH@Z
+    0x48ADC0 | public: virtual void __thiscall mmPedManager::Update(void) | ?Update@mmPedManager@@UAEXXZ
+    0x48ADF0 | public: static void __cdecl mmPed::DeclareFields(void) | ?DeclareFields@mmPed@@SAXXZ
+    0x48AF70 | public: virtual class MetaClass * __thiscall mmPed::GetClass(void) | ?GetClass@mmPed@@UAEPAVMetaClass@@XZ
+    0x48AF80 | public: static void __cdecl mmPedManager::DeclareFields(void) | ?DeclareFields@mmPedManager@@SAXXZ
+    0x48B0E0 | public: virtual class MetaClass * __thiscall mmPedManager::GetClass(void) | ?GetClass@mmPedManager@@UAEPAVMetaClass@@XZ
+    0x48B0F0 | public: virtual void * __thiscall mmPed::`vector deleting destructor'(unsigned int) | ??_EmmPed@@UAEPAXI@Z
+    0x48B150 | public: virtual void * __thiscall mmPedManager::`vector deleting destructor'(unsigned int) | ??_EmmPedManager@@UAEPAXI@Z
+    0x5920C0 | const mmPed::`vftable' | ??_7mmPed@@6B@
+    0x592120 | const mmPedManager::`vftable' | ??_7mmPedManager@@6B@
+    0x667A40 | class MetaClass mmPedManagerMetaClass | ?mmPedManagerMetaClass@@3VMetaClass@@A
+    0x667A68 | class MetaClass mmPedMetaClass | ?mmPedMetaClass@@3VMetaClass@@A
+    0x48AE40 | void * __cdecl new_mmPed(int) | ?new_mmPed@@YAPAXH@Z
+    0x48AF20 | void __cdecl delete_mmPed(void *,int) | ?delete_mmPed@@YAXPAXH@Z
+    0x48AFD0 | void * __cdecl new_mmPedManager(int) | ?new_mmPedManager@@YAPAXH@Z
+    0x48B090 | void __cdecl delete_mmPedManager(void *,int) | ?delete_mmPedManager@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

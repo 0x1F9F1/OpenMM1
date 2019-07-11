@@ -18,7 +18,15 @@
 
 #pragma once
 
-// mmui:pu_options
+/*
+    mmui:pu_options
+
+    0x49F1D0 | public: __thiscall PUOptions::PUOptions(int,float,float,float,float) | ??0PUOptions@@QAE@HMMMM@Z
+    0x49F340 | public: virtual __thiscall PUOptions::~PUOptions(void) | ??1PUOptions@@UAE@XZ
+    0x49F350 | public: virtual void * __thiscall PUOptions::`scalar deleting destructor'(unsigned int) | ??_GPUOptions@@UAEPAXI@Z
+    0x49F350 | public: virtual void * __thiscall PUOptions::`vector deleting destructor'(unsigned int) | ??_EPUOptions@@UAEPAXI@Z
+    0x592DB8 | const PUOptions::`vftable' | ??_7PUOptions@@6B@
+*/
 
 #include "hooking.h"
 

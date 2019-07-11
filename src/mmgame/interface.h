@@ -18,7 +18,95 @@
 
 #pragma once
 
-// mmgame:interface
+/*
+    mmgame:interface
+
+    0x4037F0 | void __cdecl ReportTimeAlloc(float) | ?ReportTimeAlloc@@YAXM@Z
+    0x403830 | public: __thiscall mmInterface::mmInterface(void) | ??0mmInterface@@QAE@XZ
+    0x404800 | public: void __thiscall mmInterface::InitPlayerInfo(void) | ?InitPlayerInfo@mmInterface@@QAEXXZ
+    0x404B70 | public: virtual __thiscall mmInterface::~mmInterface(void) | ??1mmInterface@@UAE@XZ
+    0x404D00 | public: void __thiscall mmInterface::MessageCallback(void *,void *) | ?MessageCallback@mmInterface@@QAEXPAX0@Z
+    0x4051D0 | public: void __thiscall mmInterface::MessageCallback2(void *,void *) | ?MessageCallback2@mmInterface@@QAEXPAX0@Z
+    0x405400 | public: virtual void __thiscall mmInterface::Reset(void) | ?Reset@mmInterface@@UAEXXZ
+    0x405410 | public: void __thiscall mmInterface::ShowMain(int) | ?ShowMain@mmInterface@@QAEXH@Z
+    0x4055D0 | public: void __thiscall mmInterface::ShowLockedVehicleMessage(void) | ?ShowLockedVehicleMessage@mmInterface@@QAEXXZ
+    0x4055F0 | public: void __thiscall mmInterface::BeDone(void) | ?BeDone@mmInterface@@QAEXXZ
+    0x4056E0 | public: virtual void __thiscall mmInterface::Update(void) | ?Update@mmInterface@@UAEXXZ
+    0x406D90 | private: void __thiscall mmInterface::NetJoinCB(void) | ?NetJoinCB@mmInterface@@AAEXXZ
+    0x406DF0 | private: void __thiscall mmInterface::NetNameCB(void) | ?NetNameCB@mmInterface@@AAEXXZ
+    0x406E20 | private: void __thiscall mmInterface::JoinGame(void) | ?JoinGame@mmInterface@@AAEXXZ
+    0x406EA0 | private: void __thiscall mmInterface::JoinLAN(void) | ?JoinLAN@mmInterface@@AAEXXZ
+    0x406F00 | private: int __thiscall mmInterface::JoinSerial(void) | ?JoinSerial@mmInterface@@AAEHXZ
+    0x406F90 | private: int __thiscall mmInterface::JoinModem(void) | ?JoinModem@mmInterface@@AAEHXZ
+    0x407080 | public: void __thiscall mmInterface::UpdateLobby(void) | ?UpdateLobby@mmInterface@@QAEXXZ
+    0x4076C0 | public: void __thiscall mmInterface::Switch(int,int) | ?Switch@mmInterface@@QAEXHH@Z
+    0x407A60 | public: void __thiscall mmInterface::LobbySwitch(int,int) | ?LobbySwitch@mmInterface@@QAEXHH@Z
+    0x407BD0 | private: void __thiscall mmInterface::RefreshCRPlayers(void) | ?RefreshCRPlayers@mmInterface@@AAEXXZ
+    0x407C70 | private: void __thiscall mmInterface::FillCRRoster(void) | ?FillCRRoster@mmInterface@@AAEXXZ
+    0x407D70 | private: void __thiscall mmInterface::GetUnlockedCar(void) | ?GetUnlockedCar@mmInterface@@AAEXXZ
+    0x407DC0 | private: void __thiscall mmInterface::RequestProverb(void) | ?RequestProverb@mmInterface@@AAEXXZ
+    0x407F20 | private: void __thiscall mmInterface::PlayerRemoveCB(void) | ?PlayerRemoveCB@mmInterface@@AAEXXZ
+    0x407F50 | private: void __thiscall mmInterface::PlayerRemove(char *) | ?PlayerRemove@mmInterface@@AAEXPAD@Z
+    0x4080E0 | private: void __thiscall mmInterface::PlayerCreateCB(void) | ?PlayerCreateCB@mmInterface@@AAEXXZ
+    0x408130 | private: int __thiscall mmInterface::PlayerCreate(char *) | ?PlayerCreate@mmInterface@@AAEHPAD@Z
+    0x4082C0 | private: void __thiscall mmInterface::PlayerLoadCB(void) | ?PlayerLoadCB@mmInterface@@AAEXXZ
+    0x4082F0 | private: void __thiscall mmInterface::PlayerGraphicsCB(void) | ?PlayerGraphicsCB@mmInterface@@AAEXXZ
+    0x408360 | private: void __thiscall mmInterface::PlayerLoad(char *) | ?PlayerLoad@mmInterface@@AAEXPAD@Z
+    0x408410 | private: void __thiscall mmInterface::PlayerSetState(void) | ?PlayerSetState@mmInterface@@AAEXXZ
+    0x408600 | private: void __thiscall mmInterface::CitySetupCB(void) | ?CitySetupCB@mmInterface@@AAEXXZ
+    0x4086C0 | private: void __thiscall mmInterface::GetTimeString(float,char *) | ?GetTimeString@mmInterface@@AAEXMPAD@Z
+    0x408720 | private: void __thiscall mmInterface::GetScoreString(int,char *) | ?GetScoreString@mmInterface@@AAEXHPAD@Z
+    0x408760 | private: void __thiscall mmInterface::GetRaceString(int,char *) | ?GetRaceString@mmInterface@@AAEXHPAD@Z
+    0x4087C0 | private: char * __thiscall mmInterface::GetRaceName(enum mmGameMode,int) | ?GetRaceName@mmInterface@@AAEPADW4mmGameMode@@H@Z
+    0x408920 | private: void __thiscall mmInterface::RaceFillRecords(void) | ?RaceFillRecords@mmInterface@@AAEXXZ
+    0x409210 | private: void __thiscall mmInterface::PlayerFillStats(void) | ?PlayerFillStats@mmInterface@@AAEXXZ
+    0x409740 | private: void __thiscall mmInterface::PlayerResolveScore(void) | ?PlayerResolveScore@mmInterface@@AAEXXZ
+    0x409880 | private: void __thiscall mmInterface::PlayerResolveCars(void) | ?PlayerResolveCars@mmInterface@@AAEXXZ
+    0x409AA0 | private: void __thiscall mmInterface::PlayerReadState(void) | ?PlayerReadState@mmInterface@@AAEXXZ
+    0x409AC0 | private: void __thiscall mmInterface::RefreshDriverList(void) | ?RefreshDriverList@mmInterface@@AAEXXZ
+    0x409B70 | private: void __thiscall mmInterface::SetStateRace(int) | ?SetStateRace@mmInterface@@AAEXH@Z
+    0x409B80 | private: void __thiscall mmInterface::SetStateDefaults(void) | ?SetStateDefaults@mmInterface@@AAEXXZ
+    0x409BA0 | private: void __thiscall mmInterface::InitNetwork(void) | ?InitNetwork@mmInterface@@AAEXXZ
+    0x409C90 | public: void __thiscall mmInterface::InitLobby(void) | ?InitLobby@mmInterface@@QAEXXZ
+    0x409D20 | private: void __thiscall mmInterface::InitProtocols(void) | ?InitProtocols@mmInterface@@AAEXXZ
+    0x409D40 | private: void __thiscall mmInterface::ShowSessions(void) | ?ShowSessions@mmInterface@@AAEXXZ
+    0x409F40 | private: void __thiscall mmInterface::ClearSessions(void) | ?ClearSessions@mmInterface@@AAEXXZ
+    0x409F60 | private: void __thiscall mmInterface::RefreshSessions(void) | ?RefreshSessions@mmInterface@@AAEXXZ
+    0x409FA0 | private: int __thiscall mmInterface::JoinSession(int) | ?JoinSession@mmInterface@@AAEHH@Z
+    0x40A1A0 | private: int __thiscall mmInterface::JoinPasswordSession(int) | ?JoinPasswordSession@mmInterface@@AAEHH@Z
+    0x40A350 | private: void __thiscall mmInterface::MultiStartGame(void) | ?MultiStartGame@mmInterface@@AAEXXZ
+    0x40A3E0 | private: void __thiscall mmInterface::SetProtocol(void) | ?SetProtocol@mmInterface@@AAEXXZ
+    0x40A490 | private: int __thiscall mmInterface::SetProtocol2(void) | ?SetProtocol2@mmInterface@@AAEHXZ
+    0x40A4E0 | private: int __thiscall mmInterface::CreatePlayer(int) | ?CreatePlayer@mmInterface@@AAEHH@Z
+    0x40A710 | private: int __thiscall mmInterface::GetHostPlayerData(struct mmPlayerInfo &) | ?GetHostPlayerData@mmInterface@@AAEHAAUmmPlayerInfo@@@Z
+    0x40A770 | private: void __thiscall mmInterface::GetUniquePlayerName(void) | ?GetUniquePlayerName@mmInterface@@AAEXXZ
+    0x40A860 | private: void __thiscall mmInterface::ChangePlayerData(void) | ?ChangePlayerData@mmInterface@@AAEXXZ
+    0x40A930 | private: void __thiscall mmInterface::RefreshPlayers(void) | ?RefreshPlayers@mmInterface@@AAEXXZ
+    0x40AB30 | private: void __thiscall mmInterface::GetSessionData(struct NETSESSION_DESC) | ?GetSessionData@mmInterface@@AAEXUNETSESSION_DESC@@@Z
+    0x40ABF0 | private: int __thiscall mmInterface::CreateSession(void) | ?CreateSession@mmInterface@@AAEHXZ
+    0x40AD70 | private: void __thiscall mmInterface::SetSessionData(struct NETSESSION_DESC *) | ?SetSessionData@mmInterface@@AAEXPAUNETSESSION_DESC@@@Z
+    0x40AE30 | private: void __thiscall mmInterface::SetCRStateData(void) | ?SetCRStateData@mmInterface@@AAEXXZ
+    0x40AEA0 | private: int __thiscall mmInterface::LobbyCreate(void) | ?LobbyCreate@mmInterface@@AAEHXZ
+    0x40B230 | private: void __thiscall mmInterface::SendChatMessage(void *) | ?SendChatMessage@mmInterface@@AAEXPAX@Z
+    0x40B2D0 | private: void __thiscall mmInterface::SendMsg(int) | ?SendMsg@mmInterface@@AAEXH@Z
+    0x40B310 | private: void __thiscall mmInterface::SendBootMsg(unsigned long) | ?SendBootMsg@mmInterface@@AAEXK@Z
+    0x40B350 | private: void __thiscall mmInterface::SendReadyStatus(void) | ?SendReadyStatus@mmInterface@@AAEXXZ
+    0x40B390 | private: void __thiscall mmInterface::SendReadyReq(void) | ?SendReadyReq@mmInterface@@AAEXXZ
+    0x40B3C0 | public: void __thiscall mmInterface::SetupArchiveTest(int &) | ?SetupArchiveTest@mmInterface@@QAEXAAH@Z
+    0x40B640 | public: static void __cdecl mmInterface::DeclareFields(void) | ?DeclareFields@mmInterface@@SAXXZ
+    0x40B7B0 | public: virtual class MetaClass * __thiscall mmInterface::GetClass(void) | ?GetClass@mmInterface@@UAEPAVMetaClass@@XZ
+    0x40B7C0 | public: __thiscall string::~string(void) | ??1string@@QAE@XZ
+    0x40B7D0 | public: virtual void * __thiscall mmInterface::`vector deleting destructor'(unsigned int) | ??_EmmInterface@@UAEPAXI@Z
+    0x58F4D8 | const mmInterface::`vftable' | ??_7mmInterface@@6B@
+    0x609150 | class MetaClass mmInterfaceMetaClass | ?mmInterfaceMetaClass@@3VMetaClass@@A
+    0x609178 | char * szSearchPath | ?szSearchPath@@3PADA
+    0x609200 | char * defcarname | ?defcarname@@3PADA
+    0x4053F0 | void __cdecl Debugf(char const *,...) | ?Debugf@@YAXPBDZZ
+    0x406B60 | bool __cdecl IsModemDialin(void) | ?IsModemDialin@@YA_NXZ
+    0x406BE0 | unsigned long __stdcall ZoneWatcher(void *) | ?ZoneWatcher@@YGKPAX@Z
+    0x40B690 | void * __cdecl new_mmInterface(int) | ?new_mmInterface@@YAPAXH@Z
+    0x40B760 | void __cdecl delete_mmInterface(void *,int) | ?delete_mmInterface@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

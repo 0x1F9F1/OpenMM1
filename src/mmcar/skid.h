@@ -18,7 +18,43 @@
 
 #pragma once
 
-// mmcar:skid
+/*
+    mmcar:skid
+
+    0x46F420 | public: __thiscall mmSkid::mmSkid(void) | ??0mmSkid@@QAE@XZ
+    0x46F440 | public: void __thiscall mmSkid::Init(char *) | ?Init@mmSkid@@QAEXPAD@Z
+    0x46F460 | public: virtual __thiscall mmSkid::~mmSkid(void) | ??1mmSkid@@UAE@XZ
+    0x46F470 | public: void __thiscall mmSkid::AddSkid(class Matrix34 &,class Vector3 *,class agiPhysParameters *,float) | ?AddSkid@mmSkid@@QAEXAAVMatrix34@@PAVVector3@@PAVagiPhysParameters@@M@Z
+    0x46F630 | public: virtual void __fastcall mmSkid::FromMatrix(class Matrix34 const &) | ?FromMatrix@mmSkid@@UAIXABVMatrix34@@@Z
+    0x46F640 | public: virtual class Matrix34 & __fastcall mmSkid::ToMatrix(class Matrix34 &) | ?ToMatrix@mmSkid@@UAIAAVMatrix34@@AAV2@@Z
+    0x46F650 | public: virtual class Vector3 & __fastcall mmSkid::GetPos(void) | ?GetPos@mmSkid@@UAIAAVVector3@@XZ
+    0x46F660 | public: void __thiscall mmSkid::Update(void) | ?Update@mmSkid@@QAEXXZ
+    0x46F670 | public: virtual void __fastcall mmSkid::Draw(int) | ?Draw@mmSkid@@UAIXH@Z
+    0x46F700 | public: virtual void __fastcall mmSkid::DrawShadow(void) | ?DrawShadow@mmSkid@@UAIXXZ
+    0x46F710 | public: __thiscall mmSkidManager::mmSkidManager(void) | ??0mmSkidManager@@QAE@XZ
+    0x46F740 | public: virtual __thiscall mmSkidManager::~mmSkidManager(void) | ??1mmSkidManager@@UAE@XZ
+    0x46F7A0 | public: void __thiscall mmSkidManager::Init(char *,int,class mmWheel *) | ?Init@mmSkidManager@@QAEXPADHPAVmmWheel@@@Z
+    0x46F860 | public: void __thiscall mmSkidManager::ReInit(class mmWheel *) | ?ReInit@mmSkidManager@@QAEXPAVmmWheel@@@Z
+    0x46F890 | public: virtual void __thiscall mmSkidManager::Reset(void) | ?Reset@mmSkidManager@@UAEXXZ
+    0x46F8E0 | public: void __thiscall mmSkidManager::LayTrack(void) | ?LayTrack@mmSkidManager@@QAEXXZ
+    0x46FC70 | public: virtual void __thiscall mmSkidManager::Update(void) | ?Update@mmSkidManager@@UAEXXZ
+    0x46FD50 | public: static void __cdecl mmSkid::DeclareFields(void) | ?DeclareFields@mmSkid@@SAXXZ
+    0x46FED0 | public: virtual class MetaClass * __thiscall mmSkid::GetClass(void) | ?GetClass@mmSkid@@UAEPAVMetaClass@@XZ
+    0x46FEE0 | public: static void __cdecl mmSkidManager::DeclareFields(void) | ?DeclareFields@mmSkidManager@@SAXXZ
+    0x470040 | public: virtual class MetaClass * __thiscall mmSkidManager::GetClass(void) | ?GetClass@mmSkidManager@@UAEPAVMetaClass@@XZ
+    0x470050 | public: virtual void * __thiscall mmSkid::`vector deleting destructor'(unsigned int) | ??_EmmSkid@@UAEPAXI@Z
+    0x4700B0 | public: virtual void * __thiscall mmSkidManager::`vector deleting destructor'(unsigned int) | ??_EmmSkidManager@@UAEPAXI@Z
+    0x470110 | public: __thiscall Matrix34::Matrix34(void) | ??0Matrix34@@QAE@XZ
+    0x470120 | public: virtual void __thiscall mmSkid::AddWidgets(class Bank *) | ?AddWidgets@mmSkid@@UAEXPAVBank@@@Z
+    0x591230 | const mmSkid::`vftable' | ??_7mmSkid@@6B@
+    0x5912A8 | const mmSkidManager::`vftable' | ??_7mmSkidManager@@6B@
+    0x60A230 | class MetaClass mmSkidMetaClass | ?mmSkidMetaClass@@3VMetaClass@@A
+    0x60A258 | class MetaClass mmSkidManagerMetaClass | ?mmSkidManagerMetaClass@@3VMetaClass@@A
+    0x46FDA0 | void * __cdecl new_mmSkid(int) | ?new_mmSkid@@YAPAXH@Z
+    0x46FE80 | void __cdecl delete_mmSkid(void *,int) | ?delete_mmSkid@@YAXPAXH@Z
+    0x46FF30 | void * __cdecl new_mmSkidManager(int) | ?new_mmSkidManager@@YAPAXH@Z
+    0x46FFF0 | void __cdecl delete_mmSkidManager(void *,int) | ?delete_mmSkidManager@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

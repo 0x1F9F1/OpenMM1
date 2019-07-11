@@ -18,7 +18,42 @@
 
 #pragma once
 
-// mmgame:gameman
+/*
+    mmgame:gameman
+
+    0x4029F0 | public: virtual void __thiscall mmScreenClearFlunky::Update(void) | ?Update@mmScreenClearFlunky@@UAEXXZ
+    0x402A20 | public: virtual void __thiscall mmScreenClearFlunky::Cull(void) | ?Cull@mmScreenClearFlunky@@UAEXXZ
+    0x402B60 | public: __thiscall mmGameManager::mmGameManager(void) | ??0mmGameManager@@QAE@XZ
+    0x402F70 | public: virtual __thiscall mmGameManager::~mmGameManager(void) | ??1mmGameManager@@UAE@XZ
+    0x403080 | public: void __thiscall mmGameManager::BeDone(void) | ?BeDone@mmGameManager@@QAEXXZ
+    0x403090 | public: virtual void __thiscall mmGameManager::Update(void) | ?Update@mmGameManager@@UAEXXZ
+    0x403330 | public: virtual void __thiscall mmGameManager::Cull(void) | ?Cull@mmGameManager@@UAEXXZ
+    0x403370 | public: void __thiscall mmGameManager::StartReplay(void) | ?StartReplay@mmGameManager@@QAEXXZ
+    0x403390 | public: void __thiscall mmGameManager::LoadReplay(char *) | ?LoadReplay@mmGameManager@@QAEXPAD@Z
+    0x403460 | public: void __thiscall mmGameManager::SaveReplay(char *) | ?SaveReplay@mmGameManager@@QAEXPAD@Z
+    0x4034F0 | public: virtual void __thiscall mmGameManager::Reset(void) | ?Reset@mmGameManager@@UAEXXZ
+    0x403500 | public: float __thiscall mmGameManager::GetBrakes(void) | ?GetBrakes@mmGameManager@@QAEMXZ
+    0x403530 | public: float __thiscall mmGameManager::GetSteering(void) | ?GetSteering@mmGameManager@@QAEMXZ
+    0x403560 | public: float __thiscall mmGameManager::GetThrottle(void) | ?GetThrottle@mmGameManager@@QAEMXZ
+    0x403590 | public: static void __cdecl mmGameManager::DeclareFields(void) | ?DeclareFields@mmGameManager@@SAXXZ
+    0x403700 | public: virtual class MetaClass * __thiscall mmGameManager::GetClass(void) | ?GetClass@mmGameManager@@UAEPAVMetaClass@@XZ
+    0x403740 | public: virtual void * __thiscall mmScreenClearFlunky::`scalar deleting destructor'(unsigned int) | ??_GmmScreenClearFlunky@@UAEPAXI@Z
+    0x403740 | public: virtual void * __thiscall mmScreenClearFlunky::`vector deleting destructor'(unsigned int) | ??_EmmScreenClearFlunky@@UAEPAXI@Z
+    0x403770 | public: virtual __thiscall mmScreenClearFlunky::~mmScreenClearFlunky(void) | ??1mmScreenClearFlunky@@UAE@XZ
+    0x403780 | public: virtual void __thiscall asNode::UpdatePaused(void) | ?UpdatePaused@asNode@@UAEXXZ
+    0x403790 | public: virtual void * __thiscall mmGameManager::`vector deleting destructor'(unsigned int) | ??_EmmGameManager@@UAEPAXI@Z
+    0x58F438 | const mmScreenClearFlunky::`vftable' | ??_7mmScreenClearFlunky@@6B@
+    0x58F468 | const mmGameManager::`vftable' | ??_7mmGameManager@@6B@
+    0x5D4504 | unsigned char dummyGlobal2 | ?dummyGlobal2@@3EA
+    0x6090F0 | int ScreenClearCount | ?ScreenClearCount@@3HA
+    0x6090F8 | class Stream * ReplayLog | ?ReplayLog@@3PAVStream@@A
+    0x609100 | class MetaClass mmGameManagerMetaClass | ?mmGameManagerMetaClass@@3VMetaClass@@A
+    0x60912C | private: static class mmGameManager * mmGameManager::Instance | ?Instance@mmGameManager@@0PAV1@A
+    0x402F50 | void __cdecl randcall(void) | ?randcall@@YAXXZ
+    0x4032B0 | void __cdecl DoScan(void *) | ?DoScan@@YAXPAX@Z
+    0x4035E0 | void * __cdecl new_mmGameManager(int) | ?new_mmGameManager@@YAPAXH@Z
+    0x4036B0 | void __cdecl delete_mmGameManager(void *,int) | ?delete_mmGameManager@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

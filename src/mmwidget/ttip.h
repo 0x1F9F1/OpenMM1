@@ -18,7 +18,19 @@
 
 #pragma once
 
-// mmwidget:ttip
+/*
+    mmwidget:ttip
+
+    0x4B4C60 | public: __thiscall mmToolTip::mmToolTip(void) | ??0mmToolTip@@QAE@XZ
+    0x4B4CD0 | public: virtual __thiscall mmToolTip::~mmToolTip(void) | ??1mmToolTip@@UAE@XZ
+    0x4B4D30 | public: void __thiscall mmToolTip::Init(class UIMenu *,struct LocString *) | ?Init@mmToolTip@@QAEXPAVUIMenu@@PAULocString@@@Z
+    0x4B4DE0 | public: void __thiscall mmToolTip::SetText(struct LocString *) | ?SetText@mmToolTip@@QAEXPAULocString@@@Z
+    0x4B4E00 | public: void __thiscall mmToolTip::Switch(int) | ?Switch@mmToolTip@@QAEXH@Z
+    0x4B4E10 | public: virtual void __thiscall mmToolTip::Update(void) | ?Update@mmToolTip@@UAEXXZ
+    0x4B4E20 | public: virtual void * __thiscall mmToolTip::`scalar deleting destructor'(unsigned int) | ??_GmmToolTip@@UAEPAXI@Z
+    0x4B4E20 | public: virtual void * __thiscall mmToolTip::`vector deleting destructor'(unsigned int) | ??_EmmToolTip@@UAEPAXI@Z
+    0x593E00 | const mmToolTip::`vftable' | ??_7mmToolTip@@6B@
+*/
 
 #include "hooking.h"
 

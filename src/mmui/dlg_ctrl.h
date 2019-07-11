@@ -18,7 +18,16 @@
 
 #pragma once
 
-// mmui:dlg_ctrl
+/*
+    mmui:dlg_ctrl
+
+    0x495190 | public: __thiscall Dialog_ControlAssign::Dialog_ControlAssign(int,float,float,float,float,char *) | ??0Dialog_ControlAssign@@QAE@HMMMMPAD@Z
+    0x495290 | public: virtual __thiscall Dialog_ControlAssign::~Dialog_ControlAssign(void) | ??1Dialog_ControlAssign@@UAE@XZ
+    0x4952A0 | public: virtual void __thiscall Dialog_ControlAssign::PreSetup(void) | ?PreSetup@Dialog_ControlAssign@@UAEXXZ
+    0x4952B0 | public: virtual void * __thiscall Dialog_ControlAssign::`scalar deleting destructor'(unsigned int) | ??_GDialog_ControlAssign@@UAEPAXI@Z
+    0x4952B0 | public: virtual void * __thiscall Dialog_ControlAssign::`vector deleting destructor'(unsigned int) | ??_EDialog_ControlAssign@@UAEPAXI@Z
+    0x592658 | const Dialog_ControlAssign::`vftable' | ??_7Dialog_ControlAssign@@6B@
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,20 @@
 
 #pragma once
 
-// mmcar:axle
+/*
+    mmcar:axle
+
+    0x474AE0 | public: __thiscall mmAxle::mmAxle(void) | ??0mmAxle@@QAE@XZ
+    0x474B00 | public: void __thiscall mmAxle::Init(char *,char *,class mmWheel *,class mmWheel *) | ?Init@mmAxle@@QAEXPAD0PAVmmWheel@@1@Z
+    0x474B50 | public: virtual void __thiscall mmAxle::Update(void) | ?Update@mmAxle@@UAEXXZ
+    0x474BF0 | public: static void __cdecl mmAxle::DeclareFields(void) | ?DeclareFields@mmAxle@@SAXXZ
+    0x474D60 | public: virtual class MetaClass * __thiscall mmAxle::GetClass(void) | ?GetClass@mmAxle@@UAEPAVMetaClass@@XZ
+    0x474D70 | public: virtual void * __thiscall mmAxle::`vector deleting destructor'(unsigned int) | ??_EmmAxle@@UAEPAXI@Z
+    0x591630 | const mmAxle::`vftable' | ??_7mmAxle@@6B@
+    0x60A410 | class MetaClass mmAxleMetaClass | ?mmAxleMetaClass@@3VMetaClass@@A
+    0x474C40 | void * __cdecl new_mmAxle(int) | ?new_mmAxle@@YAPAXH@Z
+    0x474D10 | void __cdecl delete_mmAxle(void *,int) | ?delete_mmAxle@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

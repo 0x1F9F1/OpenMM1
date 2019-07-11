@@ -18,7 +18,34 @@
 
 #pragma once
 
-// mmcityinfo:miscdata
+/*
+    mmcityinfo:miscdata
+
+    0x4C09E0 | public: __thiscall mmMiscData::mmMiscData(void) | ??0mmMiscData@@QAE@XZ
+    0x4C0AF0 | public: virtual __thiscall mmMiscData::~mmMiscData(void) | ??1mmMiscData@@UAE@XZ
+    0x4C0BF0 | public: int __thiscall mmMiscData::Load(char *) | ?Load@mmMiscData@@QAEHPAD@Z
+    0x4C0C60 | public: int __thiscall mmMiscData::Save(char *,int) | ?Save@mmMiscData@@QAEHPADH@Z
+    0x4C0CF0 | public: int __thiscall mmMiscData::LoadBinary(char *) | ?LoadBinary@mmMiscData@@QAEHPAD@Z
+    0x4C0EB0 | public: int __thiscall mmMiscData::SaveBinary(char *) | ?SaveBinary@mmMiscData@@QAEHPAD@Z
+    0x4C1030 | public: class mmRecord __thiscall mmMiscData::GetBestRaceTime(int,int) | ?GetBestRaceTime@mmMiscData@@QAE?AVmmRecord@@HH@Z
+    0x4C1160 | public: class mmRecord __thiscall mmMiscData::GetBestBlitzTime(int,int) | ?GetBestBlitzTime@mmMiscData@@QAE?AVmmRecord@@HH@Z
+    0x4C1290 | public: class mmRecord __thiscall mmMiscData::GetBestCircuitTime(int,int) | ?GetBestCircuitTime@mmMiscData@@QAE?AVmmRecord@@HH@Z
+    0x4C13C0 | public: class mmRecord __thiscall mmMiscData::GetBestRaceScore(int,int) | ?GetBestRaceScore@mmMiscData@@QAE?AVmmRecord@@HH@Z
+    0x4C14F0 | public: class mmRecord __thiscall mmMiscData::GetBestBlitzScore(int,int) | ?GetBestBlitzScore@mmMiscData@@QAE?AVmmRecord@@HH@Z
+    0x4C1620 | public: class mmRecord __thiscall mmMiscData::GetBestCircuitScore(int,int) | ?GetBestCircuitScore@mmMiscData@@QAE?AVmmRecord@@HH@Z
+    0x4C1750 | public: int __thiscall mmMiscData::CheckCheckpoint(char *,float,int,char *,int,int) | ?CheckCheckpoint@mmMiscData@@QAEHPADMH0HH@Z
+    0x4C18F0 | public: int __thiscall mmMiscData::CheckCircuit(char *,float,int,char *,int,int) | ?CheckCircuit@mmMiscData@@QAEHPADMH0HH@Z
+    0x4C1A90 | public: int __thiscall mmMiscData::CheckBlitz(char *,float,int,char *,int,int) | ?CheckBlitz@mmMiscData@@QAEHPADMH0HH@Z
+    0x4C1C30 | public: static void __cdecl mmMiscData::DeclareFields(void) | ?DeclareFields@mmMiscData@@SAXXZ
+    0x4C1EB0 | public: virtual class MetaClass * __thiscall mmMiscData::GetClass(void) | ?GetClass@mmMiscData@@UAEPAVMetaClass@@XZ
+    0x4C1EC0 | public: virtual void * __thiscall mmRecord::`scalar deleting destructor'(unsigned int) | ??_GmmRecord@@UAEPAXI@Z
+    0x4C1EF0 | public: virtual void * __thiscall mmMiscData::`vector deleting destructor'(unsigned int) | ??_EmmMiscData@@UAEPAXI@Z
+    0x594410 | const mmMiscData::`vftable' | ??_7mmMiscData@@6B@
+    0x594428 | const mmRecord::`vftable' | ??_7mmRecord@@6B@
+    0x66A820 | class MetaClass mmMiscDataMetaClass | ?mmMiscDataMetaClass@@3VMetaClass@@A
+    0x4C1D80 | void * __cdecl new_mmMiscData(int) | ?new_mmMiscData@@YAPAXH@Z
+    0x4C1E60 | void __cdecl delete_mmMiscData(void *,int) | ?delete_mmMiscData@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,31 @@
 
 #pragma once
 
-// mmui:driver
+/*
+    mmui:driver
+
+    0x49A2C0 | public: __thiscall DriverMenu::DriverMenu(int) | ??0DriverMenu@@QAE@H@Z
+    0x49A3A0 | public: virtual void __thiscall DriverMenu::PreSetup(void) | ?PreSetup@DriverMenu@@UAEXXZ
+    0x49A3D0 | public: void __thiscall DriverMenu::InitPlayerSelection(void) | ?InitPlayerSelection@DriverMenu@@QAEXXZ
+    0x49A7C0 | public: virtual __thiscall DriverMenu::~DriverMenu(void) | ??1DriverMenu@@UAE@XZ
+    0x49A830 | public: void __thiscall DriverMenu::RemovePlayer(char *) | ?RemovePlayer@DriverMenu@@QAEXPAD@Z
+    0x49AA70 | public: void __thiscall DriverMenu::SetPlayerPick(int) | ?SetPlayerPick@DriverMenu@@QAEXH@Z
+    0x49AA80 | public: void __thiscall DriverMenu::DecPlayer(void) | ?DecPlayer@DriverMenu@@QAEXXZ
+    0x49AAB0 | public: void __thiscall DriverMenu::IncPlayer(void) | ?IncPlayer@DriverMenu@@QAEXXZ
+    0x49AAE0 | public: void __thiscall DriverMenu::RemoveAllPlayers(void) | ?RemoveAllPlayers@DriverMenu@@QAEXXZ
+    0x49AAF0 | public: void __thiscall DriverMenu::AddPlayer(char *) | ?AddPlayer@DriverMenu@@QAEXPAD@Z
+    0x49AC00 | public: void __thiscall DriverMenu::TDPickCB(void) | ?TDPickCB@DriverMenu@@QAEXXZ
+    0x49AC10 | public: void __thiscall DriverMenu::DeleteCB(void) | ?DeleteCB@DriverMenu@@QAEXXZ
+    0x49AC20 | public: void __thiscall DriverMenu::NewPlayer(void) | ?NewPlayer@DriverMenu@@QAEXXZ
+    0x49AC30 | public: char * __thiscall DriverMenu::GetNewDriverName(void) | ?GetNewDriverName@DriverMenu@@QAEPADXZ
+    0x49AC40 | public: void __thiscall DriverMenu::EnterNewPlayer(void) | ?EnterNewPlayer@DriverMenu@@QAEXXZ
+    0x49AC50 | public: void __thiscall DriverMenu::DisplayDriverInfo(char *,char *,char *,char *,char *,int) | ?DisplayDriverInfo@DriverMenu@@QAEXPAD0000H@Z
+    0x49AD10 | public: void __thiscall DriverMenu::SetController(char *) | ?SetController@DriverMenu@@QAEXPAD@Z
+    0x49AD30 | public: void __thiscall DriverMenu::SetNetName(char *) | ?SetNetName@DriverMenu@@QAEXPAD@Z
+    0x49AD70 | public: virtual void * __thiscall DriverMenu::`vector deleting destructor'(unsigned int) | ??_EDriverMenu@@UAEPAXI@Z
+    0x49AD70 | public: virtual void * __thiscall DriverMenu::`scalar deleting destructor'(unsigned int) | ??_GDriverMenu@@UAEPAXI@Z
+    0x592A28 | const DriverMenu::`vftable' | ??_7DriverMenu@@6B@
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,18 @@
 
 #pragma once
 
-// mmui:racehost
+/*
+    mmui:racehost
+
+    0x497AD0 | public: __thiscall HostRaceMenu::HostRaceMenu(int) | ??0HostRaceMenu@@QAE@H@Z
+    0x497BA0 | public: virtual __thiscall HostRaceMenu::~HostRaceMenu(void) | ??1HostRaceMenu@@UAE@XZ
+    0x497BB0 | public: void __thiscall HostRaceMenu::EnableStart(void) | ?EnableStart@HostRaceMenu@@QAEXXZ
+    0x497BC0 | public: void __thiscall HostRaceMenu::DisableStart(void) | ?DisableStart@HostRaceMenu@@QAEXXZ
+    0x497BD0 | public: virtual void __thiscall HostRaceMenu::UsesLobby(int) | ?UsesLobby@HostRaceMenu@@UAEXH@Z
+    0x497BE0 | public: virtual void * __thiscall HostRaceMenu::`vector deleting destructor'(unsigned int) | ??_EHostRaceMenu@@UAEPAXI@Z
+    0x497BE0 | public: virtual void * __thiscall HostRaceMenu::`scalar deleting destructor'(unsigned int) | ??_GHostRaceMenu@@UAEPAXI@Z
+    0x5927B0 | const HostRaceMenu::`vftable' | ??_7HostRaceMenu@@6B@
+*/
 
 #include "hooking.h"
 

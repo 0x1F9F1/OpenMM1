@@ -18,7 +18,19 @@
 
 #pragma once
 
-// mmui:vehicle
+/*
+    mmui:vehicle
+
+    0x49A140 | public: __thiscall Vehicle::Vehicle(int) | ??0Vehicle@@QAE@H@Z
+    0x49A220 | public: virtual __thiscall Vehicle::~Vehicle(void) | ??1Vehicle@@UAE@XZ
+    0x49A230 | public: void __thiscall Vehicle::SetSubMenu(int) | ?SetSubMenu@Vehicle@@QAEXH@Z
+    0x49A250 | public: void __thiscall Vehicle::SetSubMenuButtons(void) | ?SetSubMenuButtons@Vehicle@@QAEXXZ
+    0x49A270 | public: virtual void __thiscall Vehicle::PreSetup(void) | ?PreSetup@Vehicle@@UAEXXZ
+    0x49A280 | public: virtual void __thiscall Vehicle::PostSetup(void) | ?PostSetup@Vehicle@@UAEXXZ
+    0x49A290 | public: virtual void * __thiscall Vehicle::`scalar deleting destructor'(unsigned int) | ??_GVehicle@@UAEPAXI@Z
+    0x49A290 | public: virtual void * __thiscall Vehicle::`vector deleting destructor'(unsigned int) | ??_EVehicle@@UAEPAXI@Z
+    0x5929B0 | const Vehicle::`vftable' | ??_7Vehicle@@6B@
+*/
 
 #include "hooking.h"
 

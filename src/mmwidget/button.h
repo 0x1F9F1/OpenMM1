@@ -18,7 +18,27 @@
 
 #pragma once
 
-// mmwidget:button
+/*
+    mmwidget:button
+
+    0x4AEB30 | public: __thiscall UIButton::UIButton(void) | ??0UIButton@@QAE@XZ
+    0x4AEBC0 | public: virtual __thiscall UIButton::~UIButton(void) | ??1UIButton@@UAE@XZ
+    0x4AEC30 | public: void __thiscall UIButton::Init(struct LocString *,int,float,float,float,float,int,class Callback) | ?Init@UIButton@@QAEXPAULocString@@HMMMMHVCallback@@@Z
+    0x4AED00 | public: virtual void __thiscall UIButton::Update(void) | ?Update@UIButton@@UAEXXZ
+    0x4AED10 | public: void __thiscall UIButton::SetString(struct LocString *) | ?SetString@UIButton@@QAEXPAULocString@@@Z
+    0x4AED30 | private: void __thiscall UIButton::DrawOff(void) | ?DrawOff@UIButton@@AAEXXZ
+    0x4AED60 | private: void __thiscall UIButton::DrawOn(void) | ?DrawOn@UIButton@@AAEXXZ
+    0x4AED90 | public: virtual void __thiscall UIButton::Action(union eqEvent) | ?Action@UIButton@@UAEXTeqEvent@@@Z
+    0x4AEDE0 | public: virtual void __thiscall UIButton::SetReadOnly(int) | ?SetReadOnly@UIButton@@UAEXH@Z
+    0x4AEE30 | public: virtual void __thiscall UIButton::Switch(int) | ?Switch@UIButton@@UAEXH@Z
+    0x4AEEB0 | public: void __thiscall UIButton::SetType(int) | ?SetType@UIButton@@QAEXH@Z
+    0x4AEF00 | public: int __thiscall UIButton::TestHit(float,float) | ?TestHit@UIButton@@QAEHMM@Z
+    0x4AEF10 | public: virtual void * __thiscall UIButton::`vector deleting destructor'(unsigned int) | ??_EUIButton@@UAEPAXI@Z
+    0x4AEF10 | public: virtual void * __thiscall UIButton::`scalar deleting destructor'(unsigned int) | ??_GUIButton@@UAEPAXI@Z
+    0x4AEF40 | public: virtual void __thiscall UIButton::Enable(void) | ?Enable@UIButton@@UAEXXZ
+    0x4AEF60 | public: virtual void __thiscall UIButton::Disable(void) | ?Disable@UIButton@@UAEXXZ
+    0x5938D8 | const UIButton::`vftable' | ??_7UIButton@@6B@
+*/
 
 #include "hooking.h"
 

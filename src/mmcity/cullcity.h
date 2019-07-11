@@ -18,7 +18,86 @@
 
 #pragma once
 
-// mmcity:cullcity
+/*
+    mmcity:cullcity
+
+    0x482B40 | public: __thiscall mmCullCity::mmCullCity(void) | ??0mmCullCity@@QAE@XZ
+    0x482D60 | public: virtual __thiscall mmCullCity::~mmCullCity(void) | ??1mmCullCity@@UAE@XZ
+    0x482F00 | public: short __thiscall mmCullCity::GetHitId(class Vector3 &) | ?GetHitId@mmCullCity@@QAEFAAVVector3@@@Z
+    0x482F30 | private: virtual void __fastcall mmUpperInstance::Draw(int) | ?Draw@mmUpperInstance@@EAIXH@Z
+    0x482F90 | public: __thiscall mmRunwayLight::mmRunwayLight(char *,class Vector3 &,class Vector3 &) | ??0mmRunwayLight@@QAE@PADAAVVector3@@1@Z
+    0x483150 | public: virtual class Vector3 & __fastcall mmRunwayLight::GetPos(void) | ?GetPos@mmRunwayLight@@UAIAAVVector3@@XZ
+    0x483160 | public: virtual void __fastcall mmRunwayLight::FromMatrix(class Matrix34 const &) | ?FromMatrix@mmRunwayLight@@UAIXABVMatrix34@@@Z
+    0x483170 | public: virtual class Matrix34 & __fastcall mmRunwayLight::ToMatrix(class Matrix34 &) | ?ToMatrix@mmRunwayLight@@UAIAAVMatrix34@@AAV2@@Z
+    0x4831A0 | public: virtual void __fastcall mmRunwayLight::Draw(int) | ?Draw@mmRunwayLight@@UAIXH@Z
+    0x4832A0 | public: virtual float __fastcall mmRunwayLight::GetScale(void) | ?GetScale@mmRunwayLight@@UAIMXZ
+    0x4832B0 | private: void __thiscall mmCullCity::AddInstance(int,char *,char *,int,class Vector3 *,class Vector3 *,class Vector3 *,float) | ?AddInstance@mmCullCity@@AAEXHPAD0HPAVVector3@@11M@Z
+    0x483630 | public: void __thiscall mmCullCity::ReparentObject(class mmInstance *) | ?ReparentObject@mmCullCity@@QAEXPAVmmInstance@@@Z
+    0x4836C0 | public: void __thiscall mmCullCity::Init(char *,class asCamera *) | ?Init@mmCullCity@@QAEXPADPAVasCamera@@@Z
+    0x483BB0 | public: virtual void __thiscall mmCullCity::Reset(void) | ?Reset@mmCullCity@@UAEXXZ
+    0x483C80 | public: void __thiscall mmCullCity::InitObjectDetail(void) | ?InitObjectDetail@mmCullCity@@QAEXXZ
+    0x483CB0 | public: void __thiscall mmCullCity::LoadBangers(char *) | ?LoadBangers@mmCullCity@@QAEXPAD@Z
+    0x483DD0 | public: void __thiscall mmCullCity::LoadFacades(char *) | ?LoadFacades@mmCullCity@@QAEXPAD@Z
+    0x483EE0 | private: void __thiscall mmCullCity::InitSnowTextures(void) | ?InitSnowTextures@mmCullCity@@AAEXXZ
+    0x4840D0 | private: void __thiscall mmCullCity::UpdateSnowTextures(void) | ?UpdateSnowTextures@mmCullCity@@AAEXXZ
+    0x484370 | public: int __thiscall mmCullCity::IsPolyWater(class mmPolygon *) | ?IsPolyWater@mmCullCity@@QAEHPAVmmPolygon@@@Z
+    0x4843B0 | public: virtual void __thiscall mmCullCity::Update(void) | ?Update@mmCullCity@@UAEXXZ
+    0x4845F0 | public: virtual void __thiscall mmCullCity::Cull(void) | ?Cull@mmCullCity@@UAEXXZ
+    0x484720 | public: void __thiscall mmCullCity::ToggleSky(void) | ?ToggleSky@mmCullCity@@QAEXXZ
+    0x484730 | public: short __thiscall mmCullCity::GetRoomFlags(short) | ?GetRoomFlags@mmCullCity@@QAEFF@Z
+    0x484770 | public: void __thiscall mmCullCity::RelightEverything(void) | ?RelightEverything@mmCullCity@@QAEXXZ
+    0x4847D0 | void __cdecl fix_clip(void) | ?fix_clip@@YAXXZ
+    0x484840 | void __cdecl fix_lighting(void) | ?fix_lighting@@YAXXZ
+    0x4848E0 | private: void __thiscall mmCullCity::InitTimeOfDayAndWeather(void) | ?InitTimeOfDayAndWeather@mmCullCity@@AAEXXZ
+    0x485220 | public: static void __cdecl mmCullCity::DeclareFields(void) | ?DeclareFields@mmCullCity@@SAXXZ
+    0x485390 | public: virtual class MetaClass * __thiscall mmCullCity::GetClass(void) | ?GetClass@mmCullCity@@UAEPAVMetaClass@@XZ
+    0x4853A0 | public: virtual void __thiscall mmRunwayLight::AddWidgets(class Bank *) | ?AddWidgets@mmRunwayLight@@UAEXPAVBank@@@Z
+    0x4853B0 | public: virtual void * __thiscall mmRunwayLight::`vector deleting destructor'(unsigned int) | ??_EmmRunwayLight@@UAEPAXI@Z
+    0x4853B0 | public: virtual void * __thiscall mmRunwayLight::`scalar deleting destructor'(unsigned int) | ??_GmmRunwayLight@@UAEPAXI@Z
+    0x4853D0 | public: virtual __thiscall mmRunwayLight::~mmRunwayLight(void) | ??1mmRunwayLight@@UAE@XZ
+    0x4853E0 | public: virtual void * __thiscall mmUpperInstance::`scalar deleting destructor'(unsigned int) | ??_GmmUpperInstance@@UAEPAXI@Z
+    0x4853E0 | public: virtual void * __thiscall mmUpperInstance::`vector deleting destructor'(unsigned int) | ??_EmmUpperInstance@@UAEPAXI@Z
+    0x485400 | public: virtual __thiscall mmUpperInstance::~mmUpperInstance(void) | ??1mmUpperInstance@@UAE@XZ
+    0x485410 | public: virtual void * __thiscall mmCullCity::`vector deleting destructor'(unsigned int) | ??_EmmCullCity@@UAEPAXI@Z
+    0x485470 | public: int __thiscall agiLib<class agiTexParameters,class agiTexDef>::Add(class agiTexParameters &) | ?Add@?$agiLib@VagiTexParameters@@VagiTexDef@@@@QAEHAAVagiTexParameters@@@Z
+    0x485550 | public: virtual void * __thiscall mmShearInstance::`scalar deleting destructor'(unsigned int) | ??_GmmShearInstance@@UAEPAXI@Z
+    0x485570 | public: virtual __thiscall mmShearInstance::~mmShearInstance(void) | ??1mmShearInstance@@UAE@XZ
+    0x485580 | public: virtual void * __thiscall mmBuildingInstance::`scalar deleting destructor'(unsigned int) | ??_GmmBuildingInstance@@UAEPAXI@Z
+    0x4855A0 | public: virtual __thiscall mmBuildingInstance::~mmBuildingInstance(void) | ??1mmBuildingInstance@@UAE@XZ
+    0x4855B0 | public: virtual void * __thiscall mmUnhitBangerInstance::`vector deleting destructor'(unsigned int) | ??_EmmUnhitBangerInstance@@UAEPAXI@Z
+    0x4855B0 | public: virtual void * __thiscall mmUnhitBangerInstance::`scalar deleting destructor'(unsigned int) | ??_GmmUnhitBangerInstance@@UAEPAXI@Z
+    0x4855D0 | public: virtual __thiscall mmUnhitBangerInstance::~mmUnhitBangerInstance(void) | ??1mmUnhitBangerInstance@@UAE@XZ
+    0x4855E0 | public: virtual void * __thiscall mmBangerManager::`vector deleting destructor'(unsigned int) | ??_EmmBangerManager@@UAEPAXI@Z
+    0x4855E0 | public: virtual void * __thiscall mmBangerManager::`scalar deleting destructor'(unsigned int) | ??_GmmBangerManager@@UAEPAXI@Z
+    0x485610 | public: virtual __thiscall mmBangerManager::~mmBangerManager(void) | ??1mmBangerManager@@UAE@XZ
+    0x591C08 | const mmCullCity::`vftable' | ??_7mmCullCity@@6B@
+    0x591C38 | const mmBangerManager::`vftable' | ??_7mmBangerManager@@6B@
+    0x591C68 | const mmRunwayLight::`vftable' | ??_7mmRunwayLight@@6B@
+    0x591CC8 | const mmUpperInstance::`vftable' | ??_7mmUpperInstance@@6B@
+    0x591D28 | const mmBuildingInstance::`vftable' | ??_7mmBuildingInstance@@6B@
+    0x591D88 | const mmShearInstance::`vftable' | ??_7mmShearInstance@@6B@
+    0x591DE8 | const mmUnhitBangerInstance::`vftable' | ??_7mmUnhitBangerInstance@@6B@
+    0x5AD110 | struct t_mmEnvSetup (* mmEnvSetup)[4] | ?mmEnvSetup@@3PAY03Ut_mmEnvSetup@@A
+    0x5AD394 | float BoneScale | ?BoneScale@@3MA
+    0x60B150 | float EnvVel | ?EnvVel@@3MA
+    0x60B190 | int UsePixelFog | ?UsePixelFog@@3HA
+    0x60B194 | private: static class mmCullCity * mmCullCity::Instance | ?Instance@mmCullCity@@0PAV1@A
+    0x60B198 | class Vector3 PlaneFudge | ?PlaneFudge@@3VVector3@@A
+    0x60B1A8 | class MetaClass mmCullCityMetaClass | ?mmCullCityMetaClass@@3VMetaClass@@A
+    0x60B1D0 | float FadeConstant | ?FadeConstant@@3MA
+    0x60B1D4 | public: static float mmRunwayLight::Phase | ?Phase@mmRunwayLight@@2MA
+    0x60B1D8 | float FadeScale | ?FadeScale@@3MA
+    0x60B1DC | int DisableUpper | ?DisableUpper@@3HA
+    0x484F80 | void __cdecl fix_sun(void) | ?fix_sun@@YAXXZ
+    0x484FF0 | void __cdecl fix_fill1(void) | ?fix_fill1@@YAXXZ
+    0x485060 | void __cdecl fix_fill2(void) | ?fix_fill2@@YAXXZ
+    0x4850D0 | void __cdecl parseFloat(float &) | ?parseFloat@@YAXAAM@Z
+    0x485100 | void __cdecl parseVector3(class Vector3 &) | ?parseVector3@@YAXAAVVector3@@@Z
+    0x485130 | void __cdecl parseRGB(unsigned int &) | ?parseRGB@@YAXAAI@Z
+    0x4851A0 | void __cdecl parseARGB(unsigned int &) | ?parseARGB@@YAXAAI@Z
+    0x485270 | void * __cdecl new_mmCullCity(int) | ?new_mmCullCity@@YAPAXH@Z
+    0x485340 | void __cdecl delete_mmCullCity(void *,int) | ?delete_mmCullCity@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

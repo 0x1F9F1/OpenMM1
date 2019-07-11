@@ -18,7 +18,26 @@
 
 #pragma once
 
-// mmcamcs:povcamcs
+/*
+    mmcamcs:povcamcs
+
+    0x4E8E30 | public: __thiscall PovCamCS::PovCamCS(void) | ??0PovCamCS@@QAE@XZ
+    0x4E8F30 | public: virtual __thiscall PovCamCS::~PovCamCS(void) | ??1PovCamCS@@UAE@XZ
+    0x4E8F40 | public: virtual void __thiscall PovCamCS::MakeActive(void) | ?MakeActive@PovCamCS@@UAEXXZ
+    0x4E8F90 | public: virtual void __thiscall PovCamCS::AfterLoad(void) | ?AfterLoad@PovCamCS@@UAEXXZ
+    0x4E8FA0 | public: virtual void __thiscall PovCamCS::Reset(void) | ?Reset@PovCamCS@@UAEXXZ
+    0x4E8FE0 | public: virtual void __thiscall PovCamCS::Update(void) | ?Update@PovCamCS@@UAEXXZ
+    0x4E9000 | public: virtual void __thiscall PovCamCS::UpdateInput(void) | ?UpdateInput@PovCamCS@@UAEXXZ
+    0x4E9010 | private: void __thiscall PovCamCS::UpdatePOV(void) | ?UpdatePOV@PovCamCS@@AAEXXZ
+    0x4E92B0 | public: static void __cdecl PovCamCS::DeclareFields(void) | ?DeclareFields@PovCamCS@@SAXXZ
+    0x4E9460 | public: virtual class MetaClass * __thiscall PovCamCS::GetClass(void) | ?GetClass@PovCamCS@@UAEPAVMetaClass@@XZ
+    0x4E94A0 | public: virtual void * __thiscall PovCamCS::`vector deleting destructor'(unsigned int) | ??_EPovCamCS@@UAEPAXI@Z
+    0x4E9500 | public: virtual void __thiscall BaseCamCS::SetST(float *) | ?SetST@BaseCamCS@@UAEXPAM@Z
+    0x594AB0 | const PovCamCS::`vftable' | ??_7PovCamCS@@6B@
+    0x67B618 | class MetaClass PovCamCSMetaClass | ?PovCamCSMetaClass@@3VMetaClass@@A
+    0x4E9340 | void * __cdecl new_PovCamCS(int) | ?new_PovCamCS@@YAPAXH@Z
+    0x4E9410 | void __cdecl delete_PovCamCS(void *,int) | ?delete_PovCamCS@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

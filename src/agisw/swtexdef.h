@@ -18,7 +18,30 @@
 
 #pragma once
 
-// agisw:swtexdef
+/*
+    agisw:swtexdef
+
+    0x51F590 | public: __thiscall agiSWTexDef::agiSWTexDef(class agiSWPipeline *) | ??0agiSWTexDef@@QAE@PAVagiSWPipeline@@@Z
+    0x51F5C0 | public: virtual __thiscall agiSWTexDef::~agiSWTexDef(void) | ??1agiSWTexDef@@UAE@XZ
+    0x51F5D0 | public: virtual void __thiscall agiSWTexDef::Set(class Vector2 &,class Vector2 &) | ?Set@agiSWTexDef@@UAEXAAVVector2@@0@Z
+    0x51F5F0 | public: virtual int __thiscall agiSWTexDef::BeginGfx(void) | ?BeginGfx@agiSWTexDef@@UAEHXZ
+    0x51F6C0 | public: virtual int __thiscall agiSWTexDef::IsAvailable(void) | ?IsAvailable@agiSWTexDef@@UAEHXZ
+    0x51F6D0 | public: virtual void __thiscall agiSWTexDef::EndGfx(void) | ?EndGfx@agiSWTexDef@@UAEXXZ
+    0x51F720 | public: virtual int __thiscall agiSWTexDef::Lock(struct agiTexLock &) | ?Lock@agiSWTexDef@@UAEHAAUagiTexLock@@@Z
+    0x51F770 | public: virtual void __thiscall agiSWTexDef::Unlock(struct agiTexLock &) | ?Unlock@agiSWTexDef@@UAEXAAUagiTexLock@@@Z
+    0x51F780 | public: virtual void __thiscall agiSWTexDef::Request(void) | ?Request@agiSWTexDef@@UAEXXZ
+    0x51F7E0 | public: __thiscall agiSWTexLut::agiSWTexLut(class agiSWPipeline *) | ??0agiSWTexLut@@QAE@PAVagiSWPipeline@@@Z
+    0x51F800 | public: virtual int __thiscall agiSWTexLut::BeginGfx(void) | ?BeginGfx@agiSWTexLut@@UAEHXZ
+    0x51F9E0 | public: virtual void __thiscall agiSWTexLut::EndGfx(void) | ?EndGfx@agiSWTexLut@@UAEXXZ
+    0x51F9F0 | public: virtual void * __thiscall agiSWTexDef::`scalar deleting destructor'(unsigned int) | ??_GagiSWTexDef@@UAEPAXI@Z
+    0x51F9F0 | public: virtual void * __thiscall agiSWTexDef::`vector deleting destructor'(unsigned int) | ??_EagiSWTexDef@@UAEPAXI@Z
+    0x51FA20 | public: virtual void * __thiscall agiSWTexLut::`vector deleting destructor'(unsigned int) | ??_EagiSWTexLut@@UAEPAXI@Z
+    0x51FA20 | public: virtual void * __thiscall agiSWTexLut::`scalar deleting destructor'(unsigned int) | ??_GagiSWTexLut@@UAEPAXI@Z
+    0x51FA50 | public: virtual __thiscall agiSWTexLut::~agiSWTexLut(void) | ??1agiSWTexLut@@UAE@XZ
+    0x595A38 | const agiSWTexDef::`vftable' | ??_7agiSWTexDef@@6B@
+    0x595A68 | const agiSWTexLut::`vftable' | ??_7agiSWTexLut@@6B@
+    0x5BEBA4 | float swLutInvGamma | ?swLutInvGamma@@3MA
+*/
 
 #include "hooking.h"
 

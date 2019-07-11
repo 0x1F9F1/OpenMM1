@@ -18,7 +18,14 @@
 
 #pragma once
 
-// mmdjpeg:jdapistd
+/*
+    mmdjpeg:jdapistd
+
+    0x55EDF0 | unsigned char __cdecl jpeg_start_decompress(struct jpeg_decompress_struct *) | ?jpeg_start_decompress@@YAEPAUjpeg_decompress_struct@@@Z
+    0x55EF00 | unsigned int __cdecl jpeg_read_scanlines(struct jpeg_decompress_struct *,unsigned char * *,unsigned int) | ?jpeg_read_scanlines@@YAIPAUjpeg_decompress_struct@@PAPAEI@Z
+    0x55EFA0 | unsigned int __cdecl jpeg_read_raw_data(struct jpeg_decompress_struct *,unsigned char * * *,unsigned int) | ?jpeg_read_raw_data@@YAIPAUjpeg_decompress_struct@@PAPAPAEI@Z
+    0x55EE90 | unsigned char __cdecl output_pass_setup(struct jpeg_decompress_struct *) | ?output_pass_setup@@YAEPAUjpeg_decompress_struct@@@Z
+*/
 
 #include "hooking.h"
 

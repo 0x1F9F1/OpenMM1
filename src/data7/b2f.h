@@ -18,7 +18,11 @@
 
 #pragma once
 
-// data7:b2f
+/*
+    data7:b2f
+
+    0x5CE928 | float * ByteToFloatTable | ?ByteToFloatTable@@3PAMA
+*/
 
 #include "hooking.h"
 

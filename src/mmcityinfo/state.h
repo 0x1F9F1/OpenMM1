@@ -18,7 +18,17 @@
 
 #pragma once
 
-// mmcityinfo:state
+/*
+    mmcityinfo:state
+
+    0x4C0040 | public: virtual __thiscall mmPlayerData::~mmPlayerData(void) | ??1mmPlayerData@@UAE@XZ
+    0x4C00E0 | public: virtual void * __thiscall mmPlayerData::`scalar deleting destructor'(unsigned int) | ??_GmmPlayerData@@UAEPAXI@Z
+    0x5943F0 | const mmPlayerData::`vftable' | ??_7mmPlayerData@@6B@
+    0x668390 | struct mmStatePack MMSTATE | ?MMSTATE@@3UmmStatePack@@A
+    0x668688 | int CHEATING | ?CHEATING@@3HA
+    0x668690 | class mmPlayerData MMCURRPLAYER | ?MMCURRPLAYER@@3VmmPlayerData@@A
+    0x66A808 | int CHICAGO | ?CHICAGO@@3HA
+*/
 
 #include "hooking.h"
 

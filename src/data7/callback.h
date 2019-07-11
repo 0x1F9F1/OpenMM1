@@ -18,7 +18,20 @@
 
 #pragma once
 
-// data7:callback
+/*
+    data7:callback
+
+    0x55AC20 | public: __thiscall Callback::Callback(void) | ??0Callback@@QAE@XZ
+    0x55AC30 | public: __thiscall Callback::Callback(void (__thiscall Base::*)(void),class Base *) | ??0Callback@@QAE@P8Base@@AEXXZPAV1@@Z
+    0x55AC70 | public: __thiscall Callback::Callback(void (__thiscall Base::*)(void *),class Base *,void *) | ??0Callback@@QAE@P8Base@@AEXPAX@ZPAV1@0@Z
+    0x55ACB0 | public: __thiscall Callback::Callback(void (__thiscall Base::*)(void *,void *),class Base *,void *) | ??0Callback@@QAE@P8Base@@AEXPAX0@ZPAV1@0@Z
+    0x55ACF0 | public: __thiscall Callback::Callback(void (__thiscall Base::*)(void *,void *),class Base *,void *,void *) | ??0Callback@@QAE@P8Base@@AEXPAX0@ZPAV1@00@Z
+    0x55AD30 | public: __thiscall Callback::Callback(void (__cdecl*)(void)) | ??0Callback@@QAE@P6AXXZ@Z
+    0x55AD50 | public: __thiscall Callback::Callback(void (__cdecl*)(void *),void *) | ??0Callback@@QAE@P6AXPAX@Z0@Z
+    0x55AD80 | public: __thiscall Callback::Callback(void (__cdecl*)(void *,void *),void *) | ??0Callback@@QAE@P6AXPAX0@Z0@Z
+    0x55ADB0 | public: void __thiscall Callback::Call(void *) | ?Call@Callback@@QAEXPAX@Z
+    0x712240 | class Callback NullCallback | ?NullCallback@@3VCallback@@A
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,60 @@
 
 #pragma once
 
-// mmaudio:mmvoicecommentary
+/*
+    mmaudio:mmvoicecommentary
+
+    0x4DD2C0 | public: __thiscall mmVoiceCommentary::mmVoiceCommentary(void) | ??0mmVoiceCommentary@@QAE@XZ
+    0x4DD360 | public: __thiscall mmVoiceCommentary::~mmVoiceCommentary(void) | ??1mmVoiceCommentary@@QAE@XZ
+    0x4DD380 | public: void __thiscall mmVoiceCommentary::ValidateCity(char *) | ?ValidateCity@mmVoiceCommentary@@QAEXPAD@Z
+    0x4DD3C0 | public: void __thiscall mmVoiceCommentary::SetFrequency(float) | ?SetFrequency@mmVoiceCommentary@@QAEXM@Z
+    0x4DD3E0 | public: void __thiscall mmVoiceCommentary::Stop(void) | ?Stop@mmVoiceCommentary@@QAEXXZ
+    0x4DD3F0 | public: void __thiscall mmVoiceCommentary::StopNow(void) | ?StopNow@mmVoiceCommentary@@QAEXXZ
+    0x4DD440 | public: void __thiscall mmVoiceCommentary::PlayAirBorne(void) | ?PlayAirBorne@mmVoiceCommentary@@QAEXXZ
+    0x4DD4B0 | public: void __thiscall mmVoiceCommentary::PlayRoam(void) | ?PlayRoam@mmVoiceCommentary@@QAEXXZ
+    0x4DD520 | public: void __thiscall mmVoiceCommentary::PlayCheckPoint(void) | ?PlayCheckPoint@mmVoiceCommentary@@QAEXXZ
+    0x4DD570 | public: void __thiscall mmVoiceCommentary::PlayFinalCheckPoint(void) | ?PlayFinalCheckPoint@mmVoiceCommentary@@QAEXXZ
+    0x4DD5E0 | public: void __thiscall mmVoiceCommentary::PlayLap(short) | ?PlayLap@mmVoiceCommentary@@QAEXF@Z
+    0x4DD5F0 | public: void __thiscall mmVoiceCommentary::PlayFinalLap(void) | ?PlayFinalLap@mmVoiceCommentary@@QAEXXZ
+    0x4DD660 | public: void __thiscall mmVoiceCommentary::Play(char *) | ?Play@mmVoiceCommentary@@QAEXPAD@Z
+    0x4DD6B0 | public: void __thiscall mmVoiceCommentary::PlayPreRace(void) | ?PlayPreRace@mmVoiceCommentary@@QAEXXZ
+    0x4DD720 | public: char * __thiscall mmVoiceCommentary::GetRandomPreRace(void) | ?GetRandomPreRace@mmVoiceCommentary@@QAEPADXZ
+    0x4DD8A0 | public: char * __thiscall mmVoiceCommentary::GetRandomPreBlitz(void) | ?GetRandomPreBlitz@mmVoiceCommentary@@QAEPADXZ
+    0x4DD980 | public: char * __thiscall mmVoiceCommentary::GetRandomPreCircuit(void) | ?GetRandomPreCircuit@mmVoiceCommentary@@QAEPADXZ
+    0x4DDA60 | public: char * __thiscall mmVoiceCommentary::GetRandomPreCheckPoint(void) | ?GetRandomPreCheckPoint@mmVoiceCommentary@@QAEPADXZ
+    0x4DDB70 | public: void __thiscall mmVoiceCommentary::PlayWinResults(void) | ?PlayWinResults@mmVoiceCommentary@@QAEXXZ
+    0x4DDBE0 | public: void __thiscall mmVoiceCommentary::PlayMidResults(void) | ?PlayMidResults@mmVoiceCommentary@@QAEXXZ
+    0x4DDC50 | public: void __thiscall mmVoiceCommentary::PlayResults(short) | ?PlayResults@mmVoiceCommentary@@QAEXF@Z
+    0x4DDCC0 | public: char * __thiscall mmVoiceCommentary::GetRandomResults(short) | ?GetRandomResults@mmVoiceCommentary@@QAEPADF@Z
+    0x4DDDA0 | public: char * __thiscall mmVoiceCommentary::GetRandomPreRaceVeh(void) | ?GetRandomPreRaceVeh@mmVoiceCommentary@@QAEPADXZ
+    0x4DDE00 | public: char * __thiscall mmVoiceCommentary::GetRandomResultsWin(void) | ?GetRandomResultsWin@mmVoiceCommentary@@QAEPADXZ
+    0x4DDFA0 | public: char * __thiscall mmVoiceCommentary::GetRandomResultsPoor(void) | ?GetRandomResultsPoor@mmVoiceCommentary@@QAEPADXZ
+    0x4DE140 | public: char * __thiscall mmVoiceCommentary::GetRandomResultsMid(void) | ?GetRandomResultsMid@mmVoiceCommentary@@QAEPADXZ
+    0x4DE2E0 | public: char * __thiscall mmVoiceCommentary::GetRandomTOD(void) | ?GetRandomTOD@mmVoiceCommentary@@QAEPADXZ
+    0x4DE340 | public: char * __thiscall mmVoiceCommentary::GetRandomWeather(void) | ?GetRandomWeather@mmVoiceCommentary@@QAEPADXZ
+    0x4DE3E0 | public: char * __thiscall mmVoiceCommentary::CatName(char *,int,int) | ?CatName@mmVoiceCommentary@@QAEPADPADHH@Z
+    0x4DE5E0 | public: char * __thiscall mmVoiceCommentary::GetLapName(short) | ?GetLapName@mmVoiceCommentary@@QAEPADF@Z
+    0x4DE6A0 | public: void __thiscall mmVoiceCommentary::PlayNetworkPreRace(void) | ?PlayNetworkPreRace@mmVoiceCommentary@@QAEXXZ
+    0x4DE710 | public: void __thiscall mmVoiceCommentary::PlayCRPreRace(void) | ?PlayCRPreRace@mmVoiceCommentary@@QAEXXZ
+    0x4DE810 | public: void __thiscall mmVoiceCommentary::PlayCollision(void) | ?PlayCollision@mmVoiceCommentary@@QAEXXZ
+    0x4DE880 | public: void __thiscall mmVoiceCommentary::PlayCR(short,short) | ?PlayCR@mmVoiceCommentary@@QAEXFF@Z
+    0x4DE910 | public: void __thiscall mmVoiceCommentary::PlayTeamCR(short,short) | ?PlayTeamCR@mmVoiceCommentary@@QAEXFF@Z
+    0x4DE980 | public: char * __thiscall mmVoiceCommentary::GetRandomRobber(short) | ?GetRandomRobber@mmVoiceCommentary@@QAEPADF@Z
+    0x4DEA00 | public: char * __thiscall mmVoiceCommentary::GetRandomRedCR(short) | ?GetRandomRedCR@mmVoiceCommentary@@QAEPADF@Z
+    0x4DEA80 | public: char * __thiscall mmVoiceCommentary::GetRandomBlueCR(short) | ?GetRandomBlueCR@mmVoiceCommentary@@QAEPADF@Z
+    0x4DEB00 | public: char * __thiscall mmVoiceCommentary::GetRandomCop(short) | ?GetRandomCop@mmVoiceCommentary@@QAEPADF@Z
+    0x4DEB80 | public: void __thiscall mmVoiceCommentary::PlayOpponentFinish(short) | ?PlayOpponentFinish@mmVoiceCommentary@@QAEXF@Z
+    0x4DECE0 | public: void __thiscall mmVoiceCommentary::PlayTimePenalty(void) | ?PlayTimePenalty@mmVoiceCommentary@@QAEXXZ
+    0x4DEDB0 | public: void __thiscall mmVoiceCommentary::PlayEndRaceDamage(void) | ?PlayEndRaceDamage@mmVoiceCommentary@@QAEXXZ
+    0x4DEE20 | public: void __thiscall mmVoiceCommentary::PlayUnlock(int) | ?PlayUnlock@mmVoiceCommentary@@QAEXH@Z
+    0x4DEE90 | public: void __thiscall mmVoiceCommentary::PlayGTUnlocked(void) | ?PlayGTUnlocked@mmVoiceCommentary@@QAEXXZ
+    0x4DEEF0 | public: void __thiscall mmVoiceCommentary::PlayBusUnlocked(void) | ?PlayBusUnlocked@mmVoiceCommentary@@QAEXXZ
+    0x4DEF50 | public: void __thiscall mmVoiceCommentary::PlayCopCarUnlocked(void) | ?PlayCopCarUnlocked@mmVoiceCommentary@@QAEXXZ
+    0x4DEFC0 | public: void __thiscall mmVoiceCommentary::PlayBulletUnlocked(void) | ?PlayBulletUnlocked@mmVoiceCommentary@@QAEXXZ
+    0x4DF020 | public: void __thiscall mmVoiceCommentary::PlaySemiUnlocked(void) | ?PlaySemiUnlocked@mmVoiceCommentary@@QAEXXZ
+    0x4DF080 | public: void __thiscall mmVoiceCommentary::PlayNextRacesUnlocked(void) | ?PlayNextRacesUnlocked@mmVoiceCommentary@@QAEXXZ
+    0x4DF150 | public: void __thiscall mmVoiceCommentary::Update(void) | ?Update@mmVoiceCommentary@@QAEXXZ
+*/
 
 #include "hooking.h"
 

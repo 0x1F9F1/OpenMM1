@@ -18,7 +18,18 @@
 
 #pragma once
 
-// mmcar:opponentsurfaceaudio
+/*
+    mmcar:opponentsurfaceaudio
+
+    0x47CD40 | public: __thiscall mmOpponentSurfaceAudio::mmOpponentSurfaceAudio(void) | ??0mmOpponentSurfaceAudio@@QAE@XZ
+    0x47CD70 | public: __thiscall mmOpponentSurfaceAudio::~mmOpponentSurfaceAudio(void) | ??1mmOpponentSurfaceAudio@@QAE@XZ
+    0x47CD80 | public: void __thiscall mmOpponentSurfaceAudio::SetWheelPointers(class mmWheel *,class mmWheel *,class mmWheel *,class mmWheel *) | ?SetWheelPointers@mmOpponentSurfaceAudio@@QAEXPAVmmWheel@@000@Z
+    0x47CDA0 | public: void __thiscall mmOpponentSurfaceAudio::Update(float) | ?Update@mmOpponentSurfaceAudio@@QAEXM@Z
+    0x47CDE0 | public: void __thiscall mmOpponentSurfaceAudio::UpdateSkid(float) | ?UpdateSkid@mmOpponentSurfaceAudio@@QAEXM@Z
+    0x47D060 | public: void __thiscall mmOpponentSurfaceAudio::UpdateSkidSnow(float) | ?UpdateSkidSnow@mmOpponentSurfaceAudio@@QAEXM@Z
+    0x47D2C0 | public: void __thiscall mmOpponentSurfaceAudio::Enable3DMode(class Vector3 *) | ?Enable3DMode@mmOpponentSurfaceAudio@@QAEXPAVVector3@@@Z
+    0x47D2E0 | public: void __thiscall mmOpponentSurfaceAudio::Disable3DMode(void) | ?Disable3DMode@mmOpponentSurfaceAudio@@QAEXXZ
+*/
 
 #include "hooking.h"
 

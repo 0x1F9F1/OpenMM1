@@ -18,7 +18,23 @@
 
 #pragma once
 
-// mmwidget:label
+/*
+    mmwidget:label
+
+    0x4A83E0 | public: __thiscall UILabel::UILabel(void) | ??0UILabel@@QAE@XZ
+    0x4A8470 | public: virtual __thiscall UILabel::~UILabel(void) | ??1UILabel@@UAE@XZ
+    0x4A84D0 | public: void __thiscall UILabel::Init(struct LocString *,int,float,float,float,float,int) | ?Init@UILabel@@QAEXPAULocString@@HMMMMH@Z
+    0x4A8590 | public: void __thiscall UILabel::SetText(struct LocString *) | ?SetText@UILabel@@QAEXPAULocString@@@Z
+    0x4A85B0 | public: virtual void __thiscall UILabel::Update(void) | ?Update@UILabel@@UAEXXZ
+    0x4A8600 | public: void __thiscall UILabel::SetBlink(int) | ?SetBlink@UILabel@@QAEXH@Z
+    0x4A8630 | public: virtual void __thiscall UILabel::Switch(int) | ?Switch@UILabel@@UAEXH@Z
+    0x4A8640 | public: void __thiscall UILabel::SwitchState(int) | ?SwitchState@UILabel@@QAEXH@Z
+    0x4A8690 | public: virtual void * __thiscall UILabel::`vector deleting destructor'(unsigned int) | ??_EUILabel@@UAEPAXI@Z
+    0x4A8690 | public: virtual void * __thiscall UILabel::`scalar deleting destructor'(unsigned int) | ??_GUILabel@@UAEPAXI@Z
+    0x4A86C0 | public: virtual void __thiscall UILabel::Action(union eqEvent) | ?Action@UILabel@@UAEXTeqEvent@@@Z
+    0x593268 | const UILabel::`vftable' | ??_7UILabel@@6B@
+    0x667CC8 | public: static float UILabel::TextHeight | ?TextHeight@UILabel@@2MA
+*/
 
 #include "hooking.h"
 

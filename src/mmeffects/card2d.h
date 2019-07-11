@@ -18,7 +18,21 @@
 
 #pragma once
 
-// mmeffects:card2d
+/*
+    mmeffects:card2d
+
+    0x4EFE20 | public: __thiscall Card2D::Card2D(void) | ??0Card2D@@QAE@XZ
+    0x4EFE40 | public: void __thiscall Card2D::Init(class asCamera *,float,float,float,float,float) | ?Init@Card2D@@QAEXPAVasCamera@@MMMMM@Z
+    0x4EFE80 | public: void __thiscall Card2D::SetDimensions(float,float,float,float) | ?SetDimensions@Card2D@@QAEXMMMM@Z
+    0x4EFF70 | public: void __thiscall Card2D::SetPosition(float,float) | ?SetPosition@Card2D@@QAEXMM@Z
+    0x4EFF90 | public: void __thiscall Card2D::SetAlpha(float) | ?SetAlpha@Card2D@@QAEXM@Z
+    0x4EFFF0 | public: virtual void __thiscall Card2D::Update(void) | ?Update@Card2D@@UAEXXZ
+    0x4F0000 | private: virtual void __thiscall Card2D::Cull(void) | ?Cull@Card2D@@EAEXXZ
+    0x4F0210 | public: virtual void * __thiscall Card2D::`vector deleting destructor'(unsigned int) | ??_ECard2D@@UAEPAXI@Z
+    0x4F0210 | public: virtual void * __thiscall Card2D::`scalar deleting destructor'(unsigned int) | ??_GCard2D@@UAEPAXI@Z
+    0x4F0240 | public: virtual __thiscall Card2D::~Card2D(void) | ??1Card2D@@UAE@XZ
+    0x594FA0 | const Card2D::`vftable' | ??_7Card2D@@6B@
+*/
 
 #include "hooking.h"
 

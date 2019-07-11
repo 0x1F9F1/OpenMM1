@@ -18,7 +18,18 @@
 
 #pragma once
 
-// mmdjpeg:jdinput
+/*
+    mmdjpeg:jdinput
+
+    0x55F390 | void __cdecl jinit_input_controller(struct jpeg_decompress_struct *) | ?jinit_input_controller@@YAXPAUjpeg_decompress_struct@@@Z
+    0x55F3E0 | void __cdecl start_input_pass(struct jpeg_decompress_struct *) | ?start_input_pass@@YAXPAUjpeg_decompress_struct@@@Z
+    0x55F430 | void __cdecl per_scan_setup(struct jpeg_decompress_struct *) | ?per_scan_setup@@YAXPAUjpeg_decompress_struct@@@Z
+    0x55F5E0 | void __cdecl latch_quant_tables(struct jpeg_decompress_struct *) | ?latch_quant_tables@@YAXPAUjpeg_decompress_struct@@@Z
+    0x55F690 | void __cdecl finish_input_pass(struct jpeg_decompress_struct *) | ?finish_input_pass@@YAXPAUjpeg_decompress_struct@@@Z
+    0x55F6B0 | int __cdecl consume_markers(struct jpeg_decompress_struct *) | ?consume_markers@@YAHPAUjpeg_decompress_struct@@@Z
+    0x55F780 | void __cdecl initial_setup(struct jpeg_decompress_struct *) | ?initial_setup@@YAXPAUjpeg_decompress_struct@@@Z
+    0x55F980 | void __cdecl reset_input_controller(struct jpeg_decompress_struct *) | ?reset_input_controller@@YAXPAUjpeg_decompress_struct@@@Z
+*/
 
 #include "hooking.h"
 

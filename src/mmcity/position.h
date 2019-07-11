@@ -18,7 +18,18 @@
 
 #pragma once
 
-// mmcity:position
+/*
+    mmcity:position
+
+    0x485620 | public: __thiscall mmPositions::mmPositions(void) | ??0mmPositions@@QAE@XZ
+    0x485630 | public: void __thiscall mmPositions::Init(int) | ?Init@mmPositions@@QAEXH@Z
+    0x485660 | public: int __thiscall mmPositions::Load(char *) | ?Load@mmPositions@@QAEHPAD@Z
+    0x485830 | public: int __thiscall mmPositions::GetCount(void) | ?GetCount@mmPositions@@QAEHXZ
+    0x485840 | public: class Vector4 & __thiscall mmPositions::GetVector4(int) | ?GetVector4@mmPositions@@QAEAAVVector4@@H@Z
+    0x485870 | public: void __thiscall mmPositions::Dump(char *) | ?Dump@mmPositions@@QAEXPAD@Z
+    0x485910 | public: int __thiscall mmPositions::Recall(int,class Matrix34 *,int *,char *) | ?Recall@mmPositions@@QAEHHPAVMatrix34@@PAHPAD@Z
+    0x4859A0 | public: int __thiscall mmPositions::Register(class Vector4 &,int,int,int,int,char *) | ?Register@mmPositions@@QAEHAAVVector4@@HHHHPAD@Z
+*/
 
 #include "hooking.h"
 

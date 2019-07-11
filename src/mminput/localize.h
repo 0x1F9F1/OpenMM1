@@ -18,7 +18,11 @@
 
 #pragma once
 
-// mminput:localize
+/*
+    mminput:localize
+
+    0x4DA070 | struct LocString * __cdecl AngelReadKeyString(unsigned int) | ?AngelReadKeyString@@YAPAULocString@@I@Z
+*/
 
 #include "hooking.h"
 

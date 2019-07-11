@@ -18,7 +18,16 @@
 
 #pragma once
 
-// agi:cmodel
+/*
+    agi:cmodel
+
+    0x53DA90 | protected: virtual __thiscall agiColorModel::~agiColorModel(void) | ??1agiColorModel@@MAE@XZ
+    0x53DAA0 | public: unsigned int __thiscall agiColorModel::GetColor(int,int,int,int) | ?GetColor@agiColorModel@@QAEIHHHH@Z
+    0x53DAD0 | public: unsigned int __thiscall agiColorModel::FindColor(int,int,int,int) | ?FindColor@agiColorModel@@QAEIHHHH@Z
+    0x53DB00 | public: unsigned int __thiscall agiColorModel::GetColor(class Vector3 const &) | ?GetColor@agiColorModel@@QAEIABVVector3@@@Z
+    0x53DB60 | public: unsigned int __thiscall agiColorModel::GetColor(class Vector4 const &) | ?GetColor@agiColorModel@@QAEIABVVector4@@@Z
+    0x595C90 | const agiColorModel::`vftable' | ??_7agiColorModel@@6B@
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,17 @@
 
 #pragma once
 
-// data7:mmx
+/*
+    data7:mmx
+
+    0x55DD70 | public: __thiscall initHaveMMX::initHaveMMX(void) | ??0initHaveMMX@@QAE@XZ
+    0x7125B8 | int UseKNI | ?UseKNI@@3HA
+    0x7125BC | int UseMMX | ?UseMMX@@3HA
+    0x7125C0 | int HavePPro | ?HavePPro@@3HA
+    0x7125C4 | int HaveKNI | ?HaveKNI@@3HA
+    0x7125C8 | int HaveMMX | ?HaveMMX@@3HA
+    0x55DD60 | int __cdecl cpuid(void) | ?cpuid@@YAHXZ
+*/
 
 #include "hooking.h"
 

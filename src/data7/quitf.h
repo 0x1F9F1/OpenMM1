@@ -18,7 +18,11 @@
 
 #pragma once
 
-// data7:quitf
+/*
+    data7:quitf
+
+    0x5588F0 | void __cdecl Quitf(char const *,...) | ?Quitf@@YAXPBDZZ
+*/
 
 #include "hooking.h"
 

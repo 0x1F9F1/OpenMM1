@@ -18,7 +18,34 @@
 
 #pragma once
 
-// mmbangers:active
+/*
+    mmbangers:active
+
+    0x4BF420 | public: __thiscall mmBangerActive::mmBangerActive(void) | ??0mmBangerActive@@QAE@XZ
+    0x4BF500 | public: virtual __thiscall mmBangerActive::~mmBangerActive(void) | ??1mmBangerActive@@UAE@XZ
+    0x4BF570 | public: void __thiscall mmBangerActive::Attach(class mmBangerInstance *) | ?Attach@mmBangerActive@@QAEXPAVmmBangerInstance@@@Z
+    0x4BF760 | public: void __thiscall mmBangerActive::Detach(void) | ?Detach@mmBangerActive@@QAEXXZ
+    0x4BF7C0 | public: virtual void __thiscall mmBangerActive::DetachMe(void) | ?DetachMe@mmBangerActive@@UAEXXZ
+    0x4BF7E0 | public: virtual void __thiscall mmBangerActive::Update(void) | ?Update@mmBangerActive@@UAEXXZ
+    0x4BF890 | public: virtual void __thiscall mmBangerActive::PostUpdate(void) | ?PostUpdate@mmBangerActive@@UAEXXZ
+    0x4BF920 | public: __thiscall mmBangerActiveManager::mmBangerActiveManager(void) | ??0mmBangerActiveManager@@QAE@XZ
+    0x4BF9D0 | public: virtual __thiscall mmBangerActiveManager::~mmBangerActiveManager(void) | ??1mmBangerActiveManager@@UAE@XZ
+    0x4BFA30 | public: class mmBangerActive * __thiscall mmBangerActiveManager::GetActive(class mmBangerInstance *) | ?GetActive@mmBangerActiveManager@@QAEPAVmmBangerActive@@PAVmmBangerInstance@@@Z
+    0x4BFA60 | public: class mmBangerActive * __thiscall mmBangerActiveManager::Attach(class mmBangerInstance *) | ?Attach@mmBangerActiveManager@@QAEPAVmmBangerActive@@PAVmmBangerInstance@@@Z
+    0x4BFB30 | public: void __thiscall mmBangerActiveManager::Detach(class mmBangerActive *) | ?Detach@mmBangerActiveManager@@QAEXPAVmmBangerActive@@@Z
+    0x4BFB80 | public: virtual void __thiscall mmBangerActiveManager::Update(void) | ?Update@mmBangerActiveManager@@UAEXXZ
+    0x4BFC60 | public: virtual void __thiscall mmBangerActiveManager::Reset(void) | ?Reset@mmBangerActiveManager@@UAEXXZ
+    0x4BFC90 | public: virtual void * __thiscall mmBangerActive::`scalar deleting destructor'(unsigned int) | ??_GmmBangerActive@@UAEPAXI@Z
+    0x4BFC90 | public: virtual void * __thiscall mmBangerActive::`vector deleting destructor'(unsigned int) | ??_EmmBangerActive@@UAEPAXI@Z
+    0x4BFCC0 | public: virtual void * __thiscall mmBangerActiveManager::`scalar deleting destructor'(unsigned int) | ??_GmmBangerActiveManager@@UAEPAXI@Z
+    0x4BFCC0 | public: virtual void * __thiscall mmBangerActiveManager::`vector deleting destructor'(unsigned int) | ??_EmmBangerActiveManager@@UAEPAXI@Z
+    0x4BFCF0 | public: virtual class asBound * __thiscall mmBangerActive::GetBound(void) | ?GetBound@mmBangerActive@@UAEPAVasBound@@XZ
+    0x4BFD00 | public: virtual class asInertialCS * __thiscall mmBangerActive::GetICS(void) | ?GetICS@mmBangerActive@@UAEPAVasInertialCS@@XZ
+    0x594370 | const mmBangerActive::`vftable' | ??_7mmBangerActive@@6B@
+    0x5943B8 | const mmBangerActiveManager::`vftable' | ??_7mmBangerActiveManager@@6B@
+    0x5B118C | float ParticleMultiplier | ?ParticleMultiplier@@3MA
+    0x668388 | protected: static class mmBangerActiveManager * mmBangerActiveManager::Instance | ?Instance@mmBangerActiveManager@@1PAV1@A
+*/
 
 #include "hooking.h"
 

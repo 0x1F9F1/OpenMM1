@@ -18,7 +18,16 @@
 
 #pragma once
 
-// data7:args
+/*
+    data7:args
+
+    0x55A590 | public: __thiscall asArg::asArg(char,char *) | ??0asArg@@QAE@DPAD@Z
+    0x55A5E0 | public: void __thiscall asArg::Print(char *) | ?Print@asArg@@QAEXPAD@Z
+    0x55A6E0 | public: void __thiscall ArgSet::Print(char *) | ?Print@ArgSet@@QAEXPAD@Z
+    0x55A730 | public: void __thiscall ArgSet::ParseArgs(int,char * *) | ?ParseArgs@ArgSet@@QAEXHPAPAD@Z
+    0x55A970 | public: void __thiscall ArgSet::Usage(void) | ?Usage@ArgSet@@QAEXXZ
+    0x712008 | class ArgSet GBArgs | ?GBArgs@@3VArgSet@@A
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,31 @@
 
 #pragma once
 
-// data7:ipc
+/*
+    data7:ipc
+
+    0x559FB0 | unsigned int __cdecl ipcCreateEvent(int) | ?ipcCreateEvent@@YAIH@Z
+    0x559FD0 | unsigned int __cdecl ipcCreateMutex(int) | ?ipcCreateMutex@@YAIH@Z
+    0x559FF0 | unsigned int __cdecl ipcCreateThread(unsigned long (__stdcall*)(void *),void *,unsigned long *) | ?ipcCreateThread@@YAIP6GKPAX@Z0PAK@Z
+    0x55A010 | void __cdecl ipcTriggerEvent(unsigned int) | ?ipcTriggerEvent@@YAXI@Z
+    0x55A030 | void __cdecl ipcReleaseMutex(unsigned int) | ?ipcReleaseMutex@@YAXI@Z
+    0x55A050 | void __cdecl ipcWaitSingle(unsigned int) | ?ipcWaitSingle@@YAXI@Z
+    0x55A080 | int __cdecl ipcWaitMultiple(int,unsigned int *,int) | ?ipcWaitMultiple@@YAHHPAIH@Z
+    0x55A0A0 | void __cdecl ipcCloseHandle(unsigned int) | ?ipcCloseHandle@@YAXI@Z
+    0x55A0C0 | void __cdecl ipcYield(void) | ?ipcYield@@YAXXZ
+    0x55A0D0 | void __cdecl ipcSleep(unsigned int) | ?ipcSleep@@YAXI@Z
+    0x55A0E0 | private: static unsigned long __stdcall ipcMessageQueue::Proc(void *) | ?Proc@ipcMessageQueue@@CGKPAX@Z
+    0x55A0F0 | private: int __thiscall ipcMessageQueue::MessageLoop(void) | ?MessageLoop@ipcMessageQueue@@AAEHXZ
+    0x55A1D0 | public: void __thiscall ipcMessageQueue::Init(int,int) | ?Init@ipcMessageQueue@@QAEXHH@Z
+    0x55A280 | public: void __thiscall ipcMessageQueue::Shutdown(void) | ?Shutdown@ipcMessageQueue@@QAEXXZ
+    0x55A2E0 | public: void __thiscall ipcMessageQueue::Send(void (__cdecl*)(void *),void *) | ?Send@ipcMessageQueue@@QAEXP6AXPAX@Z0@Z
+    0x55A3D0 | void __cdecl ipcSpinLock(unsigned int *) | ?ipcSpinLock@@YAXPAI@Z
+    0x55A420 | void __cdecl ipcSpunUnlock(unsigned int *) | ?ipcSpunUnlock@@YAXPAI@Z
+    0x55A450 | void __cdecl ipcCreateSpinLock(unsigned int *) | ?ipcCreateSpinLock@@YAXPAI@Z
+    0x55A460 | void __cdecl ipcCloseSpinLock(unsigned int *) | ?ipcCloseSpinLock@@YAXPAI@Z
+    0x711F78 | int SynchronousMessageQueues | ?SynchronousMessageQueues@@3HA
+    0x55A410 | int __fastcall compareExchange(unsigned int *,int) | ?compareExchange@@YIHPAIH@Z
+*/
 
 #include "hooking.h"
 

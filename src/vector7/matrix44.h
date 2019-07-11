@@ -18,7 +18,50 @@
 
 #pragma once
 
-// vector7:matrix44
+/*
+    vector7:matrix44
+
+    0x550050 | public: __thiscall Matrix44::Matrix44(class Matrix34 const &) | ??0Matrix44@@QAE@ABVMatrix34@@@Z
+    0x5500C0 | public: class Matrix44 __thiscall Matrix44::operator+(class Matrix44 const &) const | ??HMatrix44@@QBE?AV0@ABV0@@Z
+    0x550230 | public: class Matrix44 __thiscall Matrix44::operator-(class Matrix44 const &) const | ??GMatrix44@@QBE?AV0@ABV0@@Z
+    0x550380 | public: class Matrix44 __thiscall Matrix44::operator-(void) const | ??GMatrix44@@QBE?AV0@XZ
+    0x550480 | class Matrix44 __cdecl operator*(float,class Matrix44 const &) | ??D@YA?AVMatrix44@@MABV0@@Z
+    0x5505E0 | public: class Matrix44 __thiscall Matrix44::operator*(float) const | ??DMatrix44@@QBE?AV0@M@Z
+    0x550730 | public: class Matrix44 __thiscall Matrix44::operator/(float) const | ??KMatrix44@@QBE?AV0@M@Z
+    0x550910 | public: class Matrix44 __thiscall Matrix44::operator^(class Matrix44 const &) const | ??TMatrix44@@QBE?AV0@ABV0@@Z
+    0x550B80 | public: void __thiscall Matrix44::Dot(class Matrix44 const &,class Matrix44 const &) | ?Dot@Matrix44@@QAEXABV1@0@Z
+    0x550E50 | public: class Vector4 __thiscall Matrix44::operator^(class Vector4 const &) const | ??TMatrix44@@QBE?AVVector4@@ABV1@@Z
+    0x550F40 | class Vector3 __cdecl operator^(class Vector3 const &,class Matrix44 const &) | ??T@YA?AVVector3@@ABV0@ABVMatrix44@@@Z
+    0x550FB0 | class Vector4 __cdecl operator^(class Vector4 const &,class Matrix44 const &) | ??T@YA?AVVector4@@ABV0@ABVMatrix44@@@Z
+    0x550FE0 | public: void __thiscall Matrix44::Perspective(float,float,float,float) | ?Perspective@Matrix44@@QAEXMMMM@Z
+    0x5510D0 | public: void __thiscall Matrix44::Ortho(float,float,float,float,float,float) | ?Ortho@Matrix44@@QAEXMMMMMM@Z
+    0x5511E0 | public: float __thiscall Matrix44::Determinant(void) const | ?Determinant@Matrix44@@QBEMXZ
+    0x551420 | public: class Matrix44 __thiscall Matrix44::Inverse(void) const | ?Inverse@Matrix44@@QBE?AV1@XZ
+    0x551ED0 | public: class Matrix44 __thiscall Matrix44::Transpose(void) const | ?Transpose@Matrix44@@QBE?AV1@XZ
+    0x551FB0 | public: void __thiscall Matrix44::Identity(void) | ?Identity@Matrix44@@QAEXXZ
+    0x551FF0 | public: void __thiscall Matrix44::Rotate(char,float) | ?Rotate@Matrix44@@QAEXDM@Z
+    0x552170 | public: void __thiscall Matrix44::Rotate(class Vector3 const &,float) | ?Rotate@Matrix44@@QAEXABVVector3@@M@Z
+    0x5521D0 | public: void __thiscall Matrix44::Rotate(class Vector3 const &,class Vector3 const &) | ?Rotate@Matrix44@@QAEXABVVector3@@0@Z
+    0x552420 | public: void __thiscall Matrix44::Translate(float,float,float) | ?Translate@Matrix44@@QAEXMMM@Z
+    0x552470 | public: void __thiscall Matrix44::Scale(float,float,float) | ?Scale@Matrix44@@QAEXMMM@Z
+    0x5524C0 | public: void __thiscall Matrix44::Scale(class Vector3 const &,float) | ?Scale@Matrix44@@QAEXABVVector3@@M@Z
+    0x552520 | public: void __thiscall Matrix44::FromQuaternion(class Quaternion const &) | ?FromQuaternion@Matrix44@@QAEXABVQuaternion@@@Z
+    0x552660 | public: void __thiscall Matrix44::Print(void) const | ?Print@Matrix44@@QBEXXZ
+    0x5527D0 | public: __thiscall Matrix44::Matrix44(class Matrix44 const &) | ??0Matrix44@@QAE@ABV0@@Z
+    0x552850 | public: class Vector3 __thiscall Vector3::operator~(void) const | ??SVector3@@QBE?AV0@XZ
+    0x5528A0 | public: void __thiscall Vector4::Set(float,float,float,float) | ?Set@Vector4@@QAEXMMMM@Z
+    0x5528C0 | public: float __thiscall Vector4::operator^(class Vector4 const &) const | ??TVector4@@QBEMABV0@@Z
+    0x5C5288 | float * id | ?id@@3PAMA
+    0x5C52C8 | float * bb | ?bb@@3PAMA
+    0x5C5308 | float * bt | ?bt@@3PAMA
+    0x5C5348 | float * hb | ?hb@@3PAMA
+    0x5C5388 | float * ht | ?ht@@3PAMA
+    0x710930 | class Matrix44 HermiteBasis | ?HermiteBasis@@3VMatrix44@@A
+    0x710970 | class Matrix44 BezierBasis | ?BezierBasis@@3VMatrix44@@A
+    0x7109B0 | class Matrix44 HermiteTranspose | ?HermiteTranspose@@3VMatrix44@@A
+    0x7109F0 | class Matrix44 BezierTranspose | ?BezierTranspose@@3VMatrix44@@A
+    0x710A30 | class Matrix44 Identity | ?Identity@@3VMatrix44@@A
+*/
 
 #include "hooking.h"
 

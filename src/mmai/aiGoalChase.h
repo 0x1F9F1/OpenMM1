@@ -18,7 +18,44 @@
 
 #pragma once
 
-// mmai:aiGoalChase
+/*
+    mmai:aiGoalChase
+
+    0x458900 | public: __thiscall aiGoalChase::aiGoalChase(class aiVehiclePolice *,class aiRailSet *,class mmCar * *,short *,class Vector3 *,short *) | ??0aiGoalChase@@QAE@PAVaiVehiclePolice@@PAVaiRailSet@@PAPAVmmCar@@PAFPAVVector3@@3@Z
+    0x4589B0 | public: __thiscall aiGoalChase::~aiGoalChase(void) | ??1aiGoalChase@@QAE@XZ
+    0x458A00 | public: virtual void __thiscall aiGoalChase::Init(void) | ?Init@aiGoalChase@@UAEXXZ
+    0x458B10 | public: virtual void __thiscall aiGoalChase::Reset(void) | ?Reset@aiGoalChase@@UAEXXZ
+    0x458CC0 | public: virtual int __thiscall aiGoalChase::Context(void) | ?Context@aiGoalChase@@UAEHXZ
+    0x459050 | private: int __thiscall aiGoalChase::Fov(class mmCar *) | ?Fov@aiGoalChase@@AAEHPAVmmCar@@@Z
+    0x4591D0 | private: int __thiscall aiGoalChase::Speeding(class mmCar *) | ?Speeding@aiGoalChase@@AAEHPAVmmCar@@@Z
+    0x459220 | private: int __thiscall aiGoalChase::Collision(class mmCar *) | ?Collision@aiGoalChase@@AAEHPAVmmCar@@@Z
+    0x459240 | private: int __thiscall aiGoalChase::HitMe(class mmCar *) | ?HitMe@aiGoalChase@@AAEHPAVmmCar@@@Z
+    0x459260 | private: int __thiscall aiGoalChase::Stopped(class mmCar *) | ?Stopped@aiGoalChase@@AAEHPAVmmCar@@@Z
+    0x459290 | private: int __thiscall aiGoalChase::IsPerpACop(class mmCar *) | ?IsPerpACop@aiGoalChase@@AAEHPAVmmCar@@@Z
+    0x4592B0 | private: int __thiscall aiGoalChase::OffRoad(class mmCar *) | ?OffRoad@aiGoalChase@@AAEHPAVmmCar@@@Z
+    0x459370 | public: virtual int __thiscall aiGoalChase::Priority(void) | ?Priority@aiGoalChase@@UAEHXZ
+    0x459380 | public: virtual void __thiscall aiGoalChase::Update(void) | ?Update@aiGoalChase@@UAEXXZ
+    0x459FF0 | private: int __thiscall aiGoalChase::PlanRoute(void) | ?PlanRoute@aiGoalChase@@AAEHXZ
+    0x45A090 | private: int __thiscall aiGoalChase::LocatePerpFromRoad(class aiPath *,class aiPath * *,class aiPath * *) | ?LocatePerpFromRoad@aiGoalChase@@AAEHPAVaiPath@@PAPAV2@1@Z
+    0x45A760 | private: int __thiscall aiGoalChase::LocatePerpFromInt(class aiIntersection *,class aiPath * *) | ?LocatePerpFromInt@aiGoalChase@@AAEHPAVaiIntersection@@PAPAVaiPath@@@Z
+    0x45A9C0 | private: int __thiscall aiGoalChase::FindPerp(int,int,class aiPath *) | ?FindPerp@aiGoalChase@@AAEHHHPAVaiPath@@@Z
+    0x45AAF0 | private: class aiVehiclePolice * __thiscall aiGoalChase::DetectCopCollision(void) | ?DetectCopCollision@aiGoalChase@@AAEPAVaiVehiclePolice@@XZ
+    0x45AC30 | private: void __thiscall aiGoalChase::AvoidCopCollision(class aiVehiclePolice *) | ?AvoidCopCollision@aiGoalChase@@AAEXPAVaiVehiclePolice@@@Z
+    0x45AF00 | private: void __thiscall aiGoalChase::Follow(void) | ?Follow@aiGoalChase@@AAEXXZ
+    0x45B030 | private: void __thiscall aiGoalChase::CalcSpeed(float) | ?CalcSpeed@aiGoalChase@@AAEXM@Z
+    0x45B7B0 | private: void __thiscall aiGoalChase::CloseInRoad(void) | ?CloseInRoad@aiGoalChase@@AAEXXZ
+    0x45BC90 | private: void __thiscall aiGoalChase::CloseInOpenArea(void) | ?CloseInOpenArea@aiGoalChase@@AAEXXZ
+    0x45C170 | private: void __thiscall aiGoalChase::Barricade(void) | ?Barricade@aiGoalChase@@AAEXXZ
+    0x45C600 | private: void __thiscall aiGoalChase::Block(void) | ?Block@aiGoalChase@@AAEXXZ
+    0x45CA10 | private: void __thiscall aiGoalChase::Push(void) | ?Push@aiGoalChase@@AAEXXZ
+    0x45CC00 | private: int __thiscall aiGoalChase::DetectAmbientCollision(int *) | ?DetectAmbientCollision@aiGoalChase@@AAEHPAH@Z
+    0x45DB10 | private: void __thiscall aiGoalChase::AddToBlockedRange(float,float,float) | ?AddToBlockedRange@aiGoalChase@@AAEXMMM@Z
+    0x45DCB0 | private: void __thiscall aiGoalChase::AvoidAmbientCollision(int) | ?AvoidAmbientCollision@aiGoalChase@@AAEXH@Z
+    0x45DF10 | private: void __thiscall aiGoalChase::ProcessCollision(int) | ?ProcessCollision@aiGoalChase@@AAEXH@Z
+    0x45E1D0 | public: void __thiscall aiGoalChase::Dump(void) | ?Dump@aiGoalChase@@QAEXXZ
+    0x45E4E0 | public: virtual __thiscall aiStuck::~aiStuck(void) | ??1aiStuck@@UAE@XZ
+    0x590CB0 | const aiGoalChase::`vftable' | ??_7aiGoalChase@@6B@
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,12 @@
 
 #pragma once
 
-// agi:texlib
+/*
+    agi:texlib
+
+    0x53C730 | public: __thiscall agiLib<class agiTexParameters,class agiTexDef>::agiLib<class agiTexParameters,class agiTexDef>(void) | ??0?$agiLib@VagiTexParameters@@VagiTexDef@@@@QAE@XZ
+    0x706668 | class agiLib<class agiTexParameters,class agiTexDef> agiTexLib | ?agiTexLib@@3V?$agiLib@VagiTexParameters@@VagiTexDef@@@@A
+*/
 
 #include "hooking.h"
 

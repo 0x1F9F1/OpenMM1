@@ -18,7 +18,26 @@
 
 #pragma once
 
-// agi:rsys
+/*
+    agi:rsys
+
+    0x539B20 | public: __thiscall agiRasterizer::agiRasterizer(class agiPipeline *) | ??0agiRasterizer@@QAE@PAVagiPipeline@@@Z
+    0x539C20 | public: void __thiscall agiRendStateStruct::Reset(void) | ?Reset@agiRendStateStruct@@QAEXXZ
+    0x539C50 | public: virtual __thiscall agiRasterizer::~agiRasterizer(void) | ??1agiRasterizer@@UAE@XZ
+    0x539C60 | public: virtual void __thiscall agiRasterizer::BeginGroup(void) | ?BeginGroup@agiRasterizer@@UAEXXZ
+    0x539C70 | public: virtual void __thiscall agiRasterizer::EndGroup(void) | ?EndGroup@agiRasterizer@@UAEXXZ
+    0x539C80 | public: virtual void __thiscall agiRasterizer::Quad(int,int,int,int) | ?Quad@agiRasterizer@@UAEXHHHH@Z
+    0x539CB0 | public: virtual void __thiscall agiRasterizer::Poly(int *,int) | ?Poly@agiRasterizer@@UAEXPAHH@Z
+    0x539CF0 | public: virtual void __thiscall agiRasterizer::Mesh2(struct agiScreenVtx2 *,int,unsigned short *,int) | ?Mesh2@agiRasterizer@@UAEXPAUagiScreenVtx2@@HPAGH@Z
+    0x539D10 | public: virtual void __thiscall agiRasterizer::LineList(enum agiVtxType,union agiVtx *,int) | ?LineList@agiRasterizer@@UAEXW4agiVtxType@@PATagiVtx@@H@Z
+    0x539D80 | public: virtual void * __thiscall agiRasterizer::`vector deleting destructor'(unsigned int) | ??_EagiRasterizer@@UAEPAXI@Z
+    0x539D80 | public: virtual void * __thiscall agiRasterizer::`scalar deleting destructor'(unsigned int) | ??_GagiRasterizer@@UAEPAXI@Z
+    0x595B98 | const agiRasterizer::`vftable' | ??_7agiRasterizer@@6B@
+    0x5C3018 | struct agiRenderOpts ROPTS | ?ROPTS@@3UagiRenderOpts@@A
+    0x706540 | struct agiRendStateStruct agiLastState | ?agiLastState@@3UagiRendStateStruct@@A
+    0x706580 | class agiRendState agiCurState | ?agiCurState@@3VagiRendState@@A
+    0x7065C0 | class agiRasterizer * RAST | ?RAST@@3PAVagiRasterizer@@A
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,32 @@
 
 #pragma once
 
-// mmcar:surfaceaudio
+/*
+    mmcar:surfaceaudio
+
+    0x47E020 | public: __thiscall mmSurfaceAudio::mmSurfaceAudio(class mmCarSim *,class Vector3 *) | ??0mmSurfaceAudio@@QAE@PAVmmCarSim@@PAVVector3@@@Z
+    0x47E420 | public: __thiscall mmSurfaceAudio::~mmSurfaceAudio(void) | ??1mmSurfaceAudio@@QAE@XZ
+    0x47E490 | public: void __thiscall mmSurfaceAudio::EnableTireWobble(void) | ?EnableTireWobble@mmSurfaceAudio@@QAEXXZ
+    0x47E540 | public: void __thiscall mmSurfaceAudio::EchoOn(class mmCarSim *,float) | ?EchoOn@mmSurfaceAudio@@QAEXPAVmmCarSim@@M@Z
+    0x47E650 | public: void __thiscall mmSurfaceAudio::EchoOff(class mmCarSim *) | ?EchoOff@mmSurfaceAudio@@QAEXPAVmmCarSim@@@Z
+    0x47E700 | public: int __thiscall mmSurfaceAudio::EnableAir(class mmCarSim *) | ?EnableAir@mmSurfaceAudio@@QAEHPAVmmCarSim@@@Z
+    0x47E7D0 | public: int __thiscall mmSurfaceAudio::EnableSuspension(class mmCarSim *) | ?EnableSuspension@mmSurfaceAudio@@QAEHPAVmmCarSim@@@Z
+    0x47E880 | public: int __thiscall mmSurfaceAudio::EnableSurface(class mmCarSim *) | ?EnableSurface@mmSurfaceAudio@@QAEHPAVmmCarSim@@@Z
+    0x47EA10 | public: void __thiscall mmSurfaceAudio::DisableSurface(void) | ?DisableSurface@mmSurfaceAudio@@QAEXXZ
+    0x47EA30 | public: void __thiscall mmSurfaceAudio::SetWheelPointers(class mmWheel *,class mmWheel *,class mmWheel *,class mmWheel *) | ?SetWheelPointers@mmSurfaceAudio@@QAEXPAVmmWheel@@000@Z
+    0x47EA60 | public: void __thiscall mmSurfaceAudio::Update(float) | ?Update@mmSurfaceAudio@@QAEXM@Z
+    0x47EAF0 | public: void __thiscall mmSurfaceAudio::UpdateTireWobble(void) | ?UpdateTireWobble@mmSurfaceAudio@@QAEXXZ
+    0x47EC40 | public: void __thiscall mmSurfaceAudio::UpdateSurface(float) | ?UpdateSurface@mmSurfaceAudio@@QAEXM@Z
+    0x47EEC0 | public: void __thiscall mmSurfaceAudio::UpdateSurfaceSnow(float) | ?UpdateSurfaceSnow@mmSurfaceAudio@@QAEXM@Z
+    0x47F0A0 | private: void __thiscall mmSurfaceAudio::PlayCobble(float) | ?PlayCobble@mmSurfaceAudio@@AAEXM@Z
+    0x47F1D0 | public: void __thiscall mmSurfaceAudio::UpdateSkidClear(float) | ?UpdateSkidClear@mmSurfaceAudio@@QAEXM@Z
+    0x47F590 | public: void __thiscall mmSurfaceAudio::UpdateSkidRain(float) | ?UpdateSkidRain@mmSurfaceAudio@@QAEXM@Z
+    0x47F960 | public: void __thiscall mmSurfaceAudio::UpdateSkidSnow(float) | ?UpdateSkidSnow@mmSurfaceAudio@@QAEXM@Z
+    0x47FC90 | public: void __thiscall mmSurfaceAudio::UpdateSuspension(void) | ?UpdateSuspension@mmSurfaceAudio@@QAEXXZ
+    0x47FDA0 | public: short __thiscall mmSurfaceAudio::OnTwoWheels(void) | ?OnTwoWheels@mmSurfaceAudio@@QAEFXZ
+    0x47FE30 | public: void __thiscall mmSurfaceAudio::SetWobblePitch(float,float) | ?SetWobblePitch@mmSurfaceAudio@@QAEXMM@Z
+    0x47FE50 | public: void __thiscall mmSurfaceAudio::SetWobbleVol(float,float) | ?SetWobbleVol@mmSurfaceAudio@@QAEXMM@Z
+*/
 
 #include "hooking.h"
 

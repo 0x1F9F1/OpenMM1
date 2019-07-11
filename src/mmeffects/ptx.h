@@ -18,7 +18,29 @@
 
 #pragma once
 
-// mmeffects:ptx
+/*
+    mmeffects:ptx
+
+    0x4F1AD0 | public: __thiscall asParticles::asParticles(void) | ??0asParticles@@QAE@XZ
+    0x4F1B40 | public: virtual __thiscall asParticles::~asParticles(void) | ??1asParticles@@UAE@XZ
+    0x4F1BC0 | public: void __thiscall asParticles::Init(int,int,int,int,struct agiMeshCardVertex *) | ?Init@asParticles@@QAEXHHHHPAUagiMeshCardVertex@@@Z
+    0x4F1C30 | public: virtual void __thiscall asParticles::Reset(void) | ?Reset@asParticles@@UAEXXZ
+    0x4F1C40 | public: void __thiscall asParticles::SetTexture(class agiTexDef *) | ?SetTexture@asParticles@@QAEXPAVagiTexDef@@@Z
+    0x4F1C70 | public: void __thiscall asParticles::SetTexture(char *) | ?SetTexture@asParticles@@QAEXPAD@Z
+    0x4F1CC0 | public: virtual void __thiscall asParticles::Update(void) | ?Update@asParticles@@UAEXXZ
+    0x4F2010 | public: void __thiscall asParticles::Blast(int,class asBirthRule *) | ?Blast@asParticles@@QAEXHPAVasBirthRule@@@Z
+    0x4F20B0 | int __cdecl cmpPtx(void const *,void const *) | ?cmpPtx@@YAHPBX0@Z
+    0x4F20D0 | public: virtual void __thiscall asParticles::Cull(void) | ?Cull@asParticles@@UAEXXZ
+    0x4F2170 | public: void __thiscall asParticles::AddWidgets(class Bank *) | ?AddWidgets@asParticles@@QAEXPAVBank@@@Z
+    0x4F2180 | public: static void __cdecl asParticles::DeclareFields(void) | ?DeclareFields@asParticles@@SAXXZ
+    0x4F22E0 | public: virtual class MetaClass * __thiscall asParticles::GetClass(void) | ?GetClass@asParticles@@UAEPAVMetaClass@@XZ
+    0x4F22F0 | public: virtual void * __thiscall asParticles::`vector deleting destructor'(unsigned int) | ??_EasParticles@@UAEPAXI@Z
+    0x595098 | const asParticles::`vftable' | ??_7asParticles@@6B@
+    0x67B878 | class MetaClass asParticlesMetaClass | ?asParticlesMetaClass@@3VMetaClass@@A
+    0x67B8A0 | int EnablePtxSorting | ?EnablePtxSorting@@3HA
+    0x4F21D0 | void * __cdecl new_asParticles(int) | ?new_asParticles@@YAPAXH@Z
+    0x4F2290 | void __cdecl delete_asParticles(void *,int) | ?delete_asParticles@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,31 @@
 
 #pragma once
 
-// mmcar:opponentimpactaudio
+/*
+    mmcar:opponentimpactaudio
+
+    0x471CC0 | public: __thiscall mmOpponentImpactAudio::mmOpponentImpactAudio(void) | ??0mmOpponentImpactAudio@@QAE@XZ
+    0x471E80 | public: __thiscall mmOpponentImpactAudio::~mmOpponentImpactAudio(void) | ??1mmOpponentImpactAudio@@QAE@XZ
+    0x471EB0 | public: void __thiscall mmOpponentImpactAudio::Play(float,short,float,float) | ?Play@mmOpponentImpactAudio@@QAEXMFMM@Z
+    0x472020 | public: void __thiscall mmOpponentImpactAudio::Update(void) | ?Update@mmOpponentImpactAudio@@QAEXXZ
+    0x472080 | public: void __thiscall mmOpponentImpactAudio::Enable3DMode(class Vector3 *) | ?Enable3DMode@mmOpponentImpactAudio@@QAEXPAVVector3@@@Z
+    0x4720D0 | public: static void __cdecl mmOpponentImpactAudio::SetSecondsElapsed(float) | ?SetSecondsElapsed@mmOpponentImpactAudio@@SAXM@Z
+    0x4720E0 | public: static float __cdecl mmOpponentImpactAudio::GetSecondsElapsed(void) | ?GetSecondsElapsed@mmOpponentImpactAudio@@SAMXZ
+    0x4720F0 | public: void __thiscall mmOpponentImpactAudio::Disable3DMode(void) | ?Disable3DMode@mmOpponentImpactAudio@@QAEXXZ
+    0x5AB088 | private: static float mmOpponentImpactAudio::m_fBareMinimum | ?m_fBareMinimum@mmOpponentImpactAudio@@0MA
+    0x5AB08C | private: static float mmOpponentImpactAudio::m_fSoft | ?m_fSoft@mmOpponentImpactAudio@@0MA
+    0x5AB090 | private: static float mmOpponentImpactAudio::m_fMedium | ?m_fMedium@mmOpponentImpactAudio@@0MA
+    0x5AB094 | private: static float mmOpponentImpactAudio::m_fMinSoftVolume | ?m_fMinSoftVolume@mmOpponentImpactAudio@@0MA
+    0x5AB098 | private: static float mmOpponentImpactAudio::m_fMaxSoftVolume | ?m_fMaxSoftVolume@mmOpponentImpactAudio@@0MA
+    0x5AB09C | private: static float mmOpponentImpactAudio::m_fMinMedVolume | ?m_fMinMedVolume@mmOpponentImpactAudio@@0MA
+    0x5AB0A0 | private: static float mmOpponentImpactAudio::m_fMaxMedVolume | ?m_fMaxMedVolume@mmOpponentImpactAudio@@0MA
+    0x5AB0A4 | private: static float mmOpponentImpactAudio::m_fMinHugeVolume | ?m_fMinHugeVolume@mmOpponentImpactAudio@@0MA
+    0x5AB0A8 | private: static float mmOpponentImpactAudio::m_fMaxHugeVolume | ?m_fMaxHugeVolume@mmOpponentImpactAudio@@0MA
+    0x60A350 | private: static float mmOpponentImpactAudio::s_fSecondsElapsed | ?s_fSecondsElapsed@mmOpponentImpactAudio@@0MA
+    0x60A354 | private: static float mmOpponentImpactAudio::m_fSoftVolumeMultiplier | ?m_fSoftVolumeMultiplier@mmOpponentImpactAudio@@0MA
+    0x60A358 | private: static float mmOpponentImpactAudio::m_fMedVolumeMultiplier | ?m_fMedVolumeMultiplier@mmOpponentImpactAudio@@0MA
+    0x60A35C | private: static float mmOpponentImpactAudio::m_fHugeVolumeMultiplier | ?m_fHugeVolumeMultiplier@mmOpponentImpactAudio@@0MA
+*/
 
 #include "hooking.h"
 

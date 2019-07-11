@@ -18,7 +18,20 @@
 
 #pragma once
 
-// agid3d:d3dmtldef
+/*
+    agid3d:d3dmtldef
+
+    0x51AF20 | public: __thiscall agiD3DMtlDef::agiD3DMtlDef(class agiPipeline *) | ??0agiD3DMtlDef@@QAE@PAVagiPipeline@@@Z
+    0x51AF50 | public: virtual int __thiscall agiD3DMtlDef::BeginGfx(void) | ?BeginGfx@agiD3DMtlDef@@UAEHXZ
+    0x51AFE0 | public: virtual void __thiscall agiD3DMtlDef::EndGfx(void) | ?EndGfx@agiD3DMtlDef@@UAEXXZ
+    0x51B020 | public: virtual __thiscall agiD3DMtlDef::~agiD3DMtlDef(void) | ??1agiD3DMtlDef@@UAE@XZ
+    0x51B030 | public: void __thiscall agiD3DMtlDef::Activate(void) | ?Activate@agiD3DMtlDef@@QAEXXZ
+    0x51B110 | public: unsigned long __thiscall agiD3DMtlDef::GetHandle(void) | ?GetHandle@agiD3DMtlDef@@QAEKXZ
+    0x51B130 | public: virtual void * __thiscall agiD3DMtlDef::`vector deleting destructor'(unsigned int) | ??_EagiD3DMtlDef@@UAEPAXI@Z
+    0x51B130 | public: virtual void * __thiscall agiD3DMtlDef::`scalar deleting destructor'(unsigned int) | ??_GagiD3DMtlDef@@UAEPAXI@Z
+    0x595850 | const agiD3DMtlDef::`vftable' | ??_7agiD3DMtlDef@@6B@
+    0x51B0E0 | void __cdecl xlat(struct _D3DCOLORVALUE &,class Vector4 &) | ?xlat@@YAXAAU_D3DCOLORVALUE@@AAVVector4@@@Z
+*/
 
 #include "hooking.h"
 

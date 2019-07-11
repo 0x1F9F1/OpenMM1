@@ -18,7 +18,21 @@
 
 #pragma once
 
-// mmai:aiIntersection
+/*
+    mmai:aiIntersection
+
+    0x441720 | public: __thiscall aiIntersection::aiIntersection(int) | ??0aiIntersection@@QAE@H@Z
+    0x441740 | public: __thiscall aiIntersection::~aiIntersection(void) | ??1aiIntersection@@QAE@XZ
+    0x4417B0 | public: void __thiscall aiIntersection::Init(void) | ?Init@aiIntersection@@QAEXXZ
+    0x441960 | public: void __thiscall aiIntersection::Reset(void) | ?Reset@aiIntersection@@QAEXXZ
+    0x441970 | public: void __thiscall aiIntersection::AddSinkPath(class aiPath *) | ?AddSinkPath@aiIntersection@@QAEXPAVaiPath@@@Z
+    0x4419E0 | public: void __thiscall aiIntersection::AddSourcePath(class aiPath *) | ?AddSourcePath@aiIntersection@@QAEXPAVaiPath@@@Z
+    0x441A50 | public: void __thiscall aiIntersection::SaveBinary(class Stream *) | ?SaveBinary@aiIntersection@@QAEXPAVStream@@@Z
+    0x441B20 | public: void __thiscall aiIntersection::ReadBinary(class Stream *) | ?ReadBinary@aiIntersection@@QAEXPAVStream@@@Z
+    0x441CC0 | public: void __thiscall aiIntersection::Dump(void) | ?Dump@aiIntersection@@QAEXXZ
+    0x441CF0 | public: void __thiscall aiIntersection::CreateRoadMap(void) | ?CreateRoadMap@aiIntersection@@QAEXXZ
+    0x442020 | public: class aiPath * __thiscall aiIntersection::Path(int) | ?Path@aiIntersection@@QAEPAVaiPath@@H@Z
+*/
 
 #include "hooking.h"
 

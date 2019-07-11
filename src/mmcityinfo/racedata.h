@@ -18,7 +18,25 @@
 
 #pragma once
 
-// mmcityinfo:racedata
+/*
+    mmcityinfo:racedata
+
+    0x4C6110 | public: __thiscall mmRaceData::mmRaceData(void) | ??0mmRaceData@@QAE@XZ
+    0x4C6120 | public: __thiscall mmRaceData::~mmRaceData(void) | ??1mmRaceData@@QAE@XZ
+    0x4C6130 | public: int __thiscall mmRaceData::Load(char *) | ?Load@mmRaceData@@QAEHPAD@Z
+    0x4C64B0 | public: int __thiscall mmRaceData::GetNumRaces(void) | ?GetNumRaces@mmRaceData@@QAEHXZ
+    0x4C64C0 | public: char * __thiscall mmRaceData::GetRaceName(int) | ?GetRaceName@mmRaceData@@QAEPADH@Z
+    0x4C64D0 | public: int __thiscall mmRaceData::GetCarType(int,enum mmSkillLevel) | ?GetCarType@mmRaceData@@QAEHHW4mmSkillLevel@@@Z
+    0x4C6500 | public: int __thiscall mmRaceData::GetNumLaps(int,enum mmSkillLevel) | ?GetNumLaps@mmRaceData@@QAEHHW4mmSkillLevel@@@Z
+    0x4C6530 | public: float __thiscall mmRaceData::GetTimeLimit(int,enum mmSkillLevel) | ?GetTimeLimit@mmRaceData@@QAEMHW4mmSkillLevel@@@Z
+    0x4C6560 | public: int __thiscall mmRaceData::GetNumOpponents(int,enum mmSkillLevel) | ?GetNumOpponents@mmRaceData@@QAEHHW4mmSkillLevel@@@Z
+    0x4C6590 | public: int __thiscall mmRaceData::GetNumCops(int,enum mmSkillLevel) | ?GetNumCops@mmRaceData@@QAEHHW4mmSkillLevel@@@Z
+    0x4C65C0 | public: int __thiscall mmRaceData::GetTimeOfDay(int,enum mmSkillLevel) | ?GetTimeOfDay@mmRaceData@@QAEHHW4mmSkillLevel@@@Z
+    0x4C65F0 | public: int __thiscall mmRaceData::GetWeather(int,enum mmSkillLevel) | ?GetWeather@mmRaceData@@QAEHHW4mmSkillLevel@@@Z
+    0x4C6620 | public: float __thiscall mmRaceData::GetPedDensity(int,enum mmSkillLevel) | ?GetPedDensity@mmRaceData@@QAEMHW4mmSkillLevel@@@Z
+    0x4C6650 | public: float __thiscall mmRaceData::GetAmbientDensity(int,enum mmSkillLevel) | ?GetAmbientDensity@mmRaceData@@QAEMHW4mmSkillLevel@@@Z
+    0x4C6680 | public: float __thiscall mmRaceData::GetDifficulty(int,enum mmSkillLevel) | ?GetDifficulty@mmRaceData@@QAEMHW4mmSkillLevel@@@Z
+*/
 
 #include "hooking.h"
 

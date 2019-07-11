@@ -18,7 +18,15 @@
 
 #pragma once
 
-// mmeffects:damage
+/*
+    mmeffects:damage
+
+    0x4F33D0 | public: __thiscall mmDamage::mmDamage(void) | ??0mmDamage@@QAE@XZ
+    0x4F33E0 | public: __thiscall mmDamage::~mmDamage(void) | ??1mmDamage@@QAE@XZ
+    0x4F33F0 | public: void __thiscall mmDamage::Init(class agiMeshSet *) | ?Init@mmDamage@@QAEXPAVagiMeshSet@@@Z
+    0x4F35D0 | public: void __thiscall mmDamage::Reset(int) | ?Reset@mmDamage@@QAEXH@Z
+    0x4F3620 | public: void __thiscall mmDamage::Apply(class Vector3 &,float) | ?Apply@mmDamage@@QAEXAAVVector3@@M@Z
+*/
 
 #include "hooking.h"
 

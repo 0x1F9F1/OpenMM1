@@ -18,7 +18,20 @@
 
 #pragma once
 
-// agi:light
+/*
+    agi:light
+
+    0x53D890 | public: __thiscall agiLightParameters::agiLightParameters(void) | ??0agiLightParameters@@QAE@XZ
+    0x53D910 | public: void __thiscall agiLightParameters::operator=(class agiLightParameters const &) | ??4agiLightParameters@@QAEXABV0@@Z
+    0x53D930 | public: __thiscall agiLight::agiLight(class agiPipeline *) | ??0agiLight@@QAE@PAVagiPipeline@@@Z
+    0x53D980 | public: int __thiscall agiLight::Init(class agiLightParameters const &) | ?Init@agiLight@@QAEHABVagiLightParameters@@@Z
+    0x53D9B0 | public: virtual void __thiscall agiLight::Remove(void) | ?Remove@agiLight@@UAEXXZ
+    0x53D9C0 | public: virtual __thiscall agiLight::~agiLight(void) | ??1agiLight@@UAE@XZ
+    0x53D9D0 | public: virtual char * __thiscall agiLight::GetName(void) | ?GetName@agiLight@@UAEPADXZ
+    0x53D9F0 | public: virtual void * __thiscall agiLight::`vector deleting destructor'(unsigned int) | ??_EagiLight@@UAEPAXI@Z
+    0x53D9F0 | public: virtual void * __thiscall agiLight::`scalar deleting destructor'(unsigned int) | ??_GagiLight@@UAEPAXI@Z
+    0x595C70 | const agiLight::`vftable' | ??_7agiLight@@6B@
+*/
 
 #include "hooking.h"
 

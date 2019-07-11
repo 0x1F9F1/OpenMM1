@@ -18,7 +18,20 @@
 
 #pragma once
 
-// agid3d:d3dview
+/*
+    agid3d:d3dview
+
+    0x51A480 | public: __thiscall agiD3DViewport::agiD3DViewport(class agiPipeline *) | ??0agiD3DViewport@@QAE@PAVagiPipeline@@@Z
+    0x51A4B0 | public: virtual int __thiscall agiD3DViewport::BeginGfx(void) | ?BeginGfx@agiD3DViewport@@UAEHXZ
+    0x51A4E0 | public: virtual void __thiscall agiD3DViewport::EndGfx(void) | ?EndGfx@agiD3DViewport@@UAEXXZ
+    0x51A4F0 | public: virtual __thiscall agiD3DViewport::~agiD3DViewport(void) | ??1agiD3DViewport@@UAE@XZ
+    0x51A500 | public: virtual void __thiscall agiD3DViewport::Activate(void) | ?Activate@agiD3DViewport@@UAEXXZ
+    0x51A5C0 | public: virtual void __thiscall agiD3DViewport::SetBackground(class Vector3 &) | ?SetBackground@agiD3DViewport@@UAEXAAVVector3@@@Z
+    0x51A610 | public: virtual void __thiscall agiD3DViewport::Clear(int) | ?Clear@agiD3DViewport@@UAEXH@Z
+    0x51A6C0 | public: virtual void * __thiscall agiD3DViewport::`vector deleting destructor'(unsigned int) | ??_EagiD3DViewport@@UAEPAXI@Z
+    0x51A6C0 | public: virtual void * __thiscall agiD3DViewport::`scalar deleting destructor'(unsigned int) | ??_GagiD3DViewport@@UAEPAXI@Z
+    0x595810 | const agiD3DViewport::`vftable' | ??_7agiD3DViewport@@6B@
+*/
 
 #include "hooking.h"
 

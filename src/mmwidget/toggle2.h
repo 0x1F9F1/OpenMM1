@@ -18,7 +18,24 @@
 
 #pragma once
 
-// mmwidget:toggle2
+/*
+    mmwidget:toggle2
+
+    0x4B4E50 | public: __thiscall mmToggle2::mmToggle2(void) | ??0mmToggle2@@QAE@XZ
+    0x4B4E70 | public: virtual __thiscall mmToggle2::~mmToggle2(void) | ??1mmToggle2@@UAE@XZ
+    0x4B4ED0 | public: void __thiscall mmToggle2::Init(char *,float,float,int *) | ?Init@mmToggle2@@QAEXPADMMPAH@Z
+    0x4B4F00 | private: void __thiscall mmToggle2::LoadBitmap(char *) | ?LoadBitmap@mmToggle2@@AAEXPAD@Z
+    0x4B4F60 | public: void __thiscall mmToggle2::SetPosition(float,float) | ?SetPosition@mmToggle2@@QAEXMM@Z
+    0x4B5000 | public: virtual void __thiscall mmToggle2::Update(void) | ?Update@mmToggle2@@UAEXXZ
+    0x4B5020 | public: virtual void __thiscall mmToggle2::Cull(void) | ?Cull@mmToggle2@@UAEXXZ
+    0x4B50E0 | public: static void __cdecl mmToggle2::DeclareFields(void) | ?DeclareFields@mmToggle2@@SAXXZ
+    0x4B5240 | public: virtual class MetaClass * __thiscall mmToggle2::GetClass(void) | ?GetClass@mmToggle2@@UAEPAVMetaClass@@XZ
+    0x4B5250 | public: virtual void * __thiscall mmToggle2::`vector deleting destructor'(unsigned int) | ??_EmmToggle2@@UAEPAXI@Z
+    0x593E40 | const mmToggle2::`vftable' | ??_7mmToggle2@@6B@
+    0x668018 | class MetaClass mmToggle2MetaClass | ?mmToggle2MetaClass@@3VMetaClass@@A
+    0x4B5130 | void * __cdecl new_mmToggle2(int) | ?new_mmToggle2@@YAPAXH@Z
+    0x4B51F0 | void __cdecl delete_mmToggle2(void *,int) | ?delete_mmToggle2@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

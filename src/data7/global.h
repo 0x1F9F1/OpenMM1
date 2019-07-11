@@ -18,7 +18,12 @@
 
 #pragma once
 
-// data7:global
+/*
+    data7:global
+
+    0x55AA00 | void __cdecl HexDump(void *,int) | ?HexDump@@YAXPAXH@Z
+    0x5CE784 | int DevelopmentMode | ?DevelopmentMode@@3HA
+*/
 
 #include "hooking.h"
 

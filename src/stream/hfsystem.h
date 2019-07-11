@@ -18,7 +18,29 @@
 
 #pragma once
 
-// stream:hfsystem
+/*
+    stream:hfsystem
+
+    0x541AD0 | public: __thiscall HierFileSystem::HierFileSystem(void) | ??0HierFileSystem@@QAE@XZ
+    0x541AF0 | public: virtual __thiscall HierFileSystem::~HierFileSystem(void) | ??1HierFileSystem@@UAE@XZ
+    0x541B00 | public: virtual int __thiscall HierFileSystem::ValidPath(char *) | ?ValidPath@HierFileSystem@@UAEHPAD@Z
+    0x541B10 | char * __cdecl FQN(char *) | ?FQN@@YAPADPAD@Z
+    0x541BC0 | public: virtual int __thiscall HierFileSystem::QueryOn(char *) | ?QueryOn@HierFileSystem@@UAEHPAD@Z
+    0x541C80 | public: virtual class Stream * __thiscall HierFileSystem::OpenOn(char *,int,void *,int) | ?OpenOn@HierFileSystem@@UAEPAVStream@@PADHPAXH@Z
+    0x541E20 | public: virtual class Stream * __thiscall HierFileSystem::CreateOn(char *,void *,int) | ?CreateOn@HierFileSystem@@UAEPAVStream@@PADPAXH@Z
+    0x541F00 | public: virtual int __thiscall HierFileSystem::ChangeDir(char *) | ?ChangeDir@HierFileSystem@@UAEHPAD@Z
+    0x541F20 | public: virtual int __thiscall HierFileSystem::GetDir(char *,int) | ?GetDir@HierFileSystem@@UAEHPADH@Z
+    0x541F40 | public: virtual struct FileInfo * __thiscall HierFileSystem::FirstEntry(char *) | ?FirstEntry@HierFileSystem@@UAEPAUFileInfo@@PAD@Z
+    0x542080 | public: virtual struct FileInfo * __thiscall HierFileSystem::NextEntry(struct FileInfo *) | ?NextEntry@HierFileSystem@@UAEPAUFileInfo@@PAU2@@Z
+    0x542150 | public: void __thiscall PagerInfo_t::Read(void *,unsigned int,unsigned int) | ?Read@PagerInfo_t@@QAEXPAXII@Z
+    0x5421A0 | public: virtual void * __thiscall HierFileSystem::`scalar deleting destructor'(unsigned int) | ??_GHierFileSystem@@UAEPAXI@Z
+    0x5421A0 | public: virtual void * __thiscall HierFileSystem::`vector deleting destructor'(unsigned int) | ??_EHierFileSystem@@UAEPAXI@Z
+    0x595E98 | const HierFileSystem::`vftable' | ??_7HierFileSystem@@6B@
+    0x70EF80 | char * HierPrefix | ?HierPrefix@@3PADA
+    0x70F008 | class HierFileSystem HFS | ?HFS@@3VHierFileSystem@@A
+    0x70F010 | char * HierAllowPath | ?HierAllowPath@@3PADA
+    0x70F014 | int LogOpenOn | ?LogOpenOn@@3HA
+*/
 
 #include "hooking.h"
 

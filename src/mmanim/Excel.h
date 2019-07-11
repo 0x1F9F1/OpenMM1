@@ -18,7 +18,20 @@
 
 #pragma once
 
-// mmanim:Excel
+/*
+    mmanim:Excel
+
+    0x4B7F60 | public: __thiscall mmAnimExcel::mmAnimExcel(void) | ??0mmAnimExcel@@QAE@XZ
+    0x4B7F80 | public: virtual __thiscall mmAnimExcel::~mmAnimExcel(void) | ??1mmAnimExcel@@UAE@XZ
+    0x4B7FC0 | public: int __thiscall mmAnimExcel::Init(char *,char *) | ?Init@mmAnimExcel@@QAEHPAD0@Z
+    0x4B8050 | public: char * __thiscall mmAnimExcel::GetNextName(void) | ?GetNextName@mmAnimExcel@@QAEPADXZ
+    0x4B8090 | public: void __thiscall mmAnimExcel::AddFile(char *,char *) | ?AddFile@mmAnimExcel@@QAEXPAD0@Z
+    0x4B81D0 | public: char * __thiscall mmAnimExcel::GetPriorName(void) | ?GetPriorName@mmAnimExcel@@QAEPADXZ
+    0x4B8200 | public: char * __thiscall mmAnimExcel::GetName(int) | ?GetName@mmAnimExcel@@QAEPADH@Z
+    0x4B8230 | public: virtual void * __thiscall mmAnimExcel::`vector deleting destructor'(unsigned int) | ??_EmmAnimExcel@@UAEPAXI@Z
+    0x4B8230 | public: virtual void * __thiscall mmAnimExcel::`scalar deleting destructor'(unsigned int) | ??_GmmAnimExcel@@UAEPAXI@Z
+    0x593FB8 | const mmAnimExcel::`vftable' | ??_7mmAnimExcel@@6B@
+*/
 
 #include "hooking.h"
 

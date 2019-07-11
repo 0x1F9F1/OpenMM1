@@ -18,7 +18,17 @@
 
 #pragma once
 
-// mmui:vshow
+/*
+    mmui:vshow
+
+    0x499EE0 | public: __thiscall VehShowcase::VehShowcase(int) | ??0VehShowcase@@QAE@H@Z
+    0x49A030 | public: virtual __thiscall VehShowcase::~VehShowcase(void) | ??1VehShowcase@@UAE@XZ
+    0x49A090 | public: virtual void __thiscall VehShowcase::PreSetup(void) | ?PreSetup@VehShowcase@@UAEXXZ
+    0x49A100 | public: virtual void __thiscall VehShowcase::PostSetup(void) | ?PostSetup@VehShowcase@@UAEXXZ
+    0x49A110 | public: virtual void * __thiscall VehShowcase::`scalar deleting destructor'(unsigned int) | ??_GVehShowcase@@UAEPAXI@Z
+    0x49A110 | public: virtual void * __thiscall VehShowcase::`vector deleting destructor'(unsigned int) | ??_EVehShowcase@@UAEPAXI@Z
+    0x592968 | const VehShowcase::`vftable' | ??_7VehShowcase@@6B@
+*/
 
 #include "hooking.h"
 

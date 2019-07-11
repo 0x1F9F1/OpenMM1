@@ -18,7 +18,21 @@
 
 #pragma once
 
-// agid3d:pcpipe
+/*
+    agid3d:pcpipe
+
+    0x516930 | class agiPipeline * __cdecl d3dCreatePipeline(int,char * *) | ?d3dCreatePipeline@@YAPAVagiPipeline@@HPAPAD@Z
+    0x6F2EFC | int NoMultiTexture | ?NoMultiTexture@@3HA
+    0x6F2F00 | int MaxTexMem | ?MaxTexMem@@3HA
+    0x6F2F04 | int AutoMip | ?AutoMip@@3HA
+    0x6F2F08 | int DrawLabelFArg | ?DrawLabelFArg@@3HA
+    0x6F2F0C | int NoMip | ?NoMip@@3HA
+    0x6F2F10 | int NormalizedFog | ?NormalizedFog@@3HA
+    0x6F2F14 | int FullMip | ?FullMip@@3HA
+    0x6F2F18 | int ForceSquare | ?ForceSquare@@3HA
+    0x6F2F1C | int NoBlitHack | ?NoBlitHack@@3HA
+    0x6F2F20 | int DrawLabelPArg | ?DrawLabelPArg@@3HA
+*/
 
 #include "hooking.h"
 

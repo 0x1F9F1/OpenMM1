@@ -18,7 +18,65 @@
 
 #pragma once
 
-// mmai:aiPedestrian
+/*
+    mmai:aiPedestrian
+
+    0x442090 | public: __thiscall aiPedestrian::aiPedestrian(void) | ??0aiPedestrian@@QAE@XZ
+    0x442170 | public: __thiscall aiPedestrian::~aiPedestrian(void) | ??1aiPedestrian@@QAE@XZ
+    0x442180 | public: void __thiscall aiPedestrian::Init(char *,int,int) | ?Init@aiPedestrian@@QAEXPADHH@Z
+    0x4424E0 | public: void __thiscall aiPedestrian::Reset(class aiPath *) | ?Reset@aiPedestrian@@QAEXPAVaiPath@@@Z
+    0x442810 | public: void __thiscall aiPedestrian::Update(void) | ?Update@aiPedestrian@@QAEXXZ
+    0x443C00 | private: void __thiscall aiPedestrian::Wander(void) | ?Wander@aiPedestrian@@AAEXXZ
+    0x444060 | private: void __thiscall aiPedestrian::Anticipate(class mmIntersection &,int) | ?Anticipate@aiPedestrian@@AAEXAAVmmIntersection@@H@Z
+    0x444280 | private: void __thiscall aiPedestrian::Avoid(class mmIntersection &,float *) | ?Avoid@aiPedestrian@@AAEXAAVmmIntersection@@PAM@Z
+    0x444680 | private: float __thiscall aiPedestrian::TimeToCollision(float) | ?TimeToCollision@aiPedestrian@@AAEMM@Z
+    0x4446A0 | private: int __thiscall aiPedestrian::DetectPlayerForwardCollision(float *,float *) | ?DetectPlayerForwardCollision@aiPedestrian@@AAEHPAM0@Z
+    0x444880 | private: int __thiscall aiPedestrian::DetectPlayerAnticipate(float *,float *) | ?DetectPlayerAnticipate@aiPedestrian@@AAEHPAM0@Z
+    0x444A40 | private: float __thiscall aiPedestrian::RoadDistance(void) | ?RoadDistance@aiPedestrian@@AAEMXZ
+    0x445140 | private: void __thiscall aiPedestrian::SolveRoadSegment(float) | ?SolveRoadSegment@aiPedestrian@@AAEXM@Z
+    0x445280 | private: class aiPath * __thiscall aiPedestrian::PickNextRdSeg(void) | ?PickNextRdSeg@aiPedestrian@@AAEPAVaiPath@@XZ
+    0x445470 | private: int __thiscall aiPedestrian::DetectPlayerCollision(float *) | ?DetectPlayerCollision@aiPedestrian@@AAEHPAM@Z
+    0x4457D0 | private: int __thiscall aiPedestrian::DetectBangerCollision(class mmInstance * *,float *,float) | ?DetectBangerCollision@aiPedestrian@@AAEHPAPAVmmInstance@@PAMM@Z
+    0x445DC0 | private: class mmInstance * __thiscall aiPedestrian::DetectBangerObstacle(void) | ?DetectBangerObstacle@aiPedestrian@@AAEPAVmmInstance@@XZ
+    0x445F30 | private: class aiPedestrian * __thiscall aiPedestrian::DetectPedObstacle(void) | ?DetectPedObstacle@aiPedestrian@@AAEPAV1@XZ
+    0x445FB0 | private: int __thiscall aiPedestrian::DetectPedCollision(float,class aiPedestrian * *,float *) | ?DetectPedCollision@aiPedestrian@@AAEHMPAPAV1@PAM@Z
+    0x446490 | private: void __thiscall aiPedestrian::AvoidPlayer(class Vector3 &,float) | ?AvoidPlayer@aiPedestrian@@AAEXAAVVector3@@M@Z
+    0x446520 | private: void __thiscall aiPedestrian::AvoidBanger(class mmInstance *,float) | ?AvoidBanger@aiPedestrian@@AAEXPAVmmInstance@@M@Z
+    0x446610 | private: void __thiscall aiPedestrian::AvoidPedCollision(class aiPedestrian *,float) | ?AvoidPedCollision@aiPedestrian@@AAEXPAV1@M@Z
+    0x446700 | private: void __thiscall aiPedestrian::AvoidObstacle(class Vector3 &,float) | ?AvoidObstacle@aiPedestrian@@AAEXAAVVector3@@M@Z
+    0x446A20 | private: void __thiscall aiPedestrian::SolveTargetPoint(float) | ?SolveTargetPoint@aiPedestrian@@AAEXM@Z
+    0x446A90 | private: void __thiscall aiPedestrian::CalcCurve(int,int,float) | ?CalcCurve@aiPedestrian@@AAEXHHM@Z
+    0x447140 | private: void __thiscall aiPedestrian::ComputeCurve(class Vector3 &,class Vector3 &,class Vector3 &,class Vector3 &) | ?ComputeCurve@aiPedestrian@@AAEXAAVVector3@@000@Z
+    0x4471F0 | private: void __thiscall aiPedestrian::SolvePosition(class Vector3 &,float) | ?SolvePosition@aiPedestrian@@AAEXAAVVector3@@M@Z
+    0x447240 | public: void __thiscall aiPedestrian::PlayVoice(short) | ?PlayVoice@aiPedestrian@@QAEXF@Z
+    0x447310 | public: void __thiscall aiPedestrian::CalculateDistToPlayer2(void) | ?CalculateDistToPlayer2@aiPedestrian@@QAEXXZ
+    0x447360 | public: void __thiscall aiPedestrian::CalculateAudioPanning(void) | ?CalculateAudioPanning@aiPedestrian@@QAEXXZ
+    0x4473B0 | public: void __thiscall aiPedestrian::UpdateAudio(void) | ?UpdateAudio@aiPedestrian@@QAEXXZ
+    0x447480 | public: void __thiscall aiPedestrian::SetVoiceSoundPtr(class AudSound *) | ?SetVoiceSoundPtr@aiPedestrian@@QAEXPAVAudSound@@@Z
+    0x447490 | public: void __thiscall aiPedestrian::UnAssignSounds(void) | ?UnAssignSounds@aiPedestrian@@QAEXXZ
+    0x4474D0 | public: void __thiscall aiPedestrian::Reset(void) | ?Reset@aiPedestrian@@QAEXXZ
+    0x447500 | public: void __thiscall aiPedestrian::Stop(void) | ?Stop@aiPedestrian@@QAEXXZ
+    0x447540 | public: void __thiscall aiPedestrian::Go(void) | ?Go@aiPedestrian@@QAEXXZ
+    0x447580 | public: void __thiscall aiPedestrian::Dump(void) | ?Dump@aiPedestrian@@QAEXXZ
+    0x447750 | public: void __thiscall aiPedestrian::DrawDebug(void) | ?DrawDebug@aiPedestrian@@QAEXXZ
+    0x447760 | private: short __thiscall aiPedestrian::GetRoamVoiceIndex(void) | ?GetRoamVoiceIndex@aiPedestrian@@AAEFXZ
+    0x447930 | private: short __thiscall aiPedestrian::GetRaceVoiceIndex(void) | ?GetRaceVoiceIndex@aiPedestrian@@AAEFXZ
+    0x447AD0 | public: virtual class Matrix34 & __fastcall aiPedestrianInstance::ToMatrix(class Matrix34 &) | ?ToMatrix@aiPedestrianInstance@@UAIAAVMatrix34@@AAV2@@Z
+    0x447AE0 | public: virtual void __fastcall aiPedestrianInstance::FromMatrix(class Matrix34 const &) | ?FromMatrix@aiPedestrianInstance@@UAIXABVMatrix34@@@Z
+    0x447AF0 | public: virtual class Vector3 & __fastcall aiPedestrianInstance::GetPos(void) | ?GetPos@aiPedestrianInstance@@UAIAAVVector3@@XZ
+    0x447B00 | public: virtual int __thiscall aiPedestrianInstance::ComputeLod(float,float) | ?ComputeLod@aiPedestrianInstance@@UAEHMM@Z
+    0x447B30 | public: virtual void __fastcall aiPedestrianInstance::Draw(int) | ?Draw@aiPedestrianInstance@@UAIXH@Z
+    0x447C20 | public: virtual void __fastcall aiPedestrianInstance::DrawShadow(void) | ?DrawShadow@aiPedestrianInstance@@UAIXXZ
+    0x447CF0 | public: virtual void __thiscall aiPedestrianInstance::AddWidgets(class Bank *) | ?AddWidgets@aiPedestrianInstance@@UAEXPAVBank@@@Z
+    0x447D00 | public: virtual void * __thiscall aiPedestrianInstance::`vector deleting destructor'(unsigned int) | ??_EaiPedestrianInstance@@UAEPAXI@Z
+    0x447D00 | public: virtual void * __thiscall aiPedestrianInstance::`scalar deleting destructor'(unsigned int) | ??_GaiPedestrianInstance@@UAEPAXI@Z
+    0x447D20 | public: virtual __thiscall aiPedestrianInstance::~aiPedestrianInstance(void) | ??1aiPedestrianInstance@@UAE@XZ
+    0x590768 | const aiPedestrianInstance::`vftable' | ??_7aiPedestrianInstance@@6B@
+    0x5A8838 | private: static float aiPedestrian::s_fAudioVolume | ?s_fAudioVolume@aiPedestrian@@0MA
+    0x5A883C | private: static float aiPedestrian::s_fAudioMaxDistance | ?s_fAudioMaxDistance@aiPedestrian@@0MA
+    0x5A8BA8 | float * `public: virtual int __thiscall aiPedestrianInstance::ComputeLod(float,float)'::`2'::LodTable | ?LodTable@?1??ComputeLod@aiPedestrianInstance@@UAEHMM@Z@4PAMA
+    0x609DB8 | private: static float aiPedestrian::s_fAttenuationMult | ?s_fAttenuationMult@aiPedestrian@@0MA
+*/
 
 #include "hooking.h"
 

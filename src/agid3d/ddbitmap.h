@@ -18,7 +18,20 @@
 
 #pragma once
 
-// agid3d:ddbitmap
+/*
+    agid3d:ddbitmap
+
+    0x51BAA0 | public: __thiscall agiDDBitmap::agiDDBitmap(class agiPipeline *) | ??0agiDDBitmap@@QAE@PAVagiPipeline@@@Z
+    0x51BAD0 | public: virtual int __thiscall agiDDBitmap::BeginGfx(void) | ?BeginGfx@agiDDBitmap@@UAEHXZ
+    0x51BD30 | public: virtual void __thiscall agiDDBitmap::UpdateFlags(void) | ?UpdateFlags@agiDDBitmap@@UAEXXZ
+    0x51BD70 | public: virtual void __thiscall agiDDBitmap::EndGfx(void) | ?EndGfx@agiDDBitmap@@UAEXXZ
+    0x51BDA0 | public: virtual __thiscall agiDDBitmap::~agiDDBitmap(void) | ??1agiDDBitmap@@UAE@XZ
+    0x51BDF0 | void __cdecl breakme(void) | ?breakme@@YAXXZ
+    0x51BE00 | public: virtual void __thiscall agiDDBitmap::Restore(void) | ?Restore@agiDDBitmap@@UAEXXZ
+    0x51BE40 | public: virtual void * __thiscall agiDDBitmap::`vector deleting destructor'(unsigned int) | ??_EagiDDBitmap@@UAEPAXI@Z
+    0x51BE40 | public: virtual void * __thiscall agiDDBitmap::`scalar deleting destructor'(unsigned int) | ??_GagiDDBitmap@@UAEPAXI@Z
+    0x5958C0 | const agiDDBitmap::`vftable' | ??_7agiDDBitmap@@6B@
+*/
 
 #include "hooking.h"
 

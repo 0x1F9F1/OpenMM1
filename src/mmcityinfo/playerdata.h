@@ -18,7 +18,55 @@
 
 #pragma once
 
-// mmcityinfo:playerdata
+/*
+    mmcityinfo:playerdata
+
+    0x4C4180 | public: __thiscall mmPlayerRecord::mmPlayerRecord(void) | ??0mmPlayerRecord@@QAE@XZ
+    0x4C41A0 | public: virtual __thiscall mmPlayerRecord::~mmPlayerRecord(void) | ??1mmPlayerRecord@@UAE@XZ
+    0x4C41B0 | public: void __thiscall mmPlayerRecord::Reset(void) | ?Reset@mmPlayerRecord@@QAEXXZ
+    0x4C41E0 | public: void __thiscall mmPlayerRecord::operator=(class mmPlayerRecord &) | ??4mmPlayerRecord@@QAEXAAV0@@Z
+    0x4C4230 | public: unsigned int __thiscall mmPlayerRecord::ComputeCRC(void) | ?ComputeCRC@mmPlayerRecord@@QAEIXZ
+    0x4C4290 | public: int __thiscall mmPlayerRecord::SaveBinary(class Stream *) | ?SaveBinary@mmPlayerRecord@@QAEHPAVStream@@@Z
+    0x4C4310 | public: int __thiscall mmPlayerRecord::LoadBinary(class Stream *) | ?LoadBinary@mmPlayerRecord@@QAEHPAVStream@@@Z
+    0x4C4390 | public: static void __cdecl mmPlayerRecord::DeclareFields(void) | ?DeclareFields@mmPlayerRecord@@SAXXZ
+    0x4C4560 | public: virtual class MetaClass * __thiscall mmPlayerRecord::GetClass(void) | ?GetClass@mmPlayerRecord@@UAEPAVMetaClass@@XZ
+    0x4C4570 | public: __thiscall mmPlayerData::mmPlayerData(void) | ??0mmPlayerData@@QAE@XZ
+    0x4C4690 | public: void __thiscall mmPlayerData::operator=(class mmPlayerData &) | ??4mmPlayerData@@QAEXAAV0@@Z
+    0x4C47D0 | public: int __thiscall mmPlayerData::RegisterFinish(int,float,char) | ?RegisterFinish@mmPlayerData@@QAEHHMD@Z
+    0x4C47E0 | public: int __thiscall mmPlayerData::GetCheckpointProgress(int) | ?GetCheckpointProgress@mmPlayerData@@QAEHH@Z
+    0x4C4800 | public: int __thiscall mmPlayerData::GetBlitzMask(void) | ?GetBlitzMask@mmPlayerData@@QAEHXZ
+    0x4C4830 | public: int __thiscall mmPlayerData::GetCheckpointMask(void) | ?GetCheckpointMask@mmPlayerData@@QAEHXZ
+    0x4C4860 | public: int __thiscall mmPlayerData::GetCircuitMask(void) | ?GetCircuitMask@mmPlayerData@@QAEHXZ
+    0x4C4890 | public: int __thiscall mmPlayerData::GetBlitzPassed(void) | ?GetBlitzPassed@mmPlayerData@@QAEHXZ
+    0x4C48B0 | public: int __thiscall mmPlayerData::GetCheckpointPassed(void) | ?GetCheckpointPassed@mmPlayerData@@QAEHXZ
+    0x4C48D0 | public: int __thiscall mmPlayerData::GetCircuitPassed(void) | ?GetCircuitPassed@mmPlayerData@@QAEHXZ
+    0x4C48F0 | public: int __thiscall mmPlayerData::GetTotalPassed(void) | ?GetTotalPassed@mmPlayerData@@QAEHXZ
+    0x4C4910 | public: int __thiscall mmPlayerData::GetTotalScore(void) | ?GetTotalScore@mmPlayerData@@QAEHXZ
+    0x4C4960 | public: void __thiscall mmPlayerData::ResolveCheckpointProgress(void) | ?ResolveCheckpointProgress@mmPlayerData@@QAEXXZ
+    0x4C49F0 | public: int __thiscall mmPlayerData::RegisterFinish(class mmPlayerRecord,int,int) | ?RegisterFinish@mmPlayerData@@QAEHVmmPlayerRecord@@HH@Z
+    0x4C4CA0 | public: void __thiscall mmPlayerData::Reset(void) | ?Reset@mmPlayerData@@QAEXXZ
+    0x4C4D70 | public: void __thiscall mmPlayerData::SetName(char *) | ?SetName@mmPlayerData@@QAEXPAD@Z
+    0x4C4DB0 | public: char * __thiscall mmPlayerData::GetName(void) | ?GetName@mmPlayerData@@QAEPADXZ
+    0x4C4DC0 | public: void __thiscall mmPlayerData::SetNetName(char *) | ?SetNetName@mmPlayerData@@QAEXPAD@Z
+    0x4C4E00 | public: char * __thiscall mmPlayerData::GetNetName(void) | ?GetNetName@mmPlayerData@@QAEPADXZ
+    0x4C4E10 | public: void __thiscall mmPlayerData::SetFileName(char *) | ?SetFileName@mmPlayerData@@QAEXPAD@Z
+    0x4C4E50 | public: char * __thiscall mmPlayerData::GetFileName(void) | ?GetFileName@mmPlayerData@@QAEPADXZ
+    0x4C4E60 | public: int __thiscall mmPlayerData::Load(char *) | ?Load@mmPlayerData@@QAEHPAD@Z
+    0x4C4E90 | public: int __thiscall mmPlayerData::Save(char *,int) | ?Save@mmPlayerData@@QAEHPADH@Z
+    0x4C4F30 | public: unsigned int __thiscall mmPlayerData::ComputeCRC(void) | ?ComputeCRC@mmPlayerData@@QAEIXZ
+    0x4C4FE0 | public: int __thiscall mmPlayerData::LoadBinary(char *) | ?LoadBinary@mmPlayerData@@QAEHPAD@Z
+    0x4C5240 | public: int __thiscall mmPlayerData::SaveBinary(char *) | ?SaveBinary@mmPlayerData@@QAEHPAD@Z
+    0x4C5450 | public: static void __cdecl mmPlayerData::DeclareFields(void) | ?DeclareFields@mmPlayerData@@SAXXZ
+    0x4C5730 | public: virtual class MetaClass * __thiscall mmPlayerData::GetClass(void) | ?GetClass@mmPlayerData@@UAEPAVMetaClass@@XZ
+    0x4C5740 | public: virtual void * __thiscall mmPlayerRecord::`vector deleting destructor'(unsigned int) | ??_EmmPlayerRecord@@UAEPAXI@Z
+    0x4C57A0 | public: virtual void * __thiscall mmPlayerData::`vector deleting destructor'(unsigned int) | ??_EmmPlayerData@@UAEPAXI@Z
+    0x66A898 | class MetaClass mmPlayerDataMetaClass | ?mmPlayerDataMetaClass@@3VMetaClass@@A
+    0x66A8C0 | class MetaClass mmPlayerRecordMetaClass | ?mmPlayerRecordMetaClass@@3VMetaClass@@A
+    0x4C4440 | void * __cdecl new_mmPlayerRecord(int) | ?new_mmPlayerRecord@@YAPAXH@Z
+    0x4C4510 | void __cdecl delete_mmPlayerRecord(void *,int) | ?delete_mmPlayerRecord@@YAXPAXH@Z
+    0x4C5610 | void * __cdecl new_mmPlayerData(int) | ?new_mmPlayerData@@YAPAXH@Z
+    0x4C56E0 | void __cdecl delete_mmPlayerData(void *,int) | ?delete_mmPlayerData@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,17 @@
 
 #pragma once
 
-// mmui:dlg_password
+/*
+    mmui:dlg_password
+
+    0x492A10 | public: __thiscall Dialog_Password::Dialog_Password(int,float,float,float,float,char *) | ??0Dialog_Password@@QAE@HMMMMPAD@Z
+    0x492B80 | public: virtual __thiscall Dialog_Password::~Dialog_Password(void) | ??1Dialog_Password@@UAE@XZ
+    0x492B90 | public: virtual void __thiscall Dialog_Password::PreSetup(void) | ?PreSetup@Dialog_Password@@UAEXXZ
+    0x492BA0 | public: void __thiscall Dialog_Password::PasswordCallback(void) | ?PasswordCallback@Dialog_Password@@QAEXXZ
+    0x492BB0 | public: virtual void * __thiscall Dialog_Password::`vector deleting destructor'(unsigned int) | ??_EDialog_Password@@UAEPAXI@Z
+    0x492BB0 | public: virtual void * __thiscall Dialog_Password::`scalar deleting destructor'(unsigned int) | ??_GDialog_Password@@UAEPAXI@Z
+    0x592420 | const Dialog_Password::`vftable' | ??_7Dialog_Password@@6B@
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,21 @@
 
 #pragma once
 
-// mmui:pu_graphics
+/*
+    mmui:pu_graphics
+
+    0x49E550 | public: __thiscall PUGraphics::PUGraphics(int,float,float,float,float) | ??0PUGraphics@@QAE@HMMMM@Z
+    0x49EAD0 | public: virtual __thiscall PUGraphics::~PUGraphics(void) | ??1PUGraphics@@UAE@XZ
+    0x49EAE0 | public: virtual void __thiscall PUGraphics::PreSetup(void) | ?PreSetup@PUGraphics@@UAEXXZ
+    0x49EAF0 | public: void __thiscall PUGraphics::CancelAction(void) | ?CancelAction@PUGraphics@@QAEXXZ
+    0x49EB00 | public: virtual void * __thiscall PUGraphics::`vector deleting destructor'(unsigned int) | ??_EPUGraphics@@UAEPAXI@Z
+    0x49EB00 | public: virtual void * __thiscall PUGraphics::`scalar deleting destructor'(unsigned int) | ??_GPUGraphics@@UAEPAXI@Z
+    0x49EB30 | public: static class mmCullCity * __cdecl mmCullCity::GetInstance(void) | ?GetInstance@mmCullCity@@SAPAV1@XZ
+    0x592CC8 | const PUGraphics::`vftable' | ??_7PUGraphics@@6B@
+    0x49EA60 | void __cdecl toggle_interlace(void) | ?toggle_interlace@@YAXXZ
+    0x49EA80 | void __cdecl toggle_filter(void) | ?toggle_filter@@YAXXZ
+    0x49EAB0 | void __cdecl fix_lighting_lame(void) | ?fix_lighting_lame@@YAXXZ
+*/
 
 #include "hooking.h"
 

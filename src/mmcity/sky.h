@@ -18,7 +18,20 @@
 
 #pragma once
 
-// mmcity:sky
+/*
+    mmcity:sky
+
+    0x48A980 | public: __thiscall mmSky::mmSky(void) | ??0mmSky@@QAE@XZ
+    0x48A9C0 | public: __thiscall mmSky::~mmSky(void) | ??1mmSky@@QAE@XZ
+    0x48AA00 | public: void __thiscall mmSky::Init(char *) | ?Init@mmSky@@QAEXPAD@Z
+    0x48AA30 | public: void __thiscall mmSky::SetTexture(class agiTexDef *) | ?SetTexture@mmSky@@QAEXPAVagiTexDef@@@Z
+    0x48AA50 | public: void __thiscall mmSky::Draw(class Matrix34 &) | ?Draw@mmSky@@QAEXAAVMatrix34@@@Z
+    0x5AE30C | public: static unsigned int mmSky::Color | ?Color@mmSky@@2IA
+    0x5AE310 | float SkyScale | ?SkyScale@@3MA
+    0x667A34 | private: static int mmSky::DoFlash | ?DoFlash@mmSky@@0HA
+    0x667A38 | class agiTexDef * FlashTex | ?FlashTex@@3PAVagiTexDef@@A
+    0x667A3C | private: static class mmSky * mmSky::Instance | ?Instance@mmSky@@0PAV1@A
+*/
 
 #include "hooking.h"
 

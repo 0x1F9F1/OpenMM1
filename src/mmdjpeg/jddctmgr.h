@@ -18,7 +18,12 @@
 
 #pragma once
 
-// mmdjpeg:jddctmgr
+/*
+    mmdjpeg:jddctmgr
+
+    0x563E60 | void __cdecl jinit_inverse_dct(struct jpeg_decompress_struct *) | ?jinit_inverse_dct@@YAXPAUjpeg_decompress_struct@@@Z
+    0x563EF0 | void __cdecl start_pass(struct jpeg_decompress_struct *) | ?start_pass@@YAXPAUjpeg_decompress_struct@@@Z
+*/
 
 #include "hooking.h"
 

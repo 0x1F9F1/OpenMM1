@@ -18,7 +18,16 @@
 
 #pragma once
 
-// mmui:pu_debug
+/*
+    mmui:pu_debug
+
+    0x49EFE0 | public: __thiscall PUDebug::PUDebug(int,float,float,float,float) | ??0PUDebug@@QAE@HMMMM@Z
+    0x49F180 | public: virtual __thiscall PUDebug::~PUDebug(void) | ??1PUDebug@@UAE@XZ
+    0x49F190 | public: void __thiscall PUDebug::RecordCB(void) | ?RecordCB@PUDebug@@QAEXXZ
+    0x49F1A0 | public: virtual void * __thiscall PUDebug::`scalar deleting destructor'(unsigned int) | ??_GPUDebug@@UAEPAXI@Z
+    0x49F1A0 | public: virtual void * __thiscall PUDebug::`vector deleting destructor'(unsigned int) | ??_EPUDebug@@UAEPAXI@Z
+    0x592D70 | const PUDebug::`vftable' | ??_7PUDebug@@6B@
+*/
 
 #include "hooking.h"
 

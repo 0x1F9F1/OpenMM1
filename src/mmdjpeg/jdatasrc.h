@@ -18,7 +18,15 @@
 
 #pragma once
 
-// mmdjpeg:jdatasrc
+/*
+    mmdjpeg:jdatasrc
+
+    0x55F060 | void __cdecl jpeg_stdio_src(struct jpeg_decompress_struct *,class Stream *) | ?jpeg_stdio_src@@YAXPAUjpeg_decompress_struct@@PAVStream@@@Z
+    0x55F0E0 | void __cdecl init_source(struct jpeg_decompress_struct *) | ?init_source@@YAXPAUjpeg_decompress_struct@@@Z
+    0x55F0F0 | unsigned char __cdecl fill_input_buffer(struct jpeg_decompress_struct *) | ?fill_input_buffer@@YAEPAUjpeg_decompress_struct@@@Z
+    0x55F160 | void __cdecl skip_input_data(struct jpeg_decompress_struct *,long) | ?skip_input_data@@YAXPAUjpeg_decompress_struct@@J@Z
+    0x55F1A0 | void __cdecl term_source(struct jpeg_decompress_struct *) | ?term_source@@YAXPAUjpeg_decompress_struct@@@Z
+*/
 
 #include "hooking.h"
 

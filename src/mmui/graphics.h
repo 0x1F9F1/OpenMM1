@@ -18,7 +18,36 @@
 
 #pragma once
 
-// mmui:graphics
+/*
+    mmui:graphics
+
+    0x48E130 | void __cdecl AutoDetect(int,int) | ?AutoDetect@@YAXHH@Z
+    0x48E390 | public: __thiscall GraphicsOptions::GraphicsOptions(int) | ??0GraphicsOptions@@QAE@H@Z
+    0x48ED10 | public: virtual __thiscall GraphicsOptions::~GraphicsOptions(void) | ??1GraphicsOptions@@UAE@XZ
+    0x48ED70 | public: void __thiscall GraphicsOptions::SetResolution(void) | ?SetResolution@GraphicsOptions@@QAEXXZ
+    0x48ED90 | public: void __thiscall GraphicsOptions::SetLightQuality(void) | ?SetLightQuality@GraphicsOptions@@QAEXXZ
+    0x48EDB0 | public: void __thiscall GraphicsOptions::SetRenderer(void) | ?SetRenderer@GraphicsOptions@@QAEXXZ
+    0x48EFC0 | public: virtual void __thiscall GraphicsOptions::PreSetup(void) | ?PreSetup@GraphicsOptions@@UAEXXZ
+    0x48EFE0 | public: virtual void __thiscall GraphicsOptions::ResetDefaultAction(void) | ?ResetDefaultAction@GraphicsOptions@@UAEXXZ
+    0x48F030 | public: virtual void __thiscall GraphicsOptions::CancelAction(void) | ?CancelAction@GraphicsOptions@@UAEXXZ
+    0x48F060 | public: virtual void __thiscall GraphicsOptions::DoneAction(void) | ?DoneAction@GraphicsOptions@@UAEXXZ
+    0x48F0C0 | public: virtual void * __thiscall GraphicsOptions::`vector deleting destructor'(unsigned int) | ??_EGraphicsOptions@@UAEPAXI@Z
+    0x48F0C0 | public: virtual void * __thiscall GraphicsOptions::`scalar deleting destructor'(unsigned int) | ??_GGraphicsOptions@@UAEPAXI@Z
+    0x48F0F0 | public: virtual void __thiscall OptionsBase::StoreCurrentSetup(void) | ?StoreCurrentSetup@OptionsBase@@UAEXXZ
+    0x48F100 | public: virtual int __thiscall OptionsBase::IsAnOptionMenu(void) | ?IsAnOptionMenu@OptionsBase@@UAEHXZ
+    0x48F110 | public: void __thiscall string::Init(int) | ?Init@string@@QAEXH@Z
+    0x48F150 | public: __thiscall string::string(class string const &) | ??0string@@QAE@ABV0@@Z
+    0x592210 | const GraphicsOptions::`vftable' | ??_7GraphicsOptions@@6B@
+    0x667B1C | int data1 | ?data1@@3HA
+    0x667B20 | int data2 | ?data2@@3HA
+    0x667B24 | int data3 | ?data3@@3HA
+    0x667B28 | int data4 | ?data4@@3HA
+    0x667B2C | int data5 | ?data5@@3HA
+    0x667B30 | int data6 | ?data6@@3HA
+    0x667B50 | int RenderToSystemMemory | ?RenderToSystemMemory@@3HA
+    0x667B54 | int TextureLevel | ?TextureLevel@@3HA
+    0x48EA70 | void __cdecl SetTexQualString(void) | ?SetTexQualString@@YAXXZ
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,11 @@
 
 #pragma once
 
-// mmdjpeg:jidctint
+/*
+    mmdjpeg:jidctint
+
+    0x565010 | void __cdecl jpeg_idct_islow(struct jpeg_decompress_struct *,struct jpeg_component_info *,short *,unsigned char * *,unsigned int) | ?jpeg_idct_islow@@YAXPAUjpeg_decompress_struct@@PAUjpeg_component_info@@PAFPAPAEI@Z
+*/
 
 #include "hooking.h"
 

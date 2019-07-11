@@ -18,7 +18,38 @@
 
 #pragma once
 
-// mmanim:plane
+/*
+    mmanim:plane
+
+    0x4B99C0 | public: __thiscall mmAnimPlane::mmAnimPlane(void) | ??0mmAnimPlane@@QAE@XZ
+    0x4B9AB0 | public: virtual __thiscall mmAnimPlane::~mmAnimPlane(void) | ??1mmAnimPlane@@UAE@XZ
+    0x4B9B60 | public: void __thiscall mmAnimPlane::Init(int,char *,char *,class Vector3 *,int,int,float *) | ?Init@mmAnimPlane@@QAEXHPAD0PAVVector3@@HHPAM@Z
+    0x4B9D60 | public: virtual void __thiscall mmAnimPlane::Reset(void) | ?Reset@mmAnimPlane@@UAEXXZ
+    0x4B9DD0 | public: void __thiscall mmAnimPlane::Activate(void) | ?Activate@mmAnimPlane@@QAEXXZ
+    0x4B9DE0 | public: void __thiscall mmAnimPlane::Deactivate(void) | ?Deactivate@mmAnimPlane@@QAEXXZ
+    0x4B9DF0 | public: void __thiscall mmAnimPlane::Update(void) | ?Update@mmAnimPlane@@QAEXXZ
+    0x4B9E10 | public: void __thiscall mmAnimPlane::UpdatePathPosition(void) | ?UpdatePathPosition@mmAnimPlane@@QAEXXZ
+    0x4B9FD0 | public: void __thiscall mmAnimPlane::SetPathSpeed(void) | ?SetPathSpeed@mmAnimPlane@@QAEXXZ
+    0x4B9FE0 | public: void __thiscall mmAnimPlane::ReverseCalcPathSpeed(void) | ?ReverseCalcPathSpeed@mmAnimPlane@@QAEXXZ
+    0x4B9FF0 | public: void __thiscall mmAnimPlane::SolvePosition(class Vector3 &,float &) | ?SolvePosition@mmAnimPlane@@QAEXAAVVector3@@AAM@Z
+    0x4BA0C0 | public: void __thiscall mmAnimPlane::AdjustPhaseOffsets(void) | ?AdjustPhaseOffsets@mmAnimPlane@@QAEXXZ
+    0x4BA130 | public: void __thiscall mmAnimPlane::PreCalcCubics(void) | ?PreCalcCubics@mmAnimPlane@@QAEXXZ
+    0x4BA200 | public: void __thiscall mmAnimPlane::CalculateCubics(int,class Vector4 &,class Vector4 &,class Vector4 &) | ?CalculateCubics@mmAnimPlane@@QAEXHAAVVector4@@00@Z
+    0x4BA380 | public: void __thiscall mmAnimPlane::SolveVector(float,class Vector3 &,class Vector3 &) | ?SolveVector@mmAnimPlane@@QAEXMAAVVector3@@0@Z
+    0x4BA500 | public: virtual void __fastcall mmAnimPlane::Draw(int) | ?Draw@mmAnimPlane@@UAIXH@Z
+    0x4BA550 | private: void __thiscall mmAnimPlane::UpdateAudio(void) | ?UpdateAudio@mmAnimPlane@@AAEXXZ
+    0x4BA6B0 | private: void __thiscall mmAnimPlane::CalculateDistToPlayer2(void) | ?CalculateDistToPlayer2@mmAnimPlane@@AAEXXZ
+    0x4BA780 | private: void __thiscall mmAnimPlane::CalculateAudioPanning(void) | ?CalculateAudioPanning@mmAnimPlane@@AAEXXZ
+    0x4BA7D0 | private: float __thiscall mmAnimPlane::CalculateDoppler(float) | ?CalculateDoppler@mmAnimPlane@@AAEMM@Z
+    0x4BA910 | public: virtual void * __thiscall mmAnimPlane::`vector deleting destructor'(unsigned int) | ??_EmmAnimPlane@@UAEPAXI@Z
+    0x4BA910 | public: virtual void * __thiscall mmAnimPlane::`scalar deleting destructor'(unsigned int) | ??_GmmAnimPlane@@UAEPAXI@Z
+    0x594110 | const mmAnimPlane::`vftable' | ??_7mmAnimPlane@@6B@
+    0x5B0B60 | private: static float mmAnimPlane::s_fAudioMinDistance | ?s_fAudioMinDistance@mmAnimPlane@@0MA
+    0x5B0B64 | private: static float mmAnimPlane::s_fCloserMinDistMult | ?s_fCloserMinDistMult@mmAnimPlane@@0MA
+    0x5B0B68 | private: static float mmAnimPlane::s_fAudioMaxDistance | ?s_fAudioMaxDistance@mmAnimPlane@@0MA
+    0x5B0B6C | private: static float mmAnimPlane::s_fAudioVolume | ?s_fAudioVolume@mmAnimPlane@@0MA
+    0x668180 | private: static float mmAnimPlane::s_fAudioAttenuationMult | ?s_fAudioAttenuationMult@mmAnimPlane@@0MA
+*/
 
 #include "hooking.h"
 

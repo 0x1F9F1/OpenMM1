@@ -18,7 +18,18 @@
 
 #pragma once
 
-// agiworld:bone
+/*
+    agiworld:bone
+
+    0x506080 | public: __thiscall bnBone::bnBone(void) | ??0bnBone@@QAE@XZ
+    0x5060E0 | public: void __thiscall bnBone::AddChild(class bnBone *) | ?AddChild@bnBone@@QAEXPAV1@@Z
+    0x506120 | public: int __thiscall bnBone::Load(class Tokenizer *,class bnBone * *) | ?Load@bnBone@@QAEHPAVTokenizer@@PAPAV1@@Z
+    0x506210 | public: void __thiscall bnBone::Transform(class Matrix34 *) | ?Transform@bnBone@@QAEXPAVMatrix34@@@Z
+    0x506260 | public: void __thiscall bnBone::Draw(void) | ?Draw@bnBone@@QAEXXZ
+    0x506270 | public: void __thiscall bnBone::Attach(class Matrix34 * const,int &) | ?Attach@bnBone@@QAEXQAVMatrix34@@AAH@Z
+    0x5062D0 | public: void __thiscall bnBone::Pose(class Vector3 const *,int &) | ?Pose@bnBone@@QAEXPBVVector3@@AAH@Z
+    0x506330 | void __cdecl Matrix34__FromEulersXZY(class Matrix34 &,class Vector3 const &) | ?Matrix34__FromEulersXZY@@YAXAAVMatrix34@@ABVVector3@@@Z
+*/
 
 #include "hooking.h"
 

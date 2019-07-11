@@ -18,7 +18,18 @@
 
 #pragma once
 
-// mmcityinfo:vehinfo
+/*
+    mmcityinfo:vehinfo
+
+    0x4C7D10 | public: __thiscall mmVehInfo::mmVehInfo(void) | ??0mmVehInfo@@QAE@XZ
+    0x4C7D30 | public: virtual __thiscall mmVehInfo::~mmVehInfo(void) | ??1mmVehInfo@@UAE@XZ
+    0x4C7D40 | public: int __thiscall mmVehInfo::Load(char *) | ?Load@mmVehInfo@@QAEHPAD@Z
+    0x4C7F20 | public: int __thiscall mmVehInfo::HasColorVariations(void) | ?HasColorVariations@mmVehInfo@@QAEHXZ
+    0x4C7F40 | public: void __thiscall mmVehInfo::Print(void) | ?Print@mmVehInfo@@QAEXXZ
+    0x4C7FD0 | public: virtual void * __thiscall mmVehInfo::`scalar deleting destructor'(unsigned int) | ??_GmmVehInfo@@UAEPAXI@Z
+    0x4C7FD0 | public: virtual void * __thiscall mmVehInfo::`vector deleting destructor'(unsigned int) | ??_EmmVehInfo@@UAEPAXI@Z
+    0x5944B8 | const mmVehInfo::`vftable' | ??_7mmVehInfo@@6B@
+*/
 
 #include "hooking.h"
 

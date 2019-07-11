@@ -18,7 +18,30 @@
 
 #pragma once
 
-// agid3d:ddpipe
+/*
+    agid3d:ddpipe
+
+    0x518680 | public: virtual int __thiscall agiDDPipeline::Validate(void) | ?Validate@agiDDPipeline@@UAEHXZ
+    0x518690 | int __stdcall DDCallback(struct _GUID *,char *,char *,void *) | ?DDCallback@@YGHPAU_GUID@@PAD1PAX@Z
+    0x518710 | long __stdcall EnumModesCallback(struct _DDSURFACEDESC2 *,void *) | ?EnumModesCallback@@YGJPAU_DDSURFACEDESC2@@PAX@Z
+    0x5187C0 | long __stdcall EnumSurfsCallback(struct IDirectDrawSurface *,struct _DDSURFACEDESC *,void *) | ?EnumSurfsCallback@@YGJPAUIDirectDrawSurface@@PAU_DDSURFACEDESC@@PAX@Z
+    0x518800 | public: __thiscall agiDDPipeline::agiDDPipeline(void) | ??0agiDDPipeline@@QAE@XZ
+    0x5188A0 | public: virtual int __thiscall agiDDPipeline::BeginGfx(void) | ?BeginGfx@agiDDPipeline@@UAEHXZ
+    0x518BF0 | public: virtual void __thiscall agiDDPipeline::EndGfx(void) | ?EndGfx@agiDDPipeline@@UAEXXZ
+    0x518CB0 | public: virtual __thiscall agiDDPipeline::~agiDDPipeline(void) | ??1agiDDPipeline@@UAE@XZ
+    0x518D00 | public: virtual void __thiscall agiDDPipeline::BeginFrame(void) | ?BeginFrame@agiDDPipeline@@UAEXXZ
+    0x518D60 | public: virtual void __thiscall agiDDPipeline::BeginScene(void) | ?BeginScene@agiDDPipeline@@UAEXXZ
+    0x518DB0 | public: virtual void __thiscall agiDDPipeline::EndScene(void) | ?EndScene@agiDDPipeline@@UAEXXZ
+    0x518DC0 | public: virtual void __thiscall agiDDPipeline::EndFrame(void) | ?EndFrame@agiDDPipeline@@UAEXXZ
+    0x518DD0 | public: virtual class agiBitmap * __thiscall agiDDPipeline::CreateBitmap(void) | ?CreateBitmap@agiDDPipeline@@UAEPAVagiBitmap@@XZ
+    0x518E30 | public: virtual void __thiscall agiDDPipeline::CopyBitmap(int,int,class agiBitmap *,int,int,int,int) | ?CopyBitmap@agiDDPipeline@@UAEXHHPAVagiBitmap@@HHHH@Z
+    0x518EE0 | public: virtual int __thiscall agiDDPipeline::LockFrameBuffer(class agiSurfaceDesc &) | ?LockFrameBuffer@agiDDPipeline@@UAEHAAVagiSurfaceDesc@@@Z
+    0x518F20 | public: virtual void __thiscall agiDDPipeline::UnlockFrameBuffer(void) | ?UnlockFrameBuffer@agiDDPipeline@@UAEXXZ
+    0x518F40 | public: virtual void __thiscall agiDDPipeline::ClearRect(int,int,int,int,unsigned int) | ?ClearRect@agiDDPipeline@@UAEXHHHHI@Z
+    0x518FA0 | public: virtual void * __thiscall agiDDPipeline::`scalar deleting destructor'(unsigned int) | ??_GagiDDPipeline@@UAEPAXI@Z
+    0x518FA0 | public: virtual void * __thiscall agiDDPipeline::`vector deleting destructor'(unsigned int) | ??_EagiDDPipeline@@UAEPAXI@Z
+    0x595738 | const agiDDPipeline::`vftable' | ??_7agiDDPipeline@@6B@
+*/
 
 #include "hooking.h"
 

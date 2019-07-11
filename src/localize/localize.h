@@ -18,7 +18,12 @@
 
 #pragma once
 
-// localize:localize
+/*
+    localize:localize
+
+    0x50DFD0 | char * __cdecl GetLocTime(float) | ?GetLocTime@@YAPADM@Z
+    0x50E090 | struct LocString * __cdecl AngelReadString(unsigned int) | ?AngelReadString@@YAPAULocString@@I@Z
+*/
 
 #include "hooking.h"
 

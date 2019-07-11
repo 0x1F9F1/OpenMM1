@@ -18,7 +18,25 @@
 
 #pragma once
 
-// mmdjpeg:jmemmgr
+/*
+    mmdjpeg:jmemmgr
+
+    0x561590 | void __cdecl jinit_memory_mgr(struct jpeg_common_struct *) | ?jinit_memory_mgr@@YAXPAUjpeg_common_struct@@@Z
+    0x5616C0 | void * __cdecl alloc_small(struct jpeg_common_struct *,int,unsigned int) | ?alloc_small@@YAPAXPAUjpeg_common_struct@@HI@Z
+    0x561800 | void __cdecl out_of_memory(struct jpeg_common_struct *,int) | ?out_of_memory@@YAXPAUjpeg_common_struct@@H@Z
+    0x561830 | void * __cdecl alloc_large(struct jpeg_common_struct *,int,unsigned int) | ?alloc_large@@YAPAXPAUjpeg_common_struct@@HI@Z
+    0x5618D0 | unsigned char * * __cdecl alloc_sarray(struct jpeg_common_struct *,int,unsigned int,unsigned int) | ?alloc_sarray@@YAPAPAEPAUjpeg_common_struct@@HII@Z
+    0x561970 | short (* * __cdecl alloc_barray(struct jpeg_common_struct *,int,unsigned int,unsigned int))[64] | ?alloc_barray@@YAPAPAY0EA@FPAUjpeg_common_struct@@HII@Z
+    0x561A30 | struct jvirt_sarray_control * __cdecl request_virt_sarray(struct jpeg_common_struct *,int,unsigned char,unsigned int,unsigned int,unsigned int) | ?request_virt_sarray@@YAPAUjvirt_sarray_control@@PAUjpeg_common_struct@@HEIII@Z
+    0x561AA0 | struct jvirt_barray_control * __cdecl request_virt_barray(struct jpeg_common_struct *,int,unsigned char,unsigned int,unsigned int,unsigned int) | ?request_virt_barray@@YAPAUjvirt_barray_control@@PAUjpeg_common_struct@@HEIII@Z
+    0x561B10 | void __cdecl realize_virt_arrays(struct jpeg_common_struct *) | ?realize_virt_arrays@@YAXPAUjpeg_common_struct@@@Z
+    0x561CB0 | unsigned char * * __cdecl access_virt_sarray(struct jpeg_common_struct *,struct jvirt_sarray_control *,unsigned int,unsigned int,unsigned char) | ?access_virt_sarray@@YAPAPAEPAUjpeg_common_struct@@PAUjvirt_sarray_control@@IIE@Z
+    0x561DF0 | void __cdecl do_sarray_io(struct jpeg_common_struct *,struct jvirt_sarray_control *,unsigned char) | ?do_sarray_io@@YAXPAUjpeg_common_struct@@PAUjvirt_sarray_control@@E@Z
+    0x561EA0 | short (* * __cdecl access_virt_barray(struct jpeg_common_struct *,struct jvirt_barray_control *,unsigned int,unsigned int,unsigned char))[64] | ?access_virt_barray@@YAPAPAY0EA@FPAUjpeg_common_struct@@PAUjvirt_barray_control@@IIE@Z
+    0x561FE0 | void __cdecl do_barray_io(struct jpeg_common_struct *,struct jvirt_barray_control *,unsigned char) | ?do_barray_io@@YAXPAUjpeg_common_struct@@PAUjvirt_barray_control@@E@Z
+    0x562090 | void __cdecl free_pool(struct jpeg_common_struct *,int) | ?free_pool@@YAXPAUjpeg_common_struct@@H@Z
+    0x5621A0 | void __cdecl self_destruct(struct jpeg_common_struct *) | ?self_destruct@@YAXPAUjpeg_common_struct@@@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,12 @@
 
 #pragma once
 
-// data7:pager
+/*
+    data7:pager
+
+    0x711B08 | class ipcMessageQueue PAGER | ?PAGER@@3VipcMessageQueue@@A
+    0x711B30 | int EnablePaging | ?EnablePaging@@3HA
+*/
 
 #include "hooking.h"
 

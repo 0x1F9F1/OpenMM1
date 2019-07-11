@@ -18,7 +18,18 @@
 
 #pragma once
 
-// arts7:cullable
+/*
+    arts7:cullable
+
+    0x5124C0 | public: virtual void __thiscall asCullable::Cull(void) | ?Cull@asCullable@@UAEXXZ
+    0x5124D0 | public: static void __cdecl asCullable::DeclareFields(void) | ?DeclareFields@asCullable@@SAXXZ
+    0x512620 | public: virtual class MetaClass * __thiscall asCullable::GetClass(void) | ?GetClass@asCullable@@UAEPAVMetaClass@@XZ
+    0x512630 | public: virtual void * __thiscall asCullable::`vector deleting destructor'(unsigned int) | ??_EasCullable@@UAEPAXI@Z
+    0x512690 | public: __thiscall asCullable::asCullable(void) | ??0asCullable@@QAE@XZ
+    0x6F2B70 | class MetaClass asCullableMetaClass | ?asCullableMetaClass@@3VMetaClass@@A
+    0x512520 | void * __cdecl new_asCullable(int) | ?new_asCullable@@YAPAXH@Z
+    0x5125D0 | void __cdecl delete_asCullable(void *,int) | ?delete_asCullable@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

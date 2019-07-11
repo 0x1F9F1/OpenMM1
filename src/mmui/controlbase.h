@@ -18,7 +18,14 @@
 
 #pragma once
 
-// mmui:controlbase
+/*
+    mmui:controlbase
+
+    0x4A02F0 | public: __thiscall ControlBase::ControlBase(void) | ??0ControlBase@@QAE@XZ
+    0x4A0300 | public: __thiscall ControlBase::~ControlBase(void) | ??1ControlBase@@QAE@XZ
+    0x4A0310 | public: void __thiscall ControlBase::InitSensitivity(void) | ?InitSensitivity@ControlBase@@QAEXXZ
+    0x4A0370 | public: void __thiscall ControlBase::SetSensitivity(void) | ?SetSensitivity@ControlBase@@QAEXXZ
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,20 @@
 
 #pragma once
 
-// mmcar:shock
+/*
+    mmcar:shock
+
+    0x474870 | public: __thiscall mmShock::mmShock(void) | ??0mmShock@@QAE@XZ
+    0x474890 | public: void __thiscall mmShock::Init(char *,char *,class mmWheel *) | ?Init@mmShock@@QAEXPAD0PAVmmWheel@@@Z
+    0x4748F0 | public: virtual void __thiscall mmShock::Update(void) | ?Update@mmShock@@UAEXXZ
+    0x474900 | public: static void __cdecl mmShock::DeclareFields(void) | ?DeclareFields@mmShock@@SAXXZ
+    0x474A70 | public: virtual class MetaClass * __thiscall mmShock::GetClass(void) | ?GetClass@mmShock@@UAEPAVMetaClass@@XZ
+    0x474A80 | public: virtual void * __thiscall mmShock::`vector deleting destructor'(unsigned int) | ??_EmmShock@@UAEPAXI@Z
+    0x591600 | const mmShock::`vftable' | ??_7mmShock@@6B@
+    0x60A3E8 | class MetaClass mmShockMetaClass | ?mmShockMetaClass@@3VMetaClass@@A
+    0x474950 | void * __cdecl new_mmShock(int) | ?new_mmShock@@YAPAXH@Z
+    0x474A20 | void __cdecl delete_mmShock(void *,int) | ?delete_mmShock@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

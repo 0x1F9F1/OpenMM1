@@ -18,7 +18,19 @@
 
 #pragma once
 
-// mmwidget:iconwidget
+/*
+    mmwidget:iconwidget
+
+    0x4B1070 | public: __thiscall UIIconW::UIIconW(void) | ??0UIIconW@@QAE@XZ
+    0x4B1130 | public: virtual __thiscall UIIconW::~UIIconW(void) | ??1UIIconW@@UAE@XZ
+    0x4B11A0 | public: void __thiscall UIIconW::Init(struct LocString *,char *,float,float,float,float,class Callback) | ?Init@UIIconW@@QAEXPAULocString@@PADMMMMVCallback@@@Z
+    0x4B1280 | public: virtual void __thiscall UIIconW::Action(union eqEvent) | ?Action@UIIconW@@UAEXTeqEvent@@@Z
+    0x4B12E0 | public: virtual void __thiscall UIIconW::Update(void) | ?Update@UIIconW@@UAEXXZ
+    0x4B1360 | public: virtual void __thiscall UIIconW::Switch(int) | ?Switch@UIIconW@@UAEXH@Z
+    0x4B13E0 | public: virtual void * __thiscall UIIconW::`vector deleting destructor'(unsigned int) | ??_EUIIconW@@UAEPAXI@Z
+    0x4B13E0 | public: virtual void * __thiscall UIIconW::`scalar deleting destructor'(unsigned int) | ??_GUIIconW@@UAEPAXI@Z
+    0x593AB0 | const UIIconW::`vftable' | ??_7UIIconW@@6B@
+*/
 
 #include "hooking.h"
 

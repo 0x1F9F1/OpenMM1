@@ -18,7 +18,37 @@
 
 #pragma once
 
-// mmanim:boat
+/*
+    mmanim:boat
+
+    0x4BBBB0 | public: __thiscall mmBoat::mmBoat(void) | ??0mmBoat@@QAE@XZ
+    0x4BBC90 | public: virtual __thiscall mmBoat::~mmBoat(void) | ??1mmBoat@@UAE@XZ
+    0x4BBD00 | public: void __thiscall mmBoat::Init(int,char *,char *,class Vector3 *,int,int,float *) | ?Init@mmBoat@@QAEXHPAD0PAVVector3@@HHPAM@Z
+    0x4BC000 | public: virtual void __thiscall mmBoat::Reset(void) | ?Reset@mmBoat@@UAEXXZ
+    0x4BC060 | public: virtual void __thiscall mmBoat::Update(void) | ?Update@mmBoat@@UAEXXZ
+    0x4BC090 | public: void __thiscall mmBoat::UpdatePathPosition(void) | ?UpdatePathPosition@mmBoat@@QAEXXZ
+    0x4BC0E0 | public: void __thiscall mmBoat::SetPathSpeed(void) | ?SetPathSpeed@mmBoat@@QAEXXZ
+    0x4BC100 | public: void __thiscall mmBoat::SetRock(float,float) | ?SetRock@mmBoat@@QAEXMM@Z
+    0x4BC130 | public: void __thiscall mmBoat::ReverseCalcPathSpeed(void) | ?ReverseCalcPathSpeed@mmBoat@@QAEXXZ
+    0x4BC150 | public: void __thiscall mmBoat::SolvePosition(class Vector3 &,float &) | ?SolvePosition@mmBoat@@QAEXAAVVector3@@AAM@Z
+    0x4BC240 | public: void __thiscall mmBoat::AdjustPhaseOffsets(void) | ?AdjustPhaseOffsets@mmBoat@@QAEXXZ
+    0x4BC2C0 | public: void __thiscall mmBoat::AddWidgets(class Bank *) | ?AddWidgets@mmBoat@@QAEXPAVBank@@@Z
+    0x4BC2D0 | public: void __thiscall mmBoat::CalculateCubics(int) | ?CalculateCubics@mmBoat@@QAEXH@Z
+    0x4BC4E0 | public: void __thiscall mmBoat::SolveVector(float,class Vector3 &,class Vector3 &) | ?SolveVector@mmBoat@@QAEXMAAVVector3@@0@Z
+    0x4BC650 | public: void __thiscall mmBoat::ComputeXZCurve(class Vector3 &,class Vector3 &,class Vector3 &,class Vector3 &) | ?ComputeXZCurve@mmBoat@@QAEXAAVVector3@@000@Z
+    0x4BC740 | public: void __thiscall mmBoat::SolveXZCurve(class Vector3 &,class Vector3 &,float) | ?SolveXZCurve@mmBoat@@QAEXAAVVector3@@0M@Z
+    0x4BC810 | public: static void __cdecl mmBoat::DeclareFields(void) | ?DeclareFields@mmBoat@@SAXXZ
+    0x4BC980 | public: virtual class MetaClass * __thiscall mmBoat::GetClass(void) | ?GetClass@mmBoat@@UAEPAVMetaClass@@XZ
+    0x4BC990 | public: virtual void * __thiscall mmBoat::`vector deleting destructor'(unsigned int) | ??_EmmBoat@@UAEPAXI@Z
+    0x594198 | const mmBoat::`vftable' | ??_7mmBoat@@6B@
+    0x5B0C78 | float * cb | ?cb@@3PAMA
+    0x5B0CB8 | float GSFDef | ?GSFDef@@3MA
+    0x668230 | class MetaClass mmBoatMetaClass | ?mmBoatMetaClass@@3VMetaClass@@A
+    0x668258 | class Matrix44 _Hermite | ?_Hermite@@3VMatrix44@@A
+    0x668298 | class Matrix44 CatmullBasis | ?CatmullBasis@@3VMatrix44@@A
+    0x4BC860 | void * __cdecl new_mmBoat(int) | ?new_mmBoat@@YAPAXH@Z
+    0x4BC930 | void __cdecl delete_mmBoat(void *,int) | ?delete_mmBoat@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

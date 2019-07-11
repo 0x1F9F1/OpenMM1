@@ -18,7 +18,15 @@
 
 #pragma once
 
-// mmui:pu_main
+/*
+    mmui:pu_main
+
+    0x49F990 | public: __thiscall PUMain::PUMain(int,float,float,float,float,char *) | ??0PUMain@@QAE@HMMMMPAD@Z
+    0x49FB90 | public: virtual __thiscall PUMain::~PUMain(void) | ??1PUMain@@UAE@XZ
+    0x49FBA0 | public: virtual void * __thiscall PUMain::`scalar deleting destructor'(unsigned int) | ??_GPUMain@@UAEPAXI@Z
+    0x49FBA0 | public: virtual void * __thiscall PUMain::`vector deleting destructor'(unsigned int) | ??_EPUMain@@UAEPAXI@Z
+    0x592EE0 | const PUMain::`vftable' | ??_7PUMain@@6B@
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,13 @@
 
 #pragma once
 
-// vector7:random
+/*
+    vector7:random
+
+    0x548F90 | public: void __thiscall Random::Seed(int) | ?Seed@Random@@QAEXH@Z
+    0x549050 | public: float __thiscall Random::Number(void) | ?Number@Random@@QAEMXZ
+    0x5490B0 | public: float __thiscall Random::Normal(float,float) | ?Normal@Random@@QAEMMM@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,18 @@
 
 #pragma once
 
-// mmeffects:mousesteerbar
+/*
+    mmeffects:mousesteerbar
+
+    0x4F3AE0 | public: __thiscall mmMouseSteerBar::mmMouseSteerBar(void) | ??0mmMouseSteerBar@@QAE@XZ
+    0x4F3B00 | public: virtual __thiscall mmMouseSteerBar::~mmMouseSteerBar(void) | ??1mmMouseSteerBar@@UAE@XZ
+    0x4F3B10 | public: void __thiscall mmMouseSteerBar::Init(float,float,float *) | ?Init@mmMouseSteerBar@@QAEXMMPAM@Z
+    0x4F3BB0 | public: virtual void __thiscall mmMouseSteerBar::Update(void) | ?Update@mmMouseSteerBar@@UAEXXZ
+    0x4F3BE0 | public: virtual void __thiscall mmMouseSteerBar::Cull(void) | ?Cull@mmMouseSteerBar@@UAEXXZ
+    0x4F3C60 | public: virtual void * __thiscall mmMouseSteerBar::`scalar deleting destructor'(unsigned int) | ??_GmmMouseSteerBar@@UAEPAXI@Z
+    0x4F3C60 | public: virtual void * __thiscall mmMouseSteerBar::`vector deleting destructor'(unsigned int) | ??_EmmMouseSteerBar@@UAEPAXI@Z
+    0x595158 | const mmMouseSteerBar::`vftable' | ??_7mmMouseSteerBar@@6B@
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,28 @@
 
 #pragma once
 
-// mmdjpeg:jdmarker
+/*
+    mmdjpeg:jdmarker
+
+    0x55F9D0 | unsigned char __cdecl jpeg_resync_to_restart(struct jpeg_decompress_struct *,int) | ?jpeg_resync_to_restart@@YAEPAUjpeg_decompress_struct@@H@Z
+    0x55FC00 | void __cdecl jinit_marker_reader(struct jpeg_decompress_struct *) | ?jinit_marker_reader@@YAXPAUjpeg_decompress_struct@@@Z
+    0x561530 | void __cdecl jpeg_set_marker_processor(struct jpeg_decompress_struct *,int,unsigned char (__cdecl*)(struct jpeg_decompress_struct *)) | ?jpeg_set_marker_processor@@YAXPAUjpeg_decompress_struct@@HP6AE0@Z@Z
+    0x55FAE0 | unsigned char __cdecl next_marker(struct jpeg_decompress_struct *) | ?next_marker@@YAEPAUjpeg_decompress_struct@@@Z
+    0x55FC70 | unsigned char __cdecl get_interesting_appn(struct jpeg_decompress_struct *) | ?get_interesting_appn@@YAEPAUjpeg_decompress_struct@@@Z
+    0x55FDC0 | void __cdecl examine_app0(struct jpeg_decompress_struct *,unsigned char *,unsigned int,long) | ?examine_app0@@YAXPAUjpeg_decompress_struct@@PAEIJ@Z
+    0x560040 | void __cdecl examine_app14(struct jpeg_decompress_struct *,unsigned char *,unsigned int,long) | ?examine_app14@@YAXPAUjpeg_decompress_struct@@PAEIJ@Z
+    0x560120 | unsigned char __cdecl skip_variable(struct jpeg_decompress_struct *) | ?skip_variable@@YAEPAUjpeg_decompress_struct@@@Z
+    0x5601E0 | int __cdecl read_markers(struct jpeg_decompress_struct *) | ?read_markers@@YAHPAUjpeg_decompress_struct@@@Z
+    0x560570 | unsigned char __cdecl get_soi(struct jpeg_decompress_struct *) | ?get_soi@@YAEPAUjpeg_decompress_struct@@@Z
+    0x560630 | unsigned char __cdecl get_sof(struct jpeg_decompress_struct *,unsigned char,unsigned char) | ?get_sof@@YAEPAUjpeg_decompress_struct@@EE@Z
+    0x560980 | unsigned char __cdecl get_sos(struct jpeg_decompress_struct *) | ?get_sos@@YAEPAUjpeg_decompress_struct@@@Z
+    0x560CB0 | unsigned char __cdecl get_dht(struct jpeg_decompress_struct *) | ?get_dht@@YAEPAUjpeg_decompress_struct@@@Z
+    0x561010 | unsigned char __cdecl get_dqt(struct jpeg_decompress_struct *) | ?get_dqt@@YAEPAUjpeg_decompress_struct@@@Z
+    0x5612C0 | unsigned char __cdecl get_dri(struct jpeg_decompress_struct *) | ?get_dri@@YAEPAUjpeg_decompress_struct@@@Z
+    0x5613C0 | unsigned char __cdecl first_marker(struct jpeg_decompress_struct *) | ?first_marker@@YAEPAUjpeg_decompress_struct@@@Z
+    0x561470 | unsigned char __cdecl read_restart_marker(struct jpeg_decompress_struct *) | ?read_restart_marker@@YAEPAUjpeg_decompress_struct@@@Z
+    0x561500 | void __cdecl reset_marker_reader(struct jpeg_decompress_struct *) | ?reset_marker_reader@@YAXPAUjpeg_decompress_struct@@@Z
+*/
 
 #include "hooking.h"
 

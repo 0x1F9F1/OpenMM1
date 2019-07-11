@@ -18,7 +18,15 @@
 
 #pragma once
 
-// mmui:pu_exit
+/*
+    mmui:pu_exit
+
+    0x49F690 | public: __thiscall PUExit::PUExit(int,float,float,float,float,char *) | ??0PUExit@@QAE@HMMMMPAD@Z
+    0x49F7D0 | public: virtual __thiscall PUExit::~PUExit(void) | ??1PUExit@@UAE@XZ
+    0x49F7E0 | public: virtual void * __thiscall PUExit::`vector deleting destructor'(unsigned int) | ??_EPUExit@@UAEPAXI@Z
+    0x49F7E0 | public: virtual void * __thiscall PUExit::`scalar deleting destructor'(unsigned int) | ??_GPUExit@@UAEPAXI@Z
+    0x592E50 | const PUExit::`vftable' | ??_7PUExit@@6B@
+*/
 
 #include "hooking.h"
 

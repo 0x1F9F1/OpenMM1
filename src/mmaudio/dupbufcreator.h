@@ -18,7 +18,18 @@
 
 #pragma once
 
-// mmaudio:dupbufcreator
+/*
+    mmaudio:dupbufcreator
+
+    0x4E1790 | public: __thiscall DupBuffCreator::DupBuffCreator(void) | ??0DupBuffCreator@@QAE@XZ
+    0x4E17D0 | public: __thiscall DupBuffCreator::~DupBuffCreator(void) | ??1DupBuffCreator@@QAE@XZ
+    0x4E1830 | public: struct IDirectSoundBuffer * __thiscall DupBuffCreator::Create(char *,short *,int *) | ?Create@DupBuffCreator@@QAEPAUIDirectSoundBuffer@@PADPAFPAH@Z
+    0x4E1930 | public: void __thiscall DupBuffCreator::Add(char *,struct IDirectSoundBuffer *) | ?Add@DupBuffCreator@@QAEXPADPAUIDirectSoundBuffer@@@Z
+    0x4E1AD0 | public: struct IDirectSoundBuffer * __thiscall DupBuffCreator::FindOriginal(char *,short *) | ?FindOriginal@DupBuffCreator@@QAEPAUIDirectSoundBuffer@@PADPAF@Z
+    0x4E1B60 | private: struct tWAVEFORMATEX * __thiscall DupBuffCreator::GetWAVEFORMATEX(struct IDirectSoundBuffer *) | ?GetWAVEFORMATEX@DupBuffCreator@@AAEPAUtWAVEFORMATEX@@PAUIDirectSoundBuffer@@@Z
+    0x4E1BE0 | private: int __thiscall DupBuffCreator::IntegrityCheck(struct IDirectSoundBuffer *,struct IDirectSoundBuffer *,int *) | ?IntegrityCheck@DupBuffCreator@@AAEHPAUIDirectSoundBuffer@@0PAH@Z
+    0x67B5F8 | class DupBuffCreator * DUPBUFCREATORPTR | ?DUPBUFCREATORPTR@@3PAVDupBuffCreator@@A
+*/
 
 #include "hooking.h"
 

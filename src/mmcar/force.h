@@ -18,7 +18,24 @@
 
 #pragma once
 
-// mmcar:force
+/*
+    mmcar:force
+
+    0x477CC0 | public: __thiscall mmForce::mmForce(void) | ??0mmForce@@QAE@XZ
+    0x477CE0 | public: virtual void __thiscall mmForce::Update(void) | ?Update@mmForce@@UAEXXZ
+    0x477EE0 | public: void __thiscall mmForce::AddWidgets(class Bank *) | ?AddWidgets@mmForce@@QAEXPAVBank@@@Z
+    0x477EF0 | public: static void __cdecl mmForce::DeclareFields(void) | ?DeclareFields@mmForce@@SAXXZ
+    0x478050 | public: virtual class MetaClass * __thiscall mmForce::GetClass(void) | ?GetClass@mmForce@@UAEPAVMetaClass@@XZ
+    0x478060 | public: virtual void * __thiscall mmForce::`vector deleting destructor'(unsigned int) | ??_EmmForce@@UAEPAXI@Z
+    0x5917D0 | const mmForce::`vftable' | ??_7mmForce@@6B@
+    0x5AB6F8 | float YDownForceMinHeight | ?YDownForceMinHeight@@3MA
+    0x5AB6FC | float YDownForceMaxHeight | ?YDownForceMaxHeight@@3MA
+    0x5AB700 | float YDownForceMin | ?YDownForceMin@@3MA
+    0x5AB704 | float YDownForceMax | ?YDownForceMax@@3MA
+    0x60A4D0 | class MetaClass mmForceMetaClass | ?mmForceMetaClass@@3VMetaClass@@A
+    0x477F40 | void * __cdecl new_mmForce(int) | ?new_mmForce@@YAPAXH@Z
+    0x478000 | void __cdecl delete_mmForce(void *,int) | ?delete_mmForce@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

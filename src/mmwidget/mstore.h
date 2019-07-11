@@ -18,7 +18,18 @@
 
 #pragma once
 
-// mmwidget:mstore
+/*
+    mmwidget:mstore
+
+    0x4A03A0 | public: __thiscall MArray::MArray(void) | ??0MArray@@QAE@XZ
+    0x4A03B0 | public: __thiscall MArray::~MArray(void) | ??1MArray@@QAE@XZ
+    0x4A03C0 | public: void __thiscall MArray::Init(int) | ?Init@MArray@@QAEXH@Z
+    0x4A0400 | public: void __thiscall MArray::Write(char *) | ?Write@MArray@@QAEXPAD@Z
+    0x4A0710 | public: void __thiscall MArray::Flush(void) | ?Flush@MArray@@QAEXXZ
+    0x4A0720 | public: void __thiscall MArray::Read(char *) | ?Read@MArray@@QAEXPAD@Z
+    0x4A08E0 | public: void __thiscall MArray::AddMenuData(int,class Vector4 &,char *) | ?AddMenuData@MArray@@QAEXHAAVVector4@@PAD@Z
+    0x4A0950 | public: int __thiscall MArray::RetrieveMenuData(int,float &,float &,float &,float &) | ?RetrieveMenuData@MArray@@QAEHHAAM000@Z
+*/
 
 #include "hooking.h"
 

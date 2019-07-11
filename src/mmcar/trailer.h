@@ -18,7 +18,46 @@
 
 #pragma once
 
-// mmcar:trailer
+/*
+    mmcar:trailer
+
+    0x470C60 | public: __thiscall mmTrailer::mmTrailer(void) | ??0mmTrailer@@QAE@XZ
+    0x470EB0 | public: void __thiscall mmTrailer::Init(char *,class mmCarSim *,class Vector3) | ?Init@mmTrailer@@QAEXPADPAVmmCarSim@@VVector3@@@Z
+    0x471100 | public: virtual void __fastcall mmTrailerInstance::FromMatrix(class Matrix34 const &) | ?FromMatrix@mmTrailerInstance@@UAIXABVMatrix34@@@Z
+    0x471120 | public: virtual class Matrix34 & __fastcall mmTrailerInstance::ToMatrix(class Matrix34 &) | ?ToMatrix@mmTrailerInstance@@UAIAAVMatrix34@@AAV2@@Z
+    0x471140 | public: virtual class Vector3 & __fastcall mmTrailerInstance::GetPos(void) | ?GetPos@mmTrailerInstance@@UAIAAVVector3@@XZ
+    0x471150 | public: virtual class mmPhysEntity * __thiscall mmTrailerInstance::GetEntity(void) | ?GetEntity@mmTrailerInstance@@UAEPAVmmPhysEntity@@XZ
+    0x471160 | public: virtual class mmPhysEntity * __thiscall mmTrailerInstance::AttachEntity(void) | ?AttachEntity@mmTrailerInstance@@UAEPAVmmPhysEntity@@XZ
+    0x471170 | public: virtual class Vector3 __thiscall mmTrailerInstance::GetVelocity(void) | ?GetVelocity@mmTrailerInstance@@UAE?AVVector3@@XZ
+    0x4711A0 | public: void __thiscall mmTrailerInstance::Init(char *,class Vector3 *) | ?Init@mmTrailerInstance@@QAEXPADPAVVector3@@@Z
+    0x471330 | public: virtual void __fastcall mmTrailerInstance::Draw(int) | ?Draw@mmTrailerInstance@@UAIXH@Z
+    0x471520 | public: virtual void __fastcall mmTrailerInstance::DrawShadow(void) | ?DrawShadow@mmTrailerInstance@@UAIXXZ
+    0x471540 | public: virtual void __thiscall mmTrailer::AfterLoad(void) | ?AfterLoad@mmTrailer@@UAEXXZ
+    0x4715B0 | public: void __thiscall mmTrailer::Activate(void) | ?Activate@mmTrailer@@QAEXXZ
+    0x4715C0 | public: void __thiscall mmTrailer::Deactivate(void) | ?Deactivate@mmTrailer@@QAEXXZ
+    0x4715D0 | public: virtual void __thiscall mmTrailer::BeforeSave(void) | ?BeforeSave@mmTrailer@@UAEXXZ
+    0x471600 | public: void __thiscall mmTrailer::UpdateICSParams(void) | ?UpdateICSParams@mmTrailer@@QAEXXZ
+    0x471630 | public: void __thiscall mmTrailer::RestoreImpactParams(void) | ?RestoreImpactParams@mmTrailer@@QAEXXZ
+    0x471660 | public: void __thiscall mmTrailer::SetHackedImpactParams(void) | ?SetHackedImpactParams@mmTrailer@@QAEXXZ
+    0x471680 | public: virtual void __thiscall mmTrailer::Reset(void) | ?Reset@mmTrailer@@UAEXXZ
+    0x471760 | public: virtual void __thiscall mmTrailer::Update(void) | ?Update@mmTrailer@@UAEXXZ
+    0x471830 | public: virtual void __thiscall mmTrailer::PostUpdate(void) | ?PostUpdate@mmTrailer@@UAEXXZ
+    0x471840 | public: void __thiscall mmTrailer::AddWidgets(class Bank *) | ?AddWidgets@mmTrailer@@QAEXPAVBank@@@Z
+    0x471850 | public: static void __cdecl mmTrailer::DeclareFields(void) | ?DeclareFields@mmTrailer@@SAXXZ
+    0x471A50 | public: virtual class MetaClass * __thiscall mmTrailer::GetClass(void) | ?GetClass@mmTrailer@@UAEPAVMetaClass@@XZ
+    0x471A60 | public: virtual __thiscall mmTrailerInstance::~mmTrailerInstance(void) | ??1mmTrailerInstance@@UAE@XZ
+    0x471A70 | public: virtual void * __thiscall mmTrailerInstance::`vector deleting destructor'(unsigned int) | ??_EmmTrailerInstance@@UAEPAXI@Z
+    0x471A70 | public: virtual void * __thiscall mmTrailerInstance::`scalar deleting destructor'(unsigned int) | ??_GmmTrailerInstance@@UAEPAXI@Z
+    0x471A90 | public: virtual void * __thiscall mmTrailer::`vector deleting destructor'(unsigned int) | ??_EmmTrailer@@UAEPAXI@Z
+    0x471AF0 | public: virtual __thiscall mmTrailer::~mmTrailer(void) | ??1mmTrailer@@UAE@XZ
+    0x471C20 | public: virtual class asInertialCS * __thiscall mmTrailer::GetICS(void) | ?GetICS@mmTrailer@@UAEPAVasInertialCS@@XZ
+    0x471C30 | public: virtual class asBound * __thiscall mmTrailer::GetBound(void) | ?GetBound@mmTrailer@@UAEPAVasBound@@XZ
+    0x591398 | const mmTrailer::`vftable' | ??_7mmTrailer@@6B@
+    0x5913D8 | const mmTrailerInstance::`vftable' | ??_7mmTrailerInstance@@6B@
+    0x60A328 | class MetaClass mmTrailerMetaClass | ?mmTrailerMetaClass@@3VMetaClass@@A
+    0x471930 | void * __cdecl new_mmTrailer(int) | ?new_mmTrailer@@YAPAXH@Z
+    0x471A00 | void __cdecl delete_mmTrailer(void *,int) | ?delete_mmTrailer@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

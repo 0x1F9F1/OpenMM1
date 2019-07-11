@@ -18,7 +18,23 @@
 
 #pragma once
 
-// mmcamcs:basecamcs
+/*
+    mmcamcs:basecamcs
+
+    0x4EE320 | public: __thiscall BaseCamCS::BaseCamCS(void) | ??0BaseCamCS@@QAE@XZ
+    0x4EE3C0 | public: virtual __thiscall BaseCamCS::~BaseCamCS(void) | ??1BaseCamCS@@UAE@XZ
+    0x4EE3D0 | public: virtual void __thiscall BaseCamCS::AfterLoad(void) | ?AfterLoad@BaseCamCS@@UAEXXZ
+    0x4EE3E0 | public: int __thiscall BaseCamCS::IsViewCSInTransition(void) | ?IsViewCSInTransition@BaseCamCS@@QAEHXZ
+    0x4EE410 | public: void __thiscall BaseCamCS::UpdateView(void) | ?UpdateView@BaseCamCS@@QAEXXZ
+    0x4EE460 | public: virtual void __thiscall BaseCamCS::ForceMatrixDelta(class Vector3 const &) | ?ForceMatrixDelta@BaseCamCS@@UAEXABVVector3@@@Z
+    0x4EE4B0 | public: static void __cdecl BaseCamCS::DeclareFields(void) | ?DeclareFields@BaseCamCS@@SAXXZ
+    0x4EE690 | public: virtual class MetaClass * __thiscall BaseCamCS::GetClass(void) | ?GetClass@BaseCamCS@@UAEPAVMetaClass@@XZ
+    0x4EE6A0 | public: virtual void * __thiscall BaseCamCS::`vector deleting destructor'(unsigned int) | ??_EBaseCamCS@@UAEPAXI@Z
+    0x594EA8 | const BaseCamCS::`vftable' | ??_7BaseCamCS@@6B@
+    0x67B7C0 | class MetaClass BaseCamCSMetaClass | ?BaseCamCSMetaClass@@3VMetaClass@@A
+    0x4EE570 | void * __cdecl new_BaseCamCS(int) | ?new_BaseCamCS@@YAPAXH@Z
+    0x4EE640 | void __cdecl delete_BaseCamCS(void *,int) | ?delete_BaseCamCS@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

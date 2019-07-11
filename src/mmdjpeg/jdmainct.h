@@ -18,7 +18,18 @@
 
 #pragma once
 
-// mmdjpeg:jdmainct
+/*
+    mmdjpeg:jdmainct
+
+    0x5628F0 | void __cdecl jinit_d_main_controller(struct jpeg_decompress_struct *,unsigned char) | ?jinit_d_main_controller@@YAXPAUjpeg_decompress_struct@@E@Z
+    0x5629D0 | void __cdecl alloc_funny_pointers(struct jpeg_decompress_struct *) | ?alloc_funny_pointers@@YAXPAUjpeg_decompress_struct@@@Z
+    0x562A90 | void __cdecl start_pass_main(struct jpeg_decompress_struct *,enum J_BUF_MODE) | ?start_pass_main@@YAXPAUjpeg_decompress_struct@@W4J_BUF_MODE@@@Z
+    0x562B00 | void __cdecl make_funny_pointers(struct jpeg_decompress_struct *) | ?make_funny_pointers@@YAXPAUjpeg_decompress_struct@@@Z
+    0x562C40 | void __cdecl process_data_simple_main(struct jpeg_decompress_struct *,unsigned char * *,unsigned int *,unsigned int) | ?process_data_simple_main@@YAXPAUjpeg_decompress_struct@@PAPAEPAII@Z
+    0x562CC0 | void __cdecl process_data_context_main(struct jpeg_decompress_struct *,unsigned char * *,unsigned int *,unsigned int) | ?process_data_context_main@@YAXPAUjpeg_decompress_struct@@PAPAEPAII@Z
+    0x562E00 | void __cdecl set_wraparound_pointers(struct jpeg_decompress_struct *) | ?set_wraparound_pointers@@YAXPAUjpeg_decompress_struct@@@Z
+    0x562F00 | void __cdecl set_bottom_pointers(struct jpeg_decompress_struct *) | ?set_bottom_pointers@@YAXPAUjpeg_decompress_struct@@@Z
+*/
 
 #include "hooking.h"
 

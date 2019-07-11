@@ -18,7 +18,11 @@
 
 #pragma once
 
-// agiworld:quality
+/*
+    agiworld:quality
+
+    0x5B8670 | struct agiWorldRenderQuality agiRQ | ?agiRQ@@3UagiWorldRenderQuality@@A
+*/
 
 #include "hooking.h"
 

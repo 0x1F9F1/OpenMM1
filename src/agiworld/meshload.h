@@ -18,7 +18,15 @@
 
 #pragma once
 
-// agiworld:meshload
+/*
+    agiworld:meshload
+
+    0x505530 | public: void __thiscall agiMeshSet::BinaryLoad(class Stream *) | ?BinaryLoad@agiMeshSet@@QAEXPAVStream@@@Z
+    0x505AE0 | private: static void __cdecl agiMeshSet::PageOutCallback(void *,int) | ?PageOutCallback@agiMeshSet@@CAXPAXH@Z
+    0x505C00 | private: void __thiscall agiMeshSet::DoPageIn(void) | ?DoPageIn@agiMeshSet@@AAEXXZ
+    0x6E10F0 | int MeshBytesPaged | ?MeshBytesPaged@@3HA
+    0x6E10F4 | int MeshesPaged | ?MeshesPaged@@3HA
+*/
 
 #include "hooking.h"
 

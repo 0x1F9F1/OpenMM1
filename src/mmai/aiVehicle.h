@@ -18,7 +18,16 @@
 
 #pragma once
 
-// mmai:aiVehicle
+/*
+    mmai:aiVehicle
+
+    0x45E4F0 | public: __thiscall aiVehicle::aiVehicle(void) | ??0aiVehicle@@QAE@XZ
+    0x45E510 | public: __thiscall aiVehicle::~aiVehicle(void) | ??1aiVehicle@@QAE@XZ
+    0x45E520 | public: void __thiscall aiVehicle::Init(int) | ?Init@aiVehicle@@QAEXH@Z
+    0x45E530 | public: virtual void __thiscall aiVehicle::Reset(void) | ?Reset@aiVehicle@@UAEXXZ
+    0x45E540 | public: virtual void __thiscall aiVehicle::Update(void) | ?Update@aiVehicle@@UAEXXZ
+    0x590CC8 | const aiVehicle::`vftable' | ??_7aiVehicle@@6B@
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,34 @@
 
 #pragma once
 
-// mmcar:wheel
+/*
+    mmcar:wheel
+
+    0x474DD0 | public: __thiscall mmWheel::mmWheel(void) | ??0mmWheel@@QAE@XZ
+    0x474F90 | public: void __thiscall mmWheel::ComputeConstants(void) | ?ComputeConstants@mmWheel@@QAEXXZ
+    0x475050 | public: virtual void __thiscall mmWheel::AfterLoad(void) | ?AfterLoad@mmWheel@@UAEXXZ
+    0x475060 | public: void __thiscall mmWheel::Init(char *,char *,class Vector3,class asInertialCS *,int,class mmBoundTemplate *,int) | ?Init@mmWheel@@QAEXPAD0VVector3@@PAVasInertialCS@@HPAVmmBoundTemplate@@H@Z
+    0x4751F0 | public: float __thiscall mmWheel::ComputeDwtdw(float,float *,float *,float *) | ?ComputeDwtdw@mmWheel@@QAEMMPAM00@Z
+    0x4759F0 | public: virtual void __thiscall mmWheel::Update(void) | ?Update@mmWheel@@UAEXXZ
+    0x4768E0 | public: virtual void __thiscall mmWheel::Reset(void) | ?Reset@mmWheel@@UAEXXZ
+    0x476950 | public: void __thiscall mmWheel::GenerateSkidParticles(void) | ?GenerateSkidParticles@mmWheel@@QAEXXZ
+    0x476970 | public: void __thiscall mmWheel::SetInputs(float,float) | ?SetInputs@mmWheel@@QAEXMM@Z
+    0x476990 | public: void __thiscall mmWheel::SetFricMultiplier(float) | ?SetFricMultiplier@mmWheel@@QAEXM@Z
+    0x4769B0 | public: void __thiscall mmWheel::SetSteerMultiplier(float) | ?SetSteerMultiplier@mmWheel@@QAEXM@Z
+    0x4769C0 | public: void __thiscall mmWheel::Load(class Stream *) | ?Load@mmWheel@@QAEXPAVStream@@@Z
+    0x476AC0 | public: void __thiscall mmWheel::Save(class Stream *) | ?Save@mmWheel@@QAEXPAVStream@@@Z
+    0x476C00 | public: void __thiscall mmWheel::CopyVars(class mmWheel *) | ?CopyVars@mmWheel@@QAEXPAV1@@Z
+    0x476CC0 | public: int __thiscall mmWheel::GetSurfaceSound(void) | ?GetSurfaceSound@mmWheel@@QAEHXZ
+    0x476CE0 | public: static void __cdecl mmWheel::DeclareFields(void) | ?DeclareFields@mmWheel@@SAXXZ
+    0x476FA0 | public: virtual class MetaClass * __thiscall mmWheel::GetClass(void) | ?GetClass@mmWheel@@UAEPAVMetaClass@@XZ
+    0x476FE0 | public: virtual void * __thiscall mmWheel::`vector deleting destructor'(unsigned int) | ??_EmmWheel@@UAEPAXI@Z
+    0x5916E8 | const mmWheel::`vftable' | ??_7mmWheel@@6B@
+    0x5AB2CC | public: static float mmWheel::PtxMaxSkidCount | ?PtxMaxSkidCount@mmWheel@@2MA
+    0x60A448 | class MetaClass mmWheelMetaClass | ?mmWheelMetaClass@@3VMetaClass@@A
+    0x60A47C | float DispLatZeroThresh | ?DispLatZeroThresh@@3MA
+    0x476E80 | void * __cdecl new_mmWheel(int) | ?new_mmWheel@@YAPAXH@Z
+    0x476F50 | void __cdecl delete_mmWheel(void *,int) | ?delete_mmWheel@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

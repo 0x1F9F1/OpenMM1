@@ -18,7 +18,16 @@
 
 #pragma once
 
-// mmui:main
+/*
+    mmui:main
+
+    0x49ADA0 | public: __thiscall MainMenu::MainMenu(int) | ??0MainMenu@@QAE@H@Z
+    0x49AF20 | public: virtual __thiscall MainMenu::~MainMenu(void) | ??1MainMenu@@UAE@XZ
+    0x49AF30 | public: virtual void __thiscall MainMenu::PreSetup(void) | ?PreSetup@MainMenu@@UAEXXZ
+    0x49AF40 | public: virtual void * __thiscall MainMenu::`vector deleting destructor'(unsigned int) | ??_EMainMenu@@UAEPAXI@Z
+    0x49AF40 | public: virtual void * __thiscall MainMenu::`scalar deleting destructor'(unsigned int) | ??_GMainMenu@@UAEPAXI@Z
+    0x592A70 | const MainMenu::`vftable' | ??_7MainMenu@@6B@
+*/
 
 #include "hooking.h"
 

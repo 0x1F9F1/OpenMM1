@@ -18,7 +18,36 @@
 
 #pragma once
 
-// mmui:control
+/*
+    mmui:control
+
+    0x497C10 | public: __thiscall ControlSetup::ControlSetup(int) | ??0ControlSetup@@QAE@H@Z
+    0x497E00 | public: virtual __thiscall ControlSetup::~ControlSetup(void) | ??1ControlSetup@@UAE@XZ
+    0x497E60 | public: void __thiscall ControlSetup::CreateDeviceOptions(void) | ?CreateDeviceOptions@ControlSetup@@QAEXXZ
+    0x498120 | public: void __thiscall ControlSetup::DeactivateAllDeviceOptions(void) | ?DeactivateAllDeviceOptions@ControlSetup@@QAEXXZ
+    0x498180 | public: void __thiscall ControlSetup::ActivateDeviceOptions(void) | ?ActivateDeviceOptions@ControlSetup@@QAEXXZ
+    0x498460 | public: float __thiscall ControlSetup::SetControlPosition(class uiWidget *,float,float) | ?SetControlPosition@ControlSetup@@QAEMPAVuiWidget@@MM@Z
+    0x498480 | public: void __thiscall ControlSetup::POVCB(void) | ?POVCB@ControlSetup@@QAEXXZ
+    0x498490 | public: void __thiscall ControlSetup::SetSensitivityCB(void) | ?SetSensitivityCB@ControlSetup@@QAEXXZ
+    0x4984A0 | public: void __thiscall ControlSetup::ControlSelect(void) | ?ControlSelect@ControlSetup@@QAEXXZ
+    0x4984F0 | public: virtual void __thiscall ControlSetup::PreSetup(void) | ?PreSetup@ControlSetup@@UAEXXZ
+    0x498520 | public: void __thiscall ControlSetup::SetFFPermissions(void) | ?SetFFPermissions@ControlSetup@@QAEXXZ
+    0x498560 | public: void __thiscall ControlSetup::InitCustomControls(void) | ?InitCustomControls@ControlSetup@@QAEXXZ
+    0x4985F0 | public: virtual void __thiscall ControlSetup::Update(void) | ?Update@ControlSetup@@UAEXXZ
+    0x498610 | public: virtual void __thiscall ControlSetup::StoreCurrentSetup(void) | ?StoreCurrentSetup@ControlSetup@@UAEXXZ
+    0x498620 | public: virtual void __thiscall ControlSetup::ResetDefaultAction(void) | ?ResetDefaultAction@ControlSetup@@UAEXXZ
+    0x498660 | public: void __thiscall ControlSetup::LaunchJoyCpl(void) | ?LaunchJoyCpl@ControlSetup@@QAEXXZ
+    0x4987F0 | public: virtual void __thiscall ControlSetup::CancelAction(void) | ?CancelAction@ControlSetup@@UAEXXZ
+    0x498800 | public: virtual void __thiscall ControlSetup::DoneAction(void) | ?DoneAction@ControlSetup@@UAEXXZ
+    0x498810 | public: void __thiscall ControlSetup::BadAssignCB(void) | ?BadAssignCB@ControlSetup@@QAEXXZ
+    0x498840 | public: void __thiscall ControlSetup::ClearBadAssignment(void) | ?ClearBadAssignment@ControlSetup@@QAEXXZ
+    0x498850 | public: void __thiscall ControlSetup::CancelBadAssignment(void) | ?CancelBadAssignment@ControlSetup@@QAEXXZ
+    0x498870 | public: void __thiscall ControlSetup::VerifyBadAssignment(void) | ?VerifyBadAssignment@ControlSetup@@QAEXXZ
+    0x498890 | public: virtual void * __thiscall ControlSetup::`scalar deleting destructor'(unsigned int) | ??_GControlSetup@@UAEPAXI@Z
+    0x498890 | public: virtual void * __thiscall ControlSetup::`vector deleting destructor'(unsigned int) | ??_EControlSetup@@UAEPAXI@Z
+    0x592810 | const ControlSetup::`vftable' | ??_7ControlSetup@@6B@
+    0x498710 | unsigned long __stdcall CalibrateWatcher(void *) | ?CalibrateWatcher@@YGKPAX@Z
+*/
 
 #include "hooking.h"
 

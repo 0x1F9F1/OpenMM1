@@ -18,7 +18,53 @@
 
 #pragma once
 
-// mmai:aiVehicleAmbient
+/*
+    mmai:aiVehicleAmbient
+
+    0x448D10 | public: __thiscall aiVehicleAmbient::aiVehicleAmbient(void) | ??0aiVehicleAmbient@@QAE@XZ
+    0x448DF0 | public: __thiscall aiVehicleAmbient::~aiVehicleAmbient(void) | ??1aiVehicleAmbient@@QAE@XZ
+    0x448EC0 | public: void __thiscall aiVehicleAmbient::Init(char *,int) | ?Init@aiVehicleAmbient@@QAEXPADH@Z
+    0x4492B0 | public: virtual void __thiscall aiVehicleAmbient::Reset(void) | ?Reset@aiVehicleAmbient@@UAEXXZ
+    0x449390 | public: virtual void __thiscall aiVehicleAmbient::Update(void) | ?Update@aiVehicleAmbient@@UAEXXZ
+    0x449540 | public: virtual void __thiscall aiVehicleAmbient::Impact(int) | ?Impact@aiVehicleAmbient@@UAEXH@Z
+    0x4495F0 | public: void __thiscall aiVehicleAmbient::UnAssignSounds(void) | ?UnAssignSounds@aiVehicleAmbient@@QAEXXZ
+    0x4496D0 | private: float __thiscall aiVehicleAmbient::CalculateDoppler(float) | ?CalculateDoppler@aiVehicleAmbient@@AAEMM@Z
+    0x449700 | private: float __thiscall aiVehicleAmbient::CalculateFerrariPitch(float,int) | ?CalculateFerrariPitch@aiVehicleAmbient@@AAEMMH@Z
+    0x4498D0 | public: void __thiscall aiVehicleAmbient::UpdateAudio(void) | ?UpdateAudio@aiVehicleAmbient@@QAEXXZ
+    0x449900 | private: void __thiscall aiVehicleAmbient::UpdateAudio(float) | ?UpdateAudio@aiVehicleAmbient@@AAEXM@Z
+    0x449C90 | public: void __thiscall aiVehicleAmbient::CalculateDistToPlayer2(void) | ?CalculateDistToPlayer2@aiVehicleAmbient@@QAEXXZ
+    0x449DA0 | public: void __thiscall aiVehicleAmbient::CalculateAudioPanning(void) | ?CalculateAudioPanning@aiVehicleAmbient@@QAEXXZ
+    0x449E30 | public: virtual void __thiscall aiVehicleAmbient::DrawId(void) | ?DrawId@aiVehicleAmbient@@UAEXXZ
+    0x449E40 | public: void __thiscall aiVehicleAmbient::DrawBBox(short) | ?DrawBBox@aiVehicleAmbient@@QAEXF@Z
+    0x449E50 | public: void __thiscall aiVehicleAmbient::StopHorn(void) | ?StopHorn@aiVehicleAmbient@@QAEXXZ
+    0x449E80 | public: void __thiscall aiVehicleAmbient::PlayVoice(void) | ?PlayVoice@aiVehicleAmbient@@QAEXXZ
+    0x44A0D0 | public: void __thiscall aiVehicleAmbient::PlayHorn(void) | ?PlayHorn@aiVehicleAmbient@@QAEXXZ
+    0x44A320 | public: virtual void __thiscall aiVehicleAmbient::PlayHorn(float,float) | ?PlayHorn@aiVehicleAmbient@@UAEXMM@Z
+    0x44A410 | public: void __thiscall aiVehicleAmbient::PlayTrippleHorn(float) | ?PlayTrippleHorn@aiVehicleAmbient@@QAEXM@Z
+    0x44A4F0 | public: void __thiscall aiVehicleAmbient::UpdateHorn(void) | ?UpdateHorn@aiVehicleAmbient@@QAEXXZ
+    0x44A790 | public: virtual void __thiscall aiVehicleAmbient::StopVoice(void) | ?StopVoice@aiVehicleAmbient@@UAEXXZ
+    0x44A7D0 | public: void __thiscall aiVehicleAmbient::UpdateAudImpactReaction(void) | ?UpdateAudImpactReaction@aiVehicleAmbient@@QAEXXZ
+    0x44A810 | public: virtual void __thiscall aiVehicleAmbient::ImpactAudioReaction(float) | ?ImpactAudioReaction@aiVehicleAmbient@@UAEXM@Z
+    0x44A870 | private: void __thiscall aiVehicleAmbient::ImpactAudioReaction(void) | ?ImpactAudioReaction@aiVehicleAmbient@@AAEXXZ
+    0x44A950 | public: void __thiscall aiVehicleAmbient::PlayDoubleHorn(float) | ?PlayDoubleHorn@aiVehicleAmbient@@QAEXM@Z
+    0x44AA20 | private: void __thiscall aiVehicleAmbient::AddToAiAudMgr(void) | ?AddToAiAudMgr@aiVehicleAmbient@@AAEXXZ
+    0x44AB00 | public: static void __cdecl aiVehicleAmbient::SetAudioMaxDistance(float) | ?SetAudioMaxDistance@aiVehicleAmbient@@SAXM@Z
+    0x44AB20 | private: void __thiscall aiVehicleAmbient::UpdateDSound3DAudio(void) | ?UpdateDSound3DAudio@aiVehicleAmbient@@AAEXXZ
+    0x44AD60 | public: void __thiscall aiVehicleAmbient::AssignSounds(class AudSound *,class AudSound *,class AudSound *,class mmOpponentImpactAudio *) | ?AssignSounds@aiVehicleAmbient@@QAEXPAVAudSound@@00PAVmmOpponentImpactAudio@@@Z
+    0x44AEB0 | public: static float __cdecl aiVehicleAmbient::GetSecsSinceImpactReaction(void) | ?GetSecsSinceImpactReaction@aiVehicleAmbient@@SAMXZ
+    0x44AEC0 | public: void __thiscall aiVehicleAmbient::Dump(void) | ?Dump@aiVehicleAmbient@@QAEXXZ
+    0x44B050 | public: virtual int __thiscall aiVehicleAmbient::Type(void) | ?Type@aiVehicleAmbient@@UAEHXZ
+    0x44B060 | public: virtual class mmOpponentImpactAudio * __thiscall aiVehicleAmbient::GetImpactAudioPtr(void) | ?GetImpactAudioPtr@aiVehicleAmbient@@UAEPAVmmOpponentImpactAudio@@XZ
+    0x5908A8 | const aiVehicleAmbient::`vftable' | ??_7aiVehicleAmbient@@6B@
+    0x5A8D28 | private: static float aiVehicleAmbient::s_fAudioVolume | ?s_fAudioVolume@aiVehicleAmbient@@0MA
+    0x5A8D2C | private: static float aiVehicleAmbient::s_fAudioVolumeSemi | ?s_fAudioVolumeSemi@aiVehicleAmbient@@0MA
+    0x5A8D30 | private: static float aiVehicleAmbient::s_fAudioMaxDistance | ?s_fAudioMaxDistance@aiVehicleAmbient@@0MA
+    0x5A8D34 | private: static float aiVehicleAmbient::s_fHornVolume | ?s_fHornVolume@aiVehicleAmbient@@0MA
+    0x5A8D38 | private: static float aiVehicleAmbient::s_fVoiceVolume | ?s_fVoiceVolume@aiVehicleAmbient@@0MA
+    0x5A8D3C | private: static float aiVehicleAmbient::s_fSecsSinceImpactReaction | ?s_fSecsSinceImpactReaction@aiVehicleAmbient@@0MA
+    0x609E40 | private: static float aiVehicleAmbient::s_fAttenuationMult | ?s_fAttenuationMult@aiVehicleAmbient@@0MA
+    0x609E70 | private: static short aiVehicleAmbient::s_iPrevSoundObjIndex | ?s_iPrevSoundObjIndex@aiVehicleAmbient@@0FA
+*/
 
 #include "hooking.h"
 

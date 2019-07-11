@@ -18,7 +18,23 @@
 
 #pragma once
 
-// mmai:aipedaudiomanager
+/*
+    mmai:aipedaudiomanager
+
+    0x4410C0 | public: __thiscall aiPedAudioManager::aiPedAudioManager(void) | ??0aiPedAudioManager@@QAE@XZ
+    0x4413C0 | public: virtual __thiscall aiPedAudioManager::~aiPedAudioManager(void) | ??1aiPedAudioManager@@UAE@XZ
+    0x441470 | public: short __thiscall aiPedAudioManager::Add(class aiPedestrian *) | ?Add@aiPedAudioManager@@QAEFPAVaiPedestrian@@@Z
+    0x441520 | public: void __thiscall aiPedAudioManager::Remove(class aiPedestrian *,short) | ?Remove@aiPedAudioManager@@QAEXPAVaiPedestrian@@F@Z
+    0x441590 | public: short __thiscall aiPedAudioManager::FindGreatestDistance(class aiPedestrian *) | ?FindGreatestDistance@aiPedAudioManager@@QAEFPAVaiPedestrian@@@Z
+    0x441620 | public: short __thiscall aiPedAudioManager::FindUnusedSlot(void) | ?FindUnusedSlot@aiPedAudioManager@@QAEFXZ
+    0x441660 | public: virtual void __thiscall aiPedAudioManager::Update(void) | ?Update@aiPedAudioManager@@UAEXXZ
+    0x4416C0 | public: void __thiscall aiPedAudioManager::AssignSounds(short) | ?AssignSounds@aiPedAudioManager@@QAEXF@Z
+    0x4416E0 | public: void __thiscall aiPedAudioManager::RandomizeSeconds(float,float) | ?RandomizeSeconds@aiPedAudioManager@@QAEXMM@Z
+    0x4416F0 | public: virtual void * __thiscall aiPedAudioManager::`scalar deleting destructor'(unsigned int) | ??_GaiPedAudioManager@@UAEPAXI@Z
+    0x4416F0 | public: virtual void * __thiscall aiPedAudioManager::`vector deleting destructor'(unsigned int) | ??_EaiPedAudioManager@@UAEPAXI@Z
+    0x590688 | const aiPedAudioManager::`vftable' | ??_7aiPedAudioManager@@6B@
+    0x609D4C | class aiPedAudioManager * AIPEDAUDMGRPTR | ?AIPEDAUDMGRPTR@@3PAVaiPedAudioManager@@A
+*/
 
 #include "hooking.h"
 

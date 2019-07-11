@@ -18,7 +18,17 @@
 
 #pragma once
 
-// mmui:pu_key
+/*
+    mmui:pu_key
+
+    0x49DFB0 | public: __thiscall PUKey::PUKey(int,float,float,float,float) | ??0PUKey@@QAE@HMMMM@Z
+    0x49E050 | public: virtual __thiscall PUKey::~PUKey(void) | ??1PUKey@@UAE@XZ
+    0x49E060 | private: virtual void __thiscall PUKey::PreSetup(void) | ?PreSetup@PUKey@@EAEXXZ
+    0x49E300 | private: virtual void __thiscall PUKey::PostSetup(void) | ?PostSetup@PUKey@@EAEXXZ
+    0x49E340 | public: virtual void * __thiscall PUKey::`vector deleting destructor'(unsigned int) | ??_EPUKey@@UAEPAXI@Z
+    0x49E340 | public: virtual void * __thiscall PUKey::`scalar deleting destructor'(unsigned int) | ??_GPUKey@@UAEPAXI@Z
+    0x592BF0 | const PUKey::`vftable' | ??_7PUKey@@6B@
+*/
 
 #include "hooking.h"
 

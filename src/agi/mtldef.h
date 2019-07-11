@@ -18,7 +18,21 @@
 
 #pragma once
 
-// agi:mtldef
+/*
+    agi:mtldef
+
+    0x53F9D0 | public: __thiscall agiMtlParameters::agiMtlParameters(void) | ??0agiMtlParameters@@QAE@XZ
+    0x53FA20 | public: void __thiscall agiMtlParameters::Load(class Stream *) | ?Load@agiMtlParameters@@QAEXPAVStream@@@Z
+    0x53FA90 | public: void __thiscall agiMtlParameters::Save(class Stream *) | ?Save@agiMtlParameters@@QAEXPAVStream@@@Z
+    0x53FB00 | public: void __thiscall agiMtlParameters::operator=(class agiMtlParameters const &) | ??4agiMtlParameters@@QAEXABV0@@Z
+    0x53FB20 | protected: __thiscall agiMtlDef::agiMtlDef(class agiPipeline *) | ??0agiMtlDef@@IAE@PAVagiPipeline@@@Z
+    0x53FB70 | public: int __thiscall agiMtlDef::Init(class agiMtlParameters const &) | ?Init@agiMtlDef@@QAEHABVagiMtlParameters@@@Z
+    0x53FBA0 | protected: virtual __thiscall agiMtlDef::~agiMtlDef(void) | ??1agiMtlDef@@MAE@XZ
+    0x53FC50 | public: virtual char * __thiscall agiMtlDef::GetName(void) | ?GetName@agiMtlDef@@UAEPADXZ
+    0x53FC70 | protected: virtual void * __thiscall agiMtlDef::`vector deleting destructor'(unsigned int) | ??_EagiMtlDef@@MAEPAXI@Z
+    0x53FC70 | protected: virtual void * __thiscall agiMtlDef::`scalar deleting destructor'(unsigned int) | ??_GagiMtlDef@@MAEPAXI@Z
+    0x595DD8 | const agiMtlDef::`vftable' | ??_7agiMtlDef@@6B@
+*/
 
 #include "hooking.h"
 

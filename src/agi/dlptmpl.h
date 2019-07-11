@@ -18,7 +18,56 @@
 
 #pragma once
 
-// agi:dlptmpl
+/*
+    agi:dlptmpl
+
+    0x53A2D0 | public: __thiscall DLPTemplate::DLPTemplate(char *) | ??0DLPTemplate@@QAE@PAD@Z
+    0x53A320 | private: __thiscall DLPTemplate::~DLPTemplate(void) | ??1DLPTemplate@@AAE@XZ
+    0x53A3C0 | public: void __thiscall DLPTemplate::Init(int,int,int) | ?Init@DLPTemplate@@QAEXHHH@Z
+    0x53A4F0 | public: void __thiscall DLPTemplate::Save(class Stream *) | ?Save@DLPTemplate@@QAEXPAVStream@@@Z
+    0x53A630 | public: void __thiscall DLPTemplate::Load(class Stream *) | ?Load@DLPTemplate@@QAEXPAVStream@@@Z
+    0x53A980 | public: char * __thiscall DLPPatch::GetProp(char *) | ?GetProp@DLPPatch@@QAEPADPAD@Z
+    0x53AA30 | public: void __thiscall DLPTemplate::InitRemap(class agiLib<class agiMtlParameters,class agiMtlDef> &,class agiLib<class agiTexParameters,class agiTexDef> &,class agiLib<class agiPhysParameters,class agiPhysDef> &) | ?InitRemap@DLPTemplate@@QAEXAAV?$agiLib@VagiMtlParameters@@VagiMtlDef@@@@AAV?$agiLib@VagiTexParameters@@VagiTexDef@@@@AAV?$agiLib@VagiPhysParameters@@VagiPhysDef@@@@@Z
+    0x53AB50 | public: int __thiscall DLPTemplate::Load(char *) | ?Load@DLPTemplate@@QAEHPAD@Z
+    0x53AB90 | public: void __thiscall DLPTemplate::Print(class Stream *) | ?Print@DLPTemplate@@QAEXPAVStream@@@Z
+    0x53AC80 | public: __thiscall DLPGroup::DLPGroup(void) | ??0DLPGroup@@QAE@XZ
+    0x53ACA0 | public: __thiscall DLPGroup::DLPGroup(class DLPTemplate *,class DLPGroup *) | ??0DLPGroup@@QAE@PAVDLPTemplate@@PAV0@@Z
+    0x53AE80 | public: __thiscall DLPGroup::~DLPGroup(void) | ??1DLPGroup@@QAE@XZ
+    0x53AEB0 | public: void __thiscall DLPGroup::Load(class Stream *) | ?Load@DLPGroup@@QAEXPAVStream@@@Z
+    0x53AF30 | public: void __thiscall DLPGroup::Save(class Stream *) | ?Save@DLPGroup@@QAEXPAVStream@@@Z
+    0x53AFB0 | public: void __thiscall DLPGroup::Print(class Stream *) | ?Print@DLPGroup@@QAEXPAVStream@@@Z
+    0x53B030 | public: void __thiscall DLPGroup::Init(int,int) | ?Init@DLPGroup@@QAEXHH@Z
+    0x53B070 | public: void __thiscall DLPPatch::Load(class Stream *) | ?Load@DLPPatch@@QAEXPAVStream@@@Z
+    0x53B170 | public: void __thiscall DLPPatch::Save(class Stream *) | ?Save@DLPPatch@@QAEXPAVStream@@@Z
+    0x53B240 | public: void __thiscall DLPPatch::Print(class Stream *) | ?Print@DLPPatch@@QAEXPAVStream@@@Z
+    0x53B300 | float __cdecl UnpackAngle(unsigned char) | ?UnpackAngle@@YAME@Z
+    0x53B330 | void __cdecl UnpackNormal(class Vector3 &,unsigned short &) | ?UnpackNormal@@YAXAAVVector3@@AAG@Z
+    0x53B390 | unsigned int __cdecl PackAngle(float) | ?PackAngle@@YAIM@Z
+    0x53B3F0 | void __cdecl PackNormal(unsigned short &,class Vector3 &) | ?PackNormal@@YAXAAGAAVVector3@@@Z
+    0x53B4C0 | public: void __thiscall DLPVertex::Load(class Stream *) | ?Load@DLPVertex@@QAEXPAVStream@@@Z
+    0x53B590 | public: void __thiscall DLPVertex::Save(class Stream *) | ?Save@DLPVertex@@QAEXPAVStream@@@Z
+    0x53B620 | public: class DLPGroup * __thiscall DLPTemplate::GroupExists(char *) | ?GroupExists@DLPTemplate@@QAEPAVDLPGroup@@PAD@Z
+    0x53B6A0 | public: int __thiscall DLPTemplate::Restrict(char *) | ?Restrict@DLPTemplate@@QAEHPAD@Z
+    0x53B7B0 | public: void __thiscall DLPTemplate::AddRef(void) | ?AddRef@DLPTemplate@@QAEXXZ
+    0x53B7C0 | public: int __thiscall DLPTemplate::Release(void) | ?Release@DLPTemplate@@QAEHXZ
+    0x53B7F0 | public: int __thiscall DLPTemplate::GetVertexCentroid(class Vector3 &,char *) | ?GetVertexCentroid@DLPTemplate@@QAEHAAVVector3@@PAD@Z
+    0x53B920 | public: int __thiscall DLPTemplate::GetCentroid(class Vector3 &,char *) | ?GetCentroid@DLPTemplate@@QAEHAAVVector3@@PAD@Z
+    0x53B9A0 | public: class Vector3 * __thiscall DLPTemplate::GetGroupVertex(char *) | ?GetGroupVertex@DLPTemplate@@QAEPAVVector3@@PAD@Z
+    0x53B9F0 | public: int __thiscall DLPTemplate::BoundBox(class Vector3 &,class Vector3 &,char *) | ?BoundBox@DLPTemplate@@QAEHAAVVector3@@0PAD@Z
+    0x53BC10 | public: void * __thiscall DLPGroup::`vector deleting destructor'(unsigned int) | ??_EDLPGroup@@QAEPAXI@Z
+    0x53BC70 | public: void * __thiscall DLPPatch::`vector deleting destructor'(unsigned int) | ??_EDLPPatch@@QAEPAXI@Z
+    0x53BCE0 | public: __thiscall agiLib<class agiMtlParameters,class agiMtlDef>::~agiLib<class agiMtlParameters,class agiMtlDef>(void) | ??1?$agiLib@VagiMtlParameters@@VagiMtlDef@@@@QAE@XZ
+    0x53BD80 | public: int __thiscall agiLib<class agiMtlParameters,class agiMtlDef>::Add(class agiMtlParameters &) | ?Add@?$agiLib@VagiMtlParameters@@VagiMtlDef@@@@QAEHAAVagiMtlParameters@@@Z
+    0x53BEE0 | public: __thiscall agiLib<class agiTexParameters,class agiTexDef>::~agiLib<class agiTexParameters,class agiTexDef>(void) | ??1?$agiLib@VagiTexParameters@@VagiTexDef@@@@QAE@XZ
+    0x53BF80 | public: int __thiscall agiLib<class agiPhysParameters,class agiPhysDef>::Add(class agiPhysParameters &) | ?Add@?$agiLib@VagiPhysParameters@@VagiPhysDef@@@@QAEHAAVagiPhysParameters@@@Z
+    0x53C0C0 | public: void __thiscall agiLib<class agiMtlParameters,class agiMtlDef>::Kill(void) | ?Kill@?$agiLib@VagiMtlParameters@@VagiMtlDef@@@@QAEXXZ
+    0x53C110 | public: void __thiscall agiLib<class agiMtlParameters,class agiMtlDef>::Init(int) | ?Init@?$agiLib@VagiMtlParameters@@VagiMtlDef@@@@QAEXH@Z
+    0x53C1D0 | public: void __thiscall agiLib<class agiTexParameters,class agiTexDef>::Kill(void) | ?Kill@?$agiLib@VagiTexParameters@@VagiTexDef@@@@QAEXXZ
+    0x53C220 | public: void __thiscall agiLib<class agiTexParameters,class agiTexDef>::Init(int) | ?Init@?$agiLib@VagiTexParameters@@VagiTexDef@@@@QAEXH@Z
+    0x53C2E0 | public: __thiscall DLPPatch::DLPPatch(void) | ??0DLPPatch@@QAE@XZ
+    0x53C2F0 | public: __thiscall DLPPatch::~DLPPatch(void) | ??1DLPPatch@@QAE@XZ
+    0x706608 | class HashTable DLPTemplateHash | ?DLPTemplateHash@@3VHashTable@@A
+*/
 
 #include "hooking.h"
 

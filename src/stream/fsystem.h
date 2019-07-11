@@ -18,7 +18,30 @@
 
 #pragma once
 
-// stream:fsystem
+/*
+    stream:fsystem
+
+    0x5410B0 | public: __thiscall FileSystem::FileSystem(void) | ??0FileSystem@@QAE@XZ
+    0x541120 | public: virtual __thiscall FileSystem::~FileSystem(void) | ??1FileSystem@@UAE@XZ
+    0x541190 | protected: virtual void __thiscall FileSystem::NotifyDelete(void) | ?NotifyDelete@FileSystem@@MAEXXZ
+    0x5411A0 | public: static class FileSystem * __cdecl FileSystem::SearchAll(char *,char *,char *,int,char *) | ?SearchAll@FileSystem@@SAPAV1@PAD00H0@Z
+    0x541210 | public: int __thiscall FileSystem::Search(char *,char *,char *,int,char *) | ?Search@FileSystem@@QAEHPAD00H0@Z
+    0x5418B0 | class FileSystem * __cdecl FindFile(char *,char *,char *,int,char *) | ?FindFile@@YAPAVFileSystem@@PAD00H0@Z
+    0x5418E0 | class Stream * __cdecl OpenFile(char *,char *,char *,int,char *,char *) | ?OpenFile@@YAPAVStream@@PAD00H00@Z
+    0x5419E0 | public: static class Stream * __cdecl FileSystem::OpenAny(char *,int,void *,int) | ?OpenAny@FileSystem@@SAPAVStream@@PADHPAXH@Z
+    0x541A40 | public: virtual int __thiscall FileSystem::PagerInfo(char *,struct PagerInfo_t &) | ?PagerInfo@FileSystem@@UAEHPADAAUPagerInfo_t@@@Z
+    0x541A50 | public: static int __cdecl FileSystem::PagerInfoAny(char *,struct PagerInfo_t &) | ?PagerInfoAny@FileSystem@@SAHPADAAUPagerInfo_t@@@Z
+    0x541AA0 | public: virtual void * __thiscall FileSystem::`scalar deleting destructor'(unsigned int) | ??_GFileSystem@@UAEPAXI@Z
+    0x541AA0 | public: virtual void * __thiscall FileSystem::`vector deleting destructor'(unsigned int) | ??_EFileSystem@@UAEPAXI@Z
+    0x595E58 | const FileSystem::`vftable' | ??_7FileSystem@@6B@
+    0x70EE70 | public: static int FileSystem::FSCount | ?FSCount@FileSystem@@2HA
+    0x70EE78 | public: static class FileSystem * * FileSystem::FS | ?FS@FileSystem@@2PAPAV1@A
+    0x70EF78 | int fsVerbose | ?fsVerbose@@3HA
+    0x541670 | char * __cdecl SubString(int,char *) | ?SubString@@YAPADHPAD@Z
+    0x5416F0 | int __cdecl NumSubStrings(char *) | ?NumSubStrings@@YAHPAD@Z
+    0x541720 | int __cdecl Contains(char *,char *) | ?Contains@@YAHPAD0@Z
+    0x5417A0 | void __cdecl ExpandEnvs(char *) | ?ExpandEnvs@@YAXPAD@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,22 @@
 
 #pragma once
 
-// mmwidget:icon
+/*
+    mmwidget:icon
+
+    0x4AE8E0 | public: __thiscall UIIcon::UIIcon(void) | ??0UIIcon@@QAE@XZ
+    0x4AE930 | public: virtual __thiscall UIIcon::~UIIcon(void) | ??1UIIcon@@UAE@XZ
+    0x4AE940 | public: void __thiscall UIIcon::Init(char *,float,float) | ?Init@UIIcon@@QAEXPADMM@Z
+    0x4AE980 | public: void __thiscall UIIcon::LoadBitmap(char *) | ?LoadBitmap@UIIcon@@QAEXPAD@Z
+    0x4AE9F0 | public: class agiBitmap * __thiscall UIIcon::CreateDummyBitmap(void) | ?CreateDummyBitmap@UIIcon@@QAEPAVagiBitmap@@XZ
+    0x4AEA40 | public: void __thiscall UIIcon::GetHitArea(float &,float &) | ?GetHitArea@UIIcon@@QAEXAAM0@Z
+    0x4AEA70 | public: virtual void __thiscall UIIcon::Switch(int) | ?Switch@UIIcon@@UAEXH@Z
+    0x4AEAB0 | public: virtual void __thiscall UIIcon::Update(void) | ?Update@UIIcon@@UAEXXZ
+    0x4AEAD0 | public: virtual void __thiscall UIIcon::Cull(void) | ?Cull@UIIcon@@UAEXXZ
+    0x4AEB00 | public: virtual void * __thiscall UIIcon::`scalar deleting destructor'(unsigned int) | ??_GUIIcon@@UAEPAXI@Z
+    0x4AEB00 | public: virtual void * __thiscall UIIcon::`vector deleting destructor'(unsigned int) | ??_EUIIcon@@UAEPAXI@Z
+    0x593870 | const UIIcon::`vftable' | ??_7UIIcon@@6B@
+*/
 
 #include "hooking.h"
 

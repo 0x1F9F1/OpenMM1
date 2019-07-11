@@ -18,7 +18,14 @@
 
 #pragma once
 
-// arts7:benchstats
+/*
+    arts7:benchstats
+
+    0x516200 | public: void __thiscall asBenchStats::Reset(void) | ?Reset@asBenchStats@@QAEXXZ
+    0x516240 | public: void __thiscall asBenchStats::Print(void) | ?Print@asBenchStats@@QAEXXZ
+    0x516250 | public: void __thiscall asBenchStats::Average(class asBenchStats *,float,int) | ?Average@asBenchStats@@QAEXPAV1@MH@Z
+    0x516370 | public: void __thiscall asBenchStats::Current(class asBenchStats *) | ?Current@asBenchStats@@QAEXPAV1@@Z
+*/
 
 #include "hooking.h"
 

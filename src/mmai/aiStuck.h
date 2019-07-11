@@ -18,7 +18,20 @@
 
 #pragma once
 
-// mmai:aiStuck
+/*
+    mmai:aiStuck
+
+    0x4641F0 | public: __thiscall aiStuck::aiStuck(void) | ??0aiStuck@@QAE@XZ
+    0x464290 | public: void __thiscall aiStuck::Init(class mmCarSim *) | ?Init@aiStuck@@QAEXPAVmmCarSim@@@Z
+    0x4642B0 | public: void __thiscall aiStuck::Impact(void) | ?Impact@aiStuck@@QAEXXZ
+    0x4642C0 | public: virtual void __thiscall aiStuck::Reset(void) | ?Reset@aiStuck@@UAEXXZ
+    0x4642D0 | public: int __thiscall aiStuck::Pegged(void) | ?Pegged@aiStuck@@QAEHXZ
+    0x464340 | public: virtual void __thiscall aiStuck::Update(void) | ?Update@aiStuck@@UAEXXZ
+    0x464560 | public: virtual void * __thiscall aiStuck::`scalar deleting destructor'(unsigned int) | ??_GaiStuck@@UAEPAXI@Z
+    0x464560 | public: virtual void * __thiscall aiStuck::`vector deleting destructor'(unsigned int) | ??_EaiStuck@@UAEPAXI@Z
+    0x590DF0 | const aiStuck::`vftable' | ??_7aiStuck@@6B@
+    0x464260 | void __cdecl StuckCB(class aiStuck *) | ?StuckCB@@YAXPAVaiStuck@@@Z
+*/
 
 #include "hooking.h"
 

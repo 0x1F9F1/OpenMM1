@@ -18,7 +18,18 @@
 
 #pragma once
 
-// mmcar:carsimcheap
+/*
+    mmcar:carsimcheap
+
+    0x46C440 | public: __thiscall mmWheelCheap::mmWheelCheap(void) | ??0mmWheelCheap@@QAE@XZ
+    0x46C510 | public: void __thiscall mmWheelCheap::Init(class Vector3 *,class aiVehicleData *,class asInertialCS *) | ?Init@mmWheelCheap@@QAEXPAVVector3@@PAVaiVehicleData@@PAVasInertialCS@@@Z
+    0x46C5E0 | public: virtual void __thiscall mmWheelCheap::Update(void) | ?Update@mmWheelCheap@@UAEXXZ
+    0x46CD50 | public: virtual void __thiscall mmWheelCheap::Reset(void) | ?Reset@mmWheelCheap@@UAEXXZ
+    0x46CD70 | public: virtual void * __thiscall mmWheelCheap::`scalar deleting destructor'(unsigned int) | ??_GmmWheelCheap@@UAEPAXI@Z
+    0x46CD70 | public: virtual void * __thiscall mmWheelCheap::`vector deleting destructor'(unsigned int) | ??_EmmWheelCheap@@UAEPAXI@Z
+    0x5911B8 | const mmWheelCheap::`vftable' | ??_7mmWheelCheap@@6B@
+    0x60A20C | float EggFriction | ?EggFriction@@3MA
+*/
 
 #include "hooking.h"
 

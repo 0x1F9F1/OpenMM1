@@ -18,7 +18,32 @@
 
 #pragma once
 
-// mmgame:multicircuit
+/*
+    mmgame:multicircuit
+
+    0x416780 | public: __thiscall mmMultiCircuit::mmMultiCircuit(void) | ??0mmMultiCircuit@@QAE@XZ
+    0x4167F0 | public: virtual __thiscall mmMultiCircuit::~mmMultiCircuit(void) | ??1mmMultiCircuit@@UAE@XZ
+    0x4168B0 | public: int __thiscall mmMultiCircuit::Init(void) | ?Init@mmMultiCircuit@@QAEHXZ
+    0x4169D0 | public: virtual void __thiscall mmMultiCircuit::InitMyPlayer(void) | ?InitMyPlayer@mmMultiCircuit@@UAEXXZ
+    0x416A40 | public: virtual void __thiscall mmMultiCircuit::InitHUD(void) | ?InitHUD@mmMultiCircuit@@UAEXXZ
+    0x416A90 | public: virtual void __thiscall mmMultiCircuit::InitGameObjects(void) | ?InitGameObjects@mmMultiCircuit@@UAEXXZ
+    0x416D00 | public: virtual void __thiscall mmMultiCircuit::InitNetworkPlayers(void) | ?InitNetworkPlayers@mmMultiCircuit@@UAEXXZ
+    0x417060 | public: virtual void __thiscall mmMultiCircuit::Reset(void) | ?Reset@mmMultiCircuit@@UAEXXZ
+    0x4170F0 | public: virtual void __thiscall mmMultiCircuit::UpdateGameInput(int) | ?UpdateGameInput@mmMultiCircuit@@UAEXH@Z
+    0x417130 | public: virtual void __thiscall mmMultiCircuit::UpdateGame(void) | ?UpdateGame@mmMultiCircuit@@UAEXXZ
+    0x4176E0 | public: virtual void __thiscall mmMultiCircuit::UpdateDebugKeyInput(int) | ?UpdateDebugKeyInput@mmMultiCircuit@@UAEXH@Z
+    0x4176F0 | public: virtual void __thiscall mmMultiCircuit::SystemMessage(struct NETSYS_MSG *) | ?SystemMessage@mmMultiCircuit@@UAEXPAUNETSYS_MSG@@@Z
+    0x417890 | public: virtual void __thiscall mmMultiCircuit::GameMessage(struct NETGAME_MSG *) | ?GameMessage@mmMultiCircuit@@UAEXPAUNETGAME_MSG@@@Z
+    0x417AF0 | private: void __thiscall mmMultiCircuit::SendPlayerFinish(void) | ?SendPlayerFinish@mmMultiCircuit@@AAEXXZ
+    0x417B30 | public: static void __cdecl mmMultiCircuit::DeclareFields(void) | ?DeclareFields@mmMultiCircuit@@SAXXZ
+    0x417CA0 | public: virtual class MetaClass * __thiscall mmMultiCircuit::GetClass(void) | ?GetClass@mmMultiCircuit@@UAEPAVMetaClass@@XZ
+    0x417E00 | public: virtual void * __thiscall mmMultiCircuit::`vector deleting destructor'(unsigned int) | ??_EmmMultiCircuit@@UAEPAXI@Z
+    0x417E60 | public: virtual class mmWaypoints * __thiscall mmMultiCircuit::GetWaypoints(void) | ?GetWaypoints@mmMultiCircuit@@UAEPAVmmWaypoints@@XZ
+    0x58FA48 | const mmMultiCircuit::`vftable' | ??_7mmMultiCircuit@@6B@
+    0x6094F0 | class MetaClass mmMultiCircuitMetaClass | ?mmMultiCircuitMetaClass@@3VMetaClass@@A
+    0x417B80 | void * __cdecl new_mmMultiCircuit(int) | ?new_mmMultiCircuit@@YAPAXH@Z
+    0x417C50 | void __cdecl delete_mmMultiCircuit(void *,int) | ?delete_mmMultiCircuit@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

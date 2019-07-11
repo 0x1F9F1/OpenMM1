@@ -18,7 +18,26 @@
 
 #pragma once
 
-// mmwidget:pointer
+/*
+    mmwidget:pointer
+
+    0x4B28D0 | public: __thiscall sfPointer::sfPointer(void) | ??0sfPointer@@QAE@XZ
+    0x4B2900 | public: virtual __thiscall sfPointer::~sfPointer(void) | ??1sfPointer@@UAE@XZ
+    0x4B2960 | public: void __thiscall sfPointer::Init(void) | ?Init@sfPointer@@QAEXXZ
+    0x4B2980 | public: virtual void __thiscall sfPointer::ResChange(int,int) | ?ResChange@sfPointer@@UAEXHH@Z
+    0x4B29E0 | public: float __thiscall sfPointer::GetPointerHeight(void) | ?GetPointerHeight@sfPointer@@QAEMXZ
+    0x4B29F0 | public: virtual void __thiscall sfPointer::Update(void) | ?Update@sfPointer@@UAEXXZ
+    0x4B2C70 | private: void __thiscall sfPointer::UpdateAttached(void) | ?UpdateAttached@sfPointer@@AAEXXZ
+    0x4B2C80 | public: void __thiscall sfPointer::WaitForRelease(void) | ?WaitForRelease@sfPointer@@QAEXXZ
+    0x4B2C90 | public: virtual void __thiscall sfPointer::Cull(void) | ?Cull@sfPointer@@UAEXXZ
+    0x4B2D10 | public: static void __cdecl sfPointer::DeclareFields(void) | ?DeclareFields@sfPointer@@SAXXZ
+    0x4B2E70 | public: virtual class MetaClass * __thiscall sfPointer::GetClass(void) | ?GetClass@sfPointer@@UAEPAVMetaClass@@XZ
+    0x4B2E80 | public: virtual void * __thiscall sfPointer::`vector deleting destructor'(unsigned int) | ??_EsfPointer@@UAEPAXI@Z
+    0x593D08 | const sfPointer::`vftable' | ??_7sfPointer@@6B@
+    0x667F78 | class MetaClass sfPointerMetaClass | ?sfPointerMetaClass@@3VMetaClass@@A
+    0x4B2D60 | void * __cdecl new_sfPointer(int) | ?new_sfPointer@@YAPAXH@Z
+    0x4B2E20 | void __cdecl delete_sfPointer(void *,int) | ?delete_sfPointer@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

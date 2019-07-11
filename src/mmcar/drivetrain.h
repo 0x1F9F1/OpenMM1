@@ -18,7 +18,24 @@
 
 #pragma once
 
-// mmcar:drivetrain
+/*
+    mmcar:drivetrain
+
+    0x477040 | public: __thiscall mmDrivetrain::mmDrivetrain(void) | ??0mmDrivetrain@@QAE@XZ
+    0x477070 | public: void __thiscall mmDrivetrain::Init(class mmCarSim *) | ?Init@mmDrivetrain@@QAEXPAVmmCarSim@@@Z
+    0x4770A0 | public: void __thiscall mmDrivetrain::Attach(void) | ?Attach@mmDrivetrain@@QAEXXZ
+    0x4770C0 | public: void __thiscall mmDrivetrain::Detach(void) | ?Detach@mmDrivetrain@@QAEXXZ
+    0x4770D0 | public: int __thiscall mmDrivetrain::AddWheel(class mmWheel *) | ?AddWheel@mmDrivetrain@@QAEHPAVmmWheel@@@Z
+    0x477110 | public: virtual void __thiscall mmDrivetrain::Update(void) | ?Update@mmDrivetrain@@UAEXXZ
+    0x4775C0 | public: static void __cdecl mmDrivetrain::DeclareFields(void) | ?DeclareFields@mmDrivetrain@@SAXXZ
+    0x477750 | public: virtual class MetaClass * __thiscall mmDrivetrain::GetClass(void) | ?GetClass@mmDrivetrain@@UAEPAVMetaClass@@XZ
+    0x477760 | public: virtual void * __thiscall mmDrivetrain::`vector deleting destructor'(unsigned int) | ??_EmmDrivetrain@@UAEPAXI@Z
+    0x4777C0 | public: virtual void __thiscall mmDrivetrain::Reset(void) | ?Reset@mmDrivetrain@@UAEXXZ
+    0x591718 | const mmDrivetrain::`vftable' | ??_7mmDrivetrain@@6B@
+    0x60A480 | class MetaClass mmDrivetrainMetaClass | ?mmDrivetrainMetaClass@@3VMetaClass@@A
+    0x477630 | void * __cdecl new_mmDrivetrain(int) | ?new_mmDrivetrain@@YAPAXH@Z
+    0x477700 | void __cdecl delete_mmDrivetrain(void *,int) | ?delete_mmDrivetrain@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

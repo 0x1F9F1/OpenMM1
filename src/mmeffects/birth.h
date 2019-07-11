@@ -18,7 +18,20 @@
 
 #pragma once
 
-// mmeffects:birth
+/*
+    mmeffects:birth
+
+    0x4F2350 | public: __thiscall asBirthRule::asBirthRule(void) | ??0asBirthRule@@QAE@XZ
+    0x4F2400 | public: void __thiscall asBirthRule::InitSpark(struct asSparkInfo *,struct asSparkPos *) | ?InitSpark@asBirthRule@@QAEXPAUasSparkInfo@@PAUasSparkPos@@@Z
+    0x4F2680 | public: void __thiscall asBirthRule::AddWidgets(class Bank *) | ?AddWidgets@asBirthRule@@QAEXPAVBank@@@Z
+    0x4F2690 | public: static void __cdecl asBirthRule::DeclareFields(void) | ?DeclareFields@asBirthRule@@SAXXZ
+    0x4F2A10 | public: virtual class MetaClass * __thiscall asBirthRule::GetClass(void) | ?GetClass@asBirthRule@@UAEPAVMetaClass@@XZ
+    0x4F2A20 | public: virtual void * __thiscall asBirthRule::`vector deleting destructor'(unsigned int) | ??_EasBirthRule@@UAEPAXI@Z
+    0x5950D8 | const asBirthRule::`vftable' | ??_7asBirthRule@@6B@
+    0x67B8A8 | class MetaClass asBirthRuleMetaClass | ?asBirthRuleMetaClass@@3VMetaClass@@A
+    0x4F28F0 | void * __cdecl new_asBirthRule(int) | ?new_asBirthRule@@YAPAXH@Z
+    0x4F29C0 | void __cdecl delete_asBirthRule(void *,int) | ?delete_asBirthRule@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

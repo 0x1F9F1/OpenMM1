@@ -18,7 +18,79 @@
 
 #pragma once
 
-// mmai:aiVehicleMGR
+/*
+    mmai:aiVehicleMGR
+
+    0x44B150 | void __cdecl AMBIENTCB(class aiVehicleActive *,class asBound *,class mmIntersection *,class Vector3 *,float) | ?AMBIENTCB@@YAXPAVaiVehicleActive@@PAVasBound@@PAVmmIntersection@@PAVVector3@@M@Z
+    0x44B2E0 | public: virtual void __fastcall aiVehicleInstance::Draw(int) | ?Draw@aiVehicleInstance@@UAIXH@Z
+    0x44BAE0 | public: virtual void __fastcall aiVehicleInstance::DrawGlow(void) | ?DrawGlow@aiVehicleInstance@@UAIXXZ
+    0x44BB30 | public: virtual void __fastcall aiVehicleInstance::DrawShadow(void) | ?DrawShadow@aiVehicleInstance@@UAIXXZ
+    0x44BBD0 | public: virtual class mmPhysEntity * __thiscall aiVehicleInstance::GetEntity(void) | ?GetEntity@aiVehicleInstance@@UAEPAVmmPhysEntity@@XZ
+    0x44BC00 | public: virtual void __thiscall aiVehicleInstance::Detach(void) | ?Detach@aiVehicleInstance@@UAEXXZ
+    0x44BC30 | public: virtual class mmPhysEntity * __thiscall aiVehicleInstance::AttachEntity(void) | ?AttachEntity@aiVehicleInstance@@UAEPAVmmPhysEntity@@XZ
+    0x44BC90 | public: virtual class Vector3 __thiscall aiVehicleInstance::GetVelocity(void) | ?GetVelocity@aiVehicleInstance@@UAE?AVVector3@@XZ
+    0x44BD50 | public: virtual void __fastcall aiVehicleInstance::FromMatrix(class Matrix34 const &) | ?FromMatrix@aiVehicleInstance@@UAIXABVMatrix34@@@Z
+    0x44BD60 | public: virtual class Matrix34 & __fastcall aiVehicleInstance::ToMatrix(class Matrix34 &) | ?ToMatrix@aiVehicleInstance@@UAIAAVMatrix34@@AAV2@@Z
+    0x44BD70 | public: virtual class Vector3 & __fastcall aiVehicleInstance::GetPos(void) | ?GetPos@aiVehicleInstance@@UAIAAVVector3@@XZ
+    0x44BD80 | public: __thiscall aiVehicleActive::aiVehicleActive(void) | ??0aiVehicleActive@@QAE@XZ
+    0x44BE70 | public: void __thiscall aiVehicleActive::Init(char *) | ?Init@aiVehicleActive@@QAEXPAD@Z
+    0x44C120 | public: virtual __thiscall aiVehicleActive::~aiVehicleActive(void) | ??1aiVehicleActive@@UAE@XZ
+    0x44C210 | public: void __thiscall aiVehicleActive::Attach(class aiVehicleInstance *) | ?Attach@aiVehicleActive@@QAEXPAVaiVehicleInstance@@@Z
+    0x44C3C0 | public: virtual void __thiscall aiVehicleActive::DetachMe(void) | ?DetachMe@aiVehicleActive@@UAEXXZ
+    0x44C3E0 | public: void __thiscall aiVehicleActive::Detach(void) | ?Detach@aiVehicleActive@@QAEXXZ
+    0x44C5B0 | public: virtual void __thiscall aiVehicleActive::Update(void) | ?Update@aiVehicleActive@@UAEXXZ
+    0x44C620 | public: virtual void __thiscall aiVehicleActive::PostUpdate(void) | ?PostUpdate@aiVehicleActive@@UAEXXZ
+    0x44C6A0 | public: void __thiscall aiVehicleActive::UpdateDamage(void) | ?UpdateDamage@aiVehicleActive@@QAEXXZ
+    0x44C700 | public: __thiscall aiVehicleManager::aiVehicleManager(void) | ??0aiVehicleManager@@QAE@XZ
+    0x44C7E0 | public: virtual __thiscall aiVehicleManager::~aiVehicleManager(void) | ??1aiVehicleManager@@UAE@XZ
+    0x44C880 | public: void __thiscall aiVehicleManager::Init(char *) | ?Init@aiVehicleManager@@QAEXPAD@Z
+    0x44C8B0 | public: virtual void __thiscall aiVehicleManager::Reset(void) | ?Reset@aiVehicleManager@@UAEXXZ
+    0x44C8F0 | public: class aiVehicleActive * __thiscall aiVehicleManager::Attach(class aiVehicleInstance *) | ?Attach@aiVehicleManager@@QAEPAVaiVehicleActive@@PAVaiVehicleInstance@@@Z
+    0x44C9B0 | public: void __thiscall aiVehicleManager::Detach(class aiVehicleActive *) | ?Detach@aiVehicleManager@@QAEXPAVaiVehicleActive@@@Z
+    0x44CA40 | public: virtual void __thiscall aiVehicleManager::Update(void) | ?Update@aiVehicleManager@@UAEXXZ
+    0x44CB30 | public: int __thiscall aiVehicleData::LoadEntry(char *) | ?LoadEntry@aiVehicleData@@QAEHPAD@Z
+    0x44CCF0 | public: class aiVehicleData * __thiscall aiVehicleInstance::GetData(void) | ?GetData@aiVehicleInstance@@QAEPAVaiVehicleData@@XZ
+    0x44CD10 | public: int __thiscall aiVehicleManager::AddVehicleDataEntry(char *) | ?AddVehicleDataEntry@aiVehicleManager@@QAEHPAD@Z
+    0x44D010 | public: virtual void __thiscall aiVehicleManager::Save(void) | ?Save@aiVehicleManager@@UAEXXZ
+    0x44D040 | public: static void __cdecl aiVehicleInstance::DeclareFields(void) | ?DeclareFields@aiVehicleInstance@@SAXXZ
+    0x44D0E0 | public: virtual class MetaClass * __thiscall aiVehicleInstance::GetClass(void) | ?GetClass@aiVehicleInstance@@UAEPAVMetaClass@@XZ
+    0x44D0F0 | public: static void __cdecl aiVehicleData::DeclareFields(void) | ?DeclareFields@aiVehicleData@@SAXXZ
+    0x44D430 | public: virtual class MetaClass * __thiscall aiVehicleData::GetClass(void) | ?GetClass@aiVehicleData@@UAEPAVMetaClass@@XZ
+    0x44D440 | public: virtual void * __thiscall aiVehicleActive::`scalar deleting destructor'(unsigned int) | ??_GaiVehicleActive@@UAEPAXI@Z
+    0x44D440 | public: virtual void * __thiscall aiVehicleActive::`vector deleting destructor'(unsigned int) | ??_EaiVehicleActive@@UAEPAXI@Z
+    0x44D470 | public: virtual __thiscall asInertialCS::~asInertialCS(void) | ??1asInertialCS@@UAE@XZ
+    0x44D480 | public: virtual __thiscall asBound::~asBound(void) | ??1asBound@@UAE@XZ
+    0x44D490 | public: virtual __thiscall mmWheelCheap::~mmWheelCheap(void) | ??1mmWheelCheap@@UAE@XZ
+    0x44D4A0 | public: virtual void * __thiscall aiVehicleManager::`vector deleting destructor'(unsigned int) | ??_EaiVehicleManager@@UAEPAXI@Z
+    0x44D4A0 | public: virtual void * __thiscall aiVehicleManager::`scalar deleting destructor'(unsigned int) | ??_GaiVehicleManager@@UAEPAXI@Z
+    0x44D4D0 | public: virtual void * __thiscall aiVehicleData::`vector deleting destructor'(unsigned int) | ??_EaiVehicleData@@UAEPAXI@Z
+    0x44D530 | public: virtual void __thiscall mmPhysEntity::Update(void) | ?Update@mmPhysEntity@@UAEXXZ
+    0x44D540 | public: virtual void __thiscall mmPhysEntity::PostUpdate(void) | ?PostUpdate@mmPhysEntity@@UAEXXZ
+    0x44D550 | public: virtual class asBound * __thiscall mmPhysEntity::GetBound(void) | ?GetBound@mmPhysEntity@@UAEPAVasBound@@XZ
+    0x44D560 | public: virtual class asInertialCS * __thiscall mmPhysEntity::GetICS(void) | ?GetICS@mmPhysEntity@@UAEPAVasInertialCS@@XZ
+    0x44D570 | public: virtual void __thiscall mmPhysEntity::DetachMe(void) | ?DetachMe@mmPhysEntity@@UAEXXZ
+    0x44D580 | public: virtual void * __thiscall mmPhysEntity::`vector deleting destructor'(unsigned int) | ??_EmmPhysEntity@@UAEPAXI@Z
+    0x44D580 | public: virtual void * __thiscall mmPhysEntity::`scalar deleting destructor'(unsigned int) | ??_GmmPhysEntity@@UAEPAXI@Z
+    0x44D5B0 | public: __thiscall aiVehicleData::aiVehicleData(void) | ??0aiVehicleData@@QAE@XZ
+    0x44D5D0 | public: virtual __thiscall aiVehicleData::~aiVehicleData(void) | ??1aiVehicleData@@UAE@XZ
+    0x44D5E0 | public: virtual class asBound * __thiscall aiVehicleActive::GetBound(void) | ?GetBound@aiVehicleActive@@UAEPAVasBound@@XZ
+    0x44D5F0 | public: virtual class asInertialCS * __thiscall aiVehicleActive::GetICS(void) | ?GetICS@aiVehicleActive@@UAEPAVasInertialCS@@XZ
+    0x44D600 | public: virtual __thiscall asBirthRule::~asBirthRule(void) | ??1asBirthRule@@UAE@XZ
+    0x590940 | const aiVehicleActive::`vftable' | ??_7aiVehicleActive@@6B@
+    0x590980 | const mmPhysEntity::`vftable' | ??_7mmPhysEntity@@6B@
+    0x5909C0 | const aiVehicleManager::`vftable' | ??_7aiVehicleManager@@6B@
+    0x5909F0 | const aiVehicleData::`vftable' | ??_7aiVehicleData@@6B@
+    0x609E78 | public: static class aiVehicleManager * aiVehicleManager::Instance | ?Instance@aiVehicleManager@@2PAV1@A
+    0x609E80 | class HashTable VehicleDataHash | ?VehicleDataHash@@3VHashTable@@A
+    0x609E90 | class MetaClass aiVehicleDataMetaClass | ?aiVehicleDataMetaClass@@3VMetaClass@@A
+    0x609EB8 | class MetaClass aiVehicleInstanceMetaClass | ?aiVehicleInstanceMetaClass@@3VMetaClass@@A
+    0x609EE0 | class HashTable NoDataWhined | ?NoDataWhined@@3VHashTable@@A
+    0x609EF0 | public: static float aiVehicleManager::FloatClock | ?FloatClock@aiVehicleManager@@2MA
+    0x609EF4 | public: static int aiVehicleManager::SignalClock | ?SignalClock@aiVehicleManager@@2HA
+    0x44D090 | void __cdecl delete_aiVehicleInstance(void *,int) | ?delete_aiVehicleInstance@@YAXPAXH@Z
+    0x44D300 | void * __cdecl new_aiVehicleData(int) | ?new_aiVehicleData@@YAPAXH@Z
+    0x44D3E0 | void __cdecl delete_aiVehicleData(void *,int) | ?delete_aiVehicleData@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

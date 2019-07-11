@@ -18,7 +18,42 @@
 
 #pragma once
 
-// arts7:node
+/*
+    arts7:node
+
+    0x510C60 | public: __thiscall asNode::asNode(void) | ??0asNode@@QAE@XZ
+    0x510C80 | public: virtual __thiscall asNode::~asNode(void) | ??1asNode@@UAE@XZ
+    0x510CF0 | public: void __thiscall asNode::SetName(char *) | ?SetName@asNode@@QAEXPAD@Z
+    0x510D20 | public: virtual void __thiscall asNode::Update(void) | ?Update@asNode@@UAEXXZ
+    0x510D90 | public: virtual void __thiscall asNode::Reset(void) | ?Reset@asNode@@UAEXXZ
+    0x510DB0 | public: virtual void __thiscall asNode::ResChange(int,int) | ?ResChange@asNode@@UAEXHH@Z
+    0x510DE0 | public: int __thiscall asNode::AddChild(class asNode *) | ?AddChild@asNode@@QAEHPAV1@@Z
+    0x510E60 | public: int __thiscall asNode::InsertChild(int,class asNode *) | ?InsertChild@asNode@@QAEHHPAV1@@Z
+    0x510EF0 | public: int __thiscall asNode::RemoveChild(int) | ?RemoveChild@asNode@@QAEHH@Z
+    0x510F90 | public: int __thiscall asNode::RemoveChild(class asNode *) | ?RemoveChild@asNode@@QAEHPAV1@@Z
+    0x510FD0 | public: void __thiscall asNode::RemoveAllChildren(void) | ?RemoveAllChildren@asNode@@QAEXXZ
+    0x510FF0 | public: class asNode * __thiscall asNode::GetChild(int) | ?GetChild@asNode@@QAEPAV1@H@Z
+    0x511020 | public: class asNode * __thiscall asNode::GetNext(void) | ?GetNext@asNode@@QAEPAV1@XZ
+    0x511030 | public: class asNode * __thiscall asNode::GetLastChild(void) | ?GetLastChild@asNode@@QAEPAV1@XZ
+    0x511070 | public: int __thiscall asNode::NumChildren(void) | ?NumChildren@asNode@@QAEHXZ
+    0x511090 | public: void __thiscall asNode::SwitchTo(int) | ?SwitchTo@asNode@@QAEXH@Z
+    0x5110F0 | public: class asNode * __thiscall asNode::GetParent(class MetaClass *) | ?GetParent@asNode@@QAEPAV1@PAVMetaClass@@@Z
+    0x511130 | public: char * __thiscall asNode::GetNodeType(void) | ?GetNodeType@asNode@@QAEPADXZ
+    0x511140 | public: int __thiscall asNode::Load(char *) | ?Load@asNode@@QAEHPAD@Z
+    0x511230 | public: int __thiscall asNode::Save(char *) | ?Save@asNode@@QAEHPAD@Z
+    0x5112E0 | public: virtual void __thiscall asNode::Save(void) | ?Save@asNode@@UAEXXZ
+    0x5114C0 | public: virtual void __thiscall asNode::Load(void) | ?Load@asNode@@UAEXXZ
+    0x5116A0 | public: static void __cdecl asNode::DeclareFields(void) | ?DeclareFields@asNode@@SAXXZ
+    0x5118A0 | public: virtual class MetaClass * __thiscall asNode::GetClass(void) | ?GetClass@asNode@@UAEPAVMetaClass@@XZ
+    0x5118B0 | struct MetaType * __cdecl PtrTo(struct MetaType *) | ?PtrTo@@YAPAUMetaType@@PAU1@@Z
+    0x5118E0 | public: virtual void * __thiscall asNode::`vector deleting destructor'(unsigned int) | ??_EasNode@@UAEPAXI@Z
+    0x5953B0 | const asNode::`vftable' | ??_7asNode@@6B@
+    0x5953E0 | const PtrToType::`vftable' | ??_7PtrToType@@6B@
+    0x6F2AF0 | int DebugMemory | ?DebugMemory@@3HA
+    0x6F2AF8 | class MetaClass asNodeMetaClass | ?asNodeMetaClass@@3VMetaClass@@A
+    0x511780 | void * __cdecl new_asNode(int) | ?new_asNode@@YAPAXH@Z
+    0x511850 | void __cdecl delete_asNode(void *,int) | ?delete_asNode@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

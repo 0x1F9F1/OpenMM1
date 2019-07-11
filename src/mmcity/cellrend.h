@@ -18,7 +18,24 @@
 
 #pragma once
 
-// mmcity:cellrend
+/*
+    mmcity:cellrend
+
+    0x48BC90 | public: __thiscall mmCellRenderer::mmCellRenderer(void) | ??0mmCellRenderer@@QAE@XZ
+    0x48BCC0 | public: __thiscall mmCellRenderer::~mmCellRenderer(void) | ??1mmCellRenderer@@QAE@XZ
+    0x48BD00 | public: void __thiscall mmCellRenderer::Init(char *,int,int,int,int,int *) | ?Init@mmCellRenderer@@QAEXPADHHHHPAH@Z
+    0x48C260 | public: void __thiscall mmCellRenderer::Relight(void) | ?Relight@mmCellRenderer@@QAEXXZ
+    0x48C270 | public: virtual void __thiscall mmCellRenderer::Cull(int) | ?Cull@mmCellRenderer@@UAEXH@Z
+    0x592164 | const mmCellRenderer::`vftable' | ??_7mmCellRenderer@@6B@
+    0x5AE490 | float (* StaticTerrainLodTable)[2] | ?StaticTerrainLodTable@@3PAY01MA
+    0x5AE4B0 | float ObjectMaxDist | ?ObjectMaxDist@@3MA
+    0x5AE4B4 | int EnableSlide | ?EnableSlide@@3HA
+    0x667AB8 | int CRPassBoth | ?CRPassBoth@@3HA
+    0x667ABC | int CRPass1Only | ?CRPass1Only@@3HA
+    0x667AC0 | int * CellTriCount | ?CellTriCount@@3PAHA
+    0x667AD0 | int * CellTypeCount | ?CellTypeCount@@3PAHA
+    0x667ADC | int CRPass3Only | ?CRPass3Only@@3HA
+*/
 
 #include "hooking.h"
 

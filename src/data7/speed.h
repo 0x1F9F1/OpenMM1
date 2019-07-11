@@ -18,7 +18,13 @@
 
 #pragma once
 
-// data7:speed
+/*
+    data7:speed
+
+    0x55E710 | unsigned int __cdecl __ComputeCpuSpeed(void) | ?__ComputeCpuSpeed@@YAIXZ
+    0x55E7D0 | unsigned int __cdecl ComputeCpuSpeed(void) | ?ComputeCpuSpeed@@YAIXZ
+    0x55E7C0 | unsigned int __cdecl rdtsc(void) | ?rdtsc@@YAIXZ
+*/
 
 #include "hooking.h"
 

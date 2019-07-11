@@ -18,7 +18,15 @@
 
 #pragma once
 
-// agid3d:dderror
+/*
+    agid3d:dderror
+
+    0x51A6F0 | char * __cdecl DDErrorToString(long) | ?DDErrorToString@@YAPADJ@Z
+    0x51AE10 | void __cdecl __DDTry(int,char const *,char const *,int) | ?__DDTry@@YAXHPBD0H@Z
+    0x51AEF0 | void __cdecl __DDRelease(struct IUnknown *,char const *,char const *,int) | ?__DDRelease@@YAXPAUIUnknown@@PBD1H@Z
+    0x6F7DD0 | int DDIgnoreErrors | ?DDIgnoreErrors@@3HA
+    0x6F7DD4 | int DDNeedRestore | ?DDNeedRestore@@3HA
+*/
 
 #include "hooking.h"
 

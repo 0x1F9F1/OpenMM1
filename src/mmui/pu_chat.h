@@ -18,7 +18,17 @@
 
 #pragma once
 
-// mmui:pu_chat
+/*
+    mmui:pu_chat
+
+    0x49E370 | public: __thiscall PUChat::PUChat(int,float,float,float,float,char *) | ??0PUChat@@QAE@HMMMMPAD@Z
+    0x49E470 | public: virtual __thiscall PUChat::~PUChat(void) | ??1PUChat@@UAE@XZ
+    0x49E480 | public: void __thiscall PUChat::ClearChat(void) | ?ClearChat@PUChat@@QAEXXZ
+    0x49E4C0 | public: void __thiscall PUChat::ChatEntry(void) | ?ChatEntry@PUChat@@QAEXXZ
+    0x49E520 | public: virtual void * __thiscall PUChat::`vector deleting destructor'(unsigned int) | ??_EPUChat@@UAEPAXI@Z
+    0x49E520 | public: virtual void * __thiscall PUChat::`scalar deleting destructor'(unsigned int) | ??_GPUChat@@UAEPAXI@Z
+    0x592C60 | const PUChat::`vftable' | ??_7PUChat@@6B@
+*/
 
 #include "hooking.h"
 

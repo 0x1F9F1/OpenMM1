@@ -18,7 +18,55 @@
 
 #pragma once
 
-// arts7:sim
+/*
+    arts7:sim
+
+    0x50F7C0 | public: __thiscall asSimulation::asSimulation(void) | ??0asSimulation@@QAE@XZ
+    0x50F960 | public: virtual __thiscall asSimulation::~asSimulation(void) | ??1asSimulation@@UAE@XZ
+    0x50FAD0 | public: void __thiscall asSimulation::Quiet(void) | ?Quiet@asSimulation@@QAEXXZ
+    0x50FB00 | public: void __thiscall asSimulation::Init(char *,int,char * *) | ?Init@asSimulation@@QAEXPADHPAPAD@Z
+    0x50FE40 | public: virtual void __thiscall asSimulation::Reset(void) | ?Reset@asSimulation@@UAEXXZ
+    0x50FE50 | public: void __thiscall asSimulation::FirstUpdate(void) | ?FirstUpdate@asSimulation@@QAEXXZ
+    0x50FE70 | public: virtual void __thiscall asSimulation::Update(void) | ?Update@asSimulation@@UAEXXZ
+    0x510110 | public: void __thiscall asSimulation::Device(void) | ?Device@asSimulation@@QAEXXZ
+    0x5101D0 | public: void __thiscall asSimulation::Widgets(void) | ?Widgets@asSimulation@@QAEXXZ
+    0x510200 | public: void __thiscall asSimulation::Simulate(void) | ?Simulate@asSimulation@@QAEXXZ
+    0x510290 | public: void __thiscall asSimulation::UpdatePaused(class asNode *) | ?UpdatePaused@asSimulation@@QAEXPAVasNode@@@Z
+    0x510300 | public: void __thiscall asSimulation::ResetClock(void) | ?ResetClock@asSimulation@@QAEXXZ
+    0x510350 | public: void __thiscall asSimulation::BeginOverSample(int) | ?BeginOverSample@asSimulation@@QAEXH@Z
+    0x510390 | public: void __thiscall asSimulation::EndOverSample(void) | ?EndOverSample@asSimulation@@QAEXXZ
+    0x5103C0 | public: void __thiscall asSimulation::EndOverSample(int) | ?EndOverSample@asSimulation@@QAEXH@Z
+    0x5103F0 | public: void __thiscall asSimulation::RealTime(float) | ?RealTime@asSimulation@@QAEXM@Z
+    0x510450 | public: void __thiscall asSimulation::FixedFrame(float,int) | ?FixedFrame@asSimulation@@QAEXMH@Z
+    0x510490 | public: void __thiscall asSimulation::FrameLock(int,int) | ?FrameLock@asSimulation@@QAEXHH@Z
+    0x5104A0 | public: void __thiscall asSimulation::Benchmark(void) | ?Benchmark@asSimulation@@QAEXXZ
+    0x510520 | public: void __thiscall asSimulation::Pause(void) | ?Pause@asSimulation@@QAEXXZ
+    0x510600 | int __cdecl InitPipeline(char *,int,char * *) | ?InitPipeline@@YAHPADHPAPAD@Z
+    0x5106C0 | void __cdecl ShutdownPipeline(void) | ?ShutdownPipeline@@YAXXZ
+    0x510730 | int __cdecl RestartPipeline(int,int,int,int,int) | ?RestartPipeline@@YAHHHHHH@Z
+    0x510830 | public: char * __thiscall asNode::VerifyTree(void) | ?VerifyTree@asNode@@QAEPADXZ
+    0x510920 | public: static void __cdecl asSimulation::DeclareFields(void) | ?DeclareFields@asSimulation@@SAXXZ
+    0x510A90 | public: virtual class MetaClass * __thiscall asSimulation::GetClass(void) | ?GetClass@asSimulation@@UAEPAVMetaClass@@XZ
+    0x510AA0 | public: __thiscall artsReplayChannel::artsReplayChannel(void) | ??0artsReplayChannel@@QAE@XZ
+    0x510AC0 | public: virtual void __thiscall artsReplayChannel::DoRecord(class Stream *) | ?DoRecord@artsReplayChannel@@UAEXPAVStream@@@Z
+    0x510B00 | public: virtual void __thiscall artsReplayChannel::DoPlayback(class Stream *) | ?DoPlayback@artsReplayChannel@@UAEXPAVStream@@@Z
+    0x510B30 | public: __thiscall artsReplayChannel::~artsReplayChannel(void) | ??1artsReplayChannel@@QAE@XZ
+    0x510B40 | public: virtual void * __thiscall asSimulation::`vector deleting destructor'(unsigned int) | ??_EasSimulation@@UAEPAXI@Z
+    0x510BA0 | public: void __thiscall agiLib<class agiPhysParameters,class agiPhysDef>::Kill(void) | ?Kill@?$agiLib@VagiPhysParameters@@VagiPhysDef@@@@QAEXXZ
+    0x510BE0 | public: void __thiscall agiLib<class agiPhysParameters,class agiPhysDef>::Init(int) | ?Init@?$agiLib@VagiPhysParameters@@VagiPhysDef@@@@QAEXH@Z
+    0x595358 | const asSimulation::`vftable' | ??_7asSimulation@@6B@
+    0x595398 | const artsReplayChannel::`vftable' | ??_7artsReplayChannel@@6B@
+    0x6F2A10 | class MetaClass asSimulationMetaClass | ?asSimulationMetaClass@@3VMetaClass@@A
+    0x6F2A3C | class asSimulation * ARTSPTR | ?ARTSPTR@@3PAVasSimulation@@A
+    0x6F2AC0 | int Argc | ?Argc@@3HA
+    0x6F2AC4 | char * * Argv | ?Argv@@3PAPADA
+    0x6F2AC8 | class VirtualFileSystem * VFS | ?VFS@@3PAVVirtualFileSystem@@A
+    0x6F2AE0 | int StereoBuffer | ?StereoBuffer@@3HA
+    0x50FAE0 | void __cdecl QuietPrinter(int,char const *,char *) | ?QuietPrinter@@YAXHPBDPAD@Z
+    0x510900 | int __cdecl IsValidPointer(void *,unsigned int,int) | ?IsValidPointer@@YAHPAXIH@Z
+    0x510970 | void * __cdecl new_asSimulation(int) | ?new_asSimulation@@YAPAXH@Z
+    0x510A40 | void __cdecl delete_asSimulation(void *,int) | ?delete_asSimulation@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

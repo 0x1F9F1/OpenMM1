@@ -18,7 +18,18 @@
 
 #pragma once
 
-// agid3d:d3dlight
+/*
+    agid3d:d3dlight
+
+    0x51B850 | public: __thiscall agiD3DLight::agiD3DLight(class agiPipeline *) | ??0agiD3DLight@@QAE@PAVagiPipeline@@@Z
+    0x51B890 | public: virtual __thiscall agiD3DLight::~agiD3DLight(void) | ??1agiD3DLight@@UAE@XZ
+    0x51B8F0 | public: virtual int __thiscall agiD3DLight::BeginGfx(void) | ?BeginGfx@agiD3DLight@@UAEHXZ
+    0x51B970 | public: virtual void __thiscall agiD3DLight::EndGfx(void) | ?EndGfx@agiD3DLight@@UAEXXZ
+    0x51B9C0 | public: virtual int __thiscall agiD3DLight::Update(void) | ?Update@agiD3DLight@@UAEHXZ
+    0x51BA70 | public: virtual void * __thiscall agiD3DLight::`scalar deleting destructor'(unsigned int) | ??_GagiD3DLight@@UAEPAXI@Z
+    0x51BA70 | public: virtual void * __thiscall agiD3DLight::`vector deleting destructor'(unsigned int) | ??_EagiD3DLight@@UAEPAXI@Z
+    0x595898 | const agiD3DLight::`vftable' | ??_7agiD3DLight@@6B@
+*/
 
 #include "hooking.h"
 

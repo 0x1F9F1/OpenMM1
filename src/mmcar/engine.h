@@ -18,7 +18,29 @@
 
 #pragma once
 
-// mmcar:engine
+/*
+    mmcar:engine
+
+    0x474110 | public: __thiscall mmEngine::mmEngine(void) | ??0mmEngine@@QAE@XZ
+    0x474170 | public: virtual __thiscall mmEngine::~mmEngine(void) | ??1mmEngine@@UAE@XZ
+    0x474180 | public: void __thiscall mmEngine::Init(class mmCarSim *) | ?Init@mmEngine@@QAEXPAVmmCarSim@@@Z
+    0x4741B0 | public: virtual void __thiscall mmEngine::AfterLoad(void) | ?AfterLoad@mmEngine@@UAEXXZ
+    0x4741C0 | public: void __thiscall mmEngine::Load(class Stream *) | ?Load@mmEngine@@QAEXPAVStream@@@Z
+    0x474240 | public: void __thiscall mmEngine::ComputeConstants(void) | ?ComputeConstants@mmEngine@@QAEXXZ
+    0x4742C0 | public: float __thiscall mmEngine::CalcTorqueAtFullThrottle(void) | ?CalcTorqueAtFullThrottle@mmEngine@@QAEMXZ
+    0x474350 | public: float __thiscall mmEngine::CalcTorqueAtZeroThrottle(void) | ?CalcTorqueAtZeroThrottle@mmEngine@@QAEMXZ
+    0x474390 | public: float __thiscall mmEngine::CalcTorque(float) | ?CalcTorque@mmEngine@@QAEMM@Z
+    0x4743C0 | public: void __thiscall mmEngine::Save(class Stream *) | ?Save@mmEngine@@QAEXPAVStream@@@Z
+    0x474440 | public: virtual void __thiscall mmEngine::Reset(void) | ?Reset@mmEngine@@UAEXXZ
+    0x474470 | public: virtual void __thiscall mmEngine::Update(void) | ?Update@mmEngine@@UAEXXZ
+    0x474650 | public: static void __cdecl mmEngine::DeclareFields(void) | ?DeclareFields@mmEngine@@SAXXZ
+    0x474800 | public: virtual class MetaClass * __thiscall mmEngine::GetClass(void) | ?GetClass@mmEngine@@UAEPAVMetaClass@@XZ
+    0x474810 | public: virtual void * __thiscall mmEngine::`vector deleting destructor'(unsigned int) | ??_EmmEngine@@UAEPAXI@Z
+    0x5915D0 | const mmEngine::`vftable' | ??_7mmEngine@@6B@
+    0x60A3C0 | class MetaClass mmEngineMetaClass | ?mmEngineMetaClass@@3VMetaClass@@A
+    0x4746F0 | void * __cdecl new_mmEngine(int) | ?new_mmEngine@@YAPAXH@Z
+    0x4747B0 | void __cdecl delete_mmEngine(void *,int) | ?delete_mmEngine@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

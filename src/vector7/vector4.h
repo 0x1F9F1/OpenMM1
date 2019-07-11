@@ -18,7 +18,31 @@
 
 #pragma once
 
-// vector7:vector4
+/*
+    vector7:vector4
+
+    0x549140 | public: float __thiscall Vector4::Mag(void) const | ?Mag@Vector4@@QBEMXZ
+    0x549210 | public: class Vector4 __thiscall Vector4::operator/(float) const | ??KVector4@@QBE?AV0@M@Z
+    0x5492A0 | public: class Vector4 __thiscall Vector4::operator!(void) const | ??7Vector4@@QBE?AV0@XZ
+    0x549320 | public: void __thiscall Vector4::Bilinear(float,float,class Vector4 const &,class Vector4 const &,class Vector4 const &,class Vector4 const &) | ?Bilinear@Vector4@@QAEXMMABV1@000@Z
+    0x549370 | public: void __thiscall Vector4::CalculatePlane(class Vector3 const &,class Vector3 const &,class Vector3 const &) | ?CalculatePlane@Vector4@@QAEXABVVector3@@00@Z
+    0x549470 | public: void __thiscall Vector4::GetLookAt(class Vector3 const &,class Vector3 *,class Vector3 *) const | ?GetLookAt@Vector4@@QBEXABVVector3@@PAV2@1@Z
+    0x5494F0 | public: void __thiscall Vector4::Lerp(float,class Vector4 const &,class Vector4 const &) | ?Lerp@Vector4@@QAEXMABV1@0@Z
+    0x5495B0 | public: __thiscall Vector3::operator class Vector4(void) const | ??BVector3@@QBE?AVVector4@@XZ
+    0x5495E0 | public: void __thiscall Vector4Array::Init(int) | ?Init@Vector4Array@@QAEXH@Z
+    0x549650 | public: void __thiscall Vector4Array::Delete(void) | ?Delete@Vector4Array@@QAEXXZ
+    0x5496A0 | private: void __thiscall Vector4Array::NewTable(int) | ?NewTable@Vector4Array@@AAEXH@Z
+    0x549710 | public: class Vector4 & __thiscall Vector4Array::operator[](int) | ??AVector4Array@@QAEAAVVector4@@H@Z
+    0x549790 | public: void __thiscall Vector4Array::operator=(class Vector4Array &) | ??4Vector4Array@@QAEXAAV0@@Z
+    0x549890 | public: void __thiscall Vector4Array::BlockCopy(class Vector4Array &) | ?BlockCopy@Vector4Array@@QAEXAAV1@@Z
+    0x549990 | public: virtual void __thiscall Vector4Type::Save(class MiniParser *,void *) | ?Save@Vector4Type@@UAEXPAVMiniParser@@PAX@Z
+    0x5499D0 | public: virtual void __thiscall Vector4Type::Load(class MiniParser *,void *) | ?Load@Vector4Type@@UAEXPAVMiniParser@@PAX@Z
+    0x549A10 | public: virtual unsigned int __thiscall Vector4Type::SizeOf(void) | ?SizeOf@Vector4Type@@UAEIXZ
+    0x549A20 | public: virtual void * __thiscall Vector4Type::New(int) | ?New@Vector4Type@@UAEPAXH@Z
+    0x549A70 | public: virtual void __thiscall Vector4Type::Delete(void *,int) | ?Delete@Vector4Type@@UAEXPAXH@Z
+    0x5960F8 | const Vector4Type::`vftable' | ??_7Vector4Type@@6B@
+    0x7108C8 | struct Vector4Type Vector4Inst | ?Vector4Inst@@3UVector4Type@@A
+*/
 
 #include "hooking.h"
 

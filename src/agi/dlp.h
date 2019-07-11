@@ -18,7 +18,25 @@
 
 #pragma once
 
-// agi:dlp
+/*
+    agi:dlp
+
+    0x53FD10 | public: __thiscall DLP::DLP(class agiPipeline *) | ??0DLP@@QAE@PAVagiPipeline@@@Z
+    0x53FD70 | public: virtual __thiscall DLP::~DLP(void) | ??1DLP@@UAE@XZ
+    0x53FE80 | protected: void __thiscall DLP::FixTemplateRefs(int) | ?FixTemplateRefs@DLP@@IAEXH@Z
+    0x53FF50 | public: virtual int __thiscall DLP::BeginGfx(void) | ?BeginGfx@DLP@@UAEHXZ
+    0x540170 | public: virtual void __thiscall DLP::EndGfx(void) | ?EndGfx@DLP@@UAEXXZ
+    0x540180 | public: int __thiscall DLP::Init(char *,char *,class Vector3 *) | ?Init@DLP@@QAEHPAD0PAVVector3@@@Z
+    0x540200 | public: int __thiscall DLP::Init(class DLPTemplate *,char *,class Vector3 *) | ?Init@DLP@@QAEHPAVDLPTemplate@@PADPAVVector3@@@Z
+    0x5402E0 | public: class DLP * __thiscall DLP::Clone(void) | ?Clone@DLP@@QAEPAV1@XZ
+    0x540310 | public: virtual void __thiscall DLP::Cull(int) | ?Cull@DLP@@UAEXH@Z
+    0x540370 | public: virtual char * __thiscall DLP::GetName(void) | ?GetName@DLP@@UAEPADXZ
+    0x5403B0 | public: virtual void __thiscall DLP::FixROpts(int,int) | ?FixROpts@DLP@@UAEXHH@Z
+    0x540400 | public: virtual void * __thiscall DLP::`scalar deleting destructor'(unsigned int) | ??_GDLP@@UAEPAXI@Z
+    0x540400 | public: virtual void * __thiscall DLP::`vector deleting destructor'(unsigned int) | ??_EDLP@@UAEPAXI@Z
+    0x595DF0 | const DLP::`vftable' | ??_7DLP@@6B@
+    0x70ED90 | class HashTable DLPHash | ?DLPHash@@3VHashTable@@A
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,20 @@
 
 #pragma once
 
-// eventq7:geinputLib
+/*
+    eventq7:geinputLib
+
+    0x545960 | int __cdecl inputSetup(int,int,int,int,int) | ?inputSetup@@YAHHHHHH@Z
+    0x545D80 | void __cdecl geinputAcquireMouse(void) | ?geinputAcquireMouse@@YAXXZ
+    0x545D90 | void __cdecl geinputUnacquireMouse(void) | ?geinputUnacquireMouse@@YAXXZ
+    0x545DA0 | int __cdecl geinputGetBufferedKeyboard(char *) | ?geinputGetBufferedKeyboard@@YAHPAD@Z
+    0x545E30 | char * __cdecl geinputGetKeyboard(void) | ?geinputGetKeyboard@@YAPADXZ
+    0x545EA0 | void __cdecl geinputGetMouse(long *,long *,char *,char *,long *,long *,long *,char *) | ?geinputGetMouse@@YAXPAJ0PAD10001@Z
+    0x5460F0 | void __cdecl geinputCleanup(void) | ?geinputCleanup@@YAXXZ
+    0x546190 | void __cdecl geinputClearCache(void) | ?geinputClearCache@@YAXXZ
+    0x710700 | struct _DIMOUSESTATE MOUSESTATE | ?MOUSESTATE@@3U_DIMOUSESTATE@@A
+    0x545BD0 | char * __cdecl DIError(int) | ?DIError@@YAPADH@Z
+*/
 
 #include "hooking.h"
 

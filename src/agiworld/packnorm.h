@@ -18,7 +18,14 @@
 
 #pragma once
 
-// agiworld:packnorm
+/*
+    agiworld:packnorm
+
+    0x504E30 | unsigned char __cdecl PackNormalSlow(class Vector3 &) | ?PackNormalSlow@@YAEAAVVector3@@@Z
+    0x504EE0 | unsigned char __cdecl PackNormal(class Vector3 &) | ?PackNormal@@YAEAAVVector3@@@Z
+    0x5B8BF0 | class Vector3 * UnpackNormal | ?UnpackNormal@@3PAVVector3@@A
+    0x6A0A00 | union mmx * UnpackNormalMMX | ?UnpackNormalMMX@@3PATmmx@@A
+*/
 
 #include "hooking.h"
 

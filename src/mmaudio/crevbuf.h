@@ -18,7 +18,18 @@
 
 #pragma once
 
-// mmaudio:crevbuf
+/*
+    mmaudio:crevbuf
+
+    0x4E76D0 | public: __thiscall CReverbBuffer::CReverbBuffer(struct IDirectSound3DBuffer *) | ??0CReverbBuffer@@QAE@PAUIDirectSound3DBuffer@@@Z
+    0x4E7720 | public: __thiscall CReverbBuffer::~CReverbBuffer(void) | ??1CReverbBuffer@@QAE@XZ
+    0x4E7730 | public: int __thiscall CReverbBuffer::PropertySetOk(void) | ?PropertySetOk@CReverbBuffer@@QAEHXZ
+    0x4E7740 | private: int __thiscall CReverbBuffer::QueryProperty(unsigned long) | ?QueryProperty@CReverbBuffer@@AAEHK@Z
+    0x4E7790 | public: void __thiscall CReverbBuffer::SetReverbMix(float) | ?SetReverbMix@CReverbBuffer@@QAEXM@Z
+    0x4E77B0 | public: void __thiscall CReverbBuffer::SetAll(struct EAXBUFFER_REVERBPROPERTIES *) | ?SetAll@CReverbBuffer@@QAEXPAUEAXBUFFER_REVERBPROPERTIES@@@Z
+    0x4E77D0 | public: float __thiscall CReverbBuffer::GetReverbMix(void) | ?GetReverbMix@CReverbBuffer@@QAEMXZ
+    0x4E7810 | public: void __thiscall CReverbBuffer::GetAll(struct EAXBUFFER_REVERBPROPERTIES *) | ?GetAll@CReverbBuffer@@QAEXPAUEAXBUFFER_REVERBPROPERTIES@@@Z
+*/
 
 #include "hooking.h"
 

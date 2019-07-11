@@ -18,7 +18,35 @@
 
 #pragma once
 
-// mmwidget:vscrollbar
+/*
+    mmwidget:vscrollbar
+
+    0x4B1CE0 | public: __thiscall UIVScrollBar::UIVScrollBar(void) | ??0UIVScrollBar@@QAE@XZ
+    0x4B1D80 | public: virtual __thiscall UIVScrollBar::~UIVScrollBar(void) | ??1UIVScrollBar@@UAE@XZ
+    0x4B1E00 | public: void __thiscall UIVScrollBar::Init(float,float,float,float,int,float,float,int *,class Callback,int) | ?Init@UIVScrollBar@@QAEXMMMMHMMPAHVCallback@@H@Z
+    0x4B1E70 | public: void __thiscall UIVScrollBar::LoadBitmap(void) | ?LoadBitmap@UIVScrollBar@@QAEXXZ
+    0x4B1FA0 | public: void __thiscall UIVScrollBar::SetHotSpots(void) | ?SetHotSpots@UIVScrollBar@@QAEXXZ
+    0x4B2060 | public: float __thiscall UIVScrollBar::Inc(void) | ?Inc@UIVScrollBar@@QAEMXZ
+    0x4B20C0 | public: float __thiscall UIVScrollBar::Dec(void) | ?Dec@UIVScrollBar@@QAEMXZ
+    0x4B2120 | public: void __thiscall UIVScrollBar::SetStep(int,float) | ?SetStep@UIVScrollBar@@QAEXHM@Z
+    0x4B2180 | public: void __thiscall UIVScrollBar::SetRange(float,float) | ?SetRange@UIVScrollBar@@QAEXMM@Z
+    0x4B21F0 | public: void __thiscall UIVScrollBar::SetTrough(float,float) | ?SetTrough@UIVScrollBar@@QAEXMM@Z
+    0x4B2270 | public: virtual void __thiscall UIVScrollBar::Update(void) | ?Update@UIVScrollBar@@UAEXXZ
+    0x4B2290 | public: virtual void __thiscall UIVScrollBar::Switch(int) | ?Switch@UIVScrollBar@@UAEXH@Z
+    0x4B22E0 | public: virtual void __thiscall UIVScrollBar::Action(union eqEvent) | ?Action@UIVScrollBar@@UAEXTeqEvent@@@Z
+    0x4B23A0 | public: void __thiscall UIVScrollBar::EvalMouseXY(float,float) | ?EvalMouseXY@UIVScrollBar@@QAEXMM@Z
+    0x4B2520 | public: virtual void __thiscall UIVScrollBar::Cull(void) | ?Cull@UIVScrollBar@@UAEXXZ
+    0x4B2690 | public: static void __cdecl UIVScrollBar::DeclareFields(void) | ?DeclareFields@UIVScrollBar@@SAXXZ
+    0x4B2800 | public: virtual class MetaClass * __thiscall UIVScrollBar::GetClass(void) | ?GetClass@UIVScrollBar@@UAEPAVMetaClass@@XZ
+    0x4B2810 | public: virtual void * __thiscall UIVScrollBar::`vector deleting destructor'(unsigned int) | ??_EUIVScrollBar@@UAEPAXI@Z
+    0x4B2870 | public: virtual void __thiscall UIVScrollBar::SetPosition(float,float) | ?SetPosition@UIVScrollBar@@UAEXMM@Z
+    0x4B2890 | public: virtual void __thiscall UIVScrollBar::Enable(void) | ?Enable@UIVScrollBar@@UAEXXZ
+    0x4B28B0 | public: virtual void __thiscall UIVScrollBar::Disable(void) | ?Disable@UIVScrollBar@@UAEXXZ
+    0x593CA0 | const UIVScrollBar::`vftable' | ??_7UIVScrollBar@@6B@
+    0x667F50 | class MetaClass UIVScrollBarMetaClass | ?UIVScrollBarMetaClass@@3VMetaClass@@A
+    0x4B26E0 | void * __cdecl new_UIVScrollBar(int) | ?new_UIVScrollBar@@YAPAXH@Z
+    0x4B27B0 | void __cdecl delete_UIVScrollBar(void *,int) | ?delete_UIVScrollBar@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,21 @@
 
 #pragma once
 
-// agiworld:texsheet
+/*
+    agiworld:texsheet
+
+    0x501B20 | char * __cdecl mystrtok(char *,char const *) | ?mystrtok@@YAPADPADPBD@Z
+    0x501B80 | public: void __thiscall agiTexSheet::Load(char *) | ?Load@agiTexSheet@@QAEXPAD@Z
+    0x5020F0 | public: void __thiscall agiTexSheet::Kill(void) | ?Kill@agiTexSheet@@QAEXXZ
+    0x502120 | public: void __thiscall agiTexSheet::Save(char *) | ?Save@agiTexSheet@@QAEXPAD@Z
+    0x5023D0 | public: struct agiTexProp * __thiscall agiTexSheet::Lookup(char *,int) | ?Lookup@agiTexSheet@@QAEPAUagiTexProp@@PADH@Z
+    0x502430 | public: struct agiTexProp * __thiscall agiTexSheet::LookupAlternate(char *) | ?LookupAlternate@agiTexSheet@@QAEPAUagiTexProp@@PAD@Z
+    0x5024A0 | public: int __thiscall agiTexSheet::GetVariationCount(char *) | ?GetVariationCount@agiTexSheet@@QAEHPAD@Z
+    0x5024F0 | public: char * __thiscall agiTexSheet::RemapName(char *,int) | ?RemapName@agiTexSheet@@QAEPADPADH@Z
+    0x502530 | public: void __thiscall agiTexSheet::Add(char *) | ?Add@agiTexSheet@@QAEXPAD@Z
+    0x6A0988 | class agiTexSheet TEXSHEET | ?TEXSHEET@@3VagiTexSheet@@A
+    0x5020D0 | int __cdecl cmpTex(void const *,void const *) | ?cmpTex@@YAHPBX0@Z
+*/
 
 #include "hooking.h"
 

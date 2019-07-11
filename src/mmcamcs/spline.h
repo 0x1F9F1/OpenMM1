@@ -18,7 +18,28 @@
 
 #pragma once
 
-// mmcamcs:spline
+/*
+    mmcamcs:spline
+
+    0x4EF4B0 | public: __thiscall Spline::Spline(void) | ??0Spline@@QAE@XZ
+    0x4EF4E0 | public: void __thiscall Spline::Init(float *,int) | ?Init@Spline@@QAEXPAMH@Z
+    0x4EF610 | public: int __thiscall Spline::InRange(void) | ?InRange@Spline@@QAEHXZ
+    0x4EF670 | public: void __thiscall Spline::CalcCoeff(void) | ?CalcCoeff@Spline@@QAEXXZ
+    0x4EF7D0 | public: void __thiscall Spline::SetValue(float *) | ?SetValue@Spline@@QAEXPAM@Z
+    0x4EF850 | public: void __thiscall Spline::SetGoal(float *,float) | ?SetGoal@Spline@@QAEXPAMM@Z
+    0x4EF940 | public: void __thiscall Spline::Solve(float) | ?Solve@Spline@@QAEXM@Z
+    0x4EFAB0 | public: void __thiscall Spline::Print(int) | ?Print@Spline@@QAEXH@Z
+    0x4EFBB0 | public: void __thiscall Spline::FixTimeStop(void) | ?FixTimeStop@Spline@@QAEXXZ
+    0x4EFBF0 | public: virtual void __thiscall Spline::Update(void) | ?Update@Spline@@UAEXXZ
+    0x4EFC40 | public: void __thiscall Spline::AddWidgets(class Bank *) | ?AddWidgets@Spline@@QAEXPAVBank@@@Z
+    0x4EFC50 | public: static void __cdecl Spline::DeclareFields(void) | ?DeclareFields@Spline@@SAXXZ
+    0x4EFDB0 | public: virtual class MetaClass * __thiscall Spline::GetClass(void) | ?GetClass@Spline@@UAEPAVMetaClass@@XZ
+    0x4EFDC0 | public: virtual void * __thiscall Spline::`vector deleting destructor'(unsigned int) | ??_ESpline@@UAEPAXI@Z
+    0x594F48 | const Spline::`vftable' | ??_7Spline@@6B@
+    0x67B810 | class MetaClass SplineMetaClass | ?SplineMetaClass@@3VMetaClass@@A
+    0x4EFCA0 | void * __cdecl new_Spline(int) | ?new_Spline@@YAPAXH@Z
+    0x4EFD60 | void __cdecl delete_Spline(void *,int) | ?delete_Spline@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

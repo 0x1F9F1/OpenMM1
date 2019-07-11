@@ -18,7 +18,52 @@
 
 #pragma once
 
-// agisw:swpipe
+/*
+    agisw:swpipe
+
+    0x51BE70 | public: virtual int __thiscall agiSWPipeline::Validate(void) | ?Validate@agiSWPipeline@@UAEHXZ
+    0x51BE80 | public: __thiscall agiSWPipeline::agiSWPipeline(int,char * *) | ??0agiSWPipeline@@QAE@HPAPAD@Z
+    0x51BF00 | public: virtual __thiscall agiSWPipeline::~agiSWPipeline(void) | ??1agiSWPipeline@@UAE@XZ
+    0x51BF10 | public: virtual int __thiscall agiSWPipeline::BeginGfx(void) | ?BeginGfx@agiSWPipeline@@UAEHXZ
+    0x51C0A0 | public: virtual void __thiscall agiSWPipeline::EndGfx(void) | ?EndGfx@agiSWPipeline@@UAEXXZ
+    0x51C0C0 | public: virtual void __thiscall agiSWPipeline::BeginFrame(void) | ?BeginFrame@agiSWPipeline@@UAEXXZ
+    0x51C100 | public: virtual void __thiscall agiSWPipeline::BeginScene(void) | ?BeginScene@agiSWPipeline@@UAEXXZ
+    0x51C120 | public: virtual void __thiscall agiSWPipeline::EndScene(void) | ?EndScene@agiSWPipeline@@UAEXXZ
+    0x51C140 | public: virtual void __thiscall agiSWPipeline::EndFrame(void) | ?EndFrame@agiSWPipeline@@UAEXXZ
+    0x51C160 | public: virtual class DLP * __thiscall agiSWPipeline::CreateDLP(void) | ?CreateDLP@agiSWPipeline@@UAEPAVDLP@@XZ
+    0x51C170 | public: virtual class agiLight * __thiscall agiSWPipeline::CreateLight(void) | ?CreateLight@agiSWPipeline@@UAEPAVagiLight@@XZ
+    0x51C180 | public: virtual void __thiscall agiSWPipeline::ClearAll(int) | ?ClearAll@agiSWPipeline@@UAEXH@Z
+    0x51C210 | public: virtual void __thiscall agiSWPipeline::ClearRect(int,int,int,int,unsigned int) | ?ClearRect@agiSWPipeline@@UAEXHHHHI@Z
+    0x51C270 | public: virtual class agiViewport * __thiscall agiSWPipeline::CreateViewport(void) | ?CreateViewport@agiSWPipeline@@UAEPAVagiViewport@@XZ
+    0x51C300 | public: virtual class agiLightModel * __thiscall agiSWPipeline::CreateLightModel(void) | ?CreateLightModel@agiSWPipeline@@UAEPAVagiLightModel@@XZ
+    0x51C310 | public: virtual class agiTexDef * __thiscall agiSWPipeline::CreateTexDef(void) | ?CreateTexDef@agiSWPipeline@@UAEPAVagiTexDef@@XZ
+    0x51C370 | public: virtual class agiTexLut * __thiscall agiSWPipeline::CreateTexLut(void) | ?CreateTexLut@agiSWPipeline@@UAEPAVagiTexLut@@XZ
+    0x51C3D0 | public: virtual class agiMtlDef * __thiscall agiSWPipeline::CreateMtlDef(void) | ?CreateMtlDef@agiSWPipeline@@UAEPAVagiMtlDef@@XZ
+    0x51C3E0 | public: virtual class agiBitmap * __thiscall agiSWPipeline::CreateBitmap(void) | ?CreateBitmap@agiSWPipeline@@UAEPAVagiBitmap@@XZ
+    0x51C450 | public: virtual void __thiscall agiSWPipeline::CopyBitmap(int,int,class agiBitmap *,int,int,int,int) | ?CopyBitmap@agiSWPipeline@@UAEXHHPAVagiBitmap@@HHHH@Z
+    0x51C540 | class agiPipeline * __cdecl swCreatePipeline(int,char * *) | ?swCreatePipeline@@YAPAVagiPipeline@@HPAPAD@Z
+    0x51C5E0 | public: virtual void * __thiscall agiSWPipeline::`vector deleting destructor'(unsigned int) | ??_EagiSWPipeline@@UAEPAXI@Z
+    0x51C5E0 | public: virtual void * __thiscall agiSWPipeline::`scalar deleting destructor'(unsigned int) | ??_GagiSWPipeline@@UAEPAXI@Z
+    0x51C610 | public: virtual void __thiscall agiSWViewport::Activate(void) | ?Activate@agiSWViewport@@UAEXXZ
+    0x51C630 | public: virtual void __thiscall agiSWViewport::SetBackground(class Vector3 &) | ?SetBackground@agiSWViewport@@UAEXAAVVector3@@@Z
+    0x51C690 | public: virtual void __thiscall agiSWViewport::Clear(int) | ?Clear@agiSWViewport@@UAEXH@Z
+    0x51C880 | public: virtual int __thiscall agiSWViewport::BeginGfx(void) | ?BeginGfx@agiSWViewport@@UAEHXZ
+    0x51C890 | public: virtual void __thiscall agiSWViewport::EndGfx(void) | ?EndGfx@agiSWViewport@@UAEXXZ
+    0x51C8A0 | public: virtual void * __thiscall agiSWViewport::`vector deleting destructor'(unsigned int) | ??_EagiSWViewport@@UAEPAXI@Z
+    0x51C8A0 | public: virtual void * __thiscall agiSWViewport::`scalar deleting destructor'(unsigned int) | ??_GagiSWViewport@@UAEPAXI@Z
+    0x51C8D0 | public: virtual __thiscall agiSWViewport::~agiSWViewport(void) | ??1agiSWViewport@@UAE@XZ
+    0x51C8E0 | public: virtual int __thiscall agiSWBitmap::BeginGfx(void) | ?BeginGfx@agiSWBitmap@@UAEHXZ
+    0x51CA60 | public: virtual void __thiscall agiSWBitmap::UpdateFlags(void) | ?UpdateFlags@agiSWBitmap@@UAEXXZ
+    0x51CA80 | public: virtual void __thiscall agiSWBitmap::EndGfx(void) | ?EndGfx@agiSWBitmap@@UAEXXZ
+    0x51CAA0 | public: virtual void __thiscall agiSWBitmap::Restore(void) | ?Restore@agiSWBitmap@@UAEXXZ
+    0x51CAB0 | public: virtual void * __thiscall agiSWBitmap::`scalar deleting destructor'(unsigned int) | ??_GagiSWBitmap@@UAEPAXI@Z
+    0x51CAB0 | public: virtual void * __thiscall agiSWBitmap::`vector deleting destructor'(unsigned int) | ??_EagiSWBitmap@@UAEPAXI@Z
+    0x51CAE0 | public: virtual __thiscall agiSWBitmap::~agiSWBitmap(void) | ??1agiSWBitmap@@UAE@XZ
+    0x5958E8 | const agiSWPipeline::`vftable' | ??_7agiSWPipeline@@6B@
+    0x595958 | const agiSWViewport::`vftable' | ??_7agiSWViewport@@6B@
+    0x595998 | const agiSWBitmap::`vftable' | ??_7agiSWBitmap@@6B@
+    0x51C2D0 | void __cdecl zmemset(unsigned short *,unsigned int) | ?zmemset@@YAXPAGI@Z
+*/
 
 #include "hooking.h"
 

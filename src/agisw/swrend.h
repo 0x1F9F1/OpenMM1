@@ -18,7 +18,109 @@
 
 #pragma once
 
-// agisw:swrend
+/*
+    agisw:swrend
+
+    0x51CE30 | void __fastcall __emitDebug(struct swSurface *,int) | ?__emitDebug@@YIXPAUswSurface@@H@Z
+    0x51CE90 | void __fastcall __emitDepthComplexity(int) | ?__emitDepthComplexity@@YIXH@Z
+    0x51CED0 | void __fastcall __emitSolid(int) | ?__emitSolid@@YIXH@Z
+    0x51CF20 | void __fastcall __emitSolidZ(int) | ?__emitSolidZ@@YIXH@Z
+    0x51CF90 | void __fastcall __emitWireframe(int) | ?__emitWireframe@@YIXH@Z
+    0x51CFB0 | void __cdecl swAddEdge(int,int) | ?swAddEdge@@YAXHH@Z
+    0x51D180 | void __fastcall __setupUV(struct swSurface *) | ?__setupUV@@YIXPAUswSurface@@@Z
+    0x51D240 | void __fastcall __setupUVZ(struct swSurface *) | ?__setupUVZ@@YIXPAUswSurface@@@Z
+    0x51D310 | void __fastcall __setupZ(struct swSurface *) | ?__setupZ@@YIXPAUswSurface@@@Z
+    0x51D350 | void __fastcall __setupUVI(struct swSurface *) | ?__setupUVI@@YIXPAUswSurface@@@Z
+    0x51D420 | void __fastcall __setupUVIZ(struct swSurface *) | ?__setupUVIZ@@YIXPAUswSurface@@@Z
+    0x51D500 | void __fastcall __setupNone(struct swSurface *) | ?__setupNone@@YIXPAUswSurface@@@Z
+    0x51D510 | void __fastcall __spanLinear(struct swSurface *,int) | ?__spanLinear@@YIXPAUswSurface@@H@Z
+    0x51D540 | void __fastcall __spanLinearZwrite(struct swSurface *,int) | ?__spanLinearZwrite@@YIXPAUswSurface@@H@Z
+    0x51D640 | void __fastcall __spanPerspXY(struct swSurface *,int) | ?__spanPerspXY@@YIXPAUswSurface@@H@Z
+    0x51D840 | void __fastcall __spanPerspXYZwrite(struct swSurface *,int) | ?__spanPerspXYZwrite@@YIXPAUswSurface@@H@Z
+    0x51D860 | void __cdecl swScanSurface(struct swSurface *) | ?swScanSurface@@YAXPAUswSurface@@@Z
+    0x51DAA0 | struct swSurface * __cdecl swInitSurface(struct agiScreenVtx,struct agiScreenVtx,struct agiScreenVtx,unsigned int) | ?swInitSurface@@YAPAUswSurface@@UagiScreenVtx@@00I@Z
+    0x51E540 | void __cdecl swScanSurfaces(void) | ?swScanSurfaces@@YAXXZ
+    0x51E5F0 | void __cdecl swTri(struct agiScreenVtx *,struct agiScreenVtx *,struct agiScreenVtx *) | ?swTri@@YAXPAUagiScreenVtx@@00@Z
+    0x51E7B0 | void __cdecl swQuad(struct agiScreenVtx *,struct agiScreenVtx *,struct agiScreenVtx *,struct agiScreenVtx *) | ?swQuad@@YAXPAUagiScreenVtx@@000@Z
+    0x51EB80 | void __cdecl swPoly(struct agiScreenVtx *,int) | ?swPoly@@YAXPAUagiScreenVtx@@H@Z
+    0x51EF10 | void __cdecl swLineInt(int,int,int,int,int) | ?swLineInt@@YAXHHHHH@Z
+    0x51F000 | void __cdecl swLine(struct agiScreenVtx *,struct agiScreenVtx *) | ?swLine@@YAXPAUagiScreenVtx@@0@Z
+    0x51F090 | void __cdecl swKill(void) | ?swKill@@YAXXZ
+    0x51F0C0 | void __cdecl swSetInterlace(int) | ?swSetInterlace@@YAXH@Z
+    0x51F100 | void __cdecl swInit(void) | ?swInit@@YAXXZ
+    0x5BE8E8 | int swFbWidth | ?swFbWidth@@3HA
+    0x5BE8EC | int swFbHeight | ?swFbHeight@@3HA
+    0x5BEAFC | int FLIPWINDING | ?FLIPWINDING@@3HA
+    0x5BEB00 | int BACKFACE | ?BACKFACE@@3HA
+    0x5BEB04 | int XPTHRESH | ?XPTHRESH@@3HA
+    0x5BEB08 | int YPTHRESH | ?YPTHRESH@@3HA
+    0x5BEB0C | int PERSP2 | ?PERSP2@@3HA
+    0x5BEB10 | float PERSP_THRESH | ?PERSP_THRESH@@3MA
+    0x5BEB60 | int QUADS | ?QUADS@@3HA
+    0x6F8078 | unsigned short * swDepthBuffer | ?swDepthBuffer@@3PAGA
+    0x6F807C | int FLIPLOD | ?FLIPLOD@@3HA
+    0x6F8080 | void * swScreen | ?swScreen@@3PAXA
+    0x6F8084 | unsigned short * swCurrentDepthLine | ?swCurrentDepthLine@@3PAGA
+    0x6F808C | union swr_sizes_t swr_sizes | ?swr_sizes@@3Tswr_sizes_t@@A
+    0x6F8090 | void (__cdecl* swFbStartFrame)(void) | ?swFbStartFrame@@3P6AXXZA
+    0x6F8098 | int swr_color | ?swr_color@@3HA
+    0x6F809C | int swr_texmask | ?swr_texmask@@3HA
+    0x6F80A0 | int EnableParabolic | ?EnableParabolic@@3HA
+    0x6F80A4 | void (__cdecl* swFbEndFrame)(void) | ?swFbEndFrame@@3P6AXXZA
+    0x6F80A8 | int swPixelSizeShift | ?swPixelSizeShift@@3HA
+    0x6F80AC | unsigned char * swStippleTest | ?swStippleTest@@3PAEA
+    0x6F80B0 | int swr_di | ?swr_di@@3HA
+    0x6F80B4 | int debugTri | ?debugTri@@3HA
+    0x6F80B8 | int swr_du | ?swr_du@@3HA
+    0x6F80BC | int swr_dv | ?swr_dv@@3HA
+    0x6F80C0 | int swr_dz | ?swr_dz@@3HA
+    0x6F80C8 | unsigned short * swr_zb | ?swr_zb@@3PAGA
+    0x6F80D0 | int swGreenMask | ?swGreenMask@@3HA
+    0x6F80D8 | int debugTriGate | ?debugTriGate@@3HA
+    0x6F80DC | unsigned int swActualScreenStride | ?swActualScreenStride@@3IA
+    0x6F80E0 | unsigned int (__fastcall* swClampAdd)(unsigned int,unsigned int) | ?swClampAdd@@3P6IIII@ZA
+    0x6F8128 | void (__cdecl* swFbStartScene)(void) | ?swFbStartScene@@3P6AXXZA
+    0x6F812C | int swBlueMask | ?swBlueMask@@3HA
+    0x6F8174 | int swIsInterlaced | ?swIsInterlaced@@3HA
+    0x6F8178 | int BADEDGE | ?BADEDGE@@3HA
+    0x6F817C | int swr_texstride | ?swr_texstride@@3HA
+    0x6F81C0 | int swr_i | ?swr_i@@3HA
+    0x6F81C4 | int swr_ddu | ?swr_ddu@@3HA
+    0x6F81C8 | int swr_ddv | ?swr_ddv@@3HA
+    0x6F81CC | int swr_u | ?swr_u@@3HA
+    0x6F81D0 | int swr_v | ?swr_v@@3HA
+    0x6F81D4 | int swr_z | ?swr_z@@3HA
+    0x6F81DC | void * swCurrentScanline | ?swCurrentScanline@@3PAXA
+    0x6F81E0 | int swBytesPerPixel | ?swBytesPerPixel@@3HA
+    0x6F81E4 | void * swFbParent | ?swFbParent@@3PAXA
+    0x6F81E8 | unsigned int swFrameOffset | ?swFrameOffset@@3IA
+    0x6F81EC | void (__cdecl* swFbEnd)(void) | ?swFbEnd@@3P6AXXZA
+    0x6F81F0 | int swRedMask | ?swRedMask@@3HA
+    0x6F81F4 | void * swr_dest | ?swr_dest@@3PAXA
+    0x6F81F8 | void (__cdecl* swFbEndScene)(void) | ?swFbEndScene@@3P6AXXZA
+    0x6F81FC | void (__cdecl* swFbStart)(void) | ?swFbStart@@3P6AXXZA
+    0x6F8200 | unsigned short * swCurrentLut | ?swCurrentLut@@3PAGA
+    0x6FE014 | int swr_texshift | ?swr_texshift@@3HA
+    0x6FE018 | int debugTriMatch | ?debugTriMatch@@3HA
+    0x6FE020 | struct swRastInfo swInfo | ?swInfo@@3UswRastInfo@@A
+    0x702030 | void * swr_src | ?swr_src@@3PAXA
+    0x702034 | unsigned int swScreenStride | ?swScreenStride@@3IA
+    0x702038 | int swFbX | ?swFbX@@3HA
+    0x70203C | int swFbY | ?swFbY@@3HA
+    0x702040 | int LODBIAS | ?LODBIAS@@3HA
+    0x51D0D0 | void __cdecl swSetupEdgeScan(struct swEdge *,int,int) | ?swSetupEdgeScan@@YAXPAUswEdge@@HH@Z
+    0x51D580 | void __fastcall __emitZwrite(struct swSurface *,int) | ?__emitZwrite@@YIXPAUswSurface@@H@Z
+    0x51E480 | void __fastcall __emitSemiBlack(int) | ?__emitSemiBlack@@YIXH@Z
+    0x51E4C0 | void __fastcall __emitStippleBlack(int) | ?__emitStippleBlack@@YIXH@Z
+    0x51E500 | int __cdecl swComputeIntensity(struct agiScreenVtx &) | ?swComputeIntensity@@YAHAAUagiScreenVtx@@@Z
+    0x51E5E0 | void __cdecl emms(void) | ?emms@@YAXXZ
+    0x51F1D0 | unsigned int __cdecl swFindColor555(unsigned int) | ?swFindColor555@@YAII@Z
+    0x51F210 | unsigned int __cdecl swFindColor565(unsigned int) | ?swFindColor565@@YAII@Z
+    0x51F250 | unsigned int __fastcall swClampAddColor565(unsigned int) | ?swClampAddColor565@@YIII@Z
+    0x51F290 | unsigned int __fastcall swClampAddColor555(unsigned int) | ?swClampAddColor555@@YIII@Z
+    0x51F2D0 | unsigned int __fastcall swClampAdd565(unsigned int,unsigned int) | ?swClampAdd565@@YIIII@Z
+    0x51F310 | unsigned int __fastcall swClampAdd555(unsigned int,unsigned int) | ?swClampAdd555@@YIIII@Z
+*/
 
 #include "hooking.h"
 

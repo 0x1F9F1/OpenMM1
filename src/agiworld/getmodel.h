@@ -18,7 +18,12 @@
 
 #pragma once
 
-// agiworld:getmodel
+/*
+    agiworld:getmodel
+
+    0x503EF0 | class agiMeshModel * __cdecl GetModel(char *,char *,char *) | ?GetModel@@YAPAVagiMeshModel@@PAD00@Z
+    0x6A09E8 | class HashTable MeshModelHash | ?MeshModelHash@@3VHashTable@@A
+*/
 
 #include "hooking.h"
 

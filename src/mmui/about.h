@@ -18,7 +18,20 @@
 
 #pragma once
 
-// mmui:about
+/*
+    mmui:about
+
+    0x48F1B0 | void __cdecl GetMidtownRegString(char *,int,char *,char *) | ?GetMidtownRegString@@YAXPADH00@Z
+    0x48F230 | public: __thiscall AboutMenu::AboutMenu(int) | ??0AboutMenu@@QAE@H@Z
+    0x48F400 | public: virtual __thiscall AboutMenu::~AboutMenu(void) | ??1AboutMenu@@UAE@XZ
+    0x48F410 | public: virtual void __thiscall AboutMenu::PreSetup(void) | ?PreSetup@AboutMenu@@UAEXXZ
+    0x48F430 | public: virtual void __thiscall AboutMenu::Update(void) | ?Update@AboutMenu@@UAEXXZ
+    0x48F4B0 | public: virtual void __thiscall AboutMenu::Cull(void) | ?Cull@AboutMenu@@UAEXXZ
+    0x48F570 | public: virtual void * __thiscall AboutMenu::`scalar deleting destructor'(unsigned int) | ??_GAboutMenu@@UAEPAXI@Z
+    0x48F570 | public: virtual void * __thiscall AboutMenu::`vector deleting destructor'(unsigned int) | ??_EAboutMenu@@UAEPAXI@Z
+    0x48F5A0 | public: virtual int __thiscall UIMenu::IsAnOptionMenu(void) | ?IsAnOptionMenu@UIMenu@@UAEHXZ
+    0x592268 | const AboutMenu::`vftable' | ??_7AboutMenu@@6B@
+*/
 
 #include "hooking.h"
 

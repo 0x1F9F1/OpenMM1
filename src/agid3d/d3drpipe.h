@@ -18,7 +18,24 @@
 
 #pragma once
 
-// agid3d:d3drpipe
+/*
+    agid3d:d3drpipe
+
+    0x5169E0 | public: __thiscall agiD3DRPipeline::agiD3DRPipeline(void) | ??0agiD3DRPipeline@@QAE@XZ
+    0x516A00 | public: virtual __thiscall agiD3DRPipeline::~agiD3DRPipeline(void) | ??1agiD3DRPipeline@@UAE@XZ
+    0x516A10 | public: virtual int __thiscall agiD3DRPipeline::BeginGfx(void) | ?BeginGfx@agiD3DRPipeline@@UAEHXZ
+    0x516A90 | public: virtual void __thiscall agiD3DRPipeline::EndGfx(void) | ?EndGfx@agiD3DRPipeline@@UAEXXZ
+    0x516AC0 | public: virtual class agiViewport * __thiscall agiD3DRPipeline::CreateViewport(void) | ?CreateViewport@agiD3DRPipeline@@UAEPAVagiViewport@@XZ
+    0x516B20 | public: virtual class DLP * __thiscall agiD3DRPipeline::CreateDLP(void) | ?CreateDLP@agiD3DRPipeline@@UAEPAVDLP@@XZ
+    0x516B30 | public: virtual void __thiscall agiD3DRPipeline::BeginScene(void) | ?BeginScene@agiD3DRPipeline@@UAEXXZ
+    0x516B40 | public: virtual void __thiscall agiD3DRPipeline::EndScene(void) | ?EndScene@agiD3DRPipeline@@UAEXXZ
+    0x516B60 | public: virtual class agiLightModel * __thiscall agiD3DRPipeline::CreateLightModel(void) | ?CreateLightModel@agiD3DRPipeline@@UAEPAVagiLightModel@@XZ
+    0x516B70 | public: virtual class agiLight * __thiscall agiD3DRPipeline::CreateLight(void) | ?CreateLight@agiD3DRPipeline@@UAEPAVagiLight@@XZ
+    0x516B80 | public: virtual void * __thiscall agiD3DRPipeline::`vector deleting destructor'(unsigned int) | ??_EagiD3DRPipeline@@UAEPAXI@Z
+    0x516B80 | public: virtual void * __thiscall agiD3DRPipeline::`scalar deleting destructor'(unsigned int) | ??_GagiD3DRPipeline@@UAEPAXI@Z
+    0x595630 | const agiD3DRPipeline::`vftable' | ??_7agiD3DRPipeline@@6B@
+    0x6F2F24 | int UseSimpleRenderer | ?UseSimpleRenderer@@3HA
+*/
 
 #include "hooking.h"
 

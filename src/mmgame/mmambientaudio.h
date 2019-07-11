@@ -18,7 +18,13 @@
 
 #pragma once
 
-// mmgame:mmambientaudio
+/*
+    mmgame:mmambientaudio
+
+    0x41EF10 | public: __thiscall mmAmbientAudio::mmAmbientAudio(class mmPlayer *) | ??0mmAmbientAudio@@QAE@PAVmmPlayer@@@Z
+    0x41EFB0 | public: __thiscall mmAmbientAudio::~mmAmbientAudio(void) | ??1mmAmbientAudio@@QAE@XZ
+    0x41EFC0 | public: void __thiscall mmAmbientAudio::Update(void) | ?Update@mmAmbientAudio@@QAEXXZ
+*/
 
 #include "hooking.h"
 

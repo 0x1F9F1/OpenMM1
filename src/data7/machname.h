@@ -18,7 +18,11 @@
 
 #pragma once
 
-// data7:machname
+/*
+    data7:machname
+
+    0x55E640 | void __cdecl GetMachineName(char *,int) | ?GetMachineName@@YAXPADH@Z
+*/
 
 #include "hooking.h"
 

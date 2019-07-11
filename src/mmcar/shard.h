@@ -18,7 +18,41 @@
 
 #pragma once
 
-// mmcar:shard
+/*
+    mmcar:shard
+
+    0x470130 | public: __thiscall mmShard::mmShard(void) | ??0mmShard@@QAE@XZ
+    0x470170 | public: void __thiscall mmShard::Init(char *,int) | ?Init@mmShard@@QAEXPADH@Z
+    0x4701A0 | public: virtual __thiscall mmShard::~mmShard(void) | ??1mmShard@@UAE@XZ
+    0x4701B0 | public: void __thiscall mmShard::AddShard(class Vector3,class Vector3,class Vector3,float) | ?AddShard@mmShard@@QAEXVVector3@@00M@Z
+    0x470210 | public: void __thiscall mmShard::Update(void) | ?Update@mmShard@@QAEXXZ
+    0x4702F0 | public: virtual void __fastcall mmShard::Draw(int) | ?Draw@mmShard@@UAIXH@Z
+    0x4703A0 | public: __thiscall mmShardManager::mmShardManager(void) | ??0mmShardManager@@QAE@XZ
+    0x470410 | public: virtual __thiscall mmShardManager::~mmShardManager(void) | ??1mmShardManager@@UAE@XZ
+    0x470480 | public: static class mmShardManager * __cdecl mmShardManager::GetInstance(int) | ?GetInstance@mmShardManager@@SAPAV1@H@Z
+    0x4704A0 | public: void __thiscall mmShardManager::Init(char *,int,class mmCarSim *) | ?Init@mmShardManager@@QAEXPADHPAVmmCarSim@@@Z
+    0x470590 | public: void __thiscall mmShardManager::ReInit(class mmCarSim *) | ?ReInit@mmShardManager@@QAEXPAVmmCarSim@@@Z
+    0x4705A0 | public: void __thiscall mmShardManager::EmitShards(class Vector3,float,float) | ?EmitShards@mmShardManager@@QAEXVVector3@@MM@Z
+    0x470610 | public: void __thiscall mmShardManager::EmitAllShards(class Vector3,float) | ?EmitAllShards@mmShardManager@@QAEXVVector3@@M@Z
+    0x470660 | public: void __thiscall mmShardManager::EmitShard(class Vector3,float) | ?EmitShard@mmShardManager@@QAEXVVector3@@M@Z
+    0x470810 | public: virtual void __thiscall mmShardManager::Update(void) | ?Update@mmShardManager@@UAEXXZ
+    0x470840 | public: static void __cdecl mmShard::DeclareFields(void) | ?DeclareFields@mmShard@@SAXXZ
+    0x4709C0 | public: virtual class MetaClass * __thiscall mmShard::GetClass(void) | ?GetClass@mmShard@@UAEPAVMetaClass@@XZ
+    0x4709D0 | public: static void __cdecl mmShardManager::DeclareFields(void) | ?DeclareFields@mmShardManager@@SAXXZ
+    0x470B90 | public: virtual class MetaClass * __thiscall mmShardManager::GetClass(void) | ?GetClass@mmShardManager@@UAEPAVMetaClass@@XZ
+    0x470BA0 | public: virtual void * __thiscall mmShard::`vector deleting destructor'(unsigned int) | ??_EmmShard@@UAEPAXI@Z
+    0x470C00 | public: virtual void * __thiscall mmShardManager::`vector deleting destructor'(unsigned int) | ??_EmmShardManager@@UAEPAXI@Z
+    0x5912D8 | const mmShard::`vftable' | ??_7mmShard@@6B@
+    0x591368 | const mmShardManager::`vftable' | ??_7mmShardManager@@6B@
+    0x60A280 | class MetaClass mmShardManagerMetaClass | ?mmShardManagerMetaClass@@3VMetaClass@@A
+    0x60A2A8 | protected: static class mmShardManager * * mmShardManager::Instances | ?Instances@mmShardManager@@1PAPAV1@A
+    0x60A2F8 | class MetaClass mmShardMetaClass | ?mmShardMetaClass@@3VMetaClass@@A
+    0x60A320 | protected: static int mmShardManager::NumInstances | ?NumInstances@mmShardManager@@1HA
+    0x470890 | void * __cdecl new_mmShard(int) | ?new_mmShard@@YAPAXH@Z
+    0x470970 | void __cdecl delete_mmShard(void *,int) | ?delete_mmShard@@YAXPAXH@Z
+    0x470A80 | void * __cdecl new_mmShardManager(int) | ?new_mmShardManager@@YAPAXH@Z
+    0x470B40 | void __cdecl delete_mmShardManager(void *,int) | ?delete_mmShardManager@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

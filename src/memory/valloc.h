@@ -18,7 +18,18 @@
 
 #pragma once
 
-// memory:valloc
+/*
+    memory:valloc
+
+    0x50F350 | public: __thiscall asSafeHeap::asSafeHeap(void) | ??0asSafeHeap@@QAE@XZ
+    0x50F360 | public: __thiscall asSafeHeap::~asSafeHeap(void) | ??1asSafeHeap@@QAE@XZ
+    0x50F370 | public: void __thiscall asSafeHeap::Init(int,int) | ?Init@asSafeHeap@@QAEXHH@Z
+    0x50F3E0 | public: void __thiscall asSafeHeap::Restart(void) | ?Restart@asSafeHeap@@QAEXXZ
+    0x50F410 | public: void __thiscall asSafeHeap::Kill(void) | ?Kill@asSafeHeap@@QAEXXZ
+    0x50F440 | protected: void __thiscall asSafeHeap::Activate(void) | ?Activate@asSafeHeap@@IAEXXZ
+    0x50F480 | protected: void __thiscall asSafeHeap::Deactivate(void) | ?Deactivate@asSafeHeap@@IAEXXZ
+    0x6F29F8 | class asSafeHeap SAFEHEAP | ?SAFEHEAP@@3VasSafeHeap@@A
+*/
 
 #include "hooking.h"
 

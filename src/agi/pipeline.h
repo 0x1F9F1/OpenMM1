@@ -18,7 +18,59 @@
 
 #pragma once
 
-// agi:pipeline
+/*
+    agi:pipeline
+
+    0x537700 | protected: __thiscall agiPipeline::agiPipeline(void) | ??0agiPipeline@@IAE@XZ
+    0x5377C0 | public: virtual int __thiscall agiPipeline::Validate(void) | ?Validate@agiPipeline@@UAEHXZ
+    0x5377D0 | public: int __thiscall agiPipeline::Init(char *,int,int,int,int,int,int,void *) | ?Init@agiPipeline@@QAEHPADHHHHHHPAX@Z
+    0x537840 | public: class agiTexDef * __thiscall agiPipeline::GetTexture(char *,int) | ?GetTexture@agiPipeline@@QAEPAVagiTexDef@@PADH@Z
+    0x5378A0 | public: class agiTexDef * __thiscall agiPipeline::GetTexture(int,int) | ?GetTexture@agiPipeline@@QAEPAVagiTexDef@@HH@Z
+    0x5379D0 | public: class agiBitmap * __thiscall agiPipeline::GetBitmap(char *,float,float,int) | ?GetBitmap@agiPipeline@@QAEPAVagiBitmap@@PADMMH@Z
+    0x537A70 | public: class agiTexLut * __thiscall agiPipeline::GetTexLut(char *) | ?GetTexLut@agiPipeline@@QAEPAVagiTexLut@@PAD@Z
+    0x537AE0 | public: class agiMtlDef * __thiscall agiPipeline::GetMaterial(char *) | ?GetMaterial@agiPipeline@@QAEPAVagiMtlDef@@PAD@Z
+    0x537B40 | public: class agiMtlDef * __thiscall agiPipeline::GetMaterial(int) | ?GetMaterial@agiPipeline@@QAEPAVagiMtlDef@@H@Z
+    0x537BD0 | public: class DLP * __thiscall agiPipeline::GetDLP(char *,char *,class Vector3 *,int,int) | ?GetDLP@agiPipeline@@QAEPAVDLP@@PAD0PAVVector3@@HH@Z
+    0x537D90 | public: virtual class agiMtlDef * __thiscall agiPipeline::CreateMtlDef(void) | ?CreateMtlDef@agiPipeline@@UAEPAVagiMtlDef@@XZ
+    0x537DA0 | public: virtual class agiLight * __thiscall agiPipeline::CreateLight(void) | ?CreateLight@agiPipeline@@UAEPAVagiLight@@XZ
+    0x537DB0 | public: virtual class agiLightModel * __thiscall agiPipeline::CreateLightModel(void) | ?CreateLightModel@agiPipeline@@UAEPAVagiLightModel@@XZ
+    0x537DC0 | public: int __thiscall agiPipeline::BeginAllGfx(void) | ?BeginAllGfx@agiPipeline@@QAEHXZ
+    0x537EC0 | public: void __thiscall agiPipeline::EndAllGfx(void) | ?EndAllGfx@agiPipeline@@QAEXXZ
+    0x537F50 | public: void __thiscall agiPipeline::RestoreAll(void) | ?RestoreAll@agiPipeline@@QAEXXZ
+    0x537F90 | public: virtual void __thiscall agiPipeline::BeginFrame(void) | ?BeginFrame@agiPipeline@@UAEXXZ
+    0x537FB0 | public: virtual class agiBitmap * __thiscall agiPipeline::CreateBitmap(void) | ?CreateBitmap@agiPipeline@@UAEPAVagiBitmap@@XZ
+    0x537FC0 | public: virtual void __thiscall agiPipeline::CopyBitmap(int,int,class agiBitmap *,int,int,int,int) | ?CopyBitmap@agiPipeline@@UAEXHHPAVagiBitmap@@HHHH@Z
+    0x537FD0 | public: int __thiscall agiPipeline::CopyClippedBitmap(int,int,class agiBitmap *,int,int,int,int) | ?CopyClippedBitmap@agiPipeline@@QAEHHHPAVagiBitmap@@HHHH@Z
+    0x538010 | public: int __thiscall agiPipeline::CopyClippedBitmap(int,int,class agiBitmap *,int,int,int,int,int,int,int,int) | ?CopyClippedBitmap@agiPipeline@@QAEHHHPAVagiBitmap@@HHHHHHHH@Z
+    0x5380C0 | public: void __thiscall agiPipeline::NotifyNew(class agiRefreshable *) | ?NotifyNew@agiPipeline@@QAEXPAVagiRefreshable@@@Z
+    0x5380F0 | public: void __thiscall agiPipeline::NotifyDelete(class agiRefreshable *) | ?NotifyDelete@agiPipeline@@QAEXPAVagiRefreshable@@@Z
+    0x538130 | public: void __thiscall agiPipeline::ValidateObject(class agiRefreshable *) | ?ValidateObject@agiPipeline@@QAEXPAVagiRefreshable@@@Z
+    0x538180 | public: void __thiscall agiPipeline::DumpStatus(void) | ?DumpStatus@agiPipeline@@QAEXXZ
+    0x5381F0 | void * __cdecl GetRootWindow(void) | ?GetRootWindow@@YAPAXXZ
+    0x538200 | void * __cdecl CreatePipelineAttachableWindow(char *,int,int,int,int,void *) | ?CreatePipelineAttachableWindow@@YAPAXPADHHHHPAX@Z
+    0x538210 | void __cdecl DestroyPipelineAttachableWindow(void) | ?DestroyPipelineAttachableWindow@@YAXXZ
+    0x538220 | public: virtual __thiscall agiPipeline::~agiPipeline(void) | ??1agiPipeline@@UAE@XZ
+    0x538280 | public: virtual void __thiscall agiPipeline::BeginScene(void) | ?BeginScene@agiPipeline@@UAEXXZ
+    0x5382A0 | public: virtual void __thiscall agiPipeline::EndScene(void) | ?EndScene@agiPipeline@@UAEXXZ
+    0x5382B0 | public: virtual void __thiscall agiPipeline::EndFrame(void) | ?EndFrame@agiPipeline@@UAEXXZ
+    0x5382C0 | public: virtual int __thiscall agiPipeline::LockFrameBuffer(class agiSurfaceDesc &) | ?LockFrameBuffer@agiPipeline@@UAEHAAVagiSurfaceDesc@@@Z
+    0x5382D0 | public: virtual void __thiscall agiPipeline::UnlockFrameBuffer(void) | ?UnlockFrameBuffer@agiPipeline@@UAEXXZ
+    0x5382E0 | public: virtual void __thiscall agiPipeline::DumpStatus(struct agiMemStatus &) | ?DumpStatus@agiPipeline@@UAEXAAUagiMemStatus@@@Z
+    0x5382F0 | public: virtual void __thiscall agiPipeline::ClearRect(int,int,int,int,unsigned int) | ?ClearRect@agiPipeline@@UAEXHHHHI@Z
+    0x538300 | public: virtual void __thiscall agiPipeline::Defragment(void) | ?Defragment@agiPipeline@@UAEXXZ
+    0x595A98 | const agiPipeline::`vftable' | ??_7agiPipeline@@6B@
+    0x5C2BE8 | int ZFill | ?ZFill@@3HA
+    0x5C2BEC | char agiEnableZBuffer | ?agiEnableZBuffer@@3DA
+    0x702148 | struct agiStats STATS | ?STATS@@3UagiStats@@A
+    0x70218C | int agiBitmapPixels | ?agiBitmapPixels@@3HA
+    0x702190 | int agiBitmapCount | ?agiBitmapCount@@3HA
+    0x7021C0 | public: static class agiRenderer * agiPipeline::CurrentRenderer | ?CurrentRenderer@agiPipeline@@2PAVagiRenderer@@A
+    0x7021C4 | public: static class agiPipeline * agiPipeline::CurrentPipe | ?CurrentPipe@agiPipeline@@2PAV1@A
+    0x7021C8 | void (__cdecl* PROBER)(void *) | ?PROBER@@3P6AXPAX@ZA
+    0x7021CC | int LightCount | ?LightCount@@3HA
+    0x7021D0 | int DrawModeOr | ?DrawModeOr@@3HA
+    0x7021D4 | int DrawModeAnd | ?DrawModeAnd@@3HA
+*/
 
 #include "hooking.h"
 

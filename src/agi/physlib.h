@@ -18,7 +18,13 @@
 
 #pragma once
 
-// agi:physlib
+/*
+    agi:physlib
+
+    0x539220 | public: __thiscall agiLib<class agiPhysParameters,class agiPhysDef>::agiLib<class agiPhysParameters,class agiPhysDef>(void) | ??0?$agiLib@VagiPhysParameters@@VagiPhysDef@@@@QAE@XZ
+    0x539250 | public: __thiscall agiLib<class agiPhysParameters,class agiPhysDef>::~agiLib<class agiPhysParameters,class agiPhysDef>(void) | ??1?$agiLib@VagiPhysParameters@@VagiPhysDef@@@@QAE@XZ
+    0x7024D8 | class agiLib<class agiPhysParameters,class agiPhysDef> agiPhysLib | ?agiPhysLib@@3V?$agiLib@VagiPhysParameters@@VagiPhysDef@@@@A
+*/
 
 #include "hooking.h"
 

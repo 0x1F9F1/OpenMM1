@@ -18,7 +18,22 @@
 
 #pragma once
 
-// mmui:race
+/*
+    mmui:race
+
+    0x499BA0 | public: __thiscall RaceMenu::RaceMenu(int) | ??0RaceMenu@@QAE@H@Z
+    0x499C60 | public: virtual __thiscall RaceMenu::~RaceMenu(void) | ??1RaceMenu@@UAE@XZ
+    0x499C70 | public: int __thiscall RaceMenu::GetRaceID(void) | ?GetRaceID@RaceMenu@@QAEHXZ
+    0x499D00 | public: void __thiscall RaceMenu::SetProgressMask(int) | ?SetProgressMask@RaceMenu@@QAEXH@Z
+    0x499D20 | public: void __thiscall RaceMenu::SetBlitzMask(int) | ?SetBlitzMask@RaceMenu@@QAEXH@Z
+    0x499D40 | public: void __thiscall RaceMenu::SetCheckpointMask(int) | ?SetCheckpointMask@RaceMenu@@QAEXH@Z
+    0x499D60 | public: void __thiscall RaceMenu::SetCircuitMask(int) | ?SetCircuitMask@RaceMenu@@QAEXH@Z
+    0x499D80 | public: char * __thiscall RaceMenu::GetRaceName(enum mmGameMode,int) | ?GetRaceName@RaceMenu@@QAEPADW4mmGameMode@@H@Z
+    0x499EA0 | public: virtual void * __thiscall RaceMenu::`vector deleting destructor'(unsigned int) | ??_ERaceMenu@@UAEPAXI@Z
+    0x499EA0 | public: virtual void * __thiscall RaceMenu::`scalar deleting destructor'(unsigned int) | ??_GRaceMenu@@UAEPAXI@Z
+    0x499ED0 | public: virtual void __thiscall RaceMenuBase::UsesLobby(int) | ?UsesLobby@RaceMenuBase@@UAEXH@Z
+    0x592920 | const RaceMenu::`vftable' | ??_7RaceMenu@@6B@
+*/
 
 #include "hooking.h"
 

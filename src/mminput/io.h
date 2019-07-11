@@ -18,7 +18,22 @@
 
 #pragma once
 
-// mminput:io
+/*
+    mminput:io
+
+    0x4D78C0 | public: __thiscall mmIO::mmIO(void) | ??0mmIO@@QAE@XZ
+    0x4D78E0 | public: __thiscall mmIO::~mmIO(void) | ??1mmIO@@QAE@XZ
+    0x4D78F0 | public: void __thiscall mmIO::Clear(void) | ?Clear@mmIO@@QAEXXZ
+    0x4D7910 | public: void __thiscall mmIO::Init(char *,int,long) | ?Init@mmIO@@QAEXPADHJ@Z
+    0x4D7970 | public: void __thiscall mmIO::InitDev(int,__int64,int,int,int) | ?InitDev@mmIO@@QAEXH_JHHH@Z
+    0x4D7A20 | public: void __thiscall mmIO::Assign(int,int) | ?Assign@mmIO@@QAEXHH@Z
+    0x4D7A80 | public: int __thiscall mmIO::operator==(union eqEvent *) | ??8mmIO@@QAEHPATeqEvent@@@Z
+    0x4D7AD0 | public: void __thiscall mmIO::GetDescription(char *) | ?GetDescription@mmIO@@QAEXPAD@Z
+    0x4D7B20 | public: int __thiscall mmIO::Write(class Stream *) | ?Write@mmIO@@QAEHPAVStream@@@Z
+    0x4D7B60 | public: int __thiscall mmIO::Read(class Stream *) | ?Read@mmIO@@QAEHPAVStream@@@Z
+    0x4D7C30 | public: int __thiscall mmIO::CompareComponent(int) | ?CompareComponent@mmIO@@QAEHH@Z
+    0x4D7D00 | public: void __thiscall mmIO::ForceSettingAcrossConfigs(int) | ?ForceSettingAcrossConfigs@mmIO@@QAEXH@Z
+*/
 
 #include "hooking.h"
 

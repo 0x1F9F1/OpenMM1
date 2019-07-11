@@ -18,7 +18,34 @@
 
 #pragma once
 
-// agid3d:d3drsys
+/*
+    agid3d:d3drsys
+
+    0x518FD0 | public: __thiscall agiD3DRasterizer::agiD3DRasterizer(class agiPipeline *) | ??0agiD3DRasterizer@@QAE@PAVagiPipeline@@@Z
+    0x518FF0 | public: virtual int __thiscall agiD3DRasterizer::BeginGfx(void) | ?BeginGfx@agiD3DRasterizer@@UAEHXZ
+    0x519000 | public: virtual void __thiscall agiD3DRasterizer::EndGfx(void) | ?EndGfx@agiD3DRasterizer@@UAEXXZ
+    0x519010 | public: virtual __thiscall agiD3DRasterizer::~agiD3DRasterizer(void) | ??1agiD3DRasterizer@@UAE@XZ
+    0x519020 | public: virtual void __thiscall agiD3DRasterizer::BeginGroup(void) | ?BeginGroup@agiD3DRasterizer@@UAEXXZ
+    0x519030 | public: virtual void __thiscall agiD3DRasterizer::EndGroup(void) | ?EndGroup@agiD3DRasterizer@@UAEXXZ
+    0x519040 | void __cdecl d3d_state_init(void) | ?d3d_state_init@@YAXXZ
+    0x5190B0 | protected: void __thiscall agiD3DRasterizer::FlushState(void) | ?FlushState@agiD3DRasterizer@@IAEXXZ
+    0x51A180 | public: virtual void __thiscall agiD3DRasterizer::Verts(enum agiVtxType,union agiVtx *,int) | ?Verts@agiD3DRasterizer@@UAEXW4agiVtxType@@PATagiVtx@@H@Z
+    0x51A1D0 | public: virtual void __thiscall agiD3DRasterizer::SetVertCount(int) | ?SetVertCount@agiD3DRasterizer@@UAEXH@Z
+    0x51A1E0 | public: virtual void __thiscall agiD3DRasterizer::Triangle(int,int,int) | ?Triangle@agiD3DRasterizer@@UAEXHHH@Z
+    0x51A270 | public: virtual void __thiscall agiD3DRasterizer::Line(int,int) | ?Line@agiD3DRasterizer@@UAEXHH@Z
+    0x51A2F0 | public: virtual void __thiscall agiD3DRasterizer::Card(int,int) | ?Card@agiD3DRasterizer@@UAEXHH@Z
+    0x51A300 | public: virtual void __thiscall agiD3DRasterizer::Points(enum agiVtxType,union agiVtx *,int) | ?Points@agiD3DRasterizer@@UAEXW4agiVtxType@@PATagiVtx@@H@Z
+    0x51A360 | public: virtual void __thiscall agiD3DRasterizer::Mesh(enum agiVtxType,union agiVtx *,int,unsigned short *,int) | ?Mesh@agiD3DRasterizer@@UAEXW4agiVtxType@@PATagiVtx@@HPAGH@Z
+    0x51A3D0 | public: virtual void __thiscall agiD3DRasterizer::Mesh2(struct agiScreenVtx2 *,int,unsigned short *,int) | ?Mesh2@agiD3DRasterizer@@UAEXPAUagiScreenVtx2@@HPAGH@Z
+    0x51A450 | public: virtual void * __thiscall agiD3DRasterizer::`scalar deleting destructor'(unsigned int) | ??_GagiD3DRasterizer@@UAEPAXI@Z
+    0x51A450 | public: virtual void * __thiscall agiD3DRasterizer::`vector deleting destructor'(unsigned int) | ??_EagiD3DRasterizer@@UAEPAXI@Z
+    0x5957A8 | const agiD3DRasterizer::`vftable' | ??_7agiD3DRasterizer@@6B@
+    0x6F33A0 | int NoOutput | ?NoOutput@@3HA
+    0x6F73AC | struct IDirect3DDevice3 * d3ddev | ?d3ddev@@3PAUIDirect3DDevice3@@A
+    0x6F73C0 | void * VtxBase | ?VtxBase@@3PAXA
+    0x6F74C8 | int OneTexture | ?OneTexture@@3HA
+    0x6F74CC | int OrthoFix | ?OrthoFix@@3HA
+*/
 
 #include "hooking.h"
 

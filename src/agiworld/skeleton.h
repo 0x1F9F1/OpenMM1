@@ -18,7 +18,22 @@
 
 #pragma once
 
-// agiworld:skeleton
+/*
+    agiworld:skeleton
+
+    0x503670 | public: __thiscall bnSkeleton::bnSkeleton(void) | ??0bnSkeleton@@QAE@XZ
+    0x503680 | public: __thiscall bnSkeleton::~bnSkeleton(void) | ??1bnSkeleton@@QAE@XZ
+    0x5036A0 | public: int __thiscall bnSkeleton::Load(char const *) | ?Load@bnSkeleton@@QAEHPBD@Z
+    0x5039D0 | public: int __thiscall bnSkeleton::Save(char const *) | ?Save@bnSkeleton@@QAEHPBD@Z
+    0x503A80 | public: void __thiscall bnSkeleton::Transform(class Matrix34 *) | ?Transform@bnSkeleton@@QAEXPAVMatrix34@@@Z
+    0x503AA0 | public: void __thiscall bnSkeleton::Draw(void) | ?Draw@bnSkeleton@@QAEXXZ
+    0x503AB0 | public: void __thiscall bnSkeleton::Attach(class Matrix34 * const) | ?Attach@bnSkeleton@@QAEXQAVMatrix34@@@Z
+    0x503AE0 | public: void __thiscall bnSkeleton::Pose(class Vector3 const *) | ?Pose@bnSkeleton@@QAEXPBVVector3@@@Z
+    0x503B30 | public: class bnBone * __thiscall bnSkeleton::FindBone(char *,int,char) | ?FindBone@bnSkeleton@@QAEPAVbnBone@@PADHD@Z
+    0x503C50 | public: int __thiscall bnSkeleton::HowMany(char *,char) | ?HowMany@bnSkeleton@@QAEHPADD@Z
+    0x503C90 | public: int __thiscall bnAnimation::Load(char *) | ?Load@bnAnimation@@QAEHPAD@Z
+    0x503E20 | public: static class bnAnimation * __cdecl bnAnimation::Lookup(char *) | ?Lookup@bnAnimation@@SAPAV1@PAD@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,22 @@
 
 #pragma once
 
-// mmcar:gyro
+/*
+    mmcar:gyro
+
+    0x4777D0 | public: __thiscall VehGyro::VehGyro(void) | ??0VehGyro@@QAE@XZ
+    0x477800 | public: void __thiscall VehGyro::Load(class Stream *) | ?Load@VehGyro@@QAEXPAVStream@@@Z
+    0x477870 | public: void __thiscall VehGyro::Save(class Stream *) | ?Save@VehGyro@@QAEXPAVStream@@@Z
+    0x4778F0 | public: virtual void __thiscall VehGyro::Update(void) | ?Update@VehGyro@@UAEXXZ
+    0x477AB0 | public: void __thiscall VehGyro::AddWidgets(class Bank *) | ?AddWidgets@VehGyro@@QAEXPAVBank@@@Z
+    0x477AC0 | public: static void __cdecl VehGyro::DeclareFields(void) | ?DeclareFields@VehGyro@@SAXXZ
+    0x477C50 | public: virtual class MetaClass * __thiscall VehGyro::GetClass(void) | ?GetClass@VehGyro@@UAEPAVMetaClass@@XZ
+    0x477C60 | public: virtual void * __thiscall VehGyro::`vector deleting destructor'(unsigned int) | ??_EVehGyro@@UAEPAXI@Z
+    0x591798 | const VehGyro::`vftable' | ??_7VehGyro@@6B@
+    0x60A4A8 | class MetaClass VehGyroMetaClass | ?VehGyroMetaClass@@3VMetaClass@@A
+    0x477B40 | void * __cdecl new_VehGyro(int) | ?new_VehGyro@@YAPAXH@Z
+    0x477C00 | void __cdecl delete_VehGyro(void *,int) | ?delete_VehGyro@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

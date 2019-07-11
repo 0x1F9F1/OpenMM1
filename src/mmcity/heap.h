@@ -18,7 +18,11 @@
 
 #pragma once
 
-// mmcity:heap
+/*
+    mmcity:heap
+
+    0x48A970 | void __cdecl mmHeapError(void) | ?mmHeapError@@YAXXZ
+*/
 
 #include "hooking.h"
 

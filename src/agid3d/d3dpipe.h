@@ -18,7 +18,47 @@
 
 #pragma once
 
-// agid3d:d3dpipe
+/*
+    agid3d:d3dpipe
+
+    0x516BB0 | public: static void __cdecl agiD3DTexDef::Prober(void *) | ?Prober@agiD3DTexDef@@SAXPAX@Z
+    0x516C70 | public: __thiscall agiD3DPipeline::agiD3DPipeline(void) | ??0agiD3DPipeline@@QAE@XZ
+    0x516CB0 | public: virtual int __thiscall agiD3DPipeline::BeginGfx(void) | ?BeginGfx@agiD3DPipeline@@UAEHXZ
+    0x517AF0 | public: virtual __thiscall agiD3DPipeline::~agiD3DPipeline(void) | ??1agiD3DPipeline@@UAE@XZ
+    0x517B40 | long __stdcall RestoreCallback(struct IDirectDrawSurface4 *,struct _DDSURFACEDESC2 *,void *) | ?RestoreCallback@@YGJPAUIDirectDrawSurface4@@PAU_DDSURFACEDESC2@@PAX@Z
+    0x517B60 | public: virtual void __thiscall agiD3DPipeline::BeginFrame(void) | ?BeginFrame@agiD3DPipeline@@UAEXXZ
+    0x517BF0 | public: virtual void __thiscall agiD3DPipeline::BeginScene(void) | ?BeginScene@agiD3DPipeline@@UAEXXZ
+    0x517C40 | public: virtual void __thiscall agiD3DPipeline::EndScene(void) | ?EndScene@agiD3DPipeline@@UAEXXZ
+    0x517C90 | public: virtual void __thiscall agiD3DPipeline::EndFrame(void) | ?EndFrame@agiD3DPipeline@@UAEXXZ
+    0x517DD0 | long __stdcall callb(struct IDirectDrawSurface4 *,struct _DDSURFACEDESC2 *,void *) | ?callb@@YGJPAUIDirectDrawSurface4@@PAU_DDSURFACEDESC2@@PAX@Z
+    0x518080 | public: virtual void __thiscall agiD3DPipeline::DumpStatus(struct agiMemStatus &) | ?DumpStatus@agiD3DPipeline@@UAEXAAUagiMemStatus@@@Z
+    0x5181A0 | public: virtual void __thiscall agiD3DPipeline::EndGfx(void) | ?EndGfx@agiD3DPipeline@@UAEXXZ
+    0x518290 | public: virtual class agiViewport * __thiscall agiD3DPipeline::CreateViewport(void) | ?CreateViewport@agiD3DPipeline@@UAEPAVagiViewport@@XZ
+    0x5182F0 | public: virtual class agiMtlDef * __thiscall agiD3DPipeline::CreateMtlDef(void) | ?CreateMtlDef@agiD3DPipeline@@UAEPAVagiMtlDef@@XZ
+    0x518350 | public: virtual class agiTexDef * __thiscall agiD3DPipeline::CreateTexDef(void) | ?CreateTexDef@agiD3DPipeline@@UAEPAVagiTexDef@@XZ
+    0x5183B0 | public: virtual class agiTexLut * __thiscall agiD3DPipeline::CreateTexLut(void) | ?CreateTexLut@agiD3DPipeline@@UAEPAVagiTexLut@@XZ
+    0x518440 | public: virtual class agiLight * __thiscall agiD3DPipeline::CreateLight(void) | ?CreateLight@agiD3DPipeline@@UAEPAVagiLight@@XZ
+    0x5184A0 | public: virtual void __thiscall agiD3DPipeline::ClearAll(int) | ?ClearAll@agiD3DPipeline@@UAEXH@Z
+    0x518560 | public: virtual class agiBitmap * __thiscall agiD3DPipeline::CreateBitmap(void) | ?CreateBitmap@agiD3DPipeline@@UAEPAVagiBitmap@@XZ
+    0x5185C0 | public: virtual void __thiscall agiD3DPipeline::CopyBitmap(int,int,class agiBitmap *,int,int,int,int) | ?CopyBitmap@agiD3DPipeline@@UAEXHHPAVagiBitmap@@HHHH@Z
+    0x518600 | public: virtual void __thiscall agiD3DPipeline::Defragment(void) | ?Defragment@agiD3DPipeline@@UAEXXZ
+    0x518610 | public: virtual void * __thiscall agiD3DPipeline::`scalar deleting destructor'(unsigned int) | ??_GagiD3DPipeline@@UAEPAXI@Z
+    0x518610 | public: virtual void * __thiscall agiD3DPipeline::`vector deleting destructor'(unsigned int) | ??_EagiD3DPipeline@@UAEPAXI@Z
+    0x518640 | public: virtual void * __thiscall agiD3DTexLut::`scalar deleting destructor'(unsigned int) | ??_GagiD3DTexLut@@UAEPAXI@Z
+    0x518640 | public: virtual void * __thiscall agiD3DTexLut::`vector deleting destructor'(unsigned int) | ??_EagiD3DTexLut@@UAEPAXI@Z
+    0x518670 | public: virtual __thiscall agiD3DTexLut::~agiD3DTexLut(void) | ??1agiD3DTexLut@@UAE@XZ
+    0x5956A0 | const agiD3DPipeline::`vftable' | ??_7agiD3DPipeline@@6B@
+    0x595720 | const agiD3DTexLut::`vftable' | ??_7agiD3DTexLut@@6B@
+    0x5BAD80 | int NoTextureCompression | ?NoTextureCompression@@3HA
+    0x6F3328 | unsigned long agiFOURCC | ?agiFOURCC@@3KA
+    0x6F335C | int SeparateTextureMemories | ?SeparateTextureMemories@@3HA
+    0x6F3364 | unsigned int dummyGlobal | ?dummyGlobal@@3IA
+    0x6F3368 | int AlphaPalette | ?AlphaPalette@@3HA
+    0x6F3370 | int NotIndependentUV | ?NotIndependentUV@@3HA
+    0x5178D0 | long __stdcall EnumCallback(struct _GUID *,char *,char *,struct _D3DDeviceDesc *,struct _D3DDeviceDesc *,void *) | ?EnumCallback@@YGJPAU_GUID@@PAD1PAU_D3DDeviceDesc@@2PAX@Z
+    0x5179D0 | long __stdcall EnumTextureCallback(struct _DDPIXELFORMAT *,void *) | ?EnumTextureCallback@@YGJPAU_DDPIXELFORMAT@@PAX@Z
+    0x517AA0 | long __stdcall EnumZ(struct _DDPIXELFORMAT *,void *) | ?EnumZ@@YGJPAU_DDPIXELFORMAT@@PAX@Z
+*/
 
 #include "hooking.h"
 

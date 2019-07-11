@@ -18,7 +18,63 @@
 
 #pragma once
 
-// mmaudio:soundobj
+/*
+    mmaudio:soundobj
+
+    0x4E3740 | public: __thiscall SoundObj::SoundObj(void) | ??0SoundObj@@QAE@XZ
+    0x4E3800 | public: __thiscall SoundObj::~SoundObj(void) | ??1SoundObj@@QAE@XZ
+    0x4E38C0 | public: void __thiscall SoundObj::DeallocateEffects(void) | ?DeallocateEffects@SoundObj@@QAEXXZ
+    0x4E3990 | public: void __thiscall SoundObj::SetDelayTime(float) | ?SetDelayTime@SoundObj@@QAEXM@Z
+    0x4E3AB0 | public: short __thiscall SoundObj::SetupOneShotLayerBuffers(short,float,char *) | ?SetupOneShotLayerBuffers@SoundObj@@QAEFFMPAD@Z
+    0x4E3B40 | public: void __thiscall SoundObj::FreeOneShotLayerBuffers(void) | ?FreeOneShotLayerBuffers@SoundObj@@QAEXXZ
+    0x4E3BC0 | public: int __thiscall SoundObj::DSCreateSoundBuffer(struct IDirectSoundBuffer * *,unsigned char) | ?DSCreateSoundBuffer@SoundObj@@QAEHPAPAUIDirectSoundBuffer@@E@Z
+    0x4E3C50 | public: struct IDirectSoundBuffer * __thiscall SoundObj::DSLoadSoundBuffer(char const *,unsigned long) | ?DSLoadSoundBuffer@SoundObj@@QAEPAUIDirectSoundBuffer@@PBDK@Z
+    0x4E3E30 | public: void __thiscall SoundObj::DSLoadSoundBuffer(unsigned short,unsigned long) | ?DSLoadSoundBuffer@SoundObj@@QAEXGK@Z
+    0x4E3F70 | public: void __thiscall SoundObj::ReadADFRecord(unsigned short) | ?ReadADFRecord@SoundObj@@QAEXG@Z
+    0x4E4130 | public: int __thiscall SoundObj::DSGetWaveResource(struct HINSTANCE__ *,char const *,struct tWAVEFORMATEX * *,unsigned char * *,unsigned long *) | ?DSGetWaveResource@SoundObj@@QAEHPAUHINSTANCE__@@PBDPAPAUtWAVEFORMATEX@@PAPAEPAK@Z
+    0x4E4210 | public: void __thiscall SoundObj::ConvertTo8Bit(void) | ?ConvertTo8Bit@SoundObj@@QAEXXZ
+    0x4E4370 | public: int __thiscall SoundObj::DSGetWaveFile(struct HINSTANCE__ *,char const *,struct tWAVEFORMATEX * *,unsigned char * *,unsigned long *,void * *) | ?DSGetWaveFile@SoundObj@@QAEHPAUHINSTANCE__@@PBDPAPAUtWAVEFORMATEX@@PAPAEPAKPAPAX@Z
+    0x4E4640 | public: int __thiscall SoundObj::InitDummy(void) | ?InitDummy@SoundObj@@QAEHXZ
+    0x4E47F0 | public: int __thiscall SoundObj::Init(char const *,unsigned long,short) | ?Init@SoundObj@@QAEHPBDKF@Z
+    0x4E48B0 | public: int __thiscall SoundObj::Init(unsigned short,unsigned long,short) | ?Init@SoundObj@@QAEHGKF@Z
+    0x4E4960 | public: void __thiscall SoundObj::SetEffect(short,char *) | ?SetEffect@SoundObj@@QAEXFPAD@Z
+    0x4E4AE0 | public: void __thiscall SoundObj::SetPlayPosition(unsigned long) | ?SetPlayPosition@SoundObj@@QAEXK@Z
+    0x4E4B00 | public: int __thiscall SoundObj::Play(unsigned long,char *) | ?Play@SoundObj@@QAEHKPAD@Z
+    0x4E4D40 | public: int __thiscall SoundObj::Stop(void) | ?Stop@SoundObj@@QAEHXZ
+    0x4E4DD0 | public: void __thiscall SoundObj::StopEchoBuffers(void) | ?StopEchoBuffers@SoundObj@@QAEXXZ
+    0x4E4DF0 | public: int __thiscall SoundObj::DSFillSoundBuffer(struct IDirectSoundBuffer *) | ?DSFillSoundBuffer@SoundObj@@QAEHPAUIDirectSoundBuffer@@@Z
+    0x4E4EB0 | public: int __thiscall SoundObj::DSParseWaveResource(void *,struct tWAVEFORMATEX * *,unsigned char * *,unsigned long *) | ?DSParseWaveResource@SoundObj@@QAEHPAXPAPAUtWAVEFORMATEX@@PAPAEPAK@Z
+    0x4E4FB0 | public: short __thiscall SoundObj::IsPlaying(short) | ?IsPlaying@SoundObj@@QAEFF@Z
+    0x4E5090 | public: short __thiscall SoundObj::ReadyOneShotLayerBuf(void) | ?ReadyOneShotLayerBuf@SoundObj@@QAEFXZ
+    0x4E5120 | public: short __thiscall SoundObj::AllOneShotLayersPlaying(void) | ?AllOneShotLayersPlaying@SoundObj@@QAEFXZ
+    0x4E51C0 | public: void __thiscall SoundObj::SetPosition(float,float,float) | ?SetPosition@SoundObj@@QAEXMMM@Z
+    0x4E5200 | public: void __thiscall SoundObj::SetVelocity(float,float,float) | ?SetVelocity@SoundObj@@QAEXMMM@Z
+    0x4E5240 | public: void __thiscall SoundObj::SetFrequency(float) | ?SetFrequency@SoundObj@@QAEXM@Z
+    0x4E5480 | public: void __thiscall SoundObj::SetEchoFrequency(float) | ?SetEchoFrequency@SoundObj@@QAEXM@Z
+    0x4E5540 | public: void __thiscall SoundObj::SetVolume(float) | ?SetVolume@SoundObj@@QAEXM@Z
+    0x4E5680 | public: void __thiscall SoundObj::SetPan(float) | ?SetPan@SoundObj@@QAEXM@Z
+    0x4E57C0 | public: void __thiscall SoundObj::SetEchoPan(float) | ?SetEchoPan@SoundObj@@QAEXM@Z
+    0x4E57F0 | public: void __thiscall SoundObj::SetRamp(float,float) | ?SetRamp@SoundObj@@QAEXMM@Z
+    0x4E5820 | public: void __thiscall SoundObj::Set3DMode(unsigned long) | ?Set3DMode@SoundObj@@QAEXK@Z
+    0x4E5840 | public: void __thiscall SoundObj::SetConeOutsideVolume(long) | ?SetConeOutsideVolume@SoundObj@@QAEXJ@Z
+    0x4E5870 | public: void __thiscall SoundObj::SetConeAngles(unsigned long,unsigned long) | ?SetConeAngles@SoundObj@@QAEXKK@Z
+    0x4E58B0 | public: void __thiscall SoundObj::SetConeOrientation(class Vector3 *) | ?SetConeOrientation@SoundObj@@QAEXPAVVector3@@@Z
+    0x4E58E0 | public: struct IDirectSoundBuffer * __thiscall SoundObj::SetupDuplicateBuffer(char *) | ?SetupDuplicateBuffer@SoundObj@@QAEPAUIDirectSoundBuffer@@PAD@Z
+    0x4E5990 | public: void __thiscall SoundObj::SetupEchoBuffer(char *) | ?SetupEchoBuffer@SoundObj@@QAEXPAD@Z
+    0x4E5A30 | private: struct IDirectSoundBuffer * __thiscall SoundObj::SetupChorusBuffer(char *) | ?SetupChorusBuffer@SoundObj@@AAEPAUIDirectSoundBuffer@@PAD@Z
+    0x4E5AB0 | public: void __thiscall SoundObj::UpdateSeconds(void) | ?UpdateSeconds@SoundObj@@QAEXXZ
+    0x4E5AE0 | public: void __thiscall SoundObj::UpdateEcho(void) | ?UpdateEcho@SoundObj@@QAEXXZ
+    0x4E5B50 | public: void __thiscall SoundObj::UpdatePlayEcho(void) | ?UpdatePlayEcho@SoundObj@@QAEXXZ
+    0x4E5C50 | public: void __thiscall SoundObj::UpdateStopEcho(void) | ?UpdateStopEcho@SoundObj@@QAEXXZ
+    0x4E5D10 | public: void __thiscall SoundObj::UpdateVolumeEcho(void) | ?UpdateVolumeEcho@SoundObj@@QAEXXZ
+    0x4E5DD0 | public: void __thiscall SoundObj::UpdatePitchEcho(void) | ?UpdatePitchEcho@SoundObj@@QAEXXZ
+    0x4E5E90 | public: void __thiscall SoundObj::DisableEffect(short) | ?DisableEffect@SoundObj@@QAEXF@Z
+    0x4E5F90 | public: unsigned short __thiscall SoundObj::CreateListenerEAXObj(void) | ?CreateListenerEAXObj@SoundObj@@QAEGXZ
+    0x4E6030 | public: unsigned short __thiscall SoundObj::CreateSecondaryEAXObj(void) | ?CreateSecondaryEAXObj@SoundObj@@QAEGXZ
+    0x4E60F0 | public: struct tWAVEFORMATEX * __thiscall SoundObj::GetFormat(void) | ?GetFormat@SoundObj@@QAEPAUtWAVEFORMATEX@@XZ
+    0x4E6170 | public: void __thiscall SoundObj::Enable3DMode(void) | ?Enable3DMode@SoundObj@@QAEXXZ
+    0x4E61A0 | public: void __thiscall SoundObj::Disable3DMode(void) | ?Disable3DMode@SoundObj@@QAEXXZ
+*/
 
 #include "hooking.h"
 

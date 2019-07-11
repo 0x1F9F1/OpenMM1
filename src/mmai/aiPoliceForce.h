@@ -18,7 +18,18 @@
 
 #pragma once
 
-// mmai:aiPoliceForce
+/*
+    mmai:aiPoliceForce
+
+    0x448890 | public: __thiscall aiPoliceForce::aiPoliceForce(void) | ??0aiPoliceForce@@QAE@XZ
+    0x4488B0 | public: __thiscall aiPoliceForce::~aiPoliceForce(void) | ??1aiPoliceForce@@QAE@XZ
+    0x4488C0 | public: void __thiscall aiPoliceForce::Reset(void) | ?Reset@aiPoliceForce@@QAEXXZ
+    0x448900 | public: void __thiscall aiPoliceForce::Update(void) | ?Update@aiPoliceForce@@QAEXXZ
+    0x448910 | public: int __thiscall aiPoliceForce::Find(class mmCar *,class mmCar *) | ?Find@aiPoliceForce@@QAEHPAVmmCar@@0@Z
+    0x448980 | public: int __thiscall aiPoliceForce::RegisterPerp(class mmCar *,class mmCar *) | ?RegisterPerp@aiPoliceForce@@QAEHPAVmmCar@@0@Z
+    0x448A20 | public: int __thiscall aiPoliceForce::UnRegisterCop(class mmCar *,class mmCar *) | ?UnRegisterCop@aiPoliceForce@@QAEHPAVmmCar@@0@Z
+    0x448B10 | public: int __thiscall aiPoliceForce::State(class mmCar *,class mmCar *,float) | ?State@aiPoliceForce@@QAEHPAVmmCar@@0M@Z
+*/
 
 #include "hooking.h"
 

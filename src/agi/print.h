@@ -18,7 +18,21 @@
 
 #pragma once
 
-// agi:print
+/*
+    agi:print
+
+    0x539DB0 | void __cdecl agiPrint(int,int,int,char const *) | ?agiPrint@@YAXHHHPBD@Z
+    0x539DD0 | void __cdecl agiPrintf(int,int,int,char const *,...) | ?agiPrintf@@YAXHHHPBDZZ
+    0x539E30 | int __cdecl agiPrintIs3D(void) | ?agiPrintIs3D@@YAHXZ
+    0x539E40 | void __cdecl agiPrintInit(void) | ?agiPrintInit@@YAXXZ
+    0x539E50 | void __cdecl agiPrintShutdown(void) | ?agiPrintShutdown@@YAXXZ
+    0x539E60 | public: virtual void __thiscall agiPipeline::Print(int,int,int,char const *) | ?Print@agiPipeline@@UAEXHHHPBD@Z
+    0x53A050 | public: virtual int __thiscall agiPipeline::PrintIs3D(void) | ?PrintIs3D@agiPipeline@@UAEHXZ
+    0x53A070 | public: virtual void __thiscall agiPipeline::PrintInit(void) | ?PrintInit@agiPipeline@@UAEXXZ
+    0x53A080 | public: virtual void __thiscall agiPipeline::PrintShutdown(void) | ?PrintShutdown@agiPipeline@@UAEXXZ
+    0x5C3078 | unsigned char * CharSet | ?CharSet@@3PAEA
+    0x539F20 | void __cdecl InitBuiltin(void) | ?InitBuiltin@@YAXXZ
+*/
 
 #include "hooking.h"
 

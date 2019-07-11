@@ -18,7 +18,24 @@
 
 #pragma once
 
-// mmwidget:controlwidget
+/*
+    mmwidget:controlwidget
+
+    0x4B0A20 | public: __thiscall UIControlWidget::UIControlWidget(void) | ??0UIControlWidget@@QAE@XZ
+    0x4B0B30 | public: virtual __thiscall UIControlWidget::~UIControlWidget(void) | ??1UIControlWidget@@UAE@XZ
+    0x4B0BD0 | public: void __thiscall UIControlWidget::Init(float,float,float,float,float,class mmIO *,class Callback) | ?Init@UIControlWidget@@QAEXMMMMMPAVmmIO@@VCallback@@@Z
+    0x4B0D80 | public: void __thiscall UIControlWidget::SetPosition(float,float,float,float) | ?SetPosition@UIControlWidget@@QAEXMMMM@Z
+    0x4B0E40 | public: virtual void __thiscall UIControlWidget::Update(void) | ?Update@UIControlWidget@@UAEXXZ
+    0x4B0E60 | public: void __thiscall UIControlWidget::UpdateField(void) | ?UpdateField@UIControlWidget@@QAEXXZ
+    0x4B0E90 | public: virtual void __thiscall UIControlWidget::Action(union eqEvent) | ?Action@UIControlWidget@@UAEXTeqEvent@@@Z
+    0x4B0EE0 | public: virtual void __thiscall UIControlWidget::Switch(int) | ?Switch@UIControlWidget@@UAEXH@Z
+    0x4B0F60 | public: void __thiscall UIControlWidget::EnableField(void) | ?EnableField@UIControlWidget@@QAEXXZ
+    0x4B0FD0 | public: void __thiscall UIControlWidget::DisableField(void) | ?DisableField@UIControlWidget@@QAEXXZ
+    0x4B1020 | public: virtual void * __thiscall UIControlWidget::`scalar deleting destructor'(unsigned int) | ??_GUIControlWidget@@UAEPAXI@Z
+    0x4B1050 | public: virtual void __thiscall UIControlWidget::TurnOn(void) | ?TurnOn@UIControlWidget@@UAEXXZ
+    0x4B1060 | public: virtual void __thiscall UIControlWidget::TurnOff(void) | ?TurnOff@UIControlWidget@@UAEXXZ
+    0x593A30 | const UIControlWidget::`vftable' | ??_7UIControlWidget@@6B@
+*/
 
 #include "hooking.h"
 

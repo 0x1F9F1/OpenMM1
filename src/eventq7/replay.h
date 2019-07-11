@@ -18,7 +18,27 @@
 
 #pragma once
 
-// eventq7:replay
+/*
+    eventq7:replay
+
+    0x5461A0 | protected: __thiscall eqReplayChannel::eqReplayChannel(unsigned long) | ??0eqReplayChannel@@IAE@K@Z
+    0x5461D0 | public: __thiscall eqReplayChannel::~eqReplayChannel(void) | ??1eqReplayChannel@@QAE@XZ
+    0x546200 | public: virtual void __thiscall eqReplayChannel::InitRecord(void) | ?InitRecord@eqReplayChannel@@UAEXXZ
+    0x546210 | public: virtual void __thiscall eqReplayChannel::InitPlayback(void) | ?InitPlayback@eqReplayChannel@@UAEXXZ
+    0x546220 | public: virtual void __thiscall eqReplayChannel::ShutdownRecord(void) | ?ShutdownRecord@eqReplayChannel@@UAEXXZ
+    0x546230 | public: virtual void __thiscall eqReplayChannel::ShutdownPlayback(void) | ?ShutdownPlayback@eqReplayChannel@@UAEXXZ
+    0x546240 | public: static void __cdecl eqReplay::InitRecord(char *) | ?InitRecord@eqReplay@@SAXPAD@Z
+    0x5462D0 | public: static void __cdecl eqReplay::InitPlayback(char *) | ?InitPlayback@eqReplay@@SAXPAD@Z
+    0x546380 | public: static void __cdecl eqReplay::ShutdownRecord(void) | ?ShutdownRecord@eqReplay@@SAXXZ
+    0x5463E0 | public: static void __cdecl eqReplay::ShutdownPlayback(void) | ?ShutdownPlayback@eqReplay@@SAXXZ
+    0x546440 | public: static void __cdecl eqReplay::DoRecord(void) | ?DoRecord@eqReplay@@SAXXZ
+    0x5464A0 | public: static void __cdecl eqReplay::DoPlayback(void) | ?DoPlayback@eqReplay@@SAXXZ
+    0x596050 | const eqReplayChannel::`vftable' | ??_7eqReplayChannel@@6B@
+    0x710878 | private: static class eqReplayChannel * eqReplayChannel::First | ?First@eqReplayChannel@@0PAV1@A
+    0x71087C | private: static class Stream * eqReplay::ReplayStream | ?ReplayStream@eqReplay@@0PAVStream@@A
+    0x710880 | public: static int eqReplay::Playback | ?Playback@eqReplay@@2HA
+    0x710884 | public: static int eqReplay::Recording | ?Recording@eqReplay@@2HA
+*/
 
 #include "hooking.h"
 
@@ -78,48 +98,3 @@ public:
         return stub<member_func_t<void, eqReplayChannel>>(0x546230, this);
     }
 };
-
-// 0x546240 | ?InitRecord@eqReplay@@SAXPAD@Z
-static inline void InitRecord(char* arg1)
-{
-    return stub<cdecl_t<void, char*>>(0x546240, arg1);
-}
-
-// 0x5462D0 | ?InitPlayback@eqReplay@@SAXPAD@Z
-static inline void InitPlayback(char* arg1)
-{
-    return stub<cdecl_t<void, char*>>(0x5462D0, arg1);
-}
-
-// 0x546380 | ?ShutdownRecord@eqReplay@@SAXXZ
-static inline void ShutdownRecord()
-{
-    return stub<cdecl_t<void>>(0x546380);
-}
-
-// 0x5463E0 | ?ShutdownPlayback@eqReplay@@SAXXZ
-static inline void ShutdownPlayback()
-{
-    return stub<cdecl_t<void>>(0x5463E0);
-}
-
-// 0x546440 | ?DoRecord@eqReplay@@SAXXZ
-static inline void DoRecord()
-{
-    return stub<cdecl_t<void>>(0x546440);
-}
-
-// 0x5464A0 | ?DoPlayback@eqReplay@@SAXXZ
-static inline void DoPlayback()
-{
-    return stub<cdecl_t<void>>(0x5464A0);
-}
-
-// 0x71087C | ?ReplayStream@eqReplay@@0PAVStream@@A
-static inline extern_var(0x71087C, class Stream*, ReplayStream);
-
-// 0x710880 | ?Playback@eqReplay@@2HA
-static inline extern_var(0x710880, int32_t, Playback);
-
-// 0x710884 | ?Recording@eqReplay@@2HA
-static inline extern_var(0x710884, int32_t, Recording);

@@ -18,7 +18,18 @@
 
 #pragma once
 
-// mmcity:anim
+/*
+    mmcity:anim
+
+    0x48B1B0 | public: int __thiscall mmAnimation::LookupSequence(char *) | ?LookupSequence@mmAnimation@@QAEHPAD@Z
+    0x48B210 | public: void __thiscall mmAnimation::Load(char *,class Stream *) | ?Load@mmAnimation@@QAEXPADPAVStream@@@Z
+    0x48BA20 | class mmAnimation * __cdecl GetAnimation(char *) | ?GetAnimation@@YAPAVmmAnimation@@PAD@Z
+    0x48BB50 | public: static void __cdecl mmAnimInstState::PreUpdate(float) | ?PreUpdate@mmAnimInstState@@SAXM@Z
+    0x48BBA0 | public: void __thiscall mmAnimInstState::Update(void) | ?Update@mmAnimInstState@@QAEXXZ
+    0x48BC70 | public: __thiscall HashTable::~HashTable(void) | ??1HashTable@@QAE@XZ
+    0x667AB0 | public: static float mmAnimInstState::FrameFraction | ?FrameFraction@mmAnimInstState@@2MA
+    0x667AB4 | public: static int mmAnimInstState::FrameDelta | ?FrameDelta@mmAnimInstState@@2HA
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,22 @@
 
 #pragma once
 
-// mmcamcs:polarcamcs
+/*
+    mmcamcs:polarcamcs
+
+    0x4ED050 | public: __thiscall PolarCamCS::PolarCamCS(void) | ??0PolarCamCS@@QAE@XZ
+    0x4ED0A0 | public: void __thiscall PolarCamCS::Init(class mmCar *) | ?Init@PolarCamCS@@QAEXPAVmmCar@@@Z
+    0x4ED0D0 | public: virtual void __thiscall PolarCamCS::Reset(void) | ?Reset@PolarCamCS@@UAEXXZ
+    0x4ED0E0 | public: virtual void __thiscall PolarCamCS::MakeActive(void) | ?MakeActive@PolarCamCS@@UAEXXZ
+    0x4ED110 | public: virtual void __thiscall PolarCamCS::Update(void) | ?Update@PolarCamCS@@UAEXXZ
+    0x4ED540 | public: static void __cdecl PolarCamCS::DeclareFields(void) | ?DeclareFields@PolarCamCS@@SAXXZ
+    0x4ED6B0 | public: virtual class MetaClass * __thiscall PolarCamCS::GetClass(void) | ?GetClass@PolarCamCS@@UAEPAVMetaClass@@XZ
+    0x4ED6F0 | public: virtual void * __thiscall PolarCamCS::`vector deleting destructor'(unsigned int) | ??_EPolarCamCS@@UAEPAXI@Z
+    0x594D98 | const PolarCamCS::`vftable' | ??_7PolarCamCS@@6B@
+    0x67B760 | class MetaClass PolarCamCSMetaClass | ?PolarCamCSMetaClass@@3VMetaClass@@A
+    0x4ED590 | void * __cdecl new_PolarCamCS(int) | ?new_PolarCamCS@@YAPAXH@Z
+    0x4ED660 | void __cdecl delete_PolarCamCS(void *,int) | ?delete_PolarCamCS@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

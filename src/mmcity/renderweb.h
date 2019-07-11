@@ -18,7 +18,44 @@
 
 #pragma once
 
-// mmcity:renderweb
+/*
+    mmcity:renderweb
+
+    0x486550 | public: __thiscall asRenderWeb::asRenderWeb(void) | ??0asRenderWeb@@QAE@XZ
+    0x4865D0 | public: virtual __thiscall asRenderWeb::~asRenderWeb(void) | ??1asRenderWeb@@UAE@XZ
+    0x486660 | public: virtual struct asPortalCell * __thiscall asRenderWeb::GetStartCell(class Vector3 &,struct asPortalCell *,class mmPolygon * *) | ?GetStartCell@asRenderWeb@@UAEPAUasPortalCell@@AAVVector3@@PAU2@PAPAVmmPolygon@@@Z
+    0x486880 | public: int __thiscall asRenderWeb::Load(char *,int) | ?Load@asRenderWeb@@QAEHPADH@Z
+    0x487560 | public: virtual void __thiscall asRenderWeb::Update(void) | ?Update@asRenderWeb@@UAEXXZ
+    0x4875F0 | public: void __thiscall asRenderWeb::UpdateMirror(void) | ?UpdateMirror@asRenderWeb@@QAEXXZ
+    0x487700 | public: void __thiscall asRenderWeb::SetMirrorPos(float,float,float,float,float) | ?SetMirrorPos@asRenderWeb@@QAEXMMMMM@Z
+    0x4877D0 | void __cdecl DrawMirrorBorder(void) | ?DrawMirrorBorder@@YAXXZ
+    0x487880 | public: virtual void __thiscall asRenderWeb::Cull(void) | ?Cull@asRenderWeb@@UAEXXZ
+    0x487C80 | public: int __thiscall asRenderWeb::GetCellNeighbors(int,struct asPortalCell * *,int) | ?GetCellNeighbors@asRenderWeb@@QAEHHPAPAUasPortalCell@@H@Z
+    0x487CF0 | public: static void __cdecl asRenderWeb::DeclareFields(void) | ?DeclareFields@asRenderWeb@@SAXXZ
+    0x487E70 | public: virtual class MetaClass * __thiscall asRenderWeb::GetClass(void) | ?GetClass@asRenderWeb@@UAEPAVMetaClass@@XZ
+    0x487E80 | public: virtual void * __thiscall asRenderWeb::`vector deleting destructor'(unsigned int) | ??_EasRenderWeb@@UAEPAXI@Z
+    0x591E58 | const asRenderWeb::`vftable' | ??_7asRenderWeb@@6B@
+    0x5ADC00 | int ZREAD | ?ZREAD@@3HA
+    0x5ADC04 | int ZWRITE | ?ZWRITE@@3HA
+    0x5ADC08 | int MULTIPASS | ?MULTIPASS@@3HA
+    0x5ADC0C | float ScreenClearY | ?ScreenClearY@@3MA
+    0x5ADC10 | int EnableSubClip | ?EnableSubClip@@3HA
+    0x5ADC14 | float ShadowZBias | ?ShadowZBias@@3MA
+    0x64F7C0 | int CachedFullSegmentTests | ?CachedFullSegmentTests@@3HA
+    0x64F7C4 | int StartCellCollides | ?StartCellCollides@@3HA
+    0x64F7D4 | public: static float asRenderWeb::InvLodFactor | ?InvLodFactor@asRenderWeb@@2MA
+    0x64F7D8 | int EnableCachedPoly | ?EnableCachedPoly@@3HA
+    0x64F7DC | int CachedFullSegmentHits | ?CachedFullSegmentHits@@3HA
+    0x64F7E0 | int SC_SVP | ?SC_SVP@@3HA
+    0x64F7E4 | public: static int asRenderWeb::PassMask | ?PassMask@asRenderWeb@@2HA
+    0x64F7E8 | class Matrix34 * GridMtx | ?GridMtx@@3PAVMatrix34@@A
+    0x64F7F8 | int SC_SVCP | ?SC_SVCP@@3HA
+    0x64F800 | class MetaClass asRenderWebMetaClass | ?asRenderWebMetaClass@@3VMetaClass@@A
+    0x64F828 | int PopupEnabled | ?PopupEnabled@@3HA
+    0x64F82C | int Front2Back | ?Front2Back@@3HA
+    0x487D40 | void * __cdecl new_asRenderWeb(int) | ?new_asRenderWeb@@YAPAXH@Z
+    0x487E20 | void __cdecl delete_asRenderWeb(void *,int) | ?delete_asRenderWeb@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

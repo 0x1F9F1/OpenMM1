@@ -18,7 +18,51 @@
 
 #pragma once
 
-// mmgame:singleblitz
+/*
+    mmgame:singleblitz
+
+    0x40F110 | public: __thiscall mmSingleBlitz::mmSingleBlitz(void) | ??0mmSingleBlitz@@QAE@XZ
+    0x40F1B0 | public: virtual __thiscall mmSingleBlitz::~mmSingleBlitz(void) | ??1mmSingleBlitz@@UAE@XZ
+    0x40F280 | public: int __thiscall mmSingleBlitz::Init(void) | ?Init@mmSingleBlitz@@QAEHXZ
+    0x40F400 | public: virtual void __thiscall mmSingleBlitz::InitMyPlayer(void) | ?InitMyPlayer@mmSingleBlitz@@UAEXXZ
+    0x40F470 | public: virtual void __thiscall mmSingleBlitz::InitHUD(void) | ?InitHUD@mmSingleBlitz@@UAEXXZ
+    0x40F4F0 | public: virtual void __thiscall mmSingleBlitz::InitGameObjects(void) | ?InitGameObjects@mmSingleBlitz@@UAEXXZ
+    0x40F760 | public: virtual void __thiscall mmSingleBlitz::InitOtherPlayers(void) | ?InitOtherPlayers@mmSingleBlitz@@UAEXXZ
+    0x40F770 | public: virtual void __thiscall mmSingleBlitz::Reset(void) | ?Reset@mmSingleBlitz@@UAEXXZ
+    0x40F870 | private: void __thiscall mmSingleBlitz::EnableRacers(void) | ?EnableRacers@mmSingleBlitz@@AAEXXZ
+    0x40F900 | private: void __thiscall mmSingleBlitz::DisableRacers(void) | ?DisableRacers@mmSingleBlitz@@AAEXXZ
+    0x40F970 | public: virtual void __thiscall mmSingleBlitz::HitWaterHandler(void) | ?HitWaterHandler@mmSingleBlitz@@UAEXXZ
+    0x40FA00 | public: virtual void __thiscall mmSingleBlitz::Update(void) | ?Update@mmSingleBlitz@@UAEXXZ
+    0x40FA20 | public: virtual void __thiscall mmSingleBlitz::UpdateGameInput(int) | ?UpdateGameInput@mmSingleBlitz@@UAEXH@Z
+    0x40FA60 | public: virtual void __thiscall mmSingleBlitz::UpdateGame(void) | ?UpdateGame@mmSingleBlitz@@UAEXXZ
+    0x4102C0 | private: int __thiscall mmSingleBlitz::RegisterFinish(void) | ?RegisterFinish@mmSingleBlitz@@AAEHXZ
+    0x4105F0 | private: void __thiscall mmSingleBlitz::FinishMessage(int) | ?FinishMessage@mmSingleBlitz@@AAEXH@Z
+    0x410620 | private: int __thiscall mmSingleBlitz::ProgressCheck(int,int) | ?ProgressCheck@mmSingleBlitz@@AAEHHH@Z
+    0x4106F0 | public: virtual void __thiscall mmSingleBlitz::NextRace(void) | ?NextRace@mmSingleBlitz@@UAEXXZ
+    0x410860 | public: void __thiscall mmSingleBlitz::PlayTimerWarning(float) | ?PlayTimerWarning@mmSingleBlitz@@QAEXM@Z
+    0x410940 | public: static void __cdecl mmSingleBlitz::DeclareFields(void) | ?DeclareFields@mmSingleBlitz@@SAXXZ
+    0x410AC0 | public: virtual class MetaClass * __thiscall mmSingleBlitz::GetClass(void) | ?GetClass@mmSingleBlitz@@UAEPAVMetaClass@@XZ
+    0x410C20 | public: virtual __thiscall foobar::~foobar(void) | ??1foobar@@UAE@XZ
+    0x410C30 | public: virtual void * __thiscall foobar::`vector deleting destructor'(unsigned int) | ??_Efoobar@@UAEPAXI@Z
+    0x410C30 | public: virtual void * __thiscall foobar::`scalar deleting destructor'(unsigned int) | ??_Gfoobar@@UAEPAXI@Z
+    0x410C60 | public: __thiscall mmPlayerRecord::mmPlayerRecord(class mmPlayerRecord const &) | ??0mmPlayerRecord@@QAE@ABV0@@Z
+    0x410CE0 | public: virtual void * __thiscall Base::`vector deleting destructor'(unsigned int) | ??_EBase@@UAEPAXI@Z
+    0x410CE0 | public: virtual void * __thiscall Base::`scalar deleting destructor'(unsigned int) | ??_GBase@@UAEPAXI@Z
+    0x410D10 | public: virtual void * __thiscall mmPlayerRecord::`scalar deleting destructor'(unsigned int) | ??_GmmPlayerRecord@@UAEPAXI@Z
+    0x410D40 | public: virtual void * __thiscall mmSingleBlitz::`vector deleting destructor'(unsigned int) | ??_EmmSingleBlitz@@UAEPAXI@Z
+    0x410DA0 | public: virtual void * __thiscall mmInfoBase::`scalar deleting destructor'(unsigned int) | ??_GmmInfoBase@@UAEPAXI@Z
+    0x410DD0 | public: virtual __thiscall mmInfoBase::~mmInfoBase(void) | ??1mmInfoBase@@UAE@XZ
+    0x410DE0 | public: virtual void __thiscall mmSingleBlitz::UpdateDebugKeyInput(int) | ?UpdateDebugKeyInput@mmSingleBlitz@@UAEXH@Z
+    0x410DF0 | public: virtual class mmWaypoints * __thiscall mmSingleBlitz::GetWaypoints(void) | ?GetWaypoints@mmSingleBlitz@@UAEPAVmmWaypoints@@XZ
+    0x58F738 | const mmSingleBlitz::`vftable' | ??_7mmSingleBlitz@@6B@
+    0x58F7A8 | const foobar::`vftable' | ??_7foobar@@6B@
+    0x58F7D8 | const mmPlayerRecord::`vftable' | ??_7mmPlayerRecord@@6B@
+    0x58F7F0 | const mmInfoBase::`vftable' | ??_7mmInfoBase@@6B@
+    0x58F808 | const Base::`vftable' | ??_7Base@@6B@
+    0x609378 | class MetaClass mmSingleBlitzMetaClass | ?mmSingleBlitzMetaClass@@3VMetaClass@@A
+    0x410990 | void * __cdecl new_mmSingleBlitz(int) | ?new_mmSingleBlitz@@YAPAXH@Z
+    0x410A70 | void __cdecl delete_mmSingleBlitz(void *,int) | ?delete_mmSingleBlitz@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

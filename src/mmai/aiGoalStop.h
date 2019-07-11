@@ -18,7 +18,18 @@
 
 #pragma once
 
-// mmai:aiGoalStop
+/*
+    mmai:aiGoalStop
+
+    0x458350 | public: __thiscall aiGoalStop::aiGoalStop(class mmCar *,short *) | ??0aiGoalStop@@QAE@PAVmmCar@@PAF@Z
+    0x458380 | public: __thiscall aiGoalStop::~aiGoalStop(void) | ??1aiGoalStop@@QAE@XZ
+    0x458390 | public: virtual void __thiscall aiGoalStop::Init(void) | ?Init@aiGoalStop@@UAEXXZ
+    0x4583A0 | public: virtual void __thiscall aiGoalStop::Reset(void) | ?Reset@aiGoalStop@@UAEXXZ
+    0x4583B0 | public: virtual void __thiscall aiGoalStop::Update(void) | ?Update@aiGoalStop@@UAEXXZ
+    0x458410 | public: virtual int __thiscall aiGoalStop::Context(void) | ?Context@aiGoalStop@@UAEHXZ
+    0x458430 | public: virtual int __thiscall aiGoalStop::Priority(void) | ?Priority@aiGoalStop@@UAEHXZ
+    0x590BA0 | const aiGoalStop::`vftable' | ??_7aiGoalStop@@6B@
+*/
 
 #include "hooking.h"
 

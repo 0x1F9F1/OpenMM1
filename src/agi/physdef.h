@@ -18,7 +18,12 @@
 
 #pragma once
 
-// agi:physdef
+/*
+    agi:physdef
+
+    0x539090 | public: void __thiscall agiPhysParameters::Load(class Stream *) | ?Load@agiPhysParameters@@QAEXPAVStream@@@Z
+    0x539140 | public: void __thiscall agiPhysParameters::Save(class Stream *) | ?Save@agiPhysParameters@@QAEXPAVStream@@@Z
+*/
 
 #include "hooking.h"
 

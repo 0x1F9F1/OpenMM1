@@ -18,7 +18,26 @@
 
 #pragma once
 
-// mmaudio:creverb
+/*
+    mmaudio:creverb
+
+    0x4E7390 | public: __thiscall CReverb::CReverb(struct IDirectSound3DBuffer *) | ??0CReverb@@QAE@PAUIDirectSound3DBuffer@@@Z
+    0x4E7430 | public: __thiscall CReverb::~CReverb(void) | ??1CReverb@@QAE@XZ
+    0x4E7440 | public: int __thiscall CReverb::PropertySetOk(void) | ?PropertySetOk@CReverb@@QAEHXZ
+    0x4E7450 | private: int __thiscall CReverb::QueryProperty(unsigned long) | ?QueryProperty@CReverb@@AAEHK@Z
+    0x4E74A0 | public: void __thiscall CReverb::SetEnvironment(unsigned long) | ?SetEnvironment@CReverb@@QAEXK@Z
+    0x4E74C0 | public: void __thiscall CReverb::SetVolume(float) | ?SetVolume@CReverb@@QAEXM@Z
+    0x4E74E0 | public: void __thiscall CReverb::SetDecayTime(float) | ?SetDecayTime@CReverb@@QAEXM@Z
+    0x4E7500 | public: void __thiscall CReverb::SetDamping(float) | ?SetDamping@CReverb@@QAEXM@Z
+    0x4E7520 | public: void __thiscall CReverb::SetAll(struct EAX_REVERBPROPERTIES *) | ?SetAll@CReverb@@QAEXPAUEAX_REVERBPROPERTIES@@@Z
+    0x4E7540 | public: void __thiscall CReverb::SetPreset(unsigned long,float,float,float) | ?SetPreset@CReverb@@QAEXKMMM@Z
+    0x4E7580 | public: void __thiscall CReverb::SetPreset(struct EAX_REVERBPROPERTIES *) | ?SetPreset@CReverb@@QAEXPAUEAX_REVERBPROPERTIES@@@Z
+    0x4E75A0 | public: unsigned long __thiscall CReverb::GetEnvironment(void) | ?GetEnvironment@CReverb@@QAEKXZ
+    0x4E75E0 | public: float __thiscall CReverb::GetVolume(void) | ?GetVolume@CReverb@@QAEMXZ
+    0x4E7620 | public: float __thiscall CReverb::GetDecayTime(void) | ?GetDecayTime@CReverb@@QAEMXZ
+    0x4E7660 | public: float __thiscall CReverb::GetDamping(void) | ?GetDamping@CReverb@@QAEMXZ
+    0x4E76A0 | public: void __thiscall CReverb::GetAll(struct EAX_REVERBPROPERTIES *) | ?GetAll@CReverb@@QAEXPAUEAX_REVERBPROPERTIES@@@Z
+*/
 
 #include "hooking.h"
 

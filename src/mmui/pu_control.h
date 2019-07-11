@@ -18,7 +18,20 @@
 
 #pragma once
 
-// mmui:pu_control
+/*
+    mmui:pu_control
+
+    0x49EB40 | public: __thiscall PUControl::PUControl(int,float,float,float,float) | ??0PUControl@@QAE@HMMMM@Z
+    0x49EE40 | public: virtual __thiscall PUControl::~PUControl(void) | ??1PUControl@@UAE@XZ
+    0x49EEA0 | public: virtual void __thiscall PUControl::PreSetup(void) | ?PreSetup@PUControl@@UAEXXZ
+    0x49EEC0 | public: void __thiscall PUControl::CancelAction(void) | ?CancelAction@PUControl@@QAEXXZ
+    0x49EEE0 | public: void __thiscall PUControl::SetRWStates(void) | ?SetRWStates@PUControl@@QAEXXZ
+    0x49EF70 | public: void __thiscall PUControl::ControlSelect(void) | ?ControlSelect@PUControl@@QAEXXZ
+    0x49EFA0 | public: void __thiscall PUControl::SetSensitivityCB(void) | ?SetSensitivityCB@PUControl@@QAEXXZ
+    0x49EFB0 | public: virtual void * __thiscall PUControl::`scalar deleting destructor'(unsigned int) | ??_GPUControl@@UAEPAXI@Z
+    0x49EFB0 | public: virtual void * __thiscall PUControl::`vector deleting destructor'(unsigned int) | ??_EPUControl@@UAEPAXI@Z
+    0x592D20 | const PUControl::`vftable' | ??_7PUControl@@6B@
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,18 @@
 
 #pragma once
 
-// vector7:randmath
+/*
+    vector7:randmath
+
+    0x548EB0 | int __cdecl irand(int) | ?irand@@YAHH@Z
+    0x548EE0 | int __cdecl irand(void) | ?irand@@YAHXZ
+    0x548F20 | float __cdecl frand(void) | ?frand@@YAMXZ
+    0x548F40 | float __cdecl frand(int) | ?frand@@YAMH@Z
+    0x548F60 | _rand
+    0x548F70 | _srand
+    0x5C5060 | int gRandSeed | ?gRandSeed@@3HA
+    0x7108C4 | void (__cdecl* LogRandomCalls)(void) | ?LogRandomCalls@@3P6AXXZA
+*/
 
 #include "hooking.h"
 

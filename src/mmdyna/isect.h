@@ -18,7 +18,20 @@
 
 #pragma once
 
-// mmdyna:isect
+/*
+    mmdyna:isect
+
+    0x506470 | public: __thiscall mmIntersection::mmIntersection(void) | ??0mmIntersection@@QAE@XZ
+    0x506480 | public: void __thiscall mmIntersection::InitSegment(class Vector3 const &,class Vector3 const &,class mmBoundTemplate *,int,int) | ?InitSegment@mmIntersection@@QAEXABVVector3@@0PAVmmBoundTemplate@@HH@Z
+    0x506590 | public: void __thiscall mmIntersection::InitTransformedSegment(class Vector3 const &,class Vector3 const &,class mmBoundTemplate *,int,int) | ?InitTransformedSegment@mmIntersection@@QAEXABVVector3@@0PAVmmBoundTemplate@@HH@Z
+    0x506670 | public: void __thiscall mmIntersection::InitSphere(class Vector3 const &,float,class mmBoundTemplate *,int) | ?InitSphere@mmIntersection@@QAEXABVVector3@@MPAVmmBoundTemplate@@H@Z
+    0x5066D0 | public: void __thiscall mmIntersection::InitTransformedSphere(class Vector3 const &,float,class mmBoundTemplate *,int) | ?InitTransformedSphere@mmIntersection@@QAEXABVVector3@@MPAVmmBoundTemplate@@H@Z
+    0x506730 | public: void __thiscall mmIntersection::Reset(void) | ?Reset@mmIntersection@@QAEXXZ
+    0x506790 | public: void __thiscall mmIntersection::Transform(class Matrix34 const *) | ?Transform@mmIntersection@@QAEXPBVMatrix34@@@Z
+    0x506860 | public: __thiscall mmEdgeBodyIsect::mmEdgeBodyIsect(void) | ??0mmEdgeBodyIsect@@QAE@XZ
+    0x506870 | public: void __thiscall mmEdgeBodyIsect::Reset(void) | ?Reset@mmEdgeBodyIsect@@QAEXXZ
+    0x506890 | public: void __thiscall mmEdgeBodyIsect::InitSegment(class Vector3 const &,class Vector3 const &,int,int,class Vector3 const &,float) | ?InitSegment@mmEdgeBodyIsect@@QAEXABVVector3@@0HH0M@Z
+*/
 
 #include "hooking.h"
 

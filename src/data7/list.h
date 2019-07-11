@@ -18,7 +18,15 @@
 
 #pragma once
 
-// data7:list
+/*
+    data7:list
+
+    0x55DBE0 | public: __thiscall List::~List(void) | ??1List@@QAE@XZ
+    0x55DBF0 | public: void __thiscall List::Kill(void) | ?Kill@List@@QAEXXZ
+    0x55DC10 | public: int __thiscall List::Insert(int,void *) | ?Insert@List@@QAEHHPAX@Z
+    0x55DC90 | public: void * __thiscall List::Access(int) | ?Access@List@@QAEPAXH@Z
+    0x55DCC0 | public: int __thiscall List::Delete(int) | ?Delete@List@@QAEHH@Z
+*/
 
 #include "hooking.h"
 

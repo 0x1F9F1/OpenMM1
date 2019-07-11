@@ -18,7 +18,26 @@
 
 #pragma once
 
-// agid3d:d3dtexdef
+/*
+    agid3d:d3dtexdef
+
+    0x51B160 | public: __thiscall agiD3DTexDef::agiD3DTexDef(class agiPipeline *) | ??0agiD3DTexDef@@QAE@PAVagiPipeline@@@Z
+    0x51B190 | public: virtual __thiscall agiD3DTexDef::~agiD3DTexDef(void) | ??1agiD3DTexDef@@UAE@XZ
+    0x51B1A0 | public: virtual int __thiscall agiD3DTexDef::BeginGfx(void) | ?BeginGfx@agiD3DTexDef@@UAEHXZ
+    0x51B500 | public: virtual void __thiscall agiD3DTexDef::Request(void) | ?Request@agiD3DTexDef@@UAEXXZ
+    0x51B560 | public: struct IDirect3DTexture2 * __thiscall agiD3DTexDef::GetHandle(int) | ?GetHandle@agiD3DTexDef@@QAEPAUIDirect3DTexture2@@H@Z
+    0x51B5E0 | public: virtual int __thiscall agiD3DTexDef::Lock(struct agiTexLock &) | ?Lock@agiD3DTexDef@@UAEHAAUagiTexLock@@@Z
+    0x51B680 | public: virtual void __thiscall agiD3DTexDef::Unlock(struct agiTexLock &) | ?Unlock@agiD3DTexDef@@UAEXAAUagiTexLock@@@Z
+    0x51B6B0 | public: virtual void __thiscall agiD3DTexDef::EndGfx(void) | ?EndGfx@agiD3DTexDef@@UAEXXZ
+    0x51B720 | public: virtual int __thiscall agiD3DTexDef::IsAvailable(void) | ?IsAvailable@agiD3DTexDef@@UAEHXZ
+    0x51B730 | public: virtual void __thiscall agiD3DTexDef::Set(class Vector2 &,class Vector2 &) | ?Set@agiD3DTexDef@@UAEXAAVVector2@@0@Z
+    0x51B750 | public: virtual void __thiscall agiD3DTexDef::Restore(void) | ?Restore@agiD3DTexDef@@UAEXXZ
+    0x51B790 | public: virtual int __thiscall agiD3DTexLut::BeginGfx(void) | ?BeginGfx@agiD3DTexLut@@UAEHXZ
+    0x51B7E0 | public: virtual void __thiscall agiD3DTexLut::EndGfx(void) | ?EndGfx@agiD3DTexLut@@UAEXXZ
+    0x51B820 | public: virtual void * __thiscall agiD3DTexDef::`vector deleting destructor'(unsigned int) | ??_EagiD3DTexDef@@UAEPAXI@Z
+    0x51B820 | public: virtual void * __thiscall agiD3DTexDef::`scalar deleting destructor'(unsigned int) | ??_GagiD3DTexDef@@UAEPAXI@Z
+    0x595868 | const agiD3DTexDef::`vftable' | ??_7agiD3DTexDef@@6B@
+*/
 
 #include "hooking.h"
 

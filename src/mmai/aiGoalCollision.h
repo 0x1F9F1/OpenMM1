@@ -18,7 +18,18 @@
 
 #pragma once
 
-// mmai:aiGoalCollision
+/*
+    mmai:aiGoalCollision
+
+    0x4640E0 | public: __thiscall aiGoalCollision::aiGoalCollision(class aiRailSet *,class aiVehicleSpline *) | ??0aiGoalCollision@@QAE@PAVaiRailSet@@PAVaiVehicleSpline@@@Z
+    0x464110 | public: __thiscall aiGoalCollision::~aiGoalCollision(void) | ??1aiGoalCollision@@QAE@XZ
+    0x464120 | public: virtual void __thiscall aiGoalCollision::Init(void) | ?Init@aiGoalCollision@@UAEXXZ
+    0x464130 | public: virtual void __thiscall aiGoalCollision::Reset(void) | ?Reset@aiGoalCollision@@UAEXXZ
+    0x464140 | public: virtual void __thiscall aiGoalCollision::Update(void) | ?Update@aiGoalCollision@@UAEXXZ
+    0x4641C0 | public: virtual int __thiscall aiGoalCollision::Context(void) | ?Context@aiGoalCollision@@UAEHXZ
+    0x4641E0 | public: virtual int __thiscall aiGoalCollision::Priority(void) | ?Priority@aiGoalCollision@@UAEHXZ
+    0x590DD8 | const aiGoalCollision::`vftable' | ??_7aiGoalCollision@@6B@
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,33 @@
 
 #pragma once
 
-// mmcar:playercaraudio
+/*
+    mmcar:playercaraudio
+
+    0x478A40 | public: __thiscall mmPlayerCarAudio::mmPlayerCarAudio(class mmCarSim *) | ??0mmPlayerCarAudio@@QAE@PAVmmCarSim@@@Z
+    0x478AE0 | public: void __thiscall mmPlayerCarAudio::Init(class mmCarSim *) | ?Init@mmPlayerCarAudio@@QAEXPAVmmCarSim@@@Z
+    0x478E70 | public: virtual __thiscall mmPlayerCarAudio::~mmPlayerCarAudio(void) | ??1mmPlayerCarAudio@@UAE@XZ
+    0x478F60 | public: void __thiscall mmPlayerCarAudio::EchoOn(float) | ?EchoOn@mmPlayerCarAudio@@QAEXM@Z
+    0x479080 | public: void __thiscall mmPlayerCarAudio::EchoOff(void) | ?EchoOff@mmPlayerCarAudio@@QAEXXZ
+    0x479130 | public: void __thiscall mmPlayerCarAudio::PlayReverseBeep(void) | ?PlayReverseBeep@mmPlayerCarAudio@@QAEXXZ
+    0x479190 | public: void __thiscall mmPlayerCarAudio::Update(int,float,float,short) | ?Update@mmPlayerCarAudio@@QAEXHMMF@Z
+    0x4793A0 | public: void __thiscall mmPlayerCarAudio::StartSiren(void) | ?StartSiren@mmPlayerCarAudio@@QAEXXZ
+    0x479430 | public: void __thiscall mmPlayerCarAudio::StopSiren(void) | ?StopSiren@mmPlayerCarAudio@@QAEXXZ
+    0x479470 | public: void __thiscall mmPlayerCarAudio::FluctuateSlowSiren(void) | ?FluctuateSlowSiren@mmPlayerCarAudio@@QAEXXZ
+    0x479670 | public: void __thiscall mmPlayerCarAudio::FluctuateFastSiren(void) | ?FluctuateFastSiren@mmPlayerCarAudio@@QAEXXZ
+    0x479990 | public: virtual void __thiscall mmPlayerCarAudio::Reset(void) | ?Reset@mmPlayerCarAudio@@UAEXXZ
+    0x4799D0 | public: void __thiscall mmPlayerCarAudio::PlayHorn(void) | ?PlayHorn@mmPlayerCarAudio@@QAEXXZ
+    0x479A10 | public: void __thiscall mmPlayerCarAudio::SetUpDefault(class mmCarSim *) | ?SetUpDefault@mmPlayerCarAudio@@QAEXPAVmmCarSim@@@Z
+    0x479B60 | public: void __thiscall mmPlayerCarAudio::LoadSucessful(void) | ?LoadSucessful@mmPlayerCarAudio@@QAEXXZ
+    0x479FC0 | public: static void __cdecl mmPlayerCarAudio::DeclareFields(void) | ?DeclareFields@mmPlayerCarAudio@@SAXXZ
+    0x47A1B0 | public: virtual class MetaClass * __thiscall mmPlayerCarAudio::GetClass(void) | ?GetClass@mmPlayerCarAudio@@UAEPAVMetaClass@@XZ
+    0x47A2E0 | public: virtual void * __thiscall mmPlayerCarAudio::`vector deleting destructor'(unsigned int) | ??_EmmPlayerCarAudio@@UAEPAXI@Z
+    0x47A340 | public: __thiscall mmPlayerCarAudio::mmPlayerCarAudio(void) | ??0mmPlayerCarAudio@@QAE@XZ
+    0x591900 | const mmPlayerCarAudio::`vftable' | ??_7mmPlayerCarAudio@@6B@
+    0x60A520 | class MetaClass mmPlayerCarAudioMetaClass | ?mmPlayerCarAudioMetaClass@@3VMetaClass@@A
+    0x47A070 | void * __cdecl new_mmPlayerCarAudio(int) | ?new_mmPlayerCarAudio@@YAPAXH@Z
+    0x47A160 | void __cdecl delete_mmPlayerCarAudio(void *,int) | ?delete_mmPlayerCarAudio@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

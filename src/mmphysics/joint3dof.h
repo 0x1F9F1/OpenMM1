@@ -18,7 +18,52 @@
 
 #pragma once
 
-// mmphysics:joint3dof
+/*
+    mmphysics:joint3dof
+
+    0x4CEE00 | public: __thiscall Joint3Dof::Joint3Dof(void) | ??0Joint3Dof@@QAE@XZ
+    0x4CEE50 | public: void __thiscall Joint3Dof::Init(void) | ?Init@Joint3Dof@@QAEXXZ
+    0x4CEEC0 | public: virtual void __thiscall Joint3Dof::Reset(void) | ?Reset@Joint3Dof@@UAEXXZ
+    0x4CEED0 | public: void __thiscall Joint3Dof::InitJoint3Dof(class asInertialCS *,class Vector3 const &,class asInertialCS *,class Vector3 const &) | ?InitJoint3Dof@Joint3Dof@@QAEXPAVasInertialCS@@ABVVector3@@01@Z
+    0x4CEF50 | public: void __thiscall Joint3Dof::SetPosition(class Vector3 const &) | ?SetPosition@Joint3Dof@@QAEXABVVector3@@@Z
+    0x4CF030 | public: void __thiscall Joint3Dof::SetRotate1(class Matrix34 const &) | ?SetRotate1@Joint3Dof@@QAEXABVMatrix34@@@Z
+    0x4CF050 | public: void __thiscall Joint3Dof::SetRotate2(class Matrix34 const &) | ?SetRotate2@Joint3Dof@@QAEXABVMatrix34@@@Z
+    0x4CF070 | public: void __thiscall Joint3Dof::SetFrictionLean(float,float,float) | ?SetFrictionLean@Joint3Dof@@QAEXMMM@Z
+    0x4CF0A0 | public: void __thiscall Joint3Dof::SetFrictionRoll(float,float,float) | ?SetFrictionRoll@Joint3Dof@@QAEXMMM@Z
+    0x4CF0D0 | public: void __thiscall Joint3Dof::SetLeanLimit(float,float) | ?SetLeanLimit@Joint3Dof@@QAEXMM@Z
+    0x4CF0F0 | public: void __thiscall Joint3Dof::SetRollLimit(float,float,float) | ?SetRollLimit@Joint3Dof@@QAEXMMM@Z
+    0x4CF120 | public: void __thiscall Joint3Dof::SetRestOrientation(void) | ?SetRestOrientation@Joint3Dof@@QAEXXZ
+    0x4CF190 | public: void __thiscall Joint3Dof::SetRestOrientMat(class Matrix34 const &) | ?SetRestOrientMat@Joint3Dof@@QAEXABVMatrix34@@@Z
+    0x4CF1D0 | public: void __thiscall Joint3Dof::SetRestOrientMat(class Matrix34 const &,class Matrix34 const &) | ?SetRestOrientMat@Joint3Dof@@QAEXABVMatrix34@@0@Z
+    0x4CF220 | public: void __thiscall Joint3Dof::SetForceLimit(float) | ?SetForceLimit@Joint3Dof@@QAEXM@Z
+    0x4CF230 | public: void __thiscall Joint3Dof::SetJointForceFlag(void) | ?SetJointForceFlag@Joint3Dof@@QAEXXZ
+    0x4CF2D0 | public: virtual void __thiscall Joint3Dof::Update(void) | ?Update@Joint3Dof@@UAEXXZ
+    0x4D0530 | public: void __thiscall Joint3Dof::MoveICS(void) | ?MoveICS@Joint3Dof@@QAEXXZ
+    0x4D0580 | public: void __thiscall Joint3Dof::BreakJoint(void) | ?BreakJoint@Joint3Dof@@QAEXXZ
+    0x4D05B0 | public: void __thiscall Joint3Dof::UnbreakJoint(void) | ?UnbreakJoint@Joint3Dof@@QAEXXZ
+    0x4D05E0 | public: void __thiscall Joint3Dof::DoJointTorque(class Matrix34 const &,class Matrix34 const &,class Matrix34 const &,class Matrix34 const &,float &,float &,class Vector3 &,float &,float &) | ?DoJointTorque@Joint3Dof@@QAEXABVMatrix34@@000AAM1AAVVector3@@11@Z
+    0x4D0B70 | public: void __thiscall Joint3Dof::DoJointLimits(float,class Vector3 const &,float,class Vector3 const &,class Vector3 &,class Matrix34 const &,class Matrix34 const &,class Matrix34 const &,class Matrix34 const &,class Matrix34 const &) | ?DoJointLimits@Joint3Dof@@QAEXMABVVector3@@M0AAV2@ABVMatrix34@@2222@Z
+    0x4D1230 | public: virtual void __thiscall Joint3Dof::GetCMatrix(class asInertialCS const *,class Matrix34 &,class Vector3 const &) | ?GetCMatrix@Joint3Dof@@UAEXPBVasInertialCS@@AAVMatrix34@@ABVVector3@@@Z
+    0x4D1590 | public: virtual void __thiscall Joint3Dof::GetCMatrix(class asInertialCS const *,class asInertialCS const *,class Matrix34 &,class Vector3 const &) | ?GetCMatrix@Joint3Dof@@UAEXPBVasInertialCS@@0AAVMatrix34@@ABVVector3@@@Z
+    0x4D1B80 | public: void __thiscall Joint3Dof::AddWidgets(class Bank *) | ?AddWidgets@Joint3Dof@@QAEXPAVBank@@@Z
+    0x4D1B90 | public: static void __cdecl Joint3Dof::DeclareFields(void) | ?DeclareFields@Joint3Dof@@SAXXZ
+    0x4D1D00 | public: virtual class MetaClass * __thiscall Joint3Dof::GetClass(void) | ?GetClass@Joint3Dof@@UAEPAVMetaClass@@XZ
+    0x4D1D40 | public: virtual __thiscall JointedStruct::~JointedStruct(void) | ??1JointedStruct@@UAE@XZ
+    0x4D1D50 | public: class Vector3 __thiscall Vector3::operator^(class Matrix34 const &) const | ??TVector3@@QBE?AV0@ABVMatrix34@@@Z
+    0x4D1D80 | public: void __thiscall Vector3::operator-=(class Vector3 const &) | ??ZVector3@@QAEXABV0@@Z
+    0x4D1DB0 | public: void __thiscall Vector3::operator*=(float) | ??XVector3@@QAEXM@Z
+    0x4D1DE0 | public: virtual void * __thiscall Joint3Dof::`vector deleting destructor'(unsigned int) | ??_EJoint3Dof@@UAEPAXI@Z
+    0x4D1E40 | public: virtual __thiscall Joint3Dof::~Joint3Dof(void) | ??1Joint3Dof@@UAE@XZ
+    0x4D1E50 | public: class Vector3 __thiscall Matrix34::RotateNoTrans(class Vector3 const &) const | ?RotateNoTrans@Matrix34@@QBE?AVVector3@@ABV2@@Z
+    0x4D1E80 | public: class Matrix34 __thiscall Matrix34::Transpose(void) const | ?Transpose@Matrix34@@QBE?AV1@XZ
+    0x4D1EB0 | void __cdecl CrossProdMatrix(class Matrix34 *,class Vector3 const &) | ?CrossProdMatrix@@YAXPAVMatrix34@@ABVVector3@@@Z
+    0x594618 | const Joint3Dof::`vftable' | ??_7Joint3Dof@@6B@
+    0x67B3F0 | class MetaClass Joint3DofMetaClass | ?Joint3DofMetaClass@@3VMetaClass@@A
+    0x67B418 | class Vector3 Veldiscrepancy | ?Veldiscrepancy@@3VVector3@@A
+    0x67B428 | class Vector3 discrepancy | ?discrepancy@@3VVector3@@A
+    0x4D1BE0 | void * __cdecl new_Joint3Dof(int) | ?new_Joint3Dof@@YAPAXH@Z
+    0x4D1CB0 | void __cdecl delete_Joint3Dof(void *,int) | ?delete_Joint3Dof@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,32 @@
 
 #pragma once
 
-// mmcityinfo:racerecord
+/*
+    mmcityinfo:racerecord
+
+    0x4C5B90 | public: __thiscall mmRecord::mmRecord(void) | ??0mmRecord@@QAE@XZ
+    0x4C5BD0 | public: virtual __thiscall mmRecord::~mmRecord(void) | ??1mmRecord@@UAE@XZ
+    0x4C5BE0 | public: float __thiscall mmRecord::GetTime(void) | ?GetTime@mmRecord@@QAEMXZ
+    0x4C5BF0 | public: char * __thiscall mmRecord::GetCarName(void) | ?GetCarName@mmRecord@@QAEPADXZ
+    0x4C5C00 | public: char * __thiscall mmRecord::GetName(void) | ?GetName@mmRecord@@QAEPADXZ
+    0x4C5C10 | public: int __thiscall mmRecord::GetPassed(void) | ?GetPassed@mmRecord@@QAEHXZ
+    0x4C5C20 | public: int __thiscall mmRecord::GetScore(void) | ?GetScore@mmRecord@@QAEHXZ
+    0x4C5C30 | public: void __thiscall mmRecord::SetTime(float) | ?SetTime@mmRecord@@QAEXM@Z
+    0x4C5C40 | public: void __thiscall mmRecord::SetCarName(char *) | ?SetCarName@mmRecord@@QAEXPAD@Z
+    0x4C5C60 | public: void __thiscall mmRecord::SetName(char *) | ?SetName@mmRecord@@QAEXPAD@Z
+    0x4C5CA0 | public: void __thiscall mmRecord::SetPassed(int) | ?SetPassed@mmRecord@@QAEXH@Z
+    0x4C5CC0 | public: void __thiscall mmRecord::SetScore(int) | ?SetScore@mmRecord@@QAEXH@Z
+    0x4C5CD0 | public: void __thiscall mmRecord::operator=(class mmRecord &) | ??4mmRecord@@QAEXAAV0@@Z
+    0x4C5D60 | public: int __thiscall mmRecord::SaveBinary(class Stream *) | ?SaveBinary@mmRecord@@QAEHPAVStream@@@Z
+    0x4C5DE0 | public: int __thiscall mmRecord::LoadBinary(class Stream *) | ?LoadBinary@mmRecord@@QAEHPAVStream@@@Z
+    0x4C5E60 | public: unsigned int __thiscall mmRecord::ComputeCRC(void) | ?ComputeCRC@mmRecord@@QAEIXZ
+    0x4C5EC0 | public: static void __cdecl mmRecord::DeclareFields(void) | ?DeclareFields@mmRecord@@SAXXZ
+    0x4C60A0 | public: virtual class MetaClass * __thiscall mmRecord::GetClass(void) | ?GetClass@mmRecord@@UAEPAVMetaClass@@XZ
+    0x4C60B0 | public: virtual void * __thiscall mmRecord::`vector deleting destructor'(unsigned int) | ??_EmmRecord@@UAEPAXI@Z
+    0x66A918 | class MetaClass mmRecordMetaClass | ?mmRecordMetaClass@@3VMetaClass@@A
+    0x4C5F80 | void * __cdecl new_mmRecord(int) | ?new_mmRecord@@YAPAXH@Z
+    0x4C6050 | void __cdecl delete_mmRecord(void *,int) | ?delete_mmRecord@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 

@@ -18,7 +18,19 @@
 
 #pragma once
 
-// mmwidget:wstore
+/*
+    mmwidget:wstore
+
+    0x4A0A30 | public: __thiscall WArray::WArray(void) | ??0WArray@@QAE@XZ
+    0x4A0A40 | public: __thiscall WArray::~WArray(void) | ??1WArray@@QAE@XZ
+    0x4A0A50 | public: void __thiscall WArray::Init(int) | ?Init@WArray@@QAEXH@Z
+    0x4A0A90 | public: void __thiscall WArray::Write(char *) | ?Write@WArray@@QAEXPAD@Z
+    0x4A0CB0 | public: void __thiscall WArray::DumpMenu(class Stream *,class UIMenu *) | ?DumpMenu@WArray@@QAEXPAVStream@@PAVUIMenu@@@Z
+    0x4A0F10 | public: void __thiscall WArray::Flush(void) | ?Flush@WArray@@QAEXXZ
+    0x4A0F20 | public: void __thiscall WArray::Read(char *) | ?Read@WArray@@QAEXPAD@Z
+    0x4A1100 | public: void __thiscall WArray::AddWidgetData(int,int,class Vector4 &,char *) | ?AddWidgetData@WArray@@QAEXHHAAVVector4@@PAD@Z
+    0x4A1180 | public: int __thiscall WArray::RetrieveWidgetData(int,int,float &,float &,float &,float &) | ?RetrieveWidgetData@WArray@@QAEHHHAAM000@Z
+*/
 
 #include "hooking.h"
 

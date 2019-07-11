@@ -18,7 +18,39 @@
 
 #pragma once
 
-// mmgame:singlecircuit
+/*
+    mmgame:singlecircuit
+
+    0x410E00 | public: __thiscall mmSingleCircuit::mmSingleCircuit(void) | ??0mmSingleCircuit@@QAE@XZ
+    0x410EA0 | public: virtual __thiscall mmSingleCircuit::~mmSingleCircuit(void) | ??1mmSingleCircuit@@UAE@XZ
+    0x410F60 | public: int __thiscall mmSingleCircuit::Init(void) | ?Init@mmSingleCircuit@@QAEHXZ
+    0x4110E0 | public: virtual void __thiscall mmSingleCircuit::InitMyPlayer(void) | ?InitMyPlayer@mmSingleCircuit@@UAEXXZ
+    0x411150 | public: virtual void __thiscall mmSingleCircuit::InitHUD(void) | ?InitHUD@mmSingleCircuit@@UAEXXZ
+    0x4111A0 | public: virtual void __thiscall mmSingleCircuit::InitGameObjects(void) | ?InitGameObjects@mmSingleCircuit@@UAEXXZ
+    0x411400 | public: virtual void __thiscall mmSingleCircuit::InitOtherPlayers(void) | ?InitOtherPlayers@mmSingleCircuit@@UAEXXZ
+    0x411410 | public: virtual void __thiscall mmSingleCircuit::Reset(void) | ?Reset@mmSingleCircuit@@UAEXXZ
+    0x4114E0 | public: virtual void __thiscall mmSingleCircuit::HitWaterHandler(void) | ?HitWaterHandler@mmSingleCircuit@@UAEXXZ
+    0x4115A0 | private: void __thiscall mmSingleCircuit::EnableRacers(void) | ?EnableRacers@mmSingleCircuit@@AAEXXZ
+    0x411630 | private: void __thiscall mmSingleCircuit::DisableRacers(void) | ?DisableRacers@mmSingleCircuit@@AAEXXZ
+    0x4116A0 | public: virtual void __thiscall mmSingleCircuit::Update(void) | ?Update@mmSingleCircuit@@UAEXXZ
+    0x4116C0 | public: virtual void __thiscall mmSingleCircuit::UpdateGameInput(int) | ?UpdateGameInput@mmSingleCircuit@@UAEXH@Z
+    0x4116D0 | public: void __thiscall mmSingleCircuit::UpdateScore(void) | ?UpdateScore@mmSingleCircuit@@QAEXXZ
+    0x411A60 | public: virtual void __thiscall mmSingleCircuit::UpdateGame(void) | ?UpdateGame@mmSingleCircuit@@UAEXXZ
+    0x4121F0 | private: void __thiscall mmSingleCircuit::FinishMessage(int,int) | ?FinishMessage@mmSingleCircuit@@AAEXHH@Z
+    0x412380 | private: int __thiscall mmSingleCircuit::RegisterLap(void) | ?RegisterLap@mmSingleCircuit@@AAEHXZ
+    0x4123E0 | private: int __thiscall mmSingleCircuit::RegisterFinish(void) | ?RegisterFinish@mmSingleCircuit@@AAEHXZ
+    0x412800 | private: int __thiscall mmSingleCircuit::ProgressCheck(int,int) | ?ProgressCheck@mmSingleCircuit@@AAEHHH@Z
+    0x412830 | public: virtual void __thiscall mmSingleCircuit::NextRace(void) | ?NextRace@mmSingleCircuit@@UAEXXZ
+    0x4129B0 | public: static void __cdecl mmSingleCircuit::DeclareFields(void) | ?DeclareFields@mmSingleCircuit@@SAXXZ
+    0x412B20 | public: virtual class MetaClass * __thiscall mmSingleCircuit::GetClass(void) | ?GetClass@mmSingleCircuit@@UAEPAVMetaClass@@XZ
+    0x412C80 | public: virtual void * __thiscall mmSingleCircuit::`vector deleting destructor'(unsigned int) | ??_EmmSingleCircuit@@UAEPAXI@Z
+    0x412CE0 | public: virtual void __thiscall mmSingleCircuit::UpdateDebugKeyInput(int) | ?UpdateDebugKeyInput@mmSingleCircuit@@UAEXH@Z
+    0x412CF0 | public: virtual class mmWaypoints * __thiscall mmSingleCircuit::GetWaypoints(void) | ?GetWaypoints@mmSingleCircuit@@UAEPAVmmWaypoints@@XZ
+    0x58F850 | const mmSingleCircuit::`vftable' | ??_7mmSingleCircuit@@6B@
+    0x6093E0 | class MetaClass mmSingleCircuitMetaClass | ?mmSingleCircuitMetaClass@@3VMetaClass@@A
+    0x412A00 | void * __cdecl new_mmSingleCircuit(int) | ?new_mmSingleCircuit@@YAPAXH@Z
+    0x412AD0 | void __cdecl delete_mmSingleCircuit(void *,int) | ?delete_mmSingleCircuit@@YAXPAXH@Z
+*/
 
 #include "hooking.h"
 
