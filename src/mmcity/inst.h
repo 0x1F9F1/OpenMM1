@@ -355,22 +355,13 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline void FromMatrix(class Matrix34 const& arg1)
-    {
-        return stub<member_func_t<void, mmInstance, class Matrix34 const&>>(0x567350, this, arg1);
-    }
+    virtual inline void FromMatrix(class Matrix34 const& arg1) = 0;
 
     // 0x567350 | __purecall
-    virtual inline class Matrix34& ToMatrix(class Matrix34& arg1)
-    {
-        return stub<member_func_t<class Matrix34&, mmInstance, class Matrix34&>>(0x567350, this, arg1);
-    }
+    virtual inline class Matrix34& ToMatrix(class Matrix34& arg1) = 0;
 
     // 0x567350 | __purecall
-    virtual inline class Vector3& GetPos()
-    {
-        return stub<member_func_t<class Vector3&, mmInstance>>(0x567350, this);
-    }
+    virtual inline class Vector3& GetPos() = 0;
 
     // 0x430710 | ?GetEntity@mmInstance@@UAEPAVmmPhysEntity@@XZ
     virtual inline class mmPhysEntity* GetEntity()

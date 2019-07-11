@@ -141,11 +141,7 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline void SetPosition(class mmTextNode* arg1, int32_t arg2, float arg3)
-    {
-        return stub<member_func_t<void, mmCompBase, class mmTextNode*, int32_t, float>>(
-            0x567350, this, arg1, arg2, arg3);
-    }
+    virtual inline void SetPosition(class mmTextNode* arg1, int32_t arg2, float arg3) = 0;
 };
 
 struct mmCompCity : mmCompBase

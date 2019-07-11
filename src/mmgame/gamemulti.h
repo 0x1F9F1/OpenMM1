@@ -295,10 +295,7 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline void InitNetworkPlayers()
-    {
-        return stub<member_func_t<void, mmGameMulti>>(0x567350, this);
-    }
+    virtual inline void InitNetworkPlayers() = 0;
 
     // 0x42C650 | ?InitRoster@mmGameMulti@@UAEXXZ
     virtual inline void InitRoster()
@@ -307,14 +304,8 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline void SystemMessage(struct NETSYS_MSG* arg1)
-    {
-        return stub<member_func_t<void, mmGameMulti, struct NETSYS_MSG*>>(0x567350, this, arg1);
-    }
+    virtual inline void SystemMessage(struct NETSYS_MSG* arg1) = 0;
 
     // 0x567350 | __purecall
-    virtual inline void GameMessage(struct NETGAME_MSG* arg1)
-    {
-        return stub<member_func_t<void, mmGameMulti, struct NETGAME_MSG*>>(0x567350, this, arg1);
-    }
+    virtual inline void GameMessage(struct NETGAME_MSG* arg1) = 0;
 };

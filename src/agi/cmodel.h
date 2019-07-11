@@ -89,43 +89,22 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline ~agiColorModel()
-    {
-        stub<member_func_t<void, agiColorModel>>(0x567350, this);
-    }
+    virtual inline ~agiColorModel() = 0;
 
     // 0x567350 | __purecall
-    virtual inline uint32_t GetColor(struct agiRgba arg1)
-    {
-        return stub<member_func_t<uint32_t, agiColorModel, struct agiRgba>>(0x567350, this, arg1);
-    }
+    virtual inline uint32_t GetColor(struct agiRgba arg1) = 0;
 
     // 0x567350 | __purecall
-    virtual inline uint32_t FindColor(struct agiRgba arg1)
-    {
-        return stub<member_func_t<uint32_t, agiColorModel, struct agiRgba>>(0x567350, this, arg1);
-    }
+    virtual inline uint32_t FindColor(struct agiRgba arg1) = 0;
 
     // 0x567350 | __purecall
-    virtual inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)
-    {
-        return stub<member_func_t<uint32_t, agiColorModel, uint32_t, uint32_t, uint32_t, uint32_t>>(
-            0x567350, this, arg1, arg2, arg3, arg4);
-    }
+    virtual inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) = 0;
 
     // 0x567350 | __purecall
-    virtual inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4)
-    {
-        return stub<member_func_t<void, agiColorModel, class agiSurfaceDesc*, int32_t, int32_t, uint32_t>>(
-            0x567350, this, arg1, arg2, arg3, arg4);
-    }
+    virtual inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4) = 0;
 
     // 0x567350 | __purecall
-    virtual inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3)
-    {
-        return stub<member_func_t<uint32_t, agiColorModel, class agiSurfaceDesc*, int32_t, int32_t>>(
-            0x567350, this, arg1, arg2, arg3);
-    }
+    virtual inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3) = 0;
 };
 
 check_size(agiColorModel, 0x2C);

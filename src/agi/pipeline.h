@@ -251,10 +251,7 @@ public:
     static inline extern_var(0x7021C4, class agiPipeline*, CurrentPipe);
 
     // 0x567350 | __purecall
-    virtual inline ~agiPipeline()
-    {
-        stub<member_func_t<void, agiPipeline>>(0x567350, this);
-    }
+    virtual inline ~agiPipeline() = 0;
 
     // 0x5377C0 | ?Validate@agiPipeline@@UAEHXZ
     virtual inline int32_t Validate()
@@ -263,16 +260,10 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline int32_t BeginGfx()
-    {
-        return stub<member_func_t<int32_t, agiPipeline>>(0x567350, this);
-    }
+    virtual inline int32_t BeginGfx() = 0;
 
     // 0x567350 | __purecall
-    virtual inline void EndGfx()
-    {
-        return stub<member_func_t<void, agiPipeline>>(0x567350, this);
-    }
+    virtual inline void EndGfx() = 0;
 
     // 0x537F90 | ?BeginFrame@agiPipeline@@UAEXXZ
     virtual inline void BeginFrame()
@@ -299,16 +290,10 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline class agiTexDef* CreateTexDef()
-    {
-        return stub<member_func_t<class agiTexDef*, agiPipeline>>(0x567350, this);
-    }
+    virtual inline class agiTexDef* CreateTexDef() = 0;
 
     // 0x567350 | __purecall
-    virtual inline class agiTexLut* CreateTexLut()
-    {
-        return stub<member_func_t<class agiTexLut*, agiPipeline>>(0x567350, this);
-    }
+    virtual inline class agiTexLut* CreateTexLut() = 0;
 
     // 0x537D90 | ?CreateMtlDef@agiPipeline@@UAEPAVagiMtlDef@@XZ
     virtual inline class agiMtlDef* CreateMtlDef()
@@ -317,16 +302,10 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline class DLP* CreateDLP()
-    {
-        return stub<member_func_t<class DLP*, agiPipeline>>(0x567350, this);
-    }
+    virtual inline class DLP* CreateDLP() = 0;
 
     // 0x567350 | __purecall
-    virtual inline class agiViewport* CreateViewport()
-    {
-        return stub<member_func_t<class agiViewport*, agiPipeline>>(0x567350, this);
-    }
+    virtual inline class agiViewport* CreateViewport() = 0;
 
     // 0x537DA0 | ?CreateLight@agiPipeline@@UAEPAVagiLight@@XZ
     virtual inline class agiLight* CreateLight()
@@ -356,10 +335,7 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline void ClearAll(int32_t arg1)
-    {
-        return stub<member_func_t<void, agiPipeline, int32_t>>(0x567350, this, arg1);
-    }
+    virtual inline void ClearAll(int32_t arg1) = 0;
 
     // 0x5382F0 | ?ClearRect@agiPipeline@@UAEXHHHHI@Z
     virtual inline void ClearRect(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, uint32_t arg5)

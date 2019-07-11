@@ -160,28 +160,16 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline void Init()
-    {
-        return stub<member_func_t<void, aiGoal>>(0x567350, this);
-    }
+    virtual inline void Init() = 0;
 
     // 0x567350 | __purecall
-    virtual inline void Reset()
-    {
-        return stub<member_func_t<void, aiGoal>>(0x567350, this);
-    }
+    virtual inline void Reset() = 0;
 
     // 0x567350 | __purecall
-    virtual inline int32_t Context()
-    {
-        return stub<member_func_t<int32_t, aiGoal>>(0x567350, this);
-    }
+    virtual inline int32_t Context() = 0;
 
     // 0x567350 | __purecall
-    virtual inline int32_t Priority()
-    {
-        return stub<member_func_t<int32_t, aiGoal>>(0x567350, this);
-    }
+    virtual inline int32_t Priority() = 0;
 
     // 0x458340 | ?Update@aiGoal@@UAEXXZ
     virtual inline void Update()

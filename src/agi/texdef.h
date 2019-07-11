@@ -250,10 +250,7 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline void Set(class Vector2& arg1, class Vector2& arg2)
-    {
-        return stub<member_func_t<void, agiTexDef, class Vector2&, class Vector2&>>(0x567350, this, arg1, arg2);
-    }
+    virtual inline void Set(class Vector2& arg1, class Vector2& arg2) = 0;
 
     // 0x5386C0 | ?Lock@agiTexDef@@UAEHAAUagiTexLock@@@Z
     virtual inline int32_t Lock(struct agiTexLock& arg1)

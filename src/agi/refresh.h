@@ -81,10 +81,7 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline void EndGfx()
-    {
-        return stub<member_func_t<void, agiRefreshable>>(0x567350, this);
-    }
+    virtual inline void EndGfx() = 0;
 
     // 0x53A150 | ?Restore@agiRefreshable@@UAEXXZ
     virtual inline void Restore()
@@ -105,10 +102,7 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline int32_t BeginGfx()
-    {
-        return stub<member_func_t<int32_t, agiRefreshable>>(0x567350, this);
-    }
+    virtual inline int32_t BeginGfx() = 0;
 
     // 0x53A220 | ?IsTexture@agiRefreshable@@MAEHXZ
     virtual inline int32_t IsTexture()

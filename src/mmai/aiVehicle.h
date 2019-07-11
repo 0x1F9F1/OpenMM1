@@ -67,14 +67,8 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline int32_t Type()
-    {
-        return stub<member_func_t<int32_t, aiVehicle>>(0x567350, this);
-    }
+    virtual inline int32_t Type() = 0;
 
     // 0x567350 | __purecall
-    virtual inline void DrawId()
-    {
-        return stub<member_func_t<void, aiVehicle>>(0x567350, this);
-    }
+    virtual inline void DrawId() = 0;
 };

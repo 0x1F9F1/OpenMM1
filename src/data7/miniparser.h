@@ -164,16 +164,10 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline int32_t RawGetCh()
-    {
-        return stub<member_func_t<int32_t, MiniParser>>(0x567350, this);
-    }
+    virtual inline int32_t RawGetCh() = 0;
 
     // 0x567350 | __purecall
-    virtual inline void RawPutCh(int32_t arg1)
-    {
-        return stub<member_func_t<void, MiniParser, int32_t>>(0x567350, this, arg1);
-    }
+    virtual inline void RawPutCh(int32_t arg1) = 0;
 };
 
 check_size(MiniParser, 0x11C);

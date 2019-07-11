@@ -96,30 +96,16 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline void Verts(enum agiVtxType arg1, union agiVtx* arg2, int32_t arg3)
-    {
-        return stub<member_func_t<void, agiRasterizer, enum agiVtxType, union agiVtx*, int32_t>>(
-            0x567350, this, arg1, arg2, arg3);
-    }
+    virtual inline void Verts(enum agiVtxType arg1, union agiVtx* arg2, int32_t arg3) = 0;
 
     // 0x567350 | __purecall
-    virtual inline void Points(enum agiVtxType arg1, union agiVtx* arg2, int32_t arg3)
-    {
-        return stub<member_func_t<void, agiRasterizer, enum agiVtxType, union agiVtx*, int32_t>>(
-            0x567350, this, arg1, arg2, arg3);
-    }
+    virtual inline void Points(enum agiVtxType arg1, union agiVtx* arg2, int32_t arg3) = 0;
 
     // 0x567350 | __purecall
-    virtual inline void SetVertCount(int32_t arg1)
-    {
-        return stub<member_func_t<void, agiRasterizer, int32_t>>(0x567350, this, arg1);
-    }
+    virtual inline void SetVertCount(int32_t arg1) = 0;
 
     // 0x567350 | __purecall
-    virtual inline void Triangle(int32_t arg1, int32_t arg2, int32_t arg3)
-    {
-        return stub<member_func_t<void, agiRasterizer, int32_t, int32_t, int32_t>>(0x567350, this, arg1, arg2, arg3);
-    }
+    virtual inline void Triangle(int32_t arg1, int32_t arg2, int32_t arg3) = 0;
 
     // 0x539C80 | ?Quad@agiRasterizer@@UAEXHHHH@Z
     virtual inline void Quad(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4)
@@ -135,23 +121,13 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline void Line(int32_t arg1, int32_t arg2)
-    {
-        return stub<member_func_t<void, agiRasterizer, int32_t, int32_t>>(0x567350, this, arg1, arg2);
-    }
+    virtual inline void Line(int32_t arg1, int32_t arg2) = 0;
 
     // 0x567350 | __purecall
-    virtual inline void Card(int32_t arg1, int32_t arg2)
-    {
-        return stub<member_func_t<void, agiRasterizer, int32_t, int32_t>>(0x567350, this, arg1, arg2);
-    }
+    virtual inline void Card(int32_t arg1, int32_t arg2) = 0;
 
     // 0x567350 | __purecall
-    virtual inline void Mesh(enum agiVtxType arg1, union agiVtx* arg2, int32_t arg3, uint16_t* arg4, int32_t arg5)
-    {
-        return stub<member_func_t<void, agiRasterizer, enum agiVtxType, union agiVtx*, int32_t, uint16_t*, int32_t>>(
-            0x567350, this, arg1, arg2, arg3, arg4, arg5);
-    }
+    virtual inline void Mesh(enum agiVtxType arg1, union agiVtx* arg2, int32_t arg3, uint16_t* arg4, int32_t arg5) = 0;
 
     // 0x539CF0 | ?Mesh2@agiRasterizer@@UAEXPAUagiScreenVtx2@@HPAGH@Z
     virtual inline void Mesh2(struct agiScreenVtx2* arg1, int32_t arg2, uint16_t* arg3, int32_t arg4)

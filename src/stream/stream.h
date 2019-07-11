@@ -288,34 +288,19 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline int32_t RawRead(void* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<int32_t, Stream, void*, int32_t>>(0x567350, this, arg1, arg2);
-    }
+    virtual inline int32_t RawRead(void* arg1, int32_t arg2) = 0;
 
     // 0x567350 | __purecall
-    virtual inline int32_t RawWrite(void* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<int32_t, Stream, void*, int32_t>>(0x567350, this, arg1, arg2);
-    }
+    virtual inline int32_t RawWrite(void* arg1, int32_t arg2) = 0;
 
     // 0x567350 | __purecall
-    virtual inline int32_t RawSeek(int32_t arg1)
-    {
-        return stub<member_func_t<int32_t, Stream, int32_t>>(0x567350, this, arg1);
-    }
+    virtual inline int32_t RawSeek(int32_t arg1) = 0;
 
     // 0x567350 | __purecall
-    virtual inline int32_t RawTell()
-    {
-        return stub<member_func_t<int32_t, Stream>>(0x567350, this);
-    }
+    virtual inline int32_t RawTell() = 0;
 
     // 0x567350 | __purecall
-    virtual inline int32_t RawSize()
-    {
-        return stub<member_func_t<int32_t, Stream>>(0x567350, this);
-    }
+    virtual inline int32_t RawSize() = 0;
 
     // 0x540A10 | ?RawDebug@Stream@@MAEXXZ
     virtual inline void RawDebug()

@@ -56,10 +56,7 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline void SetLocalData()
-    {
-        return stub<member_func_t<void, asNetObject>>(0x567350, this);
-    }
+    virtual inline void SetLocalData() = 0;
 
     // 0x482480 | ?PositionUpdate@asNetObject@@UAEXPAVMatrix34@@VVector3@@MMM@Z
     virtual inline void PositionUpdate(class Matrix34* arg1, class Vector3 arg2, float arg3, float arg4, float arg5)

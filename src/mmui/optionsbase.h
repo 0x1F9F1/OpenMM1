@@ -68,16 +68,10 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline void CancelAction()
-    {
-        return stub<member_func_t<void, OptionsBase>>(0x567350, this);
-    }
+    virtual inline void CancelAction() = 0;
 
     // 0x567350 | __purecall
-    virtual inline void DoneAction()
-    {
-        return stub<member_func_t<void, OptionsBase>>(0x567350, this);
-    }
+    virtual inline void DoneAction() = 0;
 
     // 0x4A02E0 | ?ResetDefaultAction@OptionsBase@@UAEXXZ
     virtual inline void ResetDefaultAction()

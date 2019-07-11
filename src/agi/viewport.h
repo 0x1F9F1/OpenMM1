@@ -77,22 +77,13 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline void Activate()
-    {
-        return stub<member_func_t<void, agiViewport>>(0x567350, this);
-    }
+    virtual inline void Activate() = 0;
 
     // 0x567350 | __purecall
-    virtual inline void SetBackground(class Vector3& arg1)
-    {
-        return stub<member_func_t<void, agiViewport, class Vector3&>>(0x567350, this, arg1);
-    }
+    virtual inline void SetBackground(class Vector3& arg1) = 0;
 
     // 0x567350 | __purecall
-    virtual inline void Clear(int32_t arg1)
-    {
-        return stub<member_func_t<void, agiViewport, int32_t>>(0x567350, this, arg1);
-    }
+    virtual inline void Clear(int32_t arg1) = 0;
 
     // 0x5399A0 | ?SetWorld@agiViewport@@UAEXAAVMatrix34@@@Z
     virtual inline void SetWorld(class Matrix34& arg1)

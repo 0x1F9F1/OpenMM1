@@ -177,10 +177,5 @@ public:
 
     // 0x567350 | __purecall
     virtual inline struct asPortalCell* GetStartCell(
-        class Vector3& arg1, struct asPortalCell* arg2, class mmPolygon** arg3)
-    {
-        return stub<
-            member_func_t<struct asPortalCell*, asPortalWeb, class Vector3&, struct asPortalCell*, class mmPolygon**>>(
-            0x567350, this, arg1, arg2, arg3);
-    }
+        class Vector3& arg1, struct asPortalCell* arg2, class mmPolygon** arg3) = 0;
 };

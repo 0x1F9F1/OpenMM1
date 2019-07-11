@@ -210,10 +210,7 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline void InitMyPlayer()
-    {
-        return stub<member_func_t<void, mmGame>>(0x567350, this);
-    }
+    virtual inline void InitMyPlayer() = 0;
 
     // 0x40C8B0 | ?InitOtherPlayers@mmGame@@UAEXXZ
     virtual inline void InitOtherPlayers()
@@ -222,22 +219,13 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline void InitGameObjects()
-    {
-        return stub<member_func_t<void, mmGame>>(0x567350, this);
-    }
+    virtual inline void InitGameObjects() = 0;
 
     // 0x567350 | __purecall
-    virtual inline void InitHUD()
-    {
-        return stub<member_func_t<void, mmGame>>(0x567350, this);
-    }
+    virtual inline void InitHUD() = 0;
 
     // 0x567350 | __purecall
-    virtual inline void UpdateGameInput(int32_t arg1)
-    {
-        return stub<member_func_t<void, mmGame, int32_t>>(0x567350, this, arg1);
-    }
+    virtual inline void UpdateGameInput(int32_t arg1) = 0;
 
     // 0x40D380 | ?UpdateDebugInput@mmGame@@UAEXXZ
     virtual inline void UpdateDebugInput()
@@ -246,22 +234,13 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline void UpdateDebugKeyInput(int32_t arg1)
-    {
-        return stub<member_func_t<void, mmGame, int32_t>>(0x567350, this, arg1);
-    }
+    virtual inline void UpdateDebugKeyInput(int32_t arg1) = 0;
 
     // 0x567350 | __purecall
-    virtual inline void UpdateGame()
-    {
-        return stub<member_func_t<void, mmGame>>(0x567350, this);
-    }
+    virtual inline void UpdateGame() = 0;
 
     // 0x567350 | __purecall
-    virtual inline void NextRace()
-    {
-        return stub<member_func_t<void, mmGame>>(0x567350, this);
-    }
+    virtual inline void NextRace() = 0;
 
     // 0x40D370 | ?HitWaterHandler@mmGame@@UAEXXZ
     virtual inline void HitWaterHandler()
@@ -288,8 +267,5 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline class mmWaypoints* GetWaypoints()
-    {
-        return stub<member_func_t<class mmWaypoints*, mmGame>>(0x567350, this);
-    }
+    virtual inline class mmWaypoints* GetWaypoints() = 0;
 };

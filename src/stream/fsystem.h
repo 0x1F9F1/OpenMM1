@@ -140,29 +140,16 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline int32_t ValidPath(char* arg1)
-    {
-        return stub<member_func_t<int32_t, FileSystem, char*>>(0x567350, this, arg1);
-    }
+    virtual inline int32_t ValidPath(char* arg1) = 0;
 
     // 0x567350 | __purecall
-    virtual inline int32_t QueryOn(char* arg1)
-    {
-        return stub<member_func_t<int32_t, FileSystem, char*>>(0x567350, this, arg1);
-    }
+    virtual inline int32_t QueryOn(char* arg1) = 0;
 
     // 0x567350 | __purecall
-    virtual inline class Stream* OpenOn(char* arg1, int32_t arg2, void* arg3, int32_t arg4)
-    {
-        return stub<member_func_t<class Stream*, FileSystem, char*, int32_t, void*, int32_t>>(
-            0x567350, this, arg1, arg2, arg3, arg4);
-    }
+    virtual inline class Stream* OpenOn(char* arg1, int32_t arg2, void* arg3, int32_t arg4) = 0;
 
     // 0x567350 | __purecall
-    virtual inline class Stream* CreateOn(char* arg1, void* arg2, int32_t arg3)
-    {
-        return stub<member_func_t<class Stream*, FileSystem, char*, void*, int32_t>>(0x567350, this, arg1, arg2, arg3);
-    }
+    virtual inline class Stream* CreateOn(char* arg1, void* arg2, int32_t arg3) = 0;
 
     // 0x541A40 | ?PagerInfo@FileSystem@@UAEHPADAAUPagerInfo_t@@@Z
     virtual inline int32_t PagerInfo(char* arg1, struct PagerInfo_t& arg2)
@@ -171,28 +158,16 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline int32_t ChangeDir(char* arg1)
-    {
-        return stub<member_func_t<int32_t, FileSystem, char*>>(0x567350, this, arg1);
-    }
+    virtual inline int32_t ChangeDir(char* arg1) = 0;
 
     // 0x567350 | __purecall
-    virtual inline int32_t GetDir(char* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<int32_t, FileSystem, char*, int32_t>>(0x567350, this, arg1, arg2);
-    }
+    virtual inline int32_t GetDir(char* arg1, int32_t arg2) = 0;
 
     // 0x567350 | __purecall
-    virtual inline struct FileInfo* FirstEntry(char* arg1)
-    {
-        return stub<member_func_t<struct FileInfo*, FileSystem, char*>>(0x567350, this, arg1);
-    }
+    virtual inline struct FileInfo* FirstEntry(char* arg1) = 0;
 
     // 0x567350 | __purecall
-    virtual inline struct FileInfo* NextEntry(struct FileInfo* arg1)
-    {
-        return stub<member_func_t<struct FileInfo*, FileSystem, struct FileInfo*>>(0x567350, this, arg1);
-    }
+    virtual inline struct FileInfo* NextEntry(struct FileInfo* arg1) = 0;
 
     // 0x541190 | ?NotifyDelete@FileSystem@@MAEXXZ
     virtual inline void NotifyDelete()

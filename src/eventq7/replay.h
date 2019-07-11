@@ -75,16 +75,10 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline void DoRecord(class Stream* arg1)
-    {
-        return stub<member_func_t<void, eqReplayChannel, class Stream*>>(0x567350, this, arg1);
-    }
+    virtual inline void DoRecord(class Stream* arg1) = 0;
 
     // 0x567350 | __purecall
-    virtual inline void DoPlayback(class Stream* arg1)
-    {
-        return stub<member_func_t<void, eqReplayChannel, class Stream*>>(0x567350, this, arg1);
-    }
+    virtual inline void DoPlayback(class Stream* arg1) = 0;
 
     // 0x546220 | ?ShutdownRecord@eqReplayChannel@@UAEXXZ
     virtual inline void ShutdownRecord()

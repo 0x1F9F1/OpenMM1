@@ -81,10 +81,7 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline int32_t Update()
-    {
-        return stub<member_func_t<int32_t, agiLight>>(0x567350, this);
-    }
+    virtual inline int32_t Update() = 0;
 
     // 0x53D9B0 | ?Remove@agiLight@@UAEXXZ
     virtual inline void Remove()
