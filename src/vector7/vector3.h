@@ -82,9 +82,9 @@
 class Vector3
 {
 public:
-    float x;
-    float y;
-    float z;
+    float x {0.0f};
+    float y {0.0f};
+    float z {0.0f};
 
     // 0x436E50 | ??0Vector3@@QAE@MMM@Z
     inline Vector3(float arg1, float arg2, float arg3)

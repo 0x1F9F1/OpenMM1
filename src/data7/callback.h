@@ -51,11 +51,11 @@ class Base;
 class Callback
 {
 public:
-    uint32_t m_Type;
-    Base* m_pClass;
-    void* m_pFunc;
-    void* m_pFirstParam;
-    void* m_pSecondParam;
+    int32_t m_Type {-1};
+    Base* m_pClass {nullptr};
+    void* m_pFunc {nullptr};
+    void* m_pFirstParam {nullptr};
+    void* m_pSecondParam {nullptr};
 
     // 0x55AC20 | ??0Callback@@QAE@XZ
     inline Callback()

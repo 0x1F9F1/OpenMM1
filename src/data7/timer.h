@@ -36,7 +36,7 @@
 class Timer
 {
 public:
-    uint32_t m_Start;
+    uint32_t m_Start {0};
 
     // 0x5581D0 | ?Ticks@Timer@@SAKXZ
     static inline uint32_t Ticks()

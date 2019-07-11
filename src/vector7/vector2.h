@@ -124,8 +124,8 @@ public:
 class Vector2
 {
 public:
-    float x;
-    float y;
+    float x {0.0f};
+    float y {0.0f};
 
     // 0x42B330 | ??0Vector2@@QAE@ABV0@@Z
     inline Vector2(class Vector2 const& arg1)

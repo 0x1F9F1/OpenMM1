@@ -42,12 +42,12 @@
 struct Card2D : asNode
 {
 public:
-    float m_X;
-    float m_Y;
-    float m_W;
-    float m_H;
-    uint32_t m_Color;
-    uint32_t m_dword30;
+    float m_X {0.0f};
+    float m_Y {0.0f};
+    float m_W {0.0f};
+    float m_H {0.0f};
+    uint32_t m_Color {0};
+    uint32_t m_dword30 {0};
 
     // Card2D::`vftable' @ 0x594FA0
 

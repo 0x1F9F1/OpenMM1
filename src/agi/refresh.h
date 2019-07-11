@@ -42,11 +42,11 @@ class agiPipeline;
 class agiRefreshable
 {
 public:
-    agiRefreshable* m_pPrev;
-    agiRefreshable* m_pNext;
-    agiPipeline* m_pPipeline;
-    uint32_t m_ErrorCode;
-    uint32_t m_RefCount;
+    agiRefreshable* m_pPrev {nullptr};
+    agiRefreshable* m_pNext {nullptr};
+    agiPipeline* m_pPipeline {nullptr};
+    uint32_t m_ErrorCode {0};
+    uint32_t m_RefCount {1};
 
     // agiRefreshable::`vftable' @ 0x595BE8
 

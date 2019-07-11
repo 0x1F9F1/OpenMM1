@@ -86,12 +86,12 @@ inline void delete_asNode(void* arg1, int32_t arg2)
 class asNode : asCullable
 {
 public:
-    asNode* m_NextNode;
-    asNode* m_ChildNode;
-    asNode* m_ParentNode;
-    const char* n_Name;
-    int32_t m_Flags;
-    int32_t m_dword18;
+    asNode* m_NextNode {nullptr};
+    asNode* m_ChildNode {nullptr};
+    asNode* m_ParentNode {nullptr};
+    const char* n_Name {nullptr};
+    uint32_t m_Flags {0};
+    int32_t m_dword18 {0};
 
     // asNode::`vftable' @ 0x5953B0
 
