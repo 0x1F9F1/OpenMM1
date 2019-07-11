@@ -86,11 +86,11 @@ inline void delete_asNode(void* arg1, int32_t arg2)
 class asNode : asCullable
 {
 public:
-    asNode* m_NextNode {nullptr};
-    asNode* m_ChildNode {nullptr};
-    asNode* m_ParentNode {nullptr};
-    const char* n_Name {nullptr};
-    uint32_t m_Flags {0};
+    asNode* m_Next {nullptr};
+    asNode* m_Children {nullptr};
+    asNode* m_Parent {nullptr};
+    const char* m_Name {nullptr};
+    uint32_t m_Flags {3};
     int32_t m_dword18 {0};
 
     // asNode::`vftable' @ 0x5953B0
@@ -103,87 +103,46 @@ public:
 
     // 0x510C60 | ??0asNode@@QAE@XZ
     inline asNode()
-    {
-        stub<member_func_t<void, asNode>>(0x510C60, this);
-    }
+    {}
 
     // 0x510CF0 | ?SetName@asNode@@QAEXPAD@Z
-    inline void SetName(char* arg1)
-    {
-        return stub<member_func_t<void, asNode, char*>>(0x510CF0, this, arg1);
-    }
+    void SetName(char* arg1);
 
     // 0x510DE0 | ?AddChild@asNode@@QAEHPAV1@@Z
-    inline int32_t AddChild(class asNode* arg1)
-    {
-        return stub<member_func_t<int32_t, asNode, class asNode*>>(0x510DE0, this, arg1);
-    }
+    int32_t AddChild(class asNode* child);
 
     // 0x510E60 | ?InsertChild@asNode@@QAEHHPAV1@@Z
-    inline int32_t InsertChild(int32_t arg1, class asNode* arg2)
-    {
-        return stub<member_func_t<int32_t, asNode, int32_t, class asNode*>>(0x510E60, this, arg1, arg2);
-    }
+    int32_t InsertChild(int32_t index, class asNode* child);
 
     // 0x510EF0 | ?RemoveChild@asNode@@QAEHH@Z
-    inline int32_t RemoveChild(int32_t arg1)
-    {
-        return stub<member_func_t<int32_t, asNode, int32_t>>(0x510EF0, this, arg1);
-    }
+    int32_t RemoveChild(int32_t index);
 
     // 0x510F90 | ?RemoveChild@asNode@@QAEHPAV1@@Z
-    inline int32_t RemoveChild(class asNode* arg1)
-    {
-        return stub<member_func_t<int32_t, asNode, class asNode*>>(0x510F90, this, arg1);
-    }
+    int32_t RemoveChild(class asNode* child);
 
     // 0x510FD0 | ?RemoveAllChildren@asNode@@QAEXXZ
-    inline void RemoveAllChildren()
-    {
-        return stub<member_func_t<void, asNode>>(0x510FD0, this);
-    }
+    void RemoveAllChildren();
 
     // 0x510FF0 | ?GetChild@asNode@@QAEPAV1@H@Z
-    inline class asNode* GetChild(int32_t arg1)
-    {
-        return stub<member_func_t<class asNode*, asNode, int32_t>>(0x510FF0, this, arg1);
-    }
+    class asNode* GetChild(int32_t index);
 
     // 0x511020 | ?GetNext@asNode@@QAEPAV1@XZ
-    inline class asNode* GetNext()
-    {
-        return stub<member_func_t<class asNode*, asNode>>(0x511020, this);
-    }
+    class asNode* GetNext();
 
     // 0x511030 | ?GetLastChild@asNode@@QAEPAV1@XZ
-    inline class asNode* GetLastChild()
-    {
-        return stub<member_func_t<class asNode*, asNode>>(0x511030, this);
-    }
+    class asNode* GetLastChild();
 
     // 0x511070 | ?NumChildren@asNode@@QAEHXZ
-    inline int32_t NumChildren()
-    {
-        return stub<member_func_t<int32_t, asNode>>(0x511070, this);
-    }
+    int32_t NumChildren();
 
     // 0x511090 | ?SwitchTo@asNode@@QAEXH@Z
-    inline void SwitchTo(int32_t arg1)
-    {
-        return stub<member_func_t<void, asNode, int32_t>>(0x511090, this, arg1);
-    }
+    void SwitchTo(int32_t index);
 
     // 0x5110F0 | ?GetParent@asNode@@QAEPAV1@PAVMetaClass@@@Z
-    inline class asNode* GetParent(class MetaClass* arg1)
-    {
-        return stub<member_func_t<class asNode*, asNode, class MetaClass*>>(0x5110F0, this, arg1);
-    }
+    class asNode* GetParent(class MetaClass* type);
 
     // 0x511130 | ?GetNodeType@asNode@@QAEPADXZ
-    inline char* GetNodeType()
-    {
-        return stub<member_func_t<char*, asNode>>(0x511130, this);
-    }
+    char* GetNodeType();
 
     // 0x511140 | ?Load@asNode@@QAEHPAD@Z
     inline int32_t Load(char* arg1)
@@ -204,52 +163,28 @@ public:
     }
 
     // 0x510C80 | ??1asNode@@UAE@XZ
-    inline ~asNode() override
-    {
-        stub<member_func_t<void, asNode>>(0x510C80, this);
-    }
+    ~asNode() override;
 
     // 0x5118A0 | ?GetClass@asNode@@UAEPAVMetaClass@@XZ
-    inline class MetaClass* GetClass() override
-    {
-        return stub<member_func_t<class MetaClass*, asNode>>(0x5118A0, this);
-    }
+    class MetaClass* GetClass() override;
 
     // 0x510D20 | ?Update@asNode@@UAEXXZ
-    virtual inline void Update()
-    {
-        return stub<member_func_t<void, asNode>>(0x510D20, this);
-    }
+    virtual void Update();
 
     // 0x510D90 | ?Reset@asNode@@UAEXXZ
-    virtual inline void Reset()
-    {
-        return stub<member_func_t<void, asNode>>(0x510D90, this);
-    }
+    virtual void Reset();
 
     // 0x510DB0 | ?ResChange@asNode@@UAEXHH@Z
-    virtual inline void ResChange(int32_t arg1, int32_t arg2)
-    {
-        return stub<member_func_t<void, asNode, int32_t, int32_t>>(0x510DB0, this, arg1, arg2);
-    }
+    virtual void ResChange(int32_t arg1, int32_t arg2);
 
     // 0x403780 | ?UpdatePaused@asNode@@UAEXXZ
-    virtual inline void UpdatePaused()
-    {
-        return stub<member_func_t<void, asNode>>(0x403780, this);
-    }
+    virtual void UpdatePaused();
 
     // 0x5114C0 | ?Load@asNode@@UAEXXZ
-    virtual inline void Load()
-    {
-        return stub<member_func_t<void, asNode>>(0x5114C0, this);
-    }
+    virtual void Load();
 
     // 0x5112E0 | ?Save@asNode@@UAEXXZ
-    virtual inline void Save()
-    {
-        return stub<member_func_t<void, asNode>>(0x5112E0, this);
-    }
+    virtual void Save();
 };
 
 check_size(asNode, 0x1C);
