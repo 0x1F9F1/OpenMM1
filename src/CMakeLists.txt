@@ -8,8 +8,8 @@ add_subdirectory(arts7)
 add_subdirectory(data7)
 add_subdirectory(dyna7)
 # add_subdirectory(eventq7)
-# add_subdirectory(localize)
-# add_subdirectory(memory)
+add_subdirectory(localize)
+add_subdirectory(memory)
 # add_subdirectory(mmai)
 # add_subdirectory(mmanim)
 # add_subdirectory(mmaudio)
@@ -50,8 +50,8 @@ add_library(midtown STATIC
     $<TARGET_OBJECTS:data7>
     $<TARGET_OBJECTS:dyna7>
     # $<TARGET_OBJECTS:eventq7>
-    # $<TARGET_OBJECTS:localize>
-    # $<TARGET_OBJECTS:memory>
+    $<TARGET_OBJECTS:localize>
+    $<TARGET_OBJECTS:memory>
     # $<TARGET_OBJECTS:mmai>
     # $<TARGET_OBJECTS:mmanim>
     # $<TARGET_OBJECTS:mmaudio>
