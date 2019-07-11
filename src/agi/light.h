@@ -55,8 +55,6 @@ public:
         return stub<member_func_t<int32_t, agiLight, class agiLightParameters const&>>(0x53D980, this, arg1);
     }
 
-    // 0x567350 | __purecall
-
     // 0x53D9D0 | ?GetName@agiLight@@UAEPADXZ
     inline char* GetName() override
     {
@@ -68,8 +66,6 @@ public:
     {
         stub<member_func_t<void, agiLight>>(0x53D9C0, this);
     }
-
-    // 0x567350 | __purecall
 
     // 0x567350 | __purecall
     virtual inline int32_t Update()

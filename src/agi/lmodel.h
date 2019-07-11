@@ -62,8 +62,6 @@ public:
         return stub<member_func_t<int32_t, agiLightModel, class agiLightModelParameters const&>>(0x53DC70, this, arg1);
     }
 
-    // 0x567350 | __purecall
-
     // 0x53DCF0 | ?GetName@agiLightModel@@UAEPADXZ
     inline char* GetName() override
     {
@@ -75,8 +73,4 @@ public:
     {
         stub<member_func_t<void, agiLightModel>>(0x53DCA0, this);
     }
-
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
 };

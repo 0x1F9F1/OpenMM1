@@ -45,8 +45,6 @@ public:
         stub<member_func_t<void, mmEffectFF>>(0x4DA180, this);
     }
 
-    // 0x567350 | __purecall
-
     // 0x4DA1A0 | ?Play@mmEffectFF@@UAEHXZ
     virtual inline int32_t Play()
     {

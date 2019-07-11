@@ -97,8 +97,6 @@ public:
         stub<member_func_t<void, agiTexLut, class agiPipeline*>>(0x538B70, this, arg1);
     }
 
-    // 0x567350 | __purecall
-
     // 0x538B50 | ?GetName@agiTexLut@@UAEPADXZ
     inline char* GetName() override
     {
@@ -110,8 +108,6 @@ public:
     {
         stub<member_func_t<void, agiTexLut>>(0x538BA0, this);
     }
-
-    // 0x567350 | __purecall
 };
 
 class agiTexDef : agiRefreshable
@@ -185,8 +181,6 @@ public:
         return stub<member_func_t<void, agiTexDef>>(0x538A40, this);
     }
 
-    // 0x567350 | __purecall
-
     // 0x538680 | ?GetName@agiTexDef@@UAEPADXZ
     inline char* GetName() override
     {
@@ -198,8 +192,6 @@ public:
     {
         stub<member_func_t<void, agiTexDef>>(0x5384B0, this);
     }
-
-    // 0x567350 | __purecall
 
     // 0x5386B0 | ?IsTexture@agiTexDef@@UAEHXZ
     inline int32_t IsTexture() override

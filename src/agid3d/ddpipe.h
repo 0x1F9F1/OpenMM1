@@ -100,14 +100,6 @@ public:
         return stub<member_func_t<void, agiDDPipeline>>(0x518DC0, this);
     }
 
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
-
     // 0x518DD0 | ?CreateBitmap@agiDDPipeline@@UAEPAVagiBitmap@@XZ
     inline class agiBitmap* CreateBitmap() override
     {
@@ -122,8 +114,6 @@ public:
             member_func_t<void, agiDDPipeline, int32_t, int32_t, class agiBitmap*, int32_t, int32_t, int32_t, int32_t>>(
             0x518E30, this, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
     }
-
-    // 0x567350 | __purecall
 
     // 0x518F40 | ?ClearRect@agiDDPipeline@@UAEXHHHHI@Z
     inline void ClearRect(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, uint32_t arg5) override

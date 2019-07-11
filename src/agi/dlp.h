@@ -96,8 +96,4 @@ public:
     {
         return stub<member_func_t<void, DLP, int32_t, int32_t>>(0x5403B0, this, arg1, arg2);
     }
-
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
 };

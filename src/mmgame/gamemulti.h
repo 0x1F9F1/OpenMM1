@@ -202,19 +202,11 @@ public:
         return stub<member_func_t<void, mmGameMulti>>(0x42B750, this);
     }
 
-    // 0x567350 | __purecall
-
     // 0x42C3D0 | ?InitOtherPlayers@mmGameMulti@@UAEXXZ
     inline void InitOtherPlayers() override
     {
         return stub<member_func_t<void, mmGameMulti>>(0x42C3D0, this);
     }
-
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
 
     // 0x42CBC0 | ?UpdateDebugKeyInput@mmGameMulti@@UAEXH@Z
     inline void UpdateDebugKeyInput(int32_t arg1) override
@@ -257,8 +249,6 @@ public:
     {
         return stub<member_func_t<void, mmGameMulti>>(0x42C2E0, this);
     }
-
-    // 0x567350 | __purecall
 
     // 0x567350 | __purecall
     virtual inline void InitNetworkPlayers()

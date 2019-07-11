@@ -65,16 +65,4 @@ public:
     {
         return stub<cdecl_t<class agiColorModel*, class agiSurfaceDesc*>>(0x53F730, arg1);
     }
-
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
 };

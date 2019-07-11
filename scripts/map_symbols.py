@@ -629,6 +629,9 @@ def collect_classes(all_symbols, name_to_type, vtables, class_hiers, path_libs):
             if symbol.name in ['`vftable\'', '`default constructor closure\'', '`vector constructor iterator\'']:
                 continue
 
+            if ('override' in symbol.attribs and symbol.raw_name == '__purecall'):
+                continue
+
             symbol_string += '// 0x{:X} | {}\n'.format(symbol.address, symbol.raw_name)
 
             sym_type = symbol.type
@@ -638,8 +641,6 @@ def collect_classes(all_symbols, name_to_type, vtables, class_hiers, path_libs):
                     symbol_string += '// Skipped (Variable Arguments)\n'
                 elif ('dtor' in symbol.attribs) and sym_type.parameters:
                     symbol_string += '// Skipped (scalar/vector destructor)\n'
-                elif ('override' in symbol.attribs and symbol.raw_name == '__purecall'):
-                    pass
                 else:
                     # if 'virtual' in symbol.attribs:
                     #     if not any(v for v in class_vtable if v.raw_name == symbol.raw_name):
@@ -733,6 +734,9 @@ if True:
     for lib, b in collect_classes(all_symbols, name_to_type, vtables, class_hiers, path_libs).items():
         if not lib:
             lib = 'other'
+
+        if lib in ['data7:printer', 'arts7:node', 'arts7:cullable']:
+            continue
 
         lib_path = lib.replace(':', '\\')
         output_dir = os.path.normpath(SOURCE_DIR + '\\' + lib_path)

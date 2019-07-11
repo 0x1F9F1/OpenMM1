@@ -52,8 +52,6 @@ public:
         return stub<member_func_t<void, agiBitmap, int32_t>>(0x53C5D0, this, arg1);
     }
 
-    // 0x567350 | __purecall
-
     // 0x53C6A0 | ?GetName@agiBitmap@@UAEPADXZ
     inline char* GetName() override
     {
@@ -65,8 +63,6 @@ public:
     {
         stub<member_func_t<void, agiBitmap>>(0x53C610, this);
     }
-
-    // 0x567350 | __purecall
 
     // 0x53C600 | ?UpdateFlags@agiBitmap@@UAEXXZ
     virtual inline void UpdateFlags()

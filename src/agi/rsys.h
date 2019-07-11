@@ -45,15 +45,11 @@ public:
         stub<member_func_t<void, agiRasterizer, class agiPipeline*>>(0x539B20, this, arg1);
     }
 
-    // 0x567350 | __purecall
-
     // 0x539C50 | ??1agiRasterizer@@UAE@XZ
     inline ~agiRasterizer() override
     {
         stub<member_func_t<void, agiRasterizer>>(0x539C50, this);
     }
-
-    // 0x567350 | __purecall
 
     // 0x539C60 | ?BeginGroup@agiRasterizer@@UAEXXZ
     virtual inline void BeginGroup()

@@ -62,18 +62,6 @@ public:
     {
         stub<member_func_t<void, eqEventHandler>>(0x544A80, this);
     }
-
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
 };
 
 class eqEventReplayChannelClass : eqReplayChannel

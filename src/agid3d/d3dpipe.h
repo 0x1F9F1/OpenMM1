@@ -145,8 +145,6 @@ public:
         return stub<member_func_t<class agiMtlDef*, agiD3DPipeline>>(0x5182F0, this);
     }
 
-    // 0x567350 | __purecall
-
     // 0x518290 | ?CreateViewport@agiD3DPipeline@@UAEPAVagiViewport@@XZ
     inline class agiViewport* CreateViewport() override
     {

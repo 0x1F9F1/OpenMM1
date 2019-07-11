@@ -50,8 +50,6 @@ class Dispatchable
 {
 public:
     // Dispatchable::`vftable' @ 0x595FCC
-
-    // 0x567350 | __purecall
 };
 
 struct WINEventHandler : eqEventHandler

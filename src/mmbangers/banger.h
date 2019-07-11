@@ -48,12 +48,6 @@ public:
         stub<member_func_t<void, mmBangerInstance>>(0x43ED60, this);
     }
 
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
-
-    // 0x567350 | __purecall
-
     // 0x4BE9C0 | ?GetEntity@mmBangerInstance@@UAEPAVmmPhysEntity@@XZ
     inline class mmPhysEntity* GetEntity() override
     {

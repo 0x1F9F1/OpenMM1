@@ -42,8 +42,6 @@ public:
     // 0x706538 | ?Active@agiViewport@@1PAV1@A
     static inline extern_var(0x706538, class agiViewport*, Active);
 
-    // 0x567350 | __purecall
-
     // 0x539AD0 | ?GetName@agiViewport@@UAEPADXZ
     inline char* GetName() override
     {
@@ -55,8 +53,6 @@ public:
     {
         stub<member_func_t<void, agiViewport>>(0x539A40, this);
     }
-
-    // 0x567350 | __purecall
 
     // 0x567350 | __purecall
     virtual inline void Activate()

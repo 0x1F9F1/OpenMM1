@@ -67,8 +67,6 @@ public:
         return stub<member_func_t<int32_t, agiMtlDef, class agiMtlParameters const&>>(0x53FB70, this, arg1);
     }
 
-    // 0x567350 | __purecall
-
     // 0x53FC50 | ?GetName@agiMtlDef@@UAEPADXZ
     inline char* GetName() override
     {
@@ -80,6 +78,4 @@ public:
     {
         stub<member_func_t<void, agiMtlDef>>(0x53FBA0, this);
     }
-
-    // 0x567350 | __purecall
 };
