@@ -39,6 +39,12 @@ inline extern_var(0x6F29F8, class asSafeHeap, SAFEHEAP);
 class asSafeHeap
 {
 public:
+    void* m_pCurrentHeap {nullptr};
+    void* m_pHeap {nullptr};
+    uint32_t m_HeapIndex {0};
+    uint32_t m_HeapSize {0};
+    uint32_t m_MultiHeap {0};
+
     // 0x50F350 | ??0asSafeHeap@@QAE@XZ
     inline asSafeHeap()
     {
@@ -81,3 +87,5 @@ public:
         return stub<member_func_t<void, asSafeHeap>>(0x50F480, this);
     }
 };
+
+check_size(asSafeHeap, 0x14);

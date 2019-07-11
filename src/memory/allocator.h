@@ -64,6 +64,44 @@ inline int32_t HeapAssert(void* arg1, int32_t arg2, char* arg3, int32_t arg4)
 class asMemoryAllocator
 {
 public:
+    struct node
+    {
+        // 0:1 - Allocated
+        // 0x2 - Unk
+        // 0x4 - Sanity Checked
+        // 0xFFFFFFF8 - Next
+        uint32_t m_Context {0};
+        uint32_t m_Size {0};
+
+        /*
+            if (Allocated)
+                if (m_Debug)
+                    0x55555555
+
+                uint8_t Data[m_Size];
+
+                if (m_Debug)
+                    0xAAAAAAAA
+            else
+                struct asMemoryAllocator::node *m_PrevFree;
+                struct asMemoryAllocator::node *m_NextFree;
+        */
+    };
+
+    // #define GetNode(ptr) (asMemoryAllocator::node*)((char*)(ptr) - 8)
+
+    check_size(node, 8);
+
+    uint32_t m_Initialized {0};
+    uint32_t m_Debug {0};
+    uint8_t* m_pHeap {nullptr};
+    uint32_t m_HeapSize {0};
+    uint32_t m_HeapOffset {0};
+    uint32_t m_Locked {0};
+    uint32_t m_UsedNodes {0};
+    asMemoryAllocator::node* m_NodeBuckets[32] {};
+    asMemoryAllocator::node* m_Nodes {nullptr};
+
     // 0x50E970 | ??0asMemoryAllocator@@QAE@XZ
     inline asMemoryAllocator()
     {
@@ -142,3 +180,5 @@ public:
         return stub<member_func_t<void, asMemoryAllocator>>(0x50F050, this);
     }
 };
+
+check_size(asMemoryAllocator, 0xA0);
