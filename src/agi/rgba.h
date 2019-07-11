@@ -16,19 +16,11 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "quitf.h"
+#pragma once
 
-#include "printer.h"
-
-#include <stdarg.h>
-
-// 0x5588F0 | ?Quitf@@YAXPBDZZ
-[[noreturn]] void Quitf(char const* arg1, ...)
+struct agiRgba
 {
-    va_list va;
-    va_start(va, arg1);
-    Printer(3, arg1, va);
-    va_end(va);
+    uint32_t m_Color {0};
+};
 
-    exit(1);
-}
+check_size(agiRgba, 4);

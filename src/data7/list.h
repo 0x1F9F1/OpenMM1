@@ -30,9 +30,18 @@
 
 #include "hooking.h"
 
+struct ListEntry
+{
+    void* m_pValue {nullptr};
+    ListEntry* m_Next {nullptr};
+};
+
 struct List
 {
 public:
+    uint32_t m_Size {0};
+    ListEntry* m_First {nullptr};
+
     // 0x55DBE0 | ??1List@@QAE@XZ
     inline ~List()
     {
@@ -63,3 +72,6 @@ public:
         return stub<member_func_t<int32_t, List, int32_t>>(0x55DCC0, this, arg1);
     }
 };
+
+check_size(List, 8);
+check_size(ListEntry, 8);

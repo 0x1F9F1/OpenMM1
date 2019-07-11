@@ -46,9 +46,28 @@
 
 #include "hooking.h"
 
+struct ipcMessage
+{
+    void(__cdecl* m_pHandler)(void*) {nullptr};
+    void* m_pParameter {nullptr};
+};
+
+check_size(ipcMessage, 8);
+
 class ipcMessageQueue
 {
 public:
+    uint32_t m_Initialized {0};
+    uint32_t m_SendIndex {0};
+    uint32_t m_ReadIndex {0};
+    uint32_t m_nMaxMessages {0};
+    uint32_t m_WaitAfterSend {0};
+    ipcMessage* m_pMessages {nullptr};
+    void* m_SendEvent {nullptr};
+    void* m_WaitEvent {nullptr};
+    void* m_hMutex {nullptr};
+    void* m_hQueueThread {nullptr};
+
     // 0x55A0E0 | ?Proc@ipcMessageQueue@@CGKPAX@Z
     static inline uint32_t __stdcall Proc(void* arg1)
     {
@@ -79,6 +98,8 @@ public:
         return stub<member_func_t<void, ipcMessageQueue, void(__cdecl*)(void*), void*>>(0x55A2E0, this, arg1, arg2);
     }
 };
+
+check_size(ipcMessageQueue, 0x28);
 
 // 0x559FB0 | ?ipcCreateEvent@@YAIH@Z
 inline uint32_t ipcCreateEvent(int32_t arg1)

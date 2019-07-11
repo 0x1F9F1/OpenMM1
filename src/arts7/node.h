@@ -86,6 +86,13 @@ inline void delete_asNode(void* arg1, int32_t arg2)
 class asNode : asCullable
 {
 public:
+    asNode* m_NextNode;
+    asNode* m_ChildNode;
+    asNode* m_ParentNode;
+    const char* n_Name;
+    int32_t m_Flags;
+    int32_t m_dword18;
+
     // asNode::`vftable' @ 0x5953B0
 
     // 0x510830 | ?VerifyTree@asNode@@QAEPADXZ
@@ -244,3 +251,5 @@ public:
         return stub<member_func_t<void, asNode>>(0x5112E0, this);
     }
 };
+
+check_size(asNode, 0x1C);

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 
-# add_subdirectory(agi)
+add_subdirectory(agi)
 # add_subdirectory(agid3d)
 # add_subdirectory(agisw)
 # add_subdirectory(agiworld)
@@ -20,7 +20,7 @@ add_subdirectory(data7)
 # add_subdirectory(mmcityinfo)
 # add_subdirectory(mmdjpeg)
 # add_subdirectory(mmdyna)
-# add_subdirectory(mmeffects)
+add_subdirectory(mmeffects)
 # add_subdirectory(mmgame)
 # add_subdirectory(mminput)
 # add_subdirectory(mmnetwork)
@@ -29,7 +29,7 @@ add_subdirectory(data7)
 # add_subdirectory(mmwidget)
 # add_subdirectory(pcwindis)
 # add_subdirectory(stream)
-# add_subdirectory(vector7)
+add_subdirectory(vector7)
 
 add_library(hooking STATIC
     hooking.cpp
@@ -38,11 +38,11 @@ add_library(hooking STATIC
 
 target_link_libraries(hooking mem)
 
-add_library(midtown OBJECT
+add_library(midtown STATIC
     test.cpp
     test.h
 
-    # $<TARGET_OBJECTS:agi>
+    $<TARGET_OBJECTS:agi>
     # $<TARGET_OBJECTS:agid3d>
     # $<TARGET_OBJECTS:agisw>
     # $<TARGET_OBJECTS:agiworld>
@@ -62,7 +62,7 @@ add_library(midtown OBJECT
     # $<TARGET_OBJECTS:mmcityinfo>
     # $<TARGET_OBJECTS:mmdjpeg>
     # $<TARGET_OBJECTS:mmdyna>
-    # $<TARGET_OBJECTS:mmeffects>
+    $<TARGET_OBJECTS:mmeffects>
     # $<TARGET_OBJECTS:mmgame>
     # $<TARGET_OBJECTS:mminput>
     # $<TARGET_OBJECTS:mmnetwork>
@@ -71,7 +71,7 @@ add_library(midtown OBJECT
     # $<TARGET_OBJECTS:mmwidget>
     # $<TARGET_OBJECTS:pcwindis>
     # $<TARGET_OBJECTS:stream>
-    # $<TARGET_OBJECTS:vector7>
+    $<TARGET_OBJECTS:vector7>
 )
 
 target_link_libraries(midtown hooking)

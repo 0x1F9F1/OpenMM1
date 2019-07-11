@@ -36,22 +36,35 @@
 
 #include "hooking.h"
 
+#include "refresh.h"
+
 // 0x5C3610 | ?BitmapSearchPath@@3PADA
 inline extern_var(0x5C3610, char*, BitmapSearchPath);
 
 // 0x706618 | ?BitmapHash@@3VHashTable@@A
 inline extern_var(0x706618, class HashTable, BitmapHash);
 
+class agiSurfaceDesc;
+
 class agiBitmap : agiRefreshable
 {
 public:
+    const char* m_Name {nullptr};
+    agiSurfaceDesc* m_pSurfaceDesc {nullptr};
+    uint32_t m_Transparency {0};
+    uint32_t m_Width {0};
+    uint32_t m_Height {0};
+    float m_ScaleW_640 {0.0f};
+    float m_ScaleH_480 {0.0f};
+    uint32_t m_Is3D {0};
+    uint32_t m_dword38 {1};
+
     // agiBitmap::`vftable' @ 0x595C40
 
     // 0x53C380 | ??0agiBitmap@@QAE@PAVagiPipeline@@@Z
     inline agiBitmap(class agiPipeline* arg1)
-    {
-        stub<member_func_t<void, agiBitmap, class agiPipeline*>>(0x53C380, this, arg1);
-    }
+        : agiRefreshable(arg1)
+    {}
 
     // 0x53C3C0 | ?Init@agiBitmap@@QAEHPADMMH@Z
     inline int32_t Init(char* arg1, float arg2, float arg3, int32_t arg4)
@@ -84,3 +97,5 @@ public:
         return stub<member_func_t<void, agiBitmap>>(0x53C600, this);
     }
 };
+
+check_size(agiBitmap, 0x3C);

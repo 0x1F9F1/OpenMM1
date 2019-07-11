@@ -44,8 +44,6 @@
 
 #include "hooking.h"
 
-#include <stdarg.h>
-
 // 0x558360 | ?DefaultPrinter@@YAXHPBDPAD@Z
 inline void DefaultPrinter(int32_t arg1, char const* arg2, char* arg3)
 {
@@ -98,55 +96,19 @@ inline extern_var(0x5CDF70, char*, __assertFailed);
 inline extern_var(0x711ABC, uint16_t*, MonoPointer);
 
 // 0x5585E0 | ?Displayf@@YAXPBDZZ
-inline void Displayf(char const* arg1, ...)
-{
-    va_list va;
-    va_start(va, arg1);
-    Printer(0, arg1, va);
-    va_end(va);
-}
+void Displayf(char const* arg1, ...);
 
 // 0x558600 | ?Printf@@YAXPBDZZ
-inline void Printf(char const* arg1, ...)
-{
-    va_list va;
-    va_start(va, arg1);
-    Printer(0, arg1, va);
-    va_end(va);
-}
+void Printf(char const* arg1, ...);
 
 // 0x558620 | ?Debugf@@YAXPBDZZ
-inline void Debugf(char const* arg1, ...)
-{
-    va_list va;
-    va_start(va, arg1);
-    Printer(0, arg1, va);
-    va_end(va);
-}
+void Debugf(char const* arg1, ...);
 
 // 0x558640 | ?Warningf@@YAXPBDZZ
-inline void Warningf(char const* arg1, ...)
-{
-    va_list va;
-    va_start(va, arg1);
-    Printer(1, arg1, va);
-    va_end(va);
-}
+void Warningf(char const* arg1, ...);
 
 // 0x558660 | ?Errorf@@YAXPBDZZ
-inline void Errorf(char const* arg1, ...)
-{
-    va_list va;
-    va_start(va, arg1);
-    Printer(2, arg1, va);
-    va_end(va);
-}
+void Errorf(char const* arg1, ...);
 
 // 0x558720 | ?Abortf@@YAXPBDZZ
-inline void Abortf(char const* arg1, ...)
-{
-    va_list va;
-    va_start(va, arg1);
-    Printer(4, arg1, va);
-    va_end(va);
-}
+[[noreturn]] void Abortf(char const* arg1, ...);

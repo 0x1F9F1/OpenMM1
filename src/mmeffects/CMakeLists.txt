@@ -1,8 +1,8 @@
 add_library(mmeffects OBJECT
     # birth.cpp
     # birth.h
-    # card2d.cpp
-    # card2d.h
+    card2d.cpp
+    card2d.h
     # damage.cpp
     # damage.h
     # linespark.cpp

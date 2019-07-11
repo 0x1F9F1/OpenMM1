@@ -124,6 +124,9 @@ public:
 class Vector2
 {
 public:
+    float x;
+    float y;
+
     // 0x42B330 | ??0Vector2@@QAE@ABV0@@Z
     inline Vector2(class Vector2 const& arg1)
     {
@@ -153,4 +156,12 @@ public:
     {
         return stub<member_func_t<float, Vector2>>(0x553BD0, this);
     }
+
+    // 0x548D70 | ??BVector2@@QBE?AVVector3@@XZ
+    // inline operator Vector3()
+    // {
+    //     return stub<member_func_t<class Vector3>>(0x548D70, this);
+    // }
 };
+
+check_size(Vector2, 8);

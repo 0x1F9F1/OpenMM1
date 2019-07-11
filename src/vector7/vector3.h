@@ -82,6 +82,10 @@
 class Vector3
 {
 public:
+    float x;
+    float y;
+    float z;
+
     // 0x436E50 | ??0Vector3@@QAE@MMM@Z
     inline Vector3(float arg1, float arg2, float arg3)
     {
@@ -392,6 +396,18 @@ public:
         return stub<member_func_t<void, Vector3, class Vector3 const&, class Vector3 const&>>(
             0x553A20, this, arg1, arg2);
     }
+
+    // 0x5495B0 | ??BVector3@@QBE?AVVector4@@XZ
+    // inline operator Vector4()
+    // {
+    //     return stub<member_func_t<class Vector4, Vector3>>(0x5495B0, this);
+    // }
+
+    // 0x548D50 | ??BVector3@@QBE?AVVector2@@XZ
+    // inline operator Vector2()
+    // {
+    //     return stub<member_func_t<class Vector2, Vector3>>(0x548D50, this);
+    // }
 };
 
 // 0x548520 | ?TransformVertNorm@@YAXAAVVector3@@0ABV1@0ABVMatrix34@@@Z
@@ -432,18 +448,6 @@ inline void TransformNormalList(
 {
     return stub<cdecl_t<void, class Vector3**, class Vector3 const**, int32_t, class Matrix34 const&>>(
         0x548860, arg1, arg2, arg3, arg4);
-}
-
-// 0x548D50 | ??BVector3@@QBE?AVVector2@@XZ
-inline class Vector2 Vector3()
-{
-    return stub<thiscall_t<class Vector2>>(0x548D50);
-}
-
-// 0x548D70 | ??BVector2@@QBE?AVVector3@@XZ
-inline class Vector3 Vector2()
-{
-    return stub<thiscall_t<class Vector3>>(0x548D70);
 }
 
 // 0x710888 | ?ORIGIN@@3VVector3@@A
@@ -536,3 +540,5 @@ public:
         return stub<member_func_t<void, Vector3Array, class Vector3Array&>>(0x548BB0, this, arg1);
     }
 };
+
+check_size(Vector3, 12);

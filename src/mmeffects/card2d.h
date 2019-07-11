@@ -36,9 +36,19 @@
 
 #include "hooking.h"
 
+#include "arts7/node.h"
+#include "vector7/vector4.h"
+
 struct Card2D : asNode
 {
 public:
+    float m_X;
+    float m_Y;
+    float m_W;
+    float m_H;
+    uint32_t m_Color;
+    uint32_t m_dword30;
+
     // Card2D::`vftable' @ 0x594FA0
 
     // 0x491320 | ?SetColor@Card2D@@QAEXVVector4@@@Z
@@ -96,3 +106,5 @@ public:
         return stub<member_func_t<void, Card2D>>(0x4EFFF0, this);
     }
 };
+
+check_size(Card2D, 0x34);

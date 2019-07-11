@@ -85,3 +85,5 @@ public:
         return stub<member_func_t<void, asCullable>>(0x5124C0, this);
     }
 };
+
+check_size(asCullable, 4);

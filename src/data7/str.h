@@ -59,12 +59,6 @@
 
 #include "hooking.h"
 
-// 0x55AFA0 | ??H@YA?AVstring@@PBDABV0@@Z
-inline class string operator+(char const* arg1, class string const& arg2)
-{
-    return stub<cdecl_t<class string, char const*, class string const&>>(0x55AFA0, arg1, arg2);
-}
-
 // 0x712320 | ?ProjPath@@3PADA
 inline extern_var(0x712320, char*, ProjPath);
 
@@ -77,6 +71,9 @@ inline extern_var(0x7124E8, char*, ExecPath);
 class string
 {
 public:
+    char* m_pData {nullptr};
+    int32_t m_Capacity {0};
+
     // 0x40B7C0 | ??1string@@QAE@XZ
     inline ~string()
     {
@@ -248,9 +245,21 @@ public:
     // Skipped (scalar/vector destructor)
 };
 
+// 0x55AFA0 | ??H@YA?AVstring@@PBDABV0@@Z
+inline class string operator+(char const* arg1, class string const& arg2)
+{
+    return stub<cdecl_t<class string, char const*, class string const&>>(0x55AFA0, arg1, arg2);
+}
+
 class StringArray
 {
 public:
+    int32_t m_Capacity;
+    int32_t m_Size;
+    uint32_t m_dword8;
+    uint32_t m_dwordC;
+    string** m_pValues;
+
     // 0x55C7C0 | ?Init@StringArray@@QAEXH@Z
     inline void Init(int32_t arg1)
     {
@@ -287,3 +296,6 @@ public:
         return stub<member_func_t<void, StringArray, class StringArray&>>(0x55CB50, this, arg1);
     }
 };
+
+check_size(string, 8);
+check_size(StringArray, 20);

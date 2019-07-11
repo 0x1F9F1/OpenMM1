@@ -43,6 +43,19 @@
 class HashTable
 {
 public:
+    struct Entry
+    {
+        const char* m_pName {nullptr};
+        void* m_pData {nullptr};
+        Entry* m_pNext {nullptr};
+    };
+
+    check_size(Entry, 12);
+
+    int32_t m_BucketCount {0};
+    int32_t m_EntryCount {0};
+    Entry** m_pBuckets {nullptr};
+
     // 0x48BC70 | ??1HashTable@@QAE@XZ
     inline ~HashTable()
     {
@@ -125,9 +138,15 @@ public:
     static inline extern_var(0x711F74, class HashTable*, First);
 };
 
+check_size(HashTable, 12);
+
 struct HashIterator
 {
 public:
+    HashTable* m_pTable {nullptr};
+    int32_t m_Index {0};
+    HashTable::Entry* m_pEntry {nullptr};
+
     // 0x5599A0 | ?Begin@HashIterator@@QAEXXZ
     inline void Begin()
     {
@@ -140,3 +159,5 @@ public:
         return stub<member_func_t<int32_t, HashIterator>>(0x5599B0, this);
     }
 };
+
+check_size(HashIterator, 12);

@@ -90,3 +90,5 @@ public:
         return stub<member_func_t<void, Base>>(0x55AB30, this);
     }
 };
+
+check_size(Base, 4);

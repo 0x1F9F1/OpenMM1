@@ -45,9 +45,41 @@
 // 0x711AC8 | ?CACHE@@3VDataCache@@A
 inline extern_var(0x711AC8, class DataCache, CACHE);
 
+struct DataCacheObject
+{
+    uint32_t m_LastAgeAccess {0};
+    uint8_t* m_pData {nullptr};
+    uint32_t* m_Status {nullptr};
+    uint8_t m_bUsed {0};
+    uint8_t m_nLockCount {0};
+    uint8_t m_byteE {0};
+    uint8_t m_byteF {0};
+    uint32_t m_nTotalSize {0};
+    uint32_t m_nMaxSize {0};
+    void(__cdecl* m_Callback)(void*, uint32_t) {nullptr};
+    void* m_pValue {nullptr};
+};
+
 class DataCache
 {
 public:
+    uint32_t m_AgedObjectsCount {0};
+    uint32_t m_AgedObjectsSize {0};
+    DataCacheObject* m_pObjects {nullptr};
+    uint32_t m_nMaxObjects {0};
+    uint32_t m_nCurrentObjects {0};
+    uint32_t m_nHeapObjects {0};
+    uint32_t m_nMaxHeapObjects {0};
+    uint32_t m_HasError {0};
+    uint8_t* m_pHeap {nullptr};
+    uint32_t m_nHeapSize {0};
+    uint32_t m_nTotalAllocated {0};
+    uint32_t m_AgeChecks {0};
+    uint32_t m_LockCount {0};
+    void* m_hWriteMutex {nullptr};
+    void* m_hAccessMutex {nullptr};
+    const char* m_Name {nullptr};
+
     // 0x558930 | ??0DataCache@@QAE@XZ
     inline DataCache()
     {
@@ -147,3 +179,6 @@ public:
         return stub<member_func_t<void, DataCache, uint32_t&, uint32_t&, uint32_t&>>(0x559330, this, arg1, arg2, arg3);
     }
 };
+
+check_size(DataCache, 0x40);
+check_size(DataCacheObject, 0x20);

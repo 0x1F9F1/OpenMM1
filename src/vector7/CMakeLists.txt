@@ -17,12 +17,12 @@ add_library(vector7 OBJECT
     # random.h
     # trigmath.cpp
     # trigmath.h
-    # vector2.cpp
-    # vector2.h
-    # vector3.cpp
-    # vector3.h
-    # vector4.cpp
-    # vector4.h
+    vector2.cpp
+    vector2.h
+    vector3.cpp
+    vector3.h
+    vector4.cpp
+    vector4.h
 )
 
 target_link_libraries(vector7 hooking)

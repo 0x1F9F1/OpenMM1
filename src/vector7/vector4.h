@@ -46,18 +46,17 @@
 
 #include "hooking.h"
 
-// 0x5495B0 | ??BVector3@@QBE?AVVector4@@XZ
-inline class Vector4 Vector3()
-{
-    return stub<thiscall_t<class Vector4>>(0x5495B0);
-}
-
 // 0x7108C8 | ?Vector4Inst@@3UVector4Type@@A
 inline extern_var(0x7108C8, struct Vector4Type, Vector4Inst);
 
 class Vector4
 {
 public:
+    float x;
+    float y;
+    float z;
+    float w;
+
     // 0x549140 | ?Mag@Vector4@@QBEMXZ
     inline float Mag()
     {
@@ -193,3 +192,5 @@ public:
         return stub<member_func_t<void, Vector4Array, class Vector4Array&>>(0x549890, this, arg1);
     }
 };
+
+check_size(Vector4, 16);

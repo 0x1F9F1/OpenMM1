@@ -36,6 +36,8 @@
 class Timer
 {
 public:
+    uint32_t m_Start;
+
     // 0x5581D0 | ?Ticks@Timer@@SAKXZ
     static inline uint32_t Ticks()
     {
@@ -81,3 +83,5 @@ public:
     // 0x711AAC | ?TicksToSeconds@Timer@@2MA
     static inline extern_var(0x711AAC, float, TicksToSeconds);
 };
+
+check_size(Timer, 4);

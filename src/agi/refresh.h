@@ -37,9 +37,17 @@
 
 #include "hooking.h"
 
+class agiPipeline;
+
 class agiRefreshable
 {
 public:
+    agiRefreshable* m_pPrev;
+    agiRefreshable* m_pNext;
+    agiPipeline* m_pPipeline;
+    uint32_t m_ErrorCode;
+    uint32_t m_RefCount;
+
     // agiRefreshable::`vftable' @ 0x595BE8
 
     // 0x53A0A0 | ??0agiRefreshable@@QAE@PAVagiPipeline@@@Z
@@ -108,3 +116,5 @@ public:
         return stub<member_func_t<int32_t, agiRefreshable>>(0x53A220, this);
     }
 };
+
+check_size(agiRefreshable, 0x18);

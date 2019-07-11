@@ -1,8 +1,8 @@
 add_library(memory OBJECT
     # allocator.cpp
     # allocator.h
-    # stack.cpp
-    # stack.h
+    stack.cpp
+    stack.h
     # stub.cpp
     # stub.h
     # valloc.cpp

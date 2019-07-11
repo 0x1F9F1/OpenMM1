@@ -28,8 +28,6 @@
 #define DIRECTINPUT_VERSION DIRECTX_VERSION
 #define DIRECTSOUND_VERSION DIRECTX_VERSION
 
-#define unimplemented Quitf("Error calling unimplemented function %s in %s (%i)", __FUNCTION__, __FILE__, __LINE__)
-
 using namespace mem::conventions;
 using mem::stub;
 
@@ -48,3 +46,5 @@ extern size_t PatchCount;
 void create_hook(const char* name, const char* description, mem::pointer target, mem::pointer detour,
     hook_type type = hook_type::jmp);
 void create_patch(const char* name, const char* description, mem::pointer dest, mem::pointer src, size_t size);
+
+#include "data7/quitf.h"

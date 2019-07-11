@@ -17,3 +17,55 @@
 */
 
 #include "printer.h"
+
+#include <stdarg.h>
+
+void Displayf(char const* arg1, ...)
+{
+    va_list va;
+    va_start(va, arg1);
+    Printer(0, arg1, va);
+    va_end(va);
+}
+
+void Printf(char const* arg1, ...)
+{
+    va_list va;
+    va_start(va, arg1);
+    Printer(0, arg1, va);
+    va_end(va);
+}
+
+void Debugf(char const* arg1, ...)
+{
+    va_list va;
+    va_start(va, arg1);
+    Printer(0, arg1, va);
+    va_end(va);
+}
+
+void Warningf(char const* arg1, ...)
+{
+    va_list va;
+    va_start(va, arg1);
+    Printer(1, arg1, va);
+    va_end(va);
+}
+
+void Errorf(char const* arg1, ...)
+{
+    va_list va;
+    va_start(va, arg1);
+    Printer(2, arg1, va);
+    va_end(va);
+}
+
+[[noreturn]] void Abortf(char const* arg1, ...)
+{
+    va_list va;
+    va_start(va, arg1);
+    Printer(4, arg1, va);
+    va_end(va);
+
+    exit(1);
+}

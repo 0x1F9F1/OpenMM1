@@ -137,6 +137,8 @@
 
 #include "hooking.h"
 
+#include "cmodel.h"
+
 // 0x70EB30 | ?ColorModelARGB@@3VagiColorModelARGB@@A
 inline extern_var(0x70EB30, class agiColorModelARGB, ColorModelARGB);
 
@@ -167,7 +169,7 @@ inline extern_var(0x70ECB0, class agiColorModelRGB565, ColorModelRGB565);
 // 0x70ECE0 | ?ColorModelRGB555@@3VagiColorModelRGB555@@A
 inline extern_var(0x70ECE0, class agiColorModelRGB555, ColorModelRGB555);
 
-class agiColorModelRGB555
+class agiColorModelRGB555 : agiColorModel
 {
 public:
     // agiColorModelRGB555::`vftable' @ 0x595CE8
@@ -179,46 +181,46 @@ public:
     }
 
     // 0x53F750 | ??1agiColorModelRGB555@@UAE@XZ
-    virtual inline ~agiColorModelRGB555()
+    inline ~agiColorModelRGB555() override
     {
         stub<member_func_t<void, agiColorModelRGB555>>(0x53F750, this);
     }
 
     // 0x53E400 | ?GetColor@agiColorModelRGB555@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t GetColor(struct agiRgba arg1)
+    inline uint32_t GetColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB555, struct agiRgba>>(0x53E400, this, arg1);
     }
 
     // 0x53E440 | ?FindColor@agiColorModelRGB555@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t FindColor(struct agiRgba arg1)
+    inline uint32_t FindColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB555, struct agiRgba>>(0x53E440, this, arg1);
     }
 
     // 0x53E480 | ?Filter@agiColorModelRGB555@@UAEIIIII@Z
-    virtual inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)
+    inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB555, uint32_t, uint32_t, uint32_t, uint32_t>>(
             0x53E480, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53E530 | ?SetPixel@agiColorModelRGB555@@UAEXPAVagiSurfaceDesc@@HHI@Z
-    virtual inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4)
+    inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<void, agiColorModelRGB555, class agiSurfaceDesc*, int32_t, int32_t, uint32_t>>(
             0x53E530, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53E510 | ?GetPixel@agiColorModelRGB555@@UAEIPAVagiSurfaceDesc@@HH@Z
-    virtual inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3)
+    inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB555, class agiSurfaceDesc*, int32_t, int32_t>>(
             0x53E510, this, arg1, arg2, arg3);
     }
 };
 
-class agiColorModelRGB565
+class agiColorModelRGB565 : agiColorModel
 {
 public:
     // agiColorModelRGB565::`vftable' @ 0x595D00
@@ -230,46 +232,46 @@ public:
     }
 
     // 0x53F790 | ??1agiColorModelRGB565@@UAE@XZ
-    virtual inline ~agiColorModelRGB565()
+    inline ~agiColorModelRGB565() override
     {
         stub<member_func_t<void, agiColorModelRGB565>>(0x53F790, this);
     }
 
     // 0x53E5E0 | ?GetColor@agiColorModelRGB565@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t GetColor(struct agiRgba arg1)
+    inline uint32_t GetColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB565, struct agiRgba>>(0x53E5E0, this, arg1);
     }
 
     // 0x53E620 | ?FindColor@agiColorModelRGB565@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t FindColor(struct agiRgba arg1)
+    inline uint32_t FindColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB565, struct agiRgba>>(0x53E620, this, arg1);
     }
 
     // 0x53E660 | ?Filter@agiColorModelRGB565@@UAEIIIII@Z
-    virtual inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)
+    inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB565, uint32_t, uint32_t, uint32_t, uint32_t>>(
             0x53E660, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53E710 | ?SetPixel@agiColorModelRGB565@@UAEXPAVagiSurfaceDesc@@HHI@Z
-    virtual inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4)
+    inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<void, agiColorModelRGB565, class agiSurfaceDesc*, int32_t, int32_t, uint32_t>>(
             0x53E710, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53E6F0 | ?GetPixel@agiColorModelRGB565@@UAEIPAVagiSurfaceDesc@@HH@Z
-    virtual inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3)
+    inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB565, class agiSurfaceDesc*, int32_t, int32_t>>(
             0x53E6F0, this, arg1, arg2, arg3);
     }
 };
 
-class agiColorModelRGB888
+class agiColorModelRGB888 : agiColorModel
 {
 public:
     // agiColorModelRGB888::`vftable' @ 0x595D48
@@ -281,46 +283,46 @@ public:
     }
 
     // 0x53F850 | ??1agiColorModelRGB888@@UAE@XZ
-    virtual inline ~agiColorModelRGB888()
+    inline ~agiColorModelRGB888() override
     {
         stub<member_func_t<void, agiColorModelRGB888>>(0x53F850, this);
     }
 
     // 0x53EB80 | ?GetColor@agiColorModelRGB888@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t GetColor(struct agiRgba arg1)
+    inline uint32_t GetColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB888, struct agiRgba>>(0x53EB80, this, arg1);
     }
 
     // 0x53EBB0 | ?FindColor@agiColorModelRGB888@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t FindColor(struct agiRgba arg1)
+    inline uint32_t FindColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB888, struct agiRgba>>(0x53EBB0, this, arg1);
     }
 
     // 0x53EBE0 | ?Filter@agiColorModelRGB888@@UAEIIIII@Z
-    virtual inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)
+    inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB888, uint32_t, uint32_t, uint32_t, uint32_t>>(
             0x53EBE0, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53EC80 | ?SetPixel@agiColorModelRGB888@@UAEXPAVagiSurfaceDesc@@HHI@Z
-    virtual inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4)
+    inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<void, agiColorModelRGB888, class agiSurfaceDesc*, int32_t, int32_t, uint32_t>>(
             0x53EC80, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53EC60 | ?GetPixel@agiColorModelRGB888@@UAEIPAVagiSurfaceDesc@@HH@Z
-    virtual inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3)
+    inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB888, class agiSurfaceDesc*, int32_t, int32_t>>(
             0x53EC60, this, arg1, arg2, arg3);
     }
 };
 
-class agiColorModelRGBA4444
+class agiColorModelRGBA4444 : agiColorModel
 {
 public:
     // agiColorModelRGBA4444::`vftable' @ 0x595D90
@@ -332,46 +334,46 @@ public:
     }
 
     // 0x53F910 | ??1agiColorModelRGBA4444@@UAE@XZ
-    virtual inline ~agiColorModelRGBA4444()
+    inline ~agiColorModelRGBA4444() override
     {
         stub<member_func_t<void, agiColorModelRGBA4444>>(0x53F910, this);
     }
 
     // 0x53F100 | ?GetColor@agiColorModelRGBA4444@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t GetColor(struct agiRgba arg1)
+    inline uint32_t GetColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGBA4444, struct agiRgba>>(0x53F100, this, arg1);
     }
 
     // 0x53F150 | ?FindColor@agiColorModelRGBA4444@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t FindColor(struct agiRgba arg1)
+    inline uint32_t FindColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGBA4444, struct agiRgba>>(0x53F150, this, arg1);
     }
 
     // 0x53F1A0 | ?Filter@agiColorModelRGBA4444@@UAEIIIII@Z
-    virtual inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)
+    inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGBA4444, uint32_t, uint32_t, uint32_t, uint32_t>>(
             0x53F1A0, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53F280 | ?SetPixel@agiColorModelRGBA4444@@UAEXPAVagiSurfaceDesc@@HHI@Z
-    virtual inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4)
+    inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<void, agiColorModelRGBA4444, class agiSurfaceDesc*, int32_t, int32_t, uint32_t>>(
             0x53F280, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53F260 | ?GetPixel@agiColorModelRGBA4444@@UAEIPAVagiSurfaceDesc@@HH@Z
-    virtual inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3)
+    inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGBA4444, class agiSurfaceDesc*, int32_t, int32_t>>(
             0x53F260, this, arg1, arg2, arg3);
     }
 };
 
-class agiColorModelRGBA5551
+class agiColorModelRGBA5551 : agiColorModel
 {
 public:
     // agiColorModelRGBA5551::`vftable' @ 0x595D78
@@ -383,46 +385,46 @@ public:
     }
 
     // 0x53F8D0 | ??1agiColorModelRGBA5551@@UAE@XZ
-    virtual inline ~agiColorModelRGBA5551()
+    inline ~agiColorModelRGBA5551() override
     {
         stub<member_func_t<void, agiColorModelRGBA5551>>(0x53F8D0, this);
     }
 
     // 0x53EED0 | ?GetColor@agiColorModelRGBA5551@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t GetColor(struct agiRgba arg1)
+    inline uint32_t GetColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGBA5551, struct agiRgba>>(0x53EED0, this, arg1);
     }
 
     // 0x53EF20 | ?FindColor@agiColorModelRGBA5551@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t FindColor(struct agiRgba arg1)
+    inline uint32_t FindColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGBA5551, struct agiRgba>>(0x53EF20, this, arg1);
     }
 
     // 0x53EF70 | ?Filter@agiColorModelRGBA5551@@UAEIIIII@Z
-    virtual inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)
+    inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGBA5551, uint32_t, uint32_t, uint32_t, uint32_t>>(
             0x53EF70, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53F050 | ?SetPixel@agiColorModelRGBA5551@@UAEXPAVagiSurfaceDesc@@HHI@Z
-    virtual inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4)
+    inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<void, agiColorModelRGBA5551, class agiSurfaceDesc*, int32_t, int32_t, uint32_t>>(
             0x53F050, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53F030 | ?GetPixel@agiColorModelRGBA5551@@UAEIPAVagiSurfaceDesc@@HH@Z
-    virtual inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3)
+    inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGBA5551, class agiSurfaceDesc*, int32_t, int32_t>>(
             0x53F030, this, arg1, arg2, arg3);
     }
 };
 
-class agiColorModelRGB888_Rev
+class agiColorModelRGB888_Rev : agiColorModel
 {
 public:
     // agiColorModelRGB888_Rev::`vftable' @ 0x595D60
@@ -434,46 +436,46 @@ public:
     }
 
     // 0x53F890 | ??1agiColorModelRGB888_Rev@@UAE@XZ
-    virtual inline ~agiColorModelRGB888_Rev()
+    inline ~agiColorModelRGB888_Rev() override
     {
         stub<member_func_t<void, agiColorModelRGB888_Rev>>(0x53F890, this);
     }
 
     // 0x53ED20 | ?GetColor@agiColorModelRGB888_Rev@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t GetColor(struct agiRgba arg1)
+    inline uint32_t GetColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB888_Rev, struct agiRgba>>(0x53ED20, this, arg1);
     }
 
     // 0x53ED50 | ?FindColor@agiColorModelRGB888_Rev@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t FindColor(struct agiRgba arg1)
+    inline uint32_t FindColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB888_Rev, struct agiRgba>>(0x53ED50, this, arg1);
     }
 
     // 0x53ED80 | ?Filter@agiColorModelRGB888_Rev@@UAEIIIII@Z
-    virtual inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)
+    inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB888_Rev, uint32_t, uint32_t, uint32_t, uint32_t>>(
             0x53ED80, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53EE20 | ?SetPixel@agiColorModelRGB888_Rev@@UAEXPAVagiSurfaceDesc@@HHI@Z
-    virtual inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4)
+    inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<void, agiColorModelRGB888_Rev, class agiSurfaceDesc*, int32_t, int32_t, uint32_t>>(
             0x53EE20, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53EE00 | ?GetPixel@agiColorModelRGB888_Rev@@UAEIPAVagiSurfaceDesc@@HH@Z
-    virtual inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3)
+    inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB888_Rev, class agiSurfaceDesc*, int32_t, int32_t>>(
             0x53EE00, this, arg1, arg2, arg3);
     }
 };
 
-class agiColorModelRGB555_Rev
+class agiColorModelRGB555_Rev : agiColorModel
 {
 public:
     // agiColorModelRGB555_Rev::`vftable' @ 0x595D18
@@ -485,46 +487,46 @@ public:
     }
 
     // 0x53F7D0 | ??1agiColorModelRGB555_Rev@@UAE@XZ
-    virtual inline ~agiColorModelRGB555_Rev()
+    inline ~agiColorModelRGB555_Rev() override
     {
         stub<member_func_t<void, agiColorModelRGB555_Rev>>(0x53F7D0, this);
     }
 
     // 0x53E7C0 | ?GetColor@agiColorModelRGB555_Rev@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t GetColor(struct agiRgba arg1)
+    inline uint32_t GetColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB555_Rev, struct agiRgba>>(0x53E7C0, this, arg1);
     }
 
     // 0x53E800 | ?FindColor@agiColorModelRGB555_Rev@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t FindColor(struct agiRgba arg1)
+    inline uint32_t FindColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB555_Rev, struct agiRgba>>(0x53E800, this, arg1);
     }
 
     // 0x53E840 | ?Filter@agiColorModelRGB555_Rev@@UAEIIIII@Z
-    virtual inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)
+    inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB555_Rev, uint32_t, uint32_t, uint32_t, uint32_t>>(
             0x53E840, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53E8F0 | ?SetPixel@agiColorModelRGB555_Rev@@UAEXPAVagiSurfaceDesc@@HHI@Z
-    virtual inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4)
+    inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<void, agiColorModelRGB555_Rev, class agiSurfaceDesc*, int32_t, int32_t, uint32_t>>(
             0x53E8F0, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53E8D0 | ?GetPixel@agiColorModelRGB555_Rev@@UAEIPAVagiSurfaceDesc@@HH@Z
-    virtual inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3)
+    inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB555_Rev, class agiSurfaceDesc*, int32_t, int32_t>>(
             0x53E8D0, this, arg1, arg2, arg3);
     }
 };
 
-class agiColorModelABGR
+class agiColorModelABGR : agiColorModel
 {
 public:
     // agiColorModelABGR::`vftable' @ 0x595DC0
@@ -536,46 +538,46 @@ public:
     }
 
     // 0x53F990 | ??1agiColorModelABGR@@UAE@XZ
-    virtual inline ~agiColorModelABGR()
+    inline ~agiColorModelABGR() override
     {
         stub<member_func_t<void, agiColorModelABGR>>(0x53F990, this);
     }
 
     // 0x53F520 | ?GetColor@agiColorModelABGR@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t GetColor(struct agiRgba arg1)
+    inline uint32_t GetColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelABGR, struct agiRgba>>(0x53F520, this, arg1);
     }
 
     // 0x53F560 | ?FindColor@agiColorModelABGR@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t FindColor(struct agiRgba arg1)
+    inline uint32_t FindColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelABGR, struct agiRgba>>(0x53F560, this, arg1);
     }
 
     // 0x53F5A0 | ?Filter@agiColorModelABGR@@UAEIIIII@Z
-    virtual inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)
+    inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<uint32_t, agiColorModelABGR, uint32_t, uint32_t, uint32_t, uint32_t>>(
             0x53F5A0, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53F660 | ?SetPixel@agiColorModelABGR@@UAEXPAVagiSurfaceDesc@@HHI@Z
-    virtual inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4)
+    inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<void, agiColorModelABGR, class agiSurfaceDesc*, int32_t, int32_t, uint32_t>>(
             0x53F660, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53F640 | ?GetPixel@agiColorModelABGR@@UAEIPAVagiSurfaceDesc@@HH@Z
-    virtual inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3)
+    inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3) override
     {
         return stub<member_func_t<uint32_t, agiColorModelABGR, class agiSurfaceDesc*, int32_t, int32_t>>(
             0x53F640, this, arg1, arg2, arg3);
     }
 };
 
-class agiColorModelRGB565_Rev
+class agiColorModelRGB565_Rev : agiColorModel
 {
 public:
     // agiColorModelRGB565_Rev::`vftable' @ 0x595D30
@@ -587,46 +589,46 @@ public:
     }
 
     // 0x53F810 | ??1agiColorModelRGB565_Rev@@UAE@XZ
-    virtual inline ~agiColorModelRGB565_Rev()
+    inline ~agiColorModelRGB565_Rev() override
     {
         stub<member_func_t<void, agiColorModelRGB565_Rev>>(0x53F810, this);
     }
 
     // 0x53E9A0 | ?GetColor@agiColorModelRGB565_Rev@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t GetColor(struct agiRgba arg1)
+    inline uint32_t GetColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB565_Rev, struct agiRgba>>(0x53E9A0, this, arg1);
     }
 
     // 0x53E9E0 | ?FindColor@agiColorModelRGB565_Rev@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t FindColor(struct agiRgba arg1)
+    inline uint32_t FindColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB565_Rev, struct agiRgba>>(0x53E9E0, this, arg1);
     }
 
     // 0x53EA20 | ?Filter@agiColorModelRGB565_Rev@@UAEIIIII@Z
-    virtual inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)
+    inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB565_Rev, uint32_t, uint32_t, uint32_t, uint32_t>>(
             0x53EA20, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53EAD0 | ?SetPixel@agiColorModelRGB565_Rev@@UAEXPAVagiSurfaceDesc@@HHI@Z
-    virtual inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4)
+    inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<void, agiColorModelRGB565_Rev, class agiSurfaceDesc*, int32_t, int32_t, uint32_t>>(
             0x53EAD0, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53EAB0 | ?GetPixel@agiColorModelRGB565_Rev@@UAEIPAVagiSurfaceDesc@@HH@Z
-    virtual inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3)
+    inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3) override
     {
         return stub<member_func_t<uint32_t, agiColorModelRGB565_Rev, class agiSurfaceDesc*, int32_t, int32_t>>(
             0x53EAB0, this, arg1, arg2, arg3);
     }
 };
 
-class agiColorModelARGB
+class agiColorModelARGB : agiColorModel
 {
 public:
     // agiColorModelARGB::`vftable' @ 0x595DA8
@@ -638,39 +640,39 @@ public:
     }
 
     // 0x53F950 | ??1agiColorModelARGB@@UAE@XZ
-    virtual inline ~agiColorModelARGB()
+    inline ~agiColorModelARGB() override
     {
         stub<member_func_t<void, agiColorModelARGB>>(0x53F950, this);
     }
 
     // 0x53F330 | ?GetColor@agiColorModelARGB@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t GetColor(struct agiRgba arg1)
+    inline uint32_t GetColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelARGB, struct agiRgba>>(0x53F330, this, arg1);
     }
 
     // 0x53F370 | ?FindColor@agiColorModelARGB@@UAEIUagiRgba@@@Z
-    virtual inline uint32_t FindColor(struct agiRgba arg1)
+    inline uint32_t FindColor(struct agiRgba arg1) override
     {
         return stub<member_func_t<uint32_t, agiColorModelARGB, struct agiRgba>>(0x53F370, this, arg1);
     }
 
     // 0x53F3B0 | ?Filter@agiColorModelARGB@@UAEIIIII@Z
-    virtual inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)
+    inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<uint32_t, agiColorModelARGB, uint32_t, uint32_t, uint32_t, uint32_t>>(
             0x53F3B0, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53F480 | ?SetPixel@agiColorModelARGB@@UAEXPAVagiSurfaceDesc@@HHI@Z
-    virtual inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4)
+    inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4) override
     {
         return stub<member_func_t<void, agiColorModelARGB, class agiSurfaceDesc*, int32_t, int32_t, uint32_t>>(
             0x53F480, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x53F460 | ?GetPixel@agiColorModelARGB@@UAEIPAVagiSurfaceDesc@@HH@Z
-    virtual inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3)
+    inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3) override
     {
         return stub<member_func_t<uint32_t, agiColorModelARGB, class agiSurfaceDesc*, int32_t, int32_t>>(
             0x53F460, this, arg1, arg2, arg3);

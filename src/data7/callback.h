@@ -46,9 +46,17 @@
 // 0x712240 | ?NullCallback@@3VCallback@@A
 inline extern_var(0x712240, class Callback, NullCallback);
 
+class Base;
+
 class Callback
 {
 public:
+    uint32_t m_Type;
+    Base* m_pClass;
+    void* m_pFunc;
+    void* m_pFirstParam;
+    void* m_pSecondParam;
+
     // 0x55AC20 | ??0Callback@@QAE@XZ
     inline Callback()
     {
@@ -79,3 +87,5 @@ public:
         return stub<member_func_t<void, Callback, void*>>(0x55ADB0, this, arg1);
     }
 };
+
+check_size(Callback, 0x14);

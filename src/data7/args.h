@@ -34,9 +34,15 @@
 // 0x712008 | ?GBArgs@@3VArgSet@@A
 inline extern_var(0x712008, class ArgSet, GBArgs);
 
+struct asArg;
+
 class ArgSet
 {
 public:
+    asArg* m_pArgs[128] {};
+    void* m_UsageText {nullptr};
+    char* m_Path {nullptr};
+
     // 0x55A6E0 | ?Print@ArgSet@@QAEXPAD@Z
     inline void Print(char* arg1)
     {
@@ -59,6 +65,13 @@ public:
 struct asArg
 {
 public:
+    uint32_t m_Found {0};
+    uint8_t m_Flag {0};
+    char* m_Usage {nullptr};
+    int m_iValues[5] {};
+    float m_fValues[5] {};
+    char* m_sValues[5] {};
+
     // 0x55A590 | ??0asArg@@QAE@DPAD@Z
     inline asArg(char arg1, char* arg2)
     {
@@ -71,3 +84,6 @@ public:
         return stub<member_func_t<void, asArg, char*>>(0x55A5E0, this, arg1);
     }
 };
+
+check_size(ArgSet, 0x208);
+check_size(asArg, 0x48);

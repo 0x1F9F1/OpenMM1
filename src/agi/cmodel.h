@@ -31,9 +31,22 @@
 
 #include "hooking.h"
 
+#include "rgba.h"
+
 class agiColorModel
 {
 public:
+    uint32_t m_ByteCount {0};
+    uint32_t m_BitCountR {0};
+    uint32_t m_BitCountG {0};
+    uint32_t m_BitCountB {0};
+    uint32_t m_BitCountA {0};
+    uint32_t m_MaskR {0};
+    uint32_t m_MaskG {0};
+    uint32_t m_MaskB {0};
+    uint32_t m_MaskA {0};
+    uint32_t m_RefCount {1};
+
     // agiColorModel::`vftable' @ 0x595C90
 
     // 0x53DAA0 | ?GetColor@agiColorModel@@QAEIHHHH@Z
@@ -74,4 +87,45 @@ public:
     {
         return stub<cdecl_t<class agiColorModel*, class agiSurfaceDesc*>>(0x53F730, arg1);
     }
+
+    // 0x567350 | __purecall
+    virtual inline ~agiColorModel()
+    {
+        stub<member_func_t<void, agiColorModel>>(0x567350, this);
+    }
+
+    // 0x567350 | __purecall
+    virtual inline uint32_t GetColor(struct agiRgba arg1)
+    {
+        return stub<member_func_t<uint32_t, agiColorModel, struct agiRgba>>(0x567350, this, arg1);
+    }
+
+    // 0x567350 | __purecall
+    virtual inline uint32_t FindColor(struct agiRgba arg1)
+    {
+        return stub<member_func_t<uint32_t, agiColorModel, struct agiRgba>>(0x567350, this, arg1);
+    }
+
+    // 0x567350 | __purecall
+    virtual inline uint32_t Filter(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)
+    {
+        return stub<member_func_t<uint32_t, agiColorModel, uint32_t, uint32_t, uint32_t, uint32_t>>(
+            0x567350, this, arg1, arg2, arg3, arg4);
+    }
+
+    // 0x567350 | __purecall
+    virtual inline void SetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3, uint32_t arg4)
+    {
+        return stub<member_func_t<void, agiColorModel, class agiSurfaceDesc*, int32_t, int32_t, uint32_t>>(
+            0x567350, this, arg1, arg2, arg3, arg4);
+    }
+
+    // 0x567350 | __purecall
+    virtual inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3)
+    {
+        return stub<member_func_t<uint32_t, agiColorModel, class agiSurfaceDesc*, int32_t, int32_t>>(
+            0x567350, this, arg1, arg2, arg3);
+    }
 };
+
+check_size(agiColorModel, 0x2C);

@@ -431,7 +431,8 @@ def backport_vtable_purecalls(vtables, hiers):
                 # MapSymbol = recordclass('MapSymbol', 'address lib path name type parts attribs raw_name')
 
                 hier_func = hier_funcs[i]
-                hier_funcs[i] = MapSymbol(hier_func.address, hier_func.lib, hier, funcs[i].name, funcs[i].type, hier_parts + [funcs[i].name],set(funcs[i].attribs), '__purecall')
+                hier_funcs[i] = MapSymbol(hier_func.address, hier_func.lib, hier, funcs[i].name, funcs[i].type, hier_parts + [funcs[i].name], set(funcs[i].attribs), '__purecall')
+                hier_funcs[i].attribs.add('virtual')
 
                 changed = True
 
@@ -701,7 +702,19 @@ collect_vtable_hierarchy(class_hiers, vtables)
 
 class_hiers = dict(class_hiers)
 
-class_hiers = compute_hierarchy(class_hiers, {}, {
+class_hiers = compute_hierarchy(class_hiers, {
+    'agiColorModelRGB555': ['agiColorModel'],
+    'agiColorModelRGB565': ['agiColorModel'],
+    'agiColorModelRGB555_Rev': ['agiColorModel'],
+    'agiColorModelRGB565_Rev': ['agiColorModel'],
+    'agiColorModelRGB888': ['agiColorModel'],
+    'agiColorModelRGB888_Rev': ['agiColorModel'],
+    'agiColorModelRGBA5551': ['agiColorModel'],
+    'agiColorModelRGBA4444': ['agiColorModel'],
+    'agiColorModelARGB': ['agiColorModel'],
+    'agiColorModelABGR': ['agiColorModel'],
+    'agiColorModel8': ['agiColorModel'],
+}, {
     'Timer'
 })
 
@@ -736,6 +749,9 @@ if True:
     libs_data = collect_classes(all_symbols, name_to_type, vtables, class_hiers, path_libs, function_libs)
 
     for lib, symbols in function_libs.items():
+        if 'purevirt' in lib:
+            continue
+
         lib_data = libs_data.get(lib, '')
 
         if not lib:

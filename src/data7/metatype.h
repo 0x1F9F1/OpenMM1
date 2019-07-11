@@ -146,405 +146,425 @@ inline extern_var(0x7125AC, struct UnsignedShortType, UnsignedShortInst);
 // 0x7125B0 | ?SignedInt64Inst@@3USignedInt64Type@@A
 inline extern_var(0x7125B0, struct SignedInt64Type, SignedInt64Inst);
 
-struct SignedInt64Type
+class MetaClass;
+
+struct MetaType
+{
+public:
+    virtual inline void Save(class MiniParser* arg1, void* arg2) = 0;
+    virtual inline void Load(class MiniParser* arg1, void* arg2) = 0;
+    virtual inline uint32_t SizeOf() = 0;
+    virtual inline void* New(int32_t arg1) = 0;
+    virtual inline void Delete(void* arg1, int32_t arg2) = 0;
+};
+
+check_size(MetaType, 4);
+
+struct SignedInt64Type : MetaType
 {
 public:
     // SignedInt64Type::`vftable' @ 0x596368
 
     // 0x55D840 | ?Save@SignedInt64Type@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Save(class MiniParser* arg1, void* arg2)
+    inline void Save(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, SignedInt64Type, class MiniParser*, void*>>(0x55D840, this, arg1, arg2);
     }
 
     // 0x55D870 | ?Load@SignedInt64Type@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Load(class MiniParser* arg1, void* arg2)
+    inline void Load(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, SignedInt64Type, class MiniParser*, void*>>(0x55D870, this, arg1, arg2);
     }
 
     // 0x55D890 | ?SizeOf@SignedInt64Type@@UAEIXZ
-    virtual inline uint32_t SizeOf()
+    inline uint32_t SizeOf() override
     {
         return stub<member_func_t<uint32_t, SignedInt64Type>>(0x55D890, this);
     }
 
     // 0x55D8A0 | ?New@SignedInt64Type@@UAEPAXH@Z
-    virtual inline void* New(int32_t arg1)
+    inline void* New(int32_t arg1) override
     {
         return stub<member_func_t<void*, SignedInt64Type, int32_t>>(0x55D8A0, this, arg1);
     }
 
     // 0x55D8D0 | ?Delete@SignedInt64Type@@UAEXPAXH@Z
-    virtual inline void Delete(void* arg1, int32_t arg2)
+    inline void Delete(void* arg1, int32_t arg2) override
     {
         return stub<member_func_t<void, SignedInt64Type, void*, int32_t>>(0x55D8D0, this, arg1, arg2);
     }
 };
 
-struct UnsignedShortType
+struct UnsignedShortType : MetaType
 {
 public:
     // UnsignedShortType::`vftable' @ 0x596338
 
     // 0x55D690 | ?Save@UnsignedShortType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Save(class MiniParser* arg1, void* arg2)
+    inline void Save(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, UnsignedShortType, class MiniParser*, void*>>(0x55D690, this, arg1, arg2);
     }
 
     // 0x55D6C0 | ?Load@UnsignedShortType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Load(class MiniParser* arg1, void* arg2)
+    inline void Load(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, UnsignedShortType, class MiniParser*, void*>>(0x55D6C0, this, arg1, arg2);
     }
 
     // 0x55D6E0 | ?SizeOf@UnsignedShortType@@UAEIXZ
-    virtual inline uint32_t SizeOf()
+    inline uint32_t SizeOf() override
     {
         return stub<member_func_t<uint32_t, UnsignedShortType>>(0x55D6E0, this);
     }
 
     // 0x55D6F0 | ?New@UnsignedShortType@@UAEPAXH@Z
-    virtual inline void* New(int32_t arg1)
+    inline void* New(int32_t arg1) override
     {
         return stub<member_func_t<void*, UnsignedShortType, int32_t>>(0x55D6F0, this, arg1);
     }
 
     // 0x55D720 | ?Delete@UnsignedShortType@@UAEXPAXH@Z
-    virtual inline void Delete(void* arg1, int32_t arg2)
+    inline void Delete(void* arg1, int32_t arg2) override
     {
         return stub<member_func_t<void, UnsignedShortType, void*, int32_t>>(0x55D720, this, arg1, arg2);
     }
 };
 
-struct UnsignedIntType
+struct UnsignedIntType : MetaType
 {
 public:
     // UnsignedIntType::`vftable' @ 0x596380
 
     // 0x55D920 | ?Save@UnsignedIntType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Save(class MiniParser* arg1, void* arg2)
+    inline void Save(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, UnsignedIntType, class MiniParser*, void*>>(0x55D920, this, arg1, arg2);
     }
 
     // 0x55D940 | ?Load@UnsignedIntType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Load(class MiniParser* arg1, void* arg2)
+    inline void Load(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, UnsignedIntType, class MiniParser*, void*>>(0x55D940, this, arg1, arg2);
     }
 
     // 0x55D960 | ?SizeOf@UnsignedIntType@@UAEIXZ
-    virtual inline uint32_t SizeOf()
+    inline uint32_t SizeOf() override
     {
         return stub<member_func_t<uint32_t, UnsignedIntType>>(0x55D960, this);
     }
 
     // 0x55D970 | ?New@UnsignedIntType@@UAEPAXH@Z
-    virtual inline void* New(int32_t arg1)
+    inline void* New(int32_t arg1) override
     {
         return stub<member_func_t<void*, UnsignedIntType, int32_t>>(0x55D970, this, arg1);
     }
 
     // 0x55D9A0 | ?Delete@UnsignedIntType@@UAEXPAXH@Z
-    virtual inline void Delete(void* arg1, int32_t arg2)
+    inline void Delete(void* arg1, int32_t arg2) override
     {
         return stub<member_func_t<void, UnsignedIntType, void*, int32_t>>(0x55D9A0, this, arg1, arg2);
     }
 };
 
-struct SignedCharType
+struct SignedCharType : MetaType
 {
 public:
     // SignedCharType::`vftable' @ 0x5962F0
 
     // 0x55D420 | ?Save@SignedCharType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Save(class MiniParser* arg1, void* arg2)
+    inline void Save(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, SignedCharType, class MiniParser*, void*>>(0x55D420, this, arg1, arg2);
     }
 
     // 0x55D440 | ?Load@SignedCharType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Load(class MiniParser* arg1, void* arg2)
+    inline void Load(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, SignedCharType, class MiniParser*, void*>>(0x55D440, this, arg1, arg2);
     }
 
     // 0x55D460 | ?SizeOf@SignedCharType@@UAEIXZ
-    virtual inline uint32_t SizeOf()
+    inline uint32_t SizeOf() override
     {
         return stub<member_func_t<uint32_t, SignedCharType>>(0x55D460, this);
     }
 
     // 0x55D470 | ?New@SignedCharType@@UAEPAXH@Z
-    virtual inline void* New(int32_t arg1)
+    inline void* New(int32_t arg1) override
     {
         return stub<member_func_t<void*, SignedCharType, int32_t>>(0x55D470, this, arg1);
     }
 
     // 0x55D4A0 | ?Delete@SignedCharType@@UAEXPAXH@Z
-    virtual inline void Delete(void* arg1, int32_t arg2)
+    inline void Delete(void* arg1, int32_t arg2) override
     {
         return stub<member_func_t<void, SignedCharType, void*, int32_t>>(0x55D4A0, this, arg1, arg2);
     }
 };
 
-struct StringType
+struct StringType : MetaType
 {
 public:
     // StringType::`vftable' @ 0x5963B0
 
     // 0x55DAF0 | ?Save@StringType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Save(class MiniParser* arg1, void* arg2)
+    inline void Save(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, StringType, class MiniParser*, void*>>(0x55DAF0, this, arg1, arg2);
     }
 
     // 0x55DB30 | ?Load@StringType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Load(class MiniParser* arg1, void* arg2)
+    inline void Load(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, StringType, class MiniParser*, void*>>(0x55DB30, this, arg1, arg2);
     }
 
     // 0x55DBD0 | ?SizeOf@StringType@@UAEIXZ
-    virtual inline uint32_t SizeOf()
+    inline uint32_t SizeOf() override
     {
         return stub<member_func_t<uint32_t, StringType>>(0x55DBD0, this);
     }
 
     // 0x55DB80 | ?New@StringType@@UAEPAXH@Z
-    virtual inline void* New(int32_t arg1)
+    inline void* New(int32_t arg1) override
     {
         return stub<member_func_t<void*, StringType, int32_t>>(0x55DB80, this, arg1);
     }
 
     // 0x55DBC0 | ?Delete@StringType@@UAEXPAXH@Z
-    virtual inline void Delete(void* arg1, int32_t arg2)
+    inline void Delete(void* arg1, int32_t arg2) override
     {
         return stub<member_func_t<void, StringType, void*, int32_t>>(0x55DBC0, this, arg1, arg2);
     }
 };
 
-struct SignedShortType
+struct SignedShortType : MetaType
 {
 public:
     // SignedShortType::`vftable' @ 0x596320
 
     // 0x55D5C0 | ?Save@SignedShortType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Save(class MiniParser* arg1, void* arg2)
+    inline void Save(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, SignedShortType, class MiniParser*, void*>>(0x55D5C0, this, arg1, arg2);
     }
 
     // 0x55D5E0 | ?Load@SignedShortType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Load(class MiniParser* arg1, void* arg2)
+    inline void Load(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, SignedShortType, class MiniParser*, void*>>(0x55D5E0, this, arg1, arg2);
     }
 
     // 0x55D600 | ?SizeOf@SignedShortType@@UAEIXZ
-    virtual inline uint32_t SizeOf()
+    inline uint32_t SizeOf() override
     {
         return stub<member_func_t<uint32_t, SignedShortType>>(0x55D600, this);
     }
 
     // 0x55D610 | ?New@SignedShortType@@UAEPAXH@Z
-    virtual inline void* New(int32_t arg1)
+    inline void* New(int32_t arg1) override
     {
         return stub<member_func_t<void*, SignedShortType, int32_t>>(0x55D610, this, arg1);
     }
 
     // 0x55D640 | ?Delete@SignedShortType@@UAEXPAXH@Z
-    virtual inline void Delete(void* arg1, int32_t arg2)
+    inline void Delete(void* arg1, int32_t arg2) override
     {
         return stub<member_func_t<void, SignedShortType, void*, int32_t>>(0x55D640, this, arg1, arg2);
     }
 };
 
-struct FloatType
+struct FloatType : MetaType
 {
 public:
     // FloatType::`vftable' @ 0x596398
 
     // 0x55D9F0 | ?Save@FloatType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Save(class MiniParser* arg1, void* arg2)
+    inline void Save(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, FloatType, class MiniParser*, void*>>(0x55D9F0, this, arg1, arg2);
     }
 
     // 0x55DA20 | ?Load@FloatType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Load(class MiniParser* arg1, void* arg2)
+    inline void Load(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, FloatType, class MiniParser*, void*>>(0x55DA20, this, arg1, arg2);
     }
 
     // 0x55DA40 | ?SizeOf@FloatType@@UAEIXZ
-    virtual inline uint32_t SizeOf()
+    inline uint32_t SizeOf() override
     {
         return stub<member_func_t<uint32_t, FloatType>>(0x55DA40, this);
     }
 
     // 0x55DA50 | ?New@FloatType@@UAEPAXH@Z
-    virtual inline void* New(int32_t arg1)
+    inline void* New(int32_t arg1) override
     {
         return stub<member_func_t<void*, FloatType, int32_t>>(0x55DA50, this, arg1);
     }
 
     // 0x55DA80 | ?Delete@FloatType@@UAEXPAXH@Z
-    virtual inline void Delete(void* arg1, int32_t arg2)
+    inline void Delete(void* arg1, int32_t arg2) override
     {
         return stub<member_func_t<void, FloatType, void*, int32_t>>(0x55DA80, this, arg1, arg2);
     }
 };
 
-struct SignedIntType
+struct SignedIntType : MetaType
 {
 public:
     // SignedIntType::`vftable' @ 0x596350
 
     // 0x55D770 | ?Save@SignedIntType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Save(class MiniParser* arg1, void* arg2)
+    inline void Save(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, SignedIntType, class MiniParser*, void*>>(0x55D770, this, arg1, arg2);
     }
 
     // 0x55D790 | ?Load@SignedIntType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Load(class MiniParser* arg1, void* arg2)
+    inline void Load(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, SignedIntType, class MiniParser*, void*>>(0x55D790, this, arg1, arg2);
     }
 
     // 0x55D7B0 | ?SizeOf@SignedIntType@@UAEIXZ
-    virtual inline uint32_t SizeOf()
+    inline uint32_t SizeOf() override
     {
         return stub<member_func_t<uint32_t, SignedIntType>>(0x55D7B0, this);
     }
 
     // 0x55D7C0 | ?New@SignedIntType@@UAEPAXH@Z
-    virtual inline void* New(int32_t arg1)
+    inline void* New(int32_t arg1) override
     {
         return stub<member_func_t<void*, SignedIntType, int32_t>>(0x55D7C0, this, arg1);
     }
 
     // 0x55D7F0 | ?Delete@SignedIntType@@UAEXPAXH@Z
-    virtual inline void Delete(void* arg1, int32_t arg2)
+    inline void Delete(void* arg1, int32_t arg2) override
     {
         return stub<member_func_t<void, SignedIntType, void*, int32_t>>(0x55D7F0, this, arg1, arg2);
     }
 };
 
-struct CharType
+struct CharType : MetaType
 {
 public:
     // CharType::`vftable' @ 0x5962D8
 
     // 0x55D350 | ?Save@CharType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Save(class MiniParser* arg1, void* arg2)
+    inline void Save(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, CharType, class MiniParser*, void*>>(0x55D350, this, arg1, arg2);
     }
 
     // 0x55D370 | ?Load@CharType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Load(class MiniParser* arg1, void* arg2)
+    inline void Load(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, CharType, class MiniParser*, void*>>(0x55D370, this, arg1, arg2);
     }
 
     // 0x55D390 | ?SizeOf@CharType@@UAEIXZ
-    virtual inline uint32_t SizeOf()
+    inline uint32_t SizeOf() override
     {
         return stub<member_func_t<uint32_t, CharType>>(0x55D390, this);
     }
 
     // 0x55D3A0 | ?New@CharType@@UAEPAXH@Z
-    virtual inline void* New(int32_t arg1)
+    inline void* New(int32_t arg1) override
     {
         return stub<member_func_t<void*, CharType, int32_t>>(0x55D3A0, this, arg1);
     }
 
     // 0x55D3D0 | ?Delete@CharType@@UAEXPAXH@Z
-    virtual inline void Delete(void* arg1, int32_t arg2)
+    inline void Delete(void* arg1, int32_t arg2) override
     {
         return stub<member_func_t<void, CharType, void*, int32_t>>(0x55D3D0, this, arg1, arg2);
     }
 };
 
-struct UnsignedCharType
+struct UnsignedCharType : MetaType
 {
 public:
     // UnsignedCharType::`vftable' @ 0x596308
 
     // 0x55D4F0 | ?Save@UnsignedCharType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Save(class MiniParser* arg1, void* arg2)
+    inline void Save(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, UnsignedCharType, class MiniParser*, void*>>(0x55D4F0, this, arg1, arg2);
     }
 
     // 0x55D510 | ?Load@UnsignedCharType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Load(class MiniParser* arg1, void* arg2)
+    inline void Load(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, UnsignedCharType, class MiniParser*, void*>>(0x55D510, this, arg1, arg2);
     }
 
     // 0x55D530 | ?SizeOf@UnsignedCharType@@UAEIXZ
-    virtual inline uint32_t SizeOf()
+    inline uint32_t SizeOf() override
     {
         return stub<member_func_t<uint32_t, UnsignedCharType>>(0x55D530, this);
     }
 
     // 0x55D540 | ?New@UnsignedCharType@@UAEPAXH@Z
-    virtual inline void* New(int32_t arg1)
+    inline void* New(int32_t arg1) override
     {
         return stub<member_func_t<void*, UnsignedCharType, int32_t>>(0x55D540, this, arg1);
     }
 
     // 0x55D570 | ?Delete@UnsignedCharType@@UAEXPAXH@Z
-    virtual inline void Delete(void* arg1, int32_t arg2)
+    inline void Delete(void* arg1, int32_t arg2) override
     {
         return stub<member_func_t<void, UnsignedCharType, void*, int32_t>>(0x55D570, this, arg1, arg2);
     }
 };
 
-struct PtrToType
+struct PtrToType : MetaType
 {
 public:
+    MetaType* m_pType {nullptr};
+
     // PtrToType::`vftable' @ 0x5953E0
 
     // 0x55CEF0 | ?Save@PtrToType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Save(class MiniParser* arg1, void* arg2)
+    inline void Save(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, PtrToType, class MiniParser*, void*>>(0x55CEF0, this, arg1, arg2);
     }
 
     // 0x55CF10 | ?Load@PtrToType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Load(class MiniParser* arg1, void* arg2)
+    inline void Load(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, PtrToType, class MiniParser*, void*>>(0x55CF10, this, arg1, arg2);
     }
 
     // 0x55CF50 | ?SizeOf@PtrToType@@UAEIXZ
-    virtual inline uint32_t SizeOf()
+    inline uint32_t SizeOf() override
     {
         return stub<member_func_t<uint32_t, PtrToType>>(0x55CF50, this);
     }
 
     // 0x55CF30 | ?New@PtrToType@@UAEPAXH@Z
-    virtual inline void* New(int32_t arg1)
+    inline void* New(int32_t arg1) override
     {
         return stub<member_func_t<void*, PtrToType, int32_t>>(0x55CF30, this, arg1);
     }
 
     // 0x55CF40 | ?Delete@PtrToType@@UAEXPAXH@Z
-    virtual inline void Delete(void* arg1, int32_t arg2)
+    inline void Delete(void* arg1, int32_t arg2) override
     {
         return stub<member_func_t<void, PtrToType, void*, int32_t>>(0x55CF40, this, arg1, arg2);
     }
 };
 
-struct RefToType
+struct RefToType : MetaType
 {
 public:
+    MetaType* m_pType {nullptr};
+    uint32_t m_RefOffset {0};
+    uint32_t m_RefSize {0};
+
     // RefToType::`vftable' @ 0x5942A8
 
     // 0x55CF60 | ?GetCount@RefToType@@QAEHPAX@Z
@@ -554,104 +574,124 @@ public:
     }
 
     // 0x55CFA0 | ?Save@RefToType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Save(class MiniParser* arg1, void* arg2)
+    inline void Save(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, RefToType, class MiniParser*, void*>>(0x55CFA0, this, arg1, arg2);
     }
 
     // 0x55D050 | ?Load@RefToType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Load(class MiniParser* arg1, void* arg2)
+    inline void Load(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, RefToType, class MiniParser*, void*>>(0x55D050, this, arg1, arg2);
     }
 
     // 0x55D120 | ?SizeOf@RefToType@@UAEIXZ
-    virtual inline uint32_t SizeOf()
+    inline uint32_t SizeOf() override
     {
         return stub<member_func_t<uint32_t, RefToType>>(0x55D120, this);
     }
 
     // 0x55D100 | ?New@RefToType@@UAEPAXH@Z
-    virtual inline void* New(int32_t arg1)
+    inline void* New(int32_t arg1) override
     {
         return stub<member_func_t<void*, RefToType, int32_t>>(0x55D100, this, arg1);
     }
 
     // 0x55D110 | ?Delete@RefToType@@UAEXPAXH@Z
-    virtual inline void Delete(void* arg1, int32_t arg2)
+    inline void Delete(void* arg1, int32_t arg2) override
     {
         return stub<member_func_t<void, RefToType, void*, int32_t>>(0x55D110, this, arg1, arg2);
     }
 };
 
-struct ArrayOfType
+struct ArrayOfType : MetaType
 {
 public:
+    MetaType* m_pType {nullptr};
+    int32_t nCount {0};
+
     // ArrayOfType::`vftable' @ 0x590FB8
 
     // 0x55D130 | ?Save@ArrayOfType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Save(class MiniParser* arg1, void* arg2)
+    inline void Save(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, ArrayOfType, class MiniParser*, void*>>(0x55D130, this, arg1, arg2);
     }
 
     // 0x55D1D0 | ?Load@ArrayOfType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Load(class MiniParser* arg1, void* arg2)
+    inline void Load(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, ArrayOfType, class MiniParser*, void*>>(0x55D1D0, this, arg1, arg2);
     }
 
     // 0x55D260 | ?SizeOf@ArrayOfType@@UAEIXZ
-    virtual inline uint32_t SizeOf()
+    inline uint32_t SizeOf() override
     {
         return stub<member_func_t<uint32_t, ArrayOfType>>(0x55D260, this);
     }
 
     // 0x55D280 | ?New@ArrayOfType@@UAEPAXH@Z
-    virtual inline void* New(int32_t arg1)
+    inline void* New(int32_t arg1) override
     {
         return stub<member_func_t<void*, ArrayOfType, int32_t>>(0x55D280, this, arg1);
     }
 
     // 0x55D2A0 | ?Delete@ArrayOfType@@UAEXPAXH@Z
-    virtual inline void Delete(void* arg1, int32_t arg2)
+    inline void Delete(void* arg1, int32_t arg2) override
     {
         return stub<member_func_t<void, ArrayOfType, void*, int32_t>>(0x55D2A0, this, arg1, arg2);
     }
 };
 
-struct StructType
+struct StructType : MetaType
 {
 public:
+    MetaClass* m_pClass {nullptr};
+
     // StructType::`vftable' @ 0x590F58
 
     // 0x55D2C0 | ?Save@StructType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Save(class MiniParser* arg1, void* arg2)
+    inline void Save(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, StructType, class MiniParser*, void*>>(0x55D2C0, this, arg1, arg2);
     }
 
     // 0x55D2E0 | ?Load@StructType@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Load(class MiniParser* arg1, void* arg2)
+    inline void Load(class MiniParser* arg1, void* arg2) override
     {
         return stub<member_func_t<void, StructType, class MiniParser*, void*>>(0x55D2E0, this, arg1, arg2);
     }
 
     // 0x55D300 | ?SizeOf@StructType@@UAEIXZ
-    virtual inline uint32_t SizeOf()
+    inline uint32_t SizeOf() override
     {
         return stub<member_func_t<uint32_t, StructType>>(0x55D300, this);
     }
 
     // 0x55D310 | ?New@StructType@@UAEPAXH@Z
-    virtual inline void* New(int32_t arg1)
+    inline void* New(int32_t arg1) override
     {
         return stub<member_func_t<void*, StructType, int32_t>>(0x55D310, this, arg1);
     }
 
     // 0x55D330 | ?Delete@StructType@@UAEXPAXH@Z
-    virtual inline void Delete(void* arg1, int32_t arg2)
+    inline void Delete(void* arg1, int32_t arg2) override
     {
         return stub<member_func_t<void, StructType, void*, int32_t>>(0x55D330, this, arg1, arg2);
     }
 };
+
+check_size(SignedInt64Type, 4);
+check_size(UnsignedShortType, 4);
+check_size(UnsignedIntType, 4);
+check_size(SignedCharType, 4);
+check_size(StringType, 4);
+check_size(SignedShortType, 4);
+check_size(FloatType, 4);
+check_size(SignedIntType, 4);
+check_size(CharType, 4);
+check_size(UnsignedCharType, 4);
+check_size(PtrToType, 8);
+check_size(RefToType, 16);
+check_size(ArrayOfType, 12);
+check_size(StructType, 8);

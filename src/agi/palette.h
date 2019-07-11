@@ -32,17 +32,23 @@
 
 #include "hooking.h"
 
+#include "rgba.h"
+
 // 0x70E720 | ?agiPal@@3VagiPalette@@A
 inline extern_var(0x70E720, class agiPalette, agiPal);
 
 class agiPalette
 {
 public:
+    uint32_t m_Colors[256] {};
+    uint32_t dword400 {1};
+    uint32_t dword404 {1};
+    uint32_t m_ColorCount {1};
+    uint32_t m_ChangeCount {1};
+
     // 0x53DFB0 | ??0agiPalette@@QAE@XZ
     inline agiPalette()
-    {
-        stub<member_func_t<void, agiPalette>>(0x53DFB0, this);
-    }
+    {}
 
     // 0x53DFD0 | ?Kill@agiPalette@@QAEXXZ
     inline void Kill()
@@ -74,3 +80,5 @@ public:
         return stub<member_func_t<uint32_t, agiPalette, struct agiRgba>>(0x53E2C0, this, arg1);
     }
 };
+
+check_size(agiPalette, 0x410);

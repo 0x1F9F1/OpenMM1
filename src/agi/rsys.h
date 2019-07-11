@@ -41,6 +41,8 @@
 
 #include "hooking.h"
 
+#include "refresh.h"
+
 // 0x5C3018 | ?ROPTS@@3UagiRenderOpts@@A
 inline extern_var(0x5C3018, struct agiRenderOpts, ROPTS);
 
@@ -53,6 +55,14 @@ inline extern_var(0x706580, class agiRendState, agiCurState);
 // 0x7065C0 | ?RAST@@3PAVagiRasterizer@@A
 inline extern_var(0x7065C0, class agiRasterizer*, RAST);
 
+enum agiVtxType
+{
+    VtxType0,
+    VtxType1,
+    VtxType2,
+    VtxType3,
+};
+
 class agiRasterizer : agiRefreshable
 {
 public:
@@ -60,8 +70,11 @@ public:
 
     // 0x539B20 | ??0agiRasterizer@@QAE@PAVagiPipeline@@@Z
     inline agiRasterizer(class agiPipeline* arg1)
+        : agiRefreshable(arg1)
     {
-        stub<member_func_t<void, agiRasterizer, class agiPipeline*>>(0x539B20, this, arg1);
+        // stub<member_func_t<void, agiRasterizer, class agiPipeline*>>(0x539B20, this, arg1);
+
+        unimplemented;
     }
 
     // 0x539C50 | ??1agiRasterizer@@UAE@XZ
@@ -155,12 +168,18 @@ public:
     }
 };
 
+check_size(agiRasterizer, 0x18);
+
 struct agiRendStateStruct
 {
 public:
+    char m_Data[0x3C];
+
     // 0x539C20 | ?Reset@agiRendStateStruct@@QAEXXZ
     inline void Reset()
     {
         return stub<member_func_t<void, agiRendStateStruct>>(0x539C20, this);
     }
 };
+
+check_size(agiRendStateStruct, 0x3C);

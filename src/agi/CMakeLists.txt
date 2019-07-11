@@ -1,20 +1,20 @@
 add_library(agi OBJECT
-    # bitmap.cpp
-    # bitmap.h
-    # cmodel.cpp
-    # cmodel.h
-    # cmodel8.cpp
-    # cmodel8.h
-    # cmodelx.cpp
-    # cmodelx.h
+    bitmap.cpp
+    bitmap.h
+    cmodel.cpp
+    cmodel.h
+    cmodel8.cpp
+    cmodel8.h
+    cmodelx.cpp
+    cmodelx.h
     # dlp.cpp
     # dlp.h
     # dlptmpl.cpp
     # dlptmpl.h
-    # error.cpp
-    # error.h
-    # getdlp.cpp
-    # getdlp.h
+    error.cpp
+    error.h
+    getdlp.cpp
+    getdlp.h
     # light.cpp
     # light.h
     # lmodel.cpp
@@ -23,20 +23,20 @@ add_library(agi OBJECT
     # mtldef.h
     # mtllib.cpp
     # mtllib.h
-    # palette.cpp
-    # palette.h
+    palette.cpp
+    palette.h
     # physdef.cpp
     # physdef.h
     # physlib.cpp
     # physlib.h
     # pipeline.cpp
     # pipeline.h
-    # print.cpp
-    # print.h
-    # refresh.cpp
-    # refresh.h
-    # rsys.cpp
-    # rsys.h
+    print.cpp
+    print.h
+    refresh.cpp
+    refresh.h
+    rsys.cpp
+    rsys.h
     # surface.cpp
     # surface.h
     # texdef.cpp
@@ -45,6 +45,8 @@ add_library(agi OBJECT
     # texlib.h
     # viewport.cpp
     # viewport.h
+
+    rgba.h
 )
 
 target_link_libraries(agi hooking)

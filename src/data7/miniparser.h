@@ -48,6 +48,14 @@
 class MiniParser
 {
 public:
+    char m_TokenBuffer[256] {};
+    uint32_t m_LastError {0};
+    const char* m_Name {nullptr};
+    uint32_t m_CurrentToken = ' ';
+    uint32_t m_Identation {0};
+    uint32_t m_CurrentLine {1};
+    uint32_t m_PutBack {0};
+
     // MiniParser::`vftable' @ 0x5963E0
 
     // 0x55DE60 | ??0MiniParser@@QAE@PAD@Z
@@ -167,3 +175,5 @@ public:
         return stub<member_func_t<void, MiniParser, int32_t>>(0x567350, this, arg1);
     }
 };
+
+check_size(MiniParser, 0x11C);

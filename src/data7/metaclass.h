@@ -51,9 +51,30 @@ inline void __BadSafeCall(char* arg1, class Base* arg2)
 // 0x5CE3B0 | ?NoDefault@@3HA
 inline extern_var(0x5CE3B0, int32_t, NoDefault);
 
+struct MetaType;
+
+struct MetaField
+{
+    MetaField* m_NextField;
+    const char* m_Name;
+    uint32_t m_Offset;
+    MetaType* m_pType;
+};
+
 class MetaClass
 {
 public:
+    const char* m_Name;
+    uint32_t m_Size;
+    void* (*m_Allocator)(int32_t);
+    void (*m_Deallocator)(void*, int32_t);
+    void (*m_DeclareFields)();
+    MetaClass* m_Parent;
+    MetaClass* m_Child;
+    MetaClass* m_Next;
+    MetaField* m_pFields;
+    uint32_t m_Index;
+
     // 0x559400 | ??0MetaClass@@QAE@PADIP6APAXH@ZP6AXPAXH@ZP6AXXZPAV0@@Z
     inline MetaClass(char* arg1, uint32_t arg2, void*(__cdecl* arg3)(int32_t), void(__cdecl* arg4)(void*, int32_t),
         void(__cdecl* arg5)(void), class MetaClass* arg6)
@@ -131,3 +152,5 @@ public:
     // 0x711F48 | ?RootMetaClass@MetaClass@@2V1@A
     static inline extern_var(0x711F48, class MetaClass, RootMetaClass);
 };
+
+check_size(MetaClass, 0x28);

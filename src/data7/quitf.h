@@ -24,7 +24,7 @@
     0x5588F0 | void __cdecl Quitf(char const *,...) | ?Quitf@@YAXPBDZZ
 */
 
-#include "hooking.h"
-
 // 0x5588F0 | ?Quitf@@YAXPBDZZ
-// Skipped (Variable Arguments)
+[[noreturn]] void Quitf(char const* arg1, ...);
+
+#define unimplemented Quitf("Error calling unimplemented function %s in %s (%i)", __FUNCTION__, __FILE__, __LINE__)
