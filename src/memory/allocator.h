@@ -64,34 +64,7 @@ inline int32_t HeapAssert(void* arg1, int32_t arg2, char* arg3, int32_t arg4)
 class asMemoryAllocator
 {
 public:
-    struct node
-    {
-        // 0:1 - Allocated
-        // 0x2 - Unk
-        // 0x4 - Sanity Checked Pending
-        // 0xFFFFFFF8 - Next
-        uint32_t m_Context {0};
-        uint32_t m_Size {0};
-
-        /*
-            if (Allocated)
-                if (m_Debug)
-                    uint32_t = 0x55555555; // Lower Guard Word
-                    uint32_t = GetSecondReturnAddress(); // Caller address
-
-                uint8_t Data[m_Size];
-
-                if (m_Debug)
-                    uint32_t = 0xAAAAAAAA; // Upper Guard Word
-            else
-                node *m_PrevFree;
-                node *m_NextFree;
-        */
-    };
-
-    // #define GetNode(ptr) (asMemoryAllocator::node*)((char*)(ptr) - 8)
-
-    check_size(node, 8);
+    struct node;
 
     uint32_t m_Initialized {0};
     uint32_t m_Debug {0};
@@ -99,9 +72,9 @@ public:
     uint32_t m_HeapSize {0};
     uint32_t m_HeapOffset {0};
     uint32_t m_Locked {0};
-    uint32_t m_UsedNodes {0};
-    asMemoryAllocator::node* m_NodeBuckets[32] {};
-    asMemoryAllocator::node* m_Nodes {nullptr};
+    uint32_t m_UseNodes {0};
+    node* m_Buckets[32] {};
+    node* m_Nodes {nullptr};
 
     // 0x50E970 | ??0asMemoryAllocator@@QAE@XZ
     inline asMemoryAllocator()
