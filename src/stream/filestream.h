@@ -45,6 +45,8 @@
 
 #include "hooking.h"
 
+#include "stream.h"
+
 // 0x710020 | ?__stdout@@3VFileStream@@A
 inline extern_var(0x710020, class FileStream, __stdout);
 
@@ -54,13 +56,15 @@ inline extern_var(0x710048, class FileStream, __stdin);
 class FileStream : Stream
 {
 public:
+    int32_t m_FileHandle {-1};
+    void* m_PagerHandler {nullptr};
+
     // FileStream::`vftable' @ 0x595F28
 
     // 0x543370 | ??0FileStream@@QAE@PAXHPAVFileSystem@@@Z
     inline FileStream(void* arg1, int32_t arg2, class FileSystem* arg3)
-    {
-        stub<member_func_t<void, FileStream, void*, int32_t, class FileSystem*>>(0x543370, this, arg1, arg2, arg3);
-    }
+        : Stream(arg1, arg2, arg3)
+    {}
 
     // 0x5433C0 | ?Create@FileStream@@QAEHPAD@Z
     inline int32_t Create(char* arg1)
@@ -76,9 +80,9 @@ public:
 
     // 0x543460 | ??0FileStream@@QAE@H@Z
     inline FileStream(int32_t arg1)
-    {
-        stub<member_func_t<void, FileStream, int32_t>>(0x543460, this, arg1);
-    }
+        : Stream(nullptr, 0, nullptr)
+        , m_FileHandle(arg1)
+    {}
 
     // 0x543490 | ?Stdin@FileStream@@QAEHXZ
     inline int32_t Stdin()
@@ -146,3 +150,5 @@ public:
         return stub<member_func_t<int32_t, FileStream>>(0x543570, this);
     }
 };
+
+check_size(FileStream, 0x28);

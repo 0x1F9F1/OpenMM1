@@ -45,6 +45,8 @@
 
 #include "hooking.h"
 
+#include "data7/base.h"
+
 // 0x5418B0 | ?FindFile@@YAPAVFileSystem@@PAD00H0@Z
 inline class FileSystem* FindFile(char* arg1, char* arg2, char* arg3, int32_t arg4, char* arg5)
 {
@@ -89,6 +91,8 @@ inline void ExpandEnvs(char* arg1)
 class FileSystem : Base
 {
 public:
+    int32_t m_Index {-1};
+
     // FileSystem::`vftable' @ 0x595E58
 
     // 0x5410B0 | ??0FileSystem@@QAE@XZ
@@ -196,3 +200,5 @@ public:
         return stub<member_func_t<void, FileSystem>>(0x541190, this);
     }
 };
+
+check_size(FileSystem, 8);

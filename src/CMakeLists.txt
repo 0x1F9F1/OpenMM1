@@ -6,7 +6,7 @@ add_subdirectory(agi)
 # add_subdirectory(agiworld)
 add_subdirectory(arts7)
 add_subdirectory(data7)
-# add_subdirectory(dyna7)
+add_subdirectory(dyna7)
 # add_subdirectory(eventq7)
 # add_subdirectory(localize)
 # add_subdirectory(memory)
@@ -27,8 +27,8 @@ add_subdirectory(mmeffects)
 # add_subdirectory(mmphysics)
 # add_subdirectory(mmui)
 # add_subdirectory(mmwidget)
-# add_subdirectory(pcwindis)
-# add_subdirectory(stream)
+add_subdirectory(pcwindis)
+add_subdirectory(stream)
 add_subdirectory(vector7)
 
 add_library(hooking STATIC
@@ -48,7 +48,7 @@ add_library(midtown STATIC
     # $<TARGET_OBJECTS:agiworld>
     $<TARGET_OBJECTS:arts7>
     $<TARGET_OBJECTS:data7>
-    # $<TARGET_OBJECTS:dyna7>
+    $<TARGET_OBJECTS:dyna7>
     # $<TARGET_OBJECTS:eventq7>
     # $<TARGET_OBJECTS:localize>
     # $<TARGET_OBJECTS:memory>
@@ -69,8 +69,8 @@ add_library(midtown STATIC
     # $<TARGET_OBJECTS:mmphysics>
     # $<TARGET_OBJECTS:mmui>
     # $<TARGET_OBJECTS:mmwidget>
-    # $<TARGET_OBJECTS:pcwindis>
-    # $<TARGET_OBJECTS:stream>
+    $<TARGET_OBJECTS:pcwindis>
+    $<TARGET_OBJECTS:stream>
     $<TARGET_OBJECTS:vector7>
 )
 

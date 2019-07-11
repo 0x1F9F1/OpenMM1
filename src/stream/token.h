@@ -31,9 +31,16 @@
 
 #include "hooking.h"
 
+class Stream;
+
 class Tokenizer
 {
 public:
+    const char* m_Name {nullptr};
+    uint32_t m_CurrentLine {0};
+    Stream* m_pStream {nullptr};
+    uint32_t m_CurrentChar {0};
+
     // 0x543150 | ??0Tokenizer@@QAE@PBDPAVStream@@@Z
     inline Tokenizer(char const* arg1, class Stream* arg2)
     {
@@ -70,3 +77,5 @@ public:
         return stub<member_func_t<void, Tokenizer>>(0x543350, this);
     }
 };
+
+check_size(Tokenizer, 0x10);

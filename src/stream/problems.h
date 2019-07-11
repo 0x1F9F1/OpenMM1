@@ -57,9 +57,16 @@ inline int32_t cmpProblem(void const* arg1, void const* arg2)
 struct problem_t
 {
 public:
+    const char* m_Message;
+    const char* m_Problem;
+    const char* m_Additional;
+    uint32_t m_Count;
+
     // 0x542EC0 | ??1problem_t@@QAE@XZ
     inline ~problem_t()
     {
         stub<member_func_t<void, problem_t>>(0x542EC0, this);
     }
 };
+
+check_size(problem_t, 0x10);

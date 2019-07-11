@@ -72,9 +72,24 @@
 
 #include "hooking.h"
 
+#include "data7/base.h"
+
+class FileSystem;
+
 class Stream : Base
 {
 public:
+    uint8_t* m_pBuffer {nullptr};
+    uint32_t m_Offset {0};
+    uint32_t m_BufferIndex {0};
+    uint32_t m_BufferSize {0};
+    uint32_t m_MaxBufferSize {0};
+    FileSystem* m_pFileSystem {nullptr};
+    uint8_t m_Flags {0};
+    uint8_t m_SwapEndian {0};
+    uint8_t m_IsLittleEndian {0};
+    uint8_t m_byte1F {0};
+
     // Stream::`vftable' @ 0x595E18
 
     // 0x540430 | ??0Stream@@QAE@PAXHPAVFileSystem@@@Z
@@ -351,3 +366,5 @@ inline int32_t fgets(char* arg1, int32_t arg2, class Stream* arg3)
 
 // 0x70EDA0 | ?EnableBinaryFileMapping@@3HA
 inline extern_var(0x70EDA0, int32_t, EnableBinaryFileMapping);
+
+check_size(Stream, 0x20);
