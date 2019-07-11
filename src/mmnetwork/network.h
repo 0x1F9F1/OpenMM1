@@ -23,14 +23,15 @@
 #include "hooking.h"
 
 // 0x482060 | ?EnumSessionCallback@@YGHPBUDPSESSIONDESC2@@PAKKPAX@Z
-inline int32_t EnumSessionCallback(struct DPSESSIONDESC2 const* arg1, uint32_t* arg2, uint32_t arg3, void* arg4)
+inline int32_t __stdcall EnumSessionCallback(
+    struct DPSESSIONDESC2 const* arg1, uint32_t* arg2, uint32_t arg3, void* arg4)
 {
     return stub<stdcall_t<int32_t, struct DPSESSIONDESC2 const*, uint32_t*, uint32_t, void*>>(
         0x482060, arg1, arg2, arg3, arg4);
 }
 
 // 0x482120 | ?EnumConnectionsCallback@@YGHPBU_GUID@@PAXKPBUDPNAME@@K1@Z
-inline int32_t EnumConnectionsCallback(
+inline int32_t __stdcall EnumConnectionsCallback(
     struct _GUID const* arg1, void* arg2, uint32_t arg3, struct DPNAME const* arg4, uint32_t arg5, void* arg6)
 {
     return stub<stdcall_t<int32_t, struct _GUID const*, void*, uint32_t, struct DPNAME const*, uint32_t, void*>>(
@@ -38,14 +39,15 @@ inline int32_t EnumConnectionsCallback(
 }
 
 // 0x482190 | ?EnumPlayersCallback@@YGHKKPBUDPNAME@@KPAX@Z
-inline int32_t EnumPlayersCallback(uint32_t arg1, uint32_t arg2, struct DPNAME const* arg3, uint32_t arg4, void* arg5)
+inline int32_t __stdcall EnumPlayersCallback(
+    uint32_t arg1, uint32_t arg2, struct DPNAME const* arg3, uint32_t arg4, void* arg5)
 {
     return stub<stdcall_t<int32_t, uint32_t, uint32_t, struct DPNAME const*, uint32_t, void*>>(
         0x482190, arg1, arg2, arg3, arg4, arg5);
 }
 
 // 0x4823E0 | ?EnumModemAddress@@YGHABU_GUID@@KPBXPAX@Z
-inline int32_t EnumModemAddress(struct _GUID const& arg1, uint32_t arg2, void const* arg3, void* arg4)
+inline int32_t __stdcall EnumModemAddress(struct _GUID const& arg1, uint32_t arg2, void const* arg3, void* arg4)
 {
     return stub<stdcall_t<int32_t, struct _GUID const&, uint32_t, void const*, void*>>(
         0x4823E0, arg1, arg2, arg3, arg4);

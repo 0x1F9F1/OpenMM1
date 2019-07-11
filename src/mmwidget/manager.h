@@ -26,7 +26,7 @@
 inline extern_var(0x5AFE34, float, DELAYTTIME);
 
 // 0x4A6560 | ?HelpWatcher@@YGKPAX@Z
-inline uint32_t HelpWatcher(void* arg1)
+inline uint32_t __stdcall HelpWatcher(void* arg1)
 {
     return stub<stdcall_t<uint32_t, void*>>(0x4A6560, arg1);
 }

@@ -26,7 +26,7 @@ class ipcMessageQueue
 {
 public:
     // 0x55A0E0 | ?Proc@ipcMessageQueue@@CGKPAX@Z
-    static inline uint32_t Proc(void* arg1)
+    static inline uint32_t __stdcall Proc(void* arg1)
     {
         return stub<stdcall_t<uint32_t, void*>>(0x55A0E0, arg1);
     }

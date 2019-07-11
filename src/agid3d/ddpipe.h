@@ -23,19 +23,19 @@
 #include "hooking.h"
 
 // 0x518690 | ?DDCallback@@YGHPAU_GUID@@PAD1PAX@Z
-inline int32_t DDCallback(struct _GUID* arg1, char* arg2, char* arg3, void* arg4)
+inline int32_t __stdcall DDCallback(struct _GUID* arg1, char* arg2, char* arg3, void* arg4)
 {
     return stub<stdcall_t<int32_t, struct _GUID*, char*, char*, void*>>(0x518690, arg1, arg2, arg3, arg4);
 }
 
 // 0x518710 | ?EnumModesCallback@@YGJPAU_DDSURFACEDESC2@@PAX@Z
-inline int32_t EnumModesCallback(struct _DDSURFACEDESC2* arg1, void* arg2)
+inline int32_t __stdcall EnumModesCallback(struct _DDSURFACEDESC2* arg1, void* arg2)
 {
     return stub<stdcall_t<int32_t, struct _DDSURFACEDESC2*, void*>>(0x518710, arg1, arg2);
 }
 
 // 0x5187C0 | ?EnumSurfsCallback@@YGJPAUIDirectDrawSurface@@PAU_DDSURFACEDESC@@PAX@Z
-inline int32_t EnumSurfsCallback(struct IDirectDrawSurface* arg1, struct _DDSURFACEDESC* arg2, void* arg3)
+inline int32_t __stdcall EnumSurfsCallback(struct IDirectDrawSurface* arg1, struct _DDSURFACEDESC* arg2, void* arg3)
 {
     return stub<stdcall_t<int32_t, struct IDirectDrawSurface*, struct _DDSURFACEDESC*, void*>>(
         0x5187C0, arg1, arg2, arg3);

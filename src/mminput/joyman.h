@@ -23,7 +23,7 @@
 #include "hooking.h"
 
 // 0x4D87C0 | ?inputEnumDeviceProc@@YGHPAUDIDEVICEINSTANCEA@@PAX@Z
-inline int32_t inputEnumDeviceProc(struct DIDEVICEINSTANCEA* arg1, void* arg2)
+inline int32_t __stdcall inputEnumDeviceProc(struct DIDEVICEINSTANCEA* arg1, void* arg2)
 {
     return stub<stdcall_t<int32_t, struct DIDEVICEINSTANCEA*, void*>>(0x4D87C0, arg1, arg2);
 }

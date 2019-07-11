@@ -23,7 +23,7 @@
 #include "hooking.h"
 
 // 0x4DA0B0 | ?inputEnumEffectTypeProc@@YGHPBUDIEFFECTINFOA@@PAX@Z
-inline int32_t inputEnumEffectTypeProc(struct DIEFFECTINFOA const* arg1, void* arg2)
+inline int32_t __stdcall inputEnumEffectTypeProc(struct DIEFFECTINFOA const* arg1, void* arg2)
 {
     return stub<stdcall_t<int32_t, struct DIEFFECTINFOA const*, void*>>(0x4DA0B0, arg1, arg2);
 }

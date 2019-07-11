@@ -35,7 +35,7 @@ inline int32_t IsDSDeviceInList(struct _GUID* arg1)
 }
 
 // 0x4E24B0 | ?DSEnumProc@@YGHPAU_GUID@@PAD1PAX@Z
-inline int32_t DSEnumProc(struct _GUID* arg1, char* arg2, char* arg3, void* arg4)
+inline int32_t __stdcall DSEnumProc(struct _GUID* arg1, char* arg2, char* arg3, void* arg4)
 {
     return stub<stdcall_t<int32_t, struct _GUID*, char*, char*, void*>>(0x4E24B0, arg1, arg2, arg3, arg4);
 }

@@ -23,7 +23,7 @@
 #include "hooking.h"
 
 // 0x556DB0 | ?MultiMonCallback@@YGHPAU_GUID@@PAD1PAX2@Z
-inline int32_t MultiMonCallback(struct _GUID* arg1, char* arg2, char* arg3, void* arg4, void* arg5)
+inline int32_t __stdcall MultiMonCallback(struct _GUID* arg1, char* arg2, char* arg3, void* arg4, void* arg5)
 {
     return stub<stdcall_t<int32_t, struct _GUID*, char*, char*, void*, void*>>(0x556DB0, arg1, arg2, arg3, arg4, arg5);
 }
@@ -44,7 +44,7 @@ inline void NeedDX6()
 }
 
 // 0x5570F0 | ?EnumCounter@@YGHPAU_GUID@@PAD1PAX@Z
-inline int32_t EnumCounter(struct _GUID* arg1, char* arg2, char* arg3, void* arg4)
+inline int32_t __stdcall EnumCounter(struct _GUID* arg1, char* arg2, char* arg3, void* arg4)
 {
     return stub<stdcall_t<int32_t, struct _GUID*, char*, char*, void*>>(0x5570F0, arg1, arg2, arg3, arg4);
 }
@@ -86,13 +86,13 @@ inline int32_t TestResolution(struct IDirectDraw4* arg1, struct dxiRendererInfo_
 }
 
 // 0x5578F0 | ?ModeCallback@@YGJPAU_DDSURFACEDESC2@@PAX@Z
-inline int32_t ModeCallback(struct _DDSURFACEDESC2* arg1, void* arg2)
+inline int32_t __stdcall ModeCallback(struct _DDSURFACEDESC2* arg1, void* arg2)
 {
     return stub<stdcall_t<int32_t, struct _DDSURFACEDESC2*, void*>>(0x5578F0, arg1, arg2);
 }
 
 // 0x557980 | ?EnumZ@@YGJPAU_DDPIXELFORMAT@@PAX@Z
-inline int32_t EnumZ(struct _DDPIXELFORMAT* arg1, void* arg2)
+inline int32_t __stdcall EnumZ(struct _DDPIXELFORMAT* arg1, void* arg2)
 {
     return stub<stdcall_t<int32_t, struct _DDPIXELFORMAT*, void*>>(0x557980, arg1, arg2);
 }
@@ -104,7 +104,7 @@ inline void AddRenderer(struct IDirectDraw4* arg1, struct _GUID* arg2, char* arg
 }
 
 // 0x557E00 | ?EnumTextures@@YGJPAU_DDPIXELFORMAT@@PAX@Z
-inline int32_t EnumTextures(struct _DDPIXELFORMAT* arg1, void* arg2)
+inline int32_t __stdcall EnumTextures(struct _DDPIXELFORMAT* arg1, void* arg2)
 {
     return stub<stdcall_t<int32_t, struct _DDPIXELFORMAT*, void*>>(0x557E00, arg1, arg2);
 }
@@ -122,7 +122,7 @@ inline uint32_t GetSpecialFlags(uint32_t arg1, uint32_t arg2)
 }
 
 // 0x557F20 | ?Enumerator@@YGHPAU_GUID@@PAD1PAX@Z
-inline int32_t Enumerator(struct _GUID* arg1, char* arg2, char* arg3, void* arg4)
+inline int32_t __stdcall Enumerator(struct _GUID* arg1, char* arg2, char* arg3, void* arg4)
 {
     return stub<stdcall_t<int32_t, struct _GUID*, char*, char*, void*>>(0x557F20, arg1, arg2, arg3, arg4);
 }

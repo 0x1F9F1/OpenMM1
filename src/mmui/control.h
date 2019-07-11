@@ -23,7 +23,7 @@
 #include "hooking.h"
 
 // 0x498710 | ?CalibrateWatcher@@YGKPAX@Z
-inline uint32_t CalibrateWatcher(void* arg1)
+inline uint32_t __stdcall CalibrateWatcher(void* arg1)
 {
     return stub<stdcall_t<uint32_t, void*>>(0x498710, arg1);
 }

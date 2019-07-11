@@ -23,7 +23,7 @@
 #include "hooking.h"
 
 // 0x557F90 | ?MasterWindowProc@@YGJPAUHWND__@@IIJ@Z
-inline int32_t MasterWindowProc(struct HWND__* arg1, uint32_t arg2, uint32_t arg3, int32_t arg4)
+inline int32_t __stdcall MasterWindowProc(struct HWND__* arg1, uint32_t arg2, uint32_t arg3, int32_t arg4)
 {
     return stub<stdcall_t<int32_t, struct HWND__*, uint32_t, uint32_t, int32_t>>(0x557F90, arg1, arg2, arg3, arg4);
 }

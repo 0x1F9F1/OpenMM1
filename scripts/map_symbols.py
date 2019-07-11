@@ -495,7 +495,14 @@ def sym_to_str(symbol):
     elif 'dtor' in symbol.attribs:
         type_string = '~{}()'.format(symbol.parts[-2])
     elif symbol.type.type_class == TypeClass.FunctionTypeClass:
-        type_string = '{} {}({})'.format(symbol.type.return_value, symbol.name, params_to_str(symbol.type.parameters))
+        cc_name = symbol.type.calling_convention.name
+
+        if cc_name in ['thiscall', 'cdecl']:
+            cc_name = ''
+        else:
+            cc_name = '__' + cc_name + ' '
+
+        type_string = '{} {}{}({})'.format(symbol.type.return_value, cc_name, symbol.name, params_to_str(symbol.type.parameters))
     else:
         type_string = '{} {}'.format(symbol.type, symbol.name)
 

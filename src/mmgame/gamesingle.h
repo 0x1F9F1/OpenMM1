@@ -23,7 +23,7 @@
 #include "hooking.h"
 
 // 0x412D00 | ?ThreadFunc@@YGKPAX@Z
-inline uint32_t ThreadFunc(void* arg1)
+inline uint32_t __stdcall ThreadFunc(void* arg1)
 {
     return stub<stdcall_t<uint32_t, void*>>(0x412D00, arg1);
 }

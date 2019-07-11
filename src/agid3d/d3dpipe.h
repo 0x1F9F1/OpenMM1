@@ -23,14 +23,14 @@
 #include "hooking.h"
 
 // 0x517B40 | ?RestoreCallback@@YGJPAUIDirectDrawSurface4@@PAU_DDSURFACEDESC2@@PAX@Z
-inline int32_t RestoreCallback(struct IDirectDrawSurface4* arg1, struct _DDSURFACEDESC2* arg2, void* arg3)
+inline int32_t __stdcall RestoreCallback(struct IDirectDrawSurface4* arg1, struct _DDSURFACEDESC2* arg2, void* arg3)
 {
     return stub<stdcall_t<int32_t, struct IDirectDrawSurface4*, struct _DDSURFACEDESC2*, void*>>(
         0x517B40, arg1, arg2, arg3);
 }
 
 // 0x517DD0 | ?callb@@YGJPAUIDirectDrawSurface4@@PAU_DDSURFACEDESC2@@PAX@Z
-inline int32_t callb(struct IDirectDrawSurface4* arg1, struct _DDSURFACEDESC2* arg2, void* arg3)
+inline int32_t __stdcall callb(struct IDirectDrawSurface4* arg1, struct _DDSURFACEDESC2* arg2, void* arg3)
 {
     return stub<stdcall_t<int32_t, struct IDirectDrawSurface4*, struct _DDSURFACEDESC2*, void*>>(
         0x517DD0, arg1, arg2, arg3);
@@ -55,7 +55,7 @@ inline extern_var(0x6F3368, int32_t, AlphaPalette);
 inline extern_var(0x6F3370, int32_t, NotIndependentUV);
 
 // 0x5178D0 | ?EnumCallback@@YGJPAU_GUID@@PAD1PAU_D3DDeviceDesc@@2PAX@Z
-inline int32_t EnumCallback(
+inline int32_t __stdcall EnumCallback(
     struct _GUID* arg1, char* arg2, char* arg3, struct _D3DDeviceDesc* arg4, struct _D3DDeviceDesc* arg5, void* arg6)
 {
     return stub<stdcall_t<int32_t, struct _GUID*, char*, char*, struct _D3DDeviceDesc*, struct _D3DDeviceDesc*, void*>>(
@@ -63,13 +63,13 @@ inline int32_t EnumCallback(
 }
 
 // 0x5179D0 | ?EnumTextureCallback@@YGJPAU_DDPIXELFORMAT@@PAX@Z
-inline int32_t EnumTextureCallback(struct _DDPIXELFORMAT* arg1, void* arg2)
+inline int32_t __stdcall EnumTextureCallback(struct _DDPIXELFORMAT* arg1, void* arg2)
 {
     return stub<stdcall_t<int32_t, struct _DDPIXELFORMAT*, void*>>(0x5179D0, arg1, arg2);
 }
 
 // 0x517AA0 | ?EnumZ@@YGJPAU_DDPIXELFORMAT@@PAX@Z
-inline int32_t EnumZ(struct _DDPIXELFORMAT* arg1, void* arg2)
+inline int32_t __stdcall EnumZ(struct _DDPIXELFORMAT* arg1, void* arg2)
 {
     return stub<stdcall_t<int32_t, struct _DDPIXELFORMAT*, void*>>(0x517AA0, arg1, arg2);
 }

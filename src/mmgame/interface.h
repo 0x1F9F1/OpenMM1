@@ -47,7 +47,7 @@ inline bool IsModemDialin()
 }
 
 // 0x406BE0 | ?ZoneWatcher@@YGKPAX@Z
-inline uint32_t ZoneWatcher(void* arg1)
+inline uint32_t __stdcall ZoneWatcher(void* arg1)
 {
     return stub<stdcall_t<uint32_t, void*>>(0x406BE0, arg1);
 }
