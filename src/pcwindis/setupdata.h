@@ -1,0 +1,68 @@
+/*
+    OpenMM1 - An Open Source Re-Implementation of Midtown Madness 1
+    Copyright (C) 2019 Brick
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+#pragma once
+
+// pcwindis:setupdata
+
+#include "hooking.h"
+
+// 0x556460 | ?dxiResClosestMatch@@YAHHHH@Z
+inline int32_t dxiResClosestMatch(int32_t arg1, int32_t arg2, int32_t arg3)
+{
+    return stub<cdecl_t<int32_t, int32_t, int32_t, int32_t>>(0x556460, arg1, arg2, arg3);
+}
+
+// 0x556510 | ?dxiResGetRecommended@@YAHHH@Z
+inline int32_t dxiResGetRecommended(int32_t arg1, int32_t arg2)
+{
+    return stub<cdecl_t<int32_t, int32_t, int32_t>>(0x556510, arg1, arg2);
+}
+
+// 0x5565B0 | ?dxiReadConfigFile@@YAHXZ
+inline int32_t dxiReadConfigFile()
+{
+    return stub<cdecl_t<int32_t>>(0x5565B0);
+}
+
+// 0x556920 | ?dxiWriteConfigFile@@YAXXZ
+inline void dxiWriteConfigFile()
+{
+    return stub<cdecl_t<void>>(0x556920);
+}
+
+// 0x5CD880 | ?dxiRendererChoice@@3HA
+inline extern_var(0x5CD880, int32_t, dxiRendererChoice);
+
+// 0x710AC0 | ?dxiInfo@@3PAUdxiRendererInfo_t@@A
+inline extern_var(0x710AC0, struct dxiRendererInfo_t*, dxiInfo);
+
+// 0x711790 | ?dxiRendererCount@@3HA
+inline extern_var(0x711790, int32_t, dxiRendererCount);
+
+// 0x556880 | ?strtoguid@@YAXPAU_GUID@@PAD@Z
+inline void strtoguid(struct _GUID* arg1, char* arg2)
+{
+    return stub<cdecl_t<void, struct _GUID*, char*>>(0x556880, arg1, arg2);
+}
+
+// 0x556B20 | ?guidtostr@@YAXPADPAU_GUID@@@Z
+inline void guidtostr(char* arg1, struct _GUID* arg2)
+{
+    return stub<cdecl_t<void, char*, struct _GUID*>>(0x556B20, arg1, arg2);
+}

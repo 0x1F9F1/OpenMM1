@@ -1,0 +1,3 @@
+[submodule "vendor/mem"]
+	path = vendor/mem
+	url = https://github.com/0x1F9F1/mem.git

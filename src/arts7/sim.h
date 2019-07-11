@@ -1,0 +1,288 @@
+/*
+    OpenMM1 - An Open Source Re-Implementation of Midtown Madness 1
+    Copyright (C) 2019 Brick
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+#pragma once
+
+// arts7:sim
+
+#include "hooking.h"
+
+// 0x510600 | ?InitPipeline@@YAHPADHPAPAD@Z
+inline int32_t InitPipeline(char* arg1, int32_t arg2, char** arg3)
+{
+    return stub<cdecl_t<int32_t, char*, int32_t, char**>>(0x510600, arg1, arg2, arg3);
+}
+
+// 0x5106C0 | ?ShutdownPipeline@@YAXXZ
+inline void ShutdownPipeline()
+{
+    return stub<cdecl_t<void>>(0x5106C0);
+}
+
+// 0x510730 | ?RestartPipeline@@YAHHHHHH@Z
+inline int32_t RestartPipeline(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5)
+{
+    return stub<cdecl_t<int32_t, int32_t, int32_t, int32_t, int32_t, int32_t>>(0x510730, arg1, arg2, arg3, arg4, arg5);
+}
+
+// 0x6F2A10 | ?asSimulationMetaClass@@3VMetaClass@@A
+inline extern_var(0x6F2A10, class MetaClass, asSimulationMetaClass);
+
+// 0x6F2A3C | ?ARTSPTR@@3PAVasSimulation@@A
+inline extern_var(0x6F2A3C, class asSimulation*, ARTSPTR);
+
+// 0x6F2AC0 | ?Argc@@3HA
+inline extern_var(0x6F2AC0, int32_t, Argc);
+
+// 0x6F2AC4 | ?Argv@@3PAPADA
+inline extern_var(0x6F2AC4, char**, Argv);
+
+// 0x6F2AC8 | ?VFS@@3PAVVirtualFileSystem@@A
+inline extern_var(0x6F2AC8, class VirtualFileSystem*, VFS);
+
+// 0x6F2AE0 | ?StereoBuffer@@3HA
+inline extern_var(0x6F2AE0, int32_t, StereoBuffer);
+
+// 0x50FAE0 | ?QuietPrinter@@YAXHPBDPAD@Z
+inline void QuietPrinter(int32_t arg1, char const* arg2, char* arg3)
+{
+    return stub<cdecl_t<void, int32_t, char const*, char*>>(0x50FAE0, arg1, arg2, arg3);
+}
+
+// 0x510900 | ?IsValidPointer@@YAHPAXIH@Z
+inline int32_t IsValidPointer(void* arg1, uint32_t arg2, int32_t arg3)
+{
+    return stub<cdecl_t<int32_t, void*, uint32_t, int32_t>>(0x510900, arg1, arg2, arg3);
+}
+
+// 0x510970 | ?new_asSimulation@@YAPAXH@Z
+inline void* new_asSimulation(int32_t arg1)
+{
+    return stub<cdecl_t<void*, int32_t>>(0x510970, arg1);
+}
+
+// 0x510A40 | ?delete_asSimulation@@YAXPAXH@Z
+inline void delete_asSimulation(void* arg1, int32_t arg2)
+{
+    return stub<cdecl_t<void, void*, int32_t>>(0x510A40, arg1, arg2);
+}
+
+class agiLib<class agiPhysParameters, class agiPhysDef>
+{
+public:
+    // 0x510BA0 | ?Kill@?$agiLib@VagiPhysParameters@@VagiPhysDef@@@@QAEXXZ
+    inline void Kill()
+    {
+        return stub<member_func_t<void, agiLib<class agiPhysParameters, class agiPhysDef>>>(0x510BA0, this);
+    }
+
+    // 0x510BE0 | ?Init@?$agiLib@VagiPhysParameters@@VagiPhysDef@@@@QAEXH@Z
+    inline void Init(int32_t arg1)
+    {
+        return stub<member_func_t<void, agiLib<class agiPhysParameters, class agiPhysDef>, int32_t>>(
+            0x510BE0, this, arg1);
+    }
+
+    // 0x539220 | ??0?$agiLib@VagiPhysParameters@@VagiPhysDef@@@@QAE@XZ
+    inline agiLib<class agiPhysParameters, class agiPhysDef>()
+    {
+        stub<member_func_t<void, agiLib<class agiPhysParameters, class agiPhysDef>>>(0x539220, this);
+    }
+
+    // 0x539250 | ??1?$agiLib@VagiPhysParameters@@VagiPhysDef@@@@QAE@XZ
+    inline ~agiLib<class agiPhysParameters, class agiPhysDef>()
+    {
+        stub<member_func_t<void, agiLib<class agiPhysParameters, class agiPhysDef>>>(0x539250, this);
+    }
+
+    // 0x53BF80 | ?Add@?$agiLib@VagiPhysParameters@@VagiPhysDef@@@@QAEHAAVagiPhysParameters@@@Z
+    inline int32_t Add(class agiPhysParameters& arg1)
+    {
+        return stub<
+            member_func_t<int32_t, agiLib<class agiPhysParameters, class agiPhysDef>, class agiPhysParameters&>>(
+            0x53BF80, this, arg1);
+    }
+};
+
+class asSimulation : asNode
+{
+public:
+    // asSimulation::`vftable' @ 0x595358
+
+    // 0x50F7C0 | ??0asSimulation@@QAE@XZ
+    inline asSimulation()
+    {
+        stub<member_func_t<void, asSimulation>>(0x50F7C0, this);
+    }
+
+    // 0x50FAD0 | ?Quiet@asSimulation@@QAEXXZ
+    inline void Quiet()
+    {
+        return stub<member_func_t<void, asSimulation>>(0x50FAD0, this);
+    }
+
+    // 0x50FB00 | ?Init@asSimulation@@QAEXPADHPAPAD@Z
+    inline void Init(char* arg1, int32_t arg2, char** arg3)
+    {
+        return stub<member_func_t<void, asSimulation, char*, int32_t, char**>>(0x50FB00, this, arg1, arg2, arg3);
+    }
+
+    // 0x50FE50 | ?FirstUpdate@asSimulation@@QAEXXZ
+    inline void FirstUpdate()
+    {
+        return stub<member_func_t<void, asSimulation>>(0x50FE50, this);
+    }
+
+    // 0x510110 | ?Device@asSimulation@@QAEXXZ
+    inline void Device()
+    {
+        return stub<member_func_t<void, asSimulation>>(0x510110, this);
+    }
+
+    // 0x5101D0 | ?Widgets@asSimulation@@QAEXXZ
+    inline void Widgets()
+    {
+        return stub<member_func_t<void, asSimulation>>(0x5101D0, this);
+    }
+
+    // 0x510200 | ?Simulate@asSimulation@@QAEXXZ
+    inline void Simulate()
+    {
+        return stub<member_func_t<void, asSimulation>>(0x510200, this);
+    }
+
+    // 0x510290 | ?UpdatePaused@asSimulation@@QAEXPAVasNode@@@Z
+    inline void UpdatePaused(class asNode* arg1)
+    {
+        return stub<member_func_t<void, asSimulation, class asNode*>>(0x510290, this, arg1);
+    }
+
+    // 0x510300 | ?ResetClock@asSimulation@@QAEXXZ
+    inline void ResetClock()
+    {
+        return stub<member_func_t<void, asSimulation>>(0x510300, this);
+    }
+
+    // 0x510350 | ?BeginOverSample@asSimulation@@QAEXH@Z
+    inline void BeginOverSample(int32_t arg1)
+    {
+        return stub<member_func_t<void, asSimulation, int32_t>>(0x510350, this, arg1);
+    }
+
+    // 0x510390 | ?EndOverSample@asSimulation@@QAEXXZ
+    inline void EndOverSample()
+    {
+        return stub<member_func_t<void, asSimulation>>(0x510390, this);
+    }
+
+    // 0x5103C0 | ?EndOverSample@asSimulation@@QAEXH@Z
+    inline void EndOverSample(int32_t arg1)
+    {
+        return stub<member_func_t<void, asSimulation, int32_t>>(0x5103C0, this, arg1);
+    }
+
+    // 0x5103F0 | ?RealTime@asSimulation@@QAEXM@Z
+    inline void RealTime(float arg1)
+    {
+        return stub<member_func_t<void, asSimulation, float>>(0x5103F0, this, arg1);
+    }
+
+    // 0x510450 | ?FixedFrame@asSimulation@@QAEXMH@Z
+    inline void FixedFrame(float arg1, int32_t arg2)
+    {
+        return stub<member_func_t<void, asSimulation, float, int32_t>>(0x510450, this, arg1, arg2);
+    }
+
+    // 0x510490 | ?FrameLock@asSimulation@@QAEXHH@Z
+    inline void FrameLock(int32_t arg1, int32_t arg2)
+    {
+        return stub<member_func_t<void, asSimulation, int32_t, int32_t>>(0x510490, this, arg1, arg2);
+    }
+
+    // 0x5104A0 | ?Benchmark@asSimulation@@QAEXXZ
+    inline void Benchmark()
+    {
+        return stub<member_func_t<void, asSimulation>>(0x5104A0, this);
+    }
+
+    // 0x510520 | ?Pause@asSimulation@@QAEXXZ
+    inline void Pause()
+    {
+        return stub<member_func_t<void, asSimulation>>(0x510520, this);
+    }
+
+    // 0x510920 | ?DeclareFields@asSimulation@@SAXXZ
+    static inline void DeclareFields()
+    {
+        return stub<cdecl_t<void>>(0x510920);
+    }
+
+    // 0x50F960 | ??1asSimulation@@UAE@XZ
+    inline ~asSimulation() override
+    {
+        stub<member_func_t<void, asSimulation>>(0x50F960, this);
+    }
+
+    // 0x510A90 | ?GetClass@asSimulation@@UAEPAVMetaClass@@XZ
+    inline class MetaClass* GetClass() override
+    {
+        return stub<member_func_t<class MetaClass*, asSimulation>>(0x510A90, this);
+    }
+
+    // 0x50FE70 | ?Update@asSimulation@@UAEXXZ
+    inline void Update() override
+    {
+        return stub<member_func_t<void, asSimulation>>(0x50FE70, this);
+    }
+
+    // 0x50FE40 | ?Reset@asSimulation@@UAEXXZ
+    inline void Reset() override
+    {
+        return stub<member_func_t<void, asSimulation>>(0x50FE40, this);
+    }
+};
+
+struct artsReplayChannel : eqReplayChannel
+{
+public:
+    // artsReplayChannel::`vftable' @ 0x595398
+
+    // 0x510AA0 | ??0artsReplayChannel@@QAE@XZ
+    inline artsReplayChannel()
+    {
+        stub<member_func_t<void, artsReplayChannel>>(0x510AA0, this);
+    }
+
+    // 0x510B30 | ??1artsReplayChannel@@QAE@XZ
+    inline ~artsReplayChannel()
+    {
+        stub<member_func_t<void, artsReplayChannel>>(0x510B30, this);
+    }
+
+    // 0x510AC0 | ?DoRecord@artsReplayChannel@@UAEXPAVStream@@@Z
+    inline void DoRecord(class Stream* arg1) override
+    {
+        return stub<member_func_t<void, artsReplayChannel, class Stream*>>(0x510AC0, this, arg1);
+    }
+
+    // 0x510B00 | ?DoPlayback@artsReplayChannel@@UAEXPAVStream@@@Z
+    inline void DoPlayback(class Stream* arg1) override
+    {
+        return stub<member_func_t<void, artsReplayChannel, class Stream*>>(0x510B00, this, arg1);
+    }
+};

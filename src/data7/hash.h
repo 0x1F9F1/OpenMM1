@@ -1,0 +1,124 @@
+/*
+    OpenMM1 - An Open Source Re-Implementation of Midtown Madness 1
+    Copyright (C) 2019 Brick
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+#pragma once
+
+// data7:hash
+
+#include "hooking.h"
+
+class HashTable
+{
+public:
+    // 0x48BC70 | ??1HashTable@@QAE@XZ
+    inline ~HashTable()
+    {
+        stub<member_func_t<void, HashTable>>(0x48BC70, this);
+    }
+
+    // 0x559A00 | ?Init@HashTable@@QAEXH@Z
+    inline void Init(int32_t arg1)
+    {
+        return stub<member_func_t<void, HashTable, int32_t>>(0x559A00, this, arg1);
+    }
+
+    // 0x559A70 | ?Kill@HashTable@@QAEXXZ
+    inline void Kill()
+    {
+        return stub<member_func_t<void, HashTable>>(0x559A70, this);
+    }
+
+    // 0x559AE0 | ??4HashTable@@QAEXAAV0@@Z
+    inline void operator=(class HashTable& arg1)
+    {
+        return stub<member_func_t<void, HashTable, class HashTable&>>(0x559AE0, this, arg1);
+    }
+
+    // 0x559B30 | ?Insert@HashTable@@QAEHPADPAX@Z
+    inline int32_t Insert(char* arg1, void* arg2)
+    {
+        return stub<member_func_t<int32_t, HashTable, char*, void*>>(0x559B30, this, arg1, arg2);
+    }
+
+    // 0x559C10 | ?Delete@HashTable@@QAEHPAD@Z
+    inline int32_t Delete(char* arg1)
+    {
+        return stub<member_func_t<int32_t, HashTable, char*>>(0x559C10, this, arg1);
+    }
+
+    // 0x559D50 | ?Change@HashTable@@QAEHPAD0@Z
+    inline int32_t Change(char* arg1, char* arg2)
+    {
+        return stub<member_func_t<int32_t, HashTable, char*, char*>>(0x559D50, this, arg1, arg2);
+    }
+
+    // 0x559D90 | ?Access@HashTable@@QAEPAXPAD@Z
+    inline void* Access(char* arg1)
+    {
+        return stub<member_func_t<void*, HashTable, char*>>(0x559D90, this, arg1);
+    }
+
+    // 0x559E20 | ?Hash@HashTable@@AAEHPAD@Z
+    inline int32_t Hash(char* arg1)
+    {
+        return stub<member_func_t<int32_t, HashTable, char*>>(0x559E20, this, arg1);
+    }
+
+    // 0x559E60 | ?ComputePrime@HashTable@@AAEHH@Z
+    inline int32_t ComputePrime(int32_t arg1)
+    {
+        return stub<member_func_t<int32_t, HashTable, int32_t>>(0x559E60, this, arg1);
+    }
+
+    // 0x559EB0 | ?Recompute@HashTable@@AAEXH@Z
+    inline void Recompute(int32_t arg1)
+    {
+        return stub<member_func_t<void, HashTable, int32_t>>(0x559EB0, this, arg1);
+    }
+
+    // 0x559F70 | ?KillAll@HashTable@@SAXXZ
+    static inline void KillAll()
+    {
+        return stub<cdecl_t<void>>(0x559F70);
+    }
+
+    // 0x559F90 | ?RemoveMe@HashTable@@AAEXXZ
+    inline void RemoveMe()
+    {
+        return stub<member_func_t<void, HashTable>>(0x559F90, this);
+    }
+
+    // 0x711F74 | ?First@HashTable@@0PAV1@A
+    static inline extern_var(0x711F74, class HashTable*, First);
+};
+
+struct HashIterator
+{
+public:
+    // 0x5599A0 | ?Begin@HashIterator@@QAEXXZ
+    inline void Begin()
+    {
+        return stub<member_func_t<void, HashIterator>>(0x5599A0, this);
+    }
+
+    // 0x5599B0 | ?Next@HashIterator@@QAEHXZ
+    inline int32_t Next()
+    {
+        return stub<member_func_t<int32_t, HashIterator>>(0x5599B0, this);
+    }
+};

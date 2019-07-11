@@ -1,0 +1,92 @@
+//------------------------------------------------
+//--- 010 Editor v8.0 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+struct Vector3
+{
+    float x;
+    float y;
+    float z;
+};
+
+struct aiPath
+{
+    ushort ID;
+    ushort PathCount;
+    ushort LaneCount;
+    ushort SidewalkCount;
+    ushort word24;
+    ushort word14;
+    ushort DefaultIsBlocked;
+    ushort word1A;
+    ushort word1C;
+    ushort word1E;
+    ushort word22;
+    ushort word20;
+    float float28;
+    float float2C;
+    char Name[32];
+    uint ParentID;
+    uint dword4;
+    uint dword8;
+    float Lengths[PathCount * (SidewalkCount + LaneCount)];
+    float SomeFloats1[PathCount];
+    uint IntersectionID0;
+    uint IntersectionID1;
+    Vector3 Intersections[PathCount * (SidewalkCount + LaneCount)];
+    Vector3 Centers[PathCount];
+    Vector3 DirectionsX[PathCount];
+    Vector3 DirectionsY[PathCount];
+    Vector3 DirectionsZ[PathCount];
+    Vector3 SomeVectors5[PathCount];
+    Vector3 SomeVectors6[PathCount * 2];
+    Vector3 SomeVectors7[PathCount];
+    Vector3 SomeVector0;
+    Vector3 SomeVector1;
+    float SomeFloats[5];
+    float SomeFloats2[10];
+};
+
+struct aiIntersection
+{
+    ushort ID;
+    Vector3 Position;
+
+    ushort nSinkPaths;
+    uint SinkPathIDs[nSinkPaths];
+    ushort nSourcePaths;
+    uint SourcePathIDs[nSourcePaths];
+
+    uint PathIDs[nSinkPaths + nSourcePaths];
+    float PathCenters[nSinkPaths + nSourcePaths];
+};
+
+struct CArrayList
+{
+    uint NumItems;
+    
+    if (NumItems > 0)
+        uint Items[NumItems] <optimize=false>;
+};
+
+struct aiMap
+{
+    ushort nIntersections;
+    ushort nPaths;
+    aiPath Paths[nPaths] <optimize=false>;
+    aiIntersection Intersections[nIntersections] <optimize=false>;
+    uint CellCount;
+    CArrayList AmbientRoadIDs[CellCount] <optimize=false>;
+    CArrayList PedRoadIDs[CellCount] <optimize=false>;
+};
+
+aiMap file;
