@@ -68,7 +68,7 @@ public:
     {
         // 0:1 - Allocated
         // 0x2 - Unk
-        // 0x4 - Sanity Checked
+        // 0x4 - Sanity Checked Pending
         // 0xFFFFFFF8 - Next
         uint32_t m_Context {0};
         uint32_t m_Size {0};
@@ -76,15 +76,16 @@ public:
         /*
             if (Allocated)
                 if (m_Debug)
-                    0x55555555
+                    uint32_t = 0x55555555; // Lower Guard Word
+                    uint32_t = GetSecondReturnAddress(); // Caller address
 
                 uint8_t Data[m_Size];
 
                 if (m_Debug)
-                    0xAAAAAAAA
+                    uint32_t = 0xAAAAAAAA; // Upper Guard Word
             else
-                struct asMemoryAllocator::node *m_PrevFree;
-                struct asMemoryAllocator::node *m_NextFree;
+                node *m_PrevFree;
+                node *m_NextFree;
         */
     };
 
