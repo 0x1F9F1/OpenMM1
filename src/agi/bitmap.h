@@ -53,10 +53,6 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline void EndGfx() override
-    {
-        return stub<member_func_t<void, agiBitmap>>(0x567350, this);
-    }
 
     // 0x53C6A0 | ?GetName@agiBitmap@@UAEPADXZ
     inline char* GetName() override
@@ -71,10 +67,6 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline int32_t BeginGfx() override
-    {
-        return stub<member_func_t<int32_t, agiBitmap>>(0x567350, this);
-    }
 
     // 0x53C600 | ?UpdateFlags@agiBitmap@@UAEXXZ
     virtual inline void UpdateFlags()

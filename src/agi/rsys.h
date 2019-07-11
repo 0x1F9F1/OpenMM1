@@ -46,10 +46,6 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline void EndGfx() override
-    {
-        return stub<member_func_t<void, agiRasterizer>>(0x567350, this);
-    }
 
     // 0x539C50 | ??1agiRasterizer@@UAE@XZ
     inline ~agiRasterizer() override
@@ -58,10 +54,6 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline int32_t BeginGfx() override
-    {
-        return stub<member_func_t<int32_t, agiRasterizer>>(0x567350, this);
-    }
 
     // 0x539C60 | ?BeginGroup@agiRasterizer@@UAEXXZ
     virtual inline void BeginGroup()

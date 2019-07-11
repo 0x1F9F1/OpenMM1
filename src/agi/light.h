@@ -56,10 +56,6 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline void EndGfx() override
-    {
-        return stub<member_func_t<void, agiLight>>(0x567350, this);
-    }
 
     // 0x53D9D0 | ?GetName@agiLight@@UAEPADXZ
     inline char* GetName() override
@@ -74,10 +70,6 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline int32_t BeginGfx() override
-    {
-        return stub<member_func_t<int32_t, agiLight>>(0x567350, this);
-    }
 
     // 0x567350 | __purecall
     virtual inline int32_t Update()

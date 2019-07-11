@@ -49,22 +49,10 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline void FromMatrix(class Matrix34 const& arg1) override
-    {
-        return stub<member_func_t<void, mmBangerInstance, class Matrix34 const&>>(0x567350, this, arg1);
-    }
 
     // 0x567350 | __purecall
-    inline class Matrix34& ToMatrix(class Matrix34& arg1) override
-    {
-        return stub<member_func_t<class Matrix34&, mmBangerInstance, class Matrix34&>>(0x567350, this, arg1);
-    }
 
     // 0x567350 | __purecall
-    inline class Vector3& GetPos() override
-    {
-        return stub<member_func_t<class Vector3&, mmBangerInstance>>(0x567350, this);
-    }
 
     // 0x4BE9C0 | ?GetEntity@mmBangerInstance@@UAEPAVmmPhysEntity@@XZ
     inline class mmPhysEntity* GetEntity() override

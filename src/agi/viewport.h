@@ -43,10 +43,6 @@ public:
     static inline extern_var(0x706538, class agiViewport*, Active);
 
     // 0x567350 | __purecall
-    inline void EndGfx() override
-    {
-        return stub<member_func_t<void, agiViewport>>(0x567350, this);
-    }
 
     // 0x539AD0 | ?GetName@agiViewport@@UAEPADXZ
     inline char* GetName() override
@@ -61,10 +57,6 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline int32_t BeginGfx() override
-    {
-        return stub<member_func_t<int32_t, agiViewport>>(0x567350, this);
-    }
 
     // 0x567350 | __purecall
     virtual inline void Activate()

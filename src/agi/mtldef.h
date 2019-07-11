@@ -68,10 +68,6 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline void EndGfx() override
-    {
-        return stub<member_func_t<void, agiMtlDef>>(0x567350, this);
-    }
 
     // 0x53FC50 | ?GetName@agiMtlDef@@UAEPADXZ
     inline char* GetName() override
@@ -86,8 +82,4 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline int32_t BeginGfx() override
-    {
-        return stub<member_func_t<int32_t, agiMtlDef>>(0x567350, this);
-    }
 };

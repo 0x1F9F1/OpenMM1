@@ -203,10 +203,6 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline void InitMyPlayer() override
-    {
-        return stub<member_func_t<void, mmGameMulti>>(0x567350, this);
-    }
 
     // 0x42C3D0 | ?InitOtherPlayers@mmGameMulti@@UAEXXZ
     inline void InitOtherPlayers() override
@@ -215,22 +211,10 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline void InitGameObjects() override
-    {
-        return stub<member_func_t<void, mmGameMulti>>(0x567350, this);
-    }
 
     // 0x567350 | __purecall
-    inline void InitHUD() override
-    {
-        return stub<member_func_t<void, mmGameMulti>>(0x567350, this);
-    }
 
     // 0x567350 | __purecall
-    inline void UpdateGameInput(int32_t arg1) override
-    {
-        return stub<member_func_t<void, mmGameMulti, int32_t>>(0x567350, this, arg1);
-    }
 
     // 0x42CBC0 | ?UpdateDebugKeyInput@mmGameMulti@@UAEXH@Z
     inline void UpdateDebugKeyInput(int32_t arg1) override
@@ -275,10 +259,6 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline class mmWaypoints* GetWaypoints() override
-    {
-        return stub<member_func_t<class mmWaypoints*, mmGameMulti>>(0x567350, this);
-    }
 
     // 0x567350 | __purecall
     virtual inline void InitNetworkPlayers()

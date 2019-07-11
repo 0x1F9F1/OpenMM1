@@ -101,28 +101,12 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline class agiTexDef* CreateTexDef() override
-    {
-        return stub<member_func_t<class agiTexDef*, agiDDPipeline>>(0x567350, this);
-    }
 
     // 0x567350 | __purecall
-    inline class agiTexLut* CreateTexLut() override
-    {
-        return stub<member_func_t<class agiTexLut*, agiDDPipeline>>(0x567350, this);
-    }
 
     // 0x567350 | __purecall
-    inline class DLP* CreateDLP() override
-    {
-        return stub<member_func_t<class DLP*, agiDDPipeline>>(0x567350, this);
-    }
 
     // 0x567350 | __purecall
-    inline class agiViewport* CreateViewport() override
-    {
-        return stub<member_func_t<class agiViewport*, agiDDPipeline>>(0x567350, this);
-    }
 
     // 0x518DD0 | ?CreateBitmap@agiDDPipeline@@UAEPAVagiBitmap@@XZ
     inline class agiBitmap* CreateBitmap() override
@@ -140,10 +124,6 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline void ClearAll(int32_t arg1) override
-    {
-        return stub<member_func_t<void, agiDDPipeline, int32_t>>(0x567350, this, arg1);
-    }
 
     // 0x518F40 | ?ClearRect@agiDDPipeline@@UAEXHHHHI@Z
     inline void ClearRect(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, uint32_t arg5) override

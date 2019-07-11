@@ -146,10 +146,6 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline class DLP* CreateDLP() override
-    {
-        return stub<member_func_t<class DLP*, agiD3DPipeline>>(0x567350, this);
-    }
 
     // 0x518290 | ?CreateViewport@agiD3DPipeline@@UAEPAVagiViewport@@XZ
     inline class agiViewport* CreateViewport() override

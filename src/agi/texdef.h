@@ -98,10 +98,6 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline void EndGfx() override
-    {
-        return stub<member_func_t<void, agiTexLut>>(0x567350, this);
-    }
 
     // 0x538B50 | ?GetName@agiTexLut@@UAEPADXZ
     inline char* GetName() override
@@ -116,10 +112,6 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline int32_t BeginGfx() override
-    {
-        return stub<member_func_t<int32_t, agiTexLut>>(0x567350, this);
-    }
 };
 
 class agiTexDef : agiRefreshable
@@ -194,10 +186,6 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline void EndGfx() override
-    {
-        return stub<member_func_t<void, agiTexDef>>(0x567350, this);
-    }
 
     // 0x538680 | ?GetName@agiTexDef@@UAEPADXZ
     inline char* GetName() override
@@ -212,10 +200,6 @@ public:
     }
 
     // 0x567350 | __purecall
-    inline int32_t BeginGfx() override
-    {
-        return stub<member_func_t<int32_t, agiTexDef>>(0x567350, this);
-    }
 
     // 0x5386B0 | ?IsTexture@agiTexDef@@UAEHXZ
     inline int32_t IsTexture() override
