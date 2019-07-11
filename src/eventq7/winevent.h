@@ -46,6 +46,8 @@
 
 #include "hooking.h"
 
+#include "event.h"
+
 // 0x544970 | ?InitEventQueue@@YAXXZ
 inline void InitEventQueue()
 {
@@ -74,9 +76,14 @@ class Dispatchable
 {
 public:
     // Dispatchable::`vftable' @ 0x595FCC
+
+    virtual int32_t WindowProc(struct HWND__* arg1, uint32_t arg2, uint32_t arg3, int32_t arg4) = 0;
 };
 
-struct WINEventHandler : eqEventHandler
+// TODO: Can't handle multiple inheritance.
+struct WINEventHandler
+    : eqEventHandler
+    , Dispatchable
 {
 public:
     // 0x543910 | ??0WINEventHandler@@QAE@XZ
@@ -89,5 +96,54 @@ public:
     inline void AdjustMouse(int32_t& arg1, int32_t& arg2)
     {
         return stub<member_func_t<void, WINEventHandler, int32_t&, int32_t&>>(0x5441E0, this, arg1, arg2);
+    }
+
+    // 0x543A40 ??1WINEventHandler@@UAE@XZ
+    inline ~WINEventHandler() override
+    {
+        stub<member_func_t<void, WINEventHandler>>(0x543A40, this);
+    }
+
+    // 0x543AA0 | ?BeginGfx@WINEventHandler@@UAEHHHH@Z
+    inline int32_t BeginGfx(int32_t arg1, int32_t arg2, int32_t arg3) override
+    {
+        return stub<member_func_t<int32_t, WINEventHandler, int32_t, int32_t, int32_t>>(
+            0x543AA0, this, arg1, arg2, arg3);
+    }
+
+    // 0x543B40 | ?EndGfx@WINEventHandler@@UAEXXZ
+    inline void EndGfx() override
+    {
+        return stub<member_func_t<void, WINEventHandler>>(0x543B40, this);
+    }
+
+    // 0x543B60 | ?GKeyName@WINEventHandler@@UAEPADH@Z
+    inline void Update(int32_t arg1) override
+    {
+        return stub<member_func_t<void, WINEventHandler, int32_t>>(0x543B60, this, arg1);
+    }
+
+    // 0x543ED0 | ?Update@WINEventHandler@@UAEXH@Z
+    inline void BeginTracking() override
+    {
+        return stub<member_func_t<void, WINEventHandler>>(0x543ED0, this);
+    }
+
+    // 0x544190 | ?BeginTracking@WINEventHandler@@UAEXXZ
+    inline void EndTracking() override
+    {
+        return stub<member_func_t<void, WINEventHandler>>(0x544190, this);
+    }
+
+    // 0x5441C0 | ?EndTracking@WINEventHandler@@UAEXXZ
+    inline char* GKeyName(int32_t arg1) override
+    {
+        return stub<member_func_t<char*, WINEventHandler, int32_t>>(0x5441C0, this, arg1);
+    }
+
+    virtual int32_t WindowProc(struct HWND__* arg1, uint32_t arg2, uint32_t arg3, int32_t arg4) override
+    {
+        return stub<member_func_t<int32_t, WINEventHandler, struct HWND__*, uint32_t, uint32_t, int32_t>>(
+            0x5442A0, this, arg1, arg2, arg3, arg4);
     }
 };

@@ -54,12 +54,29 @@
 
 #include "hooking.h"
 
+#include "replay.h"
+
 // 0x710098 | ?eqEventReplayChannel@@3VeqEventReplayChannelClass@@A
 inline extern_var(0x710098, class eqEventReplayChannelClass, eqEventReplayChannel);
+
+class eqEventMonitor;
 
 class eqEventHandler
 {
 public:
+    uint32_t m_Debug {0};
+    uint32_t m_dword8 {0};
+    uint32_t m_dwordC {0};
+    eqEventMonitor* m_EventMonitors[8] {};
+    uint32_t m_dword30 {0};
+    uint32_t m_dword34 {0};
+    uint32_t m_dword38 {0};
+    uint32_t m_dword3C {0};
+    uint32_t m_CursorX {0};
+    uint32_t m_CursorY {0};
+    uint32_t m_dword48 {0};
+    char m_buffer4C[256];
+
     // eqEventHandler::`vftable' @ 0x595FD8
 
     // 0x544A30 | ??0eqEventHandler@@QAE@XZ
@@ -94,7 +111,27 @@ public:
     {
         stub<member_func_t<void, eqEventHandler>>(0x544A80, this);
     }
+
+    // 0x567350 | __purecall
+    virtual inline int32_t BeginGfx(int32_t arg1, int32_t arg2, int32_t arg3) = 0;
+
+    // 0x567350 | __purecall
+    virtual inline void EndGfx() = 0;
+
+    // 0x567350 | __purecall
+    virtual inline void Update(int32_t arg1) = 0;
+
+    // 0x567350 | __purecall
+    virtual inline void BeginTracking() = 0;
+
+    // 0x567350 | __purecall
+    virtual inline void EndTracking() = 0;
+
+    // 0x567350 | __purecall
+    virtual inline char* GKeyName(int32_t arg1) = 0;
 };
+
+check_size(eqEventHandler, 0x14C);
 
 class eqEventReplayChannelClass : eqReplayChannel
 {
@@ -103,6 +140,7 @@ public:
 
     // 0x5450E0 | ??0eqEventReplayChannelClass@@QAE@XZ
     inline eqEventReplayChannelClass()
+        : eqReplayChannel(0x45513031)
     {
         stub<member_func_t<void, eqEventReplayChannelClass>>(0x5450E0, this);
     }

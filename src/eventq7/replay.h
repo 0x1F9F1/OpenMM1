@@ -45,6 +45,9 @@
 class eqReplayChannel
 {
 public:
+    uint32_t m_Magic {0};
+    eqReplayChannel* m_Next {nullptr};
+
     // eqReplayChannel::`vftable' @ 0x596050
 
     // 0x5461A0 | ??0eqReplayChannel@@IAE@K@Z
