@@ -17,3 +17,29 @@
 */
 
 #include "dxsetup.h"
+
+#include "setupdata.h"
+
+int32_t __stdcall ModeCallback(DDSURFACEDESC2* sd, void* context)
+{
+    dxiRendererInfo_t* info = static_cast<dxiRendererInfo_t*>(context);
+
+    if (info->m_ResCount < 32)
+    {
+        float ar = static_cast<float>(sd->dwWidth) / static_cast<float>(sd->dwHeight);
+
+        if ((ar > 1.6) && (sd->ddpfPixelFormat.dwRGBBitCount == 32))
+        {
+            info->m_Resolutions[info->m_ResCount].uWidth = static_cast<uint16_t>(sd->dwWidth);
+            info->m_Resolutions[info->m_ResCount].uHeight = static_cast<uint16_t>(sd->dwHeight);
+
+            info->m_ResCount++;
+        }
+    }
+
+    return 1;
+}
+
+define_dummy_symbol(dxsetup);
+
+run_once([] { auto_hook(0x5578F0, ModeCallback); });

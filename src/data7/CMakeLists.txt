@@ -43,6 +43,9 @@ add_library(data7 OBJECT
     str.h
     timer.cpp
     timer.h
+
+    assert.h
+    assert.cpp
 )
 
 target_link_libraries(data7 hooking)

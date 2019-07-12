@@ -16,13 +16,16 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "machname.h"
+#pragma once
 
-void GetMachineName(char* buffer, int32_t length)
-{
-    strcpy_s(buffer, length, "OpenMM2");
-}
+void Assertf(const char* format, ...);
 
-define_dummy_symbol(machname);
+extern const char _AssertFailed[];
 
-run_once([] { auto_hook(0x55E640, GetMachineName); });
+#define Assert(EXPR) do { if (!(EXPR)) { Assertf(_AssertFailed, __FILE__, __LINE__, #EXPR); } } while (false)
+
+#ifdef _DEBUG
+#define DebugAssert(EXPR) Assert(EXPR)
+#else
+#define DebugAssert(EXPR) (void)(0)
+#endif

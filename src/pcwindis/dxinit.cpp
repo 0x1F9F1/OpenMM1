@@ -17,3 +17,31 @@
 */
 
 #include "dxinit.h"
+#include "data7/printer.h"
+
+#include "minwin.h"
+
+int32_t dxiChangeDisplaySettings(int32_t width, int32_t height, int32_t bpp)
+{
+    (void) width;
+    (void) height;
+
+    DEVMODEA dm;
+
+    dm.dmSize = sizeof(dm);
+    dm.dmBitsPerPel = bpp;
+    dm.dmFields = DM_BITSPERPEL;
+
+    int result = ChangeDisplaySettingsA(width != 0 ? &dm : nullptr, 0);
+
+    if (result)
+    {
+        Errorf("ChangeDisplayMode failed, code %d.", result);
+    }
+
+    return result;
+}
+
+define_dummy_symbol(dxinit);
+
+run_once([] { auto_hook(0x5557B0, dxiChangeDisplaySettings); });

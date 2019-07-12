@@ -43,6 +43,8 @@
 
 #include "hooking.h"
 
+#include <ddraw.h>
+
 // 0x556DB0 | ?MultiMonCallback@@YGHPAU_GUID@@PAD1PAX2@Z
 inline int32_t __stdcall MultiMonCallback(struct _GUID* arg1, char* arg2, char* arg3, void* arg4, void* arg5)
 {
@@ -107,10 +109,7 @@ inline int32_t TestResolution(struct IDirectDraw4* arg1, struct dxiRendererInfo_
 }
 
 // 0x5578F0 | ?ModeCallback@@YGJPAU_DDSURFACEDESC2@@PAX@Z
-inline int32_t __stdcall ModeCallback(struct _DDSURFACEDESC2* arg1, void* arg2)
-{
-    return stub<stdcall_t<int32_t, struct _DDSURFACEDESC2*, void*>>(0x5578F0, arg1, arg2);
-}
+int32_t __stdcall ModeCallback(DDSURFACEDESC2* sd, void* context);
 
 // 0x557980 | ?EnumZ@@YGJPAU_DDPIXELFORMAT@@PAX@Z
 inline int32_t __stdcall EnumZ(struct _DDPIXELFORMAT* arg1, void* arg2)

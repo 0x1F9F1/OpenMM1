@@ -61,6 +61,16 @@ inline int32_t HeapAssert(void* arg1, int32_t arg2, char* arg3, int32_t arg4)
     return stub<cdecl_t<int32_t, void*, int32_t, char*, int32_t>>(0x50F210, arg1, arg2, arg3, arg4);
 }
 
+struct asMemStats
+{
+    uint32_t nTotalNodes {0};
+    uint32_t nFreeNodes {0};
+    uint32_t nUsedNodes {0};
+    uint32_t cbOverhead {0};
+    uint32_t cbFree {0};
+    uint32_t cbUsed {0};
+};
+
 class asMemoryAllocator
 {
 public:
@@ -71,34 +81,24 @@ public:
     uint8_t* m_pHeap {nullptr};
     uint32_t m_HeapSize {0};
     uint32_t m_HeapOffset {0};
-    uint32_t m_Locked {0};
+    uint32_t m_LockCount {0};
     uint32_t m_UseNodes {0};
     node* m_Buckets[32] {};
     node* m_Nodes {nullptr};
 
     // 0x50E970 | ??0asMemoryAllocator@@QAE@XZ
     inline asMemoryAllocator()
-    {
-        stub<member_func_t<void, asMemoryAllocator>>(0x50E970, this);
-    }
+    {}
 
     // 0x50E980 | ??1asMemoryAllocator@@QAE@XZ
     inline ~asMemoryAllocator()
-    {
-        stub<member_func_t<void, asMemoryAllocator>>(0x50E980, this);
-    }
+    {}
 
     // 0x50E990 | ?Init@asMemoryAllocator@@QAEXPAXIH@Z
-    inline void Init(void* arg1, uint32_t arg2, int32_t arg3)
-    {
-        return stub<member_func_t<void, asMemoryAllocator, void*, uint32_t, int32_t>>(0x50E990, this, arg1, arg2, arg3);
-    }
+    void Init(void* heap_data, uint32_t heap_size, int32_t use_nodes);
 
     // 0x50E9D0 | ?Kill@asMemoryAllocator@@QAEXXZ
-    inline void Kill()
-    {
-        return stub<member_func_t<void, asMemoryAllocator>>(0x50E9D0, this);
-    }
+    void Kill();
 
     // 0x50E9E0 | ?Allocate@asMemoryAllocator@@QAEPAXI@Z
     inline void* Allocate(uint32_t arg1)
@@ -107,10 +107,7 @@ public:
     }
 
     // 0x50EC00 | ?CheckPointer@asMemoryAllocator@@QAEXPAX@Z
-    inline void CheckPointer(void* arg1)
-    {
-        return stub<member_func_t<void, asMemoryAllocator, void*>>(0x50EC00, this, arg1);
-    }
+    void CheckPointer(void* ptr);
 
     // 0x50EC50 | ?Free@asMemoryAllocator@@QAEXPAX@Z
     inline void Free(void* arg1)
@@ -119,40 +116,22 @@ public:
     }
 
     // 0x50EDB0 | ?Unlink@asMemoryAllocator@@AAEXPAUnode@1@@Z
-    inline void Unlink(struct asMemoryAllocator::node* arg1)
-    {
-        return stub<member_func_t<void, asMemoryAllocator, struct asMemoryAllocator::node*>>(0x50EDB0, this, arg1);
-    }
+    void Unlink(struct asMemoryAllocator::node* n);
 
     // 0x50EE10 | ?Link@asMemoryAllocator@@AAEXPAUnode@1@@Z
-    inline void Link(struct asMemoryAllocator::node* arg1)
-    {
-        return stub<member_func_t<void, asMemoryAllocator, struct asMemoryAllocator::node*>>(0x50EE10, this, arg1);
-    }
+    void Link(struct asMemoryAllocator::node* n);
 
     // 0x50EE60 | ?Reallocate@asMemoryAllocator@@QAEPAXPAXI@Z
-    inline void* Reallocate(void* arg1, uint32_t arg2)
-    {
-        return stub<member_func_t<void*, asMemoryAllocator, void*, uint32_t>>(0x50EE60, this, arg1, arg2);
-    }
+    void* Reallocate(void* ptr, uint32_t size);
 
     // 0x50EEC0 | ?Verify@asMemoryAllocator@@AAEXPAX@Z
-    inline void Verify(void* arg1)
-    {
-        return stub<member_func_t<void, asMemoryAllocator, void*>>(0x50EEC0, this, arg1);
-    }
+    void Verify(void* ptr);
 
     // 0x50EF80 | ?GetStats@asMemoryAllocator@@QAEXPAUasMemStats@@@Z
-    inline void GetStats(struct asMemStats* arg1)
-    {
-        return stub<member_func_t<void, asMemoryAllocator, struct asMemStats*>>(0x50EF80, this, arg1);
-    }
+    void GetStats(struct asMemStats* stats);
 
     // 0x50F050 | ?SanityCheck@asMemoryAllocator@@QAEXXZ
-    inline void SanityCheck()
-    {
-        return stub<member_func_t<void, asMemoryAllocator>>(0x50F050, this);
-    }
+    void SanityCheck();
 };
 
 check_size(asMemoryAllocator, 0xA0);

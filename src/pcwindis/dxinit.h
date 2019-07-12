@@ -59,10 +59,7 @@ inline void dxiWindowCreate(char* arg1)
 }
 
 // 0x5557B0 | ?dxiChangeDisplaySettings@@YAHHHH@Z
-inline int32_t dxiChangeDisplaySettings(int32_t arg1, int32_t arg2, int32_t arg3)
-{
-    return stub<cdecl_t<int32_t, int32_t, int32_t, int32_t>>(0x5557B0, arg1, arg2, arg3);
-}
+int32_t dxiChangeDisplaySettings(int32_t width, int32_t height, int32_t bpp);
 
 // 0x555810 | ?dxiDirectDrawCreate@@YAXXZ
 inline void dxiDirectDrawCreate()

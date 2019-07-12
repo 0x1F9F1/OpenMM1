@@ -65,14 +65,17 @@ extern "C" HRESULT WINAPI DirectInputCreateA_Impl(
 
 int CALLBACK MidtownMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-    // OpenLog("OpenMM1.log");
+    mem::init_function::init();
 
     int result = stub<decltype(&MidtownMain)>(0x4027B0, hInstance, hPrevInstance, lpCmdLine, nCmdShow);
 
-    // CloseLog();
-
     return result;
 }
+
+include_dummy_symbol(dxinit);
+include_dummy_symbol(dxsetup);
+include_dummy_symbol(allocator);
+include_dummy_symbol(machname);
 
 BOOL APIENTRY DllMain(HMODULE /*hinstDLL*/, DWORD fdwReason, LPVOID /*lpvReserved*/)
 {
@@ -92,9 +95,12 @@ BOOL APIENTRY DllMain(HMODULE /*hinstDLL*/, DWORD fdwReason, LPVOID /*lpvReserve
             SetConsoleTitleA("OpenMM1");
         }
 
-        create_hook("WinMain", "Entry Point", 0x566DEA, &MidtownMain, hook_type::call);
+        LogToFile("OpenMM1.txt");
 
-        // Printer = &CustomPrinter;
+        create_hook("DefaultPrinter", "Use a custom printer", 0x558360, DefaultPrinter);
+
+        create_hook("WinMain", "Entry Point", 0x566DEA, &MidtownMain, hook_type::call);
+        create_patch("HW Menu", "", 0x401A1E, "\xEB", 1);
     }
 
     return TRUE;

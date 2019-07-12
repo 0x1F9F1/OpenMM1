@@ -34,6 +34,8 @@
 
 #include "hooking.h"
 
+#include <rpc.h>
+
 // 0x556460 | ?dxiResClosestMatch@@YAHHHH@Z
 inline int32_t dxiResClosestMatch(int32_t arg1, int32_t arg2, int32_t arg3)
 {
@@ -78,3 +80,39 @@ inline void guidtostr(char* arg1, struct _GUID* arg2)
 {
     return stub<cdecl_t<void, char*, struct _GUID*>>(0x556B20, arg1, arg2);
 }
+struct dxiResolution
+{
+    uint16_t uWidth;
+    uint16_t uHeight;
+    uint32_t dword4;
+};
+
+check_size(dxiResolution, 8);
+
+struct dxiRendererInfo_t
+{
+    uint16_t m_Width;
+    uint16_t m_word2;
+    int32_t m_CurrentIndex;
+    int32_t m_Hardware2;
+    int32_t m_field_C;
+    int32_t m_field_10;
+    int32_t m_field_14;
+    int32_t m_field_18;
+    int32_t m_field_1C;
+    int32_t m_field_20;
+    int32_t m_field_24;
+    int32_t m_field_28;
+    char m_Name[64];
+    int32_t m_field_6C;
+    int32_t m_field_70;
+    int32_t m_field_74;
+    int32_t m_field_78;
+    GUID m_GUID;
+    uint32_t m_UseHardware;
+    dxiResolution m_Resolutions[32];
+    int32_t m_ResCount;
+    uint32_t m_ResolutionIndex;
+};
+
+check_size(dxiRendererInfo_t, 0x198);

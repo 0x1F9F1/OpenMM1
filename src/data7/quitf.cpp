@@ -23,11 +23,11 @@
 #include <stdarg.h>
 
 // 0x5588F0 | ?Quitf@@YAXPBDZZ
-[[noreturn]] void Quitf(char const* arg1, ...)
+[[noreturn]] void Quitf(char const* format, ...)
 {
     va_list va;
-    va_start(va, arg1);
-    Printer(3, arg1, va);
+    va_start(va, format);
+    Printer(3, format, va);
     va_end(va);
 
     exit(1);

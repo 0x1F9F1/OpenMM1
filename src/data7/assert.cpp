@@ -16,13 +16,32 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "machname.h"
+#include "assert.h"
+#include "printer.h"
 
-void GetMachineName(char* buffer, int32_t length)
+#include <stdarg.h>
+
+#include "minwin.h"
+
+#pragma intrinsic(__debugbreak)
+
+const char _AssertFailed[] = "Assertion failed (%s,%d): '%s'";
+
+void Assertf(const char* format, ...)
 {
-    strcpy_s(buffer, length, "OpenMM2");
+    va_list va;
+    va_start(va, format);
+
+    if (IsDebuggerPresent())
+    {
+        Printer(2, format, va);
+
+        __debugbreak();
+    }
+    else
+    {
+        Printer(4, format, va);
+    }
+
+    va_end(va);
 }
-
-define_dummy_symbol(machname);
-
-run_once([] { auto_hook(0x55E640, GetMachineName); });

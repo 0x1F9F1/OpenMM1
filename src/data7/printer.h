@@ -45,10 +45,7 @@
 #include "hooking.h"
 
 // 0x558360 | ?DefaultPrinter@@YAXHPBDPAD@Z
-inline void DefaultPrinter(int32_t arg1, char const* arg2, char* arg3)
-{
-    return stub<cdecl_t<void, int32_t, char const*, char*>>(0x558360, arg1, arg2, arg3);
-}
+void DefaultPrinter(int32_t level, char const* format, va_list args);
 
 // 0x558740 | ?Quit@@YAXPBD@Z
 inline void Quit(char const* arg1)
