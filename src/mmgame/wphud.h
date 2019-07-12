@@ -84,7 +84,9 @@ public:
     // 0x4263E0 | ??0mmWPHUD@@QAE@XZ
     inline mmWPHUD()
     {
-        stub<member_func_t<void, mmWPHUD>>(0x4263E0, this);
+        // stub<member_func_t<void, mmWPHUD>>(0x4263E0, this);
+
+        unimplemented();
     }
 
     // 0x426590 | ?SetWPCleared@mmWPHUD@@QAEXXZ
@@ -107,9 +109,11 @@ public:
     }
 
     // 0x4264E0 | ??1mmWPHUD@@UAE@XZ
-    inline ~mmWPHUD() override
+    inline ~mmWPHUD() override = 0
     {
-        stub<member_func_t<void, mmWPHUD>>(0x4264E0, this);
+        // stub<member_func_t<void, mmWPHUD>>(0x4264E0, this);
+
+        unimplemented();
     }
 
     // 0x426960 | ?Cull@mmWPHUD@@UAEXXZ
@@ -139,7 +143,9 @@ public:
     // 0x426970 | ??0mmCircuitHUD@@QAE@XZ
     inline mmCircuitHUD()
     {
-        stub<member_func_t<void, mmCircuitHUD>>(0x426970, this);
+        // stub<member_func_t<void, mmCircuitHUD>>(0x426970, this);
+
+        unimplemented();
     }
 
     // 0x426B60 | ?Init@mmCircuitHUD@@QAEXXZ
@@ -168,9 +174,11 @@ public:
     }
 
     // 0x426A70 | ??1mmCircuitHUD@@UAE@XZ
-    inline ~mmCircuitHUD() override
+    inline ~mmCircuitHUD() override = 0
     {
-        stub<member_func_t<void, mmCircuitHUD>>(0x426A70, this);
+        // stub<member_func_t<void, mmCircuitHUD>>(0x426A70, this);
+
+        unimplemented();
     }
 
     // 0x4270E0 | ?Update@mmCircuitHUD@@UAEXXZ
@@ -194,7 +202,9 @@ public:
     // 0x4272A0 | ??0mmCRHUD@@QAE@XZ
     inline mmCRHUD()
     {
-        stub<member_func_t<void, mmCRHUD>>(0x4272A0, this);
+        // stub<member_func_t<void, mmCRHUD>>(0x4272A0, this);
+
+        unimplemented();
     }
 
     // 0x427570 | ?Init@mmCRHUD@@QAEXPAVasLinearCS@@PADW4mmCRGameClass@@@Z
@@ -290,9 +300,11 @@ public:
     }
 
     // 0x427440 | ??1mmCRHUD@@UAE@XZ
-    inline ~mmCRHUD() override
+    inline ~mmCRHUD() override = 0
     {
-        stub<member_func_t<void, mmCRHUD>>(0x427440, this);
+        // stub<member_func_t<void, mmCRHUD>>(0x427440, this);
+
+        unimplemented();
     }
 
     // 0x4282C0 | ?Update@mmCRHUD@@UAEXXZ

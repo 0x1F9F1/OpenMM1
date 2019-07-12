@@ -97,7 +97,9 @@ public:
     // 0x4A13E0 | ??0UIMenu@@QAE@H@Z
     inline UIMenu(int32_t arg1)
     {
-        stub<member_func_t<void, UIMenu, int32_t>>(0x4A13E0, this, arg1);
+        // stub<member_func_t<void, UIMenu, int32_t>>(0x4A13E0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x4A1580 | ?AssignName@UIMenu@@QAEXPAULocString@@@Z
@@ -465,9 +467,11 @@ public:
     static inline extern_var(0x667C8C, float, UI_RIGHT_MARGIN);
 
     // 0x4A14E0 | ??1UIMenu@@UAE@XZ
-    inline ~UIMenu() override
+    inline ~UIMenu() override = 0
     {
-        stub<member_func_t<void, UIMenu>>(0x4A14E0, this);
+        // stub<member_func_t<void, UIMenu>>(0x4A14E0, this);
+
+        unimplemented();
     }
 
     // 0x4A16F0 | ?Update@UIMenu@@UAEXXZ

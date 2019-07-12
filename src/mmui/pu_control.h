@@ -72,9 +72,11 @@ public:
     }
 
     // 0x49EE40 | ??1PUControl@@UAE@XZ
-    inline ~PUControl() override
+    inline ~PUControl() override = 0
     {
-        stub<member_func_t<void, PUControl>>(0x49EE40, this);
+        // stub<member_func_t<void, PUControl>>(0x49EE40, this);
+
+        unimplemented();
     }
 
     // 0x49EEA0 | ?PreSetup@PUControl@@UAEXXZ

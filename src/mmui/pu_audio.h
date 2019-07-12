@@ -76,9 +76,11 @@ public:
     }
 
     // 0x49F5C0 | ??1PUAudioOptions@@UAE@XZ
-    inline ~PUAudioOptions() override
+    inline ~PUAudioOptions() override = 0
     {
-        stub<member_func_t<void, PUAudioOptions>>(0x49F5C0, this);
+        // stub<member_func_t<void, PUAudioOptions>>(0x49F5C0, this);
+
+        unimplemented();
     }
 
     // 0x49F640 | ?PreSetup@PUAudioOptions@@UAEXXZ

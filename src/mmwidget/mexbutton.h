@@ -44,7 +44,9 @@ public:
     // 0x4B1A30 | ??0UIMexButton@@QAE@XZ
     inline UIMexButton()
     {
-        stub<member_func_t<void, UIMexButton>>(0x4B1A30, this);
+        // stub<member_func_t<void, UIMexButton>>(0x4B1A30, this);
+
+        unimplemented();
     }
 
     // 0x4B1AC0 | ?Init@UIMexButton@@QAEXPAULocString@@PAHHMMMMHHVCallback@@@Z
@@ -57,9 +59,11 @@ public:
     }
 
     // 0x4B1AB0 | ??1UIMexButton@@UAE@XZ
-    inline ~UIMexButton() override
+    inline ~UIMexButton() override = 0
     {
-        stub<member_func_t<void, UIMexButton>>(0x4B1AB0, this);
+        // stub<member_func_t<void, UIMexButton>>(0x4B1AB0, this);
+
+        unimplemented();
     }
 
     // 0x4B1B90 | ?Update@UIMexButton@@UAEXXZ

@@ -45,7 +45,9 @@ public:
     // 0x4F18C0 | ??0asMeshSetForm@@QAE@XZ
     inline asMeshSetForm()
     {
-        stub<member_func_t<void, asMeshSetForm>>(0x4F18C0, this);
+        // stub<member_func_t<void, asMeshSetForm>>(0x4F18C0, this);
+
+        unimplemented();
     }
 
     // 0x4F18E0 | ?SetShape@asMeshSetForm@@QAEXPAD0PAVVector3@@@Z
@@ -73,9 +75,11 @@ public:
     static inline extern_var(0x67B870, class agiTexDef*, SphMapTex);
 
     // 0x4F1AC0 | ??1asMeshSetForm@@UAE@XZ
-    inline ~asMeshSetForm() override
+    inline ~asMeshSetForm() override = 0
     {
-        stub<member_func_t<void, asMeshSetForm>>(0x4F1AC0, this);
+        // stub<member_func_t<void, asMeshSetForm>>(0x4F1AC0, this);
+
+        unimplemented();
     }
 
     // 0x4F1980 | ?Cull@asMeshSetForm@@UAEXXZ

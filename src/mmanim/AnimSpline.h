@@ -48,7 +48,9 @@ public:
     // 0x4B8260 | ??0mmAnimSpline@@QAE@XZ
     inline mmAnimSpline()
     {
-        stub<member_func_t<void, mmAnimSpline>>(0x4B8260, this);
+        // stub<member_func_t<void, mmAnimSpline>>(0x4B8260, this);
+
+        unimplemented();
     }
 
     // 0x4B82E0 | ?Init@mmAnimSpline@@QAEHPADH@Z
@@ -106,9 +108,11 @@ public:
     }
 
     // 0x4B8280 | ??1mmAnimSpline@@UAE@XZ
-    inline ~mmAnimSpline() override
+    inline ~mmAnimSpline() override = 0
     {
-        stub<member_func_t<void, mmAnimSpline>>(0x4B8280, this);
+        // stub<member_func_t<void, mmAnimSpline>>(0x4B8280, this);
+
+        unimplemented();
     }
 
     // 0x4B8650 | ?Update@mmAnimSpline@@UAEXXZ

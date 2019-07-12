@@ -202,7 +202,9 @@ public:
     // 0x482B40 | ??0mmCullCity@@QAE@XZ
     inline mmCullCity()
     {
-        stub<member_func_t<void, mmCullCity>>(0x482B40, this);
+        // stub<member_func_t<void, mmCullCity>>(0x482B40, this);
+
+        unimplemented();
     }
 
     // 0x482F00 | ?GetHitId@mmCullCity@@QAEFAAVVector3@@@Z
@@ -307,9 +309,11 @@ public:
     }
 
     // 0x482D60 | ??1mmCullCity@@UAE@XZ
-    inline ~mmCullCity() override
+    inline ~mmCullCity() override = 0
     {
-        stub<member_func_t<void, mmCullCity>>(0x482D60, this);
+        // stub<member_func_t<void, mmCullCity>>(0x482D60, this);
+
+        unimplemented();
     }
 
     // 0x485390 | ?GetClass@mmCullCity@@UAEPAVMetaClass@@XZ
@@ -353,9 +357,11 @@ public:
     static inline extern_var(0x60B1D4, float, Phase);
 
     // 0x4853D0 | ??1mmRunwayLight@@UAE@XZ
-    inline ~mmRunwayLight() override
+    inline ~mmRunwayLight() override = 0
     {
-        stub<member_func_t<void, mmRunwayLight>>(0x4853D0, this);
+        // stub<member_func_t<void, mmRunwayLight>>(0x4853D0, this);
+
+        unimplemented();
     }
 
     // 0x483160 | ?FromMatrix@mmRunwayLight@@UAIXABVMatrix34@@@Z
@@ -401,9 +407,11 @@ public:
     // mmUpperInstance::`vftable' @ 0x591CC8
 
     // 0x485400 | ??1mmUpperInstance@@UAE@XZ
-    inline ~mmUpperInstance() override
+    inline ~mmUpperInstance() override = 0
     {
-        stub<member_func_t<void, mmUpperInstance>>(0x485400, this);
+        // stub<member_func_t<void, mmUpperInstance>>(0x485400, this);
+
+        unimplemented();
     }
 
     // 0x482F30 | ?Draw@mmUpperInstance@@EAIXH@Z

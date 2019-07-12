@@ -71,7 +71,9 @@ public:
     // 0x4B4020 | ??0VSWidget@@QAE@XZ
     inline VSWidget()
     {
-        stub<member_func_t<void, VSWidget>>(0x4B4020, this);
+        // stub<member_func_t<void, VSWidget>>(0x4B4020, this);
+
+        unimplemented();
     }
 
     // 0x4B4120 | ?Init@VSWidget@@QAEXMMMMPAHVCallback@@H@Z
@@ -155,9 +157,11 @@ public:
     }
 
     // 0x4B40A0 | ??1VSWidget@@UAE@XZ
-    inline ~VSWidget() override
+    inline ~VSWidget() override = 0
     {
-        stub<member_func_t<void, VSWidget>>(0x4B40A0, this);
+        // stub<member_func_t<void, VSWidget>>(0x4B40A0, this);
+
+        unimplemented();
     }
 
     // 0x4B4BD0 | ?GetClass@VSWidget@@UAEPAVMetaClass@@XZ

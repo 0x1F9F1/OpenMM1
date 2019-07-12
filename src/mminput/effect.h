@@ -46,7 +46,9 @@ public:
     // 0x4DA110 | ??0mmEffectFF@@QAE@XZ
     inline mmEffectFF()
     {
-        stub<member_func_t<void, mmEffectFF>>(0x4DA110, this);
+        // stub<member_func_t<void, mmEffectFF>>(0x4DA110, this);
+
+        unimplemented();
     }
 
     // 0x4DA180 | ??1mmEffectFF@@QAE@XZ

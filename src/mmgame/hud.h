@@ -133,7 +133,9 @@ public:
     // 0x423DD0 | ??0mmHUD@@QAE@XZ
     inline mmHUD()
     {
-        stub<member_func_t<void, mmHUD>>(0x423DD0, this);
+        // stub<member_func_t<void, mmHUD>>(0x423DD0, this);
+
+        unimplemented();
     }
 
     // 0x424210 | ?PostChatMessage@mmHUD@@QAEXPAD@Z
@@ -330,9 +332,11 @@ public:
     }
 
     // 0x424340 | ??1mmHUD@@UAE@XZ
-    inline ~mmHUD() override
+    inline ~mmHUD() override = 0
     {
-        stub<member_func_t<void, mmHUD>>(0x424340, this);
+        // stub<member_func_t<void, mmHUD>>(0x424340, this);
+
+        unimplemented();
     }
 
     // 0x425940 | ?GetClass@mmHUD@@UAEPAVMetaClass@@XZ
@@ -380,7 +384,9 @@ public:
     // 0x425250 | ??0mmTimer@@QAE@XZ
     inline mmTimer()
     {
-        stub<member_func_t<void, mmTimer>>(0x425250, this);
+        // stub<member_func_t<void, mmTimer>>(0x425250, this);
+
+        unimplemented();
     }
 
     // 0x425280 | ?Init@mmTimer@@QAEXHM@Z
@@ -414,9 +420,11 @@ public:
     }
 
     // 0x425270 | ??1mmTimer@@UAE@XZ
-    inline ~mmTimer() override
+    inline ~mmTimer() override = 0
     {
-        stub<member_func_t<void, mmTimer>>(0x425270, this);
+        // stub<member_func_t<void, mmTimer>>(0x425270, this);
+
+        unimplemented();
     }
 
     // 0x4252B0 | ?Update@mmTimer@@UAEXXZ
@@ -440,7 +448,9 @@ public:
     // 0x425340 | ??0mmArrow@@QAE@XZ
     inline mmArrow()
     {
-        stub<member_func_t<void, mmArrow>>(0x425340, this);
+        // stub<member_func_t<void, mmArrow>>(0x425340, this);
+
+        unimplemented();
     }
 
     // 0x425530 | ?Init@mmArrow@@QAEXPAVMatrix34@@@Z
@@ -462,9 +472,11 @@ public:
     }
 
     // 0x4254C0 | ??1mmArrow@@UAE@XZ
-    inline ~mmArrow() override
+    inline ~mmArrow() override = 0
     {
-        stub<member_func_t<void, mmArrow>>(0x4254C0, this);
+        // stub<member_func_t<void, mmArrow>>(0x4254C0, this);
+
+        unimplemented();
     }
 
     // 0x4255D0 | ?Update@mmArrow@@UAEXXZ

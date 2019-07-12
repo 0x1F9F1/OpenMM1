@@ -48,7 +48,9 @@ public:
     // 0x4B87A0 | ??0mmBridgeAudMgr@@QAE@XZ
     inline mmBridgeAudMgr()
     {
-        stub<member_func_t<void, mmBridgeAudMgr>>(0x4B87A0, this);
+        // stub<member_func_t<void, mmBridgeAudMgr>>(0x4B87A0, this);
+
+        unimplemented();
     }
 
     // 0x4B8A10 | ?Add@mmBridgeAudMgr@@QAEFPAVmmBridgeSet@@@Z
@@ -82,9 +84,11 @@ public:
     }
 
     // 0x4B8950 | ??1mmBridgeAudMgr@@UAE@XZ
-    inline ~mmBridgeAudMgr() override
+    inline ~mmBridgeAudMgr() override = 0
     {
-        stub<member_func_t<void, mmBridgeAudMgr>>(0x4B8950, this);
+        // stub<member_func_t<void, mmBridgeAudMgr>>(0x4B8950, this);
+
+        unimplemented();
     }
 
     // 0x4B8BE0 | ?Update@mmBridgeAudMgr@@UAEXXZ

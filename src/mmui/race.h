@@ -45,7 +45,9 @@ public:
     // 0x499BA0 | ??0RaceMenu@@QAE@H@Z
     inline RaceMenu(int32_t arg1)
     {
-        stub<member_func_t<void, RaceMenu, int32_t>>(0x499BA0, this, arg1);
+        // stub<member_func_t<void, RaceMenu, int32_t>>(0x499BA0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x499C70 | ?GetRaceID@RaceMenu@@QAEHXZ
@@ -85,8 +87,10 @@ public:
     }
 
     // 0x499C60 | ??1RaceMenu@@UAE@XZ
-    inline ~RaceMenu() override
+    inline ~RaceMenu() override = 0
     {
-        stub<member_func_t<void, RaceMenu>>(0x499C60, this);
+        // stub<member_func_t<void, RaceMenu>>(0x499C60, this);
+
+        unimplemented();
     }
 };

@@ -49,7 +49,9 @@ public:
     // 0x4ACB20 | ??0mmCompRoster@@QAE@XZ
     inline mmCompRoster()
     {
-        stub<member_func_t<void, mmCompRoster>>(0x4ACB20, this);
+        // stub<member_func_t<void, mmCompRoster>>(0x4ACB20, this);
+
+        unimplemented();
     }
 
     // 0x4ACC20 | ?Init@mmCompRoster@@QAEXPAD00K@Z
@@ -87,9 +89,11 @@ public:
     }
 
     // 0x4ACB90 | ??1mmCompRoster@@UAE@XZ
-    inline ~mmCompRoster() override
+    inline ~mmCompRoster() override = 0
     {
-        stub<member_func_t<void, mmCompRoster>>(0x4ACB90, this);
+        // stub<member_func_t<void, mmCompRoster>>(0x4ACB90, this);
+
+        unimplemented();
     }
 
     // 0x4ACEF0 | ?Cull@mmCompRoster@@UAEXXZ

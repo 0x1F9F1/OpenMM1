@@ -59,7 +59,9 @@ public:
     // 0x512B20 | ??0asLinearCS@@QAE@XZ
     inline asLinearCS()
     {
-        stub<member_func_t<void, asLinearCS>>(0x512B20, this);
+        // stub<member_func_t<void, asLinearCS>>(0x512B20, this);
+
+        unimplemented();
     }
 
     // 0x512C50 | ?FileIO@asLinearCS@@QAEXPAVMiniParser@@@Z
@@ -81,9 +83,11 @@ public:
     }
 
     // 0x4284F0 | ??1asLinearCS@@UAE@XZ
-    inline ~asLinearCS() override
+    inline ~asLinearCS() override = 0
     {
-        stub<member_func_t<void, asLinearCS>>(0x4284F0, this);
+        // stub<member_func_t<void, asLinearCS>>(0x4284F0, this);
+
+        unimplemented();
     }
 
     // 0x512E30 | ?GetClass@asLinearCS@@UAEPAVMetaClass@@XZ

@@ -62,7 +62,9 @@ public:
     // 0x477040 | ??0mmDrivetrain@@QAE@XZ
     inline mmDrivetrain()
     {
-        stub<member_func_t<void, mmDrivetrain>>(0x477040, this);
+        // stub<member_func_t<void, mmDrivetrain>>(0x477040, this);
+
+        unimplemented();
     }
 
     // 0x477070 | ?Init@mmDrivetrain@@QAEXPAVmmCarSim@@@Z
@@ -96,9 +98,11 @@ public:
     }
 
     // 0x4682C0 | ??1mmDrivetrain@@UAE@XZ
-    inline ~mmDrivetrain() override
+    inline ~mmDrivetrain() override = 0
     {
-        stub<member_func_t<void, mmDrivetrain>>(0x4682C0, this);
+        // stub<member_func_t<void, mmDrivetrain>>(0x4682C0, this);
+
+        unimplemented();
     }
 
     // 0x477750 | ?GetClass@mmDrivetrain@@UAEPAVMetaClass@@XZ

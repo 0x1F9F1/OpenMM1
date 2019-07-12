@@ -50,7 +50,9 @@ public:
     // 0x4AFB70 | ??0UITextRoller2@@QAE@XZ
     inline UITextRoller2()
     {
-        stub<member_func_t<void, UITextRoller2>>(0x4AFB70, this);
+        // stub<member_func_t<void, UITextRoller2>>(0x4AFB70, this);
+
+        unimplemented();
     }
 
     // 0x4AFC90 | ?Init@UITextRoller2@@QAEXPAULocString@@PAHMMMMVstring@@HHHHVCallback@@PAVUIMenu@@@Z
@@ -106,9 +108,11 @@ public:
     }
 
     // 0x4AFC20 | ??1UITextRoller2@@UAE@XZ
-    inline ~UITextRoller2() override
+    inline ~UITextRoller2() override = 0
     {
-        stub<member_func_t<void, UITextRoller2>>(0x4AFC20, this);
+        // stub<member_func_t<void, UITextRoller2>>(0x4AFC20, this);
+
+        unimplemented();
     }
 
     // 0x4B0920 | ?Cull@UITextRoller2@@UAEXXZ

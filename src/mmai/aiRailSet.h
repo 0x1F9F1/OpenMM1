@@ -62,7 +62,9 @@ public:
     // 0x44D630 | ??0aiRailSet@@QAE@XZ
     inline aiRailSet()
     {
-        stub<member_func_t<void, aiRailSet>>(0x44D630, this);
+        // stub<member_func_t<void, aiRailSet>>(0x44D630, this);
+
+        unimplemented();
     }
 
     // 0x44D730 | ??1aiRailSet@@QAE@XZ

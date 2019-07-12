@@ -49,7 +49,9 @@ public:
     // 0x4641F0 | ??0aiStuck@@QAE@XZ
     inline aiStuck()
     {
-        stub<member_func_t<void, aiStuck>>(0x4641F0, this);
+        // stub<member_func_t<void, aiStuck>>(0x4641F0, this);
+
+        unimplemented();
     }
 
     // 0x464290 | ?Init@aiStuck@@QAEXPAVmmCarSim@@@Z
@@ -71,9 +73,11 @@ public:
     }
 
     // 0x45E4E0 | ??1aiStuck@@UAE@XZ
-    inline ~aiStuck() override
+    inline ~aiStuck() override = 0
     {
-        stub<member_func_t<void, aiStuck>>(0x45E4E0, this);
+        // stub<member_func_t<void, aiStuck>>(0x45E4E0, this);
+
+        unimplemented();
     }
 
     // 0x464340 | ?Update@aiStuck@@UAEXXZ

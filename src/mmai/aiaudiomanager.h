@@ -78,7 +78,9 @@ public:
     // 0x43A830 | ??0aiAudioManager@@QAE@XZ
     inline aiAudioManager()
     {
-        stub<member_func_t<void, aiAudioManager>>(0x43A830, this);
+        // stub<member_func_t<void, aiAudioManager>>(0x43A830, this);
+
+        unimplemented();
     }
 
     // 0x43AF30 | ?AddVehicle@aiAudioManager@@QAEFPAVaiVehicleAmbient@@@Z
@@ -292,9 +294,11 @@ public:
     }
 
     // 0x43AB30 | ??1aiAudioManager@@UAE@XZ
-    inline ~aiAudioManager() override
+    inline ~aiAudioManager() override = 0
     {
-        stub<member_func_t<void, aiAudioManager>>(0x43AB30, this);
+        // stub<member_func_t<void, aiAudioManager>>(0x43AB30, this);
+
+        unimplemented();
     }
 
     // 0x43BA20 | ?Update@aiAudioManager@@UAEXXZ

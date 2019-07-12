@@ -87,9 +87,11 @@ public:
     // foobar::`vftable' @ 0x58F7A8
 
     // 0x410C20 | ??1foobar@@UAE@XZ
-    inline ~foobar() override
+    inline ~foobar() override = 0
     {
-        stub<member_func_t<void, foobar>>(0x410C20, this);
+        // stub<member_func_t<void, foobar>>(0x410C20, this);
+
+        unimplemented();
     }
 
     // 0x40E640 | ?Update@foobar@@EAEXXZ
@@ -113,7 +115,9 @@ public:
     // 0x40F110 | ??0mmSingleBlitz@@QAE@XZ
     inline mmSingleBlitz()
     {
-        stub<member_func_t<void, mmSingleBlitz>>(0x40F110, this);
+        // stub<member_func_t<void, mmSingleBlitz>>(0x40F110, this);
+
+        unimplemented();
     }
 
     // 0x40F280 | ?Init@mmSingleBlitz@@QAEHXZ
@@ -165,9 +169,11 @@ public:
     }
 
     // 0x40F1B0 | ??1mmSingleBlitz@@UAE@XZ
-    inline ~mmSingleBlitz() override
+    inline ~mmSingleBlitz() override = 0
     {
-        stub<member_func_t<void, mmSingleBlitz>>(0x40F1B0, this);
+        // stub<member_func_t<void, mmSingleBlitz>>(0x40F1B0, this);
+
+        unimplemented();
     }
 
     // 0x410AC0 | ?GetClass@mmSingleBlitz@@UAEPAVMetaClass@@XZ

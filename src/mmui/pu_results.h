@@ -121,9 +121,11 @@ public:
     }
 
     // 0x49D590 | ??1PUResults@@UAE@XZ
-    inline ~PUResults() override
+    inline ~PUResults() override = 0
     {
-        stub<member_func_t<void, PUResults>>(0x49D590, this);
+        // stub<member_func_t<void, PUResults>>(0x49D590, this);
+
+        unimplemented();
     }
 
     // 0x49D5D0 | ?Reset@PUResults@@UAEXXZ

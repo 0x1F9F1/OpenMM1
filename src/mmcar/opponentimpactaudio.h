@@ -52,7 +52,9 @@ public:
     // 0x471CC0 | ??0mmOpponentImpactAudio@@QAE@XZ
     inline mmOpponentImpactAudio()
     {
-        stub<member_func_t<void, mmOpponentImpactAudio>>(0x471CC0, this);
+        // stub<member_func_t<void, mmOpponentImpactAudio>>(0x471CC0, this);
+
+        unimplemented();
     }
 
     // 0x471E80 | ??1mmOpponentImpactAudio@@QAE@XZ

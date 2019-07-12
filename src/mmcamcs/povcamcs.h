@@ -64,7 +64,9 @@ public:
     // 0x4E8E30 | ??0PovCamCS@@QAE@XZ
     inline PovCamCS()
     {
-        stub<member_func_t<void, PovCamCS>>(0x4E8E30, this);
+        // stub<member_func_t<void, PovCamCS>>(0x4E8E30, this);
+
+        unimplemented();
     }
 
     // 0x4E9010 | ?UpdatePOV@PovCamCS@@AAEXXZ
@@ -80,9 +82,11 @@ public:
     }
 
     // 0x4E8F30 | ??1PovCamCS@@UAE@XZ
-    inline ~PovCamCS() override
+    inline ~PovCamCS() override = 0
     {
-        stub<member_func_t<void, PovCamCS>>(0x4E8F30, this);
+        // stub<member_func_t<void, PovCamCS>>(0x4E8F30, this);
+
+        unimplemented();
     }
 
     // 0x4E9460 | ?GetClass@PovCamCS@@UAEPAVMetaClass@@XZ

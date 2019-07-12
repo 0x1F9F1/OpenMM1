@@ -101,7 +101,9 @@ public:
     // 0x402B60 | ??0mmGameManager@@QAE@XZ
     inline mmGameManager()
     {
-        stub<member_func_t<void, mmGameManager>>(0x402B60, this);
+        // stub<member_func_t<void, mmGameManager>>(0x402B60, this);
+
+        unimplemented();
     }
 
     // 0x403080 | ?BeDone@mmGameManager@@QAEXXZ
@@ -156,9 +158,11 @@ public:
     static inline extern_var(0x60912C, class mmGameManager*, Instance);
 
     // 0x402F70 | ??1mmGameManager@@UAE@XZ
-    inline ~mmGameManager() override
+    inline ~mmGameManager() override = 0
     {
-        stub<member_func_t<void, mmGameManager>>(0x402F70, this);
+        // stub<member_func_t<void, mmGameManager>>(0x402F70, this);
+
+        unimplemented();
     }
 
     // 0x403700 | ?GetClass@mmGameManager@@UAEPAVMetaClass@@XZ
@@ -192,9 +196,11 @@ public:
     // mmScreenClearFlunky::`vftable' @ 0x58F438
 
     // 0x403770 | ??1mmScreenClearFlunky@@UAE@XZ
-    inline ~mmScreenClearFlunky() override
+    inline ~mmScreenClearFlunky() override = 0
     {
-        stub<member_func_t<void, mmScreenClearFlunky>>(0x403770, this);
+        // stub<member_func_t<void, mmScreenClearFlunky>>(0x403770, this);
+
+        unimplemented();
     }
 
     // 0x402A20 | ?Cull@mmScreenClearFlunky@@UAEXXZ

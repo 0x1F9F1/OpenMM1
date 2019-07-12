@@ -54,9 +54,11 @@ public:
     }
 
     // 0x53DE20 | ??1agiColorModel8@@UAE@XZ
-    inline ~agiColorModel8() override
+    inline ~agiColorModel8() override = 0
     {
-        stub<member_func_t<void, agiColorModel8>>(0x53DE20, this);
+        // stub<member_func_t<void, agiColorModel8>>(0x53DE20, this);
+
+        unimplemented();
     }
 
     // 0x53DE30 | ?GetColor@agiColorModel8@@UAEIUagiRgba@@@Z

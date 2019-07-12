@@ -96,9 +96,11 @@ public:
     }
 
     // 0x49FDA0 | ??1PUMenuBase@@UAE@XZ
-    inline ~PUMenuBase() override
+    inline ~PUMenuBase() override = 0
     {
-        stub<member_func_t<void, PUMenuBase>>(0x49FDA0, this);
+        // stub<member_func_t<void, PUMenuBase>>(0x49FDA0, this);
+
+        unimplemented();
     }
 
     // 0x4A0020 | ?Cull@PUMenuBase@@UAEXXZ

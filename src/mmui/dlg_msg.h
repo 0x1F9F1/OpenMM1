@@ -51,7 +51,7 @@ public:
     }
 
     // 0x4943C0 | ??1Dialog_Message@@UAE@XZ
-    inline ~Dialog_Message() override
+    inline ~Dialog_Message() override = 0
     {
         stub<member_func_t<void, Dialog_Message>>(0x4943C0, this);
     }

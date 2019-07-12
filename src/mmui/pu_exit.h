@@ -43,8 +43,10 @@ public:
     }
 
     // 0x49F7D0 | ??1PUExit@@UAE@XZ
-    inline ~PUExit() override
+    inline ~PUExit() override = 0
     {
-        stub<member_func_t<void, PUExit>>(0x49F7D0, this);
+        // stub<member_func_t<void, PUExit>>(0x49F7D0, this);
+
+        unimplemented();
     }
 };

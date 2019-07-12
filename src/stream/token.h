@@ -43,9 +43,9 @@ public:
 
     // 0x543150 | ??0Tokenizer@@QAE@PBDPAVStream@@@Z
     inline Tokenizer(char const* arg1, class Stream* arg2)
-    {
-        stub<member_func_t<void, Tokenizer, char const*, class Stream*>>(0x543150, this, arg1, arg2);
-    }
+        : m_Name(arg1)
+        , m_pStream(arg2)
+    {}
 
     // 0x543180 | ?GetToken@Tokenizer@@QAEHPADH@Z
     inline int32_t GetToken(char* arg1, int32_t arg2)

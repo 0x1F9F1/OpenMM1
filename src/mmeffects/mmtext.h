@@ -70,7 +70,9 @@ public:
     // 0x4F0880 | ??0mmTextNode@@QAE@XZ
     inline mmTextNode()
     {
-        stub<member_func_t<void, mmTextNode>>(0x4F0880, this);
+        // stub<member_func_t<void, mmTextNode>>(0x4F0880, this);
+
+        unimplemented();
     }
 
     // 0x4F0970 | ?Init@mmTextNode@@QAEXMMMMHH@Z
@@ -159,9 +161,11 @@ public:
     }
 
     // 0x4F0900 | ??1mmTextNode@@UAE@XZ
-    inline ~mmTextNode() override
+    inline ~mmTextNode() override = 0
     {
-        stub<member_func_t<void, mmTextNode>>(0x4F0900, this);
+        // stub<member_func_t<void, mmTextNode>>(0x4F0900, this);
+
+        unimplemented();
     }
 
     // 0x4F1300 | ?Cull@mmTextNode@@UAEXXZ
@@ -183,7 +187,9 @@ public:
     // 0x4F0260 | ??0mmText@@QAE@XZ
     inline mmText()
     {
-        stub<member_func_t<void, mmText>>(0x4F0260, this);
+        // stub<member_func_t<void, mmText>>(0x4F0260, this);
+
+        unimplemented();
     }
 
     // 0x4F0270 | ??1mmText@@QAE@XZ

@@ -82,7 +82,9 @@ public:
     // 0x544A30 | ??0eqEventHandler@@QAE@XZ
     inline eqEventHandler()
     {
-        stub<member_func_t<void, eqEventHandler>>(0x544A30, this);
+        // stub<member_func_t<void, eqEventHandler>>(0x544A30, this);
+
+        unimplemented();
     }
 
     // 0x544AB0 | ?EKeyName@eqEventHandler@@SAPADH@Z
@@ -187,7 +189,9 @@ public:
     // 0x544E20 | ??0eqEventMonitor@@QAE@H@Z
     inline eqEventMonitor(int32_t arg1)
     {
-        stub<member_func_t<void, eqEventMonitor, int32_t>>(0x544E20, this, arg1);
+        // stub<member_func_t<void, eqEventMonitor, int32_t>>(0x544E20, this, arg1);
+
+        unimplemented();
     }
 
     // 0x545060 | ?SetWantMotion@eqEventMonitor@@QAEXH@Z

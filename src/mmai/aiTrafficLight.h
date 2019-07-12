@@ -53,16 +53,20 @@ public:
     // 0x43E5D0 | ??0aiTrafficLightSet@@QAE@PAVaiIntersection@@@Z
     inline aiTrafficLightSet(class aiIntersection* arg1)
     {
-        stub<member_func_t<void, aiTrafficLightSet, class aiIntersection*>>(0x43E5D0, this, arg1);
+        // stub<member_func_t<void, aiTrafficLightSet, class aiIntersection*>>(0x43E5D0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x609D10 | ?ObjCount@aiTrafficLightSet@@0FA
     static inline extern_var(0x609D10, int16_t, ObjCount);
 
     // 0x43E7C0 | ??1aiTrafficLightSet@@UAE@XZ
-    inline ~aiTrafficLightSet() override
+    inline ~aiTrafficLightSet() override = 0
     {
-        stub<member_func_t<void, aiTrafficLightSet>>(0x43E7C0, this);
+        // stub<member_func_t<void, aiTrafficLightSet>>(0x43E7C0, this);
+
+        unimplemented();
     }
 
     // 0x43E8C0 | ?Update@aiTrafficLightSet@@UAEXXZ
@@ -84,9 +88,11 @@ public:
     // aiTrafficLightInstance::`vftable' @ 0x590520
 
     // 0x43EDA0 | ??1aiTrafficLightInstance@@UAE@XZ
-    inline ~aiTrafficLightInstance() override
+    inline ~aiTrafficLightInstance() override = 0
     {
-        stub<member_func_t<void, aiTrafficLightInstance>>(0x43EDA0, this);
+        // stub<member_func_t<void, aiTrafficLightInstance>>(0x43EDA0, this);
+
+        unimplemented();
     }
 
     // 0x43EBA0 | ?Draw@aiTrafficLightInstance@@UAIXH@Z

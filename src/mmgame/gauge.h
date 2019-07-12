@@ -51,7 +51,9 @@ public:
     // 0x42F740 | ??0RadialGauge@@QAE@XZ
     inline RadialGauge()
     {
-        stub<member_func_t<void, RadialGauge>>(0x42F740, this);
+        // stub<member_func_t<void, RadialGauge>>(0x42F740, this);
+
+        unimplemented();
     }
 
     // 0x42F7B0 | ?Init@RadialGauge@@QAEXPAD0PAM1M@Z
@@ -62,9 +64,11 @@ public:
     }
 
     // 0x42F660 | ??1RadialGauge@@UAE@XZ
-    inline ~RadialGauge() override
+    inline ~RadialGauge() override = 0
     {
-        stub<member_func_t<void, RadialGauge>>(0x42F660, this);
+        // stub<member_func_t<void, RadialGauge>>(0x42F660, this);
+
+        unimplemented();
     }
 
     // 0x42F930 | ?Cull@RadialGauge@@UAEXXZ
@@ -86,7 +90,9 @@ public:
     // 0x42F960 | ??0mmLinearGauge@@QAE@XZ
     inline mmLinearGauge()
     {
-        stub<member_func_t<void, mmLinearGauge>>(0x42F960, this);
+        // stub<member_func_t<void, mmLinearGauge>>(0x42F960, this);
+
+        unimplemented();
     }
 
     // 0x42F970 | ??1mmLinearGauge@@QAE@XZ

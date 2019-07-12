@@ -175,7 +175,9 @@ public:
     // 0x50F7C0 | ??0asSimulation@@QAE@XZ
     inline asSimulation()
     {
-        stub<member_func_t<void, asSimulation>>(0x50F7C0, this);
+        // stub<member_func_t<void, asSimulation>>(0x50F7C0, this);
+
+        unimplemented();
     }
 
     // 0x50FAD0 | ?Quiet@asSimulation@@QAEXXZ
@@ -281,9 +283,11 @@ public:
     }
 
     // 0x50F960 | ??1asSimulation@@UAE@XZ
-    inline ~asSimulation() override
+    inline ~asSimulation() override = 0
     {
-        stub<member_func_t<void, asSimulation>>(0x50F960, this);
+        // stub<member_func_t<void, asSimulation>>(0x50F960, this);
+
+        unimplemented();
     }
 
     // 0x510A90 | ?GetClass@asSimulation@@UAEPAVMetaClass@@XZ
@@ -313,7 +317,9 @@ public:
     // 0x510AA0 | ??0artsReplayChannel@@QAE@XZ
     inline artsReplayChannel()
     {
-        stub<member_func_t<void, artsReplayChannel>>(0x510AA0, this);
+        // stub<member_func_t<void, artsReplayChannel>>(0x510AA0, this);
+
+        unimplemented();
     }
 
     // 0x510B30 | ??1artsReplayChannel@@QAE@XZ

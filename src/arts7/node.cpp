@@ -268,7 +268,7 @@ asNode::~asNode()
 
     RemoveAllChildren();
 
-    free((void*) m_Name);
+    free(m_Name);
 }
 
 class MetaClass* asNode::GetClass()

@@ -133,7 +133,9 @@ public:
     // 0x486550 | ??0asRenderWeb@@QAE@XZ
     inline asRenderWeb()
     {
-        stub<member_func_t<void, asRenderWeb>>(0x486550, this);
+        // stub<member_func_t<void, asRenderWeb>>(0x486550, this);
+
+        unimplemented();
     }
 
     // 0x486880 | ?Load@asRenderWeb@@QAEHPADH@Z
@@ -175,9 +177,11 @@ public:
     static inline extern_var(0x64F7E4, int32_t, PassMask);
 
     // 0x4865D0 | ??1asRenderWeb@@UAE@XZ
-    inline ~asRenderWeb() override
+    inline ~asRenderWeb() override = 0
     {
-        stub<member_func_t<void, asRenderWeb>>(0x4865D0, this);
+        // stub<member_func_t<void, asRenderWeb>>(0x4865D0, this);
+
+        unimplemented();
     }
 
     // 0x487E70 | ?GetClass@asRenderWeb@@UAEPAVMetaClass@@XZ

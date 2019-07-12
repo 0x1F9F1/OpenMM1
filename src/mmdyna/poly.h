@@ -46,7 +46,9 @@ public:
     // 0x506930 | ??0mmPolygon@@QAE@XZ
     inline mmPolygon()
     {
-        stub<member_func_t<void, mmPolygon>>(0x506930, this);
+        // stub<member_func_t<void, mmPolygon>>(0x506930, this);
+
+        unimplemented();
     }
 
     // 0x506970 | ?Init@mmPolygon@@AAEXXZ

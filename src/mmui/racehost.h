@@ -41,7 +41,9 @@ public:
     // 0x497AD0 | ??0HostRaceMenu@@QAE@H@Z
     inline HostRaceMenu(int32_t arg1)
     {
-        stub<member_func_t<void, HostRaceMenu, int32_t>>(0x497AD0, this, arg1);
+        // stub<member_func_t<void, HostRaceMenu, int32_t>>(0x497AD0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x497BB0 | ?EnableStart@HostRaceMenu@@QAEXXZ
@@ -57,9 +59,11 @@ public:
     }
 
     // 0x497BA0 | ??1HostRaceMenu@@UAE@XZ
-    inline ~HostRaceMenu() override
+    inline ~HostRaceMenu() override = 0
     {
-        stub<member_func_t<void, HostRaceMenu>>(0x497BA0, this);
+        // stub<member_func_t<void, HostRaceMenu>>(0x497BA0, this);
+
+        unimplemented();
     }
 
     // 0x497BD0 | ?UsesLobby@HostRaceMenu@@UAEXH@Z

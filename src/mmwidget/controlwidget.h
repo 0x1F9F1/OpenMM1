@@ -47,7 +47,9 @@ public:
     // 0x4B0A20 | ??0UIControlWidget@@QAE@XZ
     inline UIControlWidget()
     {
-        stub<member_func_t<void, UIControlWidget>>(0x4B0A20, this);
+        // stub<member_func_t<void, UIControlWidget>>(0x4B0A20, this);
+
+        unimplemented();
     }
 
     // 0x4B0BD0 | ?Init@UIControlWidget@@QAEXMMMMMPAVmmIO@@VCallback@@@Z
@@ -84,9 +86,11 @@ public:
     }
 
     // 0x4B0B30 | ??1UIControlWidget@@UAE@XZ
-    inline ~UIControlWidget() override
+    inline ~UIControlWidget() override = 0
     {
-        stub<member_func_t<void, UIControlWidget>>(0x4B0B30, this);
+        // stub<member_func_t<void, UIControlWidget>>(0x4B0B30, this);
+
+        unimplemented();
     }
 
     // 0x4B0E40 | ?Update@UIControlWidget@@UAEXXZ

@@ -128,10 +128,7 @@ public:
     float y {0.0f};
 
     // 0x42B330 | ??0Vector2@@QAE@ABV0@@Z
-    inline Vector2(class Vector2 const& arg1)
-    {
-        stub<member_func_t<void, Vector2, class Vector2 const&>>(0x42B330, this, arg1);
-    }
+    inline Vector2(class Vector2 const& arg1) = default;
 
     // 0x553A80 | ??KVector2@@QBE?AV0@M@Z
     inline class Vector2 operator/(float arg1)

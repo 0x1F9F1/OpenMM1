@@ -80,7 +80,9 @@ public:
     // 0x511940 | ??0asCullManager@@QAE@HH@Z
     inline asCullManager(int32_t arg1, int32_t arg2)
     {
-        stub<member_func_t<void, asCullManager, int32_t, int32_t>>(0x511940, this, arg1, arg2);
+        // stub<member_func_t<void, asCullManager, int32_t, int32_t>>(0x511940, this, arg1, arg2);
+
+        unimplemented();
     }
 
     // 0x511B20 | ?DisplayVersionString@asCullManager@@IAEXXZ
@@ -121,9 +123,11 @@ public:
     }
 
     // 0x511A20 | ??1asCullManager@@UAE@XZ
-    inline ~asCullManager() override
+    inline ~asCullManager() override = 0
     {
-        stub<member_func_t<void, asCullManager>>(0x511A20, this);
+        // stub<member_func_t<void, asCullManager>>(0x511A20, this);
+
+        unimplemented();
     }
 
     // 0x512440 | ?GetClass@asCullManager@@UAEPAVMetaClass@@XZ

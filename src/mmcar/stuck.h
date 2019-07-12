@@ -49,7 +49,9 @@ public:
     // 0x473D90 | ??0mmStuck@@QAE@XZ
     inline mmStuck()
     {
-        stub<member_func_t<void, mmStuck>>(0x473D90, this);
+        // stub<member_func_t<void, mmStuck>>(0x473D90, this);
+
+        unimplemented();
     }
 
     // 0x473E30 | ?Init@mmStuck@@QAEXPAVmmCarSim@@@Z
@@ -71,9 +73,11 @@ public:
     }
 
     // 0x468270 | ??1mmStuck@@UAE@XZ
-    inline ~mmStuck() override
+    inline ~mmStuck() override = 0
     {
-        stub<member_func_t<void, mmStuck>>(0x468270, this);
+        // stub<member_func_t<void, mmStuck>>(0x468270, this);
+
+        unimplemented();
     }
 
     // 0x473EC0 | ?Update@mmStuck@@UAEXXZ

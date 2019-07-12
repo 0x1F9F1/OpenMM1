@@ -39,7 +39,9 @@ public:
     // 0x47CD40 | ??0mmOpponentSurfaceAudio@@QAE@XZ
     inline mmOpponentSurfaceAudio()
     {
-        stub<member_func_t<void, mmOpponentSurfaceAudio>>(0x47CD40, this);
+        // stub<member_func_t<void, mmOpponentSurfaceAudio>>(0x47CD40, this);
+
+        unimplemented();
     }
 
     // 0x47CD70 | ??1mmOpponentSurfaceAudio@@QAE@XZ

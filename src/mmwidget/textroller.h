@@ -49,7 +49,9 @@ public:
     // 0x4AEF70 | ??0UITextRoller@@QAE@XZ
     inline UITextRoller()
     {
-        stub<member_func_t<void, UITextRoller>>(0x4AEF70, this);
+        // stub<member_func_t<void, UITextRoller>>(0x4AEF70, this);
+
+        unimplemented();
     }
 
     // 0x4AF0B0 | ?Init@UITextRoller@@QAEXPAULocString@@PAHMMMMVstring@@HHHHVCallback@@PAVUIMenu@@@Z
@@ -99,9 +101,11 @@ public:
     }
 
     // 0x4AF040 | ??1UITextRoller@@UAE@XZ
-    inline ~UITextRoller() override
+    inline ~UITextRoller() override = 0
     {
-        stub<member_func_t<void, UITextRoller>>(0x4AF040, this);
+        // stub<member_func_t<void, UITextRoller>>(0x4AF040, this);
+
+        unimplemented();
     }
 
     // 0x4AFA90 | ?Cull@UITextRoller@@UAEXXZ

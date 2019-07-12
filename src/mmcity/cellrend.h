@@ -71,7 +71,9 @@ public:
     // 0x48BC90 | ??0mmCellRenderer@@QAE@XZ
     inline mmCellRenderer()
     {
-        stub<member_func_t<void, mmCellRenderer>>(0x48BC90, this);
+        // stub<member_func_t<void, mmCellRenderer>>(0x48BC90, this);
+
+        unimplemented();
     }
 
     // 0x48BCC0 | ??1mmCellRenderer@@QAE@XZ

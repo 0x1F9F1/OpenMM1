@@ -51,7 +51,7 @@ public:
     }
 
     // 0x492B80 | ??1Dialog_Password@@UAE@XZ
-    inline ~Dialog_Password() override
+    inline ~Dialog_Password() override = 0
     {
         stub<member_func_t<void, Dialog_Password>>(0x492B80, this);
     }

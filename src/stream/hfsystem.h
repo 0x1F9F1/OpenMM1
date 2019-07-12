@@ -76,10 +76,7 @@ public:
     {}
 
     // 0x541AF0 | ??1HierFileSystem@@UAE@XZ
-    inline ~HierFileSystem() override
-    {
-        stub<member_func_t<void, HierFileSystem>>(0x541AF0, this);
-    }
+    ~HierFileSystem() override;
 
     // 0x541B00 | ?ValidPath@HierFileSystem@@UAEHPAD@Z
     inline int32_t ValidPath(char* arg1) override

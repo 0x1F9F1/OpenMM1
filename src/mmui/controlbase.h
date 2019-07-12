@@ -35,7 +35,9 @@ public:
     // 0x4A02F0 | ??0ControlBase@@QAE@XZ
     inline ControlBase()
     {
-        stub<member_func_t<void, ControlBase>>(0x4A02F0, this);
+        // stub<member_func_t<void, ControlBase>>(0x4A02F0, this);
+
+        unimplemented();
     }
 
     // 0x4A0300 | ??1ControlBase@@QAE@XZ

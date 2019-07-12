@@ -56,7 +56,9 @@ public:
     // 0x51F590 | ??0agiSWTexDef@@QAE@PAVagiSWPipeline@@@Z
     inline agiSWTexDef(class agiSWPipeline* arg1)
     {
-        stub<member_func_t<void, agiSWTexDef, class agiSWPipeline*>>(0x51F590, this, arg1);
+        // stub<member_func_t<void, agiSWTexDef, class agiSWPipeline*>>(0x51F590, this, arg1);
+
+        unimplemented();
     }
 
     // 0x51F6D0 | ?EndGfx@agiSWTexDef@@UAEXXZ
@@ -66,9 +68,11 @@ public:
     }
 
     // 0x51F5C0 | ??1agiSWTexDef@@UAE@XZ
-    inline ~agiSWTexDef() override
+    inline ~agiSWTexDef() override = 0
     {
-        stub<member_func_t<void, agiSWTexDef>>(0x51F5C0, this);
+        // stub<member_func_t<void, agiSWTexDef>>(0x51F5C0, this);
+
+        unimplemented();
     }
 
     // 0x51F5F0 | ?BeginGfx@agiSWTexDef@@UAEHXZ
@@ -116,7 +120,9 @@ public:
     // 0x51F7E0 | ??0agiSWTexLut@@QAE@PAVagiSWPipeline@@@Z
     inline agiSWTexLut(class agiSWPipeline* arg1)
     {
-        stub<member_func_t<void, agiSWTexLut, class agiSWPipeline*>>(0x51F7E0, this, arg1);
+        // stub<member_func_t<void, agiSWTexLut, class agiSWPipeline*>>(0x51F7E0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x51F9E0 | ?EndGfx@agiSWTexLut@@UAEXXZ
@@ -126,9 +132,11 @@ public:
     }
 
     // 0x51FA50 | ??1agiSWTexLut@@UAE@XZ
-    inline ~agiSWTexLut() override
+    inline ~agiSWTexLut() override = 0
     {
-        stub<member_func_t<void, agiSWTexLut>>(0x51FA50, this);
+        // stub<member_func_t<void, agiSWTexLut>>(0x51FA50, this);
+
+        unimplemented();
     }
 
     // 0x51F800 | ?BeginGfx@agiSWTexLut@@UAEHXZ

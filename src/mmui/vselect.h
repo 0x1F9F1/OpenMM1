@@ -66,7 +66,9 @@ public:
     // 0x48F5B0 | ??0VehicleSelectBase@@QAE@H@Z
     inline VehicleSelectBase(int32_t arg1)
     {
-        stub<member_func_t<void, VehicleSelectBase, int32_t>>(0x48F5B0, this, arg1);
+        // stub<member_func_t<void, VehicleSelectBase, int32_t>>(0x48F5B0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x48F710 | ?IncColor@VehicleSelectBase@@QAEXXZ
@@ -181,9 +183,11 @@ public:
     }
 
     // 0x4905E0 | ??1VehicleSelectBase@@UAE@XZ
-    inline ~VehicleSelectBase() override
+    inline ~VehicleSelectBase() override = 0
     {
-        stub<member_func_t<void, VehicleSelectBase>>(0x4905E0, this);
+        // stub<member_func_t<void, VehicleSelectBase>>(0x4905E0, this);
+
+        unimplemented();
     }
 
     // 0x490800 | ?Update@VehicleSelectBase@@UAEXXZ

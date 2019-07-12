@@ -108,7 +108,9 @@ public:
     // 0x4CCF10 | ??0asInertialCS@@QAE@XZ
     inline asInertialCS()
     {
-        stub<member_func_t<void, asInertialCS>>(0x4CCF10, this);
+        // stub<member_func_t<void, asInertialCS>>(0x4CCF10, this);
+
+        unimplemented();
     }
 
     // 0x4CD010 | ?SetMass@asInertialCS@@QAEXMMMM@Z
@@ -271,9 +273,11 @@ public:
     }
 
     // 0x44D470 | ??1asInertialCS@@UAE@XZ
-    inline ~asInertialCS() override
+    inline ~asInertialCS() override = 0
     {
-        stub<member_func_t<void, asInertialCS>>(0x44D470, this);
+        // stub<member_func_t<void, asInertialCS>>(0x44D470, this);
+
+        unimplemented();
     }
 
     // 0x4CECD0 | ?GetClass@asInertialCS@@UAEPAVMetaClass@@XZ

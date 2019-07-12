@@ -54,7 +54,9 @@ public:
     // 0x4A86D0 | ??0UISlider@@QAE@XZ
     inline UISlider()
     {
-        stub<member_func_t<void, UISlider>>(0x4A86D0, this);
+        // stub<member_func_t<void, UISlider>>(0x4A86D0, this);
+
+        unimplemented();
     }
 
     // 0x4A87D0 | ?Init@UISlider@@QAEXPAULocString@@PAMMMMMMMHHHHVCallback@@PAVUIMenu@@@Z
@@ -128,9 +130,11 @@ public:
     }
 
     // 0x4A8760 | ??1UISlider@@UAE@XZ
-    inline ~UISlider() override
+    inline ~UISlider() override = 0
     {
-        stub<member_func_t<void, UISlider>>(0x4A8760, this);
+        // stub<member_func_t<void, UISlider>>(0x4A8760, this);
+
+        unimplemented();
     }
 
     // 0x4A8B40 | ?Update@UISlider@@UAEXXZ

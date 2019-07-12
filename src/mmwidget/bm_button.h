@@ -81,7 +81,9 @@ public:
     // 0x4AB380 | ??0UIBMButton@@QAE@XZ
     inline UIBMButton()
     {
-        stub<member_func_t<void, UIBMButton>>(0x4AB380, this);
+        // stub<member_func_t<void, UIBMButton>>(0x4AB380, this);
+
+        unimplemented();
     }
 
     // 0x4AB4A0 | ?Init@UIBMButton@@QAEXPADMMHHPAHHHPAULocString@@VCallback@@3@Z
@@ -181,9 +183,11 @@ public:
     static inline extern_var(0x667D38, class AudSound*, s_pSound);
 
     // 0x4AB420 | ??1UIBMButton@@UAE@XZ
-    inline ~UIBMButton() override
+    inline ~UIBMButton() override = 0
     {
-        stub<member_func_t<void, UIBMButton>>(0x4AB420, this);
+        // stub<member_func_t<void, UIBMButton>>(0x4AB420, this);
+
+        unimplemented();
     }
 
     // 0x4AC540 | ?GetClass@UIBMButton@@UAEPAVMetaClass@@XZ

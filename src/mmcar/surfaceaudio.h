@@ -53,7 +53,9 @@ public:
     // 0x47E020 | ??0mmSurfaceAudio@@QAE@PAVmmCarSim@@PAVVector3@@@Z
     inline mmSurfaceAudio(class mmCarSim* arg1, class Vector3* arg2)
     {
-        stub<member_func_t<void, mmSurfaceAudio, class mmCarSim*, class Vector3*>>(0x47E020, this, arg1, arg2);
+        // stub<member_func_t<void, mmSurfaceAudio, class mmCarSim*, class Vector3*>>(0x47E020, this, arg1, arg2);
+
+        unimplemented();
     }
 
     // 0x47E420 | ??1mmSurfaceAudio@@QAE@XZ

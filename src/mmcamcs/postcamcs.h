@@ -61,7 +61,9 @@ public:
     // 0x4EBB70 | ??0PostCamCS@@QAE@XZ
     inline PostCamCS()
     {
-        stub<member_func_t<void, PostCamCS>>(0x4EBB70, this);
+        // stub<member_func_t<void, PostCamCS>>(0x4EBB70, this);
+
+        unimplemented();
     }
 
     // 0x4EBBC0 | ?Init@PostCamCS@@QAEXPAVmmCar@@@Z
@@ -77,9 +79,11 @@ public:
     }
 
     // 0x423BA0 | ??1PostCamCS@@UAE@XZ
-    inline ~PostCamCS() override
+    inline ~PostCamCS() override = 0
     {
-        stub<member_func_t<void, PostCamCS>>(0x423BA0, this);
+        // stub<member_func_t<void, PostCamCS>>(0x423BA0, this);
+
+        unimplemented();
     }
 
     // 0x4EBF10 | ?GetClass@PostCamCS@@UAEPAVMetaClass@@XZ

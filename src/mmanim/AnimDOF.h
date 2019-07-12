@@ -82,9 +82,11 @@ public:
     }
 
     // 0x4B9850 | ??1mmDrawbridgeInstance@@UAE@XZ
-    inline ~mmDrawbridgeInstance() override
+    inline ~mmDrawbridgeInstance() override = 0
     {
-        stub<member_func_t<void, mmDrawbridgeInstance>>(0x4B9850, this);
+        // stub<member_func_t<void, mmDrawbridgeInstance>>(0x4B9850, this);
+
+        unimplemented();
     }
 
     // 0x4B8EF0 | ?Draw@mmDrawbridgeInstance@@UAIXH@Z
@@ -102,7 +104,9 @@ public:
     // 0x4B8FF0 | ??0mmAnimDOF@@QAE@XZ
     inline mmAnimDOF()
     {
-        stub<member_func_t<void, mmAnimDOF>>(0x4B8FF0, this);
+        // stub<member_func_t<void, mmAnimDOF>>(0x4B8FF0, this);
+
+        unimplemented();
     }
 
     // 0x4B9010 | ??1mmAnimDOF@@QAE@XZ
@@ -173,9 +177,11 @@ public:
     }
 
     // 0x4B9980 | ??1mmDofBangerInstance@@UAE@XZ
-    inline ~mmDofBangerInstance() override
+    inline ~mmDofBangerInstance() override = 0
     {
-        stub<member_func_t<void, mmDofBangerInstance>>(0x4B9980, this);
+        // stub<member_func_t<void, mmDofBangerInstance>>(0x4B9980, this);
+
+        unimplemented();
     }
 
     // 0x4B98F0 | ?FromMatrix@mmDofBangerInstance@@UAIXABVMatrix34@@@Z

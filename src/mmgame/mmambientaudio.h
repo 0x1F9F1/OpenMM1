@@ -34,7 +34,9 @@ public:
     // 0x41EF10 | ??0mmAmbientAudio@@QAE@PAVmmPlayer@@@Z
     inline mmAmbientAudio(class mmPlayer* arg1)
     {
-        stub<member_func_t<void, mmAmbientAudio, class mmPlayer*>>(0x41EF10, this, arg1);
+        // stub<member_func_t<void, mmAmbientAudio, class mmPlayer*>>(0x41EF10, this, arg1);
+
+        unimplemented();
     }
 
     // 0x41EFB0 | ??1mmAmbientAudio@@QAE@XZ

@@ -42,7 +42,9 @@ public:
     // 0x53F9D0 | ??0agiMtlParameters@@QAE@XZ
     inline agiMtlParameters()
     {
-        stub<member_func_t<void, agiMtlParameters>>(0x53F9D0, this);
+        // stub<member_func_t<void, agiMtlParameters>>(0x53F9D0, this);
+
+        unimplemented();
     }
 
     // 0x53FA20 | ?Load@agiMtlParameters@@QAEXPAVStream@@@Z
@@ -72,7 +74,9 @@ public:
     // 0x53FB20 | ??0agiMtlDef@@IAE@PAVagiPipeline@@@Z
     inline agiMtlDef(class agiPipeline* arg1)
     {
-        stub<member_func_t<void, agiMtlDef, class agiPipeline*>>(0x53FB20, this, arg1);
+        // stub<member_func_t<void, agiMtlDef, class agiPipeline*>>(0x53FB20, this, arg1);
+
+        unimplemented();
     }
 
     // 0x53FB70 | ?Init@agiMtlDef@@QAEHABVagiMtlParameters@@@Z
@@ -88,8 +92,10 @@ public:
     }
 
     // 0x53FBA0 | ??1agiMtlDef@@MAE@XZ
-    inline ~agiMtlDef() override
+    inline ~agiMtlDef() override = 0
     {
-        stub<member_func_t<void, agiMtlDef>>(0x53FBA0, this);
+        // stub<member_func_t<void, agiMtlDef>>(0x53FBA0, this);
+
+        unimplemented();
     }
 };

@@ -45,7 +45,9 @@ public:
     // 0x506080 | ??0bnBone@@QAE@XZ
     inline bnBone()
     {
-        stub<member_func_t<void, bnBone>>(0x506080, this);
+        // stub<member_func_t<void, bnBone>>(0x506080, this);
+
+        unimplemented();
     }
 
     // 0x5060E0 | ?AddChild@bnBone@@QAEXPAV1@@Z

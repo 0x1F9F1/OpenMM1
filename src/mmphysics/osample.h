@@ -63,7 +63,9 @@ public:
     // 0x4D1F00 | ??0asOverSample@@QAE@XZ
     inline asOverSample()
     {
-        stub<member_func_t<void, asOverSample>>(0x4D1F00, this);
+        // stub<member_func_t<void, asOverSample>>(0x4D1F00, this);
+
+        unimplemented();
     }
 
     // 0x4D1F30 | ?RealTime@asOverSample@@QAEXM@Z
@@ -85,9 +87,11 @@ public:
     }
 
     // 0x423BB0 | ??1asOverSample@@UAE@XZ
-    inline ~asOverSample() override
+    inline ~asOverSample() override = 0
     {
-        stub<member_func_t<void, asOverSample>>(0x423BB0, this);
+        // stub<member_func_t<void, asOverSample>>(0x423BB0, this);
+
+        unimplemented();
     }
 
     // 0x4D21A0 | ?GetClass@asOverSample@@UAEPAVMetaClass@@XZ

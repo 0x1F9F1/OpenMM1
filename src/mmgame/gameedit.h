@@ -70,7 +70,9 @@ public:
     // 0x40E8C0 | ??0mmGameEdit@@QAE@XZ
     inline mmGameEdit()
     {
-        stub<member_func_t<void, mmGameEdit>>(0x40E8C0, this);
+        // stub<member_func_t<void, mmGameEdit>>(0x40E8C0, this);
+
+        unimplemented();
     }
 
     // 0x40EA40 | ?Init@mmGameEdit@@QAEHXZ
@@ -92,9 +94,11 @@ public:
     }
 
     // 0x40E990 | ??1mmGameEdit@@UAE@XZ
-    inline ~mmGameEdit() override
+    inline ~mmGameEdit() override = 0
     {
-        stub<member_func_t<void, mmGameEdit>>(0x40E990, this);
+        // stub<member_func_t<void, mmGameEdit>>(0x40E990, this);
+
+        unimplemented();
     }
 
     // 0x40EF20 | ?GetClass@mmGameEdit@@UAEPAVMetaClass@@XZ

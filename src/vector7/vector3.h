@@ -87,10 +87,11 @@ public:
     float z {0.0f};
 
     // 0x436E50 | ??0Vector3@@QAE@MMM@Z
-    inline Vector3(float arg1, float arg2, float arg3)
-    {
-        stub<member_func_t<void, Vector3, float, float, float>>(0x436E50, this, arg1, arg2, arg3);
-    }
+    inline Vector3(float x, float y, float z)
+        : x(x)
+        , y(y)
+        , z(z)
+    {}
 
     // 0x43A760 | ??GVector3@@QBE?AV0@ABV0@@Z
     inline class Vector3 operator-(class Vector3 const& arg1)

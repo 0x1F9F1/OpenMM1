@@ -91,7 +91,9 @@ public:
     // 0x41F220 | ??0mmHudMap@@QAE@XZ
     inline mmHudMap()
     {
-        stub<member_func_t<void, mmHudMap>>(0x41F220, this);
+        // stub<member_func_t<void, mmHudMap>>(0x41F220, this);
+
+        unimplemented();
     }
 
     // 0x41F310 | ?Init@mmHudMap@@QAEXPAVasCamera@@PAVMatrix34@@PAVmmHUD@@PAVmmGame@@PAD@Z
@@ -248,9 +250,11 @@ public:
     }
 
     // 0x421090 | ??1mmHudMap@@UAE@XZ
-    inline ~mmHudMap() override
+    inline ~mmHudMap() override = 0
     {
-        stub<member_func_t<void, mmHudMap>>(0x421090, this);
+        // stub<member_func_t<void, mmHudMap>>(0x421090, this);
+
+        unimplemented();
     }
 
     // 0x420FF0 | ?GetClass@mmHudMap@@UAEPAVMetaClass@@XZ

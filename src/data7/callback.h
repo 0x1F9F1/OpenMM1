@@ -60,25 +60,33 @@ public:
     // 0x55AC20 | ??0Callback@@QAE@XZ
     inline Callback()
     {
-        stub<member_func_t<void, Callback>>(0x55AC20, this);
+        // stub<member_func_t<void, Callback>>(0x55AC20, this);
+
+        unimplemented();
     }
 
     // 0x55AD30 | ??0Callback@@QAE@P6AXXZ@Z
     inline Callback(void(__cdecl* arg1)(void))
     {
-        stub<member_func_t<void, Callback, void(__cdecl*)(void)>>(0x55AD30, this, arg1);
+        // stub<member_func_t<void, Callback, void(__cdecl*)(void)>>(0x55AD30, this, arg1);
+
+        unimplemented(arg1);
     }
 
     // 0x55AD50 | ??0Callback@@QAE@P6AXPAX@Z0@Z
     inline Callback(void(__cdecl* arg1)(void*), void* arg2)
     {
-        stub<member_func_t<void, Callback, void(__cdecl*)(void*), void*>>(0x55AD50, this, arg1, arg2);
+        // stub<member_func_t<void, Callback, void(__cdecl*)(void*), void*>>(0x55AD50, this, arg1, arg2);
+
+        unimplemented(arg1, arg2);
     }
 
     // 0x55AD80 | ??0Callback@@QAE@P6AXPAX0@Z0@Z
     inline Callback(void(__cdecl* arg1)(void*, void*), void* arg2)
     {
-        stub<member_func_t<void, Callback, void(__cdecl*)(void*, void*), void*>>(0x55AD80, this, arg1, arg2);
+        // stub<member_func_t<void, Callback, void(__cdecl*)(void*, void*), void*>>(0x55AD80, this, arg1, arg2);
+
+        unimplemented(arg1, arg2);
     }
 
     // 0x55ADB0 | ?Call@Callback@@QAEXPAX@Z

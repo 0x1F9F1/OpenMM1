@@ -64,7 +64,9 @@ public:
     // 0x5126A0 | ??0asLamp@@QAE@XZ
     inline asLamp()
     {
-        stub<member_func_t<void, asLamp>>(0x5126A0, this);
+        // stub<member_func_t<void, asLamp>>(0x5126A0, this);
+
+        unimplemented();
     }
 
     // 0x5127D0 | ?SetColor@asLamp@@QAEXABVVector3@@M@Z
@@ -110,9 +112,11 @@ public:
     }
 
     // 0x512760 | ??1asLamp@@UAE@XZ
-    inline ~asLamp() override
+    inline ~asLamp() override = 0
     {
-        stub<member_func_t<void, asLamp>>(0x512760, this);
+        // stub<member_func_t<void, asLamp>>(0x512760, this);
+
+        unimplemented();
     }
 
     // 0x512B10 | ?GetClass@asLamp@@UAEPAVMetaClass@@XZ

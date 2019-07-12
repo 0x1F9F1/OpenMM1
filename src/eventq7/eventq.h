@@ -46,7 +46,9 @@ public:
     // 0x545570 | ??0eqEventQ@@QAE@HHH@Z
     inline eqEventQ(int32_t arg1, int32_t arg2, int32_t arg3)
     {
-        stub<member_func_t<void, eqEventQ, int32_t, int32_t, int32_t>>(0x545570, this, arg1, arg2, arg3);
+        // stub<member_func_t<void, eqEventQ, int32_t, int32_t, int32_t>>(0x545570, this, arg1, arg2, arg3);
+
+        unimplemented();
     }
 
     // 0x545880 | ?Queue@eqEventQ@@AAEXAATeqEvent@@@Z
@@ -62,9 +64,11 @@ public:
     }
 
     // 0x545600 | ??1eqEventQ@@UAE@XZ
-    inline ~eqEventQ() override
+    inline ~eqEventQ() override = 0
     {
-        stub<member_func_t<void, eqEventQ>>(0x545600, this);
+        // stub<member_func_t<void, eqEventQ>>(0x545600, this);
+
+        unimplemented();
     }
 
     // 0x545670 | ?Redraw@eqEventQ@@UAEXPAXHHHH@Z

@@ -77,7 +77,9 @@ public:
     // 0x436EE0 | ??0aiPath@@QAE@H@Z
     inline aiPath(int32_t arg1)
     {
-        stub<member_func_t<void, aiPath, int32_t>>(0x436EE0, this, arg1);
+        // stub<member_func_t<void, aiPath, int32_t>>(0x436EE0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x436F10 | ??1aiPath@@QAE@XZ

@@ -80,7 +80,7 @@ public:
     }
 
     // 0x493ED0 | ??1Dialog_DriverRec@@UAE@XZ
-    inline ~Dialog_DriverRec() override
+    inline ~Dialog_DriverRec() override = 0
     {
         stub<member_func_t<void, Dialog_DriverRec>>(0x493ED0, this);
     }

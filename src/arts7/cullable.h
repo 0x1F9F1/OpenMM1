@@ -64,14 +64,14 @@ public:
     // 0x512690 | ??0asCullable@@QAE@XZ
     inline asCullable()
     {
-        stub<member_func_t<void, asCullable>>(0x512690, this);
+        // stub<member_func_t<void, asCullable>>(0x512690, this);
+
+        unimplemented();
     }
 
     // 0x482B30 | ??1asCullable@@UAE@XZ
     inline ~asCullable() override
-    {
-        stub<member_func_t<void, asCullable>>(0x482B30, this);
-    }
+    {}
 
     // 0x512620 | ?GetClass@asCullable@@UAEPAVMetaClass@@XZ
     inline class MetaClass* GetClass() override

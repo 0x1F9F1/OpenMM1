@@ -75,7 +75,9 @@ public:
     // 0x4683A0 | ??0mmTransmission@@QAE@XZ
     inline mmTransmission()
     {
-        stub<member_func_t<void, mmTransmission>>(0x4683A0, this);
+        // stub<member_func_t<void, mmTransmission>>(0x4683A0, this);
+
+        unimplemented();
     }
 
     // 0x468470 | ?Init@mmTransmission@@QAEXPAVmmCarSim@@@Z
@@ -139,9 +141,11 @@ public:
     }
 
     // 0x468300 | ??1mmTransmission@@UAE@XZ
-    inline ~mmTransmission() override
+    inline ~mmTransmission() override = 0
     {
-        stub<member_func_t<void, mmTransmission>>(0x468300, this);
+        // stub<member_func_t<void, mmTransmission>>(0x468300, this);
+
+        unimplemented();
     }
 
     // 0x468950 | ?GetClass@mmTransmission@@UAEPAVMetaClass@@XZ

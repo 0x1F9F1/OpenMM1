@@ -61,10 +61,8 @@ public:
     }
 
     // 0x55AB40 | ??1Base@@UAE@XZ
-    virtual inline ~Base()
-    {
-        stub<member_func_t<void, Base>>(0x55AB40, this);
-    }
+    virtual inline ~Base() = 0
+    {}
 
     // 0x55ABF0 | ?GetClass@Base@@UAEPAVMetaClass@@XZ
     virtual inline class MetaClass* GetClass()

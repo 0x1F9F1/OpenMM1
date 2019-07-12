@@ -74,7 +74,9 @@ public:
     // 0x4D7DC0 | ??0mmIODev@@QAE@XZ
     inline mmIODev()
     {
-        stub<member_func_t<void, mmIODev>>(0x4D7DC0, this);
+        // stub<member_func_t<void, mmIODev>>(0x4D7DC0, this);
+
+        unimplemented();
     }
 
     // 0x4D7E10 | ?Init@mmIODev@@QAEXH_J@Z
@@ -150,9 +152,11 @@ public:
     }
 
     // 0x4D7E00 | ??1mmIODev@@UAE@XZ
-    inline ~mmIODev() override
+    inline ~mmIODev() override = 0
     {
-        stub<member_func_t<void, mmIODev>>(0x4D7E00, this);
+        // stub<member_func_t<void, mmIODev>>(0x4D7E00, this);
+
+        unimplemented();
     }
 
     // 0x4D87B0 | ?GetClass@mmIODev@@UAEPAVMetaClass@@XZ

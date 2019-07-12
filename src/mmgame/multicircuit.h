@@ -70,7 +70,9 @@ public:
     // 0x416780 | ??0mmMultiCircuit@@QAE@XZ
     inline mmMultiCircuit()
     {
-        stub<member_func_t<void, mmMultiCircuit>>(0x416780, this);
+        // stub<member_func_t<void, mmMultiCircuit>>(0x416780, this);
+
+        unimplemented();
     }
 
     // 0x4168B0 | ?Init@mmMultiCircuit@@QAEHXZ
@@ -92,9 +94,11 @@ public:
     }
 
     // 0x4167F0 | ??1mmMultiCircuit@@UAE@XZ
-    inline ~mmMultiCircuit() override
+    inline ~mmMultiCircuit() override = 0
     {
-        stub<member_func_t<void, mmMultiCircuit>>(0x4167F0, this);
+        // stub<member_func_t<void, mmMultiCircuit>>(0x4167F0, this);
+
+        unimplemented();
     }
 
     // 0x417CA0 | ?GetClass@mmMultiCircuit@@UAEPAVMetaClass@@XZ

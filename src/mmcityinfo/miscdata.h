@@ -72,7 +72,9 @@ public:
     // 0x4C09E0 | ??0mmMiscData@@QAE@XZ
     inline mmMiscData()
     {
-        stub<member_func_t<void, mmMiscData>>(0x4C09E0, this);
+        // stub<member_func_t<void, mmMiscData>>(0x4C09E0, this);
+
+        unimplemented();
     }
 
     // 0x4C0BF0 | ?Load@mmMiscData@@QAEHPAD@Z
@@ -163,9 +165,11 @@ public:
     }
 
     // 0x4C0AF0 | ??1mmMiscData@@UAE@XZ
-    inline ~mmMiscData() override
+    inline ~mmMiscData() override = 0
     {
-        stub<member_func_t<void, mmMiscData>>(0x4C0AF0, this);
+        // stub<member_func_t<void, mmMiscData>>(0x4C0AF0, this);
+
+        unimplemented();
     }
 
     // 0x4C1EB0 | ?GetClass@mmMiscData@@UAEPAVMetaClass@@XZ

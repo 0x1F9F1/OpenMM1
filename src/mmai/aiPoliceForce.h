@@ -39,7 +39,9 @@ public:
     // 0x448890 | ??0aiPoliceForce@@QAE@XZ
     inline aiPoliceForce()
     {
-        stub<member_func_t<void, aiPoliceForce>>(0x448890, this);
+        // stub<member_func_t<void, aiPoliceForce>>(0x448890, this);
+
+        unimplemented();
     }
 
     // 0x4488B0 | ??1aiPoliceForce@@QAE@XZ

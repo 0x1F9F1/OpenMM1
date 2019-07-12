@@ -77,7 +77,9 @@ public:
     // 0x410E00 | ??0mmSingleCircuit@@QAE@XZ
     inline mmSingleCircuit()
     {
-        stub<member_func_t<void, mmSingleCircuit>>(0x410E00, this);
+        // stub<member_func_t<void, mmSingleCircuit>>(0x410E00, this);
+
+        unimplemented();
     }
 
     // 0x410F60 | ?Init@mmSingleCircuit@@QAEHXZ
@@ -135,9 +137,11 @@ public:
     }
 
     // 0x410EA0 | ??1mmSingleCircuit@@UAE@XZ
-    inline ~mmSingleCircuit() override
+    inline ~mmSingleCircuit() override = 0
     {
-        stub<member_func_t<void, mmSingleCircuit>>(0x410EA0, this);
+        // stub<member_func_t<void, mmSingleCircuit>>(0x410EA0, this);
+
+        unimplemented();
     }
 
     // 0x412B20 | ?GetClass@mmSingleCircuit@@UAEPAVMetaClass@@XZ

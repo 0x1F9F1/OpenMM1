@@ -54,7 +54,9 @@ public:
     // 0x42D4A0 | ??0mmNetObject@@QAE@XZ
     inline mmNetObject()
     {
-        stub<member_func_t<void, mmNetObject>>(0x42D4A0, this);
+        // stub<member_func_t<void, mmNetObject>>(0x42D4A0, this);
+
+        unimplemented();
     }
 
     // 0x42D560 | ?Clear@mmNetObject@@QAEXXZ
@@ -120,9 +122,11 @@ public:
     }
 
     // 0x42D550 | ??1mmNetObject@@UAE@XZ
-    inline ~mmNetObject() override
+    inline ~mmNetObject() override = 0
     {
-        stub<member_func_t<void, mmNetObject>>(0x42D550, this);
+        // stub<member_func_t<void, mmNetObject>>(0x42D550, this);
+
+        unimplemented();
     }
 
     // 0x42DE10 | ?Update@mmNetObject@@UAEXXZ

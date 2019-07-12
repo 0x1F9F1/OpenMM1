@@ -74,7 +74,9 @@ public:
     // 0x477CC0 | ??0mmForce@@QAE@XZ
     inline mmForce()
     {
-        stub<member_func_t<void, mmForce>>(0x477CC0, this);
+        // stub<member_func_t<void, mmForce>>(0x477CC0, this);
+
+        unimplemented();
     }
 
     // 0x477EE0 | ?AddWidgets@mmForce@@QAEXPAVBank@@@Z
@@ -90,9 +92,11 @@ public:
     }
 
     // 0x4682A0 | ??1mmForce@@UAE@XZ
-    inline ~mmForce() override
+    inline ~mmForce() override = 0
     {
-        stub<member_func_t<void, mmForce>>(0x4682A0, this);
+        // stub<member_func_t<void, mmForce>>(0x4682A0, this);
+
+        unimplemented();
     }
 
     // 0x478050 | ?GetClass@mmForce@@UAEPAVMetaClass@@XZ

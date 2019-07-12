@@ -47,7 +47,9 @@ public:
     // 0x4C7D10 | ??0mmVehInfo@@QAE@XZ
     inline mmVehInfo()
     {
-        stub<member_func_t<void, mmVehInfo>>(0x4C7D10, this);
+        // stub<member_func_t<void, mmVehInfo>>(0x4C7D10, this);
+
+        unimplemented();
     }
 
     // 0x4C7D40 | ?Load@mmVehInfo@@QAEHPAD@Z

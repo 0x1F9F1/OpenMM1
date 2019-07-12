@@ -75,7 +75,9 @@ public:
     // 0x474DD0 | ??0mmWheel@@QAE@XZ
     inline mmWheel()
     {
-        stub<member_func_t<void, mmWheel>>(0x474DD0, this);
+        // stub<member_func_t<void, mmWheel>>(0x474DD0, this);
+
+        unimplemented();
     }
 
     // 0x474F90 | ?ComputeConstants@mmWheel@@QAEXXZ
@@ -157,9 +159,11 @@ public:
     static inline extern_var(0x5AB2CC, float, PtxMaxSkidCount);
 
     // 0x4682D0 | ??1mmWheel@@UAE@XZ
-    inline ~mmWheel() override
+    inline ~mmWheel() override = 0
     {
-        stub<member_func_t<void, mmWheel>>(0x4682D0, this);
+        // stub<member_func_t<void, mmWheel>>(0x4682D0, this);
+
+        unimplemented();
     }
 
     // 0x476FA0 | ?GetClass@mmWheel@@UAEPAVMetaClass@@XZ

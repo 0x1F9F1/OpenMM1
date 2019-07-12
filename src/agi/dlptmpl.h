@@ -104,7 +104,9 @@ public:
     // 0x53A2D0 | ??0DLPTemplate@@QAE@PAD@Z
     inline DLPTemplate(char* arg1)
     {
-        stub<member_func_t<void, DLPTemplate, char*>>(0x53A2D0, this, arg1);
+        // stub<member_func_t<void, DLPTemplate, char*>>(0x53A2D0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x53A320 | ??1DLPTemplate@@AAE@XZ
@@ -281,13 +283,17 @@ public:
     // 0x53AC80 | ??0DLPGroup@@QAE@XZ
     inline DLPGroup()
     {
-        stub<member_func_t<void, DLPGroup>>(0x53AC80, this);
+        // stub<member_func_t<void, DLPGroup>>(0x53AC80, this);
+
+        unimplemented();
     }
 
     // 0x53ACA0 | ??0DLPGroup@@QAE@PAVDLPTemplate@@PAV0@@Z
     inline DLPGroup(class DLPTemplate* arg1, class DLPGroup* arg2)
     {
-        stub<member_func_t<void, DLPGroup, class DLPTemplate*, class DLPGroup*>>(0x53ACA0, this, arg1, arg2);
+        // stub<member_func_t<void, DLPGroup, class DLPTemplate*, class DLPGroup*>>(0x53ACA0, this, arg1, arg2);
+
+        unimplemented();
     }
 
     // 0x53AE80 | ??1DLPGroup@@QAE@XZ
@@ -357,7 +363,9 @@ public:
     // 0x53C2E0 | ??0DLPPatch@@QAE@XZ
     inline DLPPatch()
     {
-        stub<member_func_t<void, DLPPatch>>(0x53C2E0, this);
+        // stub<member_func_t<void, DLPPatch>>(0x53C2E0, this);
+
+        unimplemented();
     }
 
     // 0x53C2F0 | ??1DLPPatch@@QAE@XZ

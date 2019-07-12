@@ -39,7 +39,9 @@ public:
     // 0x4A03A0 | ??0MArray@@QAE@XZ
     inline MArray()
     {
-        stub<member_func_t<void, MArray>>(0x4A03A0, this);
+        // stub<member_func_t<void, MArray>>(0x4A03A0, this);
+
+        unimplemented();
     }
 
     // 0x4A03B0 | ??1MArray@@QAE@XZ

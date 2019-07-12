@@ -85,7 +85,9 @@ public:
     // 0x469160 | ??0mmCarModel@@QAE@XZ
     inline mmCarModel()
     {
-        stub<member_func_t<void, mmCarModel>>(0x469160, this);
+        // stub<member_func_t<void, mmCarModel>>(0x469160, this);
+
+        unimplemented();
     }
 
     // 0x469310 | ?Impact@mmCarModel@@QAEXPAVVector3@@@Z
@@ -180,9 +182,11 @@ public:
     }
 
     // 0x469210 | ??1mmCarModel@@UAE@XZ
-    inline ~mmCarModel() override
+    inline ~mmCarModel() override = 0
     {
-        stub<member_func_t<void, mmCarModel>>(0x469210, this);
+        // stub<member_func_t<void, mmCarModel>>(0x469210, this);
+
+        unimplemented();
     }
 
     // 0x46AEF0 | ?GetClass@mmCarModel@@UAEPAVMetaClass@@XZ

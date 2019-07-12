@@ -37,7 +37,9 @@ public:
     // 0x47C490 | ??0NetAddOnCarAudio@@QAE@PADF@Z
     inline NetAddOnCarAudio(char* arg1, int16_t arg2)
     {
-        stub<member_func_t<void, NetAddOnCarAudio, char*, int16_t>>(0x47C490, this, arg1, arg2);
+        // stub<member_func_t<void, NetAddOnCarAudio, char*, int16_t>>(0x47C490, this, arg1, arg2);
+
+        unimplemented();
     }
 
     // 0x47C5B0 | ??1NetAddOnCarAudio@@QAE@XZ

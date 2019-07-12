@@ -41,7 +41,9 @@ public:
     // 0x4F3AE0 | ??0mmMouseSteerBar@@QAE@XZ
     inline mmMouseSteerBar()
     {
-        stub<member_func_t<void, mmMouseSteerBar>>(0x4F3AE0, this);
+        // stub<member_func_t<void, mmMouseSteerBar>>(0x4F3AE0, this);
+
+        unimplemented();
     }
 
     // 0x4F3B10 | ?Init@mmMouseSteerBar@@QAEXMMPAM@Z
@@ -51,9 +53,11 @@ public:
     }
 
     // 0x4F3B00 | ??1mmMouseSteerBar@@UAE@XZ
-    inline ~mmMouseSteerBar() override
+    inline ~mmMouseSteerBar() override = 0
     {
-        stub<member_func_t<void, mmMouseSteerBar>>(0x4F3B00, this);
+        // stub<member_func_t<void, mmMouseSteerBar>>(0x4F3B00, this);
+
+        unimplemented();
     }
 
     // 0x4F3BE0 | ?Cull@mmMouseSteerBar@@UAEXXZ

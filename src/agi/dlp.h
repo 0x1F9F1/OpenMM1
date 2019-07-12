@@ -51,7 +51,9 @@ public:
     // 0x53FD10 | ??0DLP@@QAE@PAVagiPipeline@@@Z
     inline DLP(class agiPipeline* arg1)
     {
-        stub<member_func_t<void, DLP, class agiPipeline*>>(0x53FD10, this, arg1);
+        // stub<member_func_t<void, DLP, class agiPipeline*>>(0x53FD10, this, arg1);
+
+        unimplemented();
     }
 
     // 0x53FE80 | ?FixTemplateRefs@DLP@@IAEXH@Z
@@ -92,9 +94,11 @@ public:
     }
 
     // 0x53FD70 | ??1DLP@@UAE@XZ
-    inline ~DLP() override
+    inline ~DLP() override = 0
     {
-        stub<member_func_t<void, DLP>>(0x53FD70, this);
+        // stub<member_func_t<void, DLP>>(0x53FD70, this);
+
+        unimplemented();
     }
 
     // 0x53FF50 | ?BeginGfx@DLP@@UAEHXZ

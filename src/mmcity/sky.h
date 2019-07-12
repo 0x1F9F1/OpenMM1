@@ -47,7 +47,9 @@ public:
     // 0x48A980 | ??0mmSky@@QAE@XZ
     inline mmSky()
     {
-        stub<member_func_t<void, mmSky>>(0x48A980, this);
+        // stub<member_func_t<void, mmSky>>(0x48A980, this);
+
+        unimplemented();
     }
 
     // 0x48A9C0 | ??1mmSky@@QAE@XZ

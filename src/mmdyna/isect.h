@@ -41,7 +41,9 @@ public:
     // 0x506470 | ??0mmIntersection@@QAE@XZ
     inline mmIntersection()
     {
-        stub<member_func_t<void, mmIntersection>>(0x506470, this);
+        // stub<member_func_t<void, mmIntersection>>(0x506470, this);
+
+        unimplemented();
     }
 
     // 0x506480 | ?InitSegment@mmIntersection@@QAEXABVVector3@@0PAVmmBoundTemplate@@HH@Z
@@ -93,7 +95,9 @@ public:
     // 0x506860 | ??0mmEdgeBodyIsect@@QAE@XZ
     inline mmEdgeBodyIsect()
     {
-        stub<member_func_t<void, mmEdgeBodyIsect>>(0x506860, this);
+        // stub<member_func_t<void, mmEdgeBodyIsect>>(0x506860, this);
+
+        unimplemented();
     }
 
     // 0x506870 | ?Reset@mmEdgeBodyIsect@@QAEXXZ

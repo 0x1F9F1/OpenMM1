@@ -45,7 +45,9 @@ public:
     // 0x425AF0 | ??0mmCDPlayer@@QAE@XZ
     inline mmCDPlayer()
     {
-        stub<member_func_t<void, mmCDPlayer>>(0x425AF0, this);
+        // stub<member_func_t<void, mmCDPlayer>>(0x425AF0, this);
+
+        unimplemented();
     }
 
     // 0x425B80 | ?Init@mmCDPlayer@@QAEXPAVmmHUD@@@Z
@@ -79,9 +81,11 @@ public:
     }
 
     // 0x4259D0 | ??1mmCDPlayer@@UAE@XZ
-    inline ~mmCDPlayer() override
+    inline ~mmCDPlayer() override = 0
     {
-        stub<member_func_t<void, mmCDPlayer>>(0x4259D0, this);
+        // stub<member_func_t<void, mmCDPlayer>>(0x4259D0, this);
+
+        unimplemented();
     }
 
     // 0x425D10 | ?Cull@mmCDPlayer@@UAEXXZ

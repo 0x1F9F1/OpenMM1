@@ -93,7 +93,9 @@ public:
     // 0x4F3DA0 | ??0agiTexSorter@@QAE@XZ
     inline agiTexSorter()
     {
-        stub<member_func_t<void, agiTexSorter>>(0x4F3DA0, this);
+        // stub<member_func_t<void, agiTexSorter>>(0x4F3DA0, this);
+
+        unimplemented();
     }
 
     // 0x4F3FC0 | ??1agiTexSorter@@QAE@XZ

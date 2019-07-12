@@ -44,7 +44,7 @@ public:
     }
 
     // 0x495290 | ??1Dialog_ControlAssign@@UAE@XZ
-    inline ~Dialog_ControlAssign() override
+    inline ~Dialog_ControlAssign() override = 0
     {
         stub<member_func_t<void, Dialog_ControlAssign>>(0x495290, this);
     }

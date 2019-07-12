@@ -50,7 +50,7 @@ class MiniParser
 public:
     char m_TokenBuffer[256] {};
     uint32_t m_LastError {0};
-    const char* m_Name {nullptr};
+    char* m_Name {nullptr};
     uint32_t m_CurrentToken = ' ';
     uint32_t m_Identation {0};
     uint32_t m_CurrentLine {1};
@@ -61,13 +61,13 @@ public:
     // 0x55DE60 | ??0MiniParser@@QAE@PAD@Z
     inline MiniParser(char* arg1)
     {
-        stub<member_func_t<void, MiniParser, char*>>(0x55DE60, this, arg1);
+        m_Name = _strdup(arg1);
     }
 
     // 0x55DEC0 | ??1MiniParser@@QAE@XZ
     inline ~MiniParser()
     {
-        stub<member_func_t<void, MiniParser>>(0x55DEC0, this);
+        free(m_Name);
     }
 
     // 0x55DEE0 | ?Printf@MiniParser@@QAAXPBDZZ

@@ -40,13 +40,17 @@ public:
     // 0x482450 | ??0asNetObject@@QAE@XZ
     inline asNetObject()
     {
-        stub<member_func_t<void, asNetObject>>(0x482450, this);
+        // stub<member_func_t<void, asNetObject>>(0x482450, this);
+
+        unimplemented();
     }
 
     // 0x482470 | ??1asNetObject@@UAE@XZ
-    inline ~asNetObject() override
+    inline ~asNetObject() override = 0
     {
-        stub<member_func_t<void, asNetObject>>(0x482470, this);
+        // stub<member_func_t<void, asNetObject>>(0x482470, this);
+
+        unimplemented();
     }
 
     // 0x4824A0 | ?Update@asNetObject@@UAEXXZ

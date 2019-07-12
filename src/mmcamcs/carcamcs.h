@@ -59,7 +59,9 @@ public:
     // 0x4ED750 | ??0CarCamCS@@QAE@XZ
     inline CarCamCS()
     {
-        stub<member_func_t<void, CarCamCS>>(0x4ED750, this);
+        // stub<member_func_t<void, CarCamCS>>(0x4ED750, this);
+
+        unimplemented();
     }
 
     // 0x4ED780 | ?Init@CarCamCS@@QAEXPAVmmCar@@PAD@Z
@@ -75,9 +77,11 @@ public:
     }
 
     // 0x4ED770 | ??1CarCamCS@@UAE@XZ
-    inline ~CarCamCS() override
+    inline ~CarCamCS() override = 0
     {
-        stub<member_func_t<void, CarCamCS>>(0x4ED770, this);
+        // stub<member_func_t<void, CarCamCS>>(0x4ED770, this);
+
+        unimplemented();
     }
 
     // 0x4ED920 | ?GetClass@CarCamCS@@UAEPAVMetaClass@@XZ

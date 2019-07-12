@@ -58,7 +58,9 @@ public:
     // 0x4C5800 | ??0mmInfoBase@@QAE@XZ
     inline mmInfoBase()
     {
-        stub<member_func_t<void, mmInfoBase>>(0x4C5800, this);
+        // stub<member_func_t<void, mmInfoBase>>(0x4C5800, this);
+
+        unimplemented();
     }
 
     // 0x4C5830 | ?Load@mmInfoBase@@QAEHPAD@Z
@@ -86,9 +88,11 @@ public:
     }
 
     // 0x410DD0 | ??1mmInfoBase@@UAE@XZ
-    inline ~mmInfoBase() override
+    inline ~mmInfoBase() override = 0
     {
-        stub<member_func_t<void, mmInfoBase>>(0x410DD0, this);
+        // stub<member_func_t<void, mmInfoBase>>(0x410DD0, this);
+
+        unimplemented();
     }
 
     // 0x4C5B20 | ?GetClass@mmInfoBase@@UAEPAVMetaClass@@XZ

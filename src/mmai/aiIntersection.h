@@ -42,7 +42,9 @@ public:
     // 0x441720 | ??0aiIntersection@@QAE@H@Z
     inline aiIntersection(int32_t arg1)
     {
-        stub<member_func_t<void, aiIntersection, int32_t>>(0x441720, this, arg1);
+        // stub<member_func_t<void, aiIntersection, int32_t>>(0x441720, this, arg1);
+
+        unimplemented();
     }
 
     // 0x441740 | ??1aiIntersection@@QAE@XZ

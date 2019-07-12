@@ -84,7 +84,9 @@ public:
     // 0x470C60 | ??0mmTrailer@@QAE@XZ
     inline mmTrailer()
     {
-        stub<member_func_t<void, mmTrailer>>(0x470C60, this);
+        // stub<member_func_t<void, mmTrailer>>(0x470C60, this);
+
+        unimplemented();
     }
 
     // 0x470EB0 | ?Init@mmTrailer@@QAEXPADPAVmmCarSim@@VVector3@@@Z
@@ -137,9 +139,11 @@ public:
     }
 
     // 0x471AF0 | ??1mmTrailer@@UAE@XZ
-    inline ~mmTrailer() override
+    inline ~mmTrailer() override = 0
     {
-        stub<member_func_t<void, mmTrailer>>(0x471AF0, this);
+        // stub<member_func_t<void, mmTrailer>>(0x471AF0, this);
+
+        unimplemented();
     }
 
     // 0x471A50 | ?GetClass@mmTrailer@@UAEPAVMetaClass@@XZ
@@ -203,9 +207,11 @@ public:
     }
 
     // 0x471A60 | ??1mmTrailerInstance@@UAE@XZ
-    inline ~mmTrailerInstance() override
+    inline ~mmTrailerInstance() override = 0
     {
-        stub<member_func_t<void, mmTrailerInstance>>(0x471A60, this);
+        // stub<member_func_t<void, mmTrailerInstance>>(0x471A60, this);
+
+        unimplemented();
     }
 
     // 0x471100 | ?FromMatrix@mmTrailerInstance@@UAIXABVMatrix34@@@Z

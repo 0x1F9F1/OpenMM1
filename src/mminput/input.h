@@ -172,7 +172,9 @@ public:
     // 0x4D36A0 | ??0mmInput@@QAE@XZ
     inline mmInput()
     {
-        stub<member_func_t<void, mmInput>>(0x4D36A0, this);
+        // stub<member_func_t<void, mmInput>>(0x4D36A0, this);
+
+        unimplemented();
     }
 
     // 0x4D3980 | ?AttachToPipe@mmInput@@QAEHXZ
@@ -569,9 +571,11 @@ public:
     }
 
     // 0x4D38C0 | ??1mmInput@@UAE@XZ
-    inline ~mmInput() override
+    inline ~mmInput() override = 0
     {
-        stub<member_func_t<void, mmInput>>(0x4D38C0, this);
+        // stub<member_func_t<void, mmInput>>(0x4D38C0, this);
+
+        unimplemented();
     }
 
     // 0x4D6FF0 | ?GetClass@mmInput@@UAEPAVMetaClass@@XZ

@@ -39,7 +39,9 @@ public:
     // 0x4E76D0 | ??0CReverbBuffer@@QAE@PAUIDirectSound3DBuffer@@@Z
     inline CReverbBuffer(struct IDirectSound3DBuffer* arg1)
     {
-        stub<member_func_t<void, CReverbBuffer, struct IDirectSound3DBuffer*>>(0x4E76D0, this, arg1);
+        // stub<member_func_t<void, CReverbBuffer, struct IDirectSound3DBuffer*>>(0x4E76D0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x4E7720 | ??1CReverbBuffer@@QAE@XZ

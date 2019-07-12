@@ -45,7 +45,9 @@ public:
     // 0x4B1410 | ??0UIToggleButton@@QAE@XZ
     inline UIToggleButton()
     {
-        stub<member_func_t<void, UIToggleButton>>(0x4B1410, this);
+        // stub<member_func_t<void, UIToggleButton>>(0x4B1410, this);
+
+        unimplemented();
     }
 
     // 0x4B1500 | ?Init@UIToggleButton@@QAEXPAULocString@@PAHMMMMHHVCallback@@@Z
@@ -60,9 +62,11 @@ public:
     static inline extern_var(0x667F44, int32_t, ToggleBMLoaded);
 
     // 0x4B1490 | ??1UIToggleButton@@UAE@XZ
-    inline ~UIToggleButton() override
+    inline ~UIToggleButton() override = 0
     {
-        stub<member_func_t<void, UIToggleButton>>(0x4B1490, this);
+        // stub<member_func_t<void, UIToggleButton>>(0x4B1490, this);
+
+        unimplemented();
     }
 
     // 0x4B16A0 | ?Update@UIToggleButton@@UAEXXZ

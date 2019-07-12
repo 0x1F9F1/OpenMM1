@@ -68,7 +68,9 @@ public:
     // 0x5142F0 | ??0asForm@@QAE@XZ
     inline asForm()
     {
-        stub<member_func_t<void, asForm>>(0x5142F0, this);
+        // stub<member_func_t<void, asForm>>(0x5142F0, this);
+
+        unimplemented();
     }
 
     // 0x514370 | ?SetDLP@asForm@@QAEXPAVDLP@@@Z
@@ -133,9 +135,11 @@ public:
     }
 
     // 0x514310 | ??1asForm@@UAE@XZ
-    inline ~asForm() override
+    inline ~asForm() override = 0
     {
-        stub<member_func_t<void, asForm>>(0x514310, this);
+        // stub<member_func_t<void, asForm>>(0x514310, this);
+
+        unimplemented();
     }
 
     // 0x514910 | ?GetClass@asForm@@UAEPAVMetaClass@@XZ

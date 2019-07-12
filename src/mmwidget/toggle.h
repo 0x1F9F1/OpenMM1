@@ -62,7 +62,9 @@ public:
     // 0x4B52B0 | ??0mmToggle@@QAE@XZ
     inline mmToggle()
     {
-        stub<member_func_t<void, mmToggle>>(0x4B52B0, this);
+        // stub<member_func_t<void, mmToggle>>(0x4B52B0, this);
+
+        unimplemented();
     }
 
     // 0x4B5330 | ?Init@mmToggle@@QAEXPADMMMM@Z
@@ -91,9 +93,11 @@ public:
     }
 
     // 0x4B52D0 | ??1mmToggle@@UAE@XZ
-    inline ~mmToggle() override
+    inline ~mmToggle() override = 0
     {
-        stub<member_func_t<void, mmToggle>>(0x4B52D0, this);
+        // stub<member_func_t<void, mmToggle>>(0x4B52D0, this);
+
+        unimplemented();
     }
 
     // 0x4B56D0 | ?GetClass@mmToggle@@UAEPAVMetaClass@@XZ

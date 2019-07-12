@@ -49,7 +49,9 @@ public:
     // 0x51AF20 | ??0agiD3DMtlDef@@QAE@PAVagiPipeline@@@Z
     inline agiD3DMtlDef(class agiPipeline* arg1)
     {
-        stub<member_func_t<void, agiD3DMtlDef, class agiPipeline*>>(0x51AF20, this, arg1);
+        // stub<member_func_t<void, agiD3DMtlDef, class agiPipeline*>>(0x51AF20, this, arg1);
+
+        unimplemented();
     }
 
     // 0x51B030 | ?Activate@agiD3DMtlDef@@QAEXXZ
@@ -71,9 +73,11 @@ public:
     }
 
     // 0x51B020 | ??1agiD3DMtlDef@@UAE@XZ
-    inline ~agiD3DMtlDef() override
+    inline ~agiD3DMtlDef() override = 0
     {
-        stub<member_func_t<void, agiD3DMtlDef>>(0x51B020, this);
+        // stub<member_func_t<void, agiD3DMtlDef>>(0x51B020, this);
+
+        unimplemented();
     }
 
     // 0x51AF50 | ?BeginGfx@agiD3DMtlDef@@UAEHXZ

@@ -60,7 +60,9 @@ public:
     // 0x4ED050 | ??0PolarCamCS@@QAE@XZ
     inline PolarCamCS()
     {
-        stub<member_func_t<void, PolarCamCS>>(0x4ED050, this);
+        // stub<member_func_t<void, PolarCamCS>>(0x4ED050, this);
+
+        unimplemented();
     }
 
     // 0x4ED0A0 | ?Init@PolarCamCS@@QAEXPAVmmCar@@@Z
@@ -76,9 +78,11 @@ public:
     }
 
     // 0x423B60 | ??1PolarCamCS@@UAE@XZ
-    inline ~PolarCamCS() override
+    inline ~PolarCamCS() override = 0
     {
-        stub<member_func_t<void, PolarCamCS>>(0x423B60, this);
+        // stub<member_func_t<void, PolarCamCS>>(0x423B60, this);
+
+        unimplemented();
     }
 
     // 0x4ED6B0 | ?GetClass@PolarCamCS@@UAEPAVMetaClass@@XZ

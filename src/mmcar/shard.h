@@ -94,7 +94,9 @@ public:
     // 0x4703A0 | ??0mmShardManager@@QAE@XZ
     inline mmShardManager()
     {
-        stub<member_func_t<void, mmShardManager>>(0x4703A0, this);
+        // stub<member_func_t<void, mmShardManager>>(0x4703A0, this);
+
+        unimplemented();
     }
 
     // 0x470480 | ?GetInstance@mmShardManager@@SAPAV1@H@Z
@@ -147,9 +149,11 @@ public:
     static inline extern_var(0x60A320, int32_t, NumInstances);
 
     // 0x470410 | ??1mmShardManager@@UAE@XZ
-    inline ~mmShardManager() override
+    inline ~mmShardManager() override = 0
     {
-        stub<member_func_t<void, mmShardManager>>(0x470410, this);
+        // stub<member_func_t<void, mmShardManager>>(0x470410, this);
+
+        unimplemented();
     }
 
     // 0x470B90 | ?GetClass@mmShardManager@@UAEPAVMetaClass@@XZ
@@ -173,7 +177,9 @@ public:
     // 0x470130 | ??0mmShard@@QAE@XZ
     inline mmShard()
     {
-        stub<member_func_t<void, mmShard>>(0x470130, this);
+        // stub<member_func_t<void, mmShard>>(0x470130, this);
+
+        unimplemented();
     }
 
     // 0x470170 | ?Init@mmShard@@QAEXPADH@Z
@@ -202,9 +208,11 @@ public:
     }
 
     // 0x4701A0 | ??1mmShard@@UAE@XZ
-    inline ~mmShard() override
+    inline ~mmShard() override = 0
     {
-        stub<member_func_t<void, mmShard>>(0x4701A0, this);
+        // stub<member_func_t<void, mmShard>>(0x4701A0, this);
+
+        unimplemented();
     }
 
     // 0x4709C0 | ?GetClass@mmShard@@UAEPAVMetaClass@@XZ

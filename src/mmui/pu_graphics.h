@@ -73,9 +73,11 @@ public:
     }
 
     // 0x49EAD0 | ??1PUGraphics@@UAE@XZ
-    inline ~PUGraphics() override
+    inline ~PUGraphics() override = 0
     {
-        stub<member_func_t<void, PUGraphics>>(0x49EAD0, this);
+        // stub<member_func_t<void, PUGraphics>>(0x49EAD0, this);
+
+        unimplemented();
     }
 
     // 0x49EAE0 | ?PreSetup@PUGraphics@@UAEXXZ

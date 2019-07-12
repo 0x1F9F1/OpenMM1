@@ -143,9 +143,11 @@ public:
     }
 
     // 0x41E150 | ??1mmPopup@@UAE@XZ
-    inline ~mmPopup() override
+    inline ~mmPopup() override = 0
     {
-        stub<member_func_t<void, mmPopup>>(0x41E150, this);
+        // stub<member_func_t<void, mmPopup>>(0x41E150, this);
+
+        unimplemented();
     }
 
     // 0x41E7C0 | ?Update@mmPopup@@UAEXXZ

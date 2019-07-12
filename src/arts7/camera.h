@@ -83,7 +83,9 @@ public:
     // 0x512ED0 | ??0asCamera@@QAE@XZ
     inline asCamera()
     {
-        stub<member_func_t<void, asCamera>>(0x512ED0, this);
+        // stub<member_func_t<void, asCamera>>(0x512ED0, this);
+
+        unimplemented();
     }
 
     // 0x513390 | ?SetClipArea@asCamera@@QAEXMMMM@Z
@@ -222,9 +224,11 @@ public:
     }
 
     // 0x512E40 | ??1asCamera@@UAE@XZ
-    inline ~asCamera() override
+    inline ~asCamera() override = 0
     {
-        stub<member_func_t<void, asCamera>>(0x512E40, this);
+        // stub<member_func_t<void, asCamera>>(0x512E40, this);
+
+        unimplemented();
     }
 
     // 0x514280 | ?GetClass@asCamera@@UAEPAVMetaClass@@XZ

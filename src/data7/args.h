@@ -75,7 +75,9 @@ public:
     // 0x55A590 | ??0asArg@@QAE@DPAD@Z
     inline asArg(char arg1, char* arg2)
     {
-        stub<member_func_t<void, asArg, char, char*>>(0x55A590, this, arg1, arg2);
+        // stub<member_func_t<void, asArg, char, char*>>(0x55A590, this, arg1, arg2);
+
+        unimplemented(arg1, arg2);
     }
 
     // 0x55A5E0 | ?Print@asArg@@QAEXPAD@Z

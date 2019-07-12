@@ -96,7 +96,9 @@ public:
     // 0x46F420 | ??0mmSkid@@QAE@XZ
     inline mmSkid()
     {
-        stub<member_func_t<void, mmSkid>>(0x46F420, this);
+        // stub<member_func_t<void, mmSkid>>(0x46F420, this);
+
+        unimplemented();
     }
 
     // 0x46F440 | ?Init@mmSkid@@QAEXPAD@Z
@@ -125,9 +127,11 @@ public:
     }
 
     // 0x46F460 | ??1mmSkid@@UAE@XZ
-    inline ~mmSkid() override
+    inline ~mmSkid() override = 0
     {
-        stub<member_func_t<void, mmSkid>>(0x46F460, this);
+        // stub<member_func_t<void, mmSkid>>(0x46F460, this);
+
+        unimplemented();
     }
 
     // 0x46FED0 | ?GetClass@mmSkid@@UAEPAVMetaClass@@XZ
@@ -181,7 +185,9 @@ public:
     // 0x46F710 | ??0mmSkidManager@@QAE@XZ
     inline mmSkidManager()
     {
-        stub<member_func_t<void, mmSkidManager>>(0x46F710, this);
+        // stub<member_func_t<void, mmSkidManager>>(0x46F710, this);
+
+        unimplemented();
     }
 
     // 0x46F7A0 | ?Init@mmSkidManager@@QAEXPADHPAVmmWheel@@@Z
@@ -210,9 +216,11 @@ public:
     }
 
     // 0x46F740 | ??1mmSkidManager@@UAE@XZ
-    inline ~mmSkidManager() override
+    inline ~mmSkidManager() override = 0
     {
-        stub<member_func_t<void, mmSkidManager>>(0x46F740, this);
+        // stub<member_func_t<void, mmSkidManager>>(0x46F740, this);
+
+        unimplemented();
     }
 
     // 0x470040 | ?GetClass@mmSkidManager@@UAEPAVMetaClass@@XZ

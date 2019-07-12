@@ -73,7 +73,9 @@ public:
     // 0x4E9510 | ??0TrackCamCS@@QAE@XZ
     inline TrackCamCS()
     {
-        stub<member_func_t<void, TrackCamCS>>(0x4E9510, this);
+        // stub<member_func_t<void, TrackCamCS>>(0x4E9510, this);
+
+        unimplemented();
     }
 
     // 0x4E9980 | ?UpdateCar@TrackCamCS@@AAEXXZ
@@ -143,9 +145,11 @@ public:
     }
 
     // 0x4E97B0 | ??1TrackCamCS@@UAE@XZ
-    inline ~TrackCamCS() override
+    inline ~TrackCamCS() override = 0
     {
-        stub<member_func_t<void, TrackCamCS>>(0x4E97B0, this);
+        // stub<member_func_t<void, TrackCamCS>>(0x4E97B0, this);
+
+        unimplemented();
     }
 
     // 0x4EB530 | ?GetClass@TrackCamCS@@UAEPAVMetaClass@@XZ

@@ -66,7 +66,9 @@ public:
     // 0x43ED20 | ??0mmBangerInstance@@QAE@XZ
     inline mmBangerInstance()
     {
-        stub<member_func_t<void, mmBangerInstance>>(0x43ED20, this);
+        // stub<member_func_t<void, mmBangerInstance>>(0x43ED20, this);
+
+        unimplemented();
     }
 
     // 0x4BE9A0 | ?GetData@mmBangerInstance@@QAEPAVmmBangerData@@XZ
@@ -76,9 +78,11 @@ public:
     }
 
     // 0x43ED60 | ??1mmBangerInstance@@UAE@XZ
-    inline ~mmBangerInstance() override
+    inline ~mmBangerInstance() override = 0
     {
-        stub<member_func_t<void, mmBangerInstance>>(0x43ED60, this);
+        // stub<member_func_t<void, mmBangerInstance>>(0x43ED60, this);
+
+        unimplemented();
     }
 
     // 0x4BE9C0 | ?GetEntity@mmBangerInstance@@UAEPAVmmPhysEntity@@XZ
@@ -145,9 +149,11 @@ public:
     static inline extern_var(0x668370, class mmBangerManager*, Instance);
 
     // 0x485610 | ??1mmBangerManager@@UAE@XZ
-    inline ~mmBangerManager() override
+    inline ~mmBangerManager() override = 0
     {
-        stub<member_func_t<void, mmBangerManager>>(0x485610, this);
+        // stub<member_func_t<void, mmBangerManager>>(0x485610, this);
+
+        unimplemented();
     }
 
     // 0x4BF2D0 | ?Reset@mmBangerManager@@UAEXXZ
@@ -165,13 +171,17 @@ public:
     // 0x4BF3A0 | ??0mmHitBangerInstance@@QAE@XZ
     inline mmHitBangerInstance()
     {
-        stub<member_func_t<void, mmHitBangerInstance>>(0x4BF3A0, this);
+        // stub<member_func_t<void, mmHitBangerInstance>>(0x4BF3A0, this);
+
+        unimplemented();
     }
 
     // 0x4BF410 | ??1mmHitBangerInstance@@UAE@XZ
-    inline ~mmHitBangerInstance() override
+    inline ~mmHitBangerInstance() override = 0
     {
-        stub<member_func_t<void, mmHitBangerInstance>>(0x4BF410, this);
+        // stub<member_func_t<void, mmHitBangerInstance>>(0x4BF410, this);
+
+        unimplemented();
     }
 
     // 0x4BEA60 | ?FromMatrix@mmHitBangerInstance@@UAIXABVMatrix34@@@Z
@@ -219,7 +229,9 @@ public:
     // 0x4B98C0 | ??0mmUnhitBangerInstance@@QAE@XZ
     inline mmUnhitBangerInstance()
     {
-        stub<member_func_t<void, mmUnhitBangerInstance>>(0x4B98C0, this);
+        // stub<member_func_t<void, mmUnhitBangerInstance>>(0x4B98C0, this);
+
+        unimplemented();
     }
 
     // 0x4BEAA0 | ?InitBreakables@mmUnhitBangerInstance@@QAEXPAD0PAVmmBangerData@@@Z
@@ -230,9 +242,11 @@ public:
     }
 
     // 0x4855D0 | ??1mmUnhitBangerInstance@@UAE@XZ
-    inline ~mmUnhitBangerInstance() override
+    inline ~mmUnhitBangerInstance() override = 0
     {
-        stub<member_func_t<void, mmUnhitBangerInstance>>(0x4855D0, this);
+        // stub<member_func_t<void, mmUnhitBangerInstance>>(0x4855D0, this);
+
+        unimplemented();
     }
 
     // 0x4BED50 | ?FromMatrix@mmUnhitBangerInstance@@UAIXABVMatrix34@@@Z

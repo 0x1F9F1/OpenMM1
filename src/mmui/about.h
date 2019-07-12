@@ -49,13 +49,17 @@ public:
     // 0x48F230 | ??0AboutMenu@@QAE@H@Z
     inline AboutMenu(int32_t arg1)
     {
-        stub<member_func_t<void, AboutMenu, int32_t>>(0x48F230, this, arg1);
+        // stub<member_func_t<void, AboutMenu, int32_t>>(0x48F230, this, arg1);
+
+        unimplemented();
     }
 
     // 0x48F400 | ??1AboutMenu@@UAE@XZ
-    inline ~AboutMenu() override
+    inline ~AboutMenu() override = 0
     {
-        stub<member_func_t<void, AboutMenu>>(0x48F400, this);
+        // stub<member_func_t<void, AboutMenu>>(0x48F400, this);
+
+        unimplemented();
     }
 
     // 0x48F4B0 | ?Cull@AboutMenu@@UAEXXZ

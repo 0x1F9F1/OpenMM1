@@ -67,7 +67,7 @@ public:
     }
 
     // 0x492840 | ??1Dialog_City2@@UAE@XZ
-    inline ~Dialog_City2() override
+    inline ~Dialog_City2() override = 0
     {
         stub<member_func_t<void, Dialog_City2>>(0x492840, this);
     }

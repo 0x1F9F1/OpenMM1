@@ -74,7 +74,9 @@ public:
     // 0x498B10 | ??0NetSelectMenu@@QAE@H@Z
     inline NetSelectMenu(int32_t arg1)
     {
-        stub<member_func_t<void, NetSelectMenu, int32_t>>(0x498B10, this, arg1);
+        // stub<member_func_t<void, NetSelectMenu, int32_t>>(0x498B10, this, arg1);
+
+        unimplemented();
     }
 
     // 0x499360 | ?HostCB@NetSelectMenu@@QAEXXZ
@@ -279,9 +281,11 @@ public:
     }
 
     // 0x499260 | ??1NetSelectMenu@@UAE@XZ
-    inline ~NetSelectMenu() override
+    inline ~NetSelectMenu() override = 0
     {
-        stub<member_func_t<void, NetSelectMenu>>(0x499260, this);
+        // stub<member_func_t<void, NetSelectMenu>>(0x499260, this);
+
+        unimplemented();
     }
 
     // 0x4992D0 | ?PreSetup@NetSelectMenu@@UAEXXZ

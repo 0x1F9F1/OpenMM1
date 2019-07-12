@@ -168,7 +168,9 @@ public:
     // 0x4DAD80 | ??0AudManager@@QAE@XZ
     inline AudManager()
     {
-        stub<member_func_t<void, AudManager>>(0x4DAD80, this);
+        // stub<member_func_t<void, AudManager>>(0x4DAD80, this);
+
+        unimplemented();
     }
 
     // 0x4DB000 | ?DeallocateADFRecord@AudManager@@QAEXH@Z
@@ -698,9 +700,11 @@ public:
     }
 
     // 0x4DAEC0 | ??1AudManager@@UAE@XZ
-    inline ~AudManager() override
+    inline ~AudManager() override = 0
     {
-        stub<member_func_t<void, AudManager>>(0x4DAEC0, this);
+        // stub<member_func_t<void, AudManager>>(0x4DAEC0, this);
+
+        unimplemented();
     }
 
     // 0x4DCEF0 | ?GetClass@AudManager@@UAEPAVMetaClass@@XZ

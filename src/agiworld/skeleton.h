@@ -59,7 +59,9 @@ public:
     // 0x503670 | ??0bnSkeleton@@QAE@XZ
     inline bnSkeleton()
     {
-        stub<member_func_t<void, bnSkeleton>>(0x503670, this);
+        // stub<member_func_t<void, bnSkeleton>>(0x503670, this);
+
+        unimplemented();
     }
 
     // 0x503680 | ??1bnSkeleton@@QAE@XZ

@@ -39,7 +39,9 @@ public:
     // 0x45E4F0 | ??0aiVehicle@@QAE@XZ
     inline aiVehicle()
     {
-        stub<member_func_t<void, aiVehicle>>(0x45E4F0, this);
+        // stub<member_func_t<void, aiVehicle>>(0x45E4F0, this);
+
+        unimplemented();
     }
 
     // 0x45E510 | ??1aiVehicle@@QAE@XZ

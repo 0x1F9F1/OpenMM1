@@ -55,7 +55,9 @@ public:
     // 0x51B160 | ??0agiD3DTexDef@@QAE@PAVagiPipeline@@@Z
     inline agiD3DTexDef(class agiPipeline* arg1)
     {
-        stub<member_func_t<void, agiD3DTexDef, class agiPipeline*>>(0x51B160, this, arg1);
+        // stub<member_func_t<void, agiD3DTexDef, class agiPipeline*>>(0x51B160, this, arg1);
+
+        unimplemented();
     }
 
     // 0x51B560 | ?GetHandle@agiD3DTexDef@@QAEPAUIDirect3DTexture2@@H@Z
@@ -77,9 +79,11 @@ public:
     }
 
     // 0x51B190 | ??1agiD3DTexDef@@UAE@XZ
-    inline ~agiD3DTexDef() override
+    inline ~agiD3DTexDef() override = 0
     {
-        stub<member_func_t<void, agiD3DTexDef>>(0x51B190, this);
+        // stub<member_func_t<void, agiD3DTexDef>>(0x51B190, this);
+
+        unimplemented();
     }
 
     // 0x51B1A0 | ?BeginGfx@agiD3DTexDef@@UAEHXZ

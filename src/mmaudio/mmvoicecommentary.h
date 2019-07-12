@@ -81,7 +81,9 @@ public:
     // 0x4DD2C0 | ??0mmVoiceCommentary@@QAE@XZ
     inline mmVoiceCommentary()
     {
-        stub<member_func_t<void, mmVoiceCommentary>>(0x4DD2C0, this);
+        // stub<member_func_t<void, mmVoiceCommentary>>(0x4DD2C0, this);
+
+        unimplemented();
     }
 
     // 0x4DD360 | ??1mmVoiceCommentary@@QAE@XZ

@@ -66,7 +66,9 @@ public:
     // 0x4EF4B0 | ??0Spline@@QAE@XZ
     inline Spline()
     {
-        stub<member_func_t<void, Spline>>(0x4EF4B0, this);
+        // stub<member_func_t<void, Spline>>(0x4EF4B0, this);
+
+        unimplemented();
     }
 
     // 0x4EF4E0 | ?Init@Spline@@QAEXPAMH@Z
@@ -130,9 +132,11 @@ public:
     }
 
     // 0x4EB570 | ??1Spline@@UAE@XZ
-    inline ~Spline() override
+    inline ~Spline() override = 0
     {
-        stub<member_func_t<void, Spline>>(0x4EB570, this);
+        // stub<member_func_t<void, Spline>>(0x4EB570, this);
+
+        unimplemented();
     }
 
     // 0x4EFDB0 | ?GetClass@Spline@@UAEPAVMetaClass@@XZ

@@ -87,7 +87,9 @@ public:
     // 0x4BBBB0 | ??0mmBoat@@QAE@XZ
     inline mmBoat()
     {
-        stub<member_func_t<void, mmBoat>>(0x4BBBB0, this);
+        // stub<member_func_t<void, mmBoat>>(0x4BBBB0, this);
+
+        unimplemented();
     }
 
     // 0x4BBD00 | ?Init@mmBoat@@QAEXHPAD0PAVVector3@@HHPAM@Z
@@ -173,9 +175,11 @@ public:
     }
 
     // 0x4BBC90 | ??1mmBoat@@UAE@XZ
-    inline ~mmBoat() override
+    inline ~mmBoat() override = 0
     {
-        stub<member_func_t<void, mmBoat>>(0x4BBC90, this);
+        // stub<member_func_t<void, mmBoat>>(0x4BBC90, this);
+
+        unimplemented();
     }
 
     // 0x4BC980 | ?GetClass@mmBoat@@UAEPAVMetaClass@@XZ

@@ -63,7 +63,9 @@ public:
     // 0x4A8F50 | ??0UIBMLabel@@QAE@XZ
     inline UIBMLabel()
     {
-        stub<member_func_t<void, UIBMLabel>>(0x4A8F50, this);
+        // stub<member_func_t<void, UIBMLabel>>(0x4A8F50, this);
+
+        unimplemented();
     }
 
     // 0x4A9030 | ?Init@UIBMLabel@@QAEXPAVstring@@MMPAH@Z
@@ -98,9 +100,11 @@ public:
     }
 
     // 0x4A8FC0 | ??1UIBMLabel@@UAE@XZ
-    inline ~UIBMLabel() override
+    inline ~UIBMLabel() override = 0
     {
-        stub<member_func_t<void, UIBMLabel>>(0x4A8FC0, this);
+        // stub<member_func_t<void, UIBMLabel>>(0x4A8FC0, this);
+
+        unimplemented();
     }
 
     // 0x4A94B0 | ?GetClass@UIBMLabel@@UAEPAVMetaClass@@XZ

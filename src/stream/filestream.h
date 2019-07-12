@@ -109,9 +109,11 @@ public:
     }
 
     // 0x5435E0 | ??1FileStream@@UAE@XZ
-    inline ~FileStream() override
+    inline ~FileStream() override = 0
     {
-        stub<member_func_t<void, FileStream>>(0x5435E0, this);
+        // stub<member_func_t<void, FileStream>>(0x5435E0, this);
+
+        unimplemented();
     }
 
     // 0x5433B0 | ?GetPagerHandle@FileStream@@UAEIXZ

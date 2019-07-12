@@ -74,13 +74,15 @@ public:
     {
         // stub<member_func_t<void, agiRasterizer, class agiPipeline*>>(0x539B20, this, arg1);
 
-        unimplemented;
+        unimplemented();
     }
 
     // 0x539C50 | ??1agiRasterizer@@UAE@XZ
-    inline ~agiRasterizer() override
+    inline ~agiRasterizer() override = 0
     {
-        stub<member_func_t<void, agiRasterizer>>(0x539C50, this);
+        // stub<member_func_t<void, agiRasterizer>>(0x539C50, this);
+
+        unimplemented();
     }
 
     // 0x539C60 | ?BeginGroup@agiRasterizer@@UAEXXZ

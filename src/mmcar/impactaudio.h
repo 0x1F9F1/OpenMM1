@@ -48,7 +48,9 @@ public:
     // 0x47B6A0 | ??0mmImpactAudio@@QAE@PAVmmCarSim@@PAVVector3@@@Z
     inline mmImpactAudio(class mmCarSim* arg1, class Vector3* arg2)
     {
-        stub<member_func_t<void, mmImpactAudio, class mmCarSim*, class Vector3*>>(0x47B6A0, this, arg1, arg2);
+        // stub<member_func_t<void, mmImpactAudio, class mmCarSim*, class Vector3*>>(0x47B6A0, this, arg1, arg2);
+
+        unimplemented();
     }
 
     // 0x47BCD0 | ??1mmImpactAudio@@QAE@XZ

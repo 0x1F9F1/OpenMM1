@@ -177,13 +177,17 @@ public:
     // 0x53E3C0 | ??0agiColorModelRGB555@@QAE@XZ
     inline agiColorModelRGB555()
     {
-        stub<member_func_t<void, agiColorModelRGB555>>(0x53E3C0, this);
+        // stub<member_func_t<void, agiColorModelRGB555>>(0x53E3C0, this);
+
+        unimplemented();
     }
 
     // 0x53F750 | ??1agiColorModelRGB555@@UAE@XZ
-    inline ~agiColorModelRGB555() override
+    inline ~agiColorModelRGB555() override = 0
     {
-        stub<member_func_t<void, agiColorModelRGB555>>(0x53F750, this);
+        // stub<member_func_t<void, agiColorModelRGB555>>(0x53F750, this);
+
+        unimplemented();
     }
 
     // 0x53E400 | ?GetColor@agiColorModelRGB555@@UAEIUagiRgba@@@Z
@@ -228,13 +232,17 @@ public:
     // 0x53E5A0 | ??0agiColorModelRGB565@@QAE@XZ
     inline agiColorModelRGB565()
     {
-        stub<member_func_t<void, agiColorModelRGB565>>(0x53E5A0, this);
+        // stub<member_func_t<void, agiColorModelRGB565>>(0x53E5A0, this);
+
+        unimplemented();
     }
 
     // 0x53F790 | ??1agiColorModelRGB565@@UAE@XZ
-    inline ~agiColorModelRGB565() override
+    inline ~agiColorModelRGB565() override = 0
     {
-        stub<member_func_t<void, agiColorModelRGB565>>(0x53F790, this);
+        // stub<member_func_t<void, agiColorModelRGB565>>(0x53F790, this);
+
+        unimplemented();
     }
 
     // 0x53E5E0 | ?GetColor@agiColorModelRGB565@@UAEIUagiRgba@@@Z
@@ -279,13 +287,17 @@ public:
     // 0x53EB40 | ??0agiColorModelRGB888@@QAE@XZ
     inline agiColorModelRGB888()
     {
-        stub<member_func_t<void, agiColorModelRGB888>>(0x53EB40, this);
+        // stub<member_func_t<void, agiColorModelRGB888>>(0x53EB40, this);
+
+        unimplemented();
     }
 
     // 0x53F850 | ??1agiColorModelRGB888@@UAE@XZ
-    inline ~agiColorModelRGB888() override
+    inline ~agiColorModelRGB888() override = 0
     {
-        stub<member_func_t<void, agiColorModelRGB888>>(0x53F850, this);
+        // stub<member_func_t<void, agiColorModelRGB888>>(0x53F850, this);
+
+        unimplemented();
     }
 
     // 0x53EB80 | ?GetColor@agiColorModelRGB888@@UAEIUagiRgba@@@Z
@@ -330,13 +342,17 @@ public:
     // 0x53F0C0 | ??0agiColorModelRGBA4444@@QAE@XZ
     inline agiColorModelRGBA4444()
     {
-        stub<member_func_t<void, agiColorModelRGBA4444>>(0x53F0C0, this);
+        // stub<member_func_t<void, agiColorModelRGBA4444>>(0x53F0C0, this);
+
+        unimplemented();
     }
 
     // 0x53F910 | ??1agiColorModelRGBA4444@@UAE@XZ
-    inline ~agiColorModelRGBA4444() override
+    inline ~agiColorModelRGBA4444() override = 0
     {
-        stub<member_func_t<void, agiColorModelRGBA4444>>(0x53F910, this);
+        // stub<member_func_t<void, agiColorModelRGBA4444>>(0x53F910, this);
+
+        unimplemented();
     }
 
     // 0x53F100 | ?GetColor@agiColorModelRGBA4444@@UAEIUagiRgba@@@Z
@@ -381,13 +397,17 @@ public:
     // 0x53EE80 | ??0agiColorModelRGBA5551@@QAE@XZ
     inline agiColorModelRGBA5551()
     {
-        stub<member_func_t<void, agiColorModelRGBA5551>>(0x53EE80, this);
+        // stub<member_func_t<void, agiColorModelRGBA5551>>(0x53EE80, this);
+
+        unimplemented();
     }
 
     // 0x53F8D0 | ??1agiColorModelRGBA5551@@UAE@XZ
-    inline ~agiColorModelRGBA5551() override
+    inline ~agiColorModelRGBA5551() override = 0
     {
-        stub<member_func_t<void, agiColorModelRGBA5551>>(0x53F8D0, this);
+        // stub<member_func_t<void, agiColorModelRGBA5551>>(0x53F8D0, this);
+
+        unimplemented();
     }
 
     // 0x53EED0 | ?GetColor@agiColorModelRGBA5551@@UAEIUagiRgba@@@Z
@@ -436,7 +456,7 @@ public:
     }
 
     // 0x53F890 | ??1agiColorModelRGB888_Rev@@UAE@XZ
-    inline ~agiColorModelRGB888_Rev() override
+    inline ~agiColorModelRGB888_Rev() override = 0
     {
         stub<member_func_t<void, agiColorModelRGB888_Rev>>(0x53F890, this);
     }
@@ -487,7 +507,7 @@ public:
     }
 
     // 0x53F7D0 | ??1agiColorModelRGB555_Rev@@UAE@XZ
-    inline ~agiColorModelRGB555_Rev() override
+    inline ~agiColorModelRGB555_Rev() override = 0
     {
         stub<member_func_t<void, agiColorModelRGB555_Rev>>(0x53F7D0, this);
     }
@@ -534,13 +554,17 @@ public:
     // 0x53F4E0 | ??0agiColorModelABGR@@QAE@XZ
     inline agiColorModelABGR()
     {
-        stub<member_func_t<void, agiColorModelABGR>>(0x53F4E0, this);
+        // stub<member_func_t<void, agiColorModelABGR>>(0x53F4E0, this);
+
+        unimplemented();
     }
 
     // 0x53F990 | ??1agiColorModelABGR@@UAE@XZ
-    inline ~agiColorModelABGR() override
+    inline ~agiColorModelABGR() override = 0
     {
-        stub<member_func_t<void, agiColorModelABGR>>(0x53F990, this);
+        // stub<member_func_t<void, agiColorModelABGR>>(0x53F990, this);
+
+        unimplemented();
     }
 
     // 0x53F520 | ?GetColor@agiColorModelABGR@@UAEIUagiRgba@@@Z
@@ -589,7 +613,7 @@ public:
     }
 
     // 0x53F810 | ??1agiColorModelRGB565_Rev@@UAE@XZ
-    inline ~agiColorModelRGB565_Rev() override
+    inline ~agiColorModelRGB565_Rev() override = 0
     {
         stub<member_func_t<void, agiColorModelRGB565_Rev>>(0x53F810, this);
     }
@@ -636,13 +660,17 @@ public:
     // 0x53F2F0 | ??0agiColorModelARGB@@QAE@XZ
     inline agiColorModelARGB()
     {
-        stub<member_func_t<void, agiColorModelARGB>>(0x53F2F0, this);
+        // stub<member_func_t<void, agiColorModelARGB>>(0x53F2F0, this);
+
+        unimplemented();
     }
 
     // 0x53F950 | ??1agiColorModelARGB@@UAE@XZ
-    inline ~agiColorModelARGB() override
+    inline ~agiColorModelARGB() override = 0
     {
-        stub<member_func_t<void, agiColorModelARGB>>(0x53F950, this);
+        // stub<member_func_t<void, agiColorModelARGB>>(0x53F950, this);
+
+        unimplemented();
     }
 
     // 0x53F330 | ?GetColor@agiColorModelARGB@@UAEIUagiRgba@@@Z

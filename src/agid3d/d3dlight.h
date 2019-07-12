@@ -41,7 +41,9 @@ public:
     // 0x51B850 | ??0agiD3DLight@@QAE@PAVagiPipeline@@@Z
     inline agiD3DLight(class agiPipeline* arg1)
     {
-        stub<member_func_t<void, agiD3DLight, class agiPipeline*>>(0x51B850, this, arg1);
+        // stub<member_func_t<void, agiD3DLight, class agiPipeline*>>(0x51B850, this, arg1);
+
+        unimplemented();
     }
 
     // 0x51B970 | ?EndGfx@agiD3DLight@@UAEXXZ
@@ -51,9 +53,11 @@ public:
     }
 
     // 0x51B890 | ??1agiD3DLight@@UAE@XZ
-    inline ~agiD3DLight() override
+    inline ~agiD3DLight() override = 0
     {
-        stub<member_func_t<void, agiD3DLight>>(0x51B890, this);
+        // stub<member_func_t<void, agiD3DLight>>(0x51B890, this);
+
+        unimplemented();
     }
 
     // 0x51B8F0 | ?BeginGfx@agiD3DLight@@UAEHXZ

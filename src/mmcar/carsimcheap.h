@@ -44,7 +44,9 @@ public:
     // 0x46C440 | ??0mmWheelCheap@@QAE@XZ
     inline mmWheelCheap()
     {
-        stub<member_func_t<void, mmWheelCheap>>(0x46C440, this);
+        // stub<member_func_t<void, mmWheelCheap>>(0x46C440, this);
+
+        unimplemented();
     }
 
     // 0x46C510 | ?Init@mmWheelCheap@@QAEXPAVVector3@@PAVaiVehicleData@@PAVasInertialCS@@@Z
@@ -55,9 +57,11 @@ public:
     }
 
     // 0x44D490 | ??1mmWheelCheap@@UAE@XZ
-    inline ~mmWheelCheap() override
+    inline ~mmWheelCheap() override = 0
     {
-        stub<member_func_t<void, mmWheelCheap>>(0x44D490, this);
+        // stub<member_func_t<void, mmWheelCheap>>(0x44D490, this);
+
+        unimplemented();
     }
 
     // 0x46C5E0 | ?Update@mmWheelCheap@@UAEXXZ

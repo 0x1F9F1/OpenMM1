@@ -95,7 +95,9 @@ public:
     // 0x4210B0 | ??0mmPlayer@@QAE@XZ
     inline mmPlayer()
     {
-        stub<member_func_t<void, mmPlayer>>(0x4210B0, this);
+        // stub<member_func_t<void, mmPlayer>>(0x4210B0, this);
+
+        unimplemented();
     }
 
     // 0x4213E0 | ?ReInit@mmPlayer@@QAEXPAD@Z
@@ -213,9 +215,11 @@ public:
     }
 
     // 0x423C20 | ??1mmPlayer@@UAE@XZ
-    inline ~mmPlayer() override
+    inline ~mmPlayer() override = 0
     {
-        stub<member_func_t<void, mmPlayer>>(0x423C20, this);
+        // stub<member_func_t<void, mmPlayer>>(0x423C20, this);
+
+        unimplemented();
     }
 
     // 0x423A60 | ?GetClass@mmPlayer@@UAEPAVMetaClass@@XZ

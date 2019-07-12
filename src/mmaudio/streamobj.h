@@ -66,7 +66,9 @@ public:
     // 0x4E7840 | ??0StreamObj@@QAE@XZ
     inline StreamObj()
     {
-        stub<member_func_t<void, StreamObj>>(0x4E7840, this);
+        // stub<member_func_t<void, StreamObj>>(0x4E7840, this);
+
+        unimplemented();
     }
 
     // 0x4E78D0 | ??1StreamObj@@QAE@XZ

@@ -41,7 +41,9 @@ public:
     // 0x53DBC0 | ??0agiLightModelParameters@@QAE@XZ
     inline agiLightModelParameters()
     {
-        stub<member_func_t<void, agiLightModelParameters>>(0x53DBC0, this);
+        // stub<member_func_t<void, agiLightModelParameters>>(0x53DBC0, this);
+
+        unimplemented();
     }
 
     // 0x53DBF0 | ??4agiLightModelParameters@@QAEXABV0@@Z
@@ -66,7 +68,9 @@ public:
     // 0x53DC20 | ??0agiLightModel@@IAE@PAVagiPipeline@@@Z
     inline agiLightModel(class agiPipeline* arg1)
     {
-        stub<member_func_t<void, agiLightModel, class agiPipeline*>>(0x53DC20, this, arg1);
+        // stub<member_func_t<void, agiLightModel, class agiPipeline*>>(0x53DC20, this, arg1);
+
+        unimplemented();
     }
 
     // 0x53DC70 | ?Init@agiLightModel@@QAEHABVagiLightModelParameters@@@Z
@@ -82,8 +86,10 @@ public:
     }
 
     // 0x53DCA0 | ??1agiLightModel@@UAE@XZ
-    inline ~agiLightModel() override
+    inline ~agiLightModel() override = 0
     {
-        stub<member_func_t<void, agiLightModel>>(0x53DCA0, this);
+        // stub<member_func_t<void, agiLightModel>>(0x53DCA0, this);
+
+        unimplemented();
     }
 };

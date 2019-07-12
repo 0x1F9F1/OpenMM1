@@ -40,13 +40,17 @@ public:
     // 0x4988C0 | ??0OptionsMenu@@QAE@H@Z
     inline OptionsMenu(int32_t arg1)
     {
-        stub<member_func_t<void, OptionsMenu, int32_t>>(0x4988C0, this, arg1);
+        // stub<member_func_t<void, OptionsMenu, int32_t>>(0x4988C0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x498A80 | ??1OptionsMenu@@UAE@XZ
-    inline ~OptionsMenu() override
+    inline ~OptionsMenu() override = 0
     {
-        stub<member_func_t<void, OptionsMenu>>(0x498A80, this);
+        // stub<member_func_t<void, OptionsMenu>>(0x498A80, this);
+
+        unimplemented();
     }
 
     // 0x498A90 | ?PreSetup@OptionsMenu@@UAEXXZ

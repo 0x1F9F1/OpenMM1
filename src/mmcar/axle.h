@@ -58,7 +58,9 @@ public:
     // 0x474AE0 | ??0mmAxle@@QAE@XZ
     inline mmAxle()
     {
-        stub<member_func_t<void, mmAxle>>(0x474AE0, this);
+        // stub<member_func_t<void, mmAxle>>(0x474AE0, this);
+
+        unimplemented();
     }
 
     // 0x474B00 | ?Init@mmAxle@@QAEXPAD0PAVmmWheel@@1@Z
@@ -75,9 +77,11 @@ public:
     }
 
     // 0x4682E0 | ??1mmAxle@@UAE@XZ
-    inline ~mmAxle() override
+    inline ~mmAxle() override = 0
     {
-        stub<member_func_t<void, mmAxle>>(0x4682E0, this);
+        // stub<member_func_t<void, mmAxle>>(0x4682E0, this);
+
+        unimplemented();
     }
 
     // 0x474D60 | ?GetClass@mmAxle@@UAEPAVMetaClass@@XZ

@@ -57,7 +57,9 @@ public:
     // 0x4ADAD0 | ??0UITextScroll@@QAE@XZ
     inline UITextScroll()
     {
-        stub<member_func_t<void, UITextScroll>>(0x4ADAD0, this);
+        // stub<member_func_t<void, UITextScroll>>(0x4ADAD0, this);
+
+        unimplemented();
     }
 
     // 0x4ADC60 | ?Init@UITextScroll@@QAEXPAXMMMMVstring@@HPAHVCallback@@@Z
@@ -165,9 +167,11 @@ public:
     }
 
     // 0x4ADBE0 | ??1UITextScroll@@UAE@XZ
-    inline ~UITextScroll() override
+    inline ~UITextScroll() override = 0
     {
-        stub<member_func_t<void, UITextScroll>>(0x4ADBE0, this);
+        // stub<member_func_t<void, UITextScroll>>(0x4ADBE0, this);
+
+        unimplemented();
     }
 
     // 0x4AE440 | ?Action@UITextScroll@@UAEXTeqEvent@@@Z

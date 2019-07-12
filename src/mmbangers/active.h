@@ -60,7 +60,9 @@ public:
     // 0x4BF920 | ??0mmBangerActiveManager@@QAE@XZ
     inline mmBangerActiveManager()
     {
-        stub<member_func_t<void, mmBangerActiveManager>>(0x4BF920, this);
+        // stub<member_func_t<void, mmBangerActiveManager>>(0x4BF920, this);
+
+        unimplemented();
     }
 
     // 0x4BFA30 | ?GetActive@mmBangerActiveManager@@QAEPAVmmBangerActive@@PAVmmBangerInstance@@@Z
@@ -87,9 +89,11 @@ public:
     static inline extern_var(0x668388, class mmBangerActiveManager*, Instance);
 
     // 0x4BF9D0 | ??1mmBangerActiveManager@@UAE@XZ
-    inline ~mmBangerActiveManager() override
+    inline ~mmBangerActiveManager() override = 0
     {
-        stub<member_func_t<void, mmBangerActiveManager>>(0x4BF9D0, this);
+        // stub<member_func_t<void, mmBangerActiveManager>>(0x4BF9D0, this);
+
+        unimplemented();
     }
 
     // 0x4BFB80 | ?Update@mmBangerActiveManager@@UAEXXZ
@@ -113,7 +117,9 @@ public:
     // 0x4BF420 | ??0mmBangerActive@@QAE@XZ
     inline mmBangerActive()
     {
-        stub<member_func_t<void, mmBangerActive>>(0x4BF420, this);
+        // stub<member_func_t<void, mmBangerActive>>(0x4BF420, this);
+
+        unimplemented();
     }
 
     // 0x4BF570 | ?Attach@mmBangerActive@@QAEXPAVmmBangerInstance@@@Z
@@ -129,9 +135,11 @@ public:
     }
 
     // 0x4BF500 | ??1mmBangerActive@@UAE@XZ
-    inline ~mmBangerActive() override
+    inline ~mmBangerActive() override = 0
     {
-        stub<member_func_t<void, mmBangerActive>>(0x4BF500, this);
+        // stub<member_func_t<void, mmBangerActive>>(0x4BF500, this);
+
+        unimplemented();
     }
 
     // 0x4BF7E0 | ?Update@mmBangerActive@@UAEXXZ

@@ -45,9 +45,11 @@ public:
     }
 
     // 0x49E050 | ??1PUKey@@UAE@XZ
-    inline ~PUKey() override
+    inline ~PUKey() override = 0
     {
-        stub<member_func_t<void, PUKey>>(0x49E050, this);
+        // stub<member_func_t<void, PUKey>>(0x49E050, this);
+
+        unimplemented();
     }
 
     // 0x49E060 | ?PreSetup@PUKey@@EAEXXZ

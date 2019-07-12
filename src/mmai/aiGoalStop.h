@@ -41,7 +41,9 @@ public:
     // 0x458350 | ??0aiGoalStop@@QAE@PAVmmCar@@PAF@Z
     inline aiGoalStop(class mmCar* arg1, int16_t* arg2)
     {
-        stub<member_func_t<void, aiGoalStop, class mmCar*, int16_t*>>(0x458350, this, arg1, arg2);
+        // stub<member_func_t<void, aiGoalStop, class mmCar*, int16_t*>>(0x458350, this, arg1, arg2);
+
+        unimplemented();
     }
 
     // 0x458380 | ??1aiGoalStop@@QAE@XZ

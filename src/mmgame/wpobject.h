@@ -74,9 +74,11 @@ public:
     }
 
     // 0x426250 | ??1mmWaypointObject@@UAE@XZ
-    inline ~mmWaypointObject() override
+    inline ~mmWaypointObject() override = 0
     {
-        stub<member_func_t<void, mmWaypointObject>>(0x426250, this);
+        // stub<member_func_t<void, mmWaypointObject>>(0x426250, this);
+
+        unimplemented();
     }
 
     // 0x426270 | ?Update@mmWaypointObject@@UAEXXZ

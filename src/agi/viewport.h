@@ -58,7 +58,9 @@ public:
     // 0x5399E0 | ??0agiViewport@@IAE@PAVagiPipeline@@@Z
     inline agiViewport(class agiPipeline* arg1)
     {
-        stub<member_func_t<void, agiViewport, class agiPipeline*>>(0x5399E0, this, arg1);
+        // stub<member_func_t<void, agiViewport, class agiPipeline*>>(0x5399E0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x706538 | ?Active@agiViewport@@1PAV1@A
@@ -71,9 +73,11 @@ public:
     }
 
     // 0x539A40 | ??1agiViewport@@MAE@XZ
-    inline ~agiViewport() override
+    inline ~agiViewport() override = 0
     {
-        stub<member_func_t<void, agiViewport>>(0x539A40, this);
+        // stub<member_func_t<void, agiViewport>>(0x539A40, this);
+
+        unimplemented();
     }
 
     // 0x567350 | __purecall
@@ -98,7 +102,9 @@ public:
     // 0x5392D0 | ??0agiViewParameters@@QAE@XZ
     inline agiViewParameters()
     {
-        stub<member_func_t<void, agiViewParameters>>(0x5392D0, this);
+        // stub<member_func_t<void, agiViewParameters>>(0x5392D0, this);
+
+        unimplemented();
     }
 
     // 0x539340 | ?Perspective@agiViewParameters@@QAEXMMMM@Z

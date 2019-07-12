@@ -85,7 +85,9 @@ public:
     // 0x452BA0 | ??0aiVehicleSpline@@QAE@XZ
     inline aiVehicleSpline()
     {
-        stub<member_func_t<void, aiVehicleSpline>>(0x452BA0, this);
+        // stub<member_func_t<void, aiVehicleSpline>>(0x452BA0, this);
+
+        unimplemented();
     }
 
     // 0x452C10 | ??1aiVehicleSpline@@QAE@XZ

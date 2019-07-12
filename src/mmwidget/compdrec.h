@@ -49,7 +49,9 @@ public:
     // 0x4AAD70 | ??0mmCompDRecord@@QAE@XZ
     inline mmCompDRecord()
     {
-        stub<member_func_t<void, mmCompDRecord>>(0x4AAD70, this);
+        // stub<member_func_t<void, mmCompDRecord>>(0x4AAD70, this);
+
+        unimplemented();
     }
 
     // 0x4AAE60 | ?Init@mmCompDRecord@@QAEXHPADM0HHH@Z
@@ -81,9 +83,11 @@ public:
     }
 
     // 0x4AADB0 | ??1mmCompDRecord@@UAE@XZ
-    inline ~mmCompDRecord() override
+    inline ~mmCompDRecord() override = 0
     {
-        stub<member_func_t<void, mmCompDRecord>>(0x4AADB0, this);
+        // stub<member_func_t<void, mmCompDRecord>>(0x4AADB0, this);
+
+        unimplemented();
     }
 
     // 0x4AB2A0 | ?Cull@mmCompDRecord@@UAEXXZ

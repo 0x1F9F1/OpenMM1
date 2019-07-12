@@ -87,7 +87,9 @@ public:
     // 0x48AB80 | ??0mmPed@@QAE@XZ
     inline mmPed()
     {
-        stub<member_func_t<void, mmPed>>(0x48AB80, this);
+        // stub<member_func_t<void, mmPed>>(0x48AB80, this);
+
+        unimplemented();
     }
 
     // 0x48ABA0 | ?Init@mmPed@@QAEXPADAAVVector3@@@Z
@@ -109,9 +111,11 @@ public:
     }
 
     // 0x48AC30 | ??1mmPed@@UAE@XZ
-    inline ~mmPed() override
+    inline ~mmPed() override = 0
     {
-        stub<member_func_t<void, mmPed>>(0x48AC30, this);
+        // stub<member_func_t<void, mmPed>>(0x48AC30, this);
+
+        unimplemented();
     }
 
     // 0x48AF70 | ?GetClass@mmPed@@UAEPAVMetaClass@@XZ
@@ -141,7 +145,9 @@ public:
     // 0x48ACE0 | ??0mmPedManager@@QAE@XZ
     inline mmPedManager()
     {
-        stub<member_func_t<void, mmPedManager>>(0x48ACE0, this);
+        // stub<member_func_t<void, mmPedManager>>(0x48ACE0, this);
+
+        unimplemented();
     }
 
     // 0x48AD10 | ?Init@mmPedManager@@QAEXH@Z
@@ -157,9 +163,11 @@ public:
     }
 
     // 0x48AD00 | ??1mmPedManager@@UAE@XZ
-    inline ~mmPedManager() override
+    inline ~mmPedManager() override = 0
     {
-        stub<member_func_t<void, mmPedManager>>(0x48AD00, this);
+        // stub<member_func_t<void, mmPedManager>>(0x48AD00, this);
+
+        unimplemented();
     }
 
     // 0x48B0E0 | ?GetClass@mmPedManager@@UAEPAVMetaClass@@XZ

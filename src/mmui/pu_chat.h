@@ -57,8 +57,10 @@ public:
     }
 
     // 0x49E470 | ??1PUChat@@UAE@XZ
-    inline ~PUChat() override
+    inline ~PUChat() override = 0
     {
-        stub<member_func_t<void, PUChat>>(0x49E470, this);
+        // stub<member_func_t<void, PUChat>>(0x49E470, this);
+
+        unimplemented();
     }
 };

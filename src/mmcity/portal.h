@@ -133,7 +133,9 @@ public:
     // 0x48CC70 | ??0asPortalWeb@@QAE@XZ
     inline asPortalWeb()
     {
-        stub<member_func_t<void, asPortalWeb>>(0x48CC70, this);
+        // stub<member_func_t<void, asPortalWeb>>(0x48CC70, this);
+
+        unimplemented();
     }
 
     // 0x48D7A0 | ?BuildGroups@asPortalWeb@@QAEXXZ
@@ -158,9 +160,11 @@ public:
     static inline extern_var(0x667AE0, uint16_t, VisitTag);
 
     // 0x48DF90 | ??1asPortalWeb@@UAE@XZ
-    inline ~asPortalWeb() override
+    inline ~asPortalWeb() override = 0
     {
-        stub<member_func_t<void, asPortalWeb>>(0x48DF90, this);
+        // stub<member_func_t<void, asPortalWeb>>(0x48DF90, this);
+
+        unimplemented();
     }
 
     // 0x48E0A0 | ?GetClass@asPortalWeb@@UAEPAVMetaClass@@XZ

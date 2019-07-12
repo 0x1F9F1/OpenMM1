@@ -86,7 +86,9 @@ public:
     // 0x42B350 | ??0mmGameMulti@@QAE@XZ
     inline mmGameMulti()
     {
-        stub<member_func_t<void, mmGameMulti>>(0x42B350, this);
+        // stub<member_func_t<void, mmGameMulti>>(0x42B350, this);
+
+        unimplemented();
     }
 
     // 0x42B520 | ?Init@mmGameMulti@@QAEHXZ
@@ -217,9 +219,11 @@ public:
     }
 
     // 0x42B460 | ??1mmGameMulti@@UAE@XZ
-    inline ~mmGameMulti() override
+    inline ~mmGameMulti() override = 0
     {
-        stub<member_func_t<void, mmGameMulti>>(0x42B460, this);
+        // stub<member_func_t<void, mmGameMulti>>(0x42B460, this);
+
+        unimplemented();
     }
 
     // 0x42D310 | ?GetClass@mmGameMulti@@UAEPAVMetaClass@@XZ

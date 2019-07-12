@@ -67,7 +67,9 @@ public:
     // 0x430090 | ??0mmWaypointInstance@@QAE@HMM@Z
     inline mmWaypointInstance(int32_t arg1, float arg2, float arg3)
     {
-        stub<member_func_t<void, mmWaypointInstance, int32_t, float, float>>(0x430090, this, arg1, arg2, arg3);
+        // stub<member_func_t<void, mmWaypointInstance, int32_t, float, float>>(0x430090, this, arg1, arg2, arg3);
+
+        unimplemented();
     }
 
     // 0x4304F0 | ?AddWidgets@mmWaypointInstance@@QAEXPAVBank@@@Z
@@ -83,9 +85,11 @@ public:
     }
 
     // 0x4300E0 | ??1mmWaypointInstance@@UAE@XZ
-    inline ~mmWaypointInstance() override
+    inline ~mmWaypointInstance() override = 0
     {
-        stub<member_func_t<void, mmWaypointInstance>>(0x4300E0, this);
+        // stub<member_func_t<void, mmWaypointInstance>>(0x4300E0, this);
+
+        unimplemented();
     }
 
     // 0x430680 | ?GetClass@mmWaypointInstance@@UAEPAVMetaClass@@XZ

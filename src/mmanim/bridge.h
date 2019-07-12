@@ -104,7 +104,9 @@ public:
     // 0x4B6BE0 | ??0mmBridgeSet@@QAE@XZ
     inline mmBridgeSet()
     {
-        stub<member_func_t<void, mmBridgeSet>>(0x4B6BE0, this);
+        // stub<member_func_t<void, mmBridgeSet>>(0x4B6BE0, this);
+
+        unimplemented();
     }
 
     // 0x4B6E30 | ?ReadEntry@mmBridgeSet@@QAEHPAVStream@@H@Z
@@ -189,9 +191,11 @@ public:
     static inline extern_var(0x6680C0, float, s_fAudioAttenuationMult);
 
     // 0x4B6CF0 | ??1mmBridgeSet@@UAE@XZ
-    inline ~mmBridgeSet() override
+    inline ~mmBridgeSet() override = 0
     {
-        stub<member_func_t<void, mmBridgeSet>>(0x4B6CF0, this);
+        // stub<member_func_t<void, mmBridgeSet>>(0x4B6CF0, this);
+
+        unimplemented();
     }
 
     // 0x4B7AE0 | ?GetClass@mmBridgeSet@@UAEPAVMetaClass@@XZ
@@ -227,7 +231,9 @@ public:
     // 0x4B65C0 | ??0mmBridgeMgr@@QAE@XZ
     inline mmBridgeMgr()
     {
-        stub<member_func_t<void, mmBridgeMgr>>(0x4B65C0, this);
+        // stub<member_func_t<void, mmBridgeMgr>>(0x4B65C0, this);
+
+        unimplemented();
     }
 
     // 0x4B6760 | ?ToggleDrawLabels@mmBridgeMgr@@QAEXXZ
@@ -253,9 +259,11 @@ public:
     static inline extern_var(0x668124, class mmBridgeMgr*, Instance);
 
     // 0x4B66D0 | ??1mmBridgeMgr@@UAE@XZ
-    inline ~mmBridgeMgr() override
+    inline ~mmBridgeMgr() override = 0
     {
-        stub<member_func_t<void, mmBridgeMgr>>(0x4B66D0, this);
+        // stub<member_func_t<void, mmBridgeMgr>>(0x4B66D0, this);
+
+        unimplemented();
     }
 
     // 0x4B7D70 | ?GetClass@mmBridgeMgr@@UAEPAVMetaClass@@XZ

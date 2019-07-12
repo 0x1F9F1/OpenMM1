@@ -46,7 +46,9 @@ public:
     // 0x4A00B0 | ??0OptionsBase@@QAE@H@Z
     inline OptionsBase(int32_t arg1)
     {
-        stub<member_func_t<void, OptionsBase, int32_t>>(0x4A00B0, this, arg1);
+        // stub<member_func_t<void, OptionsBase, int32_t>>(0x4A00B0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x4A0210 | ?CreateTitle@OptionsBase@@QAEXPAULocString@@@Z
@@ -56,9 +58,11 @@ public:
     }
 
     // 0x4A0240 | ??1OptionsBase@@UAE@XZ
-    inline ~OptionsBase() override
+    inline ~OptionsBase() override = 0
     {
-        stub<member_func_t<void, OptionsBase>>(0x4A0240, this);
+        // stub<member_func_t<void, OptionsBase>>(0x4A0240, this);
+
+        unimplemented();
     }
 
     // 0x48F100 | ?IsAnOptionMenu@OptionsBase@@UAEHXZ

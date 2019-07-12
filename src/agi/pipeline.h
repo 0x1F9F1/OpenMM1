@@ -129,7 +129,9 @@ public:
     // 0x537700 | ??0agiPipeline@@IAE@XZ
     inline agiPipeline()
     {
-        stub<member_func_t<void, agiPipeline>>(0x537700, this);
+        // stub<member_func_t<void, agiPipeline>>(0x537700, this);
+
+        unimplemented();
     }
 
     // 0x5377D0 | ?Init@agiPipeline@@QAEHPADHHHHHHPAX@Z

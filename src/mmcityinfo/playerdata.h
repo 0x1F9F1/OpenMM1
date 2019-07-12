@@ -108,13 +108,17 @@ public:
     // 0x410C60 | ??0mmPlayerRecord@@QAE@ABV0@@Z
     inline mmPlayerRecord(class mmPlayerRecord const& arg1)
     {
-        stub<member_func_t<void, mmPlayerRecord, class mmPlayerRecord const&>>(0x410C60, this, arg1);
+        // stub<member_func_t<void, mmPlayerRecord, class mmPlayerRecord const&>>(0x410C60, this, arg1);
+
+        unimplemented();
     }
 
     // 0x4C4180 | ??0mmPlayerRecord@@QAE@XZ
     inline mmPlayerRecord()
     {
-        stub<member_func_t<void, mmPlayerRecord>>(0x4C4180, this);
+        // stub<member_func_t<void, mmPlayerRecord>>(0x4C4180, this);
+
+        unimplemented();
     }
 
     // 0x4C41B0 | ?Reset@mmPlayerRecord@@QAEXXZ
@@ -154,9 +158,11 @@ public:
     }
 
     // 0x4C41A0 | ??1mmPlayerRecord@@UAE@XZ
-    inline ~mmPlayerRecord() override
+    inline ~mmPlayerRecord() override = 0
     {
-        stub<member_func_t<void, mmPlayerRecord>>(0x4C41A0, this);
+        // stub<member_func_t<void, mmPlayerRecord>>(0x4C41A0, this);
+
+        unimplemented();
     }
 
     // 0x4C4560 | ?GetClass@mmPlayerRecord@@UAEPAVMetaClass@@XZ
@@ -174,7 +180,9 @@ public:
     // 0x4C4570 | ??0mmPlayerData@@QAE@XZ
     inline mmPlayerData()
     {
-        stub<member_func_t<void, mmPlayerData>>(0x4C4570, this);
+        // stub<member_func_t<void, mmPlayerData>>(0x4C4570, this);
+
+        unimplemented();
     }
 
     // 0x4C4690 | ??4mmPlayerData@@QAEXAAV0@@Z
@@ -335,9 +343,11 @@ public:
     }
 
     // 0x4C0040 | ??1mmPlayerData@@UAE@XZ
-    inline ~mmPlayerData() override
+    inline ~mmPlayerData() override = 0
     {
-        stub<member_func_t<void, mmPlayerData>>(0x4C0040, this);
+        // stub<member_func_t<void, mmPlayerData>>(0x4C0040, this);
+
+        unimplemented();
     }
 
     // 0x4C5730 | ?GetClass@mmPlayerData@@UAEPAVMetaClass@@XZ

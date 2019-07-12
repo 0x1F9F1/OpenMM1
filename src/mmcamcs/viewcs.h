@@ -67,7 +67,9 @@ public:
     // 0x4EB5E0 | ??0mmViewCS@@QAE@XZ
     inline mmViewCS()
     {
-        stub<member_func_t<void, mmViewCS>>(0x4EB5E0, this);
+        // stub<member_func_t<void, mmViewCS>>(0x4EB5E0, this);
+
+        unimplemented();
     }
 
     // 0x4EB6B0 | ?Instance@mmViewCS@@SAPAV1@PAVasCamera@@@Z
@@ -126,9 +128,11 @@ public:
     }
 
     // 0x4EB6A0 | ??1mmViewCS@@UAE@XZ
-    inline ~mmViewCS() override
+    inline ~mmViewCS() override = 0
     {
-        stub<member_func_t<void, mmViewCS>>(0x4EB6A0, this);
+        // stub<member_func_t<void, mmViewCS>>(0x4EB6A0, this);
+
+        unimplemented();
     }
 
     // 0x4EBB00 | ?GetClass@mmViewCS@@UAEPAVMetaClass@@XZ

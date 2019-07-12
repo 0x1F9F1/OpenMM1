@@ -107,7 +107,9 @@ public:
     // 0x4A3930 | ??0MenuManager@@QAE@XZ
     inline MenuManager()
     {
-        stub<member_func_t<void, MenuManager>>(0x4A3930, this);
+        // stub<member_func_t<void, MenuManager>>(0x4A3930, this);
+
+        unimplemented();
     }
 
     // 0x4A3D10 | ?GetScale@MenuManager@@QAEXAAM000@Z
@@ -437,9 +439,11 @@ public:
     static inline extern_var(0x667C94, class MenuManager*, Instance);
 
     // 0x4A3AF0 | ??1MenuManager@@UAE@XZ
-    inline ~MenuManager() override
+    inline ~MenuManager() override = 0
     {
-        stub<member_func_t<void, MenuManager>>(0x4A3AF0, this);
+        // stub<member_func_t<void, MenuManager>>(0x4A3AF0, this);
+
+        unimplemented();
     }
 
     // 0x4A59C0 | ?Update@MenuManager@@UAEXXZ

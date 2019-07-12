@@ -168,7 +168,9 @@ public:
     // 0x4C8510 | ??0mmPhysicsMGR@@QAE@XZ
     inline mmPhysicsMGR()
     {
-        stub<member_func_t<void, mmPhysicsMGR>>(0x4C8510, this);
+        // stub<member_func_t<void, mmPhysicsMGR>>(0x4C8510, this);
+
+        unimplemented();
     }
 
     // 0x4C86A0 | ?Init@mmPhysicsMGR@@QAEXPAVasInertialCS@@PAVmmViewCS@@@Z
@@ -304,9 +306,11 @@ public:
     static inline extern_var(0x679270, class mmPhysicsMGR*, Instance);
 
     // 0x4C8610 | ??1mmPhysicsMGR@@UAE@XZ
-    inline ~mmPhysicsMGR() override
+    inline ~mmPhysicsMGR() override = 0
     {
-        stub<member_func_t<void, mmPhysicsMGR>>(0x4C8610, this);
+        // stub<member_func_t<void, mmPhysicsMGR>>(0x4C8610, this);
+
+        unimplemented();
     }
 
     // 0x4CCD90 | ?GetClass@mmPhysicsMGR@@UAEPAVMetaClass@@XZ
@@ -358,9 +362,11 @@ public:
     }
 
     // 0x4CCF00 | ??1mmPhysExec@@UAE@XZ
-    inline ~mmPhysExec() override
+    inline ~mmPhysExec() override = 0
     {
-        stub<member_func_t<void, mmPhysExec>>(0x4CCF00, this);
+        // stub<member_func_t<void, mmPhysExec>>(0x4CCF00, this);
+
+        unimplemented();
     }
 
     // 0x4CCEB0 | ?Update@mmPhysExec@@UAEXXZ

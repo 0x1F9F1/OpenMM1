@@ -70,7 +70,9 @@ public:
     // 0x41B820 | ??0mmMultiRace@@QAE@XZ
     inline mmMultiRace()
     {
-        stub<member_func_t<void, mmMultiRace>>(0x41B820, this);
+        // stub<member_func_t<void, mmMultiRace>>(0x41B820, this);
+
+        unimplemented();
     }
 
     // 0x41B950 | ?Init@mmMultiRace@@QAEHXZ
@@ -98,9 +100,11 @@ public:
     }
 
     // 0x41B890 | ??1mmMultiRace@@UAE@XZ
-    inline ~mmMultiRace() override
+    inline ~mmMultiRace() override = 0
     {
-        stub<member_func_t<void, mmMultiRace>>(0x41B890, this);
+        // stub<member_func_t<void, mmMultiRace>>(0x41B890, this);
+
+        unimplemented();
     }
 
     // 0x41D300 | ?GetClass@mmMultiRace@@UAEPAVMetaClass@@XZ

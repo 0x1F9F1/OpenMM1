@@ -135,7 +135,9 @@ public:
     // 0x470110 | ??0Matrix34@@QAE@XZ
     inline Matrix34()
     {
-        stub<member_func_t<void, Matrix34>>(0x470110, this);
+        // stub<member_func_t<void, Matrix34>>(0x470110, this);
+
+        unimplemented();
     }
 
     // 0x4D1E50 | ?RotateNoTrans@Matrix34@@QBE?AVVector3@@ABV2@@Z
@@ -153,7 +155,9 @@ public:
     // 0x549AD0 | ??0Matrix34@@QAE@ABVMatrix44@@@Z
     inline Matrix34(class Matrix44 const& arg1)
     {
-        stub<member_func_t<void, Matrix34, class Matrix44 const&>>(0x549AD0, this, arg1);
+        // stub<member_func_t<void, Matrix34, class Matrix44 const&>>(0x549AD0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x549B30 | ?Identity@Matrix34@@QAEXXZ

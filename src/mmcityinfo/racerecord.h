@@ -70,7 +70,9 @@ public:
     // 0x4C5B90 | ??0mmRecord@@QAE@XZ
     inline mmRecord()
     {
-        stub<member_func_t<void, mmRecord>>(0x4C5B90, this);
+        // stub<member_func_t<void, mmRecord>>(0x4C5B90, this);
+
+        unimplemented();
     }
 
     // 0x4C5BE0 | ?GetTime@mmRecord@@QAEMXZ
@@ -164,9 +166,11 @@ public:
     }
 
     // 0x4C5BD0 | ??1mmRecord@@UAE@XZ
-    inline ~mmRecord() override
+    inline ~mmRecord() override = 0
     {
-        stub<member_func_t<void, mmRecord>>(0x4C5BD0, this);
+        // stub<member_func_t<void, mmRecord>>(0x4C5BD0, this);
+
+        unimplemented();
     }
 
     // 0x4C60A0 | ?GetClass@mmRecord@@UAEPAVMetaClass@@XZ

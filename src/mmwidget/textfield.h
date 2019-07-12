@@ -67,7 +67,9 @@ public:
     // 0x4AA7F0 | ??0uiWidget@@QAE@XZ
     inline uiWidget()
     {
-        stub<member_func_t<void, uiWidget>>(0x4AA7F0, this);
+        // stub<member_func_t<void, uiWidget>>(0x4AA7F0, this);
+
+        unimplemented();
     }
 
     // 0x4AA820 | ?AddToolTip@uiWidget@@QAEXPAVUIMenu@@PAULocString@@@Z
@@ -89,9 +91,11 @@ public:
     }
 
     // 0x4A77E0 | ??1uiWidget@@UAE@XZ
-    inline ~uiWidget() override
+    inline ~uiWidget() override = 0
     {
-        stub<member_func_t<void, uiWidget>>(0x4A77E0, this);
+        // stub<member_func_t<void, uiWidget>>(0x4A77E0, this);
+
+        unimplemented();
     }
 
     // 0x4A77F0 | ?Disable@uiWidget@@UAEXXZ
@@ -175,7 +179,9 @@ public:
     // 0x4A6B90 | ??0UITextField@@QAE@XZ
     inline UITextField()
     {
-        stub<member_func_t<void, UITextField>>(0x4A6B90, this);
+        // stub<member_func_t<void, UITextField>>(0x4A6B90, this);
+
+        unimplemented();
     }
 
     // 0x4A6D10 | ?Init@UITextField@@QAEXPAULocString@@PADMMMMHHHHHVCallback@@PAVUIMenu@@@Z
@@ -242,9 +248,11 @@ public:
     }
 
     // 0x4A6CA0 | ??1UITextField@@UAE@XZ
-    inline ~UITextField() override
+    inline ~UITextField() override = 0
     {
-        stub<member_func_t<void, UITextField>>(0x4A6CA0, this);
+        // stub<member_func_t<void, UITextField>>(0x4A6CA0, this);
+
+        unimplemented();
     }
 
     // 0x4A78F0 | ?Update@UITextField@@UAEXXZ

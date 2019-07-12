@@ -95,7 +95,9 @@ public:
     // 0x48E390 | ??0GraphicsOptions@@QAE@H@Z
     inline GraphicsOptions(int32_t arg1)
     {
-        stub<member_func_t<void, GraphicsOptions, int32_t>>(0x48E390, this, arg1);
+        // stub<member_func_t<void, GraphicsOptions, int32_t>>(0x48E390, this, arg1);
+
+        unimplemented();
     }
 
     // 0x48ED70 | ?SetResolution@GraphicsOptions@@QAEXXZ
@@ -117,9 +119,11 @@ public:
     }
 
     // 0x48ED10 | ??1GraphicsOptions@@UAE@XZ
-    inline ~GraphicsOptions() override
+    inline ~GraphicsOptions() override = 0
     {
-        stub<member_func_t<void, GraphicsOptions>>(0x48ED10, this);
+        // stub<member_func_t<void, GraphicsOptions>>(0x48ED10, this);
+
+        unimplemented();
     }
 
     // 0x48EFC0 | ?PreSetup@GraphicsOptions@@UAEXXZ

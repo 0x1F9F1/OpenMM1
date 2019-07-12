@@ -78,7 +78,9 @@ public:
     // 0x518FD0 | ??0agiD3DRasterizer@@QAE@PAVagiPipeline@@@Z
     inline agiD3DRasterizer(class agiPipeline* arg1)
     {
-        stub<member_func_t<void, agiD3DRasterizer, class agiPipeline*>>(0x518FD0, this, arg1);
+        // stub<member_func_t<void, agiD3DRasterizer, class agiPipeline*>>(0x518FD0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x5190B0 | ?FlushState@agiD3DRasterizer@@IAEXXZ
@@ -94,9 +96,11 @@ public:
     }
 
     // 0x519010 | ??1agiD3DRasterizer@@UAE@XZ
-    inline ~agiD3DRasterizer() override
+    inline ~agiD3DRasterizer() override = 0
     {
-        stub<member_func_t<void, agiD3DRasterizer>>(0x519010, this);
+        // stub<member_func_t<void, agiD3DRasterizer>>(0x519010, this);
+
+        unimplemented();
     }
 
     // 0x518FF0 | ?BeginGfx@agiD3DRasterizer@@UAEHXZ

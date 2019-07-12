@@ -58,7 +58,9 @@ public:
     // 0x4F2350 | ??0asBirthRule@@QAE@XZ
     inline asBirthRule()
     {
-        stub<member_func_t<void, asBirthRule>>(0x4F2350, this);
+        // stub<member_func_t<void, asBirthRule>>(0x4F2350, this);
+
+        unimplemented();
     }
 
     // 0x4F2400 | ?InitSpark@asBirthRule@@QAEXPAUasSparkInfo@@PAUasSparkPos@@@Z
@@ -81,9 +83,11 @@ public:
     }
 
     // 0x44D600 | ??1asBirthRule@@UAE@XZ
-    inline ~asBirthRule() override
+    inline ~asBirthRule() override = 0
     {
-        stub<member_func_t<void, asBirthRule>>(0x44D600, this);
+        // stub<member_func_t<void, asBirthRule>>(0x44D600, this);
+
+        unimplemented();
     }
 
     // 0x4F2A10 | ?GetClass@asBirthRule@@UAEPAVMetaClass@@XZ

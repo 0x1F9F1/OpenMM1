@@ -78,7 +78,9 @@ public:
     // 0x447D30 | ??0aiVehicleOpponent@@QAE@XZ
     inline aiVehicleOpponent()
     {
-        stub<member_func_t<void, aiVehicleOpponent>>(0x447D30, this);
+        // stub<member_func_t<void, aiVehicleOpponent>>(0x447D30, this);
+
+        unimplemented();
     }
 
     // 0x447D90 | ??1aiVehicleOpponent@@QAE@XZ

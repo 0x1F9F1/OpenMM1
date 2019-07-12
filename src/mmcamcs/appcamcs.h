@@ -61,7 +61,9 @@ public:
     // 0x4EE700 | ??0AppCamCS@@QAE@XZ
     inline AppCamCS()
     {
-        stub<member_func_t<void, AppCamCS>>(0x4EE700, this);
+        // stub<member_func_t<void, AppCamCS>>(0x4EE700, this);
+
+        unimplemented();
     }
 
     // 0x4EE800 | ?ApproachIt@AppCamCS@@IAEXXZ
@@ -96,9 +98,11 @@ public:
     }
 
     // 0x4EE7F0 | ??1AppCamCS@@UAE@XZ
-    inline ~AppCamCS() override
+    inline ~AppCamCS() override = 0
     {
-        stub<member_func_t<void, AppCamCS>>(0x4EE7F0, this);
+        // stub<member_func_t<void, AppCamCS>>(0x4EE7F0, this);
+
+        unimplemented();
     }
 
     // 0x4EF440 | ?GetClass@AppCamCS@@UAEPAVMetaClass@@XZ

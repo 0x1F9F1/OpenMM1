@@ -89,7 +89,9 @@ public:
     // 0x543910 | ??0WINEventHandler@@QAE@XZ
     inline WINEventHandler()
     {
-        stub<member_func_t<void, WINEventHandler>>(0x543910, this);
+        // stub<member_func_t<void, WINEventHandler>>(0x543910, this);
+
+        unimplemented();
     }
 
     // 0x5441E0 | ?AdjustMouse@WINEventHandler@@QAEXAAH0@Z
@@ -99,9 +101,11 @@ public:
     }
 
     // 0x543A40 ??1WINEventHandler@@UAE@XZ
-    inline ~WINEventHandler() override
+    inline ~WINEventHandler() override = 0
     {
-        stub<member_func_t<void, WINEventHandler>>(0x543A40, this);
+        // stub<member_func_t<void, WINEventHandler>>(0x543A40, this);
+
+        unimplemented();
     }
 
     // 0x543AA0 | ?BeginGfx@WINEventHandler@@UAEHHHH@Z

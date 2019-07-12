@@ -85,7 +85,9 @@ public:
     // 0x46AFF0 | ??0mmCar@@QAE@XZ
     inline mmCar()
     {
-        stub<member_func_t<void, mmCar>>(0x46AFF0, this);
+        // stub<member_func_t<void, mmCar>>(0x46AFF0, this);
+
+        unimplemented();
     }
 
     // 0x46B110 | ?TranslateFlags@mmCar@@QAEXH@Z
@@ -174,9 +176,11 @@ public:
     }
 
     // 0x423AA0 | ??1mmCar@@UAE@XZ
-    inline ~mmCar() override
+    inline ~mmCar() override = 0
     {
-        stub<member_func_t<void, mmCar>>(0x423AA0, this);
+        // stub<member_func_t<void, mmCar>>(0x423AA0, this);
+
+        unimplemented();
     }
 
     // 0x46C380 | ?GetClass@mmCar@@UAEPAVMetaClass@@XZ

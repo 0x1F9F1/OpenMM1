@@ -102,7 +102,9 @@ public:
     // 0x4CEE00 | ??0Joint3Dof@@QAE@XZ
     inline Joint3Dof()
     {
-        stub<member_func_t<void, Joint3Dof>>(0x4CEE00, this);
+        // stub<member_func_t<void, Joint3Dof>>(0x4CEE00, this);
+
+        unimplemented();
     }
 
     // 0x4CEE50 | ?Init@Joint3Dof@@QAEXXZ
@@ -242,9 +244,11 @@ public:
     }
 
     // 0x4D1E40 | ??1Joint3Dof@@UAE@XZ
-    inline ~Joint3Dof() override
+    inline ~Joint3Dof() override = 0
     {
-        stub<member_func_t<void, Joint3Dof>>(0x4D1E40, this);
+        // stub<member_func_t<void, Joint3Dof>>(0x4D1E40, this);
+
+        unimplemented();
     }
 
     // 0x4D1D00 | ?GetClass@Joint3Dof@@UAEPAVMetaClass@@XZ

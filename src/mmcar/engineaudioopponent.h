@@ -69,7 +69,9 @@ public:
     // 0x47C750 | ??0EngineAudioOpponent@@QAE@XZ
     inline EngineAudioOpponent()
     {
-        stub<member_func_t<void, EngineAudioOpponent>>(0x47C750, this);
+        // stub<member_func_t<void, EngineAudioOpponent>>(0x47C750, this);
+
+        unimplemented();
     }
 
     // 0x47C7E0 | ?Init@EngineAudioOpponent@@QAEXXZ
@@ -115,9 +117,11 @@ public:
     }
 
     // 0x47C7B0 | ??1EngineAudioOpponent@@UAE@XZ
-    inline ~EngineAudioOpponent() override
+    inline ~EngineAudioOpponent() override = 0
     {
-        stub<member_func_t<void, EngineAudioOpponent>>(0x47C7B0, this);
+        // stub<member_func_t<void, EngineAudioOpponent>>(0x47C7B0, this);
+
+        unimplemented();
     }
 
     // 0x47CBB0 | ?GetClass@EngineAudioOpponent@@UAEPAVMetaClass@@XZ

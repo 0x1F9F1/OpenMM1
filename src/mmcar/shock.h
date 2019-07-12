@@ -58,7 +58,9 @@ public:
     // 0x474870 | ??0mmShock@@QAE@XZ
     inline mmShock()
     {
-        stub<member_func_t<void, mmShock>>(0x474870, this);
+        // stub<member_func_t<void, mmShock>>(0x474870, this);
+
+        unimplemented();
     }
 
     // 0x474890 | ?Init@mmShock@@QAEXPAD0PAVmmWheel@@@Z
@@ -74,9 +76,11 @@ public:
     }
 
     // 0x4682F0 | ??1mmShock@@UAE@XZ
-    inline ~mmShock() override
+    inline ~mmShock() override = 0
     {
-        stub<member_func_t<void, mmShock>>(0x4682F0, this);
+        // stub<member_func_t<void, mmShock>>(0x4682F0, this);
+
+        unimplemented();
     }
 
     // 0x474A70 | ?GetClass@mmShock@@UAEPAVMetaClass@@XZ

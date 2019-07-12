@@ -87,13 +87,17 @@ public:
     // 0x51BE80 | ??0agiSWPipeline@@QAE@HPAPAD@Z
     inline agiSWPipeline(int32_t arg1, char** arg2)
     {
-        stub<member_func_t<void, agiSWPipeline, int32_t, char**>>(0x51BE80, this, arg1, arg2);
+        // stub<member_func_t<void, agiSWPipeline, int32_t, char**>>(0x51BE80, this, arg1, arg2);
+
+        unimplemented();
     }
 
     // 0x51BF00 | ??1agiSWPipeline@@UAE@XZ
-    inline ~agiSWPipeline() override
+    inline ~agiSWPipeline() override = 0
     {
-        stub<member_func_t<void, agiSWPipeline>>(0x51BF00, this);
+        // stub<member_func_t<void, agiSWPipeline>>(0x51BF00, this);
+
+        unimplemented();
     }
 
     // 0x51BE70 | ?Validate@agiSWPipeline@@UAEHXZ
@@ -221,9 +225,11 @@ public:
     }
 
     // 0x51C8D0 | ??1agiSWViewport@@UAE@XZ
-    inline ~agiSWViewport() override
+    inline ~agiSWViewport() override = 0
     {
-        stub<member_func_t<void, agiSWViewport>>(0x51C8D0, this);
+        // stub<member_func_t<void, agiSWViewport>>(0x51C8D0, this);
+
+        unimplemented();
     }
 
     // 0x51C880 | ?BeginGfx@agiSWViewport@@UAEHXZ
@@ -269,9 +275,11 @@ public:
     }
 
     // 0x51CAE0 | ??1agiSWBitmap@@UAE@XZ
-    inline ~agiSWBitmap() override
+    inline ~agiSWBitmap() override = 0
     {
-        stub<member_func_t<void, agiSWBitmap>>(0x51CAE0, this);
+        // stub<member_func_t<void, agiSWBitmap>>(0x51CAE0, this);
+
+        unimplemented();
     }
 
     // 0x51C8E0 | ?BeginGfx@agiSWBitmap@@UAEHXZ

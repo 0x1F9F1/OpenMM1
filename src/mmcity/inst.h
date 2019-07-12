@@ -267,7 +267,9 @@ public:
     // 0x487F20 | ??0mmInstance@@QAE@XZ
     inline mmInstance()
     {
-        stub<member_func_t<void, mmInstance>>(0x487F20, this);
+        // stub<member_func_t<void, mmInstance>>(0x487F20, this);
+
+        unimplemented();
     }
 
     // 0x488120 | ?GetResidentMeshSet@mmInstance@@QAEPAVagiMeshSet@@HHH@Z
@@ -343,9 +345,11 @@ public:
     static inline extern_var(0x667A30, int32_t, MeshSetSetCount);
 
     // 0x487F50 | ??1mmInstance@@UAE@XZ
-    inline ~mmInstance() override
+    inline ~mmInstance() override = 0
     {
-        stub<member_func_t<void, mmInstance>>(0x487F50, this);
+        // stub<member_func_t<void, mmInstance>>(0x487F50, this);
+
+        unimplemented();
     }
 
     // 0x489E60 | ?GetClass@mmInstance@@UAEPAVMetaClass@@XZ
@@ -471,13 +475,17 @@ public:
     // 0x48A810 | ??0mmShearInstance@@QAE@XZ
     inline mmShearInstance()
     {
-        stub<member_func_t<void, mmShearInstance>>(0x48A810, this);
+        // stub<member_func_t<void, mmShearInstance>>(0x48A810, this);
+
+        unimplemented();
     }
 
     // 0x485570 | ??1mmShearInstance@@UAE@XZ
-    inline ~mmShearInstance() override
+    inline ~mmShearInstance() override = 0
     {
-        stub<member_func_t<void, mmShearInstance>>(0x485570, this);
+        // stub<member_func_t<void, mmShearInstance>>(0x485570, this);
+
+        unimplemented();
     }
 
     // 0x48A240 | ?GetClass@mmShearInstance@@UAEPAVMetaClass@@XZ
@@ -526,13 +534,17 @@ public:
     // 0x48A890 | ??0mmBuildingInstance@@QAE@XZ
     inline mmBuildingInstance()
     {
-        stub<member_func_t<void, mmBuildingInstance>>(0x48A890, this);
+        // stub<member_func_t<void, mmBuildingInstance>>(0x48A890, this);
+
+        unimplemented();
     }
 
     // 0x4855A0 | ??1mmBuildingInstance@@UAE@XZ
-    inline ~mmBuildingInstance() override
+    inline ~mmBuildingInstance() override = 0
     {
-        stub<member_func_t<void, mmBuildingInstance>>(0x4855A0, this);
+        // stub<member_func_t<void, mmBuildingInstance>>(0x4855A0, this);
+
+        unimplemented();
     }
 
     // 0x48A3E0 | ?GetClass@mmBuildingInstance@@UAEPAVMetaClass@@XZ
@@ -568,7 +580,9 @@ public:
     // 0x4887F0 | ??0mmYInstance@@QAE@XZ
     inline mmYInstance()
     {
-        stub<member_func_t<void, mmYInstance>>(0x4887F0, this);
+        // stub<member_func_t<void, mmYInstance>>(0x4887F0, this);
+
+        unimplemented();
     }
 
     // 0x489E70 | ?DeclareFields@mmYInstance@@SAXXZ
@@ -578,9 +592,11 @@ public:
     }
 
     // 0x488820 | ??1mmYInstance@@UAE@XZ
-    inline ~mmYInstance() override
+    inline ~mmYInstance() override = 0
     {
-        stub<member_func_t<void, mmYInstance>>(0x488820, this);
+        // stub<member_func_t<void, mmYInstance>>(0x488820, this);
+
+        unimplemented();
     }
 
     // 0x489F10 | ?GetClass@mmYInstance@@UAEPAVMetaClass@@XZ
@@ -622,7 +638,9 @@ public:
     // 0x4888F0 | ??0mmMatrixInstance@@QAE@XZ
     inline mmMatrixInstance()
     {
-        stub<member_func_t<void, mmMatrixInstance>>(0x4888F0, this);
+        // stub<member_func_t<void, mmMatrixInstance>>(0x4888F0, this);
+
+        unimplemented();
     }
 
     // 0x488970 | ?Init@mmMatrixInstance@@QAEHPADAAVVector3@@11H0@Z
@@ -640,9 +658,11 @@ public:
     }
 
     // 0x488920 | ??1mmMatrixInstance@@UAE@XZ
-    inline ~mmMatrixInstance() override
+    inline ~mmMatrixInstance() override = 0
     {
-        stub<member_func_t<void, mmMatrixInstance>>(0x488920, this);
+        // stub<member_func_t<void, mmMatrixInstance>>(0x488920, this);
+
+        unimplemented();
     }
 
     // 0x48A0A0 | ?GetClass@mmMatrixInstance@@UAEPAVMetaClass@@XZ
@@ -690,7 +710,9 @@ public:
     // 0x488AC0 | ??0mmStaticInstance@@QAE@XZ
     inline mmStaticInstance()
     {
-        stub<member_func_t<void, mmStaticInstance>>(0x488AC0, this);
+        // stub<member_func_t<void, mmStaticInstance>>(0x488AC0, this);
+
+        unimplemented();
     }
 
     // 0x488AF0 | ?Init@mmStaticInstance@@QAEHPADAAVVector3@@1MH0@Z
@@ -708,9 +730,11 @@ public:
     }
 
     // 0x488AE0 | ??1mmStaticInstance@@UAE@XZ
-    inline ~mmStaticInstance() override
+    inline ~mmStaticInstance() override = 0
     {
-        stub<member_func_t<void, mmStaticInstance>>(0x488AE0, this);
+        // stub<member_func_t<void, mmStaticInstance>>(0x488AE0, this);
+
+        unimplemented();
     }
 
     // 0x48A570 | ?GetClass@mmStaticInstance@@UAEPAVMetaClass@@XZ
@@ -746,7 +770,9 @@ public:
     // 0x488C70 | ??0mmFacadeInstance@@QAE@XZ
     inline mmFacadeInstance()
     {
-        stub<member_func_t<void, mmFacadeInstance>>(0x488C70, this);
+        // stub<member_func_t<void, mmFacadeInstance>>(0x488C70, this);
+
+        unimplemented();
     }
 
     // 0x4891A0 | ?InitFacade@mmFacadeInstance@@QAEHPADAAVVector3@@1MHABV2@@Z
@@ -764,9 +790,11 @@ public:
     }
 
     // 0x488C90 | ??1mmFacadeInstance@@UAE@XZ
-    inline ~mmFacadeInstance() override
+    inline ~mmFacadeInstance() override = 0
     {
-        stub<member_func_t<void, mmFacadeInstance>>(0x488C90, this);
+        // stub<member_func_t<void, mmFacadeInstance>>(0x488C90, this);
+
+        unimplemented();
     }
 
     // 0x48A700 | ?GetClass@mmFacadeInstance@@UAEPAVMetaClass@@XZ
@@ -812,7 +840,9 @@ public:
     // 0x488D30 | ??0mmFacadeQuad@@QAE@PAVagiMeshSet@@MM@Z
     inline mmFacadeQuad(class agiMeshSet* arg1, float arg2, float arg3)
     {
-        stub<member_func_t<void, mmFacadeQuad, class agiMeshSet*, float, float>>(0x488D30, this, arg1, arg2, arg3);
+        // stub<member_func_t<void, mmFacadeQuad, class agiMeshSet*, float, float>>(0x488D30, this, arg1, arg2, arg3);
+
+        unimplemented();
     }
 
     // 0x489050 | ?DrawLit@mmFacadeQuad@@QAEXP6AXPAEPAI1PAVagiMeshSet@@@Z2@Z

@@ -160,7 +160,9 @@ public:
     // 0x403830 | ??0mmInterface@@QAE@XZ
     inline mmInterface()
     {
-        stub<member_func_t<void, mmInterface>>(0x403830, this);
+        // stub<member_func_t<void, mmInterface>>(0x403830, this);
+
+        unimplemented();
     }
 
     // 0x404800 | ?InitPlayerInfo@mmInterface@@QAEXXZ
@@ -572,9 +574,11 @@ public:
     }
 
     // 0x404B70 | ??1mmInterface@@UAE@XZ
-    inline ~mmInterface() override
+    inline ~mmInterface() override = 0
     {
-        stub<member_func_t<void, mmInterface>>(0x404B70, this);
+        // stub<member_func_t<void, mmInterface>>(0x404B70, this);
+
+        unimplemented();
     }
 
     // 0x40B7B0 | ?GetClass@mmInterface@@UAEPAVMetaClass@@XZ

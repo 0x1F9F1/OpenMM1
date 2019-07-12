@@ -65,7 +65,9 @@ public:
     // 0x478530 | ??0mmCarRoadFF@@QAE@XZ
     inline mmCarRoadFF()
     {
-        stub<member_func_t<void, mmCarRoadFF>>(0x478530, this);
+        // stub<member_func_t<void, mmCarRoadFF>>(0x478530, this);
+
+        unimplemented();
     }
 
     // 0x4785D0 | ?AssignProperties@mmCarRoadFF@@QAEXMH@Z
@@ -111,9 +113,11 @@ public:
     }
 
     // 0x478570 | ??1mmCarRoadFF@@UAE@XZ
-    inline ~mmCarRoadFF() override
+    inline ~mmCarRoadFF() override = 0
     {
-        stub<member_func_t<void, mmCarRoadFF>>(0x478570, this);
+        // stub<member_func_t<void, mmCarRoadFF>>(0x478570, this);
+
+        unimplemented();
     }
 
     // 0x4789D0 | ?GetClass@mmCarRoadFF@@UAEPAVMetaClass@@XZ

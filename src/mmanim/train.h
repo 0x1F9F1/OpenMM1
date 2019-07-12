@@ -64,7 +64,9 @@ public:
     // 0x4BA9B0 | ??0mmAnimTrain@@QAE@XZ
     inline mmAnimTrain()
     {
-        stub<member_func_t<void, mmAnimTrain>>(0x4BA9B0, this);
+        // stub<member_func_t<void, mmAnimTrain>>(0x4BA9B0, this);
+
+        unimplemented();
     }
 
     // 0x4BAAA0 | ??1mmAnimTrain@@QAE@XZ

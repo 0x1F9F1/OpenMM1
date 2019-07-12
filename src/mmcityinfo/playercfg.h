@@ -79,7 +79,9 @@ public:
     // 0x4C1F50 | ??0mmPlayerConfig@@QAE@XZ
     inline mmPlayerConfig()
     {
-        stub<member_func_t<void, mmPlayerConfig>>(0x4C1F50, this);
+        // stub<member_func_t<void, mmPlayerConfig>>(0x4C1F50, this);
+
+        unimplemented();
     }
 
     // 0x4C2060 | ??4mmPlayerConfig@@QAEXAAV0@@Z
@@ -203,9 +205,11 @@ public:
     }
 
     // 0x4C1FF0 | ??1mmPlayerConfig@@UAE@XZ
-    inline ~mmPlayerConfig() override
+    inline ~mmPlayerConfig() override = 0
     {
-        stub<member_func_t<void, mmPlayerConfig>>(0x4C1FF0, this);
+        // stub<member_func_t<void, mmPlayerConfig>>(0x4C1FF0, this);
+
+        unimplemented();
     }
 
     // 0x4C33C0 | ?GetClass@mmPlayerConfig@@UAEPAVMetaClass@@XZ

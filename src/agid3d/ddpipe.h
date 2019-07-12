@@ -72,13 +72,17 @@ public:
     // 0x518800 | ??0agiDDPipeline@@QAE@XZ
     inline agiDDPipeline()
     {
-        stub<member_func_t<void, agiDDPipeline>>(0x518800, this);
+        // stub<member_func_t<void, agiDDPipeline>>(0x518800, this);
+
+        unimplemented();
     }
 
     // 0x518CB0 | ??1agiDDPipeline@@UAE@XZ
-    inline ~agiDDPipeline() override
+    inline ~agiDDPipeline() override = 0
     {
-        stub<member_func_t<void, agiDDPipeline>>(0x518CB0, this);
+        // stub<member_func_t<void, agiDDPipeline>>(0x518CB0, this);
+
+        unimplemented();
     }
 
     // 0x518680 | ?Validate@agiDDPipeline@@UAEHXZ

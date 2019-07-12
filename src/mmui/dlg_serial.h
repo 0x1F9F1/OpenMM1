@@ -65,7 +65,7 @@ public:
     }
 
     // 0x495010 | ??1Dialog_Serial@@UAE@XZ
-    inline ~Dialog_Serial() override
+    inline ~Dialog_Serial() override = 0
     {
         stub<member_func_t<void, Dialog_Serial>>(0x495010, this);
     }

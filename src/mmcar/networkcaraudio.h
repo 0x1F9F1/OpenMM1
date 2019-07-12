@@ -73,7 +73,9 @@ public:
     // 0x47A390 | ??0mmNetworkCarAudio@@QAE@PAVmmCarSim@@@Z
     inline mmNetworkCarAudio(class mmCarSim* arg1)
     {
-        stub<member_func_t<void, mmNetworkCarAudio, class mmCarSim*>>(0x47A390, this, arg1);
+        // stub<member_func_t<void, mmNetworkCarAudio, class mmCarSim*>>(0x47A390, this, arg1);
+
+        unimplemented();
     }
 
     // 0x47A3F0 | ?Init@mmNetworkCarAudio@@QAEXPAVmmCarSim@@G@Z
@@ -157,16 +159,20 @@ public:
     // 0x47B650 | ??0mmNetworkCarAudio@@QAE@XZ
     inline mmNetworkCarAudio()
     {
-        stub<member_func_t<void, mmNetworkCarAudio>>(0x47B650, this);
+        // stub<member_func_t<void, mmNetworkCarAudio>>(0x47B650, this);
+
+        unimplemented();
     }
 
     // 0x60A5B4 | ?s_iPlayingFluctuator@mmNetworkCarAudio@@2FA
     static inline extern_var(0x60A5B4, int16_t, s_iPlayingFluctuator);
 
     // 0x47A580 | ??1mmNetworkCarAudio@@UAE@XZ
-    inline ~mmNetworkCarAudio() override
+    inline ~mmNetworkCarAudio() override = 0
     {
-        stub<member_func_t<void, mmNetworkCarAudio>>(0x47A580, this);
+        // stub<member_func_t<void, mmNetworkCarAudio>>(0x47A580, this);
+
+        unimplemented();
     }
 
     // 0x47B4C0 | ?GetClass@mmNetworkCarAudio@@UAEPAVMetaClass@@XZ

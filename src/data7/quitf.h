@@ -27,4 +27,6 @@
 // 0x5588F0 | ?Quitf@@YAXPBDZZ
 [[noreturn]] void Quitf(char const* format, ...);
 
-#define unimplemented Quitf("Error calling unimplemented function %s in %s (%i)", __FUNCTION__, __FILE__, __LINE__)
+#define unimplemented(...)   \
+    (void) (0, __VA_ARGS__); \
+    Quitf("Error calling unimplemented function %s in %s (%i)", __FUNCTION__, __FILE__, __LINE__)

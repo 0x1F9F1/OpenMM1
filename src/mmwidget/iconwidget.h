@@ -42,7 +42,9 @@ public:
     // 0x4B1070 | ??0UIIconW@@QAE@XZ
     inline UIIconW()
     {
-        stub<member_func_t<void, UIIconW>>(0x4B1070, this);
+        // stub<member_func_t<void, UIIconW>>(0x4B1070, this);
+
+        unimplemented();
     }
 
     // 0x4B11A0 | ?Init@UIIconW@@QAEXPAULocString@@PADMMMMVCallback@@@Z
@@ -54,9 +56,11 @@ public:
     }
 
     // 0x4B1130 | ??1UIIconW@@UAE@XZ
-    inline ~UIIconW() override
+    inline ~UIIconW() override = 0
     {
-        stub<member_func_t<void, UIIconW>>(0x4B1130, this);
+        // stub<member_func_t<void, UIIconW>>(0x4B1130, this);
+
+        unimplemented();
     }
 
     // 0x4B12E0 | ?Update@UIIconW@@UAEXXZ

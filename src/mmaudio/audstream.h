@@ -66,7 +66,9 @@ public:
     // 0x4E61C0 | ??0AudStream@@QAE@KHF@Z
     inline AudStream(uint32_t arg1, int32_t arg2, int16_t arg3)
     {
-        stub<member_func_t<void, AudStream, uint32_t, int32_t, int16_t>>(0x4E61C0, this, arg1, arg2, arg3);
+        // stub<member_func_t<void, AudStream, uint32_t, int32_t, int16_t>>(0x4E61C0, this, arg1, arg2, arg3);
+
+        unimplemented();
     }
 
     // 0x4E6400 | ?SetPriority@AudStream@@QAEXH@Z
@@ -221,9 +223,11 @@ public:
     static inline extern_var(0x5949E8, uint32_t const, s_DWFreqChange2DCtrlFlags);
 
     // 0x4E6300 | ??1AudStream@@UAE@XZ
-    inline ~AudStream() override
+    inline ~AudStream() override = 0
     {
-        stub<member_func_t<void, AudStream>>(0x4E6300, this);
+        // stub<member_func_t<void, AudStream>>(0x4E6300, this);
+
+        unimplemented();
     }
 
     // 0x4E6750 | ?Update@AudStream@@UAEXXZ

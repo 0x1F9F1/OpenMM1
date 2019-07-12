@@ -39,7 +39,9 @@ public:
     // 0x4D2210 | ??0asBound@@QAE@XZ
     inline asBound()
     {
-        stub<member_func_t<void, asBound>>(0x4D2210, this);
+        // stub<member_func_t<void, asBound>>(0x4D2210, this);
+
+        unimplemented();
     }
 
     // 0x4D2250 | ?Impact@asBound@@QAEHPAVmmIntersection@@PAV1@HHH@Z
@@ -56,8 +58,10 @@ public:
     }
 
     // 0x44D480 | ??1asBound@@UAE@XZ
-    inline ~asBound() override
+    inline ~asBound() override = 0
     {
-        stub<member_func_t<void, asBound>>(0x44D480, this);
+        // stub<member_func_t<void, asBound>>(0x44D480, this);
+
+        unimplemented();
     }
 };

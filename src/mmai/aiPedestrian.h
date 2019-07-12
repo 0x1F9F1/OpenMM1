@@ -89,7 +89,9 @@ public:
     // 0x442090 | ??0aiPedestrian@@QAE@XZ
     inline aiPedestrian()
     {
-        stub<member_func_t<void, aiPedestrian>>(0x442090, this);
+        // stub<member_func_t<void, aiPedestrian>>(0x442090, this);
+
+        unimplemented();
     }
 
     // 0x442170 | ??1aiPedestrian@@QAE@XZ
@@ -345,9 +347,11 @@ public:
     // aiPedestrianInstance::`vftable' @ 0x590768
 
     // 0x447D20 | ??1aiPedestrianInstance@@UAE@XZ
-    inline ~aiPedestrianInstance() override
+    inline ~aiPedestrianInstance() override = 0
     {
-        stub<member_func_t<void, aiPedestrianInstance>>(0x447D20, this);
+        // stub<member_func_t<void, aiPedestrianInstance>>(0x447D20, this);
+
+        unimplemented();
     }
 
     // 0x447AE0 | ?FromMatrix@aiPedestrianInstance@@UAIXABVMatrix34@@@Z

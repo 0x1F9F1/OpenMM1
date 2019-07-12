@@ -60,7 +60,9 @@ public:
     // 0x4EC980 | ??0AICamCS@@QAE@XZ
     inline AICamCS()
     {
-        stub<member_func_t<void, AICamCS>>(0x4EC980, this);
+        // stub<member_func_t<void, AICamCS>>(0x4EC980, this);
+
+        unimplemented();
     }
 
     // 0x4EC9B0 | ?Init@AICamCS@@QAEXPAVmmCar@@@Z
@@ -76,9 +78,11 @@ public:
     }
 
     // 0x423B70 | ??1AICamCS@@UAE@XZ
-    inline ~AICamCS() override
+    inline ~AICamCS() override = 0
     {
-        stub<member_func_t<void, AICamCS>>(0x423B70, this);
+        // stub<member_func_t<void, AICamCS>>(0x423B70, this);
+
+        unimplemented();
     }
 
     // 0x4ECFB0 | ?GetClass@AICamCS@@UAEPAVMetaClass@@XZ

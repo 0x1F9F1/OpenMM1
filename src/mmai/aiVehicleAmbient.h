@@ -79,7 +79,9 @@ public:
     // 0x448D10 | ??0aiVehicleAmbient@@QAE@XZ
     inline aiVehicleAmbient()
     {
-        stub<member_func_t<void, aiVehicleAmbient>>(0x448D10, this);
+        // stub<member_func_t<void, aiVehicleAmbient>>(0x448D10, this);
+
+        unimplemented();
     }
 
     // 0x448DF0 | ??1aiVehicleAmbient@@QAE@XZ

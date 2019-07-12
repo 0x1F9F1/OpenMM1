@@ -46,7 +46,9 @@ public:
     // 0x4DCF60 | ??0AudHead@@QAE@PAVMatrix34@@@Z
     inline AudHead(class Matrix34* arg1)
     {
-        stub<member_func_t<void, AudHead, class Matrix34*>>(0x4DCF60, this, arg1);
+        // stub<member_func_t<void, AudHead, class Matrix34*>>(0x4DCF60, this, arg1);
+
+        unimplemented();
     }
 
     // 0x4DCFC0 | ?Init@AudHead@@QAEHXZ
@@ -92,9 +94,11 @@ public:
     }
 
     // 0x4DCFB0 | ??1AudHead@@UAE@XZ
-    inline ~AudHead() override
+    inline ~AudHead() override = 0
     {
-        stub<member_func_t<void, AudHead>>(0x4DCFB0, this);
+        // stub<member_func_t<void, AudHead>>(0x4DCFB0, this);
+
+        unimplemented();
     }
 
     // 0x4DD010 | ?Update@AudHead@@EAEXXZ

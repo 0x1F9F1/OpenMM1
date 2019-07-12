@@ -40,7 +40,9 @@ public:
     // 0x4A0A30 | ??0WArray@@QAE@XZ
     inline WArray()
     {
-        stub<member_func_t<void, WArray>>(0x4A0A30, this);
+        // stub<member_func_t<void, WArray>>(0x4A0A30, this);
+
+        unimplemented();
     }
 
     // 0x4A0A40 | ??1WArray@@QAE@XZ

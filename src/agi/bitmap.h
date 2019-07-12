@@ -86,9 +86,11 @@ public:
     }
 
     // 0x53C610 | ??1agiBitmap@@MAE@XZ
-    inline ~agiBitmap() override
+    inline ~agiBitmap() override = 0
     {
-        stub<member_func_t<void, agiBitmap>>(0x53C610, this);
+        // stub<member_func_t<void, agiBitmap>>(0x53C610, this);
+
+        unimplemented();
     }
 
     // 0x53C600 | ?UpdateFlags@agiBitmap@@UAEXXZ

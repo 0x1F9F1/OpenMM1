@@ -122,13 +122,17 @@ public:
     // 0x516C70 | ??0agiD3DPipeline@@QAE@XZ
     inline agiD3DPipeline()
     {
-        stub<member_func_t<void, agiD3DPipeline>>(0x516C70, this);
+        // stub<member_func_t<void, agiD3DPipeline>>(0x516C70, this);
+
+        unimplemented();
     }
 
     // 0x517AF0 | ??1agiD3DPipeline@@UAE@XZ
-    inline ~agiD3DPipeline() override
+    inline ~agiD3DPipeline() override = 0
     {
-        stub<member_func_t<void, agiD3DPipeline>>(0x517AF0, this);
+        // stub<member_func_t<void, agiD3DPipeline>>(0x517AF0, this);
+
+        unimplemented();
     }
 
     // 0x516CB0 | ?BeginGfx@agiD3DPipeline@@UAEHXZ
@@ -242,9 +246,11 @@ public:
     }
 
     // 0x518670 | ??1agiD3DTexLut@@UAE@XZ
-    inline ~agiD3DTexLut() override
+    inline ~agiD3DTexLut() override = 0
     {
-        stub<member_func_t<void, agiD3DTexLut>>(0x518670, this);
+        // stub<member_func_t<void, agiD3DTexLut>>(0x518670, this);
+
+        unimplemented();
     }
 
     // 0x51B790 | ?BeginGfx@agiD3DTexLut@@UAEHXZ

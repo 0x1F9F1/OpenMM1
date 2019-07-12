@@ -52,7 +52,9 @@ public:
     // 0x4C0110 | ??0mmCityList@@QAE@XZ
     inline mmCityList()
     {
-        stub<member_func_t<void, mmCityList>>(0x4C0110, this);
+        // stub<member_func_t<void, mmCityList>>(0x4C0110, this);
+
+        unimplemented();
     }
 
     // 0x4C0190 | ?Init@mmCityList@@QAEXH@Z

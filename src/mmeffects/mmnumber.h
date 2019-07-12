@@ -64,7 +64,9 @@ public:
     // 0x4F1440 | ??0mmNumberFont@@QAE@PAD@Z
     inline mmNumberFont(char* arg1)
     {
-        stub<member_func_t<void, mmNumberFont, char*>>(0x4F1440, this, arg1);
+        // stub<member_func_t<void, mmNumberFont, char*>>(0x4F1440, this, arg1);
+
+        unimplemented();
     }
 
     // 0x4F1470 | ??1mmNumberFont@@QAE@XZ
@@ -95,7 +97,9 @@ public:
     // 0x4F15A0 | ??0mmNumber@@QAE@XZ
     inline mmNumber()
     {
-        stub<member_func_t<void, mmNumber>>(0x4F15A0, this);
+        // stub<member_func_t<void, mmNumber>>(0x4F15A0, this);
+
+        unimplemented();
     }
 
     // 0x4F15D0 | ?Init@mmNumber@@QAEXPAVmmNumberFont@@MM@Z
@@ -126,9 +130,11 @@ public:
     }
 
     // 0x4F15C0 | ??1mmNumber@@UAE@XZ
-    inline ~mmNumber() override
+    inline ~mmNumber() override = 0
     {
-        stub<member_func_t<void, mmNumber>>(0x4F15C0, this);
+        // stub<member_func_t<void, mmNumber>>(0x4F15C0, this);
+
+        unimplemented();
     }
 
     // 0x4F18B0 | ?GetClass@mmNumber@@UAEPAVMetaClass@@XZ

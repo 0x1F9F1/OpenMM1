@@ -98,7 +98,9 @@ public:
     // 0x4DF220 | ??0AudSound@@QAE@KHF@Z
     inline AudSound(uint32_t arg1, int32_t arg2, int16_t arg3)
     {
-        stub<member_func_t<void, AudSound, uint32_t, int32_t, int16_t>>(0x4DF220, this, arg1, arg2, arg3);
+        // stub<member_func_t<void, AudSound, uint32_t, int32_t, int16_t>>(0x4DF220, this, arg1, arg2, arg3);
+
+        unimplemented();
     }
 
     // 0x4DF630 | ?SetPriority@AudSound@@QAEXH@Z
@@ -432,9 +434,11 @@ public:
     static inline extern_var(0x594918, uint32_t const, s_DWSoftFreqChange2DCtrlFlags);
 
     // 0x4DF4F0 | ??1AudSound@@UAE@XZ
-    inline ~AudSound() override
+    inline ~AudSound() override = 0
     {
-        stub<member_func_t<void, AudSound>>(0x4DF4F0, this);
+        // stub<member_func_t<void, AudSound>>(0x4DF4F0, this);
+
+        unimplemented();
     }
 
     // 0x4DFD30 | ?Update@AudSound@@UAEXXZ

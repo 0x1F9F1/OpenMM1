@@ -39,13 +39,17 @@ public:
     // 0x49ADA0 | ??0MainMenu@@QAE@H@Z
     inline MainMenu(int32_t arg1)
     {
-        stub<member_func_t<void, MainMenu, int32_t>>(0x49ADA0, this, arg1);
+        // stub<member_func_t<void, MainMenu, int32_t>>(0x49ADA0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x49AF20 | ??1MainMenu@@UAE@XZ
-    inline ~MainMenu() override
+    inline ~MainMenu() override = 0
     {
-        stub<member_func_t<void, MainMenu>>(0x49AF20, this);
+        // stub<member_func_t<void, MainMenu>>(0x49AF20, this);
+
+        unimplemented();
     }
 
     // 0x49AF30 | ?PreSetup@MainMenu@@UAEXXZ

@@ -65,7 +65,9 @@ public:
     // 0x497C10 | ??0ControlSetup@@QAE@H@Z
     inline ControlSetup(int32_t arg1)
     {
-        stub<member_func_t<void, ControlSetup, int32_t>>(0x497C10, this, arg1);
+        // stub<member_func_t<void, ControlSetup, int32_t>>(0x497C10, this, arg1);
+
+        unimplemented();
     }
 
     // 0x497E60 | ?CreateDeviceOptions@ControlSetup@@QAEXXZ
@@ -154,9 +156,11 @@ public:
     }
 
     // 0x497E00 | ??1ControlSetup@@UAE@XZ
-    inline ~ControlSetup() override
+    inline ~ControlSetup() override = 0
     {
-        stub<member_func_t<void, ControlSetup>>(0x497E00, this);
+        // stub<member_func_t<void, ControlSetup>>(0x497E00, this);
+
+        unimplemented();
     }
 
     // 0x4985F0 | ?Update@ControlSetup@@UAEXXZ

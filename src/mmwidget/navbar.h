@@ -49,7 +49,9 @@ public:
     // 0x4A6730 | ??0uiNavBar@@QAE@H@Z
     inline uiNavBar(int32_t arg1)
     {
-        stub<member_func_t<void, uiNavBar, int32_t>>(0x4A6730, this, arg1);
+        // stub<member_func_t<void, uiNavBar, int32_t>>(0x4A6730, this, arg1);
+
+        unimplemented();
     }
 
     // 0x4A6940 | ?Help@uiNavBar@@QAEXXZ
@@ -107,9 +109,11 @@ public:
     }
 
     // 0x4A69A0 | ??1uiNavBar@@UAE@XZ
-    inline ~uiNavBar() override
+    inline ~uiNavBar() override = 0
     {
-        stub<member_func_t<void, uiNavBar>>(0x4A69A0, this);
+        // stub<member_func_t<void, uiNavBar>>(0x4A69A0, this);
+
+        unimplemented();
     }
 
     // 0x4A6A00 | ?Update@uiNavBar@@UAEXXZ

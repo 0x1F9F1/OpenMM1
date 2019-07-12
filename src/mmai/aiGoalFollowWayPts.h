@@ -76,7 +76,9 @@ public:
     // 0x45E5B0 | ??0aiGoalFollowWayPts@@QAE@XZ
     inline aiGoalFollowWayPts()
     {
-        stub<member_func_t<void, aiGoalFollowWayPts>>(0x45E5B0, this);
+        // stub<member_func_t<void, aiGoalFollowWayPts>>(0x45E5B0, this);
+
+        unimplemented();
     }
 
     // 0x45E610 | ??0aiGoalFollowWayPts@@QAE@PADPAVaiRailSet@@PAVaiVehicleOpponent@@PAF330M@Z

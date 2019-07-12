@@ -46,7 +46,9 @@ public:
     // 0x4D78C0 | ??0mmIO@@QAE@XZ
     inline mmIO()
     {
-        stub<member_func_t<void, mmIO>>(0x4D78C0, this);
+        // stub<member_func_t<void, mmIO>>(0x4D78C0, this);
+
+        unimplemented();
     }
 
     // 0x4D78E0 | ??1mmIO@@QAE@XZ

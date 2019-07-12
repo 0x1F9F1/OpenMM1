@@ -60,7 +60,9 @@ public:
     // 0x4777D0 | ??0VehGyro@@QAE@XZ
     inline VehGyro()
     {
-        stub<member_func_t<void, VehGyro>>(0x4777D0, this);
+        // stub<member_func_t<void, VehGyro>>(0x4777D0, this);
+
+        unimplemented();
     }
 
     // 0x477800 | ?Load@VehGyro@@QAEXPAVStream@@@Z
@@ -88,9 +90,11 @@ public:
     }
 
     // 0x4682B0 | ??1VehGyro@@UAE@XZ
-    inline ~VehGyro() override
+    inline ~VehGyro() override = 0
     {
-        stub<member_func_t<void, VehGyro>>(0x4682B0, this);
+        // stub<member_func_t<void, VehGyro>>(0x4682B0, this);
+
+        unimplemented();
     }
 
     // 0x477C50 | ?GetClass@VehGyro@@UAEPAVMetaClass@@XZ

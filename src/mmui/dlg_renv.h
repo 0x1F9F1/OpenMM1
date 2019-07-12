@@ -72,7 +72,7 @@ public:
     }
 
     // 0x4931F0 | ??1Dialog_RaceEnvironment@@UAE@XZ
-    inline ~Dialog_RaceEnvironment() override
+    inline ~Dialog_RaceEnvironment() override = 0
     {
         stub<member_func_t<void, Dialog_RaceEnvironment>>(0x4931F0, this);
     }

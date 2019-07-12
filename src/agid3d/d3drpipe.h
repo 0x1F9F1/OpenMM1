@@ -50,13 +50,17 @@ public:
     // 0x5169E0 | ??0agiD3DRPipeline@@QAE@XZ
     inline agiD3DRPipeline()
     {
-        stub<member_func_t<void, agiD3DRPipeline>>(0x5169E0, this);
+        // stub<member_func_t<void, agiD3DRPipeline>>(0x5169E0, this);
+
+        unimplemented();
     }
 
     // 0x516A00 | ??1agiD3DRPipeline@@UAE@XZ
-    inline ~agiD3DRPipeline() override
+    inline ~agiD3DRPipeline() override = 0
     {
-        stub<member_func_t<void, agiD3DRPipeline>>(0x516A00, this);
+        // stub<member_func_t<void, agiD3DRPipeline>>(0x516A00, this);
+
+        unimplemented();
     }
 
     // 0x516A10 | ?BeginGfx@agiD3DRPipeline@@UAEHXZ

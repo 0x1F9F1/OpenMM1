@@ -50,8 +50,10 @@ public:
     }
 
     // 0x49F180 | ??1PUDebug@@UAE@XZ
-    inline ~PUDebug() override
+    inline ~PUDebug() override = 0
     {
-        stub<member_func_t<void, PUDebug>>(0x49F180, this);
+        // stub<member_func_t<void, PUDebug>>(0x49F180, this);
+
+        unimplemented();
     }
 };

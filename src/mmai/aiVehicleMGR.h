@@ -138,9 +138,11 @@ public:
     // mmPhysEntity::`vftable' @ 0x590980
 
     // 0x423DC0 | ??1mmPhysEntity@@UAE@XZ
-    inline ~mmPhysEntity() override
+    inline ~mmPhysEntity() override = 0
     {
-        stub<member_func_t<void, mmPhysEntity>>(0x423DC0, this);
+        // stub<member_func_t<void, mmPhysEntity>>(0x423DC0, this);
+
+        unimplemented();
     }
 
     // 0x44D530 | ?Update@mmPhysEntity@@UAEXXZ
@@ -194,13 +196,17 @@ public:
     // 0x44D5B0 | ??0aiVehicleData@@QAE@XZ
     inline aiVehicleData()
     {
-        stub<member_func_t<void, aiVehicleData>>(0x44D5B0, this);
+        // stub<member_func_t<void, aiVehicleData>>(0x44D5B0, this);
+
+        unimplemented();
     }
 
     // 0x44D5D0 | ??1aiVehicleData@@UAE@XZ
-    inline ~aiVehicleData() override
+    inline ~aiVehicleData() override = 0
     {
-        stub<member_func_t<void, aiVehicleData>>(0x44D5D0, this);
+        // stub<member_func_t<void, aiVehicleData>>(0x44D5D0, this);
+
+        unimplemented();
     }
 
     // 0x44D430 | ?GetClass@aiVehicleData@@UAEPAVMetaClass@@XZ
@@ -218,7 +224,9 @@ public:
     // 0x44C700 | ??0aiVehicleManager@@QAE@XZ
     inline aiVehicleManager()
     {
-        stub<member_func_t<void, aiVehicleManager>>(0x44C700, this);
+        // stub<member_func_t<void, aiVehicleManager>>(0x44C700, this);
+
+        unimplemented();
     }
 
     // 0x44C880 | ?Init@aiVehicleManager@@QAEXPAD@Z
@@ -256,9 +264,11 @@ public:
     static inline extern_var(0x609EF4, int32_t, SignalClock);
 
     // 0x44C7E0 | ??1aiVehicleManager@@UAE@XZ
-    inline ~aiVehicleManager() override
+    inline ~aiVehicleManager() override = 0
     {
-        stub<member_func_t<void, aiVehicleManager>>(0x44C7E0, this);
+        // stub<member_func_t<void, aiVehicleManager>>(0x44C7E0, this);
+
+        unimplemented();
     }
 
     // 0x44CA40 | ?Update@aiVehicleManager@@UAEXXZ
@@ -288,7 +298,9 @@ public:
     // 0x44BD80 | ??0aiVehicleActive@@QAE@XZ
     inline aiVehicleActive()
     {
-        stub<member_func_t<void, aiVehicleActive>>(0x44BD80, this);
+        // stub<member_func_t<void, aiVehicleActive>>(0x44BD80, this);
+
+        unimplemented();
     }
 
     // 0x44BE70 | ?Init@aiVehicleActive@@QAEXPAD@Z
@@ -316,9 +328,11 @@ public:
     }
 
     // 0x44C120 | ??1aiVehicleActive@@UAE@XZ
-    inline ~aiVehicleActive() override
+    inline ~aiVehicleActive() override = 0
     {
-        stub<member_func_t<void, aiVehicleActive>>(0x44C120, this);
+        // stub<member_func_t<void, aiVehicleActive>>(0x44C120, this);
+
+        unimplemented();
     }
 
     // 0x44C5B0 | ?Update@aiVehicleActive@@UAEXXZ
@@ -370,9 +384,11 @@ public:
     }
 
     // 0x4551B0 | ??1aiVehicleInstance@@UAE@XZ
-    inline ~aiVehicleInstance() override
+    inline ~aiVehicleInstance() override = 0
     {
-        stub<member_func_t<void, aiVehicleInstance>>(0x4551B0, this);
+        // stub<member_func_t<void, aiVehicleInstance>>(0x4551B0, this);
+
+        unimplemented();
     }
 
     // 0x44D0E0 | ?GetClass@aiVehicleInstance@@UAEPAVMetaClass@@XZ

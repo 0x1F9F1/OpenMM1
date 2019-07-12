@@ -39,7 +39,9 @@ public:
     // 0x485620 | ??0mmPositions@@QAE@XZ
     inline mmPositions()
     {
-        stub<member_func_t<void, mmPositions>>(0x485620, this);
+        // stub<member_func_t<void, mmPositions>>(0x485620, this);
+
+        unimplemented();
     }
 
     // 0x485630 | ?Init@mmPositions@@QAEXH@Z

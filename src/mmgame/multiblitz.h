@@ -71,7 +71,9 @@ public:
     // 0x414DB0 | ??0mmMultiBlitz@@QAE@XZ
     inline mmMultiBlitz()
     {
-        stub<member_func_t<void, mmMultiBlitz>>(0x414DB0, this);
+        // stub<member_func_t<void, mmMultiBlitz>>(0x414DB0, this);
+
+        unimplemented();
     }
 
     // 0x414EE0 | ?Init@mmMultiBlitz@@QAEHXZ
@@ -99,9 +101,11 @@ public:
     }
 
     // 0x414E20 | ??1mmMultiBlitz@@UAE@XZ
-    inline ~mmMultiBlitz() override
+    inline ~mmMultiBlitz() override = 0
     {
-        stub<member_func_t<void, mmMultiBlitz>>(0x414E20, this);
+        // stub<member_func_t<void, mmMultiBlitz>>(0x414E20, this);
+
+        unimplemented();
     }
 
     // 0x4165A0 | ?GetClass@mmMultiBlitz@@UAEPAVMetaClass@@XZ

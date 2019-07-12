@@ -73,7 +73,9 @@ public:
     // 0x4B1CE0 | ??0UIVScrollBar@@QAE@XZ
     inline UIVScrollBar()
     {
-        stub<member_func_t<void, UIVScrollBar>>(0x4B1CE0, this);
+        // stub<member_func_t<void, UIVScrollBar>>(0x4B1CE0, this);
+
+        unimplemented();
     }
 
     // 0x4B1E00 | ?Init@UIVScrollBar@@QAEXMMMMHMMPAHVCallback@@H@Z
@@ -139,9 +141,11 @@ public:
     }
 
     // 0x4B1D80 | ??1UIVScrollBar@@UAE@XZ
-    inline ~UIVScrollBar() override
+    inline ~UIVScrollBar() override = 0
     {
-        stub<member_func_t<void, UIVScrollBar>>(0x4B1D80, this);
+        // stub<member_func_t<void, UIVScrollBar>>(0x4B1D80, this);
+
+        unimplemented();
     }
 
     // 0x4B2800 | ?GetClass@UIVScrollBar@@UAEPAVMetaClass@@XZ

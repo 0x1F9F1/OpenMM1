@@ -78,7 +78,9 @@ public:
     // 0x4D8EE0 | ??0mmJoystick@@QAE@XZ
     inline mmJoystick()
     {
-        stub<member_func_t<void, mmJoystick>>(0x4D8EE0, this);
+        // stub<member_func_t<void, mmJoystick>>(0x4D8EE0, this);
+
+        unimplemented();
     }
 
     // 0x4D8FA0 | ??1mmJoystick@@QAE@XZ
@@ -239,7 +241,9 @@ public:
     // 0x4D8DE0 | ??0mmJaxis@@QAE@XZ
     inline mmJaxis()
     {
-        stub<member_func_t<void, mmJaxis>>(0x4D8DE0, this);
+        // stub<member_func_t<void, mmJaxis>>(0x4D8DE0, this);
+
+        unimplemented();
     }
 
     // 0x4D8E00 | ??1mmJaxis@@QAE@XZ

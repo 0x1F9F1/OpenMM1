@@ -36,7 +36,9 @@ public:
     // 0x4F33D0 | ??0mmDamage@@QAE@XZ
     inline mmDamage()
     {
-        stub<member_func_t<void, mmDamage>>(0x4F33D0, this);
+        // stub<member_func_t<void, mmDamage>>(0x4F33D0, this);
+
+        unimplemented();
     }
 
     // 0x4F33E0 | ??1mmDamage@@QAE@XZ

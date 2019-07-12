@@ -89,7 +89,7 @@ public:
     asNode* m_Next {nullptr};
     asNode* m_Children {nullptr};
     asNode* m_Parent {nullptr};
-    const char* m_Name {nullptr};
+    char* m_Name {nullptr};
     uint32_t m_Flags {3};
     int32_t m_dword18 {0};
 

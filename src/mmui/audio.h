@@ -60,7 +60,9 @@ public:
     // 0x491390 | ??0AudioOptions@@QAE@H@Z
     inline AudioOptions(int32_t arg1)
     {
-        stub<member_func_t<void, AudioOptions, int32_t>>(0x491390, this, arg1);
+        // stub<member_func_t<void, AudioOptions, int32_t>>(0x491390, this, arg1);
+
+        unimplemented();
     }
 
     // 0x491D10 | ?SetWaveVolume@AudioOptions@@QAEXXZ
@@ -166,9 +168,11 @@ public:
     }
 
     // 0x491C70 | ??1AudioOptions@@UAE@XZ
-    inline ~AudioOptions() override
+    inline ~AudioOptions() override = 0
     {
-        stub<member_func_t<void, AudioOptions>>(0x491C70, this);
+        // stub<member_func_t<void, AudioOptions>>(0x491C70, this);
+
+        unimplemented();
     }
 
     // 0x491D00 | ?PreSetup@AudioOptions@@UAEXXZ

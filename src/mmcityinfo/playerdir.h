@@ -82,7 +82,9 @@ public:
     // 0x4C3450 | ??0mmPlayerDirectory@@QAE@XZ
     inline mmPlayerDirectory()
     {
-        stub<member_func_t<void, mmPlayerDirectory>>(0x4C3450, this);
+        // stub<member_func_t<void, mmPlayerDirectory>>(0x4C3450, this);
+
+        unimplemented();
     }
 
     // 0x4C34F0 | ?NewDirectory@mmPlayerDirectory@@QAEXH@Z
@@ -200,9 +202,11 @@ public:
     }
 
     // 0x4C3490 | ??1mmPlayerDirectory@@UAE@XZ
-    inline ~mmPlayerDirectory() override
+    inline ~mmPlayerDirectory() override = 0
     {
-        stub<member_func_t<void, mmPlayerDirectory>>(0x4C3490, this);
+        // stub<member_func_t<void, mmPlayerDirectory>>(0x4C3490, this);
+
+        unimplemented();
     }
 
     // 0x4C40D0 | ?GetClass@mmPlayerDirectory@@UAEPAVMetaClass@@XZ

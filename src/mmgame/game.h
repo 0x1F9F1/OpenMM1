@@ -98,7 +98,9 @@ public:
     // 0x40B860 | ??0mmGame@@QAE@XZ
     inline mmGame()
     {
-        stub<member_func_t<void, mmGame>>(0x40B860, this);
+        // stub<member_func_t<void, mmGame>>(0x40B860, this);
+
+        unimplemented();
     }
 
     // 0x40B9F0 | ?Init@mmGame@@QAEHXZ
@@ -174,9 +176,11 @@ public:
     }
 
     // 0x40CD90 | ??1mmGame@@UAE@XZ
-    inline ~mmGame() override
+    inline ~mmGame() override = 0
     {
-        stub<member_func_t<void, mmGame>>(0x40CD90, this);
+        // stub<member_func_t<void, mmGame>>(0x40CD90, this);
+
+        unimplemented();
     }
 
     // 0x40E720 | ?GetClass@mmGame@@UAEPAVMetaClass@@XZ

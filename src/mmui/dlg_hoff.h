@@ -73,7 +73,7 @@ public:
     }
 
     // 0x493740 | ??1Dialog_HallOfFame@@UAE@XZ
-    inline ~Dialog_HallOfFame() override
+    inline ~Dialog_HallOfFame() override = 0
     {
         stub<member_func_t<void, Dialog_HallOfFame>>(0x493740, this);
     }

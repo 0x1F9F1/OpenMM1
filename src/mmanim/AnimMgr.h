@@ -63,7 +63,9 @@ public:
     // 0x4B6020 | ??0mmAnimMgr@@QAE@XZ
     inline mmAnimMgr()
     {
-        stub<member_func_t<void, mmAnimMgr>>(0x4B6020, this);
+        // stub<member_func_t<void, mmAnimMgr>>(0x4B6020, this);
+
+        unimplemented();
     }
 
     // 0x4B6100 | ?Init@mmAnimMgr@@QAEHPADPAVmmInstance@@PAPAV2@H@Z
@@ -98,9 +100,11 @@ public:
     }
 
     // 0x4B60A0 | ??1mmAnimMgr@@UAE@XZ
-    inline ~mmAnimMgr() override
+    inline ~mmAnimMgr() override = 0
     {
-        stub<member_func_t<void, mmAnimMgr>>(0x4B60A0, this);
+        // stub<member_func_t<void, mmAnimMgr>>(0x4B60A0, this);
+
+        unimplemented();
     }
 
     // 0x4B64C0 | ?GetClass@mmAnimMgr@@UAEPAVMetaClass@@XZ

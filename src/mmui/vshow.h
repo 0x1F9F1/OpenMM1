@@ -40,13 +40,17 @@ public:
     // 0x499EE0 | ??0VehShowcase@@QAE@H@Z
     inline VehShowcase(int32_t arg1)
     {
-        stub<member_func_t<void, VehShowcase, int32_t>>(0x499EE0, this, arg1);
+        // stub<member_func_t<void, VehShowcase, int32_t>>(0x499EE0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x49A030 | ??1VehShowcase@@UAE@XZ
-    inline ~VehShowcase() override
+    inline ~VehShowcase() override = 0
     {
-        stub<member_func_t<void, VehShowcase>>(0x49A030, this);
+        // stub<member_func_t<void, VehShowcase>>(0x49A030, this);
+
+        unimplemented();
     }
 
     // 0x49A090 | ?PreSetup@VehShowcase@@UAEXXZ

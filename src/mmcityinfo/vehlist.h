@@ -50,7 +50,9 @@ public:
     // 0x4C0580 | ??0mmVehList@@QAE@XZ
     inline mmVehList()
     {
-        stub<member_func_t<void, mmVehList>>(0x4C0580, this);
+        // stub<member_func_t<void, mmVehList>>(0x4C0580, this);
+
+        unimplemented();
     }
 
     // 0x4C0600 | ?Init@mmVehList@@QAEXH@Z

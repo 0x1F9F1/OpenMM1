@@ -53,7 +53,9 @@ public:
     // 0x558210 | ??0Timer@@QAE@XZ
     inline Timer()
     {
-        stub<member_func_t<void, Timer>>(0x558210, this);
+        // stub<member_func_t<void, Timer>>(0x558210, this);
+
+        unimplemented();
     }
 
     // 0x558280 | ?Reset@Timer@@QAEXXZ

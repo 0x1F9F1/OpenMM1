@@ -59,7 +59,9 @@ public:
     // 0x4824E0 | ??0mmLoader@@QAE@XZ
     inline mmLoader()
     {
-        stub<member_func_t<void, mmLoader>>(0x4824E0, this);
+        // stub<member_func_t<void, mmLoader>>(0x4824E0, this);
+
+        unimplemented();
     }
 
     // 0x4826D0 | ?Init@mmLoader@@QAEXPADMM@Z
@@ -114,9 +116,11 @@ public:
     static inline extern_var(0x60B12C, class mmLoader*, Current);
 
     // 0x482630 | ??1mmLoader@@UAE@XZ
-    inline ~mmLoader() override
+    inline ~mmLoader() override = 0
     {
-        stub<member_func_t<void, mmLoader>>(0x482630, this);
+        // stub<member_func_t<void, mmLoader>>(0x482630, this);
+
+        unimplemented();
     }
 
     // 0x482A20 | ?Cull@mmLoader@@UAEXXZ

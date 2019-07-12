@@ -66,7 +66,9 @@ public:
     // 0x4EC310 | ??0PointCamCS@@QAE@XZ
     inline PointCamCS()
     {
-        stub<member_func_t<void, PointCamCS>>(0x4EC310, this);
+        // stub<member_func_t<void, PointCamCS>>(0x4EC310, this);
+
+        unimplemented();
     }
 
     // 0x4EC340 | ?Init@PointCamCS@@QAEXPAVmmCar@@@Z
@@ -118,9 +120,11 @@ public:
     }
 
     // 0x423B80 | ??1PointCamCS@@UAE@XZ
-    inline ~PointCamCS() override
+    inline ~PointCamCS() override = 0
     {
-        stub<member_func_t<void, PointCamCS>>(0x423B80, this);
+        // stub<member_func_t<void, PointCamCS>>(0x423B80, this);
+
+        unimplemented();
     }
 
     // 0x4EC8E0 | ?GetClass@PointCamCS@@UAEPAVMetaClass@@XZ

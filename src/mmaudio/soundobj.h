@@ -84,7 +84,9 @@ public:
     // 0x4E3740 | ??0SoundObj@@QAE@XZ
     inline SoundObj()
     {
-        stub<member_func_t<void, SoundObj>>(0x4E3740, this);
+        // stub<member_func_t<void, SoundObj>>(0x4E3740, this);
+
+        unimplemented();
     }
 
     // 0x4E3800 | ??1SoundObj@@QAE@XZ

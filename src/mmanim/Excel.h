@@ -43,7 +43,9 @@ public:
     // 0x4B7F60 | ??0mmAnimExcel@@QAE@XZ
     inline mmAnimExcel()
     {
-        stub<member_func_t<void, mmAnimExcel>>(0x4B7F60, this);
+        // stub<member_func_t<void, mmAnimExcel>>(0x4B7F60, this);
+
+        unimplemented();
     }
 
     // 0x4B7FC0 | ?Init@mmAnimExcel@@QAEHPAD0@Z

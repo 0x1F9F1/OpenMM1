@@ -57,7 +57,9 @@ public:
     // 0x4966F0 | ??0NetArena@@QAE@H@Z
     inline NetArena(int32_t arg1)
     {
-        stub<member_func_t<void, NetArena, int32_t>>(0x4966F0, this, arg1);
+        // stub<member_func_t<void, NetArena, int32_t>>(0x4966F0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x496DB0 | ?EnablePlayButton@NetArena@@QAEXXZ
@@ -171,9 +173,11 @@ public:
     }
 
     // 0x496CE0 | ??1NetArena@@UAE@XZ
-    inline ~NetArena() override
+    inline ~NetArena() override = 0
     {
-        stub<member_func_t<void, NetArena>>(0x496CE0, this);
+        // stub<member_func_t<void, NetArena>>(0x496CE0, this);
+
+        unimplemented();
     }
 
     // 0x496DA0 | ?PreSetup@NetArena@@UAEXXZ

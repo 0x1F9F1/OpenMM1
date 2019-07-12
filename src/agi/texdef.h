@@ -108,7 +108,9 @@ public:
     // 0x538380 | ??0agiTexParameters@@QAE@XZ
     inline agiTexParameters()
     {
-        stub<member_func_t<void, agiTexParameters>>(0x538380, this);
+        // stub<member_func_t<void, agiTexParameters>>(0x538380, this);
+
+        unimplemented();
     }
 
     // 0x5383A0 | ?Load@agiTexParameters@@QAEXPAVStream@@@Z
@@ -138,7 +140,9 @@ public:
     // 0x538B70 | ??0agiTexLut@@IAE@PAVagiPipeline@@@Z
     inline agiTexLut(class agiPipeline* arg1)
     {
-        stub<member_func_t<void, agiTexLut, class agiPipeline*>>(0x538B70, this, arg1);
+        // stub<member_func_t<void, agiTexLut, class agiPipeline*>>(0x538B70, this, arg1);
+
+        unimplemented();
     }
 
     // 0x538B50 | ?GetName@agiTexLut@@UAEPADXZ
@@ -148,9 +152,11 @@ public:
     }
 
     // 0x538BA0 | ??1agiTexLut@@MAE@XZ
-    inline ~agiTexLut() override
+    inline ~agiTexLut() override = 0
     {
-        stub<member_func_t<void, agiTexLut>>(0x538BA0, this);
+        // stub<member_func_t<void, agiTexLut>>(0x538BA0, this);
+
+        unimplemented();
     }
 };
 
@@ -162,7 +168,9 @@ public:
     // 0x538440 | ??0agiTexDef@@IAE@PAVagiPipeline@@@Z
     inline agiTexDef(class agiPipeline* arg1)
     {
-        stub<member_func_t<void, agiTexDef, class agiPipeline*>>(0x538440, this, arg1);
+        // stub<member_func_t<void, agiTexDef, class agiPipeline*>>(0x538440, this, arg1);
+
+        unimplemented();
     }
 
     // 0x538570 | ?CheckSurface@agiTexDef@@QAEXXZ
@@ -232,9 +240,11 @@ public:
     }
 
     // 0x5384B0 | ??1agiTexDef@@MAE@XZ
-    inline ~agiTexDef() override
+    inline ~agiTexDef() override = 0
     {
-        stub<member_func_t<void, agiTexDef>>(0x5384B0, this);
+        // stub<member_func_t<void, agiTexDef>>(0x5384B0, this);
+
+        unimplemented();
     }
 
     // 0x5386B0 | ?IsTexture@agiTexDef@@UAEHXZ

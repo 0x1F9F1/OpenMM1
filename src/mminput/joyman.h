@@ -60,7 +60,9 @@ public:
     // 0x4D87F0 | ??0mmJoyMan@@QAE@XZ
     inline mmJoyMan()
     {
-        stub<member_func_t<void, mmJoyMan>>(0x4D87F0, this);
+        // stub<member_func_t<void, mmJoyMan>>(0x4D87F0, this);
+
+        unimplemented();
     }
 
     // 0x4D8800 | ??1mmJoyMan@@QAE@XZ

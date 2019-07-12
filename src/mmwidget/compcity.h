@@ -60,9 +60,11 @@ public:
     // mmCompBase::`vftable' @ 0x593498
 
     // 0x4AA6E0 | ??1mmCompBase@@UAE@XZ
-    inline ~mmCompBase() override
+    inline ~mmCompBase() override = 0
     {
-        stub<member_func_t<void, mmCompBase>>(0x4AA6E0, this);
+        // stub<member_func_t<void, mmCompBase>>(0x4AA6E0, this);
+
+        unimplemented();
     }
 
     // 0x4B4C50 | ?Update@mmCompBase@@UAEXXZ
@@ -152,7 +154,9 @@ public:
     // 0x4AA310 | ??0mmCompCity@@QAE@XZ
     inline mmCompCity()
     {
-        stub<member_func_t<void, mmCompCity>>(0x4AA310, this);
+        // stub<member_func_t<void, mmCompCity>>(0x4AA310, this);
+
+        unimplemented();
     }
 
     // 0x4AA3D0 | ?Init@mmCompCity@@QAEXPADHHH@Z
@@ -183,9 +187,11 @@ public:
     }
 
     // 0x4AA340 | ??1mmCompCity@@UAE@XZ
-    inline ~mmCompCity() override
+    inline ~mmCompCity() override = 0
     {
-        stub<member_func_t<void, mmCompCity>>(0x4AA340, this);
+        // stub<member_func_t<void, mmCompCity>>(0x4AA340, this);
+
+        unimplemented();
     }
 
     // 0x4AA6A0 | ?Cull@mmCompCity@@UAEXXZ

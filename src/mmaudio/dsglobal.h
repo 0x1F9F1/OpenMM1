@@ -120,7 +120,9 @@ public:
     // 0x4E1D10 | ??0DSGlobal@@QAE@XZ
     inline DSGlobal()
     {
-        stub<member_func_t<void, DSGlobal>>(0x4E1D10, this);
+        // stub<member_func_t<void, DSGlobal>>(0x4E1D10, this);
+
+        unimplemented();
     }
 
     // 0x4E1DE0 | ??1DSGlobal@@QAE@XZ

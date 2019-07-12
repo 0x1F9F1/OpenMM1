@@ -53,7 +53,9 @@ public:
     // 0x5461A0 | ??0eqReplayChannel@@IAE@K@Z
     inline eqReplayChannel(uint32_t arg1)
     {
-        stub<member_func_t<void, eqReplayChannel, uint32_t>>(0x5461A0, this, arg1);
+        // stub<member_func_t<void, eqReplayChannel, uint32_t>>(0x5461A0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x5461D0 | ??1eqReplayChannel@@QAE@XZ

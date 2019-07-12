@@ -50,7 +50,9 @@ public:
     // 0x51F350 | ??0agiSWRasterizer@@QAE@PAVagiPipeline@@@Z
     inline agiSWRasterizer(class agiPipeline* arg1)
     {
-        stub<member_func_t<void, agiSWRasterizer, class agiPipeline*>>(0x51F350, this, arg1);
+        // stub<member_func_t<void, agiSWRasterizer, class agiPipeline*>>(0x51F350, this, arg1);
+
+        unimplemented();
     }
 
     // 0x51F390 | ?EndGfx@agiSWRasterizer@@UAEXXZ
@@ -60,9 +62,11 @@ public:
     }
 
     // 0x51F370 | ??1agiSWRasterizer@@UAE@XZ
-    inline ~agiSWRasterizer() override
+    inline ~agiSWRasterizer() override = 0
     {
-        stub<member_func_t<void, agiSWRasterizer>>(0x51F370, this);
+        // stub<member_func_t<void, agiSWRasterizer>>(0x51F370, this);
+
+        unimplemented();
     }
 
     // 0x51F380 | ?BeginGfx@agiSWRasterizer@@UAEHXZ

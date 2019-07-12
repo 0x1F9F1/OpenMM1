@@ -61,7 +61,9 @@ public:
     // 0x4EE320 | ??0BaseCamCS@@QAE@XZ
     inline BaseCamCS()
     {
-        stub<member_func_t<void, BaseCamCS>>(0x4EE320, this);
+        // stub<member_func_t<void, BaseCamCS>>(0x4EE320, this);
+
+        unimplemented();
     }
 
     // 0x4EE3E0 | ?IsViewCSInTransition@BaseCamCS@@QAEHXZ
@@ -83,9 +85,11 @@ public:
     }
 
     // 0x4EE3C0 | ??1BaseCamCS@@UAE@XZ
-    inline ~BaseCamCS() override
+    inline ~BaseCamCS() override = 0
     {
-        stub<member_func_t<void, BaseCamCS>>(0x4EE3C0, this);
+        // stub<member_func_t<void, BaseCamCS>>(0x4EE3C0, this);
+
+        unimplemented();
     }
 
     // 0x4EE690 | ?GetClass@BaseCamCS@@UAEPAVMetaClass@@XZ

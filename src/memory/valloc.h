@@ -48,7 +48,9 @@ public:
     // 0x50F350 | ??0asSafeHeap@@QAE@XZ
     inline asSafeHeap()
     {
-        stub<member_func_t<void, asSafeHeap>>(0x50F350, this);
+        // stub<member_func_t<void, asSafeHeap>>(0x50F350, this);
+
+        unimplemented();
     }
 
     // 0x50F360 | ??1asSafeHeap@@QAE@XZ

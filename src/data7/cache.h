@@ -83,7 +83,9 @@ public:
     // 0x558930 | ??0DataCache@@QAE@XZ
     inline DataCache()
     {
-        stub<member_func_t<void, DataCache>>(0x558930, this);
+        // stub<member_func_t<void, DataCache>>(0x558930, this);
+
+        unimplemented();
     }
 
     // 0x558940 | ?Init@DataCache@@QAEXIHPAD@Z

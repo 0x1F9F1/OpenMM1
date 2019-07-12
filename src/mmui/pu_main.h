@@ -43,8 +43,10 @@ public:
     }
 
     // 0x49FB90 | ??1PUMain@@UAE@XZ
-    inline ~PUMain() override
+    inline ~PUMain() override = 0
     {
-        stub<member_func_t<void, PUMain>>(0x49FB90, this);
+        // stub<member_func_t<void, PUMain>>(0x49FB90, this);
+
+        unimplemented();
     }
 };

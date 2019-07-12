@@ -48,7 +48,9 @@ public:
     // 0x4AC5F0 | ??0mmCompCRPlayer@@QAE@XZ
     inline mmCompCRPlayer()
     {
-        stub<member_func_t<void, mmCompCRPlayer>>(0x4AC5F0, this);
+        // stub<member_func_t<void, mmCompCRPlayer>>(0x4AC5F0, this);
+
+        unimplemented();
     }
 
     // 0x4AC6B0 | ?Init@mmCompCRPlayer@@QAEXPADH0HH@Z
@@ -86,9 +88,11 @@ public:
     }
 
     // 0x4AC620 | ??1mmCompCRPlayer@@UAE@XZ
-    inline ~mmCompCRPlayer() override
+    inline ~mmCompCRPlayer() override = 0
     {
-        stub<member_func_t<void, mmCompCRPlayer>>(0x4AC620, this);
+        // stub<member_func_t<void, mmCompCRPlayer>>(0x4AC620, this);
+
+        unimplemented();
     }
 
     // 0x4ACA50 | ?Cull@mmCompCRPlayer@@UAEXXZ

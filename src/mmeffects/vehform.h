@@ -41,7 +41,9 @@ public:
     // 0x4F3860 | ??0mmVehicleForm@@QAE@XZ
     inline mmVehicleForm()
     {
-        stub<member_func_t<void, mmVehicleForm>>(0x4F3860, this);
+        // stub<member_func_t<void, mmVehicleForm>>(0x4F3860, this);
+
+        unimplemented();
     }
 
     // 0x4F38C0 | ?SetShape@mmVehicleForm@@QAEXPAD00PAVVector3@@@Z
@@ -58,9 +60,11 @@ public:
     static inline extern_var(0x67B8E0, class agiTexDef*, SphMapTex);
 
     // 0x4912A0 | ??1mmVehicleForm@@UAE@XZ
-    inline ~mmVehicleForm() override
+    inline ~mmVehicleForm() override = 0
     {
-        stub<member_func_t<void, mmVehicleForm>>(0x4912A0, this);
+        // stub<member_func_t<void, mmVehicleForm>>(0x4912A0, this);
+
+        unimplemented();
     }
 
     // 0x4F3950 | ?Cull@mmVehicleForm@@UAEXXZ

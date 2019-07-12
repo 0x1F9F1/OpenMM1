@@ -60,7 +60,9 @@ public:
     // 0x485FA0 | ??0mmInstChain@@QAE@XZ
     inline mmInstChain()
     {
-        stub<member_func_t<void, mmInstChain>>(0x485FA0, this);
+        // stub<member_func_t<void, mmInstChain>>(0x485FA0, this);
+
+        unimplemented();
     }
 
     // 0x485FB0 | ??1mmInstChain@@QAE@XZ

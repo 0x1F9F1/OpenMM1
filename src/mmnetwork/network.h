@@ -134,7 +134,9 @@ public:
     // 0x47FEB0 | ??0asNetwork@@QAE@XZ
     inline asNetwork()
     {
-        stub<member_func_t<void, asNetwork>>(0x47FEB0, this);
+        // stub<member_func_t<void, asNetwork>>(0x47FEB0, this);
+
+        unimplemented();
     }
 
     // 0x47FF20 | ??1asNetwork@@QAE@XZ

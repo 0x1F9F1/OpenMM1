@@ -39,7 +39,9 @@ public:
     // 0x4C7960 | ??0mmCityInfo@@QAE@XZ
     inline mmCityInfo()
     {
-        stub<member_func_t<void, mmCityInfo>>(0x4C7960, this);
+        // stub<member_func_t<void, mmCityInfo>>(0x4C7960, this);
+
+        unimplemented();
     }
 
     // 0x4C7990 | ?Load@mmCityInfo@@QAEHPAD@Z

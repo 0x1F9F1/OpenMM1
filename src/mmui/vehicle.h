@@ -42,7 +42,9 @@ public:
     // 0x49A140 | ??0Vehicle@@QAE@H@Z
     inline Vehicle(int32_t arg1)
     {
-        stub<member_func_t<void, Vehicle, int32_t>>(0x49A140, this, arg1);
+        // stub<member_func_t<void, Vehicle, int32_t>>(0x49A140, this, arg1);
+
+        unimplemented();
     }
 
     // 0x49A230 | ?SetSubMenu@Vehicle@@QAEXH@Z
@@ -58,9 +60,11 @@ public:
     }
 
     // 0x49A220 | ??1Vehicle@@UAE@XZ
-    inline ~Vehicle() override
+    inline ~Vehicle() override = 0
     {
-        stub<member_func_t<void, Vehicle>>(0x49A220, this);
+        // stub<member_func_t<void, Vehicle>>(0x49A220, this);
+
+        unimplemented();
     }
 
     // 0x49A270 | ?PreSetup@Vehicle@@UAEXXZ

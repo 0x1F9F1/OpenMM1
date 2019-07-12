@@ -60,7 +60,9 @@ public:
     // 0x4D2D00 | ??0asAero@@QAE@XZ
     inline asAero()
     {
-        stub<member_func_t<void, asAero>>(0x4D2D00, this);
+        // stub<member_func_t<void, asAero>>(0x4D2D00, this);
+
+        unimplemented();
     }
 
     // 0x4D3220 | ?Load@asAero@@QAEXPAVStream@@@Z
@@ -88,9 +90,11 @@ public:
     }
 
     // 0x468290 | ??1asAero@@UAE@XZ
-    inline ~asAero() override
+    inline ~asAero() override = 0
     {
-        stub<member_func_t<void, asAero>>(0x468290, this);
+        // stub<member_func_t<void, asAero>>(0x468290, this);
+
+        unimplemented();
     }
 
     // 0x4D3600 | ?GetClass@asAero@@UAEPAVMetaClass@@XZ

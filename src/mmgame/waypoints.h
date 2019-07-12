@@ -76,7 +76,9 @@ public:
     // 0x428520 | ??0mmWaypoints@@QAE@XZ
     inline mmWaypoints()
     {
-        stub<member_func_t<void, mmWaypoints>>(0x428520, this);
+        // stub<member_func_t<void, mmWaypoints>>(0x428520, this);
+
+        unimplemented();
     }
 
     // 0x428930 | ?BlitzRemove@mmWaypoints@@QAEHH@Z
@@ -245,9 +247,11 @@ public:
     }
 
     // 0x428B00 | ??1mmWaypoints@@UAE@XZ
-    inline ~mmWaypoints() override
+    inline ~mmWaypoints() override = 0
     {
-        stub<member_func_t<void, mmWaypoints>>(0x428B00, this);
+        // stub<member_func_t<void, mmWaypoints>>(0x428B00, this);
+
+        unimplemented();
     }
 
     // 0x4298F0 | ?Cull@mmWaypoints@@UAEXXZ

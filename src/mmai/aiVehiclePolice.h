@@ -71,7 +71,9 @@ public:
     // 0x43EDB0 | ??0aiVehiclePolice@@QAE@XZ
     inline aiVehiclePolice()
     {
-        stub<member_func_t<void, aiVehiclePolice>>(0x43EDB0, this);
+        // stub<member_func_t<void, aiVehiclePolice>>(0x43EDB0, this);
+
+        unimplemented();
     }
 
     // 0x43EE10 | ??1aiVehiclePolice@@QAE@XZ

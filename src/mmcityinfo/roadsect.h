@@ -139,7 +139,9 @@ public:
     // 0x4C6900 | ??0mmRoadSect@@QAE@XZ
     inline mmRoadSect()
     {
-        stub<member_func_t<void, mmRoadSect>>(0x4C6900, this);
+        // stub<member_func_t<void, mmRoadSect>>(0x4C6900, this);
+
+        unimplemented();
     }
 
     // 0x4C6A40 | ?SetStreetWidth@mmRoadSect@@QAEXM@Z
@@ -318,9 +320,11 @@ public:
     }
 
     // 0x4C7850 | ??1mmRoadSect@@UAE@XZ
-    inline ~mmRoadSect() override
+    inline ~mmRoadSect() override = 0
     {
-        stub<member_func_t<void, mmRoadSect>>(0x4C7850, this);
+        // stub<member_func_t<void, mmRoadSect>>(0x4C7850, this);
+
+        unimplemented();
     }
 
     // 0x4C7690 | ?GetClass@mmRoadSect@@UAEPAVMetaClass@@XZ
@@ -338,7 +342,9 @@ public:
     // 0x4C66B0 | ??0mmPropInfo@@QAE@XZ
     inline mmPropInfo()
     {
-        stub<member_func_t<void, mmPropInfo>>(0x4C66B0, this);
+        // stub<member_func_t<void, mmPropInfo>>(0x4C66B0, this);
+
+        unimplemented();
     }
 
     // 0x4C6740 | ?NewItems@mmPropInfo@@QAEXH@Z
@@ -390,9 +396,11 @@ public:
     }
 
     // 0x4C66E0 | ??1mmPropInfo@@UAE@XZ
-    inline ~mmPropInfo() override
+    inline ~mmPropInfo() override = 0
     {
-        stub<member_func_t<void, mmPropInfo>>(0x4C66E0, this);
+        // stub<member_func_t<void, mmPropInfo>>(0x4C66E0, this);
+
+        unimplemented();
     }
 
     // 0x4C70B0 | ?GetClass@mmPropInfo@@UAEPAVMetaClass@@XZ
@@ -410,7 +418,9 @@ public:
     // 0x4C6870 | ??0mmRoadSide@@QAE@XZ
     inline mmRoadSide()
     {
-        stub<member_func_t<void, mmRoadSide>>(0x4C6870, this);
+        // stub<member_func_t<void, mmRoadSide>>(0x4C6870, this);
+
+        unimplemented();
     }
 
     // 0x4C70C0 | ?DeclareFields@mmRoadSide@@SAXXZ
@@ -420,9 +430,11 @@ public:
     }
 
     // 0x4C77C0 | ??1mmRoadSide@@UAE@XZ
-    inline ~mmRoadSide() override
+    inline ~mmRoadSide() override = 0
     {
-        stub<member_func_t<void, mmRoadSide>>(0x4C77C0, this);
+        // stub<member_func_t<void, mmRoadSide>>(0x4C77C0, this);
+
+        unimplemented();
     }
 
     // 0x4C72D0 | ?GetClass@mmRoadSide@@UAEPAVMetaClass@@XZ

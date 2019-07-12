@@ -107,7 +107,9 @@ public:
     // 0x509A70 | ??0mmBoundTemplate@@QAE@XZ
     inline mmBoundTemplate()
     {
-        stub<member_func_t<void, mmBoundTemplate>>(0x509A70, this);
+        // stub<member_func_t<void, mmBoundTemplate>>(0x509A70, this);
+
+        unimplemented();
     }
 
     // 0x509B30 | ??1mmBoundTemplate@@QAE@XZ

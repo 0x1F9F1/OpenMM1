@@ -82,7 +82,9 @@ public:
     // 0x42EF40 | ??0mmExternalView@@QAE@XZ
     inline mmExternalView()
     {
-        stub<member_func_t<void, mmExternalView>>(0x42EF40, this);
+        // stub<member_func_t<void, mmExternalView>>(0x42EF40, this);
+
+        unimplemented();
     }
 
     // 0x42EFC0 | ?Init@mmExternalView@@QAEXPAVmmPlayer@@@Z
@@ -98,9 +100,11 @@ public:
     }
 
     // 0x425980 | ??1mmExternalView@@UAE@XZ
-    inline ~mmExternalView() override
+    inline ~mmExternalView() override = 0
     {
-        stub<member_func_t<void, mmExternalView>>(0x425980, this);
+        // stub<member_func_t<void, mmExternalView>>(0x425980, this);
+
+        unimplemented();
     }
 
     // 0x42F190 | ?Cull@mmExternalView@@UAEXXZ
@@ -136,7 +140,9 @@ public:
     // 0x42E410 | ??0mmDashView@@QAE@XZ
     inline mmDashView()
     {
-        stub<member_func_t<void, mmDashView>>(0x42E410, this);
+        // stub<member_func_t<void, mmDashView>>(0x42E410, this);
+
+        unimplemented();
     }
 
     // 0x42E6C0 | ?Init@mmDashView@@QAEXPADPAVmmPlayer@@@Z
@@ -176,9 +182,11 @@ public:
     }
 
     // 0x42E5B0 | ??1mmDashView@@UAE@XZ
-    inline ~mmDashView() override
+    inline ~mmDashView() override = 0
     {
-        stub<member_func_t<void, mmDashView>>(0x42E5B0, this);
+        // stub<member_func_t<void, mmDashView>>(0x42E5B0, this);
+
+        unimplemented();
     }
 
     // 0x42F620 | ?GetClass@mmDashView@@UAEPAVMetaClass@@XZ

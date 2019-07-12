@@ -33,7 +33,9 @@ public:
     // 0x440A70 | ??0aiRaceData@@QAE@PAD0@Z
     inline aiRaceData(char* arg1, char* arg2)
     {
-        stub<member_func_t<void, aiRaceData, char*, char*>>(0x440A70, this, arg1, arg2);
+        // stub<member_func_t<void, aiRaceData, char*, char*>>(0x440A70, this, arg1, arg2);
+
+        unimplemented();
     }
 
     // 0x440F50 | ??1aiRaceData@@QAE@XZ

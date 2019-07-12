@@ -119,7 +119,9 @@ public:
     // 0x550050 | ??0Matrix44@@QAE@ABVMatrix34@@@Z
     inline Matrix44(class Matrix34 const& arg1)
     {
-        stub<member_func_t<void, Matrix44, class Matrix34 const&>>(0x550050, this, arg1);
+        // stub<member_func_t<void, Matrix44, class Matrix34 const&>>(0x550050, this, arg1);
+
+        unimplemented();
     }
 
     // 0x5500C0 | ??HMatrix44@@QBE?AV0@ABV0@@Z
@@ -260,6 +262,8 @@ public:
     // 0x5527D0 | ??0Matrix44@@QAE@ABV0@@Z
     inline Matrix44(class Matrix44 const& arg1)
     {
-        stub<member_func_t<void, Matrix44, class Matrix44 const&>>(0x5527D0, this, arg1);
+        // stub<member_func_t<void, Matrix44, class Matrix44 const&>>(0x5527D0, this, arg1);
+
+        unimplemented();
     }
 };

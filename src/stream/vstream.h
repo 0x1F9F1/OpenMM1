@@ -60,13 +60,15 @@ public:
         (void) arg1;
         (void) arg2;
 
-        unimplemented;
+        unimplemented();
     }
 
     // 0x543780 | ??1VirtualStream@@UAE@XZ
-    inline ~VirtualStream() override
+    inline ~VirtualStream() override = 0
     {
-        stub<member_func_t<void, VirtualStream>>(0x543780, this);
+        // stub<member_func_t<void, VirtualStream>>(0x543780, this);
+
+        unimplemented();
     }
 
     // 0x5438C0 | ?GetMapping@VirtualStream@@UAEPAXXZ

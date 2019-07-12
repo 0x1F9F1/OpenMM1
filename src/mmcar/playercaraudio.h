@@ -71,7 +71,9 @@ public:
     // 0x478A40 | ??0mmPlayerCarAudio@@QAE@PAVmmCarSim@@@Z
     inline mmPlayerCarAudio(class mmCarSim* arg1)
     {
-        stub<member_func_t<void, mmPlayerCarAudio, class mmCarSim*>>(0x478A40, this, arg1);
+        // stub<member_func_t<void, mmPlayerCarAudio, class mmCarSim*>>(0x478A40, this, arg1);
+
+        unimplemented();
     }
 
     // 0x478AE0 | ?Init@mmPlayerCarAudio@@QAEXPAVmmCarSim@@@Z
@@ -156,13 +158,17 @@ public:
     // 0x47A340 | ??0mmPlayerCarAudio@@QAE@XZ
     inline mmPlayerCarAudio()
     {
-        stub<member_func_t<void, mmPlayerCarAudio>>(0x47A340, this);
+        // stub<member_func_t<void, mmPlayerCarAudio>>(0x47A340, this);
+
+        unimplemented();
     }
 
     // 0x478E70 | ??1mmPlayerCarAudio@@UAE@XZ
-    inline ~mmPlayerCarAudio() override
+    inline ~mmPlayerCarAudio() override = 0
     {
-        stub<member_func_t<void, mmPlayerCarAudio>>(0x478E70, this);
+        // stub<member_func_t<void, mmPlayerCarAudio>>(0x478E70, this);
+
+        unimplemented();
     }
 
     // 0x47A1B0 | ?GetClass@mmPlayerCarAudio@@UAEPAVMetaClass@@XZ

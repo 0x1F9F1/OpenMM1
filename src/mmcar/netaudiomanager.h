@@ -61,7 +61,9 @@ public:
     // 0x46CDA0 | ??0NetAudioManager@@QAE@XZ
     inline NetAudioManager()
     {
-        stub<member_func_t<void, NetAudioManager>>(0x46CDA0, this);
+        // stub<member_func_t<void, NetAudioManager>>(0x46CDA0, this);
+
+        unimplemented();
     }
 
     // 0x46D340 | ?AddVehicle@NetAudioManager@@QAEFPAVmmNetworkCarAudio@@@Z
@@ -170,9 +172,11 @@ public:
     }
 
     // 0x46CF80 | ??1NetAudioManager@@UAE@XZ
-    inline ~NetAudioManager() override
+    inline ~NetAudioManager() override = 0
     {
-        stub<member_func_t<void, NetAudioManager>>(0x46CF80, this);
+        // stub<member_func_t<void, NetAudioManager>>(0x46CF80, this);
+
+        unimplemented();
     }
 
     // 0x46D510 | ?Update@NetAudioManager@@UAEXXZ

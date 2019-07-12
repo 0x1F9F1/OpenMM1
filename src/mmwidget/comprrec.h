@@ -48,7 +48,9 @@ public:
     // 0x4AA880 | ??0mmCompRaceRecord@@QAE@XZ
     inline mmCompRaceRecord()
     {
-        stub<member_func_t<void, mmCompRaceRecord>>(0x4AA880, this);
+        // stub<member_func_t<void, mmCompRaceRecord>>(0x4AA880, this);
+
+        unimplemented();
     }
 
     // 0x4AA960 | ?Init@mmCompRaceRecord@@QAEXHPAD0000HH@Z
@@ -89,9 +91,11 @@ public:
     }
 
     // 0x4AA8C0 | ??1mmCompRaceRecord@@UAE@XZ
-    inline ~mmCompRaceRecord() override
+    inline ~mmCompRaceRecord() override = 0
     {
-        stub<member_func_t<void, mmCompRaceRecord>>(0x4AA8C0, this);
+        // stub<member_func_t<void, mmCompRaceRecord>>(0x4AA8C0, this);
+
+        unimplemented();
     }
 
     // 0x4AAD00 | ?Cull@mmCompRaceRecord@@UAEXXZ

@@ -68,7 +68,9 @@ public:
     // 0x515420 | ??0asViewCS@@QAE@XZ
     inline asViewCS()
     {
-        stub<member_func_t<void, asViewCS>>(0x515420, this);
+        // stub<member_func_t<void, asViewCS>>(0x515420, this);
+
+        unimplemented();
     }
 
     // 0x515550 | ?SetAzimuth@asViewCS@@QAEXXZ
@@ -132,9 +134,11 @@ public:
     }
 
     // 0x5161F0 | ??1asViewCS@@UAE@XZ
-    inline ~asViewCS() override
+    inline ~asViewCS() override = 0
     {
-        stub<member_func_t<void, asViewCS>>(0x5161F0, this);
+        // stub<member_func_t<void, asViewCS>>(0x5161F0, this);
+
+        unimplemented();
     }
 
     // 0x516180 | ?GetClass@asViewCS@@UAEPAVMetaClass@@XZ

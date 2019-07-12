@@ -46,7 +46,9 @@ public:
     // 0x4C6110 | ??0mmRaceData@@QAE@XZ
     inline mmRaceData()
     {
-        stub<member_func_t<void, mmRaceData>>(0x4C6110, this);
+        // stub<member_func_t<void, mmRaceData>>(0x4C6110, this);
+
+        unimplemented();
     }
 
     // 0x4C6120 | ??1mmRaceData@@QAE@XZ

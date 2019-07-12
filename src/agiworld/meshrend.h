@@ -682,7 +682,9 @@ public:
     // 0x503200 | ??0agiMeshSet@@QAE@XZ
     inline agiMeshSet()
     {
-        stub<member_func_t<void, agiMeshSet>>(0x503200, this);
+        // stub<member_func_t<void, agiMeshSet>>(0x503200, this);
+
+        unimplemented();
     }
 
     // 0x503220 | ??1agiMeshSet@@QAE@XZ

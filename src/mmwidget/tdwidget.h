@@ -73,7 +73,9 @@ public:
     // 0x4B2EE0 | ??0TextDropWidget@@QAE@XZ
     inline TextDropWidget()
     {
-        stub<member_func_t<void, TextDropWidget>>(0x4B2EE0, this);
+        // stub<member_func_t<void, TextDropWidget>>(0x4B2EE0, this);
+
+        unimplemented();
     }
 
     // 0x4B3000 | ?Init@TextDropWidget@@QAEXPAVasCamera@@PAXMMMMMVstring@@H@Z
@@ -175,9 +177,11 @@ public:
     }
 
     // 0x4B2F90 | ??1TextDropWidget@@UAE@XZ
-    inline ~TextDropWidget() override
+    inline ~TextDropWidget() override = 0
     {
-        stub<member_func_t<void, TextDropWidget>>(0x4B2F90, this);
+        // stub<member_func_t<void, TextDropWidget>>(0x4B2F90, this);
+
+        unimplemented();
     }
 
     // 0x4B3570 | ?GetClass@TextDropWidget@@UAEPAVMetaClass@@XZ

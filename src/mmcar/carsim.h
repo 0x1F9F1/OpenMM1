@@ -142,7 +142,9 @@ public:
     // 0x464610 | ??0mmCarSim@@QAE@XZ
     inline mmCarSim()
     {
-        stub<member_func_t<void, mmCarSim>>(0x464610, this);
+        // stub<member_func_t<void, mmCarSim>>(0x464610, this);
+
+        unimplemented();
     }
 
     // 0x464CB0 | ?OnGround@mmCarSim@@QAEHXZ
@@ -315,9 +317,11 @@ public:
     static inline extern_var(0x60A040, float, PlayerRawSteering);
 
     // 0x464D00 | ??1mmCarSim@@UAE@XZ
-    inline ~mmCarSim() override
+    inline ~mmCarSim() override = 0
     {
-        stub<member_func_t<void, mmCarSim>>(0x464D00, this);
+        // stub<member_func_t<void, mmCarSim>>(0x464D00, this);
+
+        unimplemented();
     }
 
     // 0x468110 | ?GetClass@mmCarSim@@UAEPAVMetaClass@@XZ

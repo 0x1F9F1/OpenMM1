@@ -64,7 +64,9 @@ public:
     // 0x4B28D0 | ??0sfPointer@@QAE@XZ
     inline sfPointer()
     {
-        stub<member_func_t<void, sfPointer>>(0x4B28D0, this);
+        // stub<member_func_t<void, sfPointer>>(0x4B28D0, this);
+
+        unimplemented();
     }
 
     // 0x4B2960 | ?Init@sfPointer@@QAEXXZ
@@ -98,9 +100,11 @@ public:
     }
 
     // 0x4B2900 | ??1sfPointer@@UAE@XZ
-    inline ~sfPointer() override
+    inline ~sfPointer() override = 0
     {
-        stub<member_func_t<void, sfPointer>>(0x4B2900, this);
+        // stub<member_func_t<void, sfPointer>>(0x4B2900, this);
+
+        unimplemented();
     }
 
     // 0x4B2E70 | ?GetClass@sfPointer@@UAEPAVMetaClass@@XZ

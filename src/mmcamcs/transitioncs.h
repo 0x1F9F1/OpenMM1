@@ -47,7 +47,9 @@ public:
     // 0x4ED9D0 | ??0TransitionCS@@QAE@XZ
     inline TransitionCS()
     {
-        stub<member_func_t<void, TransitionCS>>(0x4ED9D0, this);
+        // stub<member_func_t<void, TransitionCS>>(0x4ED9D0, this);
+
+        unimplemented();
     }
 
     // 0x4EDA70 | ?Init@TransitionCS@@QAEXPAVmmCar@@@Z
@@ -87,9 +89,11 @@ public:
     }
 
     // 0x4EDA60 | ??1TransitionCS@@UAE@XZ
-    inline ~TransitionCS() override
+    inline ~TransitionCS() override = 0
     {
-        stub<member_func_t<void, TransitionCS>>(0x4EDA60, this);
+        // stub<member_func_t<void, TransitionCS>>(0x4EDA60, this);
+
+        unimplemented();
     }
 
     // 0x4EDAA0 | ?Update@TransitionCS@@UAEXXZ

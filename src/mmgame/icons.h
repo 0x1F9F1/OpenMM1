@@ -42,7 +42,9 @@ public:
     // 0x41D4D0 | ??0mmIcons@@QAE@XZ
     inline mmIcons()
     {
-        stub<member_func_t<void, mmIcons>>(0x41D4D0, this);
+        // stub<member_func_t<void, mmIcons>>(0x41D4D0, this);
+
+        unimplemented();
     }
 
     // 0x41D5B0 | ?Init@mmIcons@@QAEXPAVMatrix34@@MM@Z
@@ -59,9 +61,11 @@ public:
     }
 
     // 0x41D550 | ??1mmIcons@@UAE@XZ
-    inline ~mmIcons() override
+    inline ~mmIcons() override = 0
     {
-        stub<member_func_t<void, mmIcons>>(0x41D550, this);
+        // stub<member_func_t<void, mmIcons>>(0x41D550, this);
+
+        unimplemented();
     }
 
     // 0x41D6B0 | ?Cull@mmIcons@@UAEXXZ

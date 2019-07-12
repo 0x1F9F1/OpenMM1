@@ -105,7 +105,9 @@ public:
     // 0x417E70 | ??0mmMultiCR@@QAE@XZ
     inline mmMultiCR()
     {
-        stub<member_func_t<void, mmMultiCR>>(0x417E70, this);
+        // stub<member_func_t<void, mmMultiCR>>(0x417E70, this);
+
+        unimplemented();
     }
 
     // 0x418000 | ?Init@mmMultiCR@@QAEHXZ
@@ -301,9 +303,11 @@ public:
     }
 
     // 0x417F30 | ??1mmMultiCR@@UAE@XZ
-    inline ~mmMultiCR() override
+    inline ~mmMultiCR() override = 0
     {
-        stub<member_func_t<void, mmMultiCR>>(0x417F30, this);
+        // stub<member_func_t<void, mmMultiCR>>(0x417F30, this);
+
+        unimplemented();
     }
 
     // 0x41B650 | ?GetClass@mmMultiCR@@UAEPAVMetaClass@@XZ

@@ -73,7 +73,9 @@ public:
     // 0x4B35E0 | ??0mmSlider@@QAE@XZ
     inline mmSlider()
     {
-        stub<member_func_t<void, mmSlider>>(0x4B35E0, this);
+        // stub<member_func_t<void, mmSlider>>(0x4B35E0, this);
+
+        unimplemented();
     }
 
     // 0x4B3710 | ?Init@mmSlider@@QAEXPADPAVuiWidget@@MMMMHMMHH@Z
@@ -171,9 +173,11 @@ public:
     }
 
     // 0x4B3670 | ??1mmSlider@@UAE@XZ
-    inline ~mmSlider() override
+    inline ~mmSlider() override = 0
     {
-        stub<member_func_t<void, mmSlider>>(0x4B3670, this);
+        // stub<member_func_t<void, mmSlider>>(0x4B3670, this);
+
+        unimplemented();
     }
 
     // 0x4B3FB0 | ?GetClass@mmSlider@@UAEPAVMetaClass@@XZ

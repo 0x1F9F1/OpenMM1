@@ -42,7 +42,9 @@ public:
     // 0x4BC9F0 | ??0mmAnimTrainCar@@QAE@XZ
     inline mmAnimTrainCar()
     {
-        stub<member_func_t<void, mmAnimTrainCar>>(0x4BC9F0, this);
+        // stub<member_func_t<void, mmAnimTrainCar>>(0x4BC9F0, this);
+
+        unimplemented();
     }
 
     // 0x4BCA20 | ?Init@mmAnimTrainCar@@QAEXPAD0@Z
@@ -64,9 +66,11 @@ public:
     }
 
     // 0x4BCA10 | ??1mmAnimTrainCar@@UAE@XZ
-    inline ~mmAnimTrainCar() override
+    inline ~mmAnimTrainCar() override = 0
     {
-        stub<member_func_t<void, mmAnimTrainCar>>(0x4BCA10, this);
+        // stub<member_func_t<void, mmAnimTrainCar>>(0x4BCA10, this);
+
+        unimplemented();
     }
 
     // 0x4BCAC0 | ?Draw@mmAnimTrainCar@@UAIXH@Z

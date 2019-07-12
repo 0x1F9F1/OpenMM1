@@ -43,7 +43,9 @@ public:
     // 0x4B8C70 | ??0mmAnimTrigger@@QAE@XZ
     inline mmAnimTrigger()
     {
-        stub<member_func_t<void, mmAnimTrigger>>(0x4B8C70, this);
+        // stub<member_func_t<void, mmAnimTrigger>>(0x4B8C70, this);
+
+        unimplemented();
     }
 
     // 0x4B8C80 | ??1mmAnimTrigger@@QAE@XZ

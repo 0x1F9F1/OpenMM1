@@ -95,7 +95,9 @@ public:
     // 0x540430 | ??0Stream@@QAE@PAXHPAVFileSystem@@@Z
     inline Stream(void* arg1, int32_t arg2, class FileSystem* arg3)
     {
-        stub<member_func_t<void, Stream, void*, int32_t, class FileSystem*>>(0x540430, this, arg1, arg2, arg3);
+        // stub<member_func_t<void, Stream, void*, int32_t, class FileSystem*>>(0x540430, this, arg1, arg2, arg3);
+
+        unimplemented(arg1, arg2, arg3);
     }
 
     // 0x540540 | ?Read@Stream@@QAEHPAXH@Z
@@ -264,9 +266,11 @@ public:
     }
 
     // 0x5404C0 | ??1Stream@@UAE@XZ
-    inline ~Stream() override
+    inline ~Stream() override = 0
     {
-        stub<member_func_t<void, Stream>>(0x5404C0, this);
+        // stub<member_func_t<void, Stream>>(0x5404C0, this);
+
+        unimplemented();
     }
 
     // 0x540900 | ?GetMapping@Stream@@UAEPAXXZ

@@ -60,7 +60,9 @@ public:
     // 0x4EFE20 | ??0Card2D@@QAE@XZ
     inline Card2D()
     {
-        stub<member_func_t<void, Card2D>>(0x4EFE20, this);
+        // stub<member_func_t<void, Card2D>>(0x4EFE20, this);
+
+        unimplemented();
     }
 
     // 0x4EFE40 | ?Init@Card2D@@QAEXPAVasCamera@@MMMMM@Z
@@ -89,9 +91,11 @@ public:
     }
 
     // 0x4F0240 | ??1Card2D@@UAE@XZ
-    inline ~Card2D() override
+    inline ~Card2D() override = 0
     {
-        stub<member_func_t<void, Card2D>>(0x4F0240, this);
+        // stub<member_func_t<void, Card2D>>(0x4F0240, this);
+
+        unimplemented();
     }
 
     // 0x4F0000 | ?Cull@Card2D@@EAEXXZ

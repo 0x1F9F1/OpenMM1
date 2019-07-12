@@ -42,7 +42,9 @@ public:
     // 0x4B4C60 | ??0mmToolTip@@QAE@XZ
     inline mmToolTip()
     {
-        stub<member_func_t<void, mmToolTip>>(0x4B4C60, this);
+        // stub<member_func_t<void, mmToolTip>>(0x4B4C60, this);
+
+        unimplemented();
     }
 
     // 0x4B4D30 | ?Init@mmToolTip@@QAEXPAVUIMenu@@PAULocString@@@Z
@@ -64,9 +66,11 @@ public:
     }
 
     // 0x4B4CD0 | ??1mmToolTip@@UAE@XZ
-    inline ~mmToolTip() override
+    inline ~mmToolTip() override = 0
     {
-        stub<member_func_t<void, mmToolTip>>(0x4B4CD0, this);
+        // stub<member_func_t<void, mmToolTip>>(0x4B4CD0, this);
+
+        unimplemented();
     }
 
     // 0x4B4E10 | ?Update@mmToolTip@@UAEXXZ

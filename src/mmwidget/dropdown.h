@@ -66,7 +66,9 @@ public:
     // 0x4B5740 | ??0mmDropDown@@QAE@XZ
     inline mmDropDown()
     {
-        stub<member_func_t<void, mmDropDown>>(0x4B5740, this);
+        // stub<member_func_t<void, mmDropDown>>(0x4B5740, this);
+
+        unimplemented();
     }
 
     // 0x4B5820 | ?Init@mmDropDown@@QAEXPAVasCamera@@PAXMMMMVstring@@H@Z
@@ -127,9 +129,11 @@ public:
     }
 
     // 0x4B57A0 | ??1mmDropDown@@UAE@XZ
-    inline ~mmDropDown() override
+    inline ~mmDropDown() override = 0
     {
-        stub<member_func_t<void, mmDropDown>>(0x4B57A0, this);
+        // stub<member_func_t<void, mmDropDown>>(0x4B57A0, this);
+
+        unimplemented();
     }
 
     // 0x4B5FB0 | ?GetClass@mmDropDown@@UAEPAVMetaClass@@XZ

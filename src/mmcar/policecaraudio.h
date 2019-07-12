@@ -52,7 +52,9 @@ public:
     // 0x472110 | ??0mmPoliceCarAudio@@QAE@PAVmmCarSim@@M@Z
     inline mmPoliceCarAudio(class mmCarSim* arg1, float arg2)
     {
-        stub<member_func_t<void, mmPoliceCarAudio, class mmCarSim*, float>>(0x472110, this, arg1, arg2);
+        // stub<member_func_t<void, mmPoliceCarAudio, class mmCarSim*, float>>(0x472110, this, arg1, arg2);
+
+        unimplemented();
     }
 
     // 0x472200 | ?ExplosionIsPlaying@mmPoliceCarAudio@@QAEHXZ
@@ -140,8 +142,10 @@ public:
     static inline extern_var(0x60A378, int16_t, s_iPlayingFluctuator);
 
     // 0x4721F0 | ??1mmPoliceCarAudio@@UAE@XZ
-    inline ~mmPoliceCarAudio() override
+    inline ~mmPoliceCarAudio() override = 0
     {
-        stub<member_func_t<void, mmPoliceCarAudio>>(0x4721F0, this);
+        // stub<member_func_t<void, mmPoliceCarAudio>>(0x4721F0, this);
+
+        unimplemented();
     }
 };

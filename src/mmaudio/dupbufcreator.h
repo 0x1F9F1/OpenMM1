@@ -42,7 +42,9 @@ public:
     // 0x4E1790 | ??0DupBuffCreator@@QAE@XZ
     inline DupBuffCreator()
     {
-        stub<member_func_t<void, DupBuffCreator>>(0x4E1790, this);
+        // stub<member_func_t<void, DupBuffCreator>>(0x4E1790, this);
+
+        unimplemented();
     }
 
     // 0x4E17D0 | ??1DupBuffCreator@@QAE@XZ

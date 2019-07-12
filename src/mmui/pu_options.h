@@ -43,8 +43,10 @@ public:
     }
 
     // 0x49F340 | ??1PUOptions@@UAE@XZ
-    inline ~PUOptions() override
+    inline ~PUOptions() override = 0
     {
-        stub<member_func_t<void, PUOptions>>(0x49F340, this);
+        // stub<member_func_t<void, PUOptions>>(0x49F340, this);
+
+        unimplemented();
     }
 };

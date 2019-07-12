@@ -54,7 +54,9 @@ public:
     // 0x49A2C0 | ??0DriverMenu@@QAE@H@Z
     inline DriverMenu(int32_t arg1)
     {
-        stub<member_func_t<void, DriverMenu, int32_t>>(0x49A2C0, this, arg1);
+        // stub<member_func_t<void, DriverMenu, int32_t>>(0x49A2C0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x49A3D0 | ?InitPlayerSelection@DriverMenu@@QAEXXZ
@@ -149,9 +151,11 @@ public:
     }
 
     // 0x49A7C0 | ??1DriverMenu@@UAE@XZ
-    inline ~DriverMenu() override
+    inline ~DriverMenu() override = 0
     {
-        stub<member_func_t<void, DriverMenu>>(0x49A7C0, this);
+        // stub<member_func_t<void, DriverMenu>>(0x49A7C0, this);
+
+        unimplemented();
     }
 
     // 0x49A3A0 | ?PreSetup@DriverMenu@@UAEXXZ

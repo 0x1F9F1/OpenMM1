@@ -203,7 +203,9 @@ public:
     // 0x430920 | ??0aiMap@@QAE@XZ
     inline aiMap()
     {
-        stub<member_func_t<void, aiMap>>(0x430920, this);
+        // stub<member_func_t<void, aiMap>>(0x430920, this);
+
+        unimplemented();
     }
 
     // 0x430950 | ?Clean@aiMap@@QAEXXZ
@@ -486,9 +488,11 @@ public:
     }
 
     // 0x430940 | ??1aiMap@@UAE@XZ
-    inline ~aiMap() override
+    inline ~aiMap() override = 0
     {
-        stub<member_func_t<void, aiMap>>(0x430940, this);
+        // stub<member_func_t<void, aiMap>>(0x430940, this);
+
+        unimplemented();
     }
 
     // 0x436AE0 | ?GetClass@aiMap@@UAEPAVMetaClass@@XZ
@@ -531,7 +535,9 @@ public:
     // 0x436ED0 | ??0CArrayList@@QAE@XZ
     inline CArrayList()
     {
-        stub<member_func_t<void, CArrayList>>(0x436ED0, this);
+        // stub<member_func_t<void, CArrayList>>(0x436ED0, this);
+
+        unimplemented();
     }
 
     // 0x441040 | ??1CArrayList@@QAE@XZ

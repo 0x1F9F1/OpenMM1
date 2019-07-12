@@ -114,9 +114,11 @@ public:
     }
 
     // 0x49D9E0 | ??1PURoster@@UAE@XZ
-    inline ~PURoster() override
+    inline ~PURoster() override = 0
     {
-        stub<member_func_t<void, PURoster>>(0x49D9E0, this);
+        // stub<member_func_t<void, PURoster>>(0x49D9E0, this);
+
+        unimplemented();
     }
 
     // 0x49D9F0 | ?Reset@PURoster@@UAEXXZ

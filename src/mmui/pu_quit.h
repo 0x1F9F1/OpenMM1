@@ -43,8 +43,10 @@ public:
     }
 
     // 0x49F950 | ??1PUQuit@@UAE@XZ
-    inline ~PUQuit() override
+    inline ~PUQuit() override = 0
     {
-        stub<member_func_t<void, PUQuit>>(0x49F950, this);
+        // stub<member_func_t<void, PUQuit>>(0x49F950, this);
+
+        unimplemented();
     }
 };

@@ -59,7 +59,9 @@ public:
     // 0x4A9520 | ??0UICompositeScroll@@QAE@XZ
     inline UICompositeScroll()
     {
-        stub<member_func_t<void, UICompositeScroll>>(0x4A9520, this);
+        // stub<member_func_t<void, UICompositeScroll>>(0x4A9520, this);
+
+        unimplemented();
     }
 
     // 0x4A9680 | ?Init@UICompositeScroll@@QAEXMMMMMHPAHHHVCallback@@@Z
@@ -162,9 +164,11 @@ public:
     }
 
     // 0x4A9600 | ??1UICompositeScroll@@UAE@XZ
-    inline ~UICompositeScroll() override
+    inline ~UICompositeScroll() override = 0
     {
-        stub<member_func_t<void, UICompositeScroll>>(0x4A9600, this);
+        // stub<member_func_t<void, UICompositeScroll>>(0x4A9600, this);
+
+        unimplemented();
     }
 
     // 0x4A9D20 | ?Update@UICompositeScroll@@UAEXXZ

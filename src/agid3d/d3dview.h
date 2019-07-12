@@ -43,7 +43,9 @@ public:
     // 0x51A480 | ??0agiD3DViewport@@QAE@PAVagiPipeline@@@Z
     inline agiD3DViewport(class agiPipeline* arg1)
     {
-        stub<member_func_t<void, agiD3DViewport, class agiPipeline*>>(0x51A480, this, arg1);
+        // stub<member_func_t<void, agiD3DViewport, class agiPipeline*>>(0x51A480, this, arg1);
+
+        unimplemented();
     }
 
     // 0x51A4E0 | ?EndGfx@agiD3DViewport@@UAEXXZ
@@ -53,9 +55,11 @@ public:
     }
 
     // 0x51A4F0 | ??1agiD3DViewport@@UAE@XZ
-    inline ~agiD3DViewport() override
+    inline ~agiD3DViewport() override = 0
     {
-        stub<member_func_t<void, agiD3DViewport>>(0x51A4F0, this);
+        // stub<member_func_t<void, agiD3DViewport>>(0x51A4F0, this);
+
+        unimplemented();
     }
 
     // 0x51A4B0 | ?BeginGfx@agiD3DViewport@@UAEHXZ

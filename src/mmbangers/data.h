@@ -149,13 +149,17 @@ public:
     // 0x4BE110 | ??0mmBangerData@@QAE@XZ
     inline mmBangerData()
     {
-        stub<member_func_t<void, mmBangerData>>(0x4BE110, this);
+        // stub<member_func_t<void, mmBangerData>>(0x4BE110, this);
+
+        unimplemented();
     }
 
     // 0x4BE1A0 | ??1mmBangerData@@UAE@XZ
-    inline ~mmBangerData() override
+    inline ~mmBangerData() override = 0
     {
-        stub<member_func_t<void, mmBangerData>>(0x4BE1A0, this);
+        // stub<member_func_t<void, mmBangerData>>(0x4BE1A0, this);
+
+        unimplemented();
     }
 
     // 0x4BDE80 | ?GetClass@mmBangerData@@UAEPAVMetaClass@@XZ
@@ -173,7 +177,9 @@ public:
     // 0x4BD000 | ??0mmBangerDataManager@@QAE@XZ
     inline mmBangerDataManager()
     {
-        stub<member_func_t<void, mmBangerDataManager>>(0x4BD000, this);
+        // stub<member_func_t<void, mmBangerDataManager>>(0x4BD000, this);
+
+        unimplemented();
     }
 
     // 0x4BD1E0 | ?AddBangerDataEntry@mmBangerDataManager@@QAEHPAD0@Z
@@ -198,9 +204,11 @@ public:
     static inline extern_var(0x668318, int32_t, SignalClock);
 
     // 0x4BD120 | ??1mmBangerDataManager@@UAE@XZ
-    inline ~mmBangerDataManager() override
+    inline ~mmBangerDataManager() override = 0
     {
-        stub<member_func_t<void, mmBangerDataManager>>(0x4BD120, this);
+        // stub<member_func_t<void, mmBangerDataManager>>(0x4BD120, this);
+
+        unimplemented();
     }
 
     // 0x4BE000 | ?GetClass@mmBangerDataManager@@UAEPAVMetaClass@@XZ

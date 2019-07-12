@@ -59,6 +59,8 @@ public:
     // 0x55DD70 | ??0initHaveMMX@@QAE@XZ
     inline initHaveMMX()
     {
-        stub<member_func_t<void, initHaveMMX>>(0x55DD70, this);
+        // stub<member_func_t<void, initHaveMMX>>(0x55DD70, this);
+
+        unimplemented();
     }
 };

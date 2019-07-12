@@ -62,7 +62,9 @@ public:
     // 0x514980 | ??0asDofCS@@QAE@XZ
     inline asDofCS()
     {
-        stub<member_func_t<void, asDofCS>>(0x514980, this);
+        // stub<member_func_t<void, asDofCS>>(0x514980, this);
+
+        unimplemented();
     }
 
     // 0x514A70 | ??4asDofCS@@QAEXABV0@@Z
@@ -96,9 +98,11 @@ public:
     }
 
     // 0x491230 | ??1asDofCS@@UAE@XZ
-    inline ~asDofCS() override
+    inline ~asDofCS() override = 0
     {
-        stub<member_func_t<void, asDofCS>>(0x491230, this);
+        // stub<member_func_t<void, asDofCS>>(0x491230, this);
+
+        unimplemented();
     }
 
     // 0x5153E0 | ?GetClass@asDofCS@@UAEPAVMetaClass@@XZ

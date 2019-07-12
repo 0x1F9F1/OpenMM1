@@ -37,7 +37,9 @@ public:
     // 0x42DEE0 | ??0mmRainAudio@@QAE@XZ
     inline mmRainAudio()
     {
-        stub<member_func_t<void, mmRainAudio>>(0x42DEE0, this);
+        // stub<member_func_t<void, mmRainAudio>>(0x42DEE0, this);
+
+        unimplemented();
     }
 
     // 0x42E0E0 | ??1mmRainAudio@@QAE@XZ

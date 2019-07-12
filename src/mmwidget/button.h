@@ -50,7 +50,9 @@ public:
     // 0x4AEB30 | ??0UIButton@@QAE@XZ
     inline UIButton()
     {
-        stub<member_func_t<void, UIButton>>(0x4AEB30, this);
+        // stub<member_func_t<void, UIButton>>(0x4AEB30, this);
+
+        unimplemented();
     }
 
     // 0x4AEC30 | ?Init@UIButton@@QAEXPAULocString@@HMMMMHVCallback@@@Z
@@ -92,9 +94,11 @@ public:
     }
 
     // 0x4AEBC0 | ??1UIButton@@UAE@XZ
-    inline ~UIButton() override
+    inline ~UIButton() override = 0
     {
-        stub<member_func_t<void, UIButton>>(0x4AEBC0, this);
+        // stub<member_func_t<void, UIButton>>(0x4AEBC0, this);
+
+        unimplemented();
     }
 
     // 0x4AED00 | ?Update@UIButton@@UAEXXZ

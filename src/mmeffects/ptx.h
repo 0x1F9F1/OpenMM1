@@ -76,7 +76,9 @@ public:
     // 0x4F1AD0 | ??0asParticles@@QAE@XZ
     inline asParticles()
     {
-        stub<member_func_t<void, asParticles>>(0x4F1AD0, this);
+        // stub<member_func_t<void, asParticles>>(0x4F1AD0, this);
+
+        unimplemented();
     }
 
     // 0x4F1BC0 | ?Init@asParticles@@QAEXHHHHPAUagiMeshCardVertex@@@Z
@@ -117,9 +119,11 @@ public:
     }
 
     // 0x4F1B40 | ??1asParticles@@UAE@XZ
-    inline ~asParticles() override
+    inline ~asParticles() override = 0
     {
-        stub<member_func_t<void, asParticles>>(0x4F1B40, this);
+        // stub<member_func_t<void, asParticles>>(0x4F1B40, this);
+
+        unimplemented();
     }
 
     // 0x4F22E0 | ?GetClass@asParticles@@UAEPAVMetaClass@@XZ

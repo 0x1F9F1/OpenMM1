@@ -54,7 +54,9 @@ public:
     // 0x4A7900 | ??0UITextDropdown@@QAE@XZ
     inline UITextDropdown()
     {
-        stub<member_func_t<void, UITextDropdown>>(0x4A7900, this);
+        // stub<member_func_t<void, UITextDropdown>>(0x4A7900, this);
+
+        unimplemented();
     }
 
     // 0x4A7A00 | ?Init@UITextDropdown@@QAEXPAULocString@@PAHMMMMVstring@@HHHVCallback@@PAD@Z
@@ -121,9 +123,11 @@ public:
     }
 
     // 0x4A7990 | ??1UITextDropdown@@UAE@XZ
-    inline ~UITextDropdown() override
+    inline ~UITextDropdown() override = 0
     {
-        stub<member_func_t<void, UITextDropdown>>(0x4A7990, this);
+        // stub<member_func_t<void, UITextDropdown>>(0x4A7990, this);
+
+        unimplemented();
     }
 
     // 0x4A8350 | ?Cull@UITextDropdown@@UAEXXZ

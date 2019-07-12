@@ -37,7 +37,9 @@ public:
     // 0x4551C0 | ??0AddOnCarAudio@@QAE@PADF@Z
     inline AddOnCarAudio(char* arg1, int16_t arg2)
     {
-        stub<member_func_t<void, AddOnCarAudio, char*, int16_t>>(0x4551C0, this, arg1, arg2);
+        // stub<member_func_t<void, AddOnCarAudio, char*, int16_t>>(0x4551C0, this, arg1, arg2);
+
+        unimplemented();
     }
 
     // 0x4552F0 | ??1AddOnCarAudio@@QAE@XZ

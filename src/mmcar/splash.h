@@ -48,7 +48,9 @@ public:
     // 0x4780C0 | ??0mmSplash@@QAE@XZ
     inline mmSplash()
     {
-        stub<member_func_t<void, mmSplash>>(0x4780C0, this);
+        // stub<member_func_t<void, mmSplash>>(0x4780C0, this);
+
+        unimplemented();
     }
 
     // 0x478140 | ?Init@mmSplash@@QAEXPAVasInertialCS@@VVector3@@1@Z
@@ -65,9 +67,11 @@ public:
     }
 
     // 0x468280 | ??1mmSplash@@UAE@XZ
-    inline ~mmSplash() override
+    inline ~mmSplash() override = 0
     {
-        stub<member_func_t<void, mmSplash>>(0x468280, this);
+        // stub<member_func_t<void, mmSplash>>(0x468280, this);
+
+        unimplemented();
     }
 
     // 0x4782C0 | ?Update@mmSplash@@UAEXXZ

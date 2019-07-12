@@ -67,7 +67,9 @@ public:
     // 0x474110 | ??0mmEngine@@QAE@XZ
     inline mmEngine()
     {
-        stub<member_func_t<void, mmEngine>>(0x474110, this);
+        // stub<member_func_t<void, mmEngine>>(0x474110, this);
+
+        unimplemented();
     }
 
     // 0x474180 | ?Init@mmEngine@@QAEXPAVmmCarSim@@@Z
@@ -119,9 +121,11 @@ public:
     }
 
     // 0x474170 | ??1mmEngine@@UAE@XZ
-    inline ~mmEngine() override
+    inline ~mmEngine() override = 0
     {
-        stub<member_func_t<void, mmEngine>>(0x474170, this);
+        // stub<member_func_t<void, mmEngine>>(0x474170, this);
+
+        unimplemented();
     }
 
     // 0x474800 | ?GetClass@mmEngine@@UAEPAVMetaClass@@XZ

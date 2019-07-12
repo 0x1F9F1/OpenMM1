@@ -65,7 +65,9 @@ public:
     // 0x4954B0 | ??0CRSettings@@QAE@H@Z
     inline CRSettings(int32_t arg1)
     {
-        stub<member_func_t<void, CRSettings, int32_t>>(0x4954B0, this, arg1);
+        // stub<member_func_t<void, CRSettings, int32_t>>(0x4954B0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x495E70 | ?SettingsCB@CRSettings@@QAEXXZ
@@ -184,8 +186,10 @@ public:
     }
 
     // 0x495DF0 | ??1CRSettings@@UAE@XZ
-    inline ~CRSettings() override
+    inline ~CRSettings() override = 0
     {
-        stub<member_func_t<void, CRSettings>>(0x495DF0, this);
+        // stub<member_func_t<void, CRSettings>>(0x495DF0, this);
+
+        unimplemented();
     }
 };

@@ -53,7 +53,9 @@ public:
     // 0x53A0A0 | ??0agiRefreshable@@QAE@PAVagiPipeline@@@Z
     inline agiRefreshable(class agiPipeline* arg1)
     {
-        stub<member_func_t<void, agiRefreshable, class agiPipeline*>>(0x53A0A0, this, arg1);
+        // stub<member_func_t<void, agiRefreshable, class agiPipeline*>>(0x53A0A0, this, arg1);
+
+        unimplemented(arg1);
     }
 
     // 0x53A120 | ?SafeBeginGfx@agiRefreshable@@QAEHXZ

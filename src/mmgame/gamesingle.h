@@ -83,7 +83,9 @@ public:
     // 0x412D10 | ??0mmGameSingle@@QAE@XZ
     inline mmGameSingle()
     {
-        stub<member_func_t<void, mmGameSingle>>(0x412D10, this);
+        // stub<member_func_t<void, mmGameSingle>>(0x412D10, this);
+
+        unimplemented();
     }
 
     // 0x412E60 | ?Init@mmGameSingle@@QAEHXZ
@@ -135,9 +137,11 @@ public:
     }
 
     // 0x412DA0 | ??1mmGameSingle@@UAE@XZ
-    inline ~mmGameSingle() override
+    inline ~mmGameSingle() override = 0
     {
-        stub<member_func_t<void, mmGameSingle>>(0x412DA0, this);
+        // stub<member_func_t<void, mmGameSingle>>(0x412DA0, this);
+
+        unimplemented();
     }
 
     // 0x414BD0 | ?GetClass@mmGameSingle@@UAEPAVMetaClass@@XZ

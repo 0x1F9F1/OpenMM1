@@ -60,7 +60,9 @@ public:
     // 0x4EBFC0 | ??0PreCamCS@@QAE@XZ
     inline PreCamCS()
     {
-        stub<member_func_t<void, PreCamCS>>(0x4EBFC0, this);
+        // stub<member_func_t<void, PreCamCS>>(0x4EBFC0, this);
+
+        unimplemented();
     }
 
     // 0x4EC010 | ?Init@PreCamCS@@QAEXPAVmmCar@@@Z
@@ -76,9 +78,11 @@ public:
     }
 
     // 0x423B90 | ??1PreCamCS@@UAE@XZ
-    inline ~PreCamCS() override
+    inline ~PreCamCS() override = 0
     {
-        stub<member_func_t<void, PreCamCS>>(0x423B90, this);
+        // stub<member_func_t<void, PreCamCS>>(0x423B90, this);
+
+        unimplemented();
     }
 
     // 0x4EC270 | ?GetClass@PreCamCS@@UAEPAVMetaClass@@XZ

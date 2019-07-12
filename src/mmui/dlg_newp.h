@@ -51,7 +51,7 @@ public:
     }
 
     // 0x494730 | ??1Dialog_NewPlayer@@UAE@XZ
-    inline ~Dialog_NewPlayer() override
+    inline ~Dialog_NewPlayer() override = 0
     {
         stub<member_func_t<void, Dialog_NewPlayer>>(0x494730, this);
     }

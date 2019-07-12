@@ -46,7 +46,9 @@ public:
     // 0x4A83E0 | ??0UILabel@@QAE@XZ
     inline UILabel()
     {
-        stub<member_func_t<void, UILabel>>(0x4A83E0, this);
+        // stub<member_func_t<void, UILabel>>(0x4A83E0, this);
+
+        unimplemented();
     }
 
     // 0x4A84D0 | ?Init@UILabel@@QAEXPAULocString@@HMMMMH@Z
@@ -78,9 +80,11 @@ public:
     static inline extern_var(0x667CC8, float, TextHeight);
 
     // 0x4A8470 | ??1UILabel@@UAE@XZ
-    inline ~UILabel() override
+    inline ~UILabel() override = 0
     {
-        stub<member_func_t<void, UILabel>>(0x4A8470, this);
+        // stub<member_func_t<void, UILabel>>(0x4A8470, this);
+
+        unimplemented();
     }
 
     // 0x4A85B0 | ?Update@UILabel@@UAEXXZ

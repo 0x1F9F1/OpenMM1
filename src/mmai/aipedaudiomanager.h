@@ -49,7 +49,9 @@ public:
     // 0x4410C0 | ??0aiPedAudioManager@@QAE@XZ
     inline aiPedAudioManager()
     {
-        stub<member_func_t<void, aiPedAudioManager>>(0x4410C0, this);
+        // stub<member_func_t<void, aiPedAudioManager>>(0x4410C0, this);
+
+        unimplemented();
     }
 
     // 0x441470 | ?Add@aiPedAudioManager@@QAEFPAVaiPedestrian@@@Z
@@ -89,9 +91,11 @@ public:
     }
 
     // 0x4413C0 | ??1aiPedAudioManager@@UAE@XZ
-    inline ~aiPedAudioManager() override
+    inline ~aiPedAudioManager() override = 0
     {
-        stub<member_func_t<void, aiPedAudioManager>>(0x4413C0, this);
+        // stub<member_func_t<void, aiPedAudioManager>>(0x4413C0, this);
+
+        unimplemented();
     }
 
     // 0x441660 | ?Update@aiPedAudioManager@@UAEXXZ

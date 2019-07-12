@@ -61,7 +61,9 @@ public:
     // 0x4B99C0 | ??0mmAnimPlane@@QAE@XZ
     inline mmAnimPlane()
     {
-        stub<member_func_t<void, mmAnimPlane>>(0x4B99C0, this);
+        // stub<member_func_t<void, mmAnimPlane>>(0x4B99C0, this);
+
+        unimplemented();
     }
 
     // 0x4B9B60 | ?Init@mmAnimPlane@@QAEXHPAD0PAVVector3@@HHPAM@Z
@@ -179,9 +181,11 @@ public:
     static inline extern_var(0x668180, float, s_fAudioAttenuationMult);
 
     // 0x4B9AB0 | ??1mmAnimPlane@@UAE@XZ
-    inline ~mmAnimPlane() override
+    inline ~mmAnimPlane() override = 0
     {
-        stub<member_func_t<void, mmAnimPlane>>(0x4B9AB0, this);
+        // stub<member_func_t<void, mmAnimPlane>>(0x4B9AB0, this);
+
+        unimplemented();
     }
 
     // 0x4BA500 | ?Draw@mmAnimPlane@@UAIXH@Z

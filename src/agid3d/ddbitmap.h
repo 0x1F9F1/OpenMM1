@@ -49,7 +49,9 @@ public:
     // 0x51BAA0 | ??0agiDDBitmap@@QAE@PAVagiPipeline@@@Z
     inline agiDDBitmap(class agiPipeline* arg1)
     {
-        stub<member_func_t<void, agiDDBitmap, class agiPipeline*>>(0x51BAA0, this, arg1);
+        // stub<member_func_t<void, agiDDBitmap, class agiPipeline*>>(0x51BAA0, this, arg1);
+
+        unimplemented();
     }
 
     // 0x51BD70 | ?EndGfx@agiDDBitmap@@UAEXXZ
@@ -65,9 +67,11 @@ public:
     }
 
     // 0x51BDA0 | ??1agiDDBitmap@@UAE@XZ
-    inline ~agiDDBitmap() override
+    inline ~agiDDBitmap() override = 0
     {
-        stub<member_func_t<void, agiDDBitmap>>(0x51BDA0, this);
+        // stub<member_func_t<void, agiDDBitmap>>(0x51BDA0, this);
+
+        unimplemented();
     }
 
     // 0x51BAD0 | ?BeginGfx@agiDDBitmap@@UAEHXZ

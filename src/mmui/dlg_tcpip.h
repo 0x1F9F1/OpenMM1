@@ -51,7 +51,7 @@ public:
     }
 
     // 0x495450 | ??1Dialog_TCPIP@@UAE@XZ
-    inline ~Dialog_TCPIP() override
+    inline ~Dialog_TCPIP() override = 0
     {
         stub<member_func_t<void, Dialog_TCPIP>>(0x495450, this);
     }

@@ -59,7 +59,9 @@ public:
     // 0x4ACF50 | ??0UICWArray@@QAE@XZ
     inline UICWArray()
     {
-        stub<member_func_t<void, UICWArray>>(0x4ACF50, this);
+        // stub<member_func_t<void, UICWArray>>(0x4ACF50, this);
+
+        unimplemented();
     }
 
     // 0x4AD030 | ?Init@UICWArray@@QAEXMMMMHVCallback@@@Z
@@ -154,9 +156,11 @@ public:
     }
 
     // 0x4AD010 | ??1UICWArray@@UAE@XZ
-    inline ~UICWArray() override
+    inline ~UICWArray() override = 0
     {
-        stub<member_func_t<void, UICWArray>>(0x4AD010, this);
+        // stub<member_func_t<void, UICWArray>>(0x4AD010, this);
+
+        unimplemented();
     }
 
     // 0x4AD710 | ?Update@UICWArray@@UAEXXZ
