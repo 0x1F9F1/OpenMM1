@@ -67,10 +67,7 @@ public:
     // VirtualFileSystem::`vftable' @ 0x595ED8
 
     // 0x5421D0 | ??0VirtualFileSystem@@QAE@PAVStream@@@Z
-    inline VirtualFileSystem(class Stream* arg1)
-    {
-        stub<member_func_t<void, VirtualFileSystem, class Stream*>>(0x5421D0, this, arg1);
-    }
+    VirtualFileSystem(class Stream* arg1);
 
     // 0x542310 | ?NormalizeName@VirtualFileSystem@@SAXPAD0@Z
     static inline void NormalizeName(char* arg1, char* arg2)
@@ -92,10 +89,7 @@ public:
     }
 
     // 0x542290 | ??1VirtualFileSystem@@UAE@XZ
-    inline ~VirtualFileSystem() override
-    {
-        stub<member_func_t<void, VirtualFileSystem>>(0x542290, this);
-    }
+    ~VirtualFileSystem() override;
 
     // 0x542300 | ?ValidPath@VirtualFileSystem@@UAEHPAD@Z
     inline int32_t ValidPath(char* arg1) override

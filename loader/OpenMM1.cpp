@@ -65,8 +65,6 @@ extern "C" HRESULT WINAPI DirectInputCreateA_Impl(
 
 int CALLBACK MidtownMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-    mem::init_function::init();
-
     int result = stub<decltype(&MidtownMain)>(0x4027B0, hInstance, hPrevInstance, lpCmdLine, nCmdShow);
 
     return result;
@@ -76,6 +74,9 @@ include_dummy_symbol(dxinit);
 include_dummy_symbol(dxsetup);
 include_dummy_symbol(allocator);
 include_dummy_symbol(machname);
+include_dummy_symbol(fsystem);
+include_dummy_symbol(hfsystem);
+include_dummy_symbol(vfsystem);
 
 BOOL APIENTRY DllMain(HMODULE /*hinstDLL*/, DWORD fdwReason, LPVOID /*lpvReserved*/)
 {
@@ -103,6 +104,8 @@ BOOL APIENTRY DllMain(HMODULE /*hinstDLL*/, DWORD fdwReason, LPVOID /*lpvReserve
         create_patch("HW Menu", "Enable HW Menu Rendering", 0x401A1E, "\xEB", 1);
 
         create_patch("Heap Size", "Increase Heap Size", 0x401A5C, "\xb8\x00\x00\x00\x08", 5); // mov eax, 0x8000000
+
+        mem::init_function::init();
     }
 
     return TRUE;

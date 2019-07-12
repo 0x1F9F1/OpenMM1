@@ -40,13 +40,5 @@
 // 0x50F530 | _free
 
 // 0x50F560 | ??2@YAPAXI@Z
-inline void* operator new(uint32_t arg1)
-{
-    return stub<cdecl_t<void*, uint32_t>>(0x50F560, arg1);
-}
 
 // 0x50F580 | ??3@YAXPAX@Z
-inline void operator delete(void* arg1)
-{
-    return stub<cdecl_t<void, void*>>(0x50F580, arg1);
-}

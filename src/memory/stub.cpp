@@ -17,3 +17,25 @@
 */
 
 #include "stub.h"
+
+// 0x50F560 | ??2@YAPAXI@Z
+void* operator new(size_t arg1)
+{
+    return stub<cdecl_t<void*, uint32_t>>(0x50F560, arg1);
+}
+
+void* operator new[](size_t arg1)
+{
+    return operator new(arg1);
+}
+
+// 0x50F580 | ??3@YAXPAX@Z
+void operator delete(void* arg1)
+{
+    return stub<cdecl_t<void, void*>>(0x50F580, arg1);
+}
+
+void operator delete[](void* arg1)
+{
+    operator delete(arg1);
+}

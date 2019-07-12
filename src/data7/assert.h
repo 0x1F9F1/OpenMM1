@@ -22,10 +22,17 @@ void Assertf(const char* format, ...);
 
 extern const char _AssertFailed[];
 
-#define Assert(EXPR) do { if (!(EXPR)) { Assertf(_AssertFailed, __FILE__, __LINE__, #EXPR); } } while (false)
+#define Assert(EXPR)                                           \
+    do                                                         \
+    {                                                          \
+        if (!(EXPR))                                           \
+        {                                                      \
+            Assertf(_AssertFailed, __FILE__, __LINE__, #EXPR); \
+        }                                                      \
+    } while (false)
 
 #ifdef _DEBUG
-#define DebugAssert(EXPR) Assert(EXPR)
+#    define DebugAssert(EXPR) Assert(EXPR)
 #else
-#define DebugAssert(EXPR) (void)(0)
+#    define DebugAssert(EXPR) (void) (0)
 #endif

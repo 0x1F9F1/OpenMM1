@@ -17,3 +17,39 @@
 */
 
 #include "vfsystem.h"
+
+#include "stream.h"
+
+VirtualFileSystem::VirtualFileSystem(Stream* arg1)
+{
+    m_pFileStream = arg1;
+
+    m_pFileStream->Read(&m_Magic, 4);
+
+    if (memcmp(&m_Magic, "ARES", 4))
+    {
+        Quitf("VFS::VFS: Not a valid AngelRes file.");
+    }
+
+    m_pFileStream->Read(&m_NodeCount, 4);
+    m_pFileStream->Read(&m_DirectoryCount, 4);
+    m_pFileStream->Read(&m_NameDataSize, 4);
+
+    m_pNodes = new VirtualFileInode[m_NodeCount];
+    m_pFileStream->Read(m_pNodes, m_NodeCount * sizeof(VirtualFileInode));
+
+    m_pNameData = new uint8_t[m_NameDataSize];
+    m_pFileStream->Read(m_pNameData, m_NameDataSize);
+}
+
+VirtualFileSystem::~VirtualFileSystem()
+{
+    delete[] m_pNameData;
+    delete[] m_pNodes;
+
+    delete m_pFileStream;
+}
+
+define_dummy_symbol(vfsystem);
+
+run_once([] { auto_hook_ctor(0x5421D0, VirtualFileSystem, Stream*); });

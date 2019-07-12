@@ -88,6 +88,20 @@ inline void ExpandEnvs(char* arg1)
     return stub<cdecl_t<void, char*>>(0x5417A0, arg1);
 }
 
+struct PagerInfo_t
+{
+public:
+    void* m_PagerHandle {nullptr};
+    uint32_t m_Offset {0};
+    uint32_t m_Size {0};
+
+    // 0x542150 | ?Read@PagerInfo_t@@QAEXPAXII@Z
+    inline void Read(void* arg1, uint32_t arg2, uint32_t arg3)
+    {
+        return stub<member_func_t<void, PagerInfo_t, void*, uint32_t, uint32_t>>(0x542150, this, arg1, arg2, arg3);
+    }
+};
+
 class FileSystem : Base
 {
 public:
@@ -96,17 +110,10 @@ public:
     // FileSystem::`vftable' @ 0x595E58
 
     // 0x5410B0 | ??0FileSystem@@QAE@XZ
-    inline FileSystem()
-    {
-        stub<member_func_t<void, FileSystem>>(0x5410B0, this);
-    }
+    FileSystem();
 
     // 0x5411A0 | ?SearchAll@FileSystem@@SAPAV1@PAD00H0@Z
-    static inline class FileSystem* SearchAll(char* arg1, char* arg2, char* arg3, int32_t arg4, char* arg5)
-    {
-        return stub<cdecl_t<class FileSystem*, char*, char*, char*, int32_t, char*>>(
-            0x5411A0, arg1, arg2, arg3, arg4, arg5);
-    }
+    static class FileSystem* SearchAll(char* arg1, char* arg2, char* arg3, int32_t arg4, char* arg5);
 
     // 0x541210 | ?Search@FileSystem@@QAEHPAD00H0@Z
     inline int32_t Search(char* arg1, char* arg2, char* arg3, int32_t arg4, char* arg5)
@@ -116,28 +123,19 @@ public:
     }
 
     // 0x5419E0 | ?OpenAny@FileSystem@@SAPAVStream@@PADHPAXH@Z
-    static inline class Stream* OpenAny(char* arg1, int32_t arg2, void* arg3, int32_t arg4)
-    {
-        return stub<cdecl_t<class Stream*, char*, int32_t, void*, int32_t>>(0x5419E0, arg1, arg2, arg3, arg4);
-    }
+    static class Stream* OpenAny(char* arg1, int32_t arg2, void* arg3, int32_t arg4);
 
     // 0x541A50 | ?PagerInfoAny@FileSystem@@SAHPADAAUPagerInfo_t@@@Z
-    static inline int32_t PagerInfoAny(char* arg1, struct PagerInfo_t& arg2)
-    {
-        return stub<cdecl_t<int32_t, char*, struct PagerInfo_t&>>(0x541A50, arg1, arg2);
-    }
+    static int32_t PagerInfoAny(char* arg1, struct PagerInfo_t& arg2);
 
     // 0x70EE70 | ?FSCount@FileSystem@@2HA
     static inline extern_var(0x70EE70, int32_t, FSCount);
 
     // 0x70EE78 | ?FS@FileSystem@@2PAPAV1@A
-    static inline extern_var(0x70EE78, class FileSystem**, FS);
+    static FileSystem* FS[];
 
     // 0x541120 | ??1FileSystem@@UAE@XZ
-    inline ~FileSystem() override
-    {
-        stub<member_func_t<void, FileSystem>>(0x541120, this);
-    }
+    ~FileSystem() override;
 
     // 0x567350 | __purecall
     virtual inline int32_t ValidPath(char* arg1) = 0;

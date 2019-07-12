@@ -17,3 +17,15 @@
 */
 
 #include "hfsystem.h"
+
+define_dummy_symbol(hfsystem);
+
+void InitHFS()
+{
+    new (&HFS) HierFileSystem();
+}
+
+run_once([] {
+    auto_hook_ctor(0x541AD0, HierFileSystem);
+    auto_hook_dtor(0x541AF0, HierFileSystem);
+});

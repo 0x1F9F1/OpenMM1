@@ -22,7 +22,7 @@
 
 #include <mem/protect.h>
 
-inline void write_protected(mem::pointer dest, mem::pointer src, size_t length)
+void write_protected(mem::pointer dest, mem::pointer src, size_t length)
 {
     mem::protect({dest, length}).copy(src);
 }
