@@ -1,5 +1,7 @@
 # OpenMM1
 
+[![Build status](https://ci.appveyor.com/api/projects/status/61emkjr3xrxngjke/branch/master?svg=true)](https://ci.appveyor.com/project/0x1F9F1/openmm1/branch/master)
+
 OpenMM1 is an open source re-implementation of Midtown Madness 1.
 
 This project is a bottom-up rewrite of Midtown Madness 1,
@@ -19,7 +21,7 @@ features and porting to platforms unsupported by the original.
 ## dgVoodoo Settings
 For the best experience, it is recommended to use the following settings in dgVoodoo:
 * General:
-    * `Adapter(s) to use/enable`: \<Your Main GPU>
-    * `Appearance`: Windowed
+    * Adapter(s) to use/enable: \<Your Main GPU>
+    * Appearance: Windowed
 * DirectX:
-    * `Resolution`: \<Your Native Resolution>
+    * Resolution: \<Your Native Resolution>
