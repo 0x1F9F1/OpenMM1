@@ -15,3 +15,11 @@ features and porting to platforms unsupported by the original.
 ## Compatability
 * OpenMM1 requires the original release (`Angel: 1588 / Apr 14 1999 15:07:10`), not the XP patch (`Angel: 1589 / Sep 16 1999 11:00:21`).
 * OpenMM1 is intended to run on modern hardware, using `dgVoodoo`.
+
+## dgVoodoo Settings
+For the best experience, it is recommended to use the following settings in dgVoodoo:
+* General:
+    * `Adapter(s) to use/enable`: \<Your Main GPU>
+    * `Appearance`: Windowed
+* DirectX:
+    * `Resolution`: \<Your Native Resolution>
