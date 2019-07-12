@@ -100,7 +100,9 @@ BOOL APIENTRY DllMain(HMODULE /*hinstDLL*/, DWORD fdwReason, LPVOID /*lpvReserve
         create_hook("DefaultPrinter", "Use a custom printer", 0x558360, DefaultPrinter);
 
         create_hook("WinMain", "Entry Point", 0x566DEA, &MidtownMain, hook_type::call);
-        create_patch("HW Menu", "", 0x401A1E, "\xEB", 1);
+        create_patch("HW Menu", "Enable HW Menu Rendering", 0x401A1E, "\xEB", 1);
+
+        create_patch("Heap Size", "Increase Heap Size", 0x401A5C, "\xb8\x00\x00\x00\x08", 5); // mov eax, 0x8000000
     }
 
     return TRUE;
