@@ -37,14 +37,17 @@ class agiColorModel
 {
 public:
     uint32_t m_ByteCount {0};
+
     uint32_t m_BitCountR {0};
     uint32_t m_BitCountG {0};
     uint32_t m_BitCountB {0};
     uint32_t m_BitCountA {0};
-    uint32_t m_MaskR {0};
-    uint32_t m_MaskG {0};
-    uint32_t m_MaskB {0};
-    uint32_t m_MaskA {0};
+
+    uint32_t m_ShiftR {0};
+    uint32_t m_ShiftG {0};
+    uint32_t m_ShiftB {0};
+    uint32_t m_ShiftA {0};
+
     uint32_t m_RefCount {1};
 
     // agiColorModel::`vftable' @ 0x595C90

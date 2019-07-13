@@ -47,19 +47,10 @@ public:
     // agiColorModel8::`vftable' @ 0x595CD0
 
     // 0x53DDD0 | ??0agiColorModel8@@QAE@PAVagiPalette@@@Z
-    inline agiColorModel8(class agiPalette* arg1)
-        : m_Palette(arg1)
-    {
-        stub<member_func_t<void, agiColorModel8, class agiPalette*>>(0x53DDD0, this, arg1);
-    }
+    agiColorModel8(class agiPalette* arg1);
 
     // 0x53DE20 | ??1agiColorModel8@@UAE@XZ
-    inline ~agiColorModel8() override = 0
-    {
-        // stub<member_func_t<void, agiColorModel8>>(0x53DE20, this);
-
-        unimplemented();
-    }
+    inline ~agiColorModel8() override = default;
 
     // 0x53DE30 | ?GetColor@agiColorModel8@@UAEIUagiRgba@@@Z
     inline uint32_t GetColor(struct agiRgba arg1) override

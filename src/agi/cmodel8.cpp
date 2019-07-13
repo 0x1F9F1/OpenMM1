@@ -17,3 +17,19 @@
 */
 
 #include "cmodel8.h"
+
+agiColorModel8::agiColorModel8(agiPalette* arg1)
+    : m_Palette(arg1)
+{
+    m_ByteCount = 1;
+
+    m_BitCountR = 8;
+    m_BitCountG = 0;
+    m_BitCountB = 8;
+    m_BitCountA = 0;
+
+    m_ShiftR = 8;
+    m_ShiftG = 8;
+    m_ShiftB = 16;
+    m_ShiftA = 0;
+}
