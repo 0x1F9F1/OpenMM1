@@ -49,7 +49,7 @@ class agiSurfaceDesc;
 class agiBitmap : agiRefreshable
 {
 public:
-    const char* m_Name {nullptr};
+    cstring_t m_Name {};
     agiSurfaceDesc* m_pSurfaceDesc {nullptr};
     uint32_t m_Transparency {0};
     uint32_t m_Width {0};
