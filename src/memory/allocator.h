@@ -101,10 +101,7 @@ public:
     void Kill();
 
     // 0x50E9E0 | ?Allocate@asMemoryAllocator@@QAEPAXI@Z
-    inline void* Allocate(uint32_t arg1)
-    {
-        return stub<member_func_t<void*, asMemoryAllocator, uint32_t>>(0x50E9E0, this, arg1);
-    }
+    void* Allocate(uint32_t size);
 
     // 0x50EC00 | ?CheckPointer@asMemoryAllocator@@QAEXPAX@Z
     void CheckPointer(void* ptr);
@@ -132,6 +129,8 @@ public:
 
     // 0x50F050 | ?SanityCheck@asMemoryAllocator@@QAEXXZ
     void SanityCheck();
+
+    uint32_t GetSize(void* ptr);
 };
 
 check_size(asMemoryAllocator, 0xA0);
