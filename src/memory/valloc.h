@@ -46,48 +46,25 @@ public:
     uint32_t m_MultiHeap {0};
 
     // 0x50F350 | ??0asSafeHeap@@QAE@XZ
-    inline asSafeHeap()
-    {
-        // stub<member_func_t<void, asSafeHeap>>(0x50F350, this);
-
-        unimplemented();
-    }
+    inline asSafeHeap() = default;
 
     // 0x50F360 | ??1asSafeHeap@@QAE@XZ
-    inline ~asSafeHeap()
-    {
-        stub<member_func_t<void, asSafeHeap>>(0x50F360, this);
-    }
+    ~asSafeHeap();
 
     // 0x50F370 | ?Init@asSafeHeap@@QAEXHH@Z
-    inline void Init(int32_t arg1, int32_t arg2)
-    {
-        return stub<member_func_t<void, asSafeHeap, int32_t, int32_t>>(0x50F370, this, arg1, arg2);
-    }
+    void Init(int32_t heap_size, int32_t multi_heap);
 
     // 0x50F3E0 | ?Restart@asSafeHeap@@QAEXXZ
-    inline void Restart()
-    {
-        return stub<member_func_t<void, asSafeHeap>>(0x50F3E0, this);
-    }
+    void Restart();
 
     // 0x50F410 | ?Kill@asSafeHeap@@QAEXXZ
-    inline void Kill()
-    {
-        return stub<member_func_t<void, asSafeHeap>>(0x50F410, this);
-    }
+    void Kill();
 
     // 0x50F440 | ?Activate@asSafeHeap@@IAEXXZ
-    inline void Activate()
-    {
-        return stub<member_func_t<void, asSafeHeap>>(0x50F440, this);
-    }
+    void Activate();
 
     // 0x50F480 | ?Deactivate@asSafeHeap@@IAEXXZ
-    inline void Deactivate()
-    {
-        return stub<member_func_t<void, asSafeHeap>>(0x50F480, this);
-    }
+    void Deactivate();
 };
 
 check_size(asSafeHeap, 0x14);

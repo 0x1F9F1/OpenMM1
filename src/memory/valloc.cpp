@@ -17,3 +17,83 @@
 */
 
 #include "valloc.h"
+#include "minwin.h"
+
+#include "allocator.h"
+
+asSafeHeap::~asSafeHeap()
+{
+    Kill();
+}
+
+void asSafeHeap::Init(int32_t heap_size, int32_t multi_heap)
+{
+    SYSTEM_INFO si;
+    GetSystemInfo(&si);
+
+    heap_size = ~(si.dwPageSize - 1) & (si.dwPageSize + heap_size - 1);
+
+    m_HeapSize = heap_size;
+    m_MultiHeap = multi_heap;
+
+    if (multi_heap)
+    {
+        heap_size *= 4;
+    }
+
+    m_pHeap = VirtualAlloc(
+        nullptr, heap_size, multi_heap ? MEM_RESERVE : MEM_COMMIT, multi_heap ? PAGE_NOACCESS : PAGE_READWRITE);
+
+    Activate();
+}
+
+void asSafeHeap::Restart()
+{
+    Deactivate();
+
+    if (m_MultiHeap)
+    {
+        m_HeapIndex = (m_HeapIndex + 1) % 4;
+    }
+
+    Activate();
+}
+
+void asSafeHeap::Kill()
+{
+    if (m_pHeap)
+    {
+        Deactivate();
+
+        if (m_MultiHeap)
+        {
+            VirtualFree(m_pHeap, 0, MEM_RELEASE);
+        }
+
+        m_pHeap = nullptr;
+    }
+}
+
+void asSafeHeap::Activate()
+{
+    m_pCurrentHeap = static_cast<uint8_t*>(m_pHeap) + m_HeapSize * m_HeapIndex;
+
+    if (m_MultiHeap)
+    {
+        VirtualAlloc(m_pCurrentHeap, m_HeapSize, MEM_COMMIT, PAGE_READWRITE);
+    }
+
+    ALLOCATOR.Init(m_pCurrentHeap, m_HeapSize, 1);
+}
+
+void asSafeHeap::Deactivate()
+{
+    if (m_MultiHeap)
+    {
+        VirtualFree(m_pCurrentHeap, m_HeapSize, MEM_DECOMMIT);
+    }
+
+    m_pCurrentHeap = 0;
+
+    ALLOCATOR.Kill();
+}
