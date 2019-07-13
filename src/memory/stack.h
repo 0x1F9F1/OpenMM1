@@ -35,10 +35,7 @@
 #include "hooking.h"
 
 // 0x50E0F0 | ?LookupAddress@@YAXPADH@Z
-inline void LookupAddress(char* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, char*, int32_t>>(0x50E0F0, arg1, arg2);
-}
+void LookupAddress(char* buffer, uint32_t address);
 
 // 0x50E480 | ?DoStackTraceback@@YAXHPAH@Z
 inline void DoStackTraceback(int32_t arg1, int32_t* arg2)
@@ -83,7 +80,4 @@ inline void DebugLog(int32_t arg1, void* arg2, int32_t arg3)
 }
 
 // 0x50E180 | ?InitMap@@YAXXZ
-inline void InitMap()
-{
-    return stub<cdecl_t<void>>(0x50E180);
-}
+void InitMap();

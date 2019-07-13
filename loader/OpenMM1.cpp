@@ -77,6 +77,7 @@ include_dummy_symbol(machname);
 include_dummy_symbol(fsystem);
 include_dummy_symbol(hfsystem);
 include_dummy_symbol(vfsystem);
+include_dummy_symbol(stack);
 
 BOOL APIENTRY DllMain(HMODULE /*hinstDLL*/, DWORD fdwReason, LPVOID /*lpvReserved*/)
 {
