@@ -104,11 +104,7 @@ void DefaultPrinter(int level, const char* format, va_list args)
 
     SetConsoleTextAttribute(output, PrinterColors[0]);
 
-    if (EnableDebugOutput)
-    {
-        OutputDebugStringA(buffer);
-    }
-    else if (DebugLogFile != INVALID_HANDLE_VALUE)
+    if (DebugLogFile != INVALID_HANDLE_VALUE)
     {
         WriteFile(DebugLogFile, buffer, strlen(buffer), &written, 0);
 
@@ -116,6 +112,10 @@ void DefaultPrinter(int level, const char* format, va_list args)
         {
             CloseHandle(DebugLogFile);
         }
+    }
+    else if (EnableDebugOutput)
+    {
+        OutputDebugStringA(buffer);
     }
 
     if (level == 3)
