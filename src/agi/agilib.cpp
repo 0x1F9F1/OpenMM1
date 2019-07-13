@@ -16,16 +16,4 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "hash.h"
-
-HashTable::HashTable()
-{
-    m_pNext = First;
-    First = this;
-}
-
-HashTable::~HashTable()
-{
-    Kill();
-    RemoveMe();
-}
+#include "agilib.h"

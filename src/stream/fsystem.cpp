@@ -20,7 +20,7 @@
 
 #include "data7/printer.h"
 
-#define MAX_FILESYSTEMS 256
+constexpr size_t MAX_FILESYSTEMS = 256;
 
 FileSystem* FileSystem::FS[MAX_FILESYSTEMS] {};
 
@@ -31,8 +31,7 @@ FileSystem::FileSystem()
         Abortf("Out of FileSystems, raise MAX_FILESYSTEMS");
     }
 
-    FS[FSCount] = this;
-    ++FSCount;
+    FS[FSCount++] = this;
     m_Index = FSCount;
 }
 

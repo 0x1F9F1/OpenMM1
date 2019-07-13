@@ -47,6 +47,8 @@ add_library(agi OBJECT
     # viewport.h
 
     rgba.h
+    agilib.cpp
+    agilib.h
 )
 
 target_link_libraries(agi hooking)

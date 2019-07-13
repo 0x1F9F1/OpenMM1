@@ -55,12 +55,12 @@ public:
     int32_t m_BucketCount {0};
     int32_t m_EntryCount {0};
     Entry** m_pBuckets {nullptr};
+    HashTable* m_pNext {nullptr};
+
+    HashTable();
 
     // 0x48BC70 | ??1HashTable@@QAE@XZ
-    inline ~HashTable()
-    {
-        stub<member_func_t<void, HashTable>>(0x48BC70, this);
-    }
+    ~HashTable();
 
     // 0x559A00 | ?Init@HashTable@@QAEXH@Z
     inline void Init(int32_t arg1)
@@ -138,7 +138,7 @@ public:
     static inline extern_var(0x711F74, class HashTable*, First);
 };
 
-check_size(HashTable, 12);
+check_size(HashTable, 16);
 
 struct HashIterator
 {

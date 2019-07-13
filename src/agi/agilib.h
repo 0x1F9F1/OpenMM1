@@ -16,16 +16,35 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "hash.h"
+#pragma once
 
-HashTable::HashTable()
-{
-    m_pNext = First;
-    First = this;
-}
+#include "data7/hash.h"
 
-HashTable::~HashTable()
+constexpr size_t agiLibMax = 2048;
+
+/*
+    0x7024D8 | agiLib<agiPhysParameters,agiPhysDef> agiPhysLib;	
+    0x706668 | agiLib<agiTexParameters,agiTexDef> agiTexLib;	
+    0x70A6C0 | agiLib<agiMtlParameters,agiMtlDef> agiMtlLib;	
+*/
+
+template <typename Params, typename Defs>
+struct agiLib
 {
-    Kill();
-    RemoveMe();
+    Params* m_Params[agiLibMax] {};
+    Defs* m_Defs[agiLibMax] {};
+    HashTable m_LookupTable {};
+    int32_t m_Count {0};
+
+    ~agiLib();
+};
+
+template <typename Params, typename Defs>
+inline agiLib<Params, Defs>::~agiLib()
+{
+    while (m_Count--)
+    {
+        delete m_Params[m_Count];
+        m_Defs[m_Count]->Release();
+    }
 }
