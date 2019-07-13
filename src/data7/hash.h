@@ -39,13 +39,14 @@
 */
 
 #include "hooking.h"
+#include "cstr.h"
 
 class HashTable
 {
 public:
     struct Entry
     {
-        const char* m_pName {nullptr};
+        cstring_t m_Name;
         void* m_pData {nullptr};
         Entry* m_pNext {nullptr};
     };
@@ -63,27 +64,18 @@ public:
     ~HashTable();
 
     // 0x559A00 | ?Init@HashTable@@QAEXH@Z
-    inline void Init(int32_t arg1)
-    {
-        return stub<member_func_t<void, HashTable, int32_t>>(0x559A00, this, arg1);
-    }
+    void Init(int32_t capacity);
 
     // 0x559A70 | ?Kill@HashTable@@QAEXXZ
-    inline void Kill()
-    {
-        return stub<member_func_t<void, HashTable>>(0x559A70, this);
-    }
+    void Kill();
 
     // 0x559AE0 | ??4HashTable@@QAEXAAV0@@Z
-    inline void operator=(class HashTable& arg1)
-    {
-        return stub<member_func_t<void, HashTable, class HashTable&>>(0x559AE0, this, arg1);
-    }
+    void operator=(class HashTable& other);
 
     // 0x559B30 | ?Insert@HashTable@@QAEHPADPAX@Z
-    inline int32_t Insert(char* arg1, void* arg2)
+    inline int32_t Insert(const char* arg1, void* arg2)
     {
-        return stub<member_func_t<int32_t, HashTable, char*, void*>>(0x559B30, this, arg1, arg2);
+        return stub<member_func_t<int32_t, HashTable, const char*, void*>>(0x559B30, this, arg1, arg2);
     }
 
     // 0x559C10 | ?Delete@HashTable@@QAEHPAD@Z
@@ -105,10 +97,7 @@ public:
     }
 
     // 0x559E20 | ?Hash@HashTable@@AAEHPAD@Z
-    inline int32_t Hash(char* arg1)
-    {
-        return stub<member_func_t<int32_t, HashTable, char*>>(0x559E20, this, arg1);
-    }
+    uint32_t Hash(const char* value);
 
     // 0x559E60 | ?ComputePrime@HashTable@@AAEHH@Z
     inline int32_t ComputePrime(int32_t arg1)
@@ -123,16 +112,10 @@ public:
     }
 
     // 0x559F70 | ?KillAll@HashTable@@SAXXZ
-    static inline void KillAll()
-    {
-        return stub<cdecl_t<void>>(0x559F70);
-    }
+    static void KillAll();
 
     // 0x559F90 | ?RemoveMe@HashTable@@AAEXXZ
-    inline void RemoveMe()
-    {
-        return stub<member_func_t<void, HashTable>>(0x559F90, this);
-    }
+    void RemoveMe();
 
     // 0x711F74 | ?First@HashTable@@0PAV1@A
     static inline extern_var(0x711F74, class HashTable*, First);
