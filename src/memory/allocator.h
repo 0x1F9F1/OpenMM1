@@ -87,12 +87,10 @@ public:
     node* m_Nodes {nullptr};
 
     // 0x50E970 | ??0asMemoryAllocator@@QAE@XZ
-    inline asMemoryAllocator()
-    {}
+    inline asMemoryAllocator() noexcept = default;
 
     // 0x50E980 | ??1asMemoryAllocator@@QAE@XZ
-    inline ~asMemoryAllocator()
-    {}
+    inline ~asMemoryAllocator() noexcept = default;
 
     // 0x50E990 | ?Init@asMemoryAllocator@@QAEXPAXIH@Z
     void Init(void* heap_data, uint32_t heap_size, int32_t use_nodes);

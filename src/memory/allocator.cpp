@@ -168,7 +168,7 @@ public:
     {
         uint32_t upper = 0;
         memcpy(&upper, Data + nSize - 4, 4);
-        return upper = UPPER_GUARD;
+        return upper == UPPER_GUARD;
     }
 
     inline void SetDebugGuard(uint32_t source)
@@ -223,7 +223,7 @@ void asMemoryAllocator::Kill()
     m_Initialized = 0;
 }
 
-void* asMemoryAllocator::Allocate(uint32_t size)
+__declspec(noinline) void* asMemoryAllocator::Allocate(uint32_t size)
 {
     if (!size)
     {
@@ -350,7 +350,7 @@ void asMemoryAllocator::CheckPointer(void* ptr)
     }
 }
 
-void asMemoryAllocator::Free(void* ptr)
+__declspec(noinline) void asMemoryAllocator::Free(void* ptr)
 {
     if (!ptr)
     {

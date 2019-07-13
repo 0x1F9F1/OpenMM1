@@ -17,25 +17,26 @@
 */
 
 #include "stub.h"
+#include "allocator.h"
 
 // 0x50F560 | ??2@YAPAXI@Z
-void* operator new(size_t arg1)
+__declspec(noinline) void* operator new(size_t size)
 {
-    return stub<cdecl_t<void*, uint32_t>>(0x50F560, arg1);
+    return CURHEAP->Allocate(size);
 }
 
-void* operator new[](size_t arg1)
+__declspec(noinline) void* operator new[](size_t size)
 {
-    return operator new(arg1);
+    return CURHEAP->Allocate(size);
 }
 
 // 0x50F580 | ??3@YAXPAX@Z
-void operator delete(void* arg1) noexcept
+__declspec(noinline) void operator delete(void* ptr) noexcept
 {
-    return stub<cdecl_t<void, void*>>(0x50F580, arg1);
+    CURHEAP->Free(ptr);
 }
 
-void operator delete[](void* arg1) noexcept
+__declspec(noinline) void operator delete[](void* ptr) noexcept
 {
-    operator delete(arg1);
+    CURHEAP->Free(ptr);
 }
