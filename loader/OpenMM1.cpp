@@ -112,6 +112,8 @@ BOOL APIENTRY DllMain(HMODULE /*hinstDLL*/, DWORD fdwReason, LPVOID /*lpvReserve
             create_patch("MixerCT", "Fix paDetails allocation", address + 3, "\x08", 1);
         }
 
+        create_patch("PolarCamCS", "Increase Max XCAM Distance", 0x594D84, "\x00\x00\x7A\x43", 4);
+
         mem::init_function::init();
     }
 
