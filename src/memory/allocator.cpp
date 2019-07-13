@@ -153,7 +153,7 @@ struct asMemoryAllocator::node
     // Only valid for debug allocators
     inline uint32_t GetUpperGuard() const
     {
-        return reinterpret_cast<uint32_t*>(GetNext())[-1];
+        return *reinterpret_cast<const uint32_t*>(Data + nSize - 4);
     }
 
     inline uint32_t GetBucketIndex() const
@@ -186,6 +186,10 @@ void asMemoryAllocator::Init(void* heap_data, uint32_t heap_size, int32_t use_no
     m_Initialized = 1;
     m_UseNodes = use_nodes;
     m_Nodes = nullptr;
+
+#ifdef _DEBUG
+    m_Debug = 1;
+#endif
 
     if (use_nodes)
     {
@@ -351,7 +355,7 @@ void asMemoryAllocator::SanityCheck()
 
     for (node *n = reinterpret_cast<node*>(heap), *prev = nullptr; n->Data < heap_end; prev = n, n = n->GetNext())
     {
-        if (m_Debug && !n->IsAllocated())
+        if (m_Debug && n->IsAllocated())
         {
             is_invalid |=
                 HeapAssert(n, n->GetLowerGuard() == node::LOWER_GUARD, "Lower guard word", n->GetAllocSource());
@@ -398,4 +402,7 @@ void asMemoryAllocator::SanityCheck()
 
 define_dummy_symbol(allocator);
 
-run_once([] { auto_hook(0x50F050, asMemoryAllocator::SanityCheck); });
+run_once([] {
+    auto_hook(0x50E990, asMemoryAllocator::Init);
+    auto_hook(0x50F050, asMemoryAllocator::SanityCheck);
+});
