@@ -105,6 +105,13 @@ BOOL APIENTRY DllMain(HMODULE /*hinstDLL*/, DWORD fdwReason, LPVOID /*lpvReserve
 
         create_patch("Heap Size", "Increase Heap Size", 0x401A5C, "\xb8\x00\x00\x00\x08", 5); // mov eax, 0x8000000
 
+        for (uint32_t address : {0x4E1033, 0x4E1267, 0x4E1573})
+        {
+            // The code writes to the first 2 channels, even when there are less.
+            // operator new(4 * pmxl.cChannels) -> operator new(4 * (pmxl.cChannels + 2))
+            create_patch("MixerCT", "Fix paDetails allocation", address + 3, "\x08", 1);
+        }
+
         mem::init_function::init();
     }
 
