@@ -107,10 +107,7 @@ public:
     void CheckPointer(void* ptr);
 
     // 0x50EC50 | ?Free@asMemoryAllocator@@QAEXPAX@Z
-    inline void Free(void* arg1)
-    {
-        return stub<member_func_t<void, asMemoryAllocator, void*>>(0x50EC50, this, arg1);
-    }
+    void Free(void* ptr);
 
     // 0x50EDB0 | ?Unlink@asMemoryAllocator@@AAEXPAUnode@1@@Z
     void Unlink(struct asMemoryAllocator::node* n);
