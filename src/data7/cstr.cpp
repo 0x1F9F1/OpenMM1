@@ -16,26 +16,25 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "stub.h"
+#include "cstr.h"
 
-// 0x50F560 | ??2@YAPAXI@Z
-void* operator new(size_t arg1)
-{
-    return stub<cdecl_t<void*, uint32_t>>(0x50F560, arg1);
-}
+#include <cstring>
 
-void* operator new[](size_t arg1)
+char* StringDuplicate(const char* value)
 {
-    return operator new(arg1);
-}
+    char* result = nullptr;
 
-// 0x50F580 | ??3@YAXPAX@Z
-void operator delete(void* arg1) noexcept
-{
-    return stub<cdecl_t<void, void*>>(0x50F580, arg1);
-}
+    if (value)
+    {
+        size_t length = std::strlen(value) + 1;
 
-void operator delete[](void* arg1) noexcept
-{
-    operator delete(arg1);
+        result = new char[length];
+
+        if (result)
+        {
+            std::memcpy(result, value, length);
+        }
+    }
+
+    return result;
 }

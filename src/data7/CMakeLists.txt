@@ -46,6 +46,8 @@ add_library(data7 OBJECT
 
     assert.h
     assert.cpp
+    cstr.h
+    cstr.cpp
 )
 
 target_link_libraries(data7 hooking)

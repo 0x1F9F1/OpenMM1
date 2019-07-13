@@ -58,6 +58,7 @@
 #include "hooking.h"
 
 #include "cullable.h"
+#include "data7/cstr.h"
 
 // 0x5118B0 | ?PtrTo@@YAPAUMetaType@@PAU1@@Z
 inline struct MetaType* PtrTo(struct MetaType* arg1)
@@ -89,7 +90,7 @@ public:
     asNode* m_Next {nullptr};
     asNode* m_Children {nullptr};
     asNode* m_Parent {nullptr};
-    char* m_Name {nullptr};
+    cstring_t m_Name {};
     uint32_t m_Flags {3};
     int32_t m_dword18 {0};
 

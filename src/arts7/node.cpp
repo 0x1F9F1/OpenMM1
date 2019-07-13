@@ -23,8 +23,7 @@
 
 void asNode::SetName(char* arg1)
 {
-    free((void*) m_Name);
-    m_Name = _strdup(arg1);
+    m_Name = arg1;
 }
 
 int32_t asNode::AddChild(asNode* child)
@@ -267,8 +266,6 @@ asNode::~asNode()
     }
 
     RemoveAllChildren();
-
-    free(m_Name);
 }
 
 class MetaClass* asNode::GetClass()

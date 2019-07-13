@@ -43,6 +43,7 @@
     0x5963E0 | const MiniParser::`vftable' | ??_7MiniParser@@6B@
 */
 
+#include "cstr.h"
 #include "hooking.h"
 
 class MiniParser
@@ -50,7 +51,7 @@ class MiniParser
 public:
     char m_TokenBuffer[256] {};
     uint32_t m_LastError {0};
-    char* m_Name {nullptr};
+    cstring_t m_Name {};
     uint32_t m_CurrentToken = ' ';
     uint32_t m_Identation {0};
     uint32_t m_CurrentLine {1};
@@ -61,14 +62,12 @@ public:
     // 0x55DE60 | ??0MiniParser@@QAE@PAD@Z
     inline MiniParser(char* arg1)
     {
-        m_Name = _strdup(arg1);
+        m_Name = arg1;
     }
 
     // 0x55DEC0 | ??1MiniParser@@QAE@XZ
     inline ~MiniParser()
-    {
-        free(m_Name);
-    }
+    {}
 
     // 0x55DEE0 | ?Printf@MiniParser@@QAAXPBDZZ
     // Skipped (Variable Arguments)
