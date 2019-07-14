@@ -87,11 +87,7 @@
 
 #include "hooking.h"
 
-// 0x54CE50 | ??D@YA?AVMatrix34@@MABV0@@Z
-inline class Matrix34 operator*(float arg1, class Matrix34 const& arg2)
-{
-    return stub<cdecl_t<class Matrix34, float, class Matrix34 const&>>(0x54CE50, arg1, arg2);
-}
+#include "vector3.h"
 
 // 0x54FF10 | ?ASinf@@YAMM@Z
 inline float ASinf(float arg1)
@@ -132,13 +128,13 @@ inline void delete_Matrix34(void* arg1, int32_t arg2)
 class Matrix34
 {
 public:
-    // 0x470110 | ??0Matrix34@@QAE@XZ
-    inline Matrix34()
-    {
-        // stub<member_func_t<void, Matrix34>>(0x470110, this);
+    float m00 {0.0f}, m01 {0.0f}, m02 {0.0f};
+    float m10 {0.0f}, m11 {0.0f}, m12 {0.0f};
+    float m20 {0.0f}, m21 {0.0f}, m22 {0.0f};
+    float m30 {0.0f}, m31 {0.0f}, m32 {0.0f};
 
-        unimplemented();
-    }
+    // 0x470110 | ??0Matrix34@@QAE@XZ
+    inline Matrix34() = default;
 
     // 0x4D1E50 | ?RotateNoTrans@Matrix34@@QBE?AVVector3@@ABV2@@Z
     inline class Vector3 RotateNoTrans(class Vector3 const& arg1)
@@ -153,12 +149,7 @@ public:
     }
 
     // 0x549AD0 | ??0Matrix34@@QAE@ABVMatrix44@@@Z
-    inline Matrix34(class Matrix44 const& arg1)
-    {
-        // stub<member_func_t<void, Matrix34, class Matrix44 const&>>(0x549AD0, this, arg1);
-
-        unimplemented();
-    }
+    Matrix34(class Matrix44 const& other);
 
     // 0x549B30 | ?Identity@Matrix34@@QAEXXZ
     inline void Identity()
@@ -492,3 +483,11 @@ public:
         return stub<cdecl_t<class MetaClass*>>(0x54FF00);
     }
 };
+
+check_size(Matrix34, 0x30);
+
+// 0x54CE50 | ??D@YA?AVMatrix34@@MABV0@@Z
+inline class Matrix34 operator*(float arg1, class Matrix34 const& arg2)
+{
+    return stub<cdecl_t<class Matrix34, float, class Matrix34 const&>>(0x54CE50, arg1, arg2);
+}

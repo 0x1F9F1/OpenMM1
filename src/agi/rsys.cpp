@@ -17,3 +17,24 @@
 */
 
 #include "rsys.h"
+
+agiRasterizer::agiRasterizer(agiPipeline* pipe)
+    : agiRefreshable(pipe)
+{
+    agiLastState.Reset();
+}
+
+agiRendStateStruct::agiRendStateStruct()
+{
+    memset(this, 0, sizeof(*this));
+}
+
+void agiRendStateStruct::Reset()
+{
+    memset(this, 0xFF, sizeof(*this));
+
+    float20 = -99.0;
+    float24 = -99.0;
+    float28 = -99.0;
+    float34 = -99.0;
+}

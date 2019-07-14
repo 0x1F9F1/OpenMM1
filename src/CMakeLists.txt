@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 
 add_subdirectory(agi)
-# add_subdirectory(agid3d)
+add_subdirectory(agid3d)
 # add_subdirectory(agisw)
 # add_subdirectory(agiworld)
 add_subdirectory(arts7)
@@ -31,6 +31,8 @@ add_subdirectory(pcwindis)
 add_subdirectory(stream)
 add_subdirectory(vector7)
 
+add_subdirectory(agigl)
+
 add_library(hooking STATIC
     hooking.cpp
     hooking.h
@@ -43,7 +45,7 @@ add_library(midtown STATIC
     midtown.h
 
     $<TARGET_OBJECTS:agi>
-    # $<TARGET_OBJECTS:agid3d>
+    $<TARGET_OBJECTS:agid3d>
     # $<TARGET_OBJECTS:agisw>
     # $<TARGET_OBJECTS:agiworld>
     $<TARGET_OBJECTS:arts7>
@@ -72,10 +74,9 @@ add_library(midtown STATIC
     $<TARGET_OBJECTS:pcwindis>
     $<TARGET_OBJECTS:stream>
     $<TARGET_OBJECTS:vector7>
+
+    $<TARGET_OBJECTS:agigl>
 )
 
-target_link_libraries(midtown
-    hooking
-    ${DPLAY_LIBRARY}
-    ${SDL2_LIBRARIES}
-)
+target_link_libraries(midtown hooking
+    opengl32 glu32 ${GLEW_LIBRARIES})

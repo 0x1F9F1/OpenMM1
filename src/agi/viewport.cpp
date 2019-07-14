@@ -17,3 +17,30 @@
 */
 
 #include "viewport.h"
+
+#include "pipeline.h"
+
+agiViewport::agiViewport(class agiPipeline* pipe)
+    : agiRefreshable(pipe)
+    , m_dword144(pipe->m_dword38)
+{}
+
+agiViewport::~agiViewport()
+{
+    if (this == Active)
+    {
+        Active = nullptr;
+    }
+}
+
+agiViewParameters::agiViewParameters()
+{
+    m_matrix34A4.Identity();
+    m_matrix3444.Identity();
+    m_matrix3474.Identity();
+    m_matrix34D4.Identity();
+
+    ++ViewSerial;
+
+    Perspective(90.0f, 1.25f, 1.0f, 1000.0f);
+}

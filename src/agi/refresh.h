@@ -51,12 +51,7 @@ public:
     // agiRefreshable::`vftable' @ 0x595BE8
 
     // 0x53A0A0 | ??0agiRefreshable@@QAE@PAVagiPipeline@@@Z
-    inline agiRefreshable(class agiPipeline* arg1)
-    {
-        // stub<member_func_t<void, agiRefreshable, class agiPipeline*>>(0x53A0A0, this, arg1);
-
-        unimplemented(arg1);
-    }
+    agiRefreshable(class agiPipeline* pipeline);
 
     // 0x53A120 | ?SafeBeginGfx@agiRefreshable@@QAEHXZ
     inline int32_t SafeBeginGfx()
@@ -98,10 +93,7 @@ public:
     }
 
     // 0x53A0E0 | ??1agiRefreshable@@MAE@XZ
-    virtual inline ~agiRefreshable()
-    {
-        stub<member_func_t<void, agiRefreshable>>(0x53A0E0, this);
-    }
+    virtual ~agiRefreshable() = 0;
 
     // 0x567350 | __purecall
     virtual inline int32_t BeginGfx() = 0;

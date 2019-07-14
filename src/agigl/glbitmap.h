@@ -16,31 +16,19 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "surface.h"
+#pragma once
 
-agiSurfaceDesc::agiSurfaceDesc()
+#include "agi/bitmap.h"
+
+class agiSurfaceDesc;
+
+class agiGLBitmap : public agiBitmap
 {
-    memset(this, 0, sizeof(*this));
-}
+public:
+    agiSurfaceDesc* m_pSurface {nullptr};
 
-agiSurfaceDesc* agiSurfaceDesc::Init(int32_t width, int32_t height, agiSurfaceDesc& desc)
-{
-    uint32_t bytes_per_pixel = desc.ddpfPixelFormat.dwRGBBitCount >> 3;
+    agiGLBitmap(agiPipeline* pipe);
 
-    agiSurfaceDesc* sd = new agiSurfaceDesc(desc);
-
-    sd->dwFlags = 6;
-    sd->dwWidth = width;
-    sd->dwHeight = height;
-    sd->lPitch = width * bytes_per_pixel;
-
-    sd->lpSurface = new uint8_t[width * height * bytes_per_pixel]();
-
-    return sd;
-}
-
-void agiSurfaceDesc::Unload()
-{
-    delete[] static_cast<uint8_t*>(lpSurface);
-    lpSurface = nullptr;
-}
+    virtual void EndGfx() override;
+    virtual int32_t BeginGfx() override;
+};

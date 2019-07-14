@@ -56,10 +56,7 @@
 #include "hooking.h"
 
 // 0x401030 | ?CreatePipeline@@YAPAVagiPipeline@@HPAPAD@Z
-inline class agiPipeline* CreatePipeline(int32_t arg1, char** arg2)
-{
-    return stub<cdecl_t<class agiPipeline*, int32_t, char**>>(0x401030, arg1, arg2);
-}
+class agiPipeline* CreatePipeline(int32_t argc, char** argv);
 
 // 0x401250 | ?GenerateLoadScreenName@@YAHXZ
 inline int32_t GenerateLoadScreenName()

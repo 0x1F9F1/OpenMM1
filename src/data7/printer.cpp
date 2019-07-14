@@ -79,7 +79,7 @@ const uint8_t PrinterColors[5] = {7u, 14u, 12u, 12u, 12u};
 
 static extern_var(0x5CDF50, HANDLE, DebugLogFile);
 
-void DefaultPrinter(int level, const char* format, va_list args)
+void DefaultPrinter(int32_t level, const char* format, va_list args)
 {
     char buffer[512];
     strcpy_s(buffer, PrinterPrefixes[level]);
@@ -118,17 +118,18 @@ void DefaultPrinter(int level, const char* format, va_list args)
         OutputDebugStringA(buffer);
     }
 
-    if (level == 3)
+    if (level >= 3)
     {
-        ChangeDisplaySettingsA(0, 0);
+        MessageBoxA(NULL, buffer, "Fatal Error", MB_OK);
 
-        _exit(1);
-    }
+        if (level == 3)
+        {
+            _exit(1);
+        }
 
-    if (level == 4)
-    {
-        ChangeDisplaySettingsA(0, 0);
-
-        *static_cast<volatile uint32_t*>(0) = 0xDEADBEEF;
+        if (level == 4)
+        {
+            *static_cast<volatile uint32_t*>(0) = 0xDEADBEEF;
+        }
     }
 }

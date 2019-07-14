@@ -38,8 +38,8 @@
     0x711F74 | private: static class HashTable * HashTable::First | ?First@HashTable@@0PAV1@A
 */
 
-#include "hooking.h"
 #include "cstr.h"
+#include "hooking.h"
 
 class HashTable
 {

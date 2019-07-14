@@ -36,8 +36,8 @@
 
 #include "hooking.h"
 
-#include "refresh.h"
 #include "data7/cstr.h"
+#include "refresh.h"
 
 // 0x5C3610 | ?BitmapSearchPath@@3PADA
 inline extern_var(0x5C3610, char*, BitmapSearchPath);
@@ -47,7 +47,7 @@ inline extern_var(0x706618, class HashTable, BitmapHash);
 
 class agiSurfaceDesc;
 
-class agiBitmap : agiRefreshable
+class agiBitmap : public agiRefreshable
 {
 public:
     cstring_t m_Name {};
@@ -63,9 +63,7 @@ public:
     // agiBitmap::`vftable' @ 0x595C40
 
     // 0x53C380 | ??0agiBitmap@@QAE@PAVagiPipeline@@@Z
-    inline agiBitmap(class agiPipeline* arg1)
-        : agiRefreshable(arg1)
-    {}
+    agiBitmap(class agiPipeline* pipe);
 
     // 0x53C3C0 | ?Init@agiBitmap@@QAEHPADMMH@Z
     inline int32_t Init(char* arg1, float arg2, float arg3, int32_t arg4)
@@ -87,12 +85,7 @@ public:
     }
 
     // 0x53C610 | ??1agiBitmap@@MAE@XZ
-    inline ~agiBitmap() override = 0
-    {
-        // stub<member_func_t<void, agiBitmap>>(0x53C610, this);
-
-        unimplemented();
-    }
+    ~agiBitmap() override;
 
     // 0x53C600 | ?UpdateFlags@agiBitmap@@UAEXXZ
     virtual inline void UpdateFlags()

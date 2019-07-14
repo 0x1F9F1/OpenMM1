@@ -15,12 +15,12 @@ add_library(agid3d OBJECT
     # d3dview.h
     # ddbitmap.cpp
     # ddbitmap.h
-    # dderror.cpp
-    # dderror.h
+    dderror.cpp
+    dderror.h
     # ddpipe.cpp
     # ddpipe.h
-    # pcpipe.cpp
-    # pcpipe.h
+    pcpipe.cpp
+    pcpipe.h
 )
 
 target_link_libraries(agid3d hooking)

@@ -35,6 +35,7 @@ inline char* agiGetError(int32_t arg1)
 }
 
 // 0x53DDA0 | ?agiDisplayf@@YAXPBDZZ
+void agiDisplayf(const char* format, ...);
 // Skipped (Variable Arguments)
 
 // 0x70E718 | ?agiVerbose@@3HA

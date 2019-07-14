@@ -74,6 +74,9 @@
 
 #include "hooking.h"
 
+#include "data7/cstr.h"
+#include "surface.h"
+
 // 0x5381F0 | ?GetRootWindow@@YAPAXXZ
 inline void* GetRootWindow()
 {
@@ -121,18 +124,50 @@ inline extern_var(0x7021D0, int32_t, DrawModeOr);
 // 0x7021D4 | ?DrawModeAnd@@3HA
 inline extern_var(0x7021D4, int32_t, DrawModeAnd);
 
+class agiColorModel;
+class agiRefreshable;
+class agiRenderer;
+
 class agiPipeline
 {
 public:
+    cstring_t m_Name {};
+    uint32_t m_dword8 {0};
+    uint32_t m_dwordC {0};
+    uint32_t m_Width {0};
+    uint32_t m_Height {0};
+    uint32_t m_BitDepth {0};
+    uint32_t m_dword1C {0};
+    uint32_t m_dword20 {0};
+    uint32_t m_dword24 {0};
+    void* m_hWnd {nullptr};
+    int32_t m_HorzRes {0};
+    int32_t m_VertRes {0};
+    float m_dword34 {1.0f};
+    uint32_t m_dword38 {2};
+    uint32_t m_Lightmask {0xFFFFFFFF};
+    uint8_t gap40[264] {};
+    agiSurfaceDesc m_SurfaceDesc {};
+    agiSurfaceDesc m_SurfaceDesc2 {};
+    agiSurfaceDesc m_SurfaceDesc3 {};
+    agiColorModel* m_ColorModel {nullptr};
+    agiColorModel* m_ColorModel1 {nullptr};
+    agiColorModel* m_ColorModel2 {nullptr};
+    agiColorModel* m_UIColorModel {nullptr};
+    agiRenderer* m_pRenderer {nullptr};
+    uint32_t m_dword2D0 {0};
+    uint32_t m_MaxTextureWidth {0};
+    uint32_t m_MaxTextureHeight {0};
+    agiRefreshable* m_pRefreshables {nullptr};
+    uint32_t m_dword2E0 {0};
+    uint32_t m_dword2E4 {0};
+    uint32_t m_dword2E8 {0};
+    uint32_t m_SceneCount {0};
+
     // agiPipeline::`vftable' @ 0x595A98
 
     // 0x537700 | ??0agiPipeline@@IAE@XZ
-    inline agiPipeline()
-    {
-        // stub<member_func_t<void, agiPipeline>>(0x537700, this);
-
-        unimplemented();
-    }
+    agiPipeline();
 
     // 0x5377D0 | ?Init@agiPipeline@@QAEHPADHHHHHHPAX@Z
     inline int32_t Init(
@@ -240,12 +275,6 @@ public:
         return stub<member_func_t<void, agiPipeline, class agiRefreshable*>>(0x538130, this, arg1);
     }
 
-    // 0x538180 | ?DumpStatus@agiPipeline@@QAEXXZ
-    inline void DumpStatus()
-    {
-        return stub<member_func_t<void, agiPipeline>>(0x538180, this);
-    }
-
     // 0x7021C0 | ?CurrentRenderer@agiPipeline@@2PAVagiRenderer@@A
     static inline extern_var(0x7021C0, class agiRenderer*, CurrentRenderer);
 
@@ -253,7 +282,7 @@ public:
     static inline extern_var(0x7021C4, class agiPipeline*, CurrentPipe);
 
     // 0x567350 | __purecall
-    virtual inline ~agiPipeline() = 0;
+    virtual ~agiPipeline() = 0;
 
     // 0x5377C0 | ?Validate@agiPipeline@@UAEHXZ
     virtual inline int32_t Validate()
@@ -394,4 +423,12 @@ public:
     {
         return stub<member_func_t<void, agiPipeline, struct agiMemStatus&>>(0x5382E0, this, arg1);
     }
+
+    // 0x538180 | ?DumpStatus@agiPipeline@@QAEXXZ
+    inline void DumpStatus()
+    {
+        return stub<member_func_t<void, agiPipeline>>(0x538180, this);
+    }
 };
+
+check_size(agiPipeline, 0x2F0);

@@ -17,3 +17,35 @@
 */
 
 #include "pipeline.h"
+
+#include "data7/printer.h"
+#include "error.h"
+#include "refresh.h"
+
+#include <float.h>
+
+agiPipeline::agiPipeline()
+{
+    unsigned int current = 0;
+    _controlfp_s(&current, 0x20000, 0x30000);
+
+    PROBER = 0;
+}
+
+agiPipeline::~agiPipeline()
+{
+    agiRefreshable* v1 = this->m_pRefreshables;
+    if (v1)
+    {
+        Errorf("Pipeline didn't release all its objects.");
+
+        for (; v1; v1 = v1->m_pNext)
+        {
+            v1->AddRef();
+            int32_t refs = v1->Release();
+
+            agiDisplayf("Refreshable '%s' ref count = %d", v1->GetName(), refs);
+            v1->m_pPipeline = 0;
+        }
+    }
+}

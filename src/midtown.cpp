@@ -17,3 +17,14 @@
 */
 
 #include "midtown.h"
+
+#include "agigl/glpipe.h"
+
+agiPipeline* CreatePipeline(int32_t argc, char** argv)
+{
+    return glCreatePipeline(argc, argv);
+}
+
+define_dummy_symbol(midtown);
+
+run_once([] { auto_hook(0x401030, CreatePipeline); });

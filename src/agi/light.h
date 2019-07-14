@@ -35,16 +35,40 @@
 
 #include "hooking.h"
 
+#include "refresh.h"
+#include "vector7/vector4.h"
+
 class agiLightParameters
 {
 public:
-    // 0x53D890 | ??0agiLightParameters@@QAE@XZ
-    inline agiLightParameters()
-    {
-        // stub<member_func_t<void, agiLightParameters>>(0x53D890, this);
+    uint32_t m_dword0 {3};
+    uint32_t m_dword4 {1};
+    uint32_t m_dword8 {0};
+    uint32_t m_dwordC {0};
+    uint32_t m_dword10 {0};
+    float m_dword14 {1.0f};
+    float m_dword18 {1.0f};
+    float m_dword1C {1.0f};
+    float m_dword20 {1.0f};
+    float m_dword24 {1.0f};
+    float m_dword28 {1.0f};
+    float m_dword2C {1.0f};
+    float m_dword30 {1.0f};
+    float m_dword34 {1.0f};
+    Vector4 m_dword38 {0.0f, 0.0f, 0.0f, 1.0f};
+    uint32_t m_dword48 {0};
+    uint32_t m_dword4C {0};
+    float m_dword50 {-1.0f};
+    uint32_t m_dword54 {0};
+    float m_dword58 {180.0f};
+    float m_dword5C {1.0f};
+    uint32_t m_dword60 {0};
+    uint32_t m_dword64 {0};
+    uint32_t m_dword68 {0};
+    int32_t m_dword6C {-1};
 
-        unimplemented();
-    }
+    // 0x53D890 | ??0agiLightParameters@@QAE@XZ
+    inline agiLightParameters() = default;
 
     // 0x53D910 | ??4agiLightParameters@@QAEXABV0@@Z
     inline void operator=(class agiLightParameters const& arg1)
@@ -53,18 +77,17 @@ public:
     }
 };
 
-class agiLight : agiRefreshable
+check_size(agiLightParameters, 0x70);
+
+class agiLight : public agiRefreshable
 {
 public:
+    agiLightParameters m_Parameters;
+
     // agiLight::`vftable' @ 0x595C70
 
     // 0x53D930 | ??0agiLight@@QAE@PAVagiPipeline@@@Z
-    inline agiLight(class agiPipeline* arg1)
-    {
-        // stub<member_func_t<void, agiLight, class agiPipeline*>>(0x53D930, this, arg1);
-
-        unimplemented();
-    }
+    agiLight(class agiPipeline* pipe);
 
     // 0x53D980 | ?Init@agiLight@@QAEHABVagiLightParameters@@@Z
     inline int32_t Init(class agiLightParameters const& arg1)
@@ -79,12 +102,7 @@ public:
     }
 
     // 0x53D9C0 | ??1agiLight@@UAE@XZ
-    inline ~agiLight() override = 0
-    {
-        // stub<member_func_t<void, agiLight>>(0x53D9C0, this);
-
-        unimplemented();
-    }
+    inline ~agiLight() override = default;
 
     // 0x567350 | __purecall
     virtual inline int32_t Update() = 0;
@@ -95,3 +113,5 @@ public:
         return stub<member_func_t<void, agiLight>>(0x53D9B0, this);
     }
 };
+
+check_size(agiLight, 0x88);

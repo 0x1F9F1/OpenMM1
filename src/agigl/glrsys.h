@@ -16,31 +16,26 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "surface.h"
+#pragma once
 
-agiSurfaceDesc::agiSurfaceDesc()
+#include "agi/rsys.h"
+
+class agiGLRasterizer : public agiRasterizer
 {
-    memset(this, 0, sizeof(*this));
-}
+public:
+    agiGLRasterizer(agiPipeline* pipe);
 
-agiSurfaceDesc* agiSurfaceDesc::Init(int32_t width, int32_t height, agiSurfaceDesc& desc)
-{
-    uint32_t bytes_per_pixel = desc.ddpfPixelFormat.dwRGBBitCount >> 3;
+    void EndGfx() override;
+    int32_t BeginGfx() override;
 
-    agiSurfaceDesc* sd = new agiSurfaceDesc(desc);
+    void BeginGroup() override;
+    void EndGroup() override;
 
-    sd->dwFlags = 6;
-    sd->dwWidth = width;
-    sd->dwHeight = height;
-    sd->lPitch = width * bytes_per_pixel;
-
-    sd->lpSurface = new uint8_t[width * height * bytes_per_pixel]();
-
-    return sd;
-}
-
-void agiSurfaceDesc::Unload()
-{
-    delete[] static_cast<uint8_t*>(lpSurface);
-    lpSurface = nullptr;
-}
+    void Verts(agiVtxType arg1, agiVtx* arg2, int32_t arg3) override;
+    void Points(agiVtxType arg1, agiVtx* arg2, int32_t arg3) override;
+    void SetVertCount(int32_t arg1) override;
+    void Triangle(int32_t arg1, int32_t arg2, int32_t arg3) override;
+    void Line(int32_t arg1, int32_t arg2) override;
+    void Card(int32_t arg1, int32_t arg2) override;
+    void Mesh(agiVtxType arg1, agiVtx* arg2, int32_t arg3, uint16_t* arg4, int32_t arg5) override;
+};

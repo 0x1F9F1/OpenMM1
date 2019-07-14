@@ -15,8 +15,8 @@ add_library(agi OBJECT
     error.h
     getdlp.cpp
     getdlp.h
-    # light.cpp
-    # light.h
+    light.cpp
+    light.h
     # lmodel.cpp
     # lmodel.h
     # mtldef.cpp
@@ -29,22 +29,22 @@ add_library(agi OBJECT
     # physdef.h
     # physlib.cpp
     # physlib.h
-    # pipeline.cpp
-    # pipeline.h
+    pipeline.cpp
+    pipeline.h
     print.cpp
     print.h
     refresh.cpp
     refresh.h
     rsys.cpp
     rsys.h
-    # surface.cpp
-    # surface.h
+    surface.cpp
+    surface.h
     # texdef.cpp
     # texdef.h
     # texlib.cpp
     # texlib.h
-    # viewport.cpp
-    # viewport.h
+    viewport.cpp
+    viewport.h
 
     rgba.h
     agilib.cpp

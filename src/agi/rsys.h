@@ -63,27 +63,16 @@ enum agiVtxType
     VtxType3,
 };
 
-class agiRasterizer : agiRefreshable
+class agiRasterizer : public agiRefreshable
 {
 public:
     // agiRasterizer::`vftable' @ 0x595B98
 
     // 0x539B20 | ??0agiRasterizer@@QAE@PAVagiPipeline@@@Z
-    inline agiRasterizer(class agiPipeline* arg1)
-        : agiRefreshable(arg1)
-    {
-        // stub<member_func_t<void, agiRasterizer, class agiPipeline*>>(0x539B20, this, arg1);
-
-        unimplemented();
-    }
+    agiRasterizer(class agiPipeline* pipe);
 
     // 0x539C50 | ??1agiRasterizer@@UAE@XZ
-    inline ~agiRasterizer() override = 0
-    {
-        // stub<member_func_t<void, agiRasterizer>>(0x539C50, this);
-
-        unimplemented();
-    }
+    ~agiRasterizer() override = default;
 
     // 0x539C60 | ?BeginGroup@agiRasterizer@@UAEXXZ
     virtual inline void BeginGroup()
@@ -148,16 +137,77 @@ public:
 
 check_size(agiRasterizer, 0x18);
 
+class agiTexDef;
+
 struct agiRendStateStruct
 {
 public:
-    char m_Data[0x3C];
+    uint32_t dword0;
+    agiTexDef* CurrentTexture;
+    uint32_t dword8;
+    uint8_t BlendMode;
+    uint8_t ShadeModel;
+    uint8_t PolyMode;
+    uint8_t TexFilter;
+    uint8_t byte10;
+    uint8_t CullMode;
+    uint8_t byte12;
+    uint8_t byte13;
+    uint8_t PerspectiveCorrection;
+    uint8_t AlphaMode;
+    uint8_t byte16;
+    uint8_t byte17;
+    uint8_t DepthTest;
+    uint8_t DepthMask;
+    uint8_t byte1A;
+    uint8_t byte1B;
+    uint8_t byte1C;
+    uint8_t byte1D;
+    uint8_t byte1E;
+    uint8_t byte1F;
+    float float20;
+    float float24;
+    float float28;
+    uint8_t byte2C;
+    uint8_t byte2D;
+    uint8_t byte2E;
+    uint8_t byte2F;
+    uint8_t byte30;
+    uint8_t byte31;
+    uint8_t byte32;
+    uint8_t byte33;
+    float float34;
+    uint32_t dword38;
+
+    agiRendStateStruct();
 
     // 0x539C20 | ?Reset@agiRendStateStruct@@QAEXXZ
-    inline void Reset()
-    {
-        return stub<member_func_t<void, agiRendStateStruct>>(0x539C20, this);
-    }
+    void Reset();
 };
 
 check_size(agiRendStateStruct, 0x3C);
+
+class agiRendState
+{
+public:
+    uint32_t m_Touched {0};
+    agiRendStateStruct m_State {};
+
+#define X(NAME, TYPE, MEMBER)                  \
+    inline void Set##NAME(TYPE value) noexcept \
+    {                                          \
+        if (m_State.MEMBER != value)           \
+        {                                      \
+            m_State.MEMBER = value;            \
+            m_Touched = 1;                     \
+        }                                      \
+    }
+
+    X(PerspectiveCorrection, uint8_t, PerspectiveCorrection);
+    X(BlendMode, uint8_t, BlendMode);
+    X(DepthMask, uint8_t, DepthMask);
+
+#undef X
+};
+
+check_size(agiRendState, 0x40);

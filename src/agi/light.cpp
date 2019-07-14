@@ -17,3 +17,7 @@
 */
 
 #include "light.h"
+
+agiLight::agiLight(class agiPipeline* pipe)
+    : agiRefreshable(pipe)
+{}

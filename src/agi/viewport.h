@@ -44,68 +44,46 @@
 
 #include "hooking.h"
 
-class agiViewport : agiRefreshable
-{
-public:
-    // agiViewport::`vftable' @ 0x595B70
-
-    // 0x539970 | ?Aspect@agiViewport@@QAEMXZ
-    inline float Aspect()
-    {
-        return stub<member_func_t<float, agiViewport>>(0x539970, this);
-    }
-
-    // 0x5399E0 | ??0agiViewport@@IAE@PAVagiPipeline@@@Z
-    inline agiViewport(class agiPipeline* arg1)
-    {
-        // stub<member_func_t<void, agiViewport, class agiPipeline*>>(0x5399E0, this, arg1);
-
-        unimplemented();
-    }
-
-    // 0x706538 | ?Active@agiViewport@@1PAV1@A
-    static inline extern_var(0x706538, class agiViewport*, Active);
-
-    // 0x539AD0 | ?GetName@agiViewport@@UAEPADXZ
-    inline char* GetName() override
-    {
-        return stub<member_func_t<char*, agiViewport>>(0x539AD0, this);
-    }
-
-    // 0x539A40 | ??1agiViewport@@MAE@XZ
-    inline ~agiViewport() override = 0
-    {
-        // stub<member_func_t<void, agiViewport>>(0x539A40, this);
-
-        unimplemented();
-    }
-
-    // 0x567350 | __purecall
-    virtual inline void Activate() = 0;
-
-    // 0x567350 | __purecall
-    virtual inline void SetBackground(class Vector3& arg1) = 0;
-
-    // 0x567350 | __purecall
-    virtual inline void Clear(int32_t arg1) = 0;
-
-    // 0x5399A0 | ?SetWorld@agiViewport@@UAEXAAVMatrix34@@@Z
-    virtual inline void SetWorld(class Matrix34& arg1)
-    {
-        return stub<member_func_t<void, agiViewport, class Matrix34&>>(0x5399A0, this, arg1);
-    }
-};
+#include "refresh.h"
+#include "vector7/matrix34.h"
 
 class agiViewParameters
 {
 public:
-    // 0x5392D0 | ??0agiViewParameters@@QAE@XZ
-    inline agiViewParameters()
-    {
-        // stub<member_func_t<void, agiViewParameters>>(0x5392D0, this);
+    float m_X {0.0f};
+    float m_Y {0.0f};
+    float m_Width {1.0f};
+    float m_Height {1.0f};
+    float m_float10 {0.0f};
+    float m_float14 {0.0f};
+    float m_float18 {0.0f};
+    float m_float1C {0.0f};
+    float m_float20 {0.0f};
+    float m_float24 {0.0f};
+    float m_float28 {0.0f};
+    float m_float2C {0.0f};
+    float m_float30 {0.0f};
+    float m_float34 {0.0f};
+    float m_float38 {0.0f};
+    float m_float3C {0.0f};
+    float m_float40 {0.0f};
+    Matrix34 m_matrix3444 {};
+    Matrix34 m_matrix3474 {};
+    Matrix34 m_matrix34A4 {};
+    Matrix34 m_matrix34D4 {};
+    float m_float104 {0.0f};
+    float m_float108 {0.0f};
+    float m_float10C {0.0f};
+    float m_float110 {0.0f};
+    float m_float114 {0.0f};
+    float m_float118 {0.0f};
+    float m_float11C {0.0f};
+    float m_float120 {0.0f};
+    float m_float124 {0.0f};
+    float m_float128 {0.0f};
 
-        unimplemented();
-    }
+    // 0x5392D0 | ??0agiViewParameters@@QAE@XZ
+    agiViewParameters();
 
     // 0x539340 | ?Perspective@agiViewParameters@@QAEXMMMM@Z
     inline void Perspective(float arg1, float arg2, float arg3, float arg4)
@@ -158,3 +136,52 @@ public:
     // 0x706534 | ?MtxSerial@agiViewParameters@@2IA
     static inline extern_var(0x706534, uint32_t, MtxSerial);
 };
+
+check_size(agiViewParameters, 0x12C);
+
+class agiViewport : public agiRefreshable
+{
+public:
+    agiViewParameters m_Parameters;
+    uint32_t m_dword144;
+
+    // agiViewport::`vftable' @ 0x595B70
+
+    // 0x539970 | ?Aspect@agiViewport@@QAEMXZ
+    inline float Aspect()
+    {
+        return stub<member_func_t<float, agiViewport>>(0x539970, this);
+    }
+
+    // 0x5399E0 | ??0agiViewport@@IAE@PAVagiPipeline@@@Z
+    agiViewport(class agiPipeline* pipe);
+
+    // 0x706538 | ?Active@agiViewport@@1PAV1@A
+    static inline extern_var(0x706538, class agiViewport*, Active);
+
+    // 0x539AD0 | ?GetName@agiViewport@@UAEPADXZ
+    inline char* GetName() override
+    {
+        return stub<member_func_t<char*, agiViewport>>(0x539AD0, this);
+    }
+
+    // 0x539A40 | ??1agiViewport@@MAE@XZ
+    ~agiViewport() override;
+
+    // 0x567350 | __purecall
+    virtual inline void Activate() = 0;
+
+    // 0x567350 | __purecall
+    virtual inline void SetBackground(class Vector3& arg1) = 0;
+
+    // 0x567350 | __purecall
+    virtual inline void Clear(int32_t arg1) = 0;
+
+    // 0x5399A0 | ?SetWorld@agiViewport@@UAEXAAVMatrix34@@@Z
+    virtual inline void SetWorld(class Matrix34& arg1)
+    {
+        return stub<member_func_t<void, agiViewport, class Matrix34&>>(0x5399A0, this, arg1);
+    }
+};
+
+check_size(agiViewport, 0x148);

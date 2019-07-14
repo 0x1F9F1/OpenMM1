@@ -17,3 +17,20 @@
 */
 
 #include "error.h"
+
+#include "data7/printer.h"
+
+#include <stdarg.h>
+
+void agiDisplayf(const char* format, ...)
+{
+    va_list va;
+    va_start(va, format);
+
+    if (agiVerbose)
+    {
+        Printer(0, format, va);
+    }
+
+    va_end(va);
+}

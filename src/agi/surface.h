@@ -105,15 +105,108 @@ inline void copyrow4444_to_5551(void* arg1, void* arg2, uint32_t arg3, uint32_t 
     return stub<cdecl_t<void, void*, void*, uint32_t, uint32_t>>(0x53D800, arg1, arg2, arg3, arg4);
 }
 
-class agiSurfaceDesc
+struct agiColorKey // DDCOLORKEY
+{
+    uint32_t dwColorSpaceLowValue;
+    uint32_t dwColorSpaceHighValue;
+};
+
+struct agiDDSCAPS2 // DDSCAPS2
+{
+    uint32_t dwCaps;
+    uint32_t dwCaps2;
+    uint32_t dwCaps3;
+    uint32_t dwCaps4;
+};
+
+struct agiPixelFormat // DDPIXELFORMAT
+{
+    uint32_t dwSize;
+    uint32_t dwFlags;
+    uint32_t dwFourCC;
+    union
+    {
+        uint32_t dwRGBBitCount;
+        uint32_t dwYUVBitCount;
+        uint32_t dwZBufferBitDepth;
+        uint32_t dwAlphaBitDepth;
+        uint32_t dwLuminanceBitCount;
+        uint32_t dwBumpBitCount;
+    };
+    union
+    {
+        uint32_t dwRBitMask;
+        uint32_t dwYBitMask;
+        uint32_t dwStencilBitDepth;
+        uint32_t dwLuminanceBitMask;
+        uint32_t dwBumpDuBitMask;
+    };
+    union
+    {
+        uint32_t dwGBitMask;
+        uint32_t dwUBitMask;
+        uint32_t dwZBitMask;
+        uint32_t dwBumpDvBitMask;
+    };
+    union
+    {
+        uint32_t dwBBitMask;
+        uint32_t dwVBitMask;
+        uint32_t dwStencilBitMask;
+        uint32_t dwBumpLuminanceBitMask;
+    };
+    union
+    {
+        uint32_t dwRGBAlphaBitMask;
+        uint32_t dwYUVAlphaBitMask;
+        uint32_t dwLuminanceAlphaBitMask;
+        uint32_t dwRGBZBitMask;
+        uint32_t dwYUVZBitMask;
+    };
+};
+
+class agiSurfaceDesc // DDSURFACEDESC2
 {
 public:
-    // 0x53C760 | ?Init@agiSurfaceDesc@@SAPAV1@HHAAV1@@Z
-    static inline class agiSurfaceDesc* Init(int32_t arg1, int32_t arg2, class agiSurfaceDesc& arg3)
+    uint32_t dwSize;
+    uint32_t dwFlags;
+    uint32_t dwHeight;
+    uint32_t dwWidth;
+    union
     {
-        return stub<cdecl_t<class agiSurfaceDesc*, int32_t, int32_t, class agiSurfaceDesc&>>(
-            0x53C760, arg1, arg2, arg3);
-    }
+        int32_t lPitch;
+        uint32_t dwLinearSize;
+    };
+    uint32_t dwBackBufferCount;
+    union
+    {
+        uint32_t dwMipMapCount;
+        uint32_t dwRefreshRate;
+        uint32_t dwSrcVBHandle;
+    };
+    uint32_t dwAlphaBitDepth;
+    uint32_t dwReserved;
+    void* lpSurface;
+    union
+    {
+        agiColorKey ddckCKDestOverlay;
+        uint32_t dwEmptyFaceColor;
+    };
+    agiColorKey ddckCKDestBlt;
+    agiColorKey ddckCKSrcOverlay;
+    agiColorKey ddckCKSrcBlt;
+    union
+    {
+        agiPixelFormat ddpfPixelFormat;
+        uint32_t dwFVF;
+    };
+    agiDDSCAPS2 ddsCaps;
+    uint32_t dwTextureStage;
+
+    agiSurfaceDesc();
+
+    // 0x53C760 | ?Init@agiSurfaceDesc@@SAPAV1@HHAAV1@@Z
+    static class agiSurfaceDesc* Init(int32_t width, int32_t height, class agiSurfaceDesc& desc);
 
     // 0x53C7E0 | ?Load@agiSurfaceDesc@@SAPAV1@PAD0HHHH@Z
     static inline class agiSurfaceDesc* Load(
@@ -133,10 +226,7 @@ public:
     }
 
     // 0x53D080 | ?Unload@agiSurfaceDesc@@QAEXXZ
-    inline void Unload()
-    {
-        return stub<member_func_t<void, agiSurfaceDesc>>(0x53D080, this);
-    }
+    void Unload();
 
     // 0x53D0A0 | ?CopyFrom@agiSurfaceDesc@@QAEXPAV1@H@Z
     inline void CopyFrom(class agiSurfaceDesc* arg1, int32_t arg2)
@@ -144,3 +234,5 @@ public:
         return stub<member_func_t<void, agiSurfaceDesc, class agiSurfaceDesc*, int32_t>>(0x53D0A0, this, arg1, arg2);
     }
 };
+
+check_size(agiSurfaceDesc, 0x7C);

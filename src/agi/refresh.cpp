@@ -17,3 +17,32 @@
 */
 
 #include "refresh.h"
+
+#include "pipeline.h"
+
+#include "data7/printer.h"
+#include "data7/quitf.h"
+
+agiRefreshable::agiRefreshable(class agiPipeline* pipe)
+    : m_pPipeline(pipe)
+{
+    pipe->NotifyNew(this);
+}
+
+agiRefreshable::~agiRefreshable()
+{
+    if (m_ErrorCode)
+    {
+        Quitf("agiRefreshable subclass didn't clean up");
+    }
+
+    if (m_RefCount)
+    {
+        Errorf("agiRefreshable subclass deleted instead of Release'd?");
+    }
+
+    if (m_pPipeline)
+    {
+        m_pPipeline->NotifyDelete(this);
+    }
+}

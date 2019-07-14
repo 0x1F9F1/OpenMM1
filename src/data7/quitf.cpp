@@ -18,8 +18,8 @@
 
 #include "quitf.h"
 
+#include "minwin.h"
 #include "printer.h"
-
 #include <stdarg.h>
 
 // 0x5588F0 | ?Quitf@@YAXPBDZZ
@@ -27,7 +27,17 @@
 {
     va_list va;
     va_start(va, format);
-    Printer(3, format, va);
+
+    if (IsDebuggerPresent())
+    {
+        Printer(2, format, va);
+        __debugbreak();
+    }
+    else
+    {
+        Printer(3, format, va);
+    }
+
     va_end(va);
 
     exit(1);

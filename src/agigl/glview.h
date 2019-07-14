@@ -16,31 +16,18 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "surface.h"
+#pragma once
 
-agiSurfaceDesc::agiSurfaceDesc()
+#include "agi/viewport.h"
+
+class agiGLViewport : public agiViewport
 {
-    memset(this, 0, sizeof(*this));
-}
+public:
+    agiGLViewport(class agiPipeline* pipe);
 
-agiSurfaceDesc* agiSurfaceDesc::Init(int32_t width, int32_t height, agiSurfaceDesc& desc)
-{
-    uint32_t bytes_per_pixel = desc.ddpfPixelFormat.dwRGBBitCount >> 3;
-
-    agiSurfaceDesc* sd = new agiSurfaceDesc(desc);
-
-    sd->dwFlags = 6;
-    sd->dwWidth = width;
-    sd->dwHeight = height;
-    sd->lPitch = width * bytes_per_pixel;
-
-    sd->lpSurface = new uint8_t[width * height * bytes_per_pixel]();
-
-    return sd;
-}
-
-void agiSurfaceDesc::Unload()
-{
-    delete[] static_cast<uint8_t*>(lpSurface);
-    lpSurface = nullptr;
-}
+    virtual void EndGfx() override;
+    virtual int32_t BeginGfx() override;
+    virtual void Activate() override;
+    virtual void SetBackground(Vector3& color) override;
+    virtual void Clear(int32_t arg1) override;
+};

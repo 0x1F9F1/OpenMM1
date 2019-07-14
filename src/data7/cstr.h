@@ -77,7 +77,22 @@ struct cstring_t
         m_pData = StringDuplicate(value);
     }
 
+    inline operator char*() noexcept
+    {
+        return m_pData;
+    }
+
+    inline char* get() noexcept
+    {
+        return m_pData;
+    }
+
     inline operator const char*() const noexcept
+    {
+        return m_pData;
+    }
+
+    inline const char* get() const noexcept
     {
         return m_pData;
     }
