@@ -39,8 +39,8 @@ add_library(hooking STATIC
 target_link_libraries(hooking mem)
 
 add_library(midtown STATIC
-    test.cpp
-    test.h
+    midtown.cpp
+    midtown.h
 
     $<TARGET_OBJECTS:agi>
     # $<TARGET_OBJECTS:agid3d>
@@ -74,4 +74,8 @@ add_library(midtown STATIC
     $<TARGET_OBJECTS:vector7>
 )
 
-target_link_libraries(midtown hooking)
+target_link_libraries(midtown
+    hooking
+    ${DPLAY_LIBRARY}
+    ${SDL2_LIBRARIES}
+)
