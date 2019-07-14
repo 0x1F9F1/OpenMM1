@@ -37,6 +37,7 @@
 #include "hooking.h"
 
 #include "refresh.h"
+#include "data7/cstr.h"
 
 // 0x5C3610 | ?BitmapSearchPath@@3PADA
 inline extern_var(0x5C3610, char*, BitmapSearchPath);
