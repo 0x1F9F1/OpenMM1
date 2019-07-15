@@ -20,6 +20,11 @@
 
 #include "data7/printer.h"
 
+agiPixelFormat::agiPixelFormat()
+{
+    memset(this, 0, sizeof(*this));
+}
+
 agiSurfaceDesc::agiSurfaceDesc()
 {
     memset(this, 0, sizeof(*this));
@@ -47,4 +52,7 @@ void agiSurfaceDesc::Unload()
     lpSurface = nullptr;
 }
 
-run_once([] { auto_hook(0x53C760, agiSurfaceDesc::Init); });
+run_once([] {
+    auto_hook(0x53C760, agiSurfaceDesc::Init);
+    create_patch("agiSurfaceDesc::CopyFrom", "Fix Input Pitch Calculation", 0x53D0AE, "\x8b\x4f\x54", 3);
+});

@@ -110,6 +110,10 @@ class agiTexParameters
 {
 public:
     char m_Name[32];
+
+    // 0x1 | Alpha
+    // 0x2 | Wrap X
+    // 0x4 | Wrap Y
     uint8_t m_Flags;
     uint8_t m_LOD;
     uint8_t m_MaxLOD;

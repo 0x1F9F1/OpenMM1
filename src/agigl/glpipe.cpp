@@ -118,6 +118,7 @@ int32_t agiGLPipeline::BeginGfx()
 #endif
 
     PIXELFORMATDESCRIPTOR pfd;
+    memset(&pfd, 0, sizeof(pfd));
     pfd.nSize = sizeof(pfd);
     pfd.nVersion = 1;
     pfd.dwFlags = 0x25;
@@ -245,9 +246,8 @@ void agiGLPipeline::CopyBitmap(
 
         Assert(surface->ddpfPixelFormat.dwRGBAlphaBitMask == 0xFF000000);
 
-        //Assert(src_x == 0 && src_y == 0);
-        //Assert(width == surface->dwWidth);
-        //Assert(height == surface->dwHeight);
+        Assert(image->m_Width == surface->dwWidth);
+        Assert(image->m_Height == surface->dwHeight);
 
         if (!width)
             width = image->m_Width;
@@ -255,7 +255,6 @@ void agiGLPipeline::CopyBitmap(
         if (!height)
             height = image->m_Height;
 
-        //upload to GPU texture
         GLuint tex;
         glGenTextures(1, &tex);
         glBindTexture(GL_TEXTURE_2D, tex);
@@ -285,16 +284,25 @@ void agiGLPipeline::CopyBitmap(
 
         dst_y = CurrentPipe->m_Height - dst_y;
 
-        glTexCoord2i(0, 0);
+        // Texture Coords
+        // 0,0 --- 1,1
+        //  |       |
+        //  |       |
+        // 0,1 --- 1,1
+
+        float fWidth = float(image->m_Width);
+        float fHeight = float(image->m_Height);
+
+        glTexCoord2f(src_x / fWidth, src_y / fHeight);
         glVertex2i(dst_x, dst_y);
 
-        glTexCoord2i(0, 1);
+        glTexCoord2f(src_x / fWidth, (src_y + height) / fHeight);
         glVertex2i(dst_x, dst_y - height);
 
-        glTexCoord2i(1, 1);
+        glTexCoord2f((src_x + width) / fWidth, (src_y + height) / fHeight);
         glVertex2i(dst_x + width, dst_y - height);
 
-        glTexCoord2i(1, 0);
+        glTexCoord2f((src_x + width) / fWidth, src_y / fHeight);
         glVertex2i(dst_x + width, dst_y);
 
         glEnd();

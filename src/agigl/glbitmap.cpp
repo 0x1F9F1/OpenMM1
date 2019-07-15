@@ -54,7 +54,7 @@ int32_t agiGLBitmap::BeginGfx()
         uint32_t* pixels = static_cast<uint32_t*>(m_pSurface->lpSurface);
         uint32_t pending = m_pSurface->dwHeight * m_pSurface->dwWidth;
 
-        while (--pending)
+        while (pending--)
         {
             if (*pixels)
                 *pixels |= 0xFF000000;

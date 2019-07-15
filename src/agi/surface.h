@@ -163,6 +163,8 @@ struct agiPixelFormat // DDPIXELFORMAT
         uint32_t dwRGBZBitMask;
         uint32_t dwYUVZBitMask;
     };
+
+    agiPixelFormat();
 };
 
 class agiSurfaceDesc // DDSURFACEDESC2
