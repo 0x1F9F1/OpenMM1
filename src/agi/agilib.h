@@ -19,6 +19,7 @@
 #pragma once
 
 #include "data7/hash.h"
+#include "hooking.h"
 
 constexpr size_t agiLibMax = 2048;
 
@@ -37,6 +38,9 @@ struct agiLib
     int32_t m_Count {0};
 
     ~agiLib();
+
+    uint32_t GetIndex(const char* key);
+    void Remove(uint32_t index);
 };
 
 template <typename Params, typename Defs>
@@ -46,5 +50,24 @@ inline agiLib<Params, Defs>::~agiLib()
     {
         delete m_Params[m_Count];
         m_Defs[m_Count]->Release();
+    }
+}
+
+template <typename Params, typename Defs>
+inline uint32_t agiLib<Params, Defs>::GetIndex(const char* key)
+{
+    char upper_key[128];
+    strcpy_s(upper_key, key);
+    _strupr_s(upper_key, 128);
+
+    return reinterpret_cast<uint32_t>(m_LookupTable.Access(upper_key));
+}
+
+template <typename Params, typename Defs>
+inline void agiLib<Params, Defs>::Remove(uint32_t index)
+{
+    if (index)
+    {
+        m_Params[index - 1] = 0;
     }
 }

@@ -28,13 +28,11 @@ agiGLViewport::agiGLViewport(agiPipeline* pipe)
 {}
 
 void agiGLViewport::EndGfx()
-{
-    unimplemented();
-}
+{}
 
 int32_t agiGLViewport::BeginGfx()
 {
-    unimplemented();
+    return 0;
 }
 
 void agiGLViewport::Activate()

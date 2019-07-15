@@ -20,6 +20,9 @@
 
 #include "setupdata.h"
 
+void dxiConfig(int32_t /*argc*/, char** /*argv*/)
+{}
+
 int32_t __stdcall ModeCallback(DDSURFACEDESC2* sd, void* context)
 {
     dxiRendererInfo_t* info = static_cast<dxiRendererInfo_t*>(context);
@@ -42,4 +45,7 @@ int32_t __stdcall ModeCallback(DDSURFACEDESC2* sd, void* context)
 
 define_dummy_symbol(dxsetup);
 
-run_once([] { auto_hook(0x5578F0, ModeCallback); });
+run_once([] {
+    auto_hook(0x5578F0, ModeCallback);
+    auto_hook(0x556DF0, dxiConfig);
+});

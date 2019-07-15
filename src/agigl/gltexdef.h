@@ -16,25 +16,24 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "dxinit.h"
-#include "data7/printer.h"
+#pragma once
 
-#include "minwin.h"
+#include "agi/texdef.h"
 
-int32_t dxiChangeDisplaySettings(int32_t /*width*/, int32_t /*height*/, int32_t /*bpp*/)
+class Vector2;
+
+class agiGLTexDef : public agiTexDef
 {
-    return 0;
-}
+public:
+    uint32_t m_Texture {0};
 
-void dxiInit(char* window_name, int32_t argc, char** argv)
-{
-    dxiWindowCreate(window_name);
-    dxiDirectInputCreate();
-}
+    agiGLTexDef(agiPipeline* pipe);
 
-define_dummy_symbol(dxinit);
+    void EndGfx() override;
 
-run_once([] {
-    auto_hook(0x5557B0, dxiChangeDisplaySettings);
-    auto_hook(0x5560A0, dxiInit);
-});
+    ~agiGLTexDef() override = default;
+
+    int32_t BeginGfx() override;
+
+    void Set(Vector2& arg1, Vector2& arg2) override;
+};

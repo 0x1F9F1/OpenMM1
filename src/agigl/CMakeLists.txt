@@ -7,6 +7,8 @@ add_library(agigl OBJECT
     glview.h
     glbitmap.cpp
     glbitmap.h
+    gltexdef.cpp
+    gltexdef.h
 )
 
 target_link_libraries(agigl hooking)

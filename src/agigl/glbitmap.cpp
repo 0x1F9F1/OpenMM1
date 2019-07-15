@@ -20,6 +20,7 @@
 
 #include "agi/pipeline.h"
 #include "agi/surface.h"
+#include "data7/assert.h"
 
 agiGLBitmap::agiGLBitmap(agiPipeline* pipe)
     : agiBitmap(pipe)
@@ -44,11 +45,12 @@ int32_t agiGLBitmap::BeginGfx()
         m_pSurfaceDesc->Reload(m_Name, "bmp16", 0, 0, 0, 0, 0);
 
     m_pSurface = agiSurfaceDesc::Init(m_Width, m_Height, m_pPipeline->m_SurfaceDesc2);
-
     m_pSurface->CopyFrom(m_pSurfaceDesc, 0);
 
     if (m_Transparency & 1)
     {
+        Assert(m_pSurface->ddpfPixelFormat.dwRGBAlphaBitMask == 0xFF000000);
+
         uint32_t* pixels = static_cast<uint32_t*>(m_pSurface->lpSurface);
         uint32_t pending = m_pSurface->dwHeight * m_pSurface->dwWidth;
 

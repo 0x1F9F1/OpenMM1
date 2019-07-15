@@ -56,31 +56,91 @@
 
 #include "hooking.h"
 
+#include "arts7/node.h"
+
 // 0x4F0250 | ?ddGDIFlip@@YAXXZ
 inline void ddGDIFlip()
 {
     return stub<cdecl_t<void>>(0x4F0250);
 }
 
-class mmTextNode : asNode
+class agiBitmap;
+
+struct mmTextData
+{
+    uint32_t m_X {0};
+    uint32_t m_Y {0};
+    uint32_t m_Effects {0};
+    void* m_Handle {nullptr};
+    char m_Text[256] {};
+};
+
+check_size(mmTextData, 0x110);
+
+struct mmText
 {
 public:
+    uint8_t m_byte0 {1};
+    uint8_t m_byte1 {0};
+
+    // 0x4F0260 | ??0mmText@@QAE@XZ
+    inline mmText() = default;
+
+    // 0x4F0270 | ??1mmText@@QAE@XZ
+    inline ~mmText() = default;
+
+    // 0x4F0280 | ?CreateLocFont@mmText@@SAPAXPAULocString@@H@Z
+    static void* CreateLocFont(struct LocString* arg1, int32_t arg2);
+
+    // 0x4F0350 | ?CreateFont@mmText@@SAPAXPADH@Z
+    static void* CreateFont(char* arg1, int32_t arg2);
+
+    // 0x4F0380 | ?DeleteFont@mmText@@SAXPAX@Z
+    static void DeleteFont(void* arg1);
+
+    // 0x4F0390 | ?GetDC@mmText@@SAPAXPAVagiSurfaceDesc@@@Z
+    static void* GetDC(class agiSurfaceDesc* arg1);
+
+    // 0x4F0430 | ?ReleaseDC@mmText@@SAXXZ
+    static void ReleaseDC();
+
+    // 0x4F04E0 | ?CreateFitBitmap@mmText@@SAPAVagiBitmap@@PADPAXHH@Z
+    static class agiBitmap* CreateFitBitmap(char* arg1, void* arg2, int32_t arg3, int32_t arg4);
+
+    // 0x4F0700 | ?Draw@mmText@@QAEXPAVagiSurfaceDesc@@MMPADPAX@Z
+    void Draw(class agiSurfaceDesc* arg1, float arg2, float arg3, char* arg4, void* arg5);
+
+    // 0x4F0790 | ?Draw2@mmText@@QAEXPAVagiSurfaceDesc@@MMPADPAXI@Z
+    void Draw2(class agiSurfaceDesc* arg1, float arg2, float arg3, char* arg4, void* arg5, uint32_t arg6);
+};
+
+check_size(mmText, 2);
+
+class mmTextNode : public asNode
+{
+public:
+    float m_X {0.0f};
+    float m_Y {0.0f};
+    int32_t m_Count {0};
+    int32_t m_Max {0};
+    int32_t m_dword2C {-1};
+    mmText m_text30 {0};
+    mmTextData* m_Text {nullptr};
+    agiBitmap* m_Bitmap {nullptr};
+    uint32_t m_HasText {1};
+    uint32_t m_dword40 {0};
+    uint32_t m_dword44 {0};
+    uint32_t m_dword48 {0xFFFFFF};
+    uint32_t m_dword4C {0};
+    uint32_t m_dword50 {0};
+
     // mmTextNode::`vftable' @ 0x594FE8
 
     // 0x4F0880 | ??0mmTextNode@@QAE@XZ
-    inline mmTextNode()
-    {
-        // stub<member_func_t<void, mmTextNode>>(0x4F0880, this);
-
-        unimplemented();
-    }
+    inline mmTextNode() = default;
 
     // 0x4F0970 | ?Init@mmTextNode@@QAEXMMMMHH@Z
-    inline void Init(float arg1, float arg2, float arg3, float arg4, int32_t arg5, int32_t arg6)
-    {
-        return stub<member_func_t<void, mmTextNode, float, float, float, float, int32_t, int32_t>>(
-            0x4F0970, this, arg1, arg2, arg3, arg4, arg5, arg6);
-    }
+    void Init(float arg1, float arg2, float arg3, float arg4, int32_t arg5, int32_t arg6);
 
     // 0x4F0AC0 | ?SetBGColor@mmTextNode@@QAEXAAVVector4@@@Z
     inline void SetBGColor(class Vector4& arg1)
@@ -161,12 +221,7 @@ public:
     }
 
     // 0x4F0900 | ??1mmTextNode@@UAE@XZ
-    inline ~mmTextNode() override = 0
-    {
-        // stub<member_func_t<void, mmTextNode>>(0x4F0900, this);
-
-        unimplemented();
-    }
+    ~mmTextNode() override;
 
     // 0x4F1300 | ?Cull@mmTextNode@@UAEXXZ
     inline void Cull() override
@@ -181,70 +236,4 @@ public:
     }
 };
 
-struct mmText
-{
-public:
-    // 0x4F0260 | ??0mmText@@QAE@XZ
-    inline mmText()
-    {
-        // stub<member_func_t<void, mmText>>(0x4F0260, this);
-
-        unimplemented();
-    }
-
-    // 0x4F0270 | ??1mmText@@QAE@XZ
-    inline ~mmText()
-    {
-        stub<member_func_t<void, mmText>>(0x4F0270, this);
-    }
-
-    // 0x4F0280 | ?CreateLocFont@mmText@@SAPAXPAULocString@@H@Z
-    static inline void* CreateLocFont(struct LocString* arg1, int32_t arg2)
-    {
-        return stub<cdecl_t<void*, struct LocString*, int32_t>>(0x4F0280, arg1, arg2);
-    }
-
-    // 0x4F0350 | ?CreateFont@mmText@@SAPAXPADH@Z
-    static inline void* CreateFont(char* arg1, int32_t arg2)
-    {
-        return stub<cdecl_t<void*, char*, int32_t>>(0x4F0350, arg1, arg2);
-    }
-
-    // 0x4F0380 | ?DeleteFont@mmText@@SAXPAX@Z
-    static inline void DeleteFont(void* arg1)
-    {
-        return stub<cdecl_t<void, void*>>(0x4F0380, arg1);
-    }
-
-    // 0x4F0390 | ?GetDC@mmText@@SAPAXPAVagiSurfaceDesc@@@Z
-    static inline void* GetDC(class agiSurfaceDesc* arg1)
-    {
-        return stub<cdecl_t<void*, class agiSurfaceDesc*>>(0x4F0390, arg1);
-    }
-
-    // 0x4F0430 | ?ReleaseDC@mmText@@SAXXZ
-    static inline void ReleaseDC()
-    {
-        return stub<cdecl_t<void>>(0x4F0430);
-    }
-
-    // 0x4F04E0 | ?CreateFitBitmap@mmText@@SAPAVagiBitmap@@PADPAXHH@Z
-    static inline class agiBitmap* CreateFitBitmap(char* arg1, void* arg2, int32_t arg3, int32_t arg4)
-    {
-        return stub<cdecl_t<class agiBitmap*, char*, void*, int32_t, int32_t>>(0x4F04E0, arg1, arg2, arg3, arg4);
-    }
-
-    // 0x4F0700 | ?Draw@mmText@@QAEXPAVagiSurfaceDesc@@MMPADPAX@Z
-    inline void Draw(class agiSurfaceDesc* arg1, float arg2, float arg3, char* arg4, void* arg5)
-    {
-        return stub<member_func_t<void, mmText, class agiSurfaceDesc*, float, float, char*, void*>>(
-            0x4F0700, this, arg1, arg2, arg3, arg4, arg5);
-    }
-
-    // 0x4F0790 | ?Draw2@mmText@@QAEXPAVagiSurfaceDesc@@MMPADPAXI@Z
-    inline void Draw2(class agiSurfaceDesc* arg1, float arg2, float arg3, char* arg4, void* arg5, uint32_t arg6)
-    {
-        return stub<member_func_t<void, mmText, class agiSurfaceDesc*, float, float, char*, void*, uint32_t>>(
-            0x4F0790, this, arg1, arg2, arg3, arg4, arg5, arg6);
-    }
-};
+check_size(mmTextNode, 0x54);

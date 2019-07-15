@@ -32,3 +32,19 @@ inline extern_var(0x711B08, class ipcMessageQueue, PAGER);
 
 // 0x711B30 | ?EnablePaging@@3HA
 inline extern_var(0x711B30, int32_t, EnablePaging);
+
+struct PagerInfo_t
+{
+public:
+    void* m_PagerHandle {nullptr};
+    uint32_t m_Offset {0};
+    uint32_t m_Size {0};
+
+    // 0x542150 | ?Read@PagerInfo_t@@QAEXPAXII@Z
+    inline void Read(void* arg1, uint32_t arg2, uint32_t arg3)
+    {
+        return stub<member_func_t<void, PagerInfo_t, void*, uint32_t, uint32_t>>(0x542150, this, arg1, arg2, arg3);
+    }
+};
+
+check_size(PagerInfo_t, 12);

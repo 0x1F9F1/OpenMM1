@@ -64,8 +64,6 @@ inline extern_var(0x70F010, char*, HierAllowPath);
 // 0x70F014 | ?LogOpenOn@@3HA
 inline extern_var(0x70F014, int32_t, LogOpenOn);
 
-check_size(PagerInfo_t, 12);
-
 class HierFileSystem : FileSystem
 {
 public:

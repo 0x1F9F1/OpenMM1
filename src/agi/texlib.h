@@ -27,5 +27,10 @@
 
 #include "hooking.h"
 
+#include "agilib.h"
+
+class agiTexParameters;
+class agiTexDef;
+
 // 0x706668 | ?agiTexLib@@3V?$agiLib@VagiTexParameters@@VagiTexDef@@@@A
-inline extern_var(0x706668, class agiLib<class agiTexParameters, class agiTexDef>, agiTexLib);
+inline extern_var(0x706668, Ty(agiLib<agiTexParameters, agiTexDef>), agiTexLib);

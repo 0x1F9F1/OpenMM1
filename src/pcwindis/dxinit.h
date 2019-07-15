@@ -110,10 +110,7 @@ inline void dxiMemoryFree(struct IDirectDrawSurface4* arg1)
 }
 
 // 0x5560A0 | ?dxiInit@@YAXPADHPAPAD@Z
-inline void dxiInit(char* arg1, int32_t arg2, char** arg3)
-{
-    return stub<cdecl_t<void, char*, int32_t, char**>>(0x5560A0, arg1, arg2, arg3);
-}
+void dxiInit(char* window_name, int32_t argc, char** argv);
 
 // 0x556140 | ?dxiScreenShot@@YAXPAD@Z
 inline void dxiScreenShot(char* arg1)

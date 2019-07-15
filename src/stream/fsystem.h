@@ -88,20 +88,6 @@ inline void ExpandEnvs(char* arg1)
     return stub<cdecl_t<void, char*>>(0x5417A0, arg1);
 }
 
-struct PagerInfo_t
-{
-public:
-    void* m_PagerHandle {nullptr};
-    uint32_t m_Offset {0};
-    uint32_t m_Size {0};
-
-    // 0x542150 | ?Read@PagerInfo_t@@QAEXPAXII@Z
-    inline void Read(void* arg1, uint32_t arg2, uint32_t arg3)
-    {
-        return stub<member_func_t<void, PagerInfo_t, void*, uint32_t, uint32_t>>(0x542150, this, arg1, arg2, arg3);
-    }
-};
-
 class FileSystem : Base
 {
 public:

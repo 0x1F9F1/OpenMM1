@@ -19,6 +19,7 @@
 #include "glpipe.h"
 
 #include "agi/cmodel.h"
+#include "data7/assert.h"
 #include "data7/printer.h"
 
 #include <GL/glew.h>
@@ -27,6 +28,7 @@
 
 #include "glbitmap.h"
 #include "glrsys.h"
+#include "gltexdef.h"
 #include "glview.h"
 
 void PrintGlErrors()
@@ -196,7 +198,7 @@ void agiGLPipeline::EndFrame()
 
 agiTexDef* agiGLPipeline::CreateTexDef()
 {
-    unimplemented();
+    return new agiGLTexDef(this);
 }
 
 agiTexLut* agiGLPipeline::CreateTexLut()
@@ -239,52 +241,71 @@ void agiGLPipeline::CopyBitmap(
 {
     if (image && image->m_pSurfaceDesc)
     {
+        agiSurfaceDesc* surface = static_cast<agiGLBitmap*>(image)->m_pSurface;
+
+        Assert(surface->ddpfPixelFormat.dwRGBAlphaBitMask == 0xFF000000);
+
+        //Assert(src_x == 0 && src_y == 0);
+        //Assert(width == surface->dwWidth);
+        //Assert(height == surface->dwHeight);
+
         if (!width)
             width = image->m_Width;
 
         if (!height)
             height = image->m_Height;
 
-        glRasterPos2i(dst_x, CurrentPipe->m_Height - dst_y);
+        //upload to GPU texture
+        GLuint tex;
+        glGenTextures(1, &tex);
+        glBindTexture(GL_TEXTURE_2D, tex);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image->m_Width, image->m_Height, 0, GL_RGBA, GL_UNSIGNED_BYTE,
+            surface->lpSurface);
+        glBindTexture(GL_TEXTURE_2D, 0);
 
-        GLboolean valid_pos = GL_FALSE;
-        glGetBooleanv(GL_CURRENT_RASTER_POSITION_VALID, &valid_pos);
+        glDisable(GL_ALPHA_TEST);
+        glDisable(GL_DEPTH_TEST);
+        glDisable(GL_BLEND);
 
-        if (valid_pos)
+        if (image->m_Transparency & 1)
         {
-            glDisable(GL_ALPHA_TEST);
-            glDisable(GL_DEPTH_TEST);
-            glDisable(GL_TEXTURE_2D);
-            glDisable(GL_DEPTH_TEST);
-
-            if (image->m_Transparency & 1)
-            {
-                glEnable(GL_BLEND);
-                glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-            }
-            else
-            {
-                glDisable(GL_BLEND);
-            }
-
-            glPixelStorei(GL_UNPACK_ROW_LENGTH, image->m_Width);
-            glPixelStorei(GL_UNPACK_SKIP_ROWS, image->m_Height - src_y - height);
-            glPixelStorei(GL_UNPACK_SKIP_PIXELS, src_x);
-            glPixelZoom(1.0, -1.0); // TODO: Should be -1.0?
-
-            glDrawPixels(
-                width, height, GL_RGBA, GL_UNSIGNED_BYTE, static_cast<agiGLBitmap*>(image)->m_pSurface->lpSurface);
-
-            glPixelZoom(1.0, 1.0);
-            glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
-            glPixelStorei(GL_UNPACK_SKIP_ROWS, 0);
-            glPixelStorei(GL_UNPACK_SKIP_PIXELS, 0);
-
-            glEnable(GL_DEPTH_TEST);
             glEnable(GL_BLEND);
-            glEnable(GL_ALPHA_TEST);
-            glEnable(GL_DEPTH_TEST);
+            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         }
+        else
+        {
+            glDisable(GL_BLEND);
+        }
+
+        glBindTexture(GL_TEXTURE_2D, tex);
+        glEnable(GL_TEXTURE_2D);
+        glBegin(GL_QUADS);
+
+        dst_y = CurrentPipe->m_Height - dst_y;
+
+        glTexCoord2i(0, 0);
+        glVertex2i(dst_x, dst_y);
+
+        glTexCoord2i(0, 1);
+        glVertex2i(dst_x, dst_y - height);
+
+        glTexCoord2i(1, 1);
+        glVertex2i(dst_x + width, dst_y - height);
+
+        glTexCoord2i(1, 0);
+        glVertex2i(dst_x + width, dst_y);
+
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, 0);
+
+        glEnable(GL_BLEND);
+        glEnable(GL_ALPHA_TEST);
+        glEnable(GL_DEPTH_TEST);
+
+        glDeleteTextures(1, &tex);
     }
 }
 

@@ -66,6 +66,10 @@
 
 #include "hooking.h"
 
+#include "data7/cstr.h"
+#include "data7/pager.h"
+#include "refresh.h"
+
 // 0x538720 | ?UpdateLutQueue@@YAXXZ
 inline void UpdateLutQueue()
 {
@@ -105,13 +109,16 @@ inline extern_var(0x7024B8, int32_t, TexsPaged);
 class agiTexParameters
 {
 public:
-    // 0x538380 | ??0agiTexParameters@@QAE@XZ
-    inline agiTexParameters()
-    {
-        // stub<member_func_t<void, agiTexParameters>>(0x538380, this);
+    char m_Name[32];
+    uint8_t m_Flags;
+    uint8_t m_LOD;
+    uint8_t m_MaxLOD;
+    uint32_t m_Flags1;
+    uint32_t m_dword28;
+    uint32_t m_dword2C;
 
-        unimplemented();
-    }
+    // 0x538380 | ??0agiTexParameters@@QAE@XZ
+    agiTexParameters();
 
     // 0x5383A0 | ?Load@agiTexParameters@@QAEXPAVStream@@@Z
     inline void Load(class Stream* arg1)
@@ -124,11 +131,21 @@ public:
     {
         return stub<member_func_t<void, agiTexParameters, class Stream*>>(0x5383F0, this, arg1);
     }
+
+    const char* GetKey() const
+    {
+        return m_Name;
+    }
 };
 
-class agiTexLut : agiRefreshable
+check_size(agiTexParameters, 0x30);
+
+class agiTexLut : public agiRefreshable
 {
 public:
+    uint32_t m_Palette[256] {};
+    cstring_t m_Name {};
+
     // agiTexLut::`vftable' @ 0x595B38
 
     // 0x538A80 | ?Init@agiTexLut@@QAEHPAD@Z
@@ -138,12 +155,7 @@ public:
     }
 
     // 0x538B70 | ??0agiTexLut@@IAE@PAVagiPipeline@@@Z
-    inline agiTexLut(class agiPipeline* arg1)
-    {
-        // stub<member_func_t<void, agiTexLut, class agiPipeline*>>(0x538B70, this, arg1);
-
-        unimplemented();
-    }
+    agiTexLut(class agiPipeline* pipe);
 
     // 0x538B50 | ?GetName@agiTexLut@@UAEPADXZ
     inline char* GetName() override
@@ -152,26 +164,31 @@ public:
     }
 
     // 0x538BA0 | ??1agiTexLut@@MAE@XZ
-    inline ~agiTexLut() override = 0
-    {
-        // stub<member_func_t<void, agiTexLut>>(0x538BA0, this);
-
-        unimplemented();
-    }
+    ~agiTexLut() override = default;
 };
 
-class agiTexDef : agiRefreshable
+check_size(agiTexLut, 0x41C);
+
+class agiSurfaceDesc;
+class agiPolySet;
+
+class agiTexDef : public agiRefreshable
 {
 public:
+    agiSurfaceDesc* m_pTextureData {nullptr};
+    agiTexParameters m_Params {};
+    agiPolySet* m_pPolySet {nullptr};
+    uint32_t m_dword50 {0};
+    uint32_t m_dword54 {0};
+    uint32_t m_dword58 {0};
+    PagerInfo_t m_PagerInfo {};
+    uint32_t m_CacheHandle {0};
+    uint32_t m_State {0};
+
     // agiTexDef::`vftable' @ 0x595B08
 
     // 0x538440 | ??0agiTexDef@@IAE@PAVagiPipeline@@@Z
-    inline agiTexDef(class agiPipeline* arg1)
-    {
-        // stub<member_func_t<void, agiTexDef, class agiPipeline*>>(0x538440, this, arg1);
-
-        unimplemented();
-    }
+    agiTexDef(class agiPipeline* pipe);
 
     // 0x538570 | ?CheckSurface@agiTexDef@@QAEXXZ
     inline void CheckSurface()
@@ -240,12 +257,7 @@ public:
     }
 
     // 0x5384B0 | ??1agiTexDef@@MAE@XZ
-    inline ~agiTexDef() override = 0
-    {
-        // stub<member_func_t<void, agiTexDef>>(0x5384B0, this);
-
-        unimplemented();
-    }
+    ~agiTexDef() override;
 
     // 0x5386B0 | ?IsTexture@agiTexDef@@UAEHXZ
     inline int32_t IsTexture() override

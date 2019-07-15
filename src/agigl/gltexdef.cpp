@@ -16,25 +16,25 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "dxinit.h"
-#include "data7/printer.h"
+#include "gltexdef.h"
 
-#include "minwin.h"
+#include "vector7/vector2.h"
 
-int32_t dxiChangeDisplaySettings(int32_t /*width*/, int32_t /*height*/, int32_t /*bpp*/)
+agiGLTexDef::agiGLTexDef(agiPipeline* pipe)
+    : agiTexDef(pipe)
+{}
+
+void agiGLTexDef::EndGfx()
 {
-    return 0;
+    unimplemented();
 }
 
-void dxiInit(char* window_name, int32_t argc, char** argv)
+int32_t agiGLTexDef::BeginGfx()
 {
-    dxiWindowCreate(window_name);
-    dxiDirectInputCreate();
+    unimplemented();
 }
 
-define_dummy_symbol(dxinit);
-
-run_once([] {
-    auto_hook(0x5557B0, dxiChangeDisplaySettings);
-    auto_hook(0x5560A0, dxiInit);
-});
+void agiGLTexDef::Set(Vector2& arg1, Vector2& arg2)
+{
+    arg1 = arg2;
+}

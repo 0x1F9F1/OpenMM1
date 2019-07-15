@@ -39,8 +39,8 @@ add_library(agi OBJECT
     rsys.h
     surface.cpp
     surface.h
-    # texdef.cpp
-    # texdef.h
+    texdef.cpp
+    texdef.h
     # texlib.cpp
     # texlib.h
     viewport.cpp

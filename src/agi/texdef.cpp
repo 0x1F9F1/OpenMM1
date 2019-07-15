@@ -17,3 +17,29 @@
 */
 
 #include "texdef.h"
+#include "texlib.h"
+
+agiTexParameters::agiTexParameters()
+{
+    memset(this, 0, sizeof(*this));
+}
+
+agiTexLut::agiTexLut(agiPipeline* pipe)
+    : agiRefreshable(pipe)
+{}
+
+agiTexDef::agiTexDef(agiPipeline* pipe)
+    : agiRefreshable(pipe)
+{}
+
+agiTexDef::~agiTexDef()
+{
+    uint32_t index = agiTexLib.GetIndex(m_Params.m_Name);
+
+    if (m_Params.m_LOD)
+    {
+        index += m_Params.m_LOD - 1;
+    }
+
+    agiTexLib.Remove(index);
+}

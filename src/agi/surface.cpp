@@ -18,6 +18,8 @@
 
 #include "surface.h"
 
+#include "data7/printer.h"
+
 agiSurfaceDesc::agiSurfaceDesc()
 {
     memset(this, 0, sizeof(*this));
@@ -25,7 +27,7 @@ agiSurfaceDesc::agiSurfaceDesc()
 
 agiSurfaceDesc* agiSurfaceDesc::Init(int32_t width, int32_t height, agiSurfaceDesc& desc)
 {
-    uint32_t bytes_per_pixel = desc.ddpfPixelFormat.dwRGBBitCount >> 3;
+    uint32_t bytes_per_pixel = (desc.ddpfPixelFormat.dwRGBBitCount + 7) / 8;
 
     agiSurfaceDesc* sd = new agiSurfaceDesc(desc);
 
@@ -44,3 +46,5 @@ void agiSurfaceDesc::Unload()
     delete[] static_cast<uint8_t*>(lpSurface);
     lpSurface = nullptr;
 }
+
+run_once([] { auto_hook(0x53C760, agiSurfaceDesc::Init); });

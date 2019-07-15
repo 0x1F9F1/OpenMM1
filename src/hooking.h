@@ -31,6 +31,8 @@
 using namespace mem::conventions;
 using mem::stub;
 
+#define Ty(...) __VA_ARGS__
+
 enum class hook_type
 {
     jmp,

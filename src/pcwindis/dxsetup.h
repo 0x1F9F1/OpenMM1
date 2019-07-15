@@ -52,10 +52,7 @@ inline int32_t __stdcall MultiMonCallback(struct _GUID* arg1, char* arg2, char* 
 }
 
 // 0x556DF0 | ?dxiConfig@@YAXHPAPAD@Z
-inline void dxiConfig(int32_t arg1, char** arg2)
-{
-    return stub<cdecl_t<void, int32_t, char**>>(0x556DF0, arg1, arg2);
-}
+void dxiConfig(int32_t argc, char** argv);
 
 // 0x7119A0 | ?dxiCpuSpeed@@3HA
 inline extern_var(0x7119A0, int32_t, dxiCpuSpeed);

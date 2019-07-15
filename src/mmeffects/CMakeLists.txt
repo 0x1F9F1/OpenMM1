@@ -11,8 +11,8 @@ add_library(mmeffects OBJECT
     # meshform.h
     # mmnumber.cpp
     # mmnumber.h
-    # mmtext.cpp
-    # mmtext.h
+    mmtext.cpp
+    mmtext.h
     # mousesteerbar.cpp
     # mousesteerbar.h
     # ptx.cpp
