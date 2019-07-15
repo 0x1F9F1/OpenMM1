@@ -27,6 +27,16 @@
 
 #include "hooking.h"
 
+struct LocString
+{
+    char Data[512];
+
+    operator const char*() const noexcept
+    {
+        return Data;
+    }
+};
+
 // 0x50DFD0 | ?GetLocTime@@YAPADM@Z
 inline char* GetLocTime(float arg1)
 {

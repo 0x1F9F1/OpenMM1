@@ -29,8 +29,7 @@ class agiGLRasterizer;
 class agiGLPipeline : public agiPipeline
 {
 public:
-    HDC m_WindowDC {nullptr};
-    HGLRC m_GlContext {nullptr};
+    void* m_GL {nullptr};
     agiGLRasterizer* m_pRasterizer {nullptr};
 
     int32_t BeginGfx() override;

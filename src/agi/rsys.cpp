@@ -18,10 +18,27 @@
 
 #include "rsys.h"
 
+#include "pipeline.h"
+
 agiRasterizer::agiRasterizer(agiPipeline* pipe)
     : agiRefreshable(pipe)
 {
     agiLastState.Reset();
+
+    agiCurState.SetPolyMode(15);
+    agiCurState.SetByte12(4);
+    agiCurState.SetByte2F(0);
+    agiCurState.SetByte30(0);
+    agiCurState.SetCullMode(3);
+
+    if (pipe->m_dword2E4 & 4)
+    {
+        agiCurState.SetByte10(1);
+    }
+
+    agiCurState.SetByte33(0);
+
+    RAST = this;
 }
 
 agiRendStateStruct::agiRendStateStruct()

@@ -52,11 +52,14 @@
 
 #include "hooking.h"
 
+struct SDL_Window;
+struct SDL_Renderer;
+
+extern SDL_Window* s_SDLWindow;
+extern SDL_Renderer* s_SDLRenderer;
+
 // 0x5556D0 | ?dxiWindowCreate@@YAXPAD@Z
-inline void dxiWindowCreate(char* arg1)
-{
-    return stub<cdecl_t<void, char*>>(0x5556D0, arg1);
-}
+void dxiWindowCreate(char* window_name);
 
 // 0x5557B0 | ?dxiChangeDisplaySettings@@YAHHHH@Z
 int32_t dxiChangeDisplaySettings(int32_t width, int32_t height, int32_t bpp);
@@ -92,10 +95,7 @@ inline void dxiDirectInputCreate()
 }
 
 // 0x555D90 | ?dxiShutdown@@YAXXZ
-inline void dxiShutdown()
-{
-    return stub<cdecl_t<void>>(0x555D90);
-}
+void dxiShutdown();
 
 // 0x555E10 | ?dxiMemoryAllocate@@YAPAXPAPAUIDirectDrawSurface4@@I@Z
 inline void* dxiMemoryAllocate(struct IDirectDrawSurface4** arg1, uint32_t arg2)

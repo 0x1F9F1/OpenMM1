@@ -206,6 +206,13 @@ public:
     X(PerspectiveCorrection, uint8_t, PerspectiveCorrection);
     X(BlendMode, uint8_t, BlendMode);
     X(DepthMask, uint8_t, DepthMask);
+    X(Byte12, uint8_t, byte12);
+    X(Byte2F, uint8_t, byte2F);
+    X(Byte30, uint8_t, byte30);
+    X(Byte10, uint8_t, byte10);
+    X(Byte33, uint8_t, byte33);
+    X(PolyMode, uint8_t, PolyMode);
+    X(CullMode, uint8_t, CullMode);
 
 #undef X
 };

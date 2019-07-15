@@ -26,6 +26,9 @@
 
 #include "pcwindis/dxinit.h"
 
+#include <SDL_video.h>
+#include <SDL_opengl.h>
+
 #include "glbitmap.h"
 #include "glrsys.h"
 #include "gltexdef.h"
@@ -107,44 +110,18 @@ int32_t agiGLPipeline::BeginGfx()
 
     m_SurfaceDesc = m_SurfaceDesc2 = m_SurfaceDesc3 = sd;
 
-#if 0
     HDC hdc = GetDC(GetDesktopWindow());
     m_HorzRes = GetDeviceCaps(hdc, HORZRES);
     m_VertRes = GetDeviceCaps(hdc, VERTRES);
     ReleaseDC(GetDesktopWindow(), hdc);
-#else
-    m_HorzRes = m_Width;
-    m_VertRes = m_Height;
-#endif
 
-    PIXELFORMATDESCRIPTOR pfd;
-    memset(&pfd, 0, sizeof(pfd));
-    pfd.nSize = sizeof(pfd);
-    pfd.nVersion = 1;
-    pfd.dwFlags = 0x25;
-    pfd.cColorBits = 32;
-    pfd.cDepthBits = 16;
+    SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
 
-    m_WindowDC = GetDC(hwndMain);
-
-    int format = ChoosePixelFormat(m_WindowDC, &pfd);
-    SetPixelFormat(m_WindowDC, format, &pfd);
-
-    int total_formats = DescribePixelFormat(m_WindowDC, format, 0, 0);
-
-    Displayf("%d pixel formats... (we picked #%d)", total_formats, format);
-
-    for (int i = 1; i < total_formats; ++i)
-    {
-        DescribePixelFormat(m_WindowDC, i, sizeof(pfd), &pfd);
-
-        Displayf("%d. Flags %x [%s] colorbits=%d depthbits=%d", i, pfd.dwFlags, PixelFormatFlagsToString(pfd.dwFlags),
-            pfd.cColorBits, pfd.cDepthBits);
-    }
-
-    m_GlContext = wglCreateContext(m_WindowDC);
-
-    wglMakeCurrent(m_WindowDC, m_GlContext);
+    m_GL = SDL_GL_CreateContext(s_SDLWindow);
 
     if (glewInit() != GLEW_OK)
     {
@@ -185,14 +162,16 @@ void agiGLPipeline::BeginFrame()
 {
     agiPipeline::BeginFrame();
 
-    wglMakeCurrent(m_WindowDC, m_GlContext);
+    SDL_GL_MakeCurrent(s_SDLWindow, m_GL);
+
     PrintGlErrors();
 }
 
 void agiGLPipeline::EndFrame()
 {
     PrintGlErrors();
-    SwapBuffers(m_WindowDC);
+
+    SDL_GL_SwapWindow(s_SDLWindow);
 
     agiPipeline::EndFrame();
 }

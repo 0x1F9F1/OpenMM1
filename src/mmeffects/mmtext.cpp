@@ -21,8 +21,18 @@
 #include "agi/bitmap.h"
 #include "agi/pipeline.h"
 
+#include "data7/assert.h"
+#include "data7/printer.h"
+
+#include "pcwindis/dxinit.h"
+
+#include <SDL_ttf.h>
+#include <SDL_filesystem.h>
+
 void mmTextNode::Init(float arg1, float arg2, float arg3, float arg4, int32_t arg5, int32_t arg6)
 {
+    Assert(TTF_Init() == 0);
+
     m_Count = 0;
     m_Max = arg5;
     m_Text = new mmTextData[m_Max];
@@ -47,16 +57,29 @@ mmTextNode::~mmTextNode()
 
 void* mmText::CreateLocFont(LocString* arg1, int32_t arg2)
 {
-    return nullptr;
+    char buffer[1024];
+
+    sprintf_s(buffer, "%s%s", SDL_GetBasePath(), "GILI____.TTF");
+
+    // Gill Sans MT, 16, 16, 0, 400
+    TTF_Font* result = TTF_OpenFont(buffer, 16);
+
+    Displayf("Loc Font: %s, %p", arg1, (void*) result);
+
+    return result;
 }
 
 void* mmText::CreateFont(char* arg1, int32_t arg2)
 {
+    Displayf("Font: %s", arg1);
+
     return nullptr;
 }
 
 void mmText::DeleteFont(void* arg1)
-{}
+{
+    TTF_CloseFont(static_cast<TTF_Font*>(arg1));
+}
 
 void* mmText::GetDC(agiSurfaceDesc* arg1)
 {
@@ -66,7 +89,7 @@ void* mmText::GetDC(agiSurfaceDesc* arg1)
 void mmText::ReleaseDC()
 {}
 
-agiBitmap* mmText::CreateFitBitmap(char* arg1, void* arg2, int32_t arg3, int32_t arg4)
+agiBitmap* mmText::CreateFitBitmap(char* text, void* font, int32_t fg_color, int32_t shadow_color)
 {
     agiBitmap* result = agiPipeline::CurrentPipe->CreateBitmap();
 
@@ -81,10 +104,14 @@ agiBitmap* mmText::CreateFitBitmap(char* arg1, void* arg2, int32_t arg3, int32_t
 }
 
 void mmText::Draw(agiSurfaceDesc* arg1, float arg2, float arg3, char* arg4, void* arg5)
-{}
+{
+    unimplemented();
+}
 
 void mmText::Draw2(agiSurfaceDesc* arg1, float arg2, float arg3, char* arg4, void* arg5, uint32_t arg6)
-{}
+{
+    unimplemented();
+}
 
 define_dummy_symbol(mmtext);
 
