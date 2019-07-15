@@ -18,6 +18,7 @@ add_compile_options(/MP /arch:SSE2)
 add_subdirectory(vendor EXCLUDE_FROM_ALL)
 
 add_compile_options(/W4)
+add_link_options(/IGNORE:4099 /NODEFAULTLIB:LIBCMT)
 
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} /DEBUG /OPT:REF")
 
@@ -46,7 +47,7 @@ endif()
 
 if(MM1_GAME_DIRECTORY)
     set_target_properties(OpenMM1 PROPERTIES
-        VS_DEBUGGER_COMMAND "${MM1_GAME_DIRECTORY}/midtown.exe"
+        VS_DEBUGGER_COMMAND "${MM1_GAME_DIRECTORY}/midtown1.exe"
         VS_DEBUGGER_WORKING_DIRECTORY "${MM1_GAME_DIRECTORY}"
     )
 

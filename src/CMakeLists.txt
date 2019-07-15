@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 
+add_definitions(-DGLEW_STATIC)
+include_directories(${GLEW_INCLUDE_DIRS} ${SDL2_INCLUDE_DIRS})
+
 add_subdirectory(agi)
 add_subdirectory(agid3d)
 # add_subdirectory(agisw)
@@ -79,4 +82,4 @@ add_library(midtown STATIC
 )
 
 target_link_libraries(midtown hooking
-    opengl32 glu32 ${GLEW_LIBRARIES})
+    opengl32 glu32 ${GLEW_LIBRARIES} ${SDL2_LIBRARIES})

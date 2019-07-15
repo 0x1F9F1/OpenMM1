@@ -48,27 +48,27 @@ char* PixelFormatFlagsToString(uint32_t flags)
 {
     PixelFormatFlagsBuffer[0] = 0;
 
-    if (flags & 4)
+    if (flags & PFD_DRAW_TO_WINDOW)
         strcat_s(PixelFormatFlagsBuffer, "PFD_DRAW_TO_WINDOW ");
-    if (flags & 8)
+    if (flags & PFD_DRAW_TO_BITMAP)
         strcat_s(PixelFormatFlagsBuffer, "PFD_DRAW_TO_BITMAP ");
-    if (flags & 0x10)
+    if (flags & PFD_SUPPORT_GDI)
         strcat_s(PixelFormatFlagsBuffer, "PFD_SUPPORT_GDI ");
-    if (flags & 0x20)
+    if (flags & PFD_SUPPORT_OPENGL)
         strcat_s(PixelFormatFlagsBuffer, "PFD_SUPPORT_OPENGL ");
-    if (flags & 0x1000)
+    if (flags & PFD_GENERIC_ACCELERATED)
         strcat_s(PixelFormatFlagsBuffer, "PFD_GENERIC_ACCELERATED ");
-    if (flags & 0x40)
+    if (flags & PFD_GENERIC_FORMAT)
         strcat_s(PixelFormatFlagsBuffer, "PFD_GENERIC_FORMAT ");
-    if (flags & 0x80)
+    if (flags & PFD_NEED_PALETTE)
         strcat_s(PixelFormatFlagsBuffer, "PFD_NEED_PALETTE ");
-    if (flags & 0x100)
+    if (flags & PFD_NEED_SYSTEM_PALETTE)
         strcat_s(PixelFormatFlagsBuffer, "PFD_NEED_SYSTEM_PALETTE ");
-    if (flags & 1)
+    if (flags & PFD_DOUBLEBUFFER)
         strcat_s(PixelFormatFlagsBuffer, "PFD_DOUBLEBUFFER ");
-    if (flags & 2)
+    if (flags & PFD_STEREO)
         strcat_s(PixelFormatFlagsBuffer, "PFD_STEREO ");
-    if (flags & 0x800)
+    if (flags & PFD_SWAP_LAYER_BUFFERS)
         strcat_s(PixelFormatFlagsBuffer, "PFD_SWAP_LAYER_BUFFERS ");
 
     return PixelFormatFlagsBuffer;
@@ -142,6 +142,11 @@ int32_t agiGLPipeline::BeginGfx()
     m_GlContext = wglCreateContext(m_WindowDC);
 
     wglMakeCurrent(m_WindowDC, m_GlContext);
+
+    if (glewInit() != GLEW_OK)
+    {
+        Quitf("GLEW Initialization Failed");
+    }
 
     glDisable(GL_CULL_FACE);
     glEnable(GL_COLOR_MATERIAL);

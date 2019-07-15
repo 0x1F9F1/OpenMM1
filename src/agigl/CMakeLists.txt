@@ -10,6 +10,3 @@ add_library(agigl OBJECT
 )
 
 target_link_libraries(agigl hooking)
-
-target_include_directories(agigl PRIVATE
-    ${GLEW_INCLUDE_DIRS})
