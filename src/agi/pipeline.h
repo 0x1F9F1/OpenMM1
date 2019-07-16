@@ -161,7 +161,7 @@ public:
     agiRefreshable* m_pRefreshables {nullptr};
     uint32_t m_dword2E0 {0};
     uint32_t m_dword2E4 {0};
-    uint32_t m_dword2E8 {0};
+    uint32_t m_InScene {0};
     uint32_t m_SceneCount {0};
 
     // agiPipeline::`vftable' @ 0x595A98

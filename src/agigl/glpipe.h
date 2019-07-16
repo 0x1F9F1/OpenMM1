@@ -36,6 +36,8 @@ public:
     void EndGfx() override;
 
     void BeginFrame() override;
+    void BeginScene() override;
+    void EndScene() override;
     void EndFrame() override;
 
     class agiTexDef* CreateTexDef() override;

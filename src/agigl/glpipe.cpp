@@ -31,8 +31,8 @@
 #include "glbitmap.h"
 #include "glrsys.h"
 #include "gltexdef.h"
-#include "glview.h"
 #include "glutils.h"
+#include "glview.h"
 
 agiPipeline* glCreatePipeline(int32_t /*argc*/, char** /*argv*/)
 {
@@ -122,6 +122,19 @@ void agiGLPipeline::BeginFrame()
     SDL_GL_MakeCurrent(s_Window, m_GL);
 
     PrintGlErrors();
+}
+
+void agiGLPipeline::BeginScene()
+{
+    agiPipeline::BeginScene();
+    m_InScene = 1;
+}
+
+void agiGLPipeline::EndScene()
+{
+    m_InScene = 0;
+
+    agiPipeline::EndScene();
 }
 
 void agiGLPipeline::EndFrame()
@@ -255,12 +268,11 @@ void agiGLPipeline::CopyBitmap(
 
 void agiGLPipeline::ClearAll(int32_t /*arg1*/)
 {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT);
 }
 
 void agiGLPipeline::ClearRect(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, uint32_t arg5)
-{
-}
+{}
 
 void agiGLPipeline::Print(int32_t arg1, int32_t arg2, int32_t arg3, char const* arg4)
 {

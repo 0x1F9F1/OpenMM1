@@ -19,9 +19,9 @@
 #include "glrsys.h"
 
 #include "agi/pipeline.h"
+#include "data7/printer.h"
 #include "gltexdef.h"
 #include "glutils.h"
-#include "data7/printer.h"
 
 #include <GL/glew.h>
 
@@ -76,8 +76,6 @@ void agiGLRasterizer::EndGroup()
 
 void agiGLRasterizer::Verts(agiVtxType type, agiVtx* verts, int32_t count)
 {
-    Displayf("Verts: %i, %i", VtxCount, VtxIndexCount);
-
     if (VtxIndexCount || agiCurState.IsTouched())
         FlushState();
 
@@ -99,8 +97,6 @@ void agiGLRasterizer::SetVertCount(int32_t arg1)
 
 void agiGLRasterizer::Triangle(int32_t a, int32_t b, int32_t c)
 {
-    Displayf("Triangle: %i, %i, %i", a, b, c);
-
     if (VtxIndexCount > 1020 || UseTriangles != 1 || agiCurState.IsTouched())
     {
         FlushState();
@@ -113,9 +109,17 @@ void agiGLRasterizer::Triangle(int32_t a, int32_t b, int32_t c)
     VtxIndexCount += 3;
 }
 
-void agiGLRasterizer::Line(int32_t arg1, int32_t arg2)
+void agiGLRasterizer::Line(int32_t a, int32_t b)
 {
-    unimplemented(arg1, arg2);
+    if (VtxIndexCount > 1020 || UseTriangles || agiCurState.IsTouched())
+    {
+        agiGLRasterizer::FlushState();
+        UseTriangles = 0;
+    }
+
+    VtxIndex[VtxIndexCount] = a;
+    VtxIndex[VtxIndexCount + 1] = b;
+    VtxIndexCount += 2;
 }
 
 void agiGLRasterizer::Card(int32_t arg1, int32_t arg2)
@@ -123,17 +127,23 @@ void agiGLRasterizer::Card(int32_t arg1, int32_t arg2)
     unimplemented(arg1, arg2);
 }
 
-void agiGLRasterizer::Mesh(agiVtxType arg1, agiVtx* arg2, int32_t arg3, uint16_t* arg4, int32_t arg5)
+void agiGLRasterizer::Mesh(agiVtxType arg1, agiVtx* verts, int32_t vtx_count, uint16_t* indices, int32_t index_count)
 {
-    unimplemented(arg1, arg2, arg3, arg4, arg5);
+    agiGLRasterizer::FlushState();
+    UseTriangles = 1;
+    VtxBase = verts;
+    VtxCount = vtx_count;
+    VtxIndex = indices;
+    VtxIndexCount = index_count;
+    agiGLRasterizer::FlushState();
 }
 
-int32_t GetBlendFuncS()
+int32_t GetBlendFuncD()
 {
     return GL_ONE_MINUS_SRC_ALPHA;
 }
 
-int32_t GetBlendFuncD()
+int32_t GetBlendFuncS()
 {
     return GL_SRC_ALPHA;
 }
