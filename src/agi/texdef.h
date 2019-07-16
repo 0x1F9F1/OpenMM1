@@ -187,7 +187,7 @@ public:
     uint32_t m_dword58 {0};
     PagerInfo_t m_PagerInfo {};
     uint32_t m_CacheHandle {0};
-    uint32_t m_State {0};
+    uint32_t m_State2 {0};
 
     // agiTexDef::`vftable' @ 0x595B08
 

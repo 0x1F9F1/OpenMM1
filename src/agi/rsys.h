@@ -146,7 +146,7 @@ public:
     agiTexDef* CurrentTexture;
     uint32_t dword8;
     uint8_t BlendMode;
-    uint8_t ShadeModel;
+    uint8_t ShaderModel;
     uint8_t PolyMode;
     uint8_t TexFilter;
     uint8_t byte10;
@@ -194,6 +194,10 @@ public:
     agiRendStateStruct m_State {};
 
 #define X(NAME, TYPE, MEMBER)                  \
+    inline TYPE Get##NAME() noexcept           \
+    {                                          \
+        return m_State.MEMBER;                 \
+    }                                          \
     inline void Set##NAME(TYPE value) noexcept \
     {                                          \
         if (m_State.MEMBER != value)           \
@@ -213,8 +217,23 @@ public:
     X(Byte33, uint8_t, byte33);
     X(PolyMode, uint8_t, PolyMode);
     X(CullMode, uint8_t, CullMode);
+    X(Texture, agiTexDef*, CurrentTexture);
+    X(DepthTest, uint8_t, DepthTest);
+    X(TexFilter, uint8_t, TexFilter);
+    X(ShaderModel, uint8_t, ShaderModel);
+    X(AlphaMode, uint8_t, AlphaMode);
 
 #undef X
+
+    bool IsTouched()
+    {
+        return m_Touched != 0;
+    }
+
+    void ClearTouched()
+    {
+        m_Touched = 0;
+    }
 };
 
 check_size(agiRendState, 0x40);

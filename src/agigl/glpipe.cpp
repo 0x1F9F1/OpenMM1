@@ -32,51 +32,7 @@
 #include "glrsys.h"
 #include "gltexdef.h"
 #include "glview.h"
-
-void PrintGlErrors()
-{
-    while (true)
-    {
-        GLenum error = glGetError();
-
-        if (!error)
-            break;
-
-        Errorf("GL Error: %s", gluErrorString(error));
-    }
-}
-
-char PixelFormatFlagsBuffer[256];
-
-char* PixelFormatFlagsToString(uint32_t flags)
-{
-    PixelFormatFlagsBuffer[0] = 0;
-
-    if (flags & PFD_DRAW_TO_WINDOW)
-        strcat_s(PixelFormatFlagsBuffer, "PFD_DRAW_TO_WINDOW ");
-    if (flags & PFD_DRAW_TO_BITMAP)
-        strcat_s(PixelFormatFlagsBuffer, "PFD_DRAW_TO_BITMAP ");
-    if (flags & PFD_SUPPORT_GDI)
-        strcat_s(PixelFormatFlagsBuffer, "PFD_SUPPORT_GDI ");
-    if (flags & PFD_SUPPORT_OPENGL)
-        strcat_s(PixelFormatFlagsBuffer, "PFD_SUPPORT_OPENGL ");
-    if (flags & PFD_GENERIC_ACCELERATED)
-        strcat_s(PixelFormatFlagsBuffer, "PFD_GENERIC_ACCELERATED ");
-    if (flags & PFD_GENERIC_FORMAT)
-        strcat_s(PixelFormatFlagsBuffer, "PFD_GENERIC_FORMAT ");
-    if (flags & PFD_NEED_PALETTE)
-        strcat_s(PixelFormatFlagsBuffer, "PFD_NEED_PALETTE ");
-    if (flags & PFD_NEED_SYSTEM_PALETTE)
-        strcat_s(PixelFormatFlagsBuffer, "PFD_NEED_SYSTEM_PALETTE ");
-    if (flags & PFD_DOUBLEBUFFER)
-        strcat_s(PixelFormatFlagsBuffer, "PFD_DOUBLEBUFFER ");
-    if (flags & PFD_STEREO)
-        strcat_s(PixelFormatFlagsBuffer, "PFD_STEREO ");
-    if (flags & PFD_SWAP_LAYER_BUFFERS)
-        strcat_s(PixelFormatFlagsBuffer, "PFD_SWAP_LAYER_BUFFERS ");
-
-    return PixelFormatFlagsBuffer;
-}
+#include "glutils.h"
 
 agiPipeline* glCreatePipeline(int32_t /*argc*/, char** /*argv*/)
 {
@@ -154,7 +110,9 @@ int32_t agiGLPipeline::BeginGfx()
 
 void agiGLPipeline::EndGfx()
 {
-    unimplemented();
+    SDL_GL_DeleteContext(m_GL);
+
+    m_GL = nullptr;
 }
 
 void agiGLPipeline::BeginFrame()
@@ -297,12 +255,11 @@ void agiGLPipeline::CopyBitmap(
 
 void agiGLPipeline::ClearAll(int32_t /*arg1*/)
 {
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void agiGLPipeline::ClearRect(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, uint32_t arg5)
 {
-    unimplemented(arg1, arg2, arg3, arg4, arg5);
 }
 
 void agiGLPipeline::Print(int32_t arg1, int32_t arg2, int32_t arg3, char const* arg4)

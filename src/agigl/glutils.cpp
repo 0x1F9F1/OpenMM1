@@ -16,28 +16,21 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#pragma once
+#include "glutils.h"
 
-#include "agi/rsys.h"
+#include "data7/printer.h"
 
-class agiGLRasterizer : public agiRasterizer
+#include <GL/glew.h>
+
+void PrintGlErrors()
 {
-public:
-    agiGLRasterizer(agiPipeline* pipe);
+    while (true)
+    {
+        GLenum error = glGetError();
 
-    void EndGfx() override;
-    int32_t BeginGfx() override;
+        if (!error)
+            break;
 
-    void BeginGroup() override;
-    void EndGroup() override;
-
-    void Verts(agiVtxType arg1, agiVtx* arg2, int32_t arg3) override;
-    void Points(agiVtxType arg1, agiVtx* arg2, int32_t arg3) override;
-    void SetVertCount(int32_t arg1) override;
-    void Triangle(int32_t arg1, int32_t arg2, int32_t arg3) override;
-    void Line(int32_t arg1, int32_t arg2) override;
-    void Card(int32_t arg1, int32_t arg2) override;
-    void Mesh(agiVtxType arg1, agiVtx* arg2, int32_t arg3, uint16_t* arg4, int32_t arg5) override;
-
-    static void FlushState();
-};
+        Errorf("GL Error: %s", gluErrorString(error));
+    }
+}

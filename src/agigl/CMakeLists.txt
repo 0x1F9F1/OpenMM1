@@ -9,6 +9,8 @@ add_library(agigl OBJECT
     glbitmap.h
     gltexdef.cpp
     gltexdef.h
+    glutils.cpp
+    glutils.h
 )
 
 target_link_libraries(agigl hooking)

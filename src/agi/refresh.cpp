@@ -31,7 +31,7 @@ agiRefreshable::agiRefreshable(class agiPipeline* pipe)
 
 agiRefreshable::~agiRefreshable()
 {
-    if (m_ErrorCode)
+    if (m_State)
     {
         Quitf("agiRefreshable subclass didn't clean up");
     }
