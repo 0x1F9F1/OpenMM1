@@ -35,6 +35,7 @@ add_subdirectory(stream)
 add_subdirectory(vector7)
 
 add_subdirectory(agigl)
+add_subdirectory(agisdl)
 
 add_library(hooking STATIC
     hooking.cpp
@@ -79,7 +80,13 @@ add_library(midtown STATIC
     $<TARGET_OBJECTS:vector7>
 
     $<TARGET_OBJECTS:agigl>
+    $<TARGET_OBJECTS:agisdl>
 )
 
-target_link_libraries(midtown hooking
-    opengl32 glu32 ${GLEW_LIBRARIES} ${SDL2_LIBRARIES} ${SDL2_TTF_LIBRARIES})
+target_link_libraries(midtown
+    hooking
+    opengl32
+    glu32
+    ${SDL2_LIBRARIES}
+    ${SDL2_TTF_LIBRARIES}
+    ${GLEW_LIBRARIES})

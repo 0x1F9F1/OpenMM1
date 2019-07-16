@@ -24,10 +24,9 @@
 
 #include <GL/glew.h>
 
-#include "pcwindis/dxinit.h"
+#include "agisdl/sdlinit.h"
 
 #include <SDL_video.h>
-#include <SDL_opengl.h>
 
 #include "glbitmap.h"
 #include "glrsys.h"
@@ -121,7 +120,7 @@ int32_t agiGLPipeline::BeginGfx()
     SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
 
-    m_GL = SDL_GL_CreateContext(s_SDLWindow);
+    m_GL = SDL_GL_CreateContext(s_Window);
 
     if (glewInit() != GLEW_OK)
     {
@@ -162,7 +161,7 @@ void agiGLPipeline::BeginFrame()
 {
     agiPipeline::BeginFrame();
 
-    SDL_GL_MakeCurrent(s_SDLWindow, m_GL);
+    SDL_GL_MakeCurrent(s_Window, m_GL);
 
     PrintGlErrors();
 }
@@ -171,7 +170,7 @@ void agiGLPipeline::EndFrame()
 {
     PrintGlErrors();
 
-    SDL_GL_SwapWindow(s_SDLWindow);
+    SDL_GL_SwapWindow(s_Window);
 
     agiPipeline::EndFrame();
 }

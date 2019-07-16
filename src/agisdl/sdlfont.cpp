@@ -16,30 +16,36 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "dxinit.h"
+#include "sdlfont.h"
 
-#include "agisdl/sdlinit.h"
+#include "sdlinit.h"
 
-int32_t dxiChangeDisplaySettings(int32_t /*width*/, int32_t /*height*/, int32_t /*bpp*/)
+#include "data7/assert.h"
+#include "data7/printer.h"
+
+#include <SDL_filesystem.h>
+#include <SDL_ttf.h>
+
+void sdlFontInit()
 {
-    return 0;
+    Assert(TTF_Init() == 0);
 }
 
-void dxiInit(char* window_title, int32_t /*argc*/, char** /*argv*/)
+void sdlFontShutdown()
 {
-    sdlInit(window_title);
+    TTF_Quit();
 }
 
-void dxiShutdown()
+void* sdlLoadFont(const char* name, int ptsize)
 {
-    sdlShutdown();
+    char path[1024];
+
+    sprintf_s(path, "%s%s", SDL_GetBasePath(), "GILI____.TTF");
+
+    return TTF_OpenFont(path, ptsize);
 }
 
-define_dummy_symbol(dxinit);
-
-run_once([] {
-    auto_hook(0x5557B0, dxiChangeDisplaySettings);
-
-    auto_hook(0x5560A0, dxiInit);
-    auto_hook(0x555D90, dxiShutdown);
-});
+void sdlDeleteFont(void* font)
+{
+    TTF_CloseFont(static_cast<TTF_Font*>(font));
+}

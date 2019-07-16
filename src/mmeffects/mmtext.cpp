@@ -24,15 +24,10 @@
 #include "data7/assert.h"
 #include "data7/printer.h"
 
-#include "pcwindis/dxinit.h"
-
-#include <SDL_ttf.h>
-#include <SDL_filesystem.h>
+#include "agisdl/sdlfont.h"
 
 void mmTextNode::Init(float arg1, float arg2, float arg3, float arg4, int32_t arg5, int32_t arg6)
 {
-    Assert(TTF_Init() == 0);
-
     m_Count = 0;
     m_Max = arg5;
     m_Text = new mmTextData[m_Max];
@@ -57,14 +52,9 @@ mmTextNode::~mmTextNode()
 
 void* mmText::CreateLocFont(LocString* arg1, int32_t arg2)
 {
-    char buffer[1024];
+    void* result = sdlLoadFont("GILI____.TTF", 16);
 
-    sprintf_s(buffer, "%s%s", SDL_GetBasePath(), "GILI____.TTF");
-
-    // Gill Sans MT, 16, 16, 0, 400
-    TTF_Font* result = TTF_OpenFont(buffer, 16);
-
-    Displayf("Loc Font: %s, %p", arg1, (void*) result);
+    Displayf("Loc Font: %s, %p", arg1, result);
 
     return result;
 }
@@ -78,7 +68,7 @@ void* mmText::CreateFont(char* arg1, int32_t arg2)
 
 void mmText::DeleteFont(void* arg1)
 {
-    TTF_CloseFont(static_cast<TTF_Font*>(arg1));
+    sdlDeleteFont(arg1);
 }
 
 void* mmText::GetDC(agiSurfaceDesc* arg1)

@@ -16,30 +16,10 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "dxinit.h"
+#pragma once
 
-#include "agisdl/sdlinit.h"
+void sdlFontInit();
+void sdlFontShutdown();
 
-int32_t dxiChangeDisplaySettings(int32_t /*width*/, int32_t /*height*/, int32_t /*bpp*/)
-{
-    return 0;
-}
-
-void dxiInit(char* window_title, int32_t /*argc*/, char** /*argv*/)
-{
-    sdlInit(window_title);
-}
-
-void dxiShutdown()
-{
-    sdlShutdown();
-}
-
-define_dummy_symbol(dxinit);
-
-run_once([] {
-    auto_hook(0x5557B0, dxiChangeDisplaySettings);
-
-    auto_hook(0x5560A0, dxiInit);
-    auto_hook(0x555D90, dxiShutdown);
-});
+void* sdlLoadFont(const char* name, int ptsize);
+void sdlDeleteFont(void* font);
