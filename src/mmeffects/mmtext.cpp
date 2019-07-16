@@ -43,11 +43,6 @@ void mmTextNode::Init(float arg1, float arg2, float arg3, float arg4, int32_t ar
 mmTextNode::~mmTextNode()
 {
     delete[] m_Text;
-
-    if (m_Bitmap)
-    {
-        m_Bitmap->Release();
-    }
 }
 
 void* mmText::CreateLocFont(LocString* arg1, int32_t arg2)

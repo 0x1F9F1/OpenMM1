@@ -57,6 +57,7 @@
 #include "hooking.h"
 
 #include "arts7/node.h"
+#include "data7/ref.h"
 
 // 0x4F0250 | ?ddGDIFlip@@YAXXZ
 inline void ddGDIFlip()
@@ -126,7 +127,7 @@ public:
     int32_t m_dword2C {-1};
     mmText m_text30 {0};
     mmTextData* m_Text {nullptr};
-    agiBitmap* m_Bitmap {nullptr};
+    Ref<agiBitmap> m_Bitmap {};
     uint32_t m_HasText {1};
     uint32_t m_dword40 {0};
     uint32_t m_dword44 {0};
