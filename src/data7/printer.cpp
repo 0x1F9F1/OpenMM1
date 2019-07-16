@@ -87,6 +87,10 @@ void DefaultPrinter(int32_t level, const char* format, va_list args)
     {
         char buffer2[512];
         vsprintf_s(buffer2, format, args);
+
+        if (!strcmp(buffer2, "DirectInput problem, code = -2147024884(8007000c) [not acquired]"))
+            return;
+
         strcat_s(buffer, buffer2);
     }
 
