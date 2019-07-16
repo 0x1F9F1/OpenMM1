@@ -38,6 +38,9 @@ void agiGLTexDef::EndGfx()
 
         m_Texture = 0;
     }
+
+    m_State2 = 0;
+    m_State = 0;
 }
 
 int32_t agiGLTexDef::BeginGfx()

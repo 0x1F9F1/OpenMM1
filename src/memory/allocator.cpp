@@ -352,12 +352,12 @@ void asMemoryAllocator::CheckPointer(void* ptr)
 
 __declspec(noinline) void asMemoryAllocator::Free(void* ptr)
 {
-    if (!ptr)
+    if (!ptr || !m_Initialized)
     {
         return;
     }
 
-    Assert(m_Initialized && m_UseNodes);
+    Assert(m_UseNodes);
 
     Verify(ptr);
 
