@@ -86,6 +86,9 @@ void sdlInit(const char* window_title)
 {
     Assert(SDL_Init(SDL_INIT_EVERYTHING) == 0);
 
+    dxiWidth = 1920;
+    dxiHeight = 1080;
+
     sdlWindowCreate(window_title);
     sdlRendererCreate("opengl");
 

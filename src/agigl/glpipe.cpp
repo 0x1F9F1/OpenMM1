@@ -34,12 +34,14 @@
 #include "glutils.h"
 #include "glview.h"
 
+#include "pcwindis/dxinit.h"
+
 agiPipeline* glCreatePipeline(int32_t /*argc*/, char** /*argv*/)
 {
     agiGLPipeline* result = new agiGLPipeline();
 
-    result->m_Width = 640;
-    result->m_Height = 480;
+    result->m_Width = dxiWidth;
+    result->m_Height = dxiHeight;
     result->m_BitDepth = 32;
 
     return result;
