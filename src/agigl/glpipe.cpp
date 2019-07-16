@@ -76,6 +76,7 @@ int32_t agiGLPipeline::BeginGfx()
     SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
     SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
     SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
+
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
 
     m_GL = SDL_GL_CreateContext(s_Window);
@@ -215,6 +216,8 @@ void agiGLPipeline::CopyBitmap(
             surface->lpSurface);
         glBindTexture(GL_TEXTURE_2D, 0);
 
+        glColor3f(1.0, 1.0, 1.0);
+        glDisable(GL_CULL_FACE);
         glDisable(GL_ALPHA_TEST);
         glDisable(GL_DEPTH_TEST);
         glDisable(GL_BLEND);
@@ -261,8 +264,9 @@ void agiGLPipeline::CopyBitmap(
         glBindTexture(GL_TEXTURE_2D, 0);
 
         glEnable(GL_BLEND);
-        glEnable(GL_ALPHA_TEST);
         glEnable(GL_DEPTH_TEST);
+        glEnable(GL_ALPHA_TEST);
+        glEnable(GL_CULL_FACE);
 
         glDeleteTextures(1, &tex);
     }
@@ -273,8 +277,20 @@ void agiGLPipeline::ClearAll(int32_t /*arg1*/)
     glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void agiGLPipeline::ClearRect(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, uint32_t arg5)
-{}
+void agiGLPipeline::ClearRect(int32_t x, int32_t y, int32_t w, int32_t h, uint32_t color)
+{
+    y = CurrentPipe->m_Height - y;
+
+    glBegin(GL_QUADS);
+    glColor3ub(color, color >> 8, color >> 16);
+
+    glVertex2i(x, y);
+    glVertex2i(x, y - h);
+    glVertex2i(x + w, y - h);
+    glVertex2i(x + w, y);
+
+    glEnd();
+}
 
 void agiGLPipeline::Print(int32_t arg1, int32_t arg2, int32_t arg3, char const* arg4)
 {

@@ -53,7 +53,7 @@ int32_t agiGLTexDef::BeginGfx()
     }
 
     if (!m_pTextureData->lpSurface)
-        m_pTextureData->Reload(m_Params.m_Name, (char*) TexSearchPath, m_Params.m_LOD, m_dword58, 0, 0, 0);
+        m_pTextureData->Reload(m_Params.m_Name, TexSearchPath, m_Params.m_LOD, m_dword58, 0, 0, 0);
 
     PrintGlErrors();
 
