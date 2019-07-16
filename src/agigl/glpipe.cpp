@@ -135,6 +135,8 @@ void agiGLPipeline::BeginScene()
 
 void agiGLPipeline::EndScene()
 {
+    m_pRasterizer->EndGroup();
+
     m_InScene = 0;
 
     agiPipeline::EndScene();
@@ -192,89 +194,89 @@ agiBitmap* agiGLPipeline::CreateBitmap()
 void agiGLPipeline::CopyBitmap(
     int32_t dst_x, int32_t dst_y, agiBitmap* image, int32_t src_x, int32_t src_y, int32_t width, int32_t height)
 {
-    if (image && image->m_pSurfaceDesc)
+    if (!image || !image->m_pSurfaceDesc)
+        return;
+
+    agiSurfaceDesc* surface = static_cast<agiGLBitmap*>(image)->m_pSurface;
+
+    Assert(surface->ddpfPixelFormat.dwRGBAlphaBitMask == 0xFF000000);
+
+    Assert(image->m_Width == surface->dwWidth);
+    Assert(image->m_Height == surface->dwHeight);
+
+    if (!width)
+        width = image->m_Width;
+
+    if (!height)
+        height = image->m_Height;
+
+    GLuint tex;
+    glGenTextures(1, &tex);
+    glBindTexture(GL_TEXTURE_2D, tex);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    glTexImage2D(
+        GL_TEXTURE_2D, 0, GL_RGBA, image->m_Width, image->m_Height, 0, GL_RGBA, GL_UNSIGNED_BYTE, surface->lpSurface);
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    glColor3f(1.0, 1.0, 1.0);
+    glDisable(GL_CULL_FACE);
+    glDisable(GL_ALPHA_TEST);
+    glDisable(GL_DEPTH_TEST);
+    glDisable(GL_BLEND);
+
+    if (image->m_Transparency & 1)
     {
-        agiSurfaceDesc* surface = static_cast<agiGLBitmap*>(image)->m_pSurface;
-
-        Assert(surface->ddpfPixelFormat.dwRGBAlphaBitMask == 0xFF000000);
-
-        Assert(image->m_Width == surface->dwWidth);
-        Assert(image->m_Height == surface->dwHeight);
-
-        if (!width)
-            width = image->m_Width;
-
-        if (!height)
-            height = image->m_Height;
-
-        GLuint tex;
-        glGenTextures(1, &tex);
-        glBindTexture(GL_TEXTURE_2D, tex);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image->m_Width, image->m_Height, 0, GL_RGBA, GL_UNSIGNED_BYTE,
-            surface->lpSurface);
-        glBindTexture(GL_TEXTURE_2D, 0);
-
-        glColor3f(1.0, 1.0, 1.0);
-        glDisable(GL_CULL_FACE);
-        glDisable(GL_ALPHA_TEST);
-        glDisable(GL_DEPTH_TEST);
-        glDisable(GL_BLEND);
-
-        if (image->m_Transparency & 1)
-        {
-            glEnable(GL_BLEND);
-            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-        }
-        else
-        {
-            glDisable(GL_BLEND);
-        }
-
-        glBindTexture(GL_TEXTURE_2D, tex);
-        glEnable(GL_TEXTURE_2D);
-        glBegin(GL_QUADS);
-
-        dst_y = CurrentPipe->m_Height - dst_y;
-
-        // Texture Coords
-        // 0,0 --- 1,1
-        //  |       |
-        //  |       |
-        // 0,1 --- 1,1
-
-        float fWidth = float(image->m_Width);
-        float fHeight = float(image->m_Height);
-
-        glTexCoord2f(src_x / fWidth, src_y / fHeight);
-        glVertex2i(dst_x, dst_y);
-
-        glTexCoord2f(src_x / fWidth, (src_y + height) / fHeight);
-        glVertex2i(dst_x, dst_y - height);
-
-        glTexCoord2f((src_x + width) / fWidth, (src_y + height) / fHeight);
-        glVertex2i(dst_x + width, dst_y - height);
-
-        glTexCoord2f((src_x + width) / fWidth, src_y / fHeight);
-        glVertex2i(dst_x + width, dst_y);
-
-        glEnd();
-        glDisable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, 0);
-
         glEnable(GL_BLEND);
-        glEnable(GL_DEPTH_TEST);
-        glEnable(GL_ALPHA_TEST);
-        glEnable(GL_CULL_FACE);
-
-        glDeleteTextures(1, &tex);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     }
+    else
+    {
+        glDisable(GL_BLEND);
+    }
+
+    glBindTexture(GL_TEXTURE_2D, tex);
+    glEnable(GL_TEXTURE_2D);
+    glBegin(GL_QUADS);
+
+    dst_y = CurrentPipe->m_Height - dst_y;
+
+    // Texture Coords
+    // 0,0 --- 1,1
+    //  |       |
+    //  |       |
+    // 0,1 --- 1,1
+
+    float fWidth = float(image->m_Width);
+    float fHeight = float(image->m_Height);
+
+    glTexCoord2f(src_x / fWidth, src_y / fHeight);
+    glVertex2i(dst_x, dst_y);
+
+    glTexCoord2f(src_x / fWidth, (src_y + height) / fHeight);
+    glVertex2i(dst_x, dst_y - height);
+
+    glTexCoord2f((src_x + width) / fWidth, (src_y + height) / fHeight);
+    glVertex2i(dst_x + width, dst_y - height);
+
+    glTexCoord2f((src_x + width) / fWidth, src_y / fHeight);
+    glVertex2i(dst_x + width, dst_y);
+
+    glEnd();
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    glEnable(GL_BLEND);
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_ALPHA_TEST);
+    glEnable(GL_CULL_FACE);
+
+    glDeleteTextures(1, &tex);
 }
 
 void agiGLPipeline::ClearAll(int32_t /*arg1*/)
 {
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void agiGLPipeline::ClearRect(int32_t x, int32_t y, int32_t w, int32_t h, uint32_t color)

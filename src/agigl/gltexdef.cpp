@@ -65,15 +65,17 @@ int32_t agiGLTexDef::BeginGfx()
 
     surface->CopyFrom(m_pTextureData, 0);
 
-    gluBuild2DMipmaps(GL_TEXTURE_2D, (m_Params.m_Flags & 1) ? GL_RGBA : GL_RGB, m_pTextureData->dwWidth,
-        m_pTextureData->dwHeight, GL_RGBA, GL_UNSIGNED_BYTE, surface->lpSurface);
+    glTexImage2D(GL_TEXTURE_2D, 0, (m_Params.m_Flags & 1) ? GL_RGBA : GL_RGB, m_pTextureData->dwWidth,
+        m_pTextureData->dwHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, surface->lpSurface);
+
+    glGenerateMipmap(GL_TEXTURE_2D);
 
     surface->Unload();
     delete surface;
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, (m_Params.m_Flags & 2) ? GL_REPEAT : GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, (m_Params.m_Flags & 4) ? GL_REPEAT : GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR); // TODO: What is the best value?
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glBindTexture(GL_TEXTURE_2D, 0);
 

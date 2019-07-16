@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 
-add_definitions(-DGLEW_STATIC)
 include_directories(${GLEW_INCLUDE_DIRS} ${SDL2_INCLUDE_DIRS} ${SDL2_TTF_INCLUDE_DIRS})
 
 add_subdirectory(agi)

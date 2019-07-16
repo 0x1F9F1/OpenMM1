@@ -19,6 +19,7 @@
 #include "glrsys.h"
 
 #include "agi/pipeline.h"
+#include "data7/assert.h"
 #include "data7/printer.h"
 #include "gltexdef.h"
 #include "glutils.h"
@@ -76,6 +77,8 @@ void agiGLRasterizer::EndGroup()
 
 void agiGLRasterizer::Verts(agiVtxType type, agiVtx* verts, int32_t count)
 {
+    Assert(type == 3);
+
     if (VtxIndexCount || agiCurState.IsTouched())
         FlushState();
 
@@ -127,8 +130,10 @@ void agiGLRasterizer::Card(int32_t arg1, int32_t arg2)
     unimplemented(arg1, arg2);
 }
 
-void agiGLRasterizer::Mesh(agiVtxType arg1, agiVtx* verts, int32_t vtx_count, uint16_t* indices, int32_t index_count)
+void agiGLRasterizer::Mesh(agiVtxType type, agiVtx* verts, int32_t vtx_count, uint16_t* indices, int32_t index_count)
 {
+    Assert(type == 3);
+
     agiGLRasterizer::FlushState();
     UseTriangles = 1;
     VtxBase = verts;
@@ -343,16 +348,16 @@ void agiGLRasterizer::FlushState()
             agiLastState.PolyMode = agiCurState.GetPolyMode();
         }
 
-        uint8_t v28 = agiCurState.GetAlphaMode();
+        uint8_t alpha_mode = agiCurState.GetAlphaMode();
 
         if (agiCurState.GetTexture())
         {
-            v28 |= agiCurState.GetTexture()->m_Params.m_Flags & 1;
+            alpha_mode |= agiCurState.GetTexture()->m_Params.m_Flags & 1;
         }
 
-        if (v28 != agiLastState.AlphaMode)
+        if (alpha_mode != agiLastState.AlphaMode)
         {
-            if (v28)
+            if (alpha_mode)
             {
                 glEnable(GL_ALPHA_TEST);
                 glAlphaFunc(GL_GREATER, 0.0);
@@ -364,7 +369,7 @@ void agiGLRasterizer::FlushState()
                 glDisable(GL_ALPHA_TEST);
                 glDisable(GL_BLEND);
             }
-            agiLastState.AlphaMode = v28;
+            agiLastState.AlphaMode = alpha_mode;
         }
         if (agiCurState.GetBlendMode() != agiLastState.BlendMode)
         {

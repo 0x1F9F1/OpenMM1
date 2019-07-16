@@ -28,15 +28,30 @@ agiGLViewport::agiGLViewport(agiPipeline* pipe)
 {}
 
 void agiGLViewport::EndGfx()
-{}
+{
+    m_State = 0;
+}
 
 int32_t agiGLViewport::BeginGfx()
 {
+    if (m_pPipeline->m_dword2E0)
+    {
+        if (m_State)
+        {
+            return -3;
+        }
+
+        m_State = 1;
+    }
+
     return 0;
 }
 
 void agiGLViewport::Activate()
 {
+    ++agiViewParameters::ViewSerial;
+    ++agiViewParameters::MtxSerial;
+
     Active = this;
 }
 

@@ -111,9 +111,12 @@ class agiTexParameters
 public:
     char m_Name[32];
 
+    // agiTexParameters
     // 0x1 | Alpha
-    // 0x2 | Wrap X
-    // 0x4 | Wrap Y
+    // 0x2 | Wrap X/U/S
+    // 0x4 | Wrap Y/V/T
+    // 0x40 | Color Key Enable
+    // 0x80 | Second
     uint8_t m_Flags;
     uint8_t m_LOD;
     uint8_t m_MaxLOD;

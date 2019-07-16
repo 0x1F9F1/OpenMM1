@@ -194,7 +194,7 @@ public:
     agiRendStateStruct m_State {};
 
 #define X(NAME, TYPE, MEMBER)                  \
-    inline TYPE Get##NAME() noexcept           \
+    inline TYPE Get##NAME() const noexcept     \
     {                                          \
         return m_State.MEMBER;                 \
     }                                          \
