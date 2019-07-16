@@ -27,6 +27,7 @@
 #include "data7/printer.h"
 
 #include "pcwindis/dxinit.h"
+#include "pcwindis/pcwindis.h"
 
 #include "sdlfont.h"
 
@@ -46,6 +47,8 @@ void sdlWindowCreate(const char* window_title)
     SDL_GetWindowWMInfo(s_Window, &wmInfo);
 
     hwndMain = wmInfo.info.win.window;
+
+    SetWindowLongPtrA(hwndMain, GWL_WNDPROC, (LONG_PTR) &MasterWindowProc);
 }
 
 void sdlRendererCreate(const char* driver_name)
