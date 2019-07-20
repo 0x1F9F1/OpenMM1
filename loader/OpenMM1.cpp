@@ -23,6 +23,10 @@
 #include "minwin.h"
 
 #include <dinput.h>
+#include <mem/module.h>
+
+#include <DbgHelp.h>
+#pragma comment(lib, "Dbghelp.lib")
 
 static decltype(&DirectInputCreateA) DirectInputCreateA_Orig = nullptr;
 
@@ -31,6 +35,8 @@ static decltype(&DirectInputCreateA) DirectInputCreateA_Orig = nullptr;
 extern "C" HRESULT WINAPI DirectInputCreateA_Impl(
     HINSTANCE hinst, DWORD dwVersion, LPDIRECTINPUTA* ppDI, LPUNKNOWN punkOuter)
 {
+    DebugBreak();
+
     if (DirectInputCreateA_Orig == nullptr)
     {
         char szDllFile[MAX_PATH];
@@ -81,7 +87,44 @@ include_dummy_symbol(stack);
 include_dummy_symbol(midtown);
 include_dummy_symbol(mmtext);
 
-BOOL APIENTRY DllMain(HMODULE /*hinstDLL*/, DWORD fdwReason, LPVOID /*lpvReserved*/)
+void InitExportHooks(HMODULE instance)
+{
+    mem::module self = mem::module::nt(instance);
+    IMAGE_DATA_DIRECTORY export_dir = self.nt_headers().OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT];
+
+    if (export_dir.Size < sizeof(IMAGE_EXPORT_DIRECTORY))
+    {
+        MessageBoxA(NULL, "Invalid Export Directory Size", "Invalid Export Directory", MB_OK);
+
+        exit(1);
+    }
+
+    IMAGE_EXPORT_DIRECTORY& exports = self.start.add(export_dir.VirtualAddress).as<IMAGE_EXPORT_DIRECTORY&>();
+
+    uint32_t* names = self.start.add(exports.AddressOfNames).as<uint32_t[]>();
+    uint16_t* ords = self.start.add(exports.AddressOfNameOrdinals).as<uint16_t[]>();
+    uint32_t* addrs = self.start.add(exports.AddressOfFunctions).as<uint32_t[]>();
+
+    for (uint32_t i = 0; i < exports.NumberOfNames; ++i)
+    {
+        uint32_t target;
+        char name[256];
+
+        if (sscanf_s(self.start.add(names[i]).as<const char[]>(), "Hook_0x%X_%s", &target, name, 256) == 2)
+        {
+            uintptr_t detour = self.start.add(addrs[ords[i]]).as<uintptr_t>();
+
+            char undName[256];
+
+            const char* function_name =
+                UnDecorateSymbolName(name, undName, std::size(undName), UNDNAME_NAME_ONLY) ? undName : name;
+
+            create_hook(function_name, "", target, detour);
+        }
+    }
+}
+
+BOOL APIENTRY DllMain(HMODULE hinstDLL, DWORD fdwReason, LPVOID /*lpvReserved*/)
 {
     if (fdwReason == DLL_PROCESS_ATTACH)
     {
@@ -118,6 +161,8 @@ BOOL APIENTRY DllMain(HMODULE /*hinstDLL*/, DWORD fdwReason, LPVOID /*lpvReserve
         create_patch("PolarCamCS", "Increase Max XCAM Distance", 0x594D84, "\x00\x00\x7A\x43", 4);
 
         mem::init_function::init();
+
+        InitExportHooks(hinstDLL);
     }
 
     return TRUE;

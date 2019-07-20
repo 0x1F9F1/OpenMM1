@@ -74,4 +74,10 @@ struct class_proxy
 
 #define auto_hook_dtor(ADDRESS, TYPE) create_hook(#TYPE "::~" #TYPE, "", ADDRESS, &class_proxy<TYPE>::dtor)
 
+#ifndef __FUNCDNAME__ // Just to shut up IntelliSense
+#    define __FUNCDNAME__ "INVALID_FUNCTION"
+#endif
+
+#define export_hook(ADDRESS) __pragma(comment(linker, "/EXPORT:Hook_" #ADDRESS "_" __FUNCDNAME__ "=" __FUNCDNAME__))
+
 #include "data7/quitf.h"
