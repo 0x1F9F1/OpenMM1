@@ -77,6 +77,8 @@ int32_t agiGLTexDef::BeginGfx()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, (m_Params.m_Flags & 4) ? GL_REPEAT : GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR); // TODO: What is the best value?
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT, 16.0f);
+
     glBindTexture(GL_TEXTURE_2D, 0);
 
     PrintGlErrors();

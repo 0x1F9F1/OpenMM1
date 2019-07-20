@@ -31,6 +31,15 @@ extern const char _AssertFailed[];
         }                                                      \
     } while (false)
 
+#define AssertMsg(EXPR, MESSAGE, ...)      \
+    do                                     \
+    {                                      \
+        if (!(EXPR))                       \
+        {                                  \
+            Assertf(MESSAGE, __VA_ARGS__); \
+        }                                  \
+    } while (false)
+
 #ifdef _DEBUG
 #    define DebugAssert(EXPR) Assert(EXPR)
 #else

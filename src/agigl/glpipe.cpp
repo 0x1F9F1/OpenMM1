@@ -81,10 +81,10 @@ int32_t agiGLPipeline::BeginGfx()
 
     m_GL = SDL_GL_CreateContext(s_Window);
 
-    if (glewInit() != GLEW_OK)
-    {
-        Quitf("GLEW Initialization Failed");
-    }
+    GLenum glew_status = glewInit();
+
+    AssertMsg(
+        glew_status == GLEW_OK, "GLEW Initialization Failed: %s (0x%08X)", glewGetString(glew_status), glew_status);
 
     glDisable(GL_CULL_FACE);
     glEnable(GL_COLOR_MATERIAL);
