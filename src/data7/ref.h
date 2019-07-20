@@ -24,47 +24,47 @@ class Ref
     T* m_Value {nullptr};
 
 public:
-    Ref() noexcept = default;
-    Ref(T* value);
+    constexpr Ref() noexcept = default;
+    constexpr explicit Ref(T* value) noexcept;
 
-    Ref(const Ref<T>& other);
-    Ref(Ref<T>&& other) noexcept;
+    constexpr Ref(const Ref<T>& other);
+    constexpr Ref(Ref<T>&& other) noexcept;
 
     ~Ref();
 
-    Ref<T>& operator=(const Ref<T>& other);
-    Ref<T>& operator=(Ref<T>&& other);
+    constexpr Ref<T>& operator=(const Ref<T>& other);
+    constexpr Ref<T>& operator=(Ref<T>&& other);
 
-    T* Release();
+    constexpr [[nodiscard]] T* Release();
 
-    void Reset(T* value = nullptr);
+    constexpr void Reset(T* value = nullptr);
 
-    T* Get() noexcept;
-    const T* Get() const noexcept;
+    constexpr T* Get() noexcept;
+    constexpr const T* Get() const noexcept;
 
-    T* operator->() noexcept;
-    const T* operator->() const noexcept;
+    constexpr T* operator->() noexcept;
+    constexpr const T* operator->() const noexcept;
 
-    T& operator*() noexcept;
-    const T& operator*() const noexcept;
+    constexpr T& operator*() noexcept;
+    constexpr const T& operator*() const noexcept;
 
-    operator bool() const noexcept;
+    constexpr operator bool() const noexcept;
 };
 
 template <typename T>
-inline Ref<T>::Ref(T* value)
+constexpr inline Ref<T>::Ref(T* value) noexcept
     : m_Value(value)
 {}
 
 template <typename T>
-inline Ref<T>::Ref(const Ref<T>& other)
+constexpr inline Ref<T>::Ref(const Ref<T>& other)
     : m_Value(other)
 {
     m_Value->AddRef();
 }
 
 template <typename T>
-inline Ref<T>::Ref(Ref<T>&& other) noexcept
+constexpr inline Ref<T>::Ref(Ref<T>&& other) noexcept
     : m_Value(other.m_Value)
 {
     other.m_Value = nullptr;
@@ -80,7 +80,7 @@ inline Ref<T>::~Ref()
 }
 
 template <typename T>
-inline Ref<T>& Ref<T>::operator=(const Ref<T>& other)
+constexpr inline Ref<T>& Ref<T>::operator=(const Ref<T>& other)
 {
     if (m_Value)
     {
@@ -95,7 +95,7 @@ inline Ref<T>& Ref<T>::operator=(const Ref<T>& other)
 }
 
 template <typename T>
-inline Ref<T>& Ref<T>::operator=(Ref<T>&& other)
+constexpr inline Ref<T>& Ref<T>::operator=(Ref<T>&& other)
 {
     if (m_Value)
     {
@@ -109,7 +109,7 @@ inline Ref<T>& Ref<T>::operator=(Ref<T>&& other)
 }
 
 template <typename T>
-inline T* Ref<T>::Release()
+constexpr inline T* Ref<T>::Release()
 {
     T* result = m_Value;
     m_Value = nullptr;
@@ -117,7 +117,7 @@ inline T* Ref<T>::Release()
 }
 
 template <typename T>
-inline void Ref<T>::Reset(T* value)
+constexpr inline void Ref<T>::Reset(T* value)
 {
     if (m_Value)
     {
@@ -133,43 +133,43 @@ inline void Ref<T>::Reset(T* value)
 }
 
 template <typename T>
-inline T* Ref<T>::Get() noexcept
+constexpr inline T* Ref<T>::Get() noexcept
 {
     return m_Value;
 }
 
 template <typename T>
-inline const T* Ref<T>::Get() const noexcept
+constexpr inline const T* Ref<T>::Get() const noexcept
 {
     return m_Value;
 }
 
 template <typename T>
-inline T* Ref<T>::operator->() noexcept
+constexpr inline T* Ref<T>::operator->() noexcept
 {
     return m_Value;
 }
 
 template <typename T>
-inline const T* Ref<T>::operator->() const noexcept
+constexpr inline const T* Ref<T>::operator->() const noexcept
 {
     return m_Value;
 }
 
 template <typename T>
-inline T& Ref<T>::operator*() noexcept
+constexpr inline T& Ref<T>::operator*() noexcept
 {
     return *m_Value;
 }
 
 template <typename T>
-inline const T& Ref<T>::operator*() const noexcept
+constexpr inline const T& Ref<T>::operator*() const noexcept
 {
     return *m_Value;
 }
 
 template <typename T>
-inline Ref<T>::operator bool() const noexcept
+constexpr inline Ref<T>::operator bool() const noexcept
 {
     return m_Value != nullptr;
 }

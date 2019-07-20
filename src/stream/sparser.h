@@ -33,27 +33,22 @@
 #include "hooking.h"
 
 #include "data7/miniparser.h"
+#include "data7/ptr.h"
 
 class Stream;
 
 struct StreamMiniParser : MiniParser
 {
 public:
-    Stream* m_pStream {nullptr};
+    Ptr<Stream> m_pStream {nullptr};
 
     // StreamMiniParser::`vftable' @ 0x595F18
 
     // 0x542EF0 | ??0StreamMiniParser@@QAE@PADPAVStream@@@Z
-    inline StreamMiniParser(char* arg1, class Stream* arg2)
-        : MiniParser(arg1)
-        , m_pStream(arg2)
-    {}
+    StreamMiniParser(const char* name, class Stream* stream);
 
     // 0x542F20 | ??1StreamMiniParser@@QAE@XZ
-    inline ~StreamMiniParser()
-    {
-        stub<member_func_t<void, StreamMiniParser>>(0x542F20, this);
-    }
+    ~StreamMiniParser();
 
     // 0x542FF0 | ?Load@StreamMiniParser@@SAXPAVMetaClass@@PADPAX@Z
     static inline void Load(class MetaClass* arg1, char* arg2, void* arg3)

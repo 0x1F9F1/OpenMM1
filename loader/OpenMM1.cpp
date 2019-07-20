@@ -110,6 +110,8 @@ void InitExportHooks(HMODULE instance)
 
         if (sscanf_s(self.start.add(names[i]).as<const char[]>(), "Hook_0x%X_%s", &target, name, 256) == 2)
         {
+            name[255] = '\0';
+
             uintptr_t detour = self.start.add(addrs[ords[i]]).as<uintptr_t>();
 
             char undName[256];

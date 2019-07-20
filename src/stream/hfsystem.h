@@ -70,8 +70,7 @@ public:
     // HierFileSystem::`vftable' @ 0x595E98
 
     // 0x541AD0 | ??0HierFileSystem@@QAE@XZ
-    inline HierFileSystem()
-    {}
+    HierFileSystem();
 
     // 0x541AF0 | ??1HierFileSystem@@UAE@XZ
     ~HierFileSystem() override;

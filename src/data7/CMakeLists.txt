@@ -48,7 +48,7 @@ add_library(data7 OBJECT
     assert.cpp
     cstr.h
     cstr.cpp
-    ref.cpp
+    ptr.h
     ref.h
 )
 

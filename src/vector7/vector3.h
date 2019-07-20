@@ -86,8 +86,10 @@ public:
     float y {0.0f};
     float z {0.0f};
 
+    constexpr inline Vector3() noexcept = default;
+
     // 0x436E50 | ??0Vector3@@QAE@MMM@Z
-    inline Vector3(float x, float y, float z)
+    constexpr inline Vector3(float x, float y, float z) noexcept
         : x(x)
         , y(y)
         , z(z)

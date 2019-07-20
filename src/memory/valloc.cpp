@@ -90,6 +90,7 @@ void asSafeHeap::Deactivate()
 {
     if (m_MultiHeap)
     {
+#pragma warning(suppress : 6250)
         VirtualFree(m_pCurrentHeap, m_HeapSize, MEM_DECOMMIT);
     }
 

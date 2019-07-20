@@ -17,3 +17,9 @@
 */
 
 #include "miniparser.h"
+
+MiniParser::MiniParser(const char* name)
+    : m_Name(name)
+{}
+
+MiniParser::~MiniParser() = default;

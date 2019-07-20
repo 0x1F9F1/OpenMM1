@@ -65,23 +65,7 @@
 
 #include "hooking.h"
 
-// 0x550480 | ??D@YA?AVMatrix44@@MABV0@@Z
-inline class Matrix44 operator*(float arg1, class Matrix44 const& arg2)
-{
-    return stub<cdecl_t<class Matrix44, float, class Matrix44 const&>>(0x550480, arg1, arg2);
-}
-
-// 0x550F40 | ??T@YA?AVVector3@@ABV0@ABVMatrix44@@@Z
-inline class Vector3 operator^(class Vector3 const& arg1, class Matrix44 const& arg2)
-{
-    return stub<cdecl_t<class Vector3, class Vector3 const&, class Matrix44 const&>>(0x550F40, arg1, arg2);
-}
-
-// 0x550FB0 | ??T@YA?AVVector4@@ABV0@ABVMatrix44@@@Z
-inline class Vector4 operator^(class Vector4 const& arg1, class Matrix44 const& arg2)
-{
-    return stub<cdecl_t<class Vector4, class Vector4 const&, class Matrix44 const&>>(0x550FB0, arg1, arg2);
-}
+#include "vector4.h"
 
 // 0x5C5288 | ?id@@3PAMA
 inline extern_var(0x5C5288, float*, id);
@@ -116,12 +100,29 @@ inline extern_var(0x710A30, class Matrix44, Identity);
 class Matrix44
 {
 public:
+    float m00 {0.0f};
+    float m01 {0.0f};
+    float m02 {0.0f};
+    float m03 {0.0f};
+    float m10 {0.0f};
+    float m11 {0.0f};
+    float m12 {0.0f};
+    float m13 {0.0f};
+    float m20 {0.0f};
+    float m21 {0.0f};
+    float m22 {0.0f};
+    float m23 {0.0f};
+    float m30 {0.0f};
+    float m31 {0.0f};
+    float m32 {0.0f};
+    float m33 {0.0f};
+
     // 0x550050 | ??0Matrix44@@QAE@ABVMatrix34@@@Z
     inline Matrix44(class Matrix34 const& arg1)
     {
         // stub<member_func_t<void, Matrix44, class Matrix34 const&>>(0x550050, this, arg1);
 
-        unimplemented();
+        unimplemented(arg1);
     }
 
     // 0x5500C0 | ??HMatrix44@@QBE?AV0@ABV0@@Z
@@ -264,6 +265,24 @@ public:
     {
         // stub<member_func_t<void, Matrix44, class Matrix44 const&>>(0x5527D0, this, arg1);
 
-        unimplemented();
+        unimplemented(arg1);
     }
 };
+
+// 0x550480 | ??D@YA?AVMatrix44@@MABV0@@Z
+inline class Matrix44 operator*(float arg1, class Matrix44 const& arg2)
+{
+    return stub<cdecl_t<class Matrix44, float, class Matrix44 const&>>(0x550480, arg1, arg2);
+}
+
+// 0x550F40 | ??T@YA?AVVector3@@ABV0@ABVMatrix44@@@Z
+inline class Vector3 operator^(class Vector3 const& arg1, class Matrix44 const& arg2)
+{
+    return stub<cdecl_t<class Vector3, class Vector3 const&, class Matrix44 const&>>(0x550F40, arg1, arg2);
+}
+
+// 0x550FB0 | ??T@YA?AVVector4@@ABV0@ABVMatrix44@@@Z
+inline class Vector4 operator^(class Vector4 const& arg1, class Matrix44 const& arg2)
+{
+    return stub<cdecl_t<class Vector4, class Vector4 const&, class Matrix44 const&>>(0x550FB0, arg1, arg2);
+}

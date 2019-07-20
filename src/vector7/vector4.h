@@ -52,10 +52,12 @@ inline extern_var(0x7108C8, struct Vector4Type, Vector4Inst);
 class Vector4
 {
 public:
-    float x;
-    float y;
-    float z;
-    float w;
+    float x {0.0f};
+    float y {0.0f};
+    float z {0.0f};
+    float w {0.0f};
+
+    constexpr inline Vector4() noexcept = default;
 
     // 0x549140 | ?Mag@Vector4@@QBEMXZ
     inline float Mag()

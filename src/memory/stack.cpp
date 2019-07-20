@@ -134,6 +134,8 @@ void InitMap()
         return;
     }
 
+    Assert(map_file != nullptr);
+
     char* symbols = 0;
     size_t symbols_length = 0;
 
@@ -163,8 +165,10 @@ void InitMap()
 
             char value_buffer[256];
             if (!strncmp(line_buffer, " 0001:", 6u) &&
-                sscanf_s(line_buffer, "%*s %s %x", value_buffer, sizeof(value_buffer), &address) == 2)
+                sscanf_s(line_buffer, "%*s %255s %x", value_buffer, sizeof(value_buffer), &address) == 2)
             {
+                value_buffer[255] = '\0';
+
                 if (state == 2)
                 {
                     strcpy_s(&symbols[strings_length], symbols_length - strings_length, value_buffer);

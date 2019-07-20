@@ -103,8 +103,7 @@ public:
     }
 
     // 0x510C60 | ??0asNode@@QAE@XZ
-    inline asNode()
-    {}
+    inline asNode() = default;
 
     // 0x510CF0 | ?SetName@asNode@@QAEXPAD@Z
     void SetName(char* arg1);

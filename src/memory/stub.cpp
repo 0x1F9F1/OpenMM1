@@ -19,6 +19,8 @@
 #include "stub.h"
 #include "allocator.h"
 
+#pragma warning(disable: 28251)
+
 // 0x50F560 | ??2@YAPAXI@Z
 __declspec(noinline) void* operator new(size_t size)
 {

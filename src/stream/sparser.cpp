@@ -17,3 +17,12 @@
 */
 
 #include "sparser.h"
+
+#include "stream/stream.h"
+
+StreamMiniParser::StreamMiniParser(const char* name, class Stream* stream)
+    : MiniParser(name)
+    , m_pStream(stream)
+{}
+
+StreamMiniParser::~StreamMiniParser() = default;

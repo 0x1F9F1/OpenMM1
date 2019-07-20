@@ -20,10 +20,9 @@
 
 #include "stream.h"
 
-VirtualFileSystem::VirtualFileSystem(Stream* arg1)
+VirtualFileSystem::VirtualFileSystem(Stream* stream)
+    : m_pFileStream(stream)
 {
-    m_pFileStream = arg1;
-
     m_pFileStream->Read(&m_Magic, 4);
 
     if (memcmp(&m_Magic, "ARES", 4))
@@ -35,20 +34,14 @@ VirtualFileSystem::VirtualFileSystem(Stream* arg1)
     m_pFileStream->Read(&m_DirectoryCount, 4);
     m_pFileStream->Read(&m_NameDataSize, 4);
 
-    m_pNodes = new VirtualFileInode[m_NodeCount];
-    m_pFileStream->Read(m_pNodes, m_NodeCount * sizeof(VirtualFileInode));
+    m_pNodes.Reset(new VirtualFileInode[m_NodeCount]);
+    m_pFileStream->Read(m_pNodes.Get(), m_NodeCount * sizeof(VirtualFileInode));
 
-    m_pNameData = new uint8_t[m_NameDataSize];
-    m_pFileStream->Read(m_pNameData, m_NameDataSize);
+    m_pNameData.Reset(new uint8_t[m_NameDataSize]);
+    m_pFileStream->Read(m_pNameData.Get(), m_NameDataSize);
 }
 
-VirtualFileSystem::~VirtualFileSystem()
-{
-    delete[] m_pNameData;
-    delete[] m_pNodes;
-
-    delete m_pFileStream;
-}
+VirtualFileSystem::~VirtualFileSystem() = default;
 
 define_dummy_symbol(vfsystem);
 

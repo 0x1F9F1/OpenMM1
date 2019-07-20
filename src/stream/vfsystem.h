@@ -42,6 +42,7 @@
 
 #include "hooking.h"
 
+#include "data7/ptr.h"
 #include "fsystem.h"
 
 struct VirtualFileInode
@@ -56,18 +57,18 @@ check_size(VirtualFileInode, 12);
 class VirtualFileSystem : FileSystem
 {
 public:
-    Stream* m_pFileStream {nullptr};
+    Ptr<Stream> m_pFileStream {nullptr};
     uint32_t m_Magic {0};
     uint32_t m_NodeCount {0};
     uint32_t m_DirectoryCount {0};
     uint32_t m_NameDataSize {0};
-    VirtualFileInode* m_pNodes {nullptr};
-    uint8_t* m_pNameData {nullptr};
+    Ptr<VirtualFileInode[]> m_pNodes {nullptr};
+    Ptr<uint8_t[]> m_pNameData {nullptr};
 
     // VirtualFileSystem::`vftable' @ 0x595ED8
 
     // 0x5421D0 | ??0VirtualFileSystem@@QAE@PAVStream@@@Z
-    VirtualFileSystem(class Stream* arg1);
+    VirtualFileSystem(class Stream* stream);
 
     // 0x542310 | ?NormalizeName@VirtualFileSystem@@SAXPAD0@Z
     static inline void NormalizeName(char* arg1, char* arg2)

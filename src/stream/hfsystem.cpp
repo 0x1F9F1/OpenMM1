@@ -18,17 +18,13 @@
 
 #include "hfsystem.h"
 
-define_dummy_symbol(hfsystem);
+HierFileSystem::HierFileSystem() = default;
 
-void InitHFS()
-{
-    new (&HFS) HierFileSystem();
-}
+HierFileSystem::~HierFileSystem() = default;
+
+define_dummy_symbol(hfsystem);
 
 run_once([] {
     auto_hook_ctor(0x541AD0, HierFileSystem);
     auto_hook_dtor(0x541AF0, HierFileSystem);
 });
-
-HierFileSystem::~HierFileSystem()
-{}

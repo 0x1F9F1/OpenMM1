@@ -61,8 +61,7 @@ public:
     }
 
     // 0x55AB40 | ??1Base@@UAE@XZ
-    virtual inline ~Base() = 0
-    {}
+    virtual ~Base() = 0;
 
     // 0x55ABF0 | ?GetClass@Base@@UAEPAVMetaClass@@XZ
     virtual inline class MetaClass* GetClass()
@@ -88,5 +87,7 @@ public:
         return stub<member_func_t<void, Base>>(0x55AB30, this);
     }
 };
+
+inline Base::~Base() = default;
 
 check_size(Base, 4);

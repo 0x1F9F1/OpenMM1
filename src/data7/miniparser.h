@@ -60,14 +60,10 @@ public:
     // MiniParser::`vftable' @ 0x5963E0
 
     // 0x55DE60 | ??0MiniParser@@QAE@PAD@Z
-    inline MiniParser(char* arg1)
-    {
-        m_Name = arg1;
-    }
+    MiniParser(const char* name);
 
     // 0x55DEC0 | ??1MiniParser@@QAE@XZ
-    inline ~MiniParser()
-    {}
+    ~MiniParser();
 
     // 0x55DEE0 | ?Printf@MiniParser@@QAAXPBDZZ
     // Skipped (Variable Arguments)

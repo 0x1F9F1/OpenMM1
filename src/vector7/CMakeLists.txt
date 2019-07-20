@@ -5,8 +5,8 @@ add_library(vector7 OBJECT
     const.h
     geomath.cpp
     geomath.h
-    # matrix34.cpp
-    # matrix34.h
+    matrix34.cpp
+    matrix34.h
     # matrix44.cpp
     # matrix44.h
     # quat.cpp

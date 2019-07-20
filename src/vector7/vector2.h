@@ -127,8 +127,9 @@ public:
     float x {0.0f};
     float y {0.0f};
 
+    constexpr inline Vector2() noexcept = default;
+
     // 0x42B330 | ??0Vector2@@QAE@ABV0@@Z
-    inline Vector2(class Vector2 const& arg1) = default;
 
     // 0x553A80 | ??KVector2@@QBE?AV0@M@Z
     inline class Vector2 operator/(float arg1)
