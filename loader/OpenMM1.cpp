@@ -35,8 +35,6 @@ static decltype(&DirectInputCreateA) DirectInputCreateA_Orig = nullptr;
 extern "C" HRESULT WINAPI DirectInputCreateA_Impl(
     HINSTANCE hinst, DWORD dwVersion, LPDIRECTINPUTA* ppDI, LPUNKNOWN punkOuter)
 {
-    DebugBreak();
-
     if (DirectInputCreateA_Orig == nullptr)
     {
         char szDllFile[MAX_PATH];
