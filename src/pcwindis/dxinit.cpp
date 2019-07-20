@@ -18,13 +18,16 @@
 
 #include "dxinit.h"
 
-#include "agisdl/sdlinit.h"
+#ifdef USE_SDL2
+#    include "agisdl/sdlinit.h"
+#endif
 
 int32_t dxiChangeDisplaySettings(int32_t /*width*/, int32_t /*height*/, int32_t /*bpp*/)
 {
     return 0;
 }
 
+#ifdef USE_SDL2
 void dxiInit(char* window_title, int32_t /*argc*/, char** /*argv*/)
 {
     sdlInit(window_title);
@@ -34,12 +37,15 @@ void dxiShutdown()
 {
     sdlShutdown();
 }
+#endif
 
 define_dummy_symbol(dxinit);
 
 run_once([] {
     auto_hook(0x5557B0, dxiChangeDisplaySettings);
 
+#ifdef USE_SDL2
     auto_hook(0x5560A0, dxiInit);
     auto_hook(0x555D90, dxiShutdown);
+#endif
 });

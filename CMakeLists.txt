@@ -25,6 +25,10 @@ set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} /DEBUG /OPT:REF")
 # This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
 set(CMAKE_STATIC_LINKER_FLAGS "${CMAKE_STATIC_LINKER_FLAGS} /IGNORE:4221")
 
+if (USE_SDL2)
+    add_definitions(-DUSE_SDL2=1)
+endif()
+
 include_directories(src)
 add_subdirectory(src)
 
@@ -55,13 +59,17 @@ if(MM1_GAME_DIRECTORY)
         file(STRINGS "${CMAKE_CURRENT_SOURCE_DIR}/CommandLine.txt" MM1_COMMAND_LINE)
     endif()
 
-    if (MM1_COMMAND_LINE)
+    if(MM1_COMMAND_LINE)
         set_target_properties(OpenMM1 PROPERTIES
             VS_DEBUGGER_COMMAND_ARGUMENTS "${MM1_COMMAND_LINE}"
         )
     endif()
 
     install(TARGETS OpenMM1 RUNTIME DESTINATION ${MM1_GAME_DIRECTORY})
-    install(FILES "extra/midtown.map" ${SDL2_BINARIES} ${SDL2_TTF_BINARIES} ${GLEW_BINARIES} DESTINATION ${MM1_GAME_DIRECTORY})
+    install(FILES "extra/midtown.map" DESTINATION ${MM1_GAME_DIRECTORY})
     install(FILES $<TARGET_PDB_FILE:OpenMM1> DESTINATION ${MM1_GAME_DIRECTORY} OPTIONAL)
+
+    if(USE_SDL2)
+        install(FILES ${SDL2_BINARIES} ${SDL2_TTF_BINARIES} ${GLEW_BINARIES} DESTINATION ${MM1_GAME_DIRECTORY})
+    endif()
 endif()

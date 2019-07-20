@@ -18,13 +18,21 @@
 
 #include "midtown.h"
 
-#include "agigl/glpipe.h"
+#ifdef USE_SDL2
+#    include "agigl/glpipe.h"
+#endif
 
+#ifdef USE_SDL2
 agiPipeline* CreatePipeline(int32_t argc, char** argv)
 {
     return glCreatePipeline(argc, argv);
 }
+#endif
 
 define_dummy_symbol(midtown);
 
-run_once([] { auto_hook(0x401030, CreatePipeline); });
+run_once([] {
+#ifdef USE_SDL2
+    auto_hook(0x401030, CreatePipeline);
+#endif
+});

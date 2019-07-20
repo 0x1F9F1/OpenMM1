@@ -20,8 +20,10 @@
 
 #include "setupdata.h"
 
+#ifdef USE_SDL2
 void dxiConfig(int32_t /*argc*/, char** /*argv*/)
 {}
+#endif
 
 int32_t __stdcall ModeCallback(DDSURFACEDESC2* sd, void* context)
 {
@@ -47,5 +49,8 @@ define_dummy_symbol(dxsetup);
 
 run_once([] {
     auto_hook(0x5578F0, ModeCallback);
+
+#ifdef USE_SDL2
     auto_hook(0x556DF0, dxiConfig);
+#endif
 });

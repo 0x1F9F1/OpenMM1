@@ -24,8 +24,11 @@
 #include "data7/assert.h"
 #include "data7/printer.h"
 
-#include "agisdl/sdlfont.h"
+#ifdef USE_SDL2
+#    include "agisdl/sdlfont.h"
+#endif
 
+#ifdef USE_SDL2
 void mmTextNode::Init(float arg1, float arg2, float arg3, float arg4, int32_t arg5, int32_t arg6)
 {
     m_Count = 0;
@@ -97,10 +100,12 @@ void mmText::Draw2(agiSurfaceDesc* arg1, float arg2, float arg3, char* arg4, voi
 {
     unimplemented();
 }
+#endif
 
 define_dummy_symbol(mmtext);
 
 run_once([] {
+#ifdef USE_SDL2
     auto_hook(0x4F0970, mmTextNode::Init);
 
     auto_hook(0x4F0280, mmText::CreateLocFont);
@@ -110,4 +115,5 @@ run_once([] {
     auto_hook(0x4F04E0, mmText::CreateFitBitmap);
     auto_hook(0x4F0700, mmText::Draw);
     auto_hook(0x4F0790, mmText::Draw2);
+#endif
 });
