@@ -37,9 +37,6 @@ agiPipeline* CreatePipeline(int32_t argc, char** argv)
 }
 #endif
 
-char Main_ExecPath[1024] {};
-char* Main_ArgV[128] {};
-
 void Application(int32_t argc, char** argv)
 {
     dxiIcon = 111;
@@ -59,6 +56,9 @@ void Application(int32_t argc, char** argv)
         Quitf("Exception caught during init.");
     }
 }
+
+static char Main_ExecPath[1024] {};
+static char* Main_ArgV[128] {};
 
 int CALLBACK MidtownMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
