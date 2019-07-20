@@ -73,6 +73,7 @@ include_dummy_symbol(dxinit);
 include_dummy_symbol(dxsetup);
 include_dummy_symbol(allocator);
 include_dummy_symbol(machname);
+include_dummy_symbol(stream);
 include_dummy_symbol(fsystem);
 include_dummy_symbol(hfsystem);
 include_dummy_symbol(vfsystem);

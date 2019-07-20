@@ -74,222 +74,124 @@
 
 #include "data7/base.h"
 
+#include <cstdarg>
+
 class FileSystem;
 
 class Stream : Base
 {
 public:
+    // Stream::`vftable' @ 0x595E18
+
     uint8_t* m_pBuffer {nullptr};
-    uint32_t m_Offset {0};
-    uint32_t m_BufferIndex {0};
-    uint32_t m_BufferSize {0};
-    uint32_t m_MaxBufferSize {0};
+    uint32_t m_Position {0};
+    int32_t m_BufferStart {0};
+    int32_t m_BufferEnd {0};
+    int32_t m_BufferCapacity {0};
     FileSystem* m_pFileSystem {nullptr};
     uint8_t m_Flags {0};
     uint8_t m_SwapEndian {0};
     uint8_t m_IsLittleEndian {0};
-    uint8_t m_byte1F {0};
-
-    // Stream::`vftable' @ 0x595E18
+    uint8_t m_Initialized {0};
 
     // 0x540430 | ??0Stream@@QAE@PAXHPAVFileSystem@@@Z
-    inline Stream(void* arg1, int32_t arg2, class FileSystem* arg3)
-    {
-        // stub<member_func_t<void, Stream, void*, int32_t, class FileSystem*>>(0x540430, this, arg1, arg2, arg3);
-
-        unimplemented(arg1, arg2, arg3);
-    }
+    Stream(void* buffer, int32_t buffer_size, class FileSystem* file_system);
 
     // 0x540540 | ?Read@Stream@@QAEHPAXH@Z
-    inline int32_t Read(void* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<int32_t, Stream, void*, int32_t>>(0x540540, this, arg1, arg2);
-    }
+    int32_t Read(void* output, int32_t length);
 
     // 0x540680 | ?Write@Stream@@QAEHPAXH@Z
-    inline int32_t Write(void* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<int32_t, Stream, void*, int32_t>>(0x540680, this, arg1, arg2);
-    }
+    int32_t Write(const void* input, int32_t length);
 
     // 0x540780 | ?GetCh@Stream@@QAEHXZ
-    inline int32_t GetCh()
-    {
-        return stub<member_func_t<int32_t, Stream>>(0x540780, this);
-    }
+    int32_t GetCh();
 
     // 0x5407B0 | ?PutCh@Stream@@QAEHE@Z
-    inline int32_t PutCh(uint8_t arg1)
-    {
-        return stub<member_func_t<int32_t, Stream, uint8_t>>(0x5407B0, this, arg1);
-    }
+    int32_t PutCh(uint8_t value);
 
     // 0x5407E0 | ?Seek@Stream@@QAEHH@Z
-    inline int32_t Seek(int32_t arg1)
-    {
-        return stub<member_func_t<int32_t, Stream, int32_t>>(0x5407E0, this, arg1);
-    }
+    int32_t Seek(int32_t position);
 
     // 0x540810 | ?Tell@Stream@@QAEHXZ
-    inline int32_t Tell()
-    {
-        return stub<member_func_t<int32_t, Stream>>(0x540810, this);
-    }
+    int32_t Tell();
 
     // 0x540820 | ?Size@Stream@@QAEHXZ
-    inline int32_t Size()
-    {
-        return stub<member_func_t<int32_t, Stream>>(0x540820, this);
-    }
+    int32_t Size();
 
     // 0x540840 | ?Flush@Stream@@QAEHXZ
-    inline int32_t Flush()
-    {
-        return stub<member_func_t<int32_t, Stream>>(0x540840, this);
-    }
+    int32_t Flush();
 
     // 0x540930 | ?Error@Stream@@QAEXPAD@Z
-    inline void Error(char* arg1)
-    {
-        return stub<member_func_t<void, Stream, char*>>(0x540930, this, arg1);
-    }
+    void Error(const char* location);
 
     // 0x540970 | ?Printf@Stream@@QAAHPBDZZ
-    // Skipped (Variable Arguments)
+    int32_t Printf(const char* format, ...);
 
     // 0x5409C0 | ?Vprintf@Stream@@QAEHPBDPAD@Z
-    inline int32_t Vprintf(char const* arg1, char* arg2)
-    {
-        return stub<member_func_t<int32_t, Stream, char const*, char*>>(0x5409C0, this, arg1, arg2);
-    }
+    int32_t Vprintf(char const* format, va_list args);
 
     // 0x540A20 | ?Debug@Stream@@QAEXXZ
-    inline void Debug()
-    {
-        return stub<member_func_t<void, Stream>>(0x540A20, this);
-    }
+    void Debug();
 
     // 0x540A30 | ?PutString@Stream@@QAEHPAD@Z
-    inline int32_t PutString(char* arg1)
-    {
-        return stub<member_func_t<int32_t, Stream, char*>>(0x540A30, this, arg1);
-    }
+    int32_t PutString(const char* value);
 
     // 0x540A70 | ?GetString@Stream@@QAEHPADH@Z
-    inline int32_t GetString(char* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<int32_t, Stream, char*, int32_t>>(0x540A70, this, arg1, arg2);
-    }
+    int32_t GetString(char* buffer, int32_t length);
 
     // 0x540B00 | ?Put@Stream@@QAEHE@Z
-    inline int32_t Put(uint8_t arg1)
-    {
-        return stub<member_func_t<int32_t, Stream, uint8_t>>(0x540B00, this, arg1);
-    }
+    int32_t Put(uint8_t value);
 
     // 0x540B20 | ?Put@Stream@@QAEHG@Z
-    inline int32_t Put(uint16_t arg1)
-    {
-        return stub<member_func_t<int32_t, Stream, uint16_t>>(0x540B20, this, arg1);
-    }
+    int32_t Put(uint16_t value);
 
     // 0x540B50 | ?Put@Stream@@QAEHK@Z
-    inline int32_t Put(uint32_t arg1)
-    {
-        return stub<member_func_t<int32_t, Stream, uint32_t>>(0x540B50, this, arg1);
-    }
+    int32_t Put(uint32_t value);
 
     // 0x540BA0 | ?Put@Stream@@QAEHM@Z
-    inline int32_t Put(float arg1)
-    {
-        return stub<member_func_t<int32_t, Stream, float>>(0x540BA0, this, arg1);
-    }
+    int32_t Put(float value);
 
     // 0x540C00 | ?Put@Stream@@QAEHPAEH@Z
-    inline int32_t Put(uint8_t* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<int32_t, Stream, uint8_t*, int32_t>>(0x540C00, this, arg1, arg2);
-    }
+    int32_t Put(const uint8_t* values, int32_t count);
 
     // 0x540C20 | ?Put@Stream@@QAEHPAGH@Z
-    inline int32_t Put(uint16_t* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<int32_t, Stream, uint16_t*, int32_t>>(0x540C20, this, arg1, arg2);
-    }
+    int32_t Put(const uint16_t* values, int32_t count);
 
     // 0x540C80 | ?Put@Stream@@QAEHPAKH@Z
-    inline int32_t Put(uint32_t* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<int32_t, Stream, uint32_t*, int32_t>>(0x540C80, this, arg1, arg2);
-    }
+    int32_t Put(const uint32_t* values, int32_t count);
 
     // 0x540CF0 | ?Get@Stream@@QAEHPAEH@Z
-    inline int32_t Get(uint8_t* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<int32_t, Stream, uint8_t*, int32_t>>(0x540CF0, this, arg1, arg2);
-    }
+    int32_t GetUnchecked(uint8_t* values, int32_t count);
 
     // 0x540D10 | ?Get@Stream@@QAEHPAGH@Z
-    inline int32_t Get(uint16_t* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<int32_t, Stream, uint16_t*, int32_t>>(0x540D10, this, arg1, arg2);
-    }
+    int32_t GetUnchecked(uint16_t* values, int32_t count);
 
     // 0x540D50 | ?Get@Stream@@QAEHPAKH@Z
-    inline int32_t Get(uint32_t* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<int32_t, Stream, uint32_t*, int32_t>>(0x540D50, this, arg1, arg2);
-    }
+    int32_t GetUnchecked(uint32_t* values, int32_t count);
 
     // 0x540D90 | ?SwapShorts@Stream@@CAXPAGH@Z
-    static inline void SwapShorts(uint16_t* arg1, int32_t arg2)
-    {
-        return stub<cdecl_t<void, uint16_t*, int32_t>>(0x540D90, arg1, arg2);
-    }
+    static void SwapShorts(uint16_t* values, int32_t count);
 
     // 0x540DC0 | ?SwapLongs@Stream@@CAXPAKH@Z
-    static inline void SwapLongs(uint32_t* arg1, int32_t arg2)
-    {
-        return stub<cdecl_t<void, uint32_t*, int32_t>>(0x540DC0, arg1, arg2);
-    }
+    static void SwapLongs(uint32_t* values, int32_t count);
 
     // 0x540E10 | ?GetShort@Stream@@QAEGXZ
-    inline uint16_t GetShort()
-    {
-        return stub<member_func_t<uint16_t, Stream>>(0x540E10, this);
-    }
+    uint16_t GetShort();
 
     // 0x540E30 | ?GetLong@Stream@@QAEKXZ
-    inline uint32_t GetLong()
-    {
-        return stub<member_func_t<uint32_t, Stream>>(0x540E30, this);
-    }
+    uint32_t GetLong();
 
     // 0x5404C0 | ??1Stream@@UAE@XZ
-    inline ~Stream() override = 0
-    {
-        // stub<member_func_t<void, Stream>>(0x5404C0, this);
-
-        unimplemented();
-    }
+    ~Stream() override;
 
     // 0x540900 | ?GetMapping@Stream@@UAEPAXXZ
-    virtual inline void* GetMapping()
-    {
-        return stub<member_func_t<void*, Stream>>(0x540900, this);
-    }
+    virtual void* GetMapping();
 
     // 0x540910 | ?GetPagerHandle@Stream@@UAEIXZ
-    virtual inline uint32_t GetPagerHandle()
-    {
-        return stub<member_func_t<uint32_t, Stream>>(0x540910, this);
-    }
+    virtual uint32_t GetPagerHandle();
 
     // 0x540920 | ?GetPagingInfo@Stream@@UAEHAAI00@Z
-    virtual inline int32_t GetPagingInfo(uint32_t& arg1, uint32_t& arg2, uint32_t& arg3)
-    {
-        return stub<member_func_t<int32_t, Stream, uint32_t&, uint32_t&, uint32_t&>>(0x540920, this, arg1, arg2, arg3);
-    }
+    virtual int32_t GetPagingInfo(uint32_t& handle, uint32_t& offset, uint32_t& size);
 
     // 0x567350 | __purecall
     virtual inline int32_t RawRead(void* arg1, int32_t arg2) = 0;
@@ -307,51 +209,33 @@ public:
     virtual inline int32_t RawSize() = 0;
 
     // 0x540A10 | ?RawDebug@Stream@@MAEXXZ
-    virtual inline void RawDebug()
-    {
-        return stub<member_func_t<void, Stream>>(0x540A10, this);
-    }
+    virtual void RawDebug();
 
     // 0x5408B0 | ?AlignSize@Stream@@MAEHXZ
-    virtual inline int32_t AlignSize()
-    {
-        return stub<member_func_t<int32_t, Stream>>(0x5408B0, this);
-    }
+    virtual int32_t AlignSize();
 
     // 0x5408C0 | ?GetError@Stream@@MAEHPADH@Z
-    virtual inline int32_t GetError(char* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<int32_t, Stream, char*, int32_t>>(0x5408C0, this, arg1, arg2);
-    }
+    virtual int32_t GetError(char* buffer, int32_t length);
 };
 
 // 0x540E50 | ?fprintf@@YAXPAVStream@@PBDZZ
-// Skipped (Variable Arguments)
+void fprintf(Stream* stream, const char* format, ...);
 
 // 0x540E70 | ?fopen@@YAPAVStream@@PAD0@Z
-inline class Stream* fopen(char* arg1, char* arg2)
-{
-    return stub<cdecl_t<class Stream*, char*, char*>>(0x540E70, arg1, arg2);
-}
+class Stream* fopen(char* filename, char* mode);
 
 // 0x540EB0 | ?fseek@@YAHPAVStream@@HH@Z
-inline int32_t fseek(class Stream* arg1, int32_t arg2, int32_t arg3)
-{
-    return stub<cdecl_t<int32_t, class Stream*, int32_t, int32_t>>(0x540EB0, arg1, arg2, arg3);
-}
+int32_t fseek(class Stream* stream, int32_t offset, int32_t origin);
 
 // 0x540F10 | _vprintf
 
 // 0x540F30 | _printf
 
 // 0x540F60 | ?fgets@@YAHPADHPAVStream@@@Z
-inline int32_t fgets(char* arg1, int32_t arg2, class Stream* arg3)
-{
-    return stub<cdecl_t<int32_t, char*, int32_t, class Stream*>>(0x540F60, arg1, arg2, arg3);
-}
+int32_t fgets(char* buffer, int32_t length, class Stream* stream);
 
 // 0x540FD0 | ?fscanf@@YAHPAVStream@@PBDZZ
-// Skipped (Variable Arguments)
+int32_t fscanf(Stream* stream, const char* format, ...);
 
 // 0x70EDA0 | ?EnableBinaryFileMapping@@3HA
 inline extern_var(0x70EDA0, int32_t, EnableBinaryFileMapping);
