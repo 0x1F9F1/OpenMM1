@@ -55,6 +55,8 @@
 
 #include "hooking.h"
 
+#include "minwin.h"
+
 // 0x401030 | ?CreatePipeline@@YAPAVagiPipeline@@HPAPAD@Z
 class agiPipeline* CreatePipeline(int32_t argc, char** argv);
 
@@ -89,12 +91,10 @@ inline void InitAudioManager()
 }
 
 // 0x4026D0 | ?Application@@YAXHPAPAD@Z
-inline void Application(int32_t arg1, char** arg2)
-{
-    return stub<cdecl_t<void, int32_t, char**>>(0x4026D0, arg1, arg2);
-}
+void Application(int32_t argc, char** argv);
 
 // 0x4027B0 | _WinMain@16
+int CALLBACK MidtownMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow);
 
 // 0x5A47C0 | ?CycleTime@@3MA
 inline extern_var(0x5A47C0, float, CycleTime);

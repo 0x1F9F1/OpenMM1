@@ -18,6 +18,14 @@
 
 #include "midtown.h"
 
+#include "data7/assert.h"
+#include "data7/printer.h"
+#include "data7/timer.h"
+
+#include "pcwindis/dxinit.h"
+
+#include <cstring>
+
 #ifdef USE_SDL2
 #    include "agigl/glpipe.h"
 #endif
@@ -28,6 +36,82 @@ agiPipeline* CreatePipeline(int32_t argc, char** argv)
     return glCreatePipeline(argc, argv);
 }
 #endif
+
+char Main_ExecPath[1024] {};
+char* Main_ArgV[128] {};
+
+void Application(int32_t argc, char** argv)
+{
+    dxiIcon = 111;
+
+    SetProcessAffinityMask(GetCurrentProcess(), 1);
+
+    __try
+    {
+        ApplicationHelper(argc, argv);
+
+        Displayf("Normal exit.");
+    }
+    __except (GameFilter(GetExceptionInformation()))
+    {
+        // AIMAP.Dump()
+
+        Quitf("Exception caught during init.");
+    }
+}
+
+int CALLBACK MidtownMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+{
+    GetModuleFileNameA(0, Main_ExecPath, 1024);
+
+    int argc = 0;
+    Main_ArgV[argc++] = Main_ExecPath;
+
+    char* current = lpCmdLine;
+
+    while (*current)
+    {
+        current += std::strspn(current, " \t");
+
+        char* cmd_start = nullptr;
+
+        if (*current == '"')
+        {
+            ++current;
+
+            cmd_start = current;
+
+            current = std::strchr(current, '"');
+
+            Assert(current != nullptr);
+        }
+        else if (*current != '\0')
+        {
+            cmd_start = current;
+
+            current += std::strcspn(current, " \t");
+        }
+        else
+        {
+            break;
+        }
+
+        Main_ArgV[argc++] = cmd_start;
+
+        if (*current)
+        {
+            *current++ = '\0';
+        }
+    }
+
+    Main_ArgV[argc] = nullptr;
+
+    Application(argc, Main_ArgV);
+
+    Timer::Sleep(500);
+
+    return 0;
+}
 
 define_dummy_symbol(midtown);
 

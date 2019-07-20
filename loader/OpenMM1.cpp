@@ -22,6 +22,8 @@
 
 #include "minwin.h"
 
+#include "midtown.h"
+
 #include <dinput.h>
 #include <mem/module.h>
 
@@ -65,13 +67,6 @@ extern "C" HRESULT WINAPI DirectInputCreateA_Impl(
     }
 
     return DirectInputCreateA_Orig(hinst, dwVersion, ppDI, punkOuter);
-}
-
-int CALLBACK MidtownMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
-{
-    int result = stub<decltype(&MidtownMain)>(0x4027B0, hInstance, hPrevInstance, lpCmdLine, nCmdShow);
-
-    return result;
 }
 
 include_dummy_symbol(dxinit);
