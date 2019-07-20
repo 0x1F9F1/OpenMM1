@@ -90,6 +90,14 @@ FileSystem::~FileSystem()
     --FSCount;
 }
 
+int32_t FileSystem::PagerInfo(char* /*arg1*/, PagerInfo_t& /*arg2*/)
+{
+    return 0;
+}
+
+void FileSystem::NotifyDelete()
+{}
+
 define_dummy_symbol(fsystem);
 
 run_once([] {

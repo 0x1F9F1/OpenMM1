@@ -136,10 +136,7 @@ public:
     virtual inline class Stream* CreateOn(char* arg1, void* arg2, int32_t arg3) = 0;
 
     // 0x541A40 | ?PagerInfo@FileSystem@@UAEHPADAAUPagerInfo_t@@@Z
-    virtual inline int32_t PagerInfo(char* arg1, struct PagerInfo_t& arg2)
-    {
-        return stub<member_func_t<int32_t, FileSystem, char*, struct PagerInfo_t&>>(0x541A40, this, arg1, arg2);
-    }
+    virtual int32_t PagerInfo(char* arg1, struct PagerInfo_t& arg2);
 
     // 0x567350 | __purecall
     virtual inline int32_t ChangeDir(char* arg1) = 0;
@@ -154,10 +151,7 @@ public:
     virtual inline struct FileInfo* NextEntry(struct FileInfo* arg1) = 0;
 
     // 0x541190 | ?NotifyDelete@FileSystem@@MAEXXZ
-    virtual inline void NotifyDelete()
-    {
-        return stub<member_func_t<void, FileSystem>>(0x541190, this);
-    }
+    virtual void NotifyDelete();
 };
 
 check_size(FileSystem, 8);
