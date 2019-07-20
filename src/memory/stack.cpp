@@ -72,7 +72,7 @@ void LookupAddress(char* buffer, uint32_t address)
     {
         DWORD64 dwDisplacement = 0;
 
-        char symbol_buffer[sizeof(SYMBOL_INFO) + MAX_SYM_NAME * sizeof(TCHAR)];
+        alignas(SYMBOL_INFO) char symbol_buffer[sizeof(SYMBOL_INFO) + MAX_SYM_NAME * sizeof(TCHAR)];
         PSYMBOL_INFO pSymbol = (PSYMBOL_INFO) symbol_buffer;
 
         pSymbol->SizeOfStruct = sizeof(SYMBOL_INFO);
@@ -87,6 +87,11 @@ void LookupAddress(char* buffer, uint32_t address)
             if (!_stricmp(module.ModuleName, "dinput"))
             {
                 strcpy_s(module.ModuleName, "OpenMM1");
+            }
+
+            if (pSymbol->NameLen > 64)
+            {
+                strcpy_s(pSymbol->Name + 61, 4, "...");
             }
 
             sprintf_s(buffer, 128, "0x%X (%s.%s + 0x%X)", address, module.ModuleName, pSymbol->Name,
