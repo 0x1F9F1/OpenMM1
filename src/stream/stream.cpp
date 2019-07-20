@@ -48,7 +48,7 @@ Stream::Stream(void* buffer, int32_t buffer_size, FileSystem* file_system)
         m_Flags |= 1;
     }
 
-    m_IsLittleEndian = s_IsLittleEndian; // TODO: Properly check this
+    m_IsLittleEndian = s_IsLittleEndian;
     m_SwapEndian = m_IsLittleEndian;
 
     m_Initialized = 1;
