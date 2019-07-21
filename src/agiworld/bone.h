@@ -31,6 +31,9 @@
     0x506330 | void __cdecl Matrix34__FromEulersXZY(class Matrix34 &,class Vector3 const &) | ?Matrix34__FromEulersXZY@@YAXAAVMatrix34@@ABVVector3@@@Z
 */
 
+#include "vector7/matrix34.h"
+#include "vector7/vector3.h"
+
 // 0x506330 | ?Matrix34__FromEulersXZY@@YAXAAVMatrix34@@ABVVector3@@@Z
 inline void Matrix34__FromEulersXZY(class Matrix34& arg1, class Vector3 const& arg2)
 {
@@ -40,6 +43,14 @@ inline void Matrix34__FromEulersXZY(class Matrix34& arg1, class Vector3 const& a
 class bnBone
 {
 public:
+    Matrix34 m_Transform {};
+    Matrix34* m_pTransform {nullptr};
+    bnBone* m_Next {nullptr};
+    bnBone* m_Children {nullptr};
+    bnBone* m_Parent {nullptr};
+    char m_Name[64] {};
+    Vector3 m_EulerXZY {};
+
     // 0x506080 | ??0bnBone@@QAE@XZ
     inline bnBone()
     {
@@ -84,3 +95,5 @@ public:
         return stub<member_func_t<void, bnBone, class Vector3 const*, int32_t&>>(0x5062D0, this, arg1, arg2);
     }
 };
+
+check_size(bnBone, 0x8C);
