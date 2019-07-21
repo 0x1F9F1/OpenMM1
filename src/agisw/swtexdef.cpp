@@ -17,3 +17,13 @@
 */
 
 #include "swtexdef.h"
+
+#include "swpipe.h"
+
+agiSWTexDef::agiSWTexDef(agiSWPipeline* pipe)
+    : agiTexDef(pipe)
+{}
+
+agiSWTexLut::agiSWTexLut(agiSWPipeline* pipe)
+    : agiTexLut(pipe)
+{}

@@ -17,3 +17,7 @@
 */
 
 #include "swrsys.h"
+
+agiSWRasterizer::agiSWRasterizer(agiPipeline* pipe)
+    : agiRasterizer(pipe)
+{}

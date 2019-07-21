@@ -40,18 +40,15 @@
     0x5959E8 | const agiSWRasterizer::`vftable' | ??_7agiSWRasterizer@@6B@
 */
 
+#include "agi/rsys.h"
+
 struct agiSWRasterizer : agiRasterizer
 {
 public:
     // agiSWRasterizer::`vftable' @ 0x5959E8
 
     // 0x51F350 | ??0agiSWRasterizer@@QAE@PAVagiPipeline@@@Z
-    inline agiSWRasterizer(class agiPipeline* arg1)
-    {
-        // stub<member_func_t<void, agiSWRasterizer, class agiPipeline*>>(0x51F350, this, arg1);
-
-        unimplemented();
-    }
+    agiSWRasterizer(class agiPipeline* pipe);
 
     // 0x51F390 | ?EndGfx@agiSWRasterizer@@UAEXXZ
     inline void EndGfx() override
@@ -137,3 +134,5 @@ public:
             0x51F4B0, this, arg1, arg2, arg3, arg4, arg5);
     }
 };
+
+check_size(agiSWRasterizer, 0x18);

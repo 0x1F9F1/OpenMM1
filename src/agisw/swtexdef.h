@@ -43,21 +43,23 @@
     0x5BEBA4 | float swLutInvGamma | ?swLutInvGamma@@3MA
 */
 
+#include "agi/texdef.h"
+
 // 0x5BEBA4 | ?swLutInvGamma@@3MA
 inline extern_var(0x5BEBA4, float, swLutInvGamma);
 
-struct agiSWTexDef : agiTexDef
+struct agiSWTexDef : public agiTexDef
 {
 public:
     // agiSWTexDef::`vftable' @ 0x595A38
 
-    // 0x51F590 | ??0agiSWTexDef@@QAE@PAVagiSWPipeline@@@Z
-    inline agiSWTexDef(class agiSWPipeline* arg1)
-    {
-        // stub<member_func_t<void, agiSWTexDef, class agiSWPipeline*>>(0x51F590, this, arg1);
+    uint32_t m_dword70 {0};
+    uint32_t m_WidthPow {0};
+    uint32_t m_HeightPow {0};
+    uint8_t* m_pSurfaces[7] {};
 
-        unimplemented();
-    }
+    // 0x51F590 | ??0agiSWTexDef@@QAE@PAVagiSWPipeline@@@Z
+    agiSWTexDef(class agiSWPipeline* pipe);
 
     // 0x51F6D0 | ?EndGfx@agiSWTexDef@@UAEXXZ
     inline void EndGfx() override
@@ -110,18 +112,18 @@ public:
     }
 };
 
-struct agiSWTexLut : agiTexLut
+check_size(agiSWTexDef, 0x98);
+
+struct agiSWTexLut : public agiTexLut
 {
 public:
+    uint32_t m_FogColor {0};
+    uint16_t m_Tables[8][256] {};
+
     // agiSWTexLut::`vftable' @ 0x595A68
 
     // 0x51F7E0 | ??0agiSWTexLut@@QAE@PAVagiSWPipeline@@@Z
-    inline agiSWTexLut(class agiSWPipeline* arg1)
-    {
-        // stub<member_func_t<void, agiSWTexLut, class agiSWPipeline*>>(0x51F7E0, this, arg1);
-
-        unimplemented();
-    }
+    agiSWTexLut(class agiSWPipeline* pipe);
 
     // 0x51F9E0 | ?EndGfx@agiSWTexLut@@UAEXXZ
     inline void EndGfx() override
@@ -143,3 +145,5 @@ public:
         return stub<member_func_t<int32_t, agiSWTexLut>>(0x51F800, this);
     }
 };
+
+check_size(agiSWTexLut, 0x1420);

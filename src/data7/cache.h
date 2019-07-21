@@ -54,7 +54,7 @@ struct DataCacheObject
     uint8_t m_byteF {0};
     uint32_t m_nTotalSize {0};
     uint32_t m_nMaxSize {0};
-    void(__cdecl* m_Callback)(void*, uint32_t) {nullptr};
+    void (*m_Callback)(void*, uint32_t) {nullptr};
     void* m_pValue {nullptr};
 };
 

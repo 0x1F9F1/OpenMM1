@@ -1,14 +1,14 @@
 arts_add_component(agisw
-    # swddraw.cpp
-    # swddraw.h
-    # swemitrunall.cpp
-    # swemitrunall.h
-    # swpipe.cpp
-    # swpipe.h
-    # swrend.cpp
-    # swrend.h
-    # swrsys.cpp
-    # swrsys.h
-    # swtexdef.cpp
-    # swtexdef.h
+    swddraw.cpp
+    swddraw.h
+    swemitrunall.cpp
+    swemitrunall.h
+    swpipe.cpp
+    swpipe.h
+    swrend.cpp
+    swrend.h
+    swrsys.cpp
+    swrsys.h
+    swtexdef.cpp
+    swtexdef.h
 )

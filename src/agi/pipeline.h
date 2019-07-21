@@ -144,7 +144,8 @@ public:
     float m_dword34 {1.0f};
     uint32_t m_dword38 {2};
     uint32_t m_Lightmask {0xFFFFFFFF};
-    uint8_t gap40[264] {};
+    uint8_t gap40[260] {};
+    uint32_t m_dword144 {0};
     agiSurfaceDesc m_SurfaceDesc {};
     agiSurfaceDesc m_SurfaceDesc2 {};
     agiSurfaceDesc m_SurfaceDesc3 {};

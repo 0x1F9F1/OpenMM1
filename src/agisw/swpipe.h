@@ -65,6 +65,10 @@
     0x51C2D0 | void __cdecl zmemset(unsigned short *,unsigned int) | ?zmemset@@YAXPAGI@Z
 */
 
+#include "agi/bitmap.h"
+#include "agi/pipeline.h"
+#include "agi/viewport.h"
+
 // 0x51C540 | ?swCreatePipeline@@YAPAVagiPipeline@@HPAPAD@Z
 inline class agiPipeline* swCreatePipeline(int32_t arg1, char** arg2)
 {
@@ -77,7 +81,7 @@ inline void zmemset(uint16_t* arg1, uint32_t arg2)
     return stub<cdecl_t<void, uint16_t*, uint32_t>>(0x51C2D0, arg1, arg2);
 }
 
-class agiSWPipeline : agiPipeline
+class agiSWPipeline : public agiPipeline
 {
 public:
     // agiSWPipeline::`vftable' @ 0x5958E8
@@ -87,7 +91,7 @@ public:
     {
         // stub<member_func_t<void, agiSWPipeline, int32_t, char**>>(0x51BE80, this, arg1, arg2);
 
-        unimplemented();
+        unimplemented(arg1, arg2);
     }
 
     // 0x51BF00 | ??1agiSWPipeline@@UAE@XZ
@@ -211,9 +215,13 @@ public:
     }
 };
 
+check_size(agiSWPipeline, 0x2F0);
+
 struct agiSWViewport : agiViewport
 {
 public:
+    uint32_t m_BackgroundColor {0};
+
     // agiSWViewport::`vftable' @ 0x595958
 
     // 0x51C890 | ?EndGfx@agiSWViewport@@UAEXXZ
@@ -255,9 +263,15 @@ public:
     }
 };
 
+check_size(agiSWViewport, 0x14C);
+
+struct IDirectDrawSurface4;
+
 struct agiSWBitmap : agiBitmap
 {
 public:
+    IDirectDrawSurface4* m_pSurface {nullptr};
+
     // agiSWBitmap::`vftable' @ 0x595998
 
     // 0x51CA80 | ?EndGfx@agiSWBitmap@@UAEXXZ
@@ -292,3 +306,5 @@ public:
         return stub<member_func_t<void, agiSWBitmap>>(0x51CA60, this);
     }
 };
+
+check_size(agiSWBitmap, 0x40);

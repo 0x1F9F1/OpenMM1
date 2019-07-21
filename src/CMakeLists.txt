@@ -30,7 +30,7 @@ endmacro(arts_add_component)
 
 add_subdirectory(agi)
 add_subdirectory(agid3d)
-# add_subdirectory(agisw)
+add_subdirectory(agisw)
 # add_subdirectory(agiworld)
 add_subdirectory(arts7)
 add_subdirectory(data7)
