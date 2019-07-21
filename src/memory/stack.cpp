@@ -23,7 +23,6 @@
 #include <algorithm>
 
 #include <DbgHelp.h>
-#pragma comment(lib, "Dbghelp.lib")
 
 static extern_var(0x6E28A8, int32_t, MapInitialized);
 

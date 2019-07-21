@@ -8,3 +8,5 @@ arts_add_component(memory
     valloc.cpp
     valloc.h
 )
+
+target_link_libraries(memory dbghelp)

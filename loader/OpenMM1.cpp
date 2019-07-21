@@ -28,7 +28,6 @@
 #include <mem/module.h>
 
 #include <DbgHelp.h>
-#pragma comment(lib, "Dbghelp.lib")
 
 static decltype(&DirectInputCreateA) DirectInputCreateA_Orig = nullptr;
 
