@@ -58,7 +58,7 @@ constexpr inline Ref<T>::Ref(T* value) noexcept
 
 template <typename T>
 constexpr inline Ref<T>::Ref(const Ref<T>& other)
-    : m_Value(other)
+    : m_Value(other.m_Value)
 {
     m_Value->AddRef();
 }
@@ -88,7 +88,6 @@ constexpr inline Ref<T>& Ref<T>::operator=(const Ref<T>& other)
     }
 
     m_Value = other.m_Value;
-
     m_Value->AddRef();
 
     return *this;
@@ -125,11 +124,6 @@ constexpr inline void Ref<T>::Reset(T* value)
     }
 
     m_Value = value;
-
-    if (m_Value)
-    {
-        m_Value->AddRef();
-    }
 }
 
 template <typename T>

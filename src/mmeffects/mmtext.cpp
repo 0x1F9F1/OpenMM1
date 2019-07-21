@@ -32,7 +32,7 @@ void mmTextNode::Init(float arg1, float arg2, float arg3, float arg4, int32_t ar
     m_Max = arg5;
     m_Text = new mmTextData[m_Max];
 
-    m_Bitmap = agiPipeline::CurrentPipe->CreateBitmap();
+    m_Bitmap.Reset(agiPipeline::CurrentPipe->CreateBitmap());
     char name[128];
     sprintf_s(name, "*TextNode:%08x", (uint32_t) this);
     m_Bitmap->Init(name, 2.0f, 2.0f, arg6);
