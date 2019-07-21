@@ -89,7 +89,7 @@ uint32_t HashTable::Hash(const char* value)
 
         if (hash & 0xF0000000)
         {
-            hash ^= hash & 0xF0000000 ^ ((hash & 0xF0000000) >> 24);
+            hash ^= (hash & 0xF0000000) ^ ((hash & 0xF0000000) >> 24);
         }
     }
 
