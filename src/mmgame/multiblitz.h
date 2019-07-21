@@ -46,8 +46,6 @@
     0x416550 | void __cdecl delete_mmMultiBlitz(void *,int) | ?delete_mmMultiBlitz@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x6094A8 | ?mmMultiBlitzMetaClass@@3VMetaClass@@A
 inline extern_var(0x6094A8, class MetaClass, mmMultiBlitzMetaClass);
 

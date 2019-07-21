@@ -28,8 +28,6 @@
     0x4DA510 | public: virtual int __thiscall mmCollideFF::Stop(void) | ?Stop@mmCollideFF@@UAEHXZ
 */
 
-#include "hooking.h"
-
 struct mmCollideFF
 {
 public:

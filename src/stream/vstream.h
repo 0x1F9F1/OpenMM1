@@ -35,8 +35,6 @@
     0x595F68 | const VirtualStream::`vftable' | ??_7VirtualStream@@6B@
 */
 
-#include "hooking.h"
-
 #include "stream.h"
 
 struct VirtualStream : Stream

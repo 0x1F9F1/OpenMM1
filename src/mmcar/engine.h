@@ -42,8 +42,6 @@
     0x4747B0 | void __cdecl delete_mmEngine(void *,int) | ?delete_mmEngine@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x60A3C0 | ?mmEngineMetaClass@@3VMetaClass@@A
 inline extern_var(0x60A3C0, class MetaClass, mmEngineMetaClass);
 

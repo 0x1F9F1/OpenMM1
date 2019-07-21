@@ -27,8 +27,6 @@
     0x562280 | struct JHUFF_TBL * __cdecl jpeg_alloc_huff_table(struct jpeg_common_struct *) | ?jpeg_alloc_huff_table@@YAPAUJHUFF_TBL@@PAUjpeg_common_struct@@@Z
 */
 
-#include "hooking.h"
-
 // 0x5621E0 | ?jpeg_abort@@YAXPAUjpeg_common_struct@@@Z
 inline void jpeg_abort(struct jpeg_common_struct* arg1)
 {

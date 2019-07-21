@@ -45,8 +45,6 @@
     0x417C50 | void __cdecl delete_mmMultiCircuit(void *,int) | ?delete_mmMultiCircuit@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x6094F0 | ?mmMultiCircuitMetaClass@@3VMetaClass@@A
 inline extern_var(0x6094F0, class MetaClass, mmMultiCircuitMetaClass);
 

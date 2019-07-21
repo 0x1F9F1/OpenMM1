@@ -96,8 +96,6 @@
     0x4258F0 | void __cdecl delete_mmHUD(void *,int) | ?delete_mmHUD@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x5A64C4 | ?arotX@@3MA
 inline extern_var(0x5A64C4, float, arotX);
 

@@ -44,8 +44,6 @@
     0x58FCB8 | const mmPopup::`vftable' | ??_7mmPopup@@6B@
 */
 
-#include "hooking.h"
-
 struct mmPopup : asNode
 {
 public:

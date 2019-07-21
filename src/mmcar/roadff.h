@@ -40,8 +40,6 @@
     0x478980 | void __cdecl delete_mmCarRoadFF(void *,int) | ?delete_mmCarRoadFF@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x60A4F8 | ?mmCarRoadFFMetaClass@@3VMetaClass@@A
 inline extern_var(0x60A4F8, class MetaClass, mmCarRoadFFMetaClass);
 

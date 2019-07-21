@@ -44,8 +44,6 @@
     0x5931E0 | const UITextDropdown::`vftable' | ??_7UITextDropdown@@6B@
 */
 
-#include "hooking.h"
-
 class UITextDropdown : uiWidget
 {
 public:

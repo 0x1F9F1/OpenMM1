@@ -31,8 +31,6 @@
     0x5927B0 | const HostRaceMenu::`vftable' | ??_7HostRaceMenu@@6B@
 */
 
-#include "hooking.h"
-
 struct HostRaceMenu : RaceMenuBase
 {
 public:

@@ -50,8 +50,6 @@
     0x5563F0 | void __cdecl translate555(unsigned char *,unsigned short *,unsigned int) | ?translate555@@YAXPAEPAGI@Z
 */
 
-#include "hooking.h"
-
 // 0x5556D0 | ?dxiWindowCreate@@YAXPAD@Z
 inline void dxiWindowCreate(char* window_name)
 {

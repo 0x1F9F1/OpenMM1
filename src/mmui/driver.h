@@ -44,8 +44,6 @@
     0x592A28 | const DriverMenu::`vftable' | ??_7DriverMenu@@6B@
 */
 
-#include "hooking.h"
-
 struct DriverMenu : UIMenu
 {
 public:

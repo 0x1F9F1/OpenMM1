@@ -61,8 +61,6 @@
     0x40E6D0 | void __cdecl delete_mmGame(void *,int) | ?delete_mmGame@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x5A56B8 | ?ProjectileY@@3MA
 inline extern_var(0x5A56B8, float, ProjectileY);
 

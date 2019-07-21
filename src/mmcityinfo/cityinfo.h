@@ -29,8 +29,6 @@
     0x5944B4 | const mmCityInfo::`vftable' | ??_7mmCityInfo@@6B@
 */
 
-#include "hooking.h"
-
 class mmCityInfo
 {
 public:

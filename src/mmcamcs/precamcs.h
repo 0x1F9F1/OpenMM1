@@ -35,8 +35,6 @@
     0x4EC220 | void __cdecl delete_PreCamCS(void *,int) | ?delete_PreCamCS@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x67B6C8 | ?PreCamCSMetaClass@@3VMetaClass@@A
 inline extern_var(0x67B6C8, class MetaClass, PreCamCSMetaClass);
 

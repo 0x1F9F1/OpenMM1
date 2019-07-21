@@ -55,8 +55,6 @@
     0x4BDFB0 | void __cdecl delete_mmBangerDataManager(void *,int) | ?delete_mmBangerDataManager@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x4BE010 | ?RefTo@@YAPAUMetaType@@PAU1@HPAF@Z
 inline struct MetaType* RefTo(struct MetaType* arg1, int32_t arg2, int16_t* arg3)
 {

@@ -75,8 +75,6 @@
     0x4CCD40 | void __cdecl delete_mmPhysicsMGR(void *,int) | ?delete_mmPhysicsMGR@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x4CA4F0 | ?FindIntersections@@YAHPAVmmIntersection@@HPAVasBound@@1PAVmmBoundTemplate@@2PAVmmEdgeBodyIsect@@H3H@Z
 inline int32_t FindIntersections(class mmIntersection* arg1, int32_t arg2, class asBound* arg3, class asBound* arg4,
     class mmBoundTemplate* arg5, class mmBoundTemplate* arg6, class mmEdgeBodyIsect* arg7, int32_t arg8,

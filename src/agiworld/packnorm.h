@@ -27,8 +27,6 @@
     0x6A0A00 | union mmx * UnpackNormalMMX | ?UnpackNormalMMX@@3PATmmx@@A
 */
 
-#include "hooking.h"
-
 // 0x504E30 | ?PackNormalSlow@@YAEAAVVector3@@@Z
 inline uint8_t PackNormalSlow(class Vector3& arg1)
 {

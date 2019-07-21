@@ -39,8 +39,6 @@
     0x595868 | const agiD3DTexDef::`vftable' | ??_7agiD3DTexDef@@6B@
 */
 
-#include "hooking.h"
-
 struct agiD3DTexDef : agiTexDef
 {
 public:

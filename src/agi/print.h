@@ -34,8 +34,6 @@
     0x539F20 | void __cdecl InitBuiltin(void) | ?InitBuiltin@@YAXXZ
 */
 
-#include "hooking.h"
-
 // 0x539DB0 | ?agiPrint@@YAXHHHPBD@Z
 inline void agiPrint(int32_t arg1, int32_t arg2, int32_t arg3, char const* arg4)
 {

@@ -24,8 +24,6 @@
     0x565A30 | void __cdecl jpeg_idct_float(struct jpeg_decompress_struct *,struct jpeg_component_info *,short *,unsigned char * *,unsigned int) | ?jpeg_idct_float@@YAXPAUjpeg_decompress_struct@@PAUjpeg_component_info@@PAFPAPAEI@Z
 */
 
-#include "hooking.h"
-
 // 0x565A30 | ?jpeg_idct_float@@YAXPAUjpeg_decompress_struct@@PAUjpeg_component_info@@PAFPAPAEI@Z
 inline void jpeg_idct_float(
     struct jpeg_decompress_struct* arg1, struct jpeg_component_info* arg2, int16_t* arg3, uint8_t** arg4, uint32_t arg5)

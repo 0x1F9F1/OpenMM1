@@ -34,8 +34,6 @@
     0x5020D0 | int __cdecl cmpTex(void const *,void const *) | ?cmpTex@@YAHPBX0@Z
 */
 
-#include "hooking.h"
-
 // 0x501B20 | ?mystrtok@@YAPADPADPBD@Z
 inline char* mystrtok(char* arg1, char const* arg2)
 {

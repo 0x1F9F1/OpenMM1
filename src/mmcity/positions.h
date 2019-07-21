@@ -32,8 +32,6 @@
     0x60B1E8 | int DontClearPositions | ?DontClearPositions@@3HA
 */
 
-#include "hooking.h"
-
 // 0x485AA0 | ?InitPositions@@YAXXZ
 inline void InitPositions()
 {

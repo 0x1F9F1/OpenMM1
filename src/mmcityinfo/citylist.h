@@ -39,8 +39,6 @@
     0x66A80C | class mmCityList * CityListPtr | ?CityListPtr@@3PAVmmCityList@@A
 */
 
-#include "hooking.h"
-
 // 0x66A80C | ?CityListPtr@@3PAVmmCityList@@A
 inline extern_var(0x66A80C, class mmCityList*, CityListPtr);
 

@@ -78,8 +78,6 @@
     0x609DB8 | private: static float aiPedestrian::s_fAttenuationMult | ?s_fAttenuationMult@aiPedestrian@@0MA
 */
 
-#include "hooking.h"
-
 class aiPedestrian
 {
 public:

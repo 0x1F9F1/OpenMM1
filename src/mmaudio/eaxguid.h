@@ -25,8 +25,6 @@
     0x594A60 | _DSPROPSETID_EAXBUFFER_ReverbProperties
 */
 
-#include "hooking.h"
-
 // 0x594A50 | _DSPROPSETID_EAX_ReverbProperties
 
 // 0x594A60 | _DSPROPSETID_EAXBUFFER_ReverbProperties

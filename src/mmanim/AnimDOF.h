@@ -51,8 +51,6 @@
     0x4B97B0 | void __cdecl delete_mmAnimDOF(void *,int) | ?delete_mmAnimDOF@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x668148 | ?mmAnimDOFMetaClass@@3VMetaClass@@A
 inline extern_var(0x668148, class MetaClass, mmAnimDOFMetaClass);
 

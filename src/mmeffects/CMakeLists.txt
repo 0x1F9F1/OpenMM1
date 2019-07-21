@@ -1,4 +1,4 @@
-add_library(mmeffects OBJECT
+arts_add_component(mmeffects
     # birth.cpp
     # birth.h
     card2d.cpp
@@ -20,5 +20,3 @@ add_library(mmeffects OBJECT
     # vehform.cpp
     # vehform.h
 )
-
-target_link_libraries(mmeffects hooking)

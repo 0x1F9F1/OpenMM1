@@ -32,8 +32,6 @@
     0x590BD8 | const aiGoalBackup::`vftable' | ??_7aiGoalBackup@@6B@
 */
 
-#include "hooking.h"
-
 struct aiGoalBackup : aiGoal
 {
 public:

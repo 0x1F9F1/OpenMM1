@@ -60,8 +60,6 @@
     0x454FF0 | void __cdecl delete_aiVehicleSpline(void *,int) | ?delete_aiVehicleSpline@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x609F40 | ?aiVehicleSplineMetaClass@@3VMetaClass@@A
 inline extern_var(0x609F40, class MetaClass, aiVehicleSplineMetaClass);
 

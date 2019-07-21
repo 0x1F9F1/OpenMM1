@@ -69,8 +69,6 @@
     0x706608 | class HashTable DLPTemplateHash | ?DLPTemplateHash@@3VHashTable@@A
 */
 
-#include "hooking.h"
-
 // 0x53B300 | ?UnpackAngle@@YAME@Z
 inline float UnpackAngle(uint8_t arg1)
 {

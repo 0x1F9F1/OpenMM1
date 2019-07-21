@@ -44,8 +44,6 @@
     0x710088 | int eqRestoreFlag | ?eqRestoreFlag@@3HA
 */
 
-#include "hooking.h"
-
 #include "event.h"
 
 // 0x544970 | ?InitEventQueue@@YAXXZ

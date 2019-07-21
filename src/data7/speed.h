@@ -26,8 +26,6 @@
     0x55E7C0 | unsigned int __cdecl rdtsc(void) | ?rdtsc@@YAIXZ
 */
 
-#include "hooking.h"
-
 // 0x55E710 | ?__ComputeCpuSpeed@@YAIXZ
 inline uint32_t __ComputeCpuSpeed()
 {

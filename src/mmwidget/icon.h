@@ -35,8 +35,6 @@
     0x593870 | const UIIcon::`vftable' | ??_7UIIcon@@6B@
 */
 
-#include "hooking.h"
-
 class UIIcon : uiWidget
 {
 public:

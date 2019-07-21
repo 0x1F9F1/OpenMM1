@@ -77,8 +77,6 @@
     0x7108B8 | class Vector3 ZAXIS | ?ZAXIS@@3VVector3@@A
 */
 
-#include "hooking.h"
-
 class Vector3
 {
 public:

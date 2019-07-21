@@ -50,8 +50,6 @@
     0x4486B0 | void __cdecl delete_aiVehicleOpponent(void *,int) | ?delete_aiVehicleOpponent@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x609DF8 | ?aiVehicleOpponentMetaClass@@3VMetaClass@@A
 inline extern_var(0x609DF8, class MetaClass, aiVehicleOpponentMetaClass);
 

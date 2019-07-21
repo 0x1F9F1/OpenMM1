@@ -64,8 +64,6 @@
     0x5928D8 | const NetSelectMenu::`vftable' | ??_7NetSelectMenu@@6B@
 */
 
-#include "hooking.h"
-
 struct NetSelectMenu : UIMenu
 {
 public:

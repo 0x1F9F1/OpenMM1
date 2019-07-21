@@ -85,8 +85,6 @@
     0x54FEB0 | void __cdecl delete_Matrix34(void *,int) | ?delete_Matrix34@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 #include "vector3.h"
 
 // 0x54FF10 | ?ASinf@@YAMM@Z

@@ -87,8 +87,6 @@
     0x667C8C | public: static float UIMenu::UI_RIGHT_MARGIN | ?UI_RIGHT_MARGIN@UIMenu@@2MA
 */
 
-#include "hooking.h"
-
 class UIMenu : asNode
 {
 public:

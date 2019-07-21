@@ -54,8 +54,6 @@
     0x594FE8 | const mmTextNode::`vftable' | ??_7mmTextNode@@6B@
 */
 
-#include "hooking.h"
-
 #include "arts7/node.h"
 #include "data7/ref.h"
 

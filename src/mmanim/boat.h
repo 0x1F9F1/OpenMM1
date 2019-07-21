@@ -50,8 +50,6 @@
     0x4BC930 | void __cdecl delete_mmBoat(void *,int) | ?delete_mmBoat@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x5B0C78 | ?cb@@3PAMA
 inline extern_var(0x5B0C78, float*, cb);
 

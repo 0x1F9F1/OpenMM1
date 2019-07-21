@@ -40,8 +40,6 @@
     0x5939B8 | const UITextRoller2::`vftable' | ??_7UITextRoller2@@6B@
 */
 
-#include "hooking.h"
-
 class UITextRoller2 : uiWidget
 {
 public:

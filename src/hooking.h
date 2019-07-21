@@ -79,5 +79,3 @@ struct class_proxy
 #endif
 
 #define export_hook(ADDRESS) __pragma(comment(linker, "/EXPORT:Hook_" #ADDRESS "_" __FUNCDNAME__ "=" __FUNCDNAME__))
-
-#include "data7/quitf.h"

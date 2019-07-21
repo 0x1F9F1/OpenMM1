@@ -25,7 +25,5 @@
     0x70A6C0 | class agiLib<class agiMtlParameters,class agiMtlDef> agiMtlLib | ?agiMtlLib@@3V?$agiLib@VagiMtlParameters@@VagiMtlDef@@@@A
 */
 
-#include "hooking.h"
-
 // 0x70A6C0 | ?agiMtlLib@@3V?$agiLib@VagiMtlParameters@@VagiMtlDef@@@@A
 inline extern_var(0x70A6C0, class agiLib<class agiMtlParameters, class agiMtlDef>, agiMtlLib);

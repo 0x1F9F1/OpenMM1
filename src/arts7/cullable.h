@@ -31,8 +31,6 @@
     0x5125D0 | void __cdecl delete_asCullable(void *,int) | ?delete_asCullable@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 #include "data7/base.h"
 
 // 0x6F2B70 | ?asCullableMetaClass@@3VMetaClass@@A

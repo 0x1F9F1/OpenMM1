@@ -40,8 +40,6 @@
     0x47C480 | public: void __thiscall mmImpactAudio::Update(void) | ?Update@mmImpactAudio@@QAEXXZ
 */
 
-#include "hooking.h"
-
 struct mmImpactAudio
 {
 public:

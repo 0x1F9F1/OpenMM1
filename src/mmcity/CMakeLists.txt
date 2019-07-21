@@ -1,4 +1,4 @@
-add_library(mmcity OBJECT
+arts_add_component(mmcity
     # anim.cpp
     # anim.h
     # cellrend.cpp
@@ -26,5 +26,3 @@ add_library(mmcity OBJECT
     # sky.cpp
     # sky.h
 )
-
-target_link_libraries(mmcity hooking)

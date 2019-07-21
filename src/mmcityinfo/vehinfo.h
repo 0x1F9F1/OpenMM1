@@ -31,8 +31,6 @@
     0x5944B8 | const mmVehInfo::`vftable' | ??_7mmVehInfo@@6B@
 */
 
-#include "hooking.h"
-
 class mmVehInfo
 {
 public:

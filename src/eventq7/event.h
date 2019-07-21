@@ -52,8 +52,6 @@
     0x7106D0 | public: static class eqEventHandler * eqEventHandler::SuperQ | ?SuperQ@eqEventHandler@@2PAV1@A
 */
 
-#include "hooking.h"
-
 #include "replay.h"
 
 // 0x710098 | ?eqEventReplayChannel@@3VeqEventReplayChannelClass@@A

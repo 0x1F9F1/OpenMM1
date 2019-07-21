@@ -34,8 +34,6 @@
     0x442020 | public: class aiPath * __thiscall aiIntersection::Path(int) | ?Path@aiIntersection@@QAEPAVaiPath@@H@Z
 */
 
-#include "hooking.h"
-
 class aiIntersection
 {
 public:

@@ -25,8 +25,6 @@
     0x50E090 | struct LocString * __cdecl AngelReadString(unsigned int) | ?AngelReadString@@YAPAULocString@@I@Z
 */
 
-#include "hooking.h"
-
 struct LocString
 {
     char Data[512];

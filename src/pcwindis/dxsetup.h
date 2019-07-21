@@ -41,8 +41,6 @@
     0x557F20 | int __stdcall Enumerator(struct _GUID *,char *,char *,void *) | ?Enumerator@@YGHPAU_GUID@@PAD1PAX@Z
 */
 
-#include "hooking.h"
-
 #include <ddraw.h>
 
 // 0x556DB0 | ?MultiMonCallback@@YGHPAU_GUID@@PAD1PAX2@Z

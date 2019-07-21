@@ -61,8 +61,6 @@
     0x420FA0 | void __cdecl delete_mmHudMap(void *,int) | ?delete_mmHudMap@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x4210A0 | ??_9@$BBE@AE
 
 // 0x609638 | ?mmHudMapMetaClass@@3VMetaClass@@A

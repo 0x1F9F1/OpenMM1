@@ -1,4 +1,4 @@
-add_library(mmgame OBJECT
+arts_add_component(mmgame
     # cd.cpp
     # cd.h
     # dash.cpp
@@ -54,5 +54,3 @@ add_library(mmgame OBJECT
     # wpobject.cpp
     # wpobject.h
 )
-
-target_link_libraries(mmgame hooking)

@@ -63,8 +63,6 @@
     0x710A30 | class Matrix44 Identity | ?Identity@@3VMatrix44@@A
 */
 
-#include "hooking.h"
-
 #include "vector4.h"
 
 // 0x5C5288 | ?id@@3PAMA

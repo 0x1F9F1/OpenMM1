@@ -1,4 +1,4 @@
-add_library(mmcar OBJECT
+arts_add_component(mmcar
     # axle.cpp
     # axle.h
     # car.cpp
@@ -62,5 +62,3 @@ add_library(mmcar OBJECT
     # wheel.cpp
     # wheel.h
 )
-
-target_link_libraries(mmcar hooking)

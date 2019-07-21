@@ -29,8 +29,6 @@
     0x590CC8 | const aiVehicle::`vftable' | ??_7aiVehicle@@6B@
 */
 
-#include "hooking.h"
-
 struct aiVehicle
 {
 public:

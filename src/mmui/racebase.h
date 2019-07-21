@@ -46,8 +46,6 @@
     0x5AF70C | float GoldDamageScale | ?GoldDamageScale@@3MA
 */
 
-#include "hooking.h"
-
 // 0x5AF708 | ?GoldHPScale@@3MA
 inline extern_var(0x5AF708, float, GoldHPScale);
 

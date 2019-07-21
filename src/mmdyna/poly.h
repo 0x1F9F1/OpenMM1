@@ -38,8 +38,6 @@
     0x509240 | private: float __thiscall mmPolygon::CheckCellZSide(float,float,float) | ?CheckCellZSide@mmPolygon@@AAEMMMM@Z
 */
 
-#include "hooking.h"
-
 class mmPolygon
 {
 public:

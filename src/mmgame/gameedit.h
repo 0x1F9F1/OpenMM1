@@ -45,8 +45,6 @@
     0x40EED0 | void __cdecl delete_mmGameEdit(void *,int) | ?delete_mmGameEdit@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x609318 | ?mmGameEditMetaClass@@3VMetaClass@@A
 inline extern_var(0x609318, class MetaClass, mmGameEditMetaClass);
 

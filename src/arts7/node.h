@@ -55,8 +55,6 @@
     0x511850 | void __cdecl delete_asNode(void *,int) | ?delete_asNode@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 #include "cullable.h"
 #include "data7/cstr.h"
 

@@ -42,8 +42,6 @@
     0x711ABC | unsigned short * MonoPointer | ?MonoPointer@@3PAGA
 */
 
-#include "hooking.h"
-
 // 0x558360 | ?DefaultPrinter@@YAXHPBDPAD@Z
 void DefaultPrinter(int32_t level, char const* format, va_list args);
 

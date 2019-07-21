@@ -38,8 +38,6 @@
     0x4B6470 | void __cdecl delete_mmAnimMgr(void *,int) | ?delete_mmAnimMgr@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x668090 | ?mmAnimMgrMetaClass@@3VMetaClass@@A
 inline extern_var(0x668090, class MetaClass, mmAnimMgrMetaClass);
 

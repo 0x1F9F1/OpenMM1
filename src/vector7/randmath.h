@@ -31,8 +31,6 @@
     0x7108C4 | void (__cdecl* LogRandomCalls)(void) | ?LogRandomCalls@@3P6AXXZA
 */
 
-#include "hooking.h"
-
 // 0x548EB0 | ?irand@@YAHH@Z
 inline int32_t irand(int32_t arg1)
 {

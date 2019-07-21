@@ -37,8 +37,6 @@
     0x4B51F0 | void __cdecl delete_mmToggle2(void *,int) | ?delete_mmToggle2@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x668018 | ?mmToggle2MetaClass@@3VMetaClass@@A
 inline extern_var(0x668018, class MetaClass, mmToggle2MetaClass);
 

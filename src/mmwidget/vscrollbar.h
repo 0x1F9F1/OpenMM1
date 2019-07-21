@@ -48,8 +48,6 @@
     0x4B27B0 | void __cdecl delete_UIVScrollBar(void *,int) | ?delete_UIVScrollBar@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x667F50 | ?UIVScrollBarMetaClass@@3VMetaClass@@A
 inline extern_var(0x667F50, class MetaClass, UIVScrollBarMetaClass);
 

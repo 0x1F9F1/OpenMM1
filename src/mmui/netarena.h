@@ -47,8 +47,6 @@
     0x592768 | const NetArena::`vftable' | ??_7NetArena@@6B@
 */
 
-#include "hooking.h"
-
 struct NetArena : UIMenu
 {
 public:

@@ -41,8 +41,6 @@
     0x710A8C | int OldMathSpeed | ?OldMathSpeed@@3HA
 */
 
-#include "hooking.h"
-
 // 0x555020 | ?SetMathSpeedSlow@@YAXXZ
 inline void SetMathSpeedSlow()
 {

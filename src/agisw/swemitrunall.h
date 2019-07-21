@@ -326,8 +326,6 @@
     0x5BEBE8 | struct swEmitterSet swCurrentEmitterSet | ?swCurrentEmitterSet@@3UswEmitterSet@@A
 */
 
-#include "hooking.h"
-
 // 0x51FA60 | ?swEmitRun1_NoZOpaqueDecalLinearSolidWUWV@@YIXH@Z
 inline void swEmitRun1_NoZOpaqueDecalLinearSolidWUWV(int32_t arg1)
 {

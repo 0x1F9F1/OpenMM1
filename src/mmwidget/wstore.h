@@ -32,8 +32,6 @@
     0x4A1180 | public: int __thiscall WArray::RetrieveWidgetData(int,int,float &,float &,float &,float &) | ?RetrieveWidgetData@WArray@@QAEHHHAAM000@Z
 */
 
-#include "hooking.h"
-
 struct WArray
 {
 public:

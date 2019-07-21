@@ -41,8 +41,6 @@
     0x4EC890 | void __cdecl delete_PointCamCS(void *,int) | ?delete_PointCamCS@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x67B700 | ?PointCamCSMetaClass@@3VMetaClass@@A
 inline extern_var(0x67B700, class MetaClass, PointCamCSMetaClass);
 

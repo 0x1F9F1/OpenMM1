@@ -34,8 +34,6 @@
     0x4ED8D0 | void __cdecl delete_CarCamCS(void *,int) | ?delete_CarCamCS@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x67B790 | ?CarCamCSMetaClass@@3VMetaClass@@A
 inline extern_var(0x67B790, class MetaClass, CarCamCSMetaClass);
 

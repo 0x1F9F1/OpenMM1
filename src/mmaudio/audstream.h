@@ -56,8 +56,6 @@
     0x594A00 | const AudStream::`vftable' | ??_7AudStream@@6B@
 */
 
-#include "hooking.h"
-
 class AudStream : asNode
 {
 public:

@@ -56,8 +56,6 @@
     0x46FFF0 | void __cdecl delete_mmSkidManager(void *,int) | ?delete_mmSkidManager@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x60A230 | ?mmSkidMetaClass@@3VMetaClass@@A
 inline extern_var(0x60A230, class MetaClass, mmSkidMetaClass);
 

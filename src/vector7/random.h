@@ -26,8 +26,6 @@
     0x5490B0 | public: float __thiscall Random::Normal(float,float) | ?Normal@Random@@QAEMMM@Z
 */
 
-#include "hooking.h"
-
 // An implementation of ran3 decribed in Numerical Recipes in C
 struct Random
 {

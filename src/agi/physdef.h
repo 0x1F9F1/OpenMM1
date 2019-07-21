@@ -25,8 +25,6 @@
     0x539140 | public: void __thiscall agiPhysParameters::Save(class Stream *) | ?Save@agiPhysParameters@@QAEXPAVStream@@@Z
 */
 
-#include "hooking.h"
-
 class agiPhysParameters
 {
 public:

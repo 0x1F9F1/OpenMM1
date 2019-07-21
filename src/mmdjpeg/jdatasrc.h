@@ -28,8 +28,6 @@
     0x55F1A0 | void __cdecl term_source(struct jpeg_decompress_struct *) | ?term_source@@YAXPAUjpeg_decompress_struct@@@Z
 */
 
-#include "hooking.h"
-
 // 0x55F060 | ?jpeg_stdio_src@@YAXPAUjpeg_decompress_struct@@PAVStream@@@Z
 inline void jpeg_stdio_src(struct jpeg_decompress_struct* arg1, class Stream* arg2)
 {

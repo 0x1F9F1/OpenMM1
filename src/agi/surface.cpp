@@ -18,8 +18,6 @@
 
 #include "surface.h"
 
-#include "data7/printer.h"
-
 agiPixelFormat::agiPixelFormat()
 {
     memset(this, 0, sizeof(*this));

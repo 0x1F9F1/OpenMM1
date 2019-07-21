@@ -92,8 +92,6 @@
     0x44D3E0 | void __cdecl delete_aiVehicleData(void *,int) | ?delete_aiVehicleData@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x44B150 | ?AMBIENTCB@@YAXPAVaiVehicleActive@@PAVasBound@@PAVmmIntersection@@PAVVector3@@M@Z
 inline void AMBIENTCB(
     class aiVehicleActive* arg1, class asBound* arg2, class mmIntersection* arg3, class Vector3* arg4, float arg5)

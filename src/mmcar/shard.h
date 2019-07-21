@@ -54,8 +54,6 @@
     0x470B40 | void __cdecl delete_mmShardManager(void *,int) | ?delete_mmShardManager@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x60A280 | ?mmShardManagerMetaClass@@3VMetaClass@@A
 inline extern_var(0x60A280, class MetaClass, mmShardManagerMetaClass);
 

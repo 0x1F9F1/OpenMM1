@@ -53,8 +53,6 @@
     0x668370 | protected: static class mmBangerManager * mmBangerManager::Instance | ?Instance@mmBangerManager@@1PAV1@A
 */
 
-#include "hooking.h"
-
 // 0x5B0FD4 | ?ExpensiveShadows@@3HA
 inline extern_var(0x5B0FD4, int32_t, ExpensiveShadows);
 

@@ -25,8 +25,6 @@
     0x6A09E8 | class HashTable MeshModelHash | ?MeshModelHash@@3VHashTable@@A
 */
 
-#include "hooking.h"
-
 // 0x503EF0 | ?GetModel@@YAPAVagiMeshModel@@PAD00@Z
 inline class agiMeshModel* GetModel(char* arg1, char* arg2, char* arg3)
 {

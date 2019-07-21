@@ -42,8 +42,6 @@
     0x60A378 | private: static short mmPoliceCarAudio::s_iPlayingFluctuator | ?s_iPlayingFluctuator@mmPoliceCarAudio@@0FA
 */
 
-#include "hooking.h"
-
 class mmPoliceCarAudio : mmOpponentCarAudio
 {
 public:

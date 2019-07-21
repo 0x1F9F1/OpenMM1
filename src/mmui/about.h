@@ -33,8 +33,6 @@
     0x592268 | const AboutMenu::`vftable' | ??_7AboutMenu@@6B@
 */
 
-#include "hooking.h"
-
 // 0x48F1B0 | ?GetMidtownRegString@@YAXPADH00@Z
 inline void GetMidtownRegString(char* arg1, int32_t arg2, char* arg3, char* arg4)
 {

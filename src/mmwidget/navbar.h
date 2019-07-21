@@ -39,8 +39,6 @@
     0x5930C8 | const uiNavBar::`vftable' | ??_7uiNavBar@@6B@
 */
 
-#include "hooking.h"
-
 struct uiNavBar : UIMenu
 {
 public:

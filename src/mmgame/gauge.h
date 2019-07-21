@@ -41,8 +41,6 @@
     0x590300 | const RadialGauge::`vftable' | ??_7RadialGauge@@6B@
 */
 
-#include "hooking.h"
-
 struct RadialGauge : asNode
 {
 public:

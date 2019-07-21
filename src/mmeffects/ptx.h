@@ -42,8 +42,6 @@
     0x4F2290 | void __cdecl delete_asParticles(void *,int) | ?delete_asParticles@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x4F20B0 | ?cmpPtx@@YAHPBX0@Z
 inline int32_t cmpPtx(void const* arg1, void const* arg2)
 {

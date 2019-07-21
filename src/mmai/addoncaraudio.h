@@ -29,8 +29,6 @@
     0x4553E0 | public: void __thiscall AddOnCarAudio::Update(void) | ?Update@AddOnCarAudio@@QAEXXZ
 */
 
-#include "hooking.h"
-
 struct AddOnCarAudio
 {
 public:

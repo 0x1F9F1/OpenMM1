@@ -52,8 +52,6 @@
     0x4E8E10 | public: void __thiscall StreamObj::SetPlayingFlag(short) | ?SetPlayingFlag@StreamObj@@QAEXF@Z
 */
 
-#include "hooking.h"
-
 // 0x4E8730 | ?HandleNotifications@@YAKPAX@Z
 inline uint32_t HandleNotifications(void* arg1)
 {

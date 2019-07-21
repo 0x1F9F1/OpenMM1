@@ -43,8 +43,6 @@
     0x5BEBA4 | float swLutInvGamma | ?swLutInvGamma@@3MA
 */
 
-#include "hooking.h"
-
 // 0x5BEBA4 | ?swLutInvGamma@@3MA
 inline extern_var(0x5BEBA4, float, swLutInvGamma);
 

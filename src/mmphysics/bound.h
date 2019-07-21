@@ -29,8 +29,6 @@
     0x5946D0 | const asBound::`vftable' | ??_7asBound@@6B@
 */
 
-#include "hooking.h"
-
 class asBound : asNode
 {
 public:

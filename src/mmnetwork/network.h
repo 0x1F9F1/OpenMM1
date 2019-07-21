@@ -87,8 +87,6 @@
     0x480000 | void __cdecl Debugf(char const *,...) | ?Debugf@@YAXPBDZZ
 */
 
-#include "hooking.h"
-
 // 0x482060 | ?EnumSessionCallback@@YGHPBUDPSESSIONDESC2@@PAKKPAX@Z
 inline int32_t __stdcall EnumSessionCallback(
     struct DPSESSIONDESC2 const* arg1, uint32_t* arg2, uint32_t arg3, void* arg4)

@@ -68,8 +68,6 @@
     0x4C56E0 | void __cdecl delete_mmPlayerData(void *,int) | ?delete_mmPlayerData@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x66A898 | ?mmPlayerDataMetaClass@@3VMetaClass@@A
 inline extern_var(0x66A898, class MetaClass, mmPlayerDataMetaClass);
 

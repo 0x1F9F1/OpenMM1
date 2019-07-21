@@ -35,8 +35,6 @@
     0x58FF98 | const mmWaypointObject::`vftable' | ??_7mmWaypointObject@@6B@
 */
 
-#include "hooking.h"
-
 struct mmWaypointObject : asNode
 {
 public:

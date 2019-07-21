@@ -32,8 +32,6 @@
     0x592F88 | const OptionsBase::`vftable' | ??_7OptionsBase@@6B@
 */
 
-#include "hooking.h"
-
 // 0x4A02C0 | ??_9@$BEE@AE
 
 // 0x4A02D0 | ??_9@$BEI@AE

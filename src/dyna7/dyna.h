@@ -46,8 +46,6 @@
     0x6F2EF8 | int SegVCPoly | ?SegVCPoly@@3HA
 */
 
-#include "hooking.h"
-
 // 0x5BAD60 | ?DynaDrawMode@@3HA
 inline extern_var(0x5BAD60, int32_t, DynaDrawMode);
 

@@ -42,8 +42,6 @@
     0x4EBAB0 | void __cdecl delete_mmViewCS(void *,int) | ?delete_mmViewCS@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x67B670 | ?mmViewCSMetaClass@@3VMetaClass@@A
 inline extern_var(0x67B670, class MetaClass, mmViewCSMetaClass);
 

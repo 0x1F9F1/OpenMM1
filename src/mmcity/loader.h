@@ -43,8 +43,6 @@
     0x60B134 | void * myFont | ?myFont@@3PAXA
 */
 
-#include "hooking.h"
-
 // 0x60B130 | ?IntroFont@@3PAXA
 inline extern_var(0x60B130, void*, IntroFont);
 

@@ -32,8 +32,6 @@
     0x5C69A4 | float QuadCoplanarTolerance | ?QuadCoplanarTolerance@@3MA
 */
 
-#include "hooking.h"
-
 #include "vector4.h"
 
 // 0x552C60 | ?GetBoundSphere@@YA?AVVector4@@HPAVVector3@@@Z

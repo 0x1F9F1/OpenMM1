@@ -33,8 +33,6 @@
     0x564860 | void __cdecl h2v2_fancy_upsample(struct jpeg_decompress_struct *,struct jpeg_component_info *,unsigned char * *,unsigned char * * *) | ?h2v2_fancy_upsample@@YAXPAUjpeg_decompress_struct@@PAUjpeg_component_info@@PAPAEPAPAPAE@Z
 */
 
-#include "hooking.h"
-
 // 0x564260 | ?jinit_upsampler@@YAXPAUjpeg_decompress_struct@@@Z
 inline void jinit_upsampler(struct jpeg_decompress_struct* arg1)
 {

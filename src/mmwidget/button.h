@@ -40,8 +40,6 @@
     0x5938D8 | const UIButton::`vftable' | ??_7UIButton@@6B@
 */
 
-#include "hooking.h"
-
 class UIButton : uiWidget
 {
 public:

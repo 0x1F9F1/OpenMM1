@@ -25,5 +25,3 @@
     0x6A10F0 | protected: static class Vector4 * agiMeshSet::out | ?out@agiMeshSet@@1PAVVector4@@A
     0x50505E | protected: static void __fastcall agiMeshSet::ToScreen$$1(unsigned char *,class Vector4 *,int) | ?ToScreen$$1@agiMeshSet@@KIXPAEPAVVector4@@H@Z
 */
-
-#include "hooking.h"

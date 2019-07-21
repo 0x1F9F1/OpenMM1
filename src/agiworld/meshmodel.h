@@ -29,8 +29,6 @@
     0x503160 | public: __thiscall agiLitAnimation::agiLitAnimation(class agiMeshModel *,class bnAnimation *,class Stream *) | ??0agiLitAnimation@@QAE@PAVagiMeshModel@@PAVbnAnimation@@PAVStream@@@Z
 */
 
-#include "hooking.h"
-
 class agiMeshModel
 {
 public:

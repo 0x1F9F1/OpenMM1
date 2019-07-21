@@ -40,8 +40,6 @@
     0x595ED8 | const VirtualFileSystem::`vftable' | ??_7VirtualFileSystem@@6B@
 */
 
-#include "hooking.h"
-
 #include "data7/ptr.h"
 #include "fsystem.h"
 

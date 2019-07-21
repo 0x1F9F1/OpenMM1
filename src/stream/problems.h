@@ -28,8 +28,6 @@
     0x542BD0 | int __cdecl cmpProblem(void const *,void const *) | ?cmpProblem@@YAHPBX0@Z
 */
 
-#include "hooking.h"
-
 // 0x542930 | ?InitProblems@@YAXXZ
 inline void InitProblems()
 {

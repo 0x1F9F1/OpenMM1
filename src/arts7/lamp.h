@@ -39,8 +39,6 @@
     0x512AC0 | void __cdecl delete_asLamp(void *,int) | ?delete_asLamp@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x6F2B98 | ?asLampMetaClass@@3VMetaClass@@A
 inline extern_var(0x6F2B98, class MetaClass, asLampMetaClass);
 

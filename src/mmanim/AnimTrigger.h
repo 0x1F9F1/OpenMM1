@@ -35,8 +35,6 @@
     0x4B8E40 | public: int __thiscall mmAnimTrigger::CheckObjectDistance(void) | ?CheckObjectDistance@mmAnimTrigger@@QAEHXZ
 */
 
-#include "hooking.h"
-
 class mmAnimTrigger
 {
 public:

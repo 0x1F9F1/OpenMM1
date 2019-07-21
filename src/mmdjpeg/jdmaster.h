@@ -30,8 +30,6 @@
     0x562710 | void __cdecl finish_output_pass(struct jpeg_decompress_struct *) | ?finish_output_pass@@YAXPAUjpeg_decompress_struct@@@Z
 */
 
-#include "hooking.h"
-
 // 0x5622A0 | ?jpeg_calc_output_dimensions@@YAXPAUjpeg_decompress_struct@@@Z
 inline void jpeg_calc_output_dimensions(struct jpeg_decompress_struct* arg1)
 {

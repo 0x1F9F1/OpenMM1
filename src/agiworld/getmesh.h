@@ -27,8 +27,6 @@
     0x6A09D4 | char * MeshCurrentObject | ?MeshCurrentObject@@3PADA
 */
 
-#include "hooking.h"
-
 // 0x5026A0 | ?FixTexFlags@@YAXAAVagiTexParameters@@@Z
 inline void FixTexFlags(class agiTexParameters& arg1)
 {

@@ -32,8 +32,6 @@
     0x592610 | const Dialog_Serial::`vftable' | ??_7Dialog_Serial@@6B@
 */
 
-#include "hooking.h"
-
 struct Dialog_Serial : PUMenuBase
 {
 public:

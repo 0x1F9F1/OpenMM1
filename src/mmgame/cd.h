@@ -35,8 +35,6 @@
     0x58FF48 | const mmCDPlayer::`vftable' | ??_7mmCDPlayer@@6B@
 */
 
-#include "hooking.h"
-
 struct mmCDPlayer : asNode
 {
 public:

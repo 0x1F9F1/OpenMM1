@@ -40,8 +40,6 @@
     0x711AC8 | class DataCache CACHE | ?CACHE@@3VDataCache@@A
 */
 
-#include "hooking.h"
-
 // 0x711AC8 | ?CACHE@@3VDataCache@@A
 inline extern_var(0x711AC8, class DataCache, CACHE);
 

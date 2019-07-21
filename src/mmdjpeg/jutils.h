@@ -29,8 +29,6 @@
     0x596600 | int const * const jpeg_natural_order | ?jpeg_natural_order@@3PBHB
 */
 
-#include "hooking.h"
-
 // 0x562740 | ?jdiv_round_up@@YAJJJ@Z
 inline int32_t jdiv_round_up(int32_t arg1, int32_t arg2)
 {

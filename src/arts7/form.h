@@ -43,8 +43,6 @@
     0x5148C0 | void __cdecl delete_asForm(void *,int) | ?delete_asForm@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x6F2C18 | ?asFormMetaClass@@3VMetaClass@@A
 inline extern_var(0x6F2C18, class MetaClass, asFormMetaClass);
 

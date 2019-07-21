@@ -35,8 +35,6 @@
     0x4ED660 | void __cdecl delete_PolarCamCS(void *,int) | ?delete_PolarCamCS@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x67B760 | ?PolarCamCSMetaClass@@3VMetaClass@@A
 inline extern_var(0x67B760, class MetaClass, PolarCamCSMetaClass);
 

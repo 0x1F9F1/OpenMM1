@@ -44,8 +44,6 @@
     0x7108C8 | struct Vector4Type Vector4Inst | ?Vector4Inst@@3UVector4Type@@A
 */
 
-#include "hooking.h"
-
 // 0x7108C8 | ?Vector4Inst@@3UVector4Type@@A
 inline extern_var(0x7108C8, struct Vector4Type, Vector4Inst);
 

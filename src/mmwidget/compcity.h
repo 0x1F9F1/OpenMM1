@@ -52,8 +52,6 @@
     0x593498 | const mmCompBase::`vftable' | ??_7mmCompBase@@6B@
 */
 
-#include "hooking.h"
-
 class mmCompBase : asNode
 {
 public:

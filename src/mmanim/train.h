@@ -50,8 +50,6 @@
     0x668224 | private: static float mmAnimTrain::s_fAudioAttenuationMult | ?s_fAudioAttenuationMult@mmAnimTrain@@0MA
 */
 
-#include "hooking.h"
-
 // 0x668198 | ?TrainHermite@@3VMatrix44@@A
 inline extern_var(0x668198, class Matrix44, TrainHermite);
 

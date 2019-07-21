@@ -108,8 +108,6 @@
     0x40B760 | void __cdecl delete_mmInterface(void *,int) | ?delete_mmInterface@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x4037F0 | ?ReportTimeAlloc@@YAXM@Z
 inline void ReportTimeAlloc(float arg1)
 {

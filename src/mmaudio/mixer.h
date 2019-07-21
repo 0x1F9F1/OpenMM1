@@ -47,8 +47,6 @@
     0x59498C | const MixerCTL::`vftable'{for `Dispatchable'} | ??_7MixerCTL@@6BDispatchable@@@
 */
 
-#include "hooking.h"
-
 class MixerCTL
 {
 public:

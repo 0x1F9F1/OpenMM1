@@ -38,8 +38,6 @@
     0x70ED90 | class HashTable DLPHash | ?DLPHash@@3VHashTable@@A
 */
 
-#include "hooking.h"
-
 // 0x70ED90 | ?DLPHash@@3VHashTable@@A
 inline extern_var(0x70ED90, class HashTable, DLPHash);
 

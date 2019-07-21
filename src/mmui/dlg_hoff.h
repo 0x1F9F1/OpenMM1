@@ -33,8 +33,6 @@
     0x5924D8 | const Dialog_HallOfFame::`vftable' | ??_7Dialog_HallOfFame@@6B@
 */
 
-#include "hooking.h"
-
 struct Dialog_HallOfFame : PUMenuBase
 {
 public:

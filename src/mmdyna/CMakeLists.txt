@@ -1,4 +1,4 @@
-add_library(mmdyna OBJECT
+arts_add_component(mmdyna
     # bndtmpl.cpp
     # bndtmpl.h
     # bndtmpl2.cpp
@@ -8,5 +8,3 @@ add_library(mmdyna OBJECT
     # poly.cpp
     # poly.h
 )
-
-target_link_libraries(mmdyna hooking)

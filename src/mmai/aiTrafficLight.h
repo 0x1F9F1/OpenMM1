@@ -43,8 +43,6 @@
     0x609D10 | private: static short aiTrafficLightSet::ObjCount | ?ObjCount@aiTrafficLightSet@@0FA
 */
 
-#include "hooking.h"
-
 struct aiTrafficLightSet : asNode
 {
 public:

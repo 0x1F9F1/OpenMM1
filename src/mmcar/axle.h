@@ -33,8 +33,6 @@
     0x474D10 | void __cdecl delete_mmAxle(void *,int) | ?delete_mmAxle@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x60A410 | ?mmAxleMetaClass@@3VMetaClass@@A
 inline extern_var(0x60A410, class MetaClass, mmAxleMetaClass);
 

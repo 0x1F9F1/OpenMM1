@@ -33,8 +33,6 @@
     0x464260 | void __cdecl StuckCB(class aiStuck *) | ?StuckCB@@YAXPAVaiStuck@@@Z
 */
 
-#include "hooking.h"
-
 // 0x464260 | ?StuckCB@@YAXPAVaiStuck@@@Z
 inline void StuckCB(class aiStuck* arg1)
 {

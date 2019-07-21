@@ -32,8 +32,6 @@
     0x5929B0 | const Vehicle::`vftable' | ??_7Vehicle@@6B@
 */
 
-#include "hooking.h"
-
 struct Vehicle : VehicleSelectBase
 {
 public:

@@ -47,8 +47,6 @@
     0x6F2E00 | class Vector3 ColWhite | ?ColWhite@@3VVector3@@A
 */
 
-#include "hooking.h"
-
 // 0x6F2C90 | ?ColLightCyan@@3VVector3@@A
 inline extern_var(0x6F2C90, class Vector3, ColLightCyan);
 

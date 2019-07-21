@@ -38,8 +38,6 @@
     0x47CB60 | void __cdecl delete_EngineAudioOpponent(void *,int) | ?delete_EngineAudioOpponent@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x60A5D0 | ?EngineAudioOpponentMetaClass@@3VMetaClass@@A
 inline extern_var(0x60A5D0, class MetaClass, EngineAudioOpponentMetaClass);
 

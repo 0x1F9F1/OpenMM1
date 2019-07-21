@@ -54,8 +54,6 @@
     0x42F5D0 | void __cdecl delete_mmDashView(void *,int) | ?delete_mmDashView@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x5A6AAC | ?MAX_SPEED@@3MA
 inline extern_var(0x5A6AAC, float, MAX_SPEED);
 

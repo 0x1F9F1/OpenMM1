@@ -42,8 +42,6 @@
     0x430630 | void __cdecl delete_mmWaypointInstance(void *,int) | ?delete_mmWaypointInstance@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x609BA0 | ?mmWaypointInstanceMetaClass@@3VMetaClass@@A
 inline extern_var(0x609BA0, class MetaClass, mmWaypointInstanceMetaClass);
 

@@ -33,8 +33,6 @@
     0x51CCF0 | void __cdecl ddEndFrame(void) | ?ddEndFrame@@YAXXZ
 */
 
-#include "hooking.h"
-
 // 0x51CAF0 | ?ddAttach@@YAXHH@Z
 inline void ddAttach(int32_t arg1, int32_t arg2)
 {

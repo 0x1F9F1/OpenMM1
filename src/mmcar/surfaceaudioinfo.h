@@ -27,8 +27,6 @@
     0x60A080 | struct tagSurfaceAudioInfo * SURFACEAUDIOINFO | ?SURFACEAUDIOINFO@@3PAUtagSurfaceAudioInfo@@A
 */
 
-#include "hooking.h"
-
 // 0x468A20 | ?SetClearSurfaceAudioInfos@@YAXXZ
 inline void SetClearSurfaceAudioInfos()
 {

@@ -33,8 +33,6 @@
     0x545BD0 | char * __cdecl DIError(int) | ?DIError@@YAPADH@Z
 */
 
-#include "hooking.h"
-
 // 0x545960 | ?inputSetup@@YAHHHHHH@Z
 inline int32_t inputSetup(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5)
 {

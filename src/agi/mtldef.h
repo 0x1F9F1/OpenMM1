@@ -34,8 +34,6 @@
     0x595DD8 | const agiMtlDef::`vftable' | ??_7agiMtlDef@@6B@
 */
 
-#include "hooking.h"
-
 class agiMtlParameters
 {
 public:

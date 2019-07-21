@@ -111,8 +111,6 @@
     0x4D6FA0 | void __cdecl delete_mmInput(void *,int) | ?delete_mmInput@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x4D3670 | ?testsuperq@@YAXXZ
 inline void testsuperq()
 {

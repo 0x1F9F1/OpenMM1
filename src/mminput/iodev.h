@@ -43,8 +43,6 @@
     0x4D8760 | void __cdecl delete_mmIODev(void *,int) | ?delete_mmIODev@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x4D7FC0 | ?ConvertDItoString@@YAHHPADH@Z
 inline int32_t ConvertDItoString(int32_t arg1, char* arg2, int32_t arg3)
 {

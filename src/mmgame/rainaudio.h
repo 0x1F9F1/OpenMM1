@@ -29,8 +29,6 @@
     0x42E290 | public: void __thiscall mmRainAudio::Update(void) | ?Update@mmRainAudio@@QAEXXZ
 */
 
-#include "hooking.h"
-
 struct mmRainAudio
 {
 public:

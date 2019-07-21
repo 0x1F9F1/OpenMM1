@@ -38,8 +38,6 @@
     0x593FC0 | const mmAnimSpline::`vftable' | ??_7mmAnimSpline@@6B@
 */
 
-#include "hooking.h"
-
 struct mmAnimSpline : asNode
 {
 public:

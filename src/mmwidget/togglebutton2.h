@@ -39,8 +39,6 @@
     0x667F48 | protected: static int UIToggleButton2::ToggleBMLoaded | ?ToggleBMLoaded@UIToggleButton2@@1HA
 */
 
-#include "hooking.h"
-
 class UIToggleButton2 : UIButton
 {
 public:

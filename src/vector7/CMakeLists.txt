@@ -1,4 +1,4 @@
-add_library(vector7 OBJECT
+arts_add_component(vector7
     algmath.cpp
     algmath.h
     const.cpp
@@ -24,5 +24,3 @@ add_library(vector7 OBJECT
     vector4.cpp
     vector4.h
 )
-
-target_link_libraries(vector7 hooking)

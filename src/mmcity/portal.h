@@ -46,8 +46,6 @@
     0x48E050 | void __cdecl delete_asPortalWeb(void *,int) | ?delete_asPortalWeb@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x48CB40 | ?LookupCell@@YAPAUasPortalCell@@PAD@Z
 inline struct asPortalCell* LookupCell(char* arg1)
 {

@@ -33,8 +33,6 @@
     0x51B0E0 | void __cdecl xlat(struct _D3DCOLORVALUE &,class Vector4 &) | ?xlat@@YAXAAU_D3DCOLORVALUE@@AAVVector4@@@Z
 */
 
-#include "hooking.h"
-
 // 0x51B0E0 | ?xlat@@YAXAAU_D3DCOLORVALUE@@AAVVector4@@@Z
 inline void xlat(struct _D3DCOLORVALUE& arg1, class Vector4& arg2)
 {

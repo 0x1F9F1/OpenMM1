@@ -31,8 +31,6 @@
     0x590DD8 | const aiGoalCollision::`vftable' | ??_7aiGoalCollision@@6B@
 */
 
-#include "hooking.h"
-
 struct aiGoalCollision : aiGoal
 {
 public:

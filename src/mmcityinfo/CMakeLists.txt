@@ -1,4 +1,4 @@
-add_library(mmcityinfo OBJECT
+arts_add_component(mmcityinfo
     # cityinfo.cpp
     # cityinfo.h
     # citylist.cpp
@@ -28,5 +28,3 @@ add_library(mmcityinfo OBJECT
     # vehlist.cpp
     # vehlist.h
 )
-
-target_link_libraries(mmcityinfo hooking)

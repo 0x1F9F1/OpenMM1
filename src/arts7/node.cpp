@@ -19,7 +19,6 @@
 #include "node.h"
 
 #include "data7/metaclass.h"
-#include "data7/printer.h"
 
 void asNode::SetName(char* arg1)
 {

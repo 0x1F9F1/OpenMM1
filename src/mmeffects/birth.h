@@ -33,8 +33,6 @@
     0x4F29C0 | void __cdecl delete_asBirthRule(void *,int) | ?delete_asBirthRule@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x67B8A8 | ?asBirthRuleMetaClass@@3VMetaClass@@A
 inline extern_var(0x67B8A8, class MetaClass, asBirthRuleMetaClass);
 

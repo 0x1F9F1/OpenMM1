@@ -1,4 +1,4 @@
-add_library(memory OBJECT
+arts_add_component(memory
     allocator.cpp
     allocator.h
     stack.cpp
@@ -8,5 +8,3 @@ add_library(memory OBJECT
     valloc.cpp
     valloc.h
 )
-
-target_link_libraries(memory hooking)

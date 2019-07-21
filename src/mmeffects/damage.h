@@ -28,8 +28,6 @@
     0x4F3620 | public: void __thiscall mmDamage::Apply(class Vector3 &,float) | ?Apply@mmDamage@@QAEXAAVVector3@@M@Z
 */
 
-#include "hooking.h"
-
 struct mmDamage
 {
 public:

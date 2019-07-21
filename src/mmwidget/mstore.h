@@ -31,8 +31,6 @@
     0x4A0950 | public: int __thiscall MArray::RetrieveMenuData(int,float &,float &,float &,float &) | ?RetrieveMenuData@MArray@@QAEHHAAM000@Z
 */
 
-#include "hooking.h"
-
 struct MArray
 {
 public:

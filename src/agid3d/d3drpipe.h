@@ -37,8 +37,6 @@
     0x6F2F24 | int UseSimpleRenderer | ?UseSimpleRenderer@@3HA
 */
 
-#include "hooking.h"
-
 // 0x6F2F24 | ?UseSimpleRenderer@@3HA
 inline extern_var(0x6F2F24, int32_t, UseSimpleRenderer);
 

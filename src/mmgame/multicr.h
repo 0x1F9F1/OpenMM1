@@ -77,8 +77,6 @@
     0x41B600 | void __cdecl delete_mmMultiCR(void *,int) | ?delete_mmMultiCR@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x609548 | ?mmMultiCRMetaClass@@3VMetaClass@@A
 inline extern_var(0x609548, class MetaClass, mmMultiCRMetaClass);
 

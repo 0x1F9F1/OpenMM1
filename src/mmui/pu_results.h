@@ -40,8 +40,6 @@
     0x592B50 | const PUResults::`vftable' | ??_7PUResults@@6B@
 */
 
-#include "hooking.h"
-
 struct PUResults : PUMenuBase
 {
 public:

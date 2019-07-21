@@ -34,8 +34,6 @@
     0x593C20 | const UIMexButton::`vftable' | ??_7UIMexButton@@6B@
 */
 
-#include "hooking.h"
-
 class UIMexButton : UIToggleButton2
 {
 public:

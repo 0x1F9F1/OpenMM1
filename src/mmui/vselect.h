@@ -56,8 +56,6 @@
     0x5922D0 | const VehicleSelectBase::`vftable' | ??_7VehicleSelectBase@@6B@
 */
 
-#include "hooking.h"
-
 struct VehicleSelectBase : UIMenu
 {
 public:

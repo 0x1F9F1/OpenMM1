@@ -52,8 +52,6 @@
     0x412AD0 | void __cdecl delete_mmSingleCircuit(void *,int) | ?delete_mmSingleCircuit@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x6093E0 | ?mmSingleCircuitMetaClass@@3VMetaClass@@A
 inline extern_var(0x6093E0, class MetaClass, mmSingleCircuitMetaClass);
 

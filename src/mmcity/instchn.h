@@ -37,8 +37,6 @@
     0x64F7BC | int NormalsOnInstances | ?NormalsOnInstances@@3HA
 */
 
-#include "hooking.h"
-
 // 0x5ADAA4 | ?EnableSphereCull@@3HA
 inline extern_var(0x5ADAA4, int32_t, EnableSphereCull);
 

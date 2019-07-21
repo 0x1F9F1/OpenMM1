@@ -56,8 +56,6 @@
     0x4AC4F0 | void __cdecl delete_UIBMButton(void *,int) | ?delete_UIBMButton@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x667D00 | ?UIBMButtonMetaClass@@3VMetaClass@@A
 inline extern_var(0x667D00, class MetaClass, UIBMButtonMetaClass);
 

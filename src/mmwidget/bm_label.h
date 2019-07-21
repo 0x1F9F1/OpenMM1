@@ -38,8 +38,6 @@
     0x4A9460 | void __cdecl delete_UIBMLabel(void *,int) | ?delete_UIBMLabel@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x667CD0 | ?UIBMLabelMetaClass@@3VMetaClass@@A
 inline extern_var(0x667CD0, class MetaClass, UIBMLabelMetaClass);
 

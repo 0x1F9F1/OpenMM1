@@ -47,8 +47,6 @@
     0x6F74CC | int OrthoFix | ?OrthoFix@@3HA
 */
 
-#include "hooking.h"
-
 // 0x519040 | ?d3d_state_init@@YAXXZ
 inline void d3d_state_init()
 {

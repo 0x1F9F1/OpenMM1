@@ -31,8 +31,6 @@
     0x448B10 | public: int __thiscall aiPoliceForce::State(class mmCar *,class mmCar *,float) | ?State@aiPoliceForce@@QAEHPAVmmCar@@0M@Z
 */
 
-#include "hooking.h"
-
 struct aiPoliceForce
 {
 public:

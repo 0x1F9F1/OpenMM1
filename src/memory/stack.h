@@ -32,8 +32,6 @@
     0x50E180 | void __cdecl InitMap(void) | ?InitMap@@YAXXZ
 */
 
-#include "hooking.h"
-
 // 0x50E0F0 | ?LookupAddress@@YAXPADH@Z
 void LookupAddress(char* buffer, uint32_t address);
 

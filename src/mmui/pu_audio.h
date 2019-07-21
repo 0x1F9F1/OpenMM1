@@ -34,8 +34,6 @@
     0x667C88 | class mmPlayerConfig * PUOptionsConfig | ?PUOptionsConfig@@3PAVmmPlayerConfig@@A
 */
 
-#include "hooking.h"
-
 // 0x667C88 | ?PUOptionsConfig@@3PAVmmPlayerConfig@@A
 inline extern_var(0x667C88, class mmPlayerConfig*, PUOptionsConfig);
 

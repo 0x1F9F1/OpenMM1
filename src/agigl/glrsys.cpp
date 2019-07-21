@@ -19,8 +19,6 @@
 #include "glrsys.h"
 
 #include "agi/pipeline.h"
-#include "data7/assert.h"
-#include "data7/printer.h"
 #include "gltexdef.h"
 #include "glutils.h"
 

@@ -33,8 +33,6 @@
     0x595CD0 | const agiColorModel8::`vftable' | ??_7agiColorModel8@@6B@
 */
 
-#include "hooking.h"
-
 #include "cmodel.h"
 
 class agiPalette;

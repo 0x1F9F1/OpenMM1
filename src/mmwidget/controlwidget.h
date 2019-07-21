@@ -37,8 +37,6 @@
     0x593A30 | const UIControlWidget::`vftable' | ??_7UIControlWidget@@6B@
 */
 
-#include "hooking.h"
-
 class UIControlWidget : uiWidget
 {
 public:

@@ -39,8 +39,6 @@
     0x593590 | const mmCompDRecord::`vftable' | ??_7mmCompDRecord@@6B@
 */
 
-#include "hooking.h"
-
 struct mmCompDRecord : mmCompBase
 {
 public:

@@ -45,8 +45,6 @@
     0x47FE50 | public: void __thiscall mmSurfaceAudio::SetWobbleVol(float,float) | ?SetWobbleVol@mmSurfaceAudio@@QAEXMM@Z
 */
 
-#include "hooking.h"
-
 struct mmSurfaceAudio
 {
 public:

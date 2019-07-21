@@ -18,9 +18,6 @@
 
 #include "stream.h"
 
-#include "data7/assert.h"
-#include "data7/printer.h"
-
 #include "fsystem.h"
 #include "hfsystem.h"
 

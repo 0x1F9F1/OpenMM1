@@ -24,8 +24,6 @@
     0x48A970 | void __cdecl mmHeapError(void) | ?mmHeapError@@YAXXZ
 */
 
-#include "hooking.h"
-
 // 0x48A970 | ?mmHeapError@@YAXXZ
 inline void mmHeapError()
 {

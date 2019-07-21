@@ -40,8 +40,6 @@
     0x710A84 | struct Vector2Type Vector2Inst | ?Vector2Inst@@3UVector2Type@@A
 */
 
-#include "hooking.h"
-
 // 0x710A84 | ?Vector2Inst@@3UVector2Type@@A
 inline extern_var(0x710A84, struct Vector2Type, Vector2Inst);
 

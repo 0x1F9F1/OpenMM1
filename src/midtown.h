@@ -53,8 +53,6 @@
     0x402530 | void __cdecl GameCloseCallback(void) | ?GameCloseCallback@@YAXXZ
 */
 
-#include "hooking.h"
-
 #include "minwin.h"
 
 // 0x401030 | ?CreatePipeline@@YAPAVagiPipeline@@HPAPAD@Z

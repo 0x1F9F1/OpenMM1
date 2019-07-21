@@ -24,7 +24,5 @@
     0x5B8670 | struct agiWorldRenderQuality agiRQ | ?agiRQ@@3UagiWorldRenderQuality@@A
 */
 
-#include "hooking.h"
-
 // 0x5B8670 | ?agiRQ@@3UagiWorldRenderQuality@@A
 inline extern_var(0x5B8670, struct agiWorldRenderQuality, agiRQ);

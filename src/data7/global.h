@@ -25,8 +25,6 @@
     0x5CE784 | int DevelopmentMode | ?DevelopmentMode@@3HA
 */
 
-#include "hooking.h"
-
 // 0x55AA00 | ?HexDump@@YAXPAXH@Z
 inline void HexDump(void* arg1, int32_t arg2)
 {

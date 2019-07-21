@@ -38,8 +38,6 @@
     0x593508 | const mmCompRaceRecord::`vftable' | ??_7mmCompRaceRecord@@6B@
 */
 
-#include "hooking.h"
-
 struct mmCompRaceRecord : mmCompBase
 {
 public:

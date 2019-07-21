@@ -47,8 +47,6 @@
     0x4C1E60 | void __cdecl delete_mmMiscData(void *,int) | ?delete_mmMiscData@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x66A820 | ?mmMiscDataMetaClass@@3VMetaClass@@A
 inline extern_var(0x66A820, class MetaClass, mmMiscDataMetaClass);
 

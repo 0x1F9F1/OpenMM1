@@ -37,8 +37,6 @@
     0x478000 | void __cdecl delete_mmForce(void *,int) | ?delete_mmForce@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x5AB6F8 | ?YDownForceMinHeight@@3MA
 inline extern_var(0x5AB6F8, float, YDownForceMinHeight);
 

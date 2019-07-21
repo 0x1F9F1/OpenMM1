@@ -25,8 +25,6 @@
     0x440F50 | public: __thiscall aiRaceData::~aiRaceData(void) | ??1aiRaceData@@QAE@XZ
 */
 
-#include "hooking.h"
-
 class aiRaceData
 {
 public:

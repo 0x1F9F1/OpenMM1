@@ -41,8 +41,6 @@
     0x50F210 | int __cdecl HeapAssert(void *,int,char *,int) | ?HeapAssert@@YAHPAXHPADH@Z
 */
 
-#include "hooking.h"
-
 // 0x6E28B0 | ?ALLOCATOR@@3VasMemoryAllocator@@A
 inline extern_var(0x6E28B0, class asMemoryAllocator, ALLOCATOR);
 

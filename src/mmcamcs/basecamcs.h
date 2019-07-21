@@ -36,8 +36,6 @@
     0x4EE640 | void __cdecl delete_BaseCamCS(void *,int) | ?delete_BaseCamCS@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x67B7C0 | ?BaseCamCSMetaClass@@3VMetaClass@@A
 inline extern_var(0x67B7C0, class MetaClass, BaseCamCSMetaClass);
 

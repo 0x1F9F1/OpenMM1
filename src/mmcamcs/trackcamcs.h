@@ -48,8 +48,6 @@
     0x4EB4E0 | void __cdecl delete_TrackCamCS(void *,int) | ?delete_TrackCamCS@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x67B648 | ?TrackCamCSMetaClass@@3VMetaClass@@A
 inline extern_var(0x67B648, class MetaClass, TrackCamCSMetaClass);
 

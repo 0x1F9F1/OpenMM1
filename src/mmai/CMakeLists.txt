@@ -1,4 +1,4 @@
-add_library(mmai OBJECT
+arts_add_component(mmai
     # addoncaraudio.cpp
     # addoncaraudio.h
     # aiData.cpp
@@ -54,5 +54,3 @@ add_library(mmai OBJECT
     # arraylist.cpp
     # arraylist.h
 )
-
-target_link_libraries(mmai hooking)

@@ -33,8 +33,6 @@
     0x592D20 | const PUControl::`vftable' | ??_7PUControl@@6B@
 */
 
-#include "hooking.h"
-
 struct PUControl : PUMenuBase
 {
 public:

@@ -35,8 +35,6 @@
     0x595BE8 | const agiRefreshable::`vftable' | ??_7agiRefreshable@@6B@
 */
 
-#include "hooking.h"
-
 class agiPipeline;
 
 class agiRefreshable

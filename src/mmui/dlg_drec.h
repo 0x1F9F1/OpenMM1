@@ -34,8 +34,6 @@
     0x592530 | const Dialog_DriverRec::`vftable' | ??_7Dialog_DriverRec@@6B@
 */
 
-#include "hooking.h"
-
 struct Dialog_DriverRec : PUMenuBase
 {
 public:

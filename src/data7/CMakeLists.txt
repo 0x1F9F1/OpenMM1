@@ -1,4 +1,4 @@
-add_library(data7 OBJECT
+arts_add_component(data7
     args.cpp
     args.h
     b2f.cpp
@@ -51,5 +51,3 @@ add_library(data7 OBJECT
     ptr.h
     ref.h
 )
-
-target_link_libraries(data7 hooking)

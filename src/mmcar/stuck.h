@@ -33,8 +33,6 @@
     0x473E00 | void __cdecl StuckCB(class mmStuck *) | ?StuckCB@@YAXPAVmmStuck@@@Z
 */
 
-#include "hooking.h"
-
 // 0x473E00 | ?StuckCB@@YAXPAVmmStuck@@@Z
 inline void StuckCB(class mmStuck* arg1)
 {

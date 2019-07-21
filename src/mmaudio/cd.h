@@ -33,8 +33,6 @@
     0x4E7330 | public: short __thiscall CDMan::GetNumTracks(void) | ?GetNumTracks@CDMan@@QAEFXZ
 */
 
-#include "hooking.h"
-
 struct CDMan
 {
 public:

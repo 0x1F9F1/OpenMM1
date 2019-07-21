@@ -26,8 +26,6 @@
     0x5641E0 | void __cdecl post_process_1pass(struct jpeg_decompress_struct *,unsigned char * * *,unsigned int *,unsigned int,unsigned char * *,unsigned int *,unsigned int) | ?post_process_1pass@@YAXPAUjpeg_decompress_struct@@PAPAPAEPAIIPAPAE2I@Z
 */
 
-#include "hooking.h"
-
 // 0x5640C0 | ?jinit_d_post_controller@@YAXPAUjpeg_decompress_struct@@E@Z
 inline void jinit_d_post_controller(struct jpeg_decompress_struct* arg1, uint8_t arg2)
 {

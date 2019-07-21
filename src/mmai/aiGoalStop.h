@@ -31,8 +31,6 @@
     0x590BA0 | const aiGoalStop::`vftable' | ??_7aiGoalStop@@6B@
 */
 
-#include "hooking.h"
-
 struct aiGoalStop : aiGoal
 {
 public:

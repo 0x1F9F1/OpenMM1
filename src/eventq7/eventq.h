@@ -36,8 +36,6 @@
     0x596030 | const eqEventQ::`vftable' | ??_7eqEventQ@@6B@
 */
 
-#include "hooking.h"
-
 struct eqEventQ : eqEventMonitor
 {
 public:

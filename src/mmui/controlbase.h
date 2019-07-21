@@ -27,8 +27,6 @@
     0x4A0370 | public: void __thiscall ControlBase::SetSensitivity(void) | ?SetSensitivity@ControlBase@@QAEXXZ
 */
 
-#include "hooking.h"
-
 struct ControlBase
 {
 public:

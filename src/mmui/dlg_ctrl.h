@@ -29,8 +29,6 @@
     0x592658 | const Dialog_ControlAssign::`vftable' | ??_7Dialog_ControlAssign@@6B@
 */
 
-#include "hooking.h"
-
 struct Dialog_ControlAssign : PUMenuBase
 {
 public:

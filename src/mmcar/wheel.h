@@ -47,8 +47,6 @@
     0x476F50 | void __cdecl delete_mmWheel(void *,int) | ?delete_mmWheel@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x60A448 | ?mmWheelMetaClass@@3VMetaClass@@A
 inline extern_var(0x60A448, class MetaClass, mmWheelMetaClass);
 

@@ -64,8 +64,6 @@
     0x4B7D20 | void __cdecl delete_mmBridgeMgr(void *,int) | ?delete_mmBridgeMgr@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x6680C8 | ?mmBridgeMgrMetaClass@@3VMetaClass@@A
 inline extern_var(0x6680C8, class MetaClass, mmBridgeMgrMetaClass);
 

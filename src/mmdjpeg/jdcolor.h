@@ -31,8 +31,6 @@
     0x565000 | void __cdecl start_pass_dcolor(struct jpeg_decompress_struct *) | ?start_pass_dcolor@@YAXPAUjpeg_decompress_struct@@@Z
 */
 
-#include "hooking.h"
-
 // 0x5649B0 | ?jinit_color_deconverter@@YAXPAUjpeg_decompress_struct@@@Z
 inline void jinit_color_deconverter(struct jpeg_decompress_struct* arg1)
 {

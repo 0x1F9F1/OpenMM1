@@ -35,8 +35,6 @@
     0x503E20 | public: static class bnAnimation * __cdecl bnAnimation::Lookup(char *) | ?Lookup@bnAnimation@@SAPAV1@PAD@Z
 */
 
-#include "hooking.h"
-
 class bnAnimation
 {
 public:

@@ -23,9 +23,6 @@
 #include <SDL.h>
 #include <SDL_syswm.h>
 
-#include "data7/assert.h"
-#include "data7/printer.h"
-
 #include "pcwindis/dxinit.h"
 #include "pcwindis/pcwindis.h"
 

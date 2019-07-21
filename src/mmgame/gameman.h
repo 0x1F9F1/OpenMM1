@@ -55,8 +55,6 @@
     0x4036B0 | void __cdecl delete_mmGameManager(void *,int) | ?delete_mmGameManager@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x5D4504 | ?dummyGlobal2@@3EA
 inline extern_var(0x5D4504, uint8_t, dummyGlobal2);
 

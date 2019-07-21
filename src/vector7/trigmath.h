@@ -33,8 +33,6 @@
     0x5CCDE0 | float * TRIGMATH_ATANTABLE | ?TRIGMATH_ATANTABLE@@3PAMA
 */
 
-#include "hooking.h"
-
 // 0x554DA0 | ?tanf_fast@@YAMM@Z
 inline float tanf_fast(float arg1)
 {

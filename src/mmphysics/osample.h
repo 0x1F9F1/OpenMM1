@@ -35,8 +35,6 @@
     0x4D2150 | void __cdecl delete_asOverSample(void *,int) | ?delete_asOverSample@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x67B438 | ?asOverSampleMetaClass@@3VMetaClass@@A
 inline extern_var(0x67B438, class MetaClass, asOverSampleMetaClass);
 

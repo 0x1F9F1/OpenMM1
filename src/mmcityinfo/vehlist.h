@@ -37,8 +37,6 @@
     0x66A814 | class mmVehList * VehicleListPtr | ?VehicleListPtr@@3PAVmmVehList@@A
 */
 
-#include "hooking.h"
-
 // 0x66A814 | ?VehicleListPtr@@3PAVmmVehList@@A
 inline extern_var(0x66A814, class mmVehList*, VehicleListPtr);
 

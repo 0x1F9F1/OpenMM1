@@ -1,4 +1,4 @@
-add_library(mmdjpeg OBJECT
+arts_add_component(mmdjpeg
     # jcomapi.cpp
     # jcomapi.h
     # jdapimin.cpp
@@ -42,5 +42,3 @@ add_library(mmdjpeg OBJECT
     # jutils.cpp
     # jutils.h
 )
-
-target_link_libraries(mmdjpeg hooking)

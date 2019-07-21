@@ -41,8 +41,6 @@
     0x561500 | void __cdecl reset_marker_reader(struct jpeg_decompress_struct *) | ?reset_marker_reader@@YAXPAUjpeg_decompress_struct@@@Z
 */
 
-#include "hooking.h"
-
 // 0x55F9D0 | ?jpeg_resync_to_restart@@YAEPAUjpeg_decompress_struct@@H@Z
 inline uint8_t jpeg_resync_to_restart(struct jpeg_decompress_struct* arg1, int32_t arg2)
 {

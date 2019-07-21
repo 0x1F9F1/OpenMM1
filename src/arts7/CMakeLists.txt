@@ -1,4 +1,4 @@
-add_library(arts7 OBJECT
+arts_add_component(arts7
     # benchstats.cpp
     # benchstats.h
     # camera.cpp
@@ -22,5 +22,3 @@ add_library(arts7 OBJECT
     # view.cpp
     # view.h
 )
-
-target_link_libraries(arts7 hooking)

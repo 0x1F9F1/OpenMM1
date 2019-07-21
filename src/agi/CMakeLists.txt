@@ -1,4 +1,4 @@
-add_library(agi OBJECT
+arts_add_component(agi
     bitmap.cpp
     bitmap.h
     cmodel.cpp
@@ -50,5 +50,3 @@ add_library(agi OBJECT
     agilib.cpp
     agilib.h
 )
-
-target_link_libraries(agi hooking)

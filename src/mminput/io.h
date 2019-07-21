@@ -35,8 +35,6 @@
     0x4D7D00 | public: void __thiscall mmIO::ForceSettingAcrossConfigs(int) | ?ForceSettingAcrossConfigs@mmIO@@QAEXH@Z
 */
 
-#include "hooking.h"
-
 class mmIO
 {
 public:

@@ -38,8 +38,6 @@
     0x4C6680 | public: float __thiscall mmRaceData::GetDifficulty(int,enum mmSkillLevel) | ?GetDifficulty@mmRaceData@@QAEMHW4mmSkillLevel@@@Z
 */
 
-#include "hooking.h"
-
 struct mmRaceData
 {
 public:

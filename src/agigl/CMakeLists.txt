@@ -1,4 +1,4 @@
-add_library(agigl OBJECT
+arts_add_component(agigl
     glpipe.cpp
     glpipe.h
     glrsys.cpp
@@ -12,5 +12,3 @@ add_library(agigl OBJECT
     glutils.cpp
     glutils.h
 )
-
-target_link_libraries(agigl hooking)

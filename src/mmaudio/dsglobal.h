@@ -79,8 +79,6 @@
     0x4E27B0 | void __cdecl Debugf(char const *,...) | ?Debugf@@YAXPBDZZ
 */
 
-#include "hooking.h"
-
 // 0x4E2400 | ?UpperCase@@YAXPAD@Z
 inline void UpperCase(char* arg1)
 {

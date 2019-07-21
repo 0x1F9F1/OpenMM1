@@ -32,8 +32,6 @@
     0x67B8D0 | class HashTable SLH | ?SLH@@3VHashTable@@A
 */
 
-#include "hooking.h"
-
 // 0x4F2AF0 | ?GetSparkLut@@YAPAVasSparkLut@@PAD@Z
 inline class asSparkLut* GetSparkLut(char* arg1)
 {

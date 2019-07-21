@@ -33,8 +33,6 @@
     0x712240 | class Callback NullCallback | ?NullCallback@@3VCallback@@A
 */
 
-#include "hooking.h"
-
 // 0x55AC30 | ??0Callback@@QAE@P8Base@@AEXXZPAV1@@Z
 
 // 0x55AC70 | ??0Callback@@QAE@P8Base@@AEXPAX@ZPAV1@0@Z

@@ -28,8 +28,6 @@
     0x55A4E0 | int __cdecl getMem(void) | ?getMem@@YAHXZ
 */
 
-#include "hooking.h"
-
 // 0x55A480 | ?BeginMemStat@@YAXPBD@Z
 inline void BeginMemStat(char const* arg1)
 {

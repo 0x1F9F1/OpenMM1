@@ -49,8 +49,6 @@
     0x498710 | unsigned long __stdcall CalibrateWatcher(void *) | ?CalibrateWatcher@@YGKPAX@Z
 */
 
-#include "hooking.h"
-
 // 0x498710 | ?CalibrateWatcher@@YGKPAX@Z
 inline uint32_t __stdcall CalibrateWatcher(void* arg1)
 {

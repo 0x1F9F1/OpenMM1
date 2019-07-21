@@ -34,8 +34,6 @@
     0x554CF0 | public: void __thiscall Quaternion::CatmullRom(float,class Quaternion const &,class Quaternion const &,class Quaternion const &,class Quaternion const &) | ?CatmullRom@Quaternion@@QAEXMABV1@000@Z
 */
 
-#include "hooking.h"
-
 class Quaternion
 {
 public:

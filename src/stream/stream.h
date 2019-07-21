@@ -70,8 +70,6 @@
     0x70EDA0 | int EnableBinaryFileMapping | ?EnableBinaryFileMapping@@3HA
 */
 
-#include "hooking.h"
-
 #include "data7/base.h"
 
 #include <cstdarg>

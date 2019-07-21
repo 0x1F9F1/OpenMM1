@@ -31,8 +31,6 @@
     0x67B8E0 | public: static class agiTexDef * mmVehicleForm::SphMapTex | ?SphMapTex@mmVehicleForm@@2PAVagiTexDef@@A
 */
 
-#include "hooking.h"
-
 struct mmVehicleForm : asNode
 {
 public:

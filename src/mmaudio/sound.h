@@ -88,8 +88,6 @@
     0x594930 | const AudSound::`vftable' | ??_7AudSound@@6B@
 */
 
-#include "hooking.h"
-
 class AudSound : asNode
 {
 public:

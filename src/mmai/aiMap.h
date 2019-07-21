@@ -103,8 +103,6 @@
     0x436A90 | void __cdecl delete_aiMap(void *,int) | ?delete_aiMap@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x436E20 | ?Clamp@@YAMMMM@Z
 inline float Clamp(float arg1, float arg2, float arg3)
 {

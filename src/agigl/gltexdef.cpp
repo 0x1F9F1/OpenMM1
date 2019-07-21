@@ -20,7 +20,6 @@
 
 #include "agi/pipeline.h"
 #include "agi/surface.h"
-#include "data7/printer.h"
 #include "glutils.h"
 #include "vector7/vector2.h"
 

@@ -49,8 +49,6 @@
     0x5AF068 | int * Limit_ValueTable | ?Limit_ValueTable@@3PAHA
 */
 
-#include "hooking.h"
-
 // 0x5AF040 | ?GameType_PenaltyTable@@3PAHA
 inline extern_var(0x5AF040, int32_t*, GameType_PenaltyTable);
 

@@ -33,8 +33,6 @@
     0x592480 | const Dialog_RaceEnvironment::`vftable' | ??_7Dialog_RaceEnvironment@@6B@
 */
 
-#include "hooking.h"
-
 struct Dialog_RaceEnvironment : PUMenuBase
 {
 public:

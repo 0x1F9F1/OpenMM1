@@ -1,4 +1,4 @@
-add_library(agisw OBJECT
+arts_add_component(agisw
     # swddraw.cpp
     # swddraw.h
     # swemitrunall.cpp
@@ -12,5 +12,3 @@ add_library(agisw OBJECT
     # swtexdef.cpp
     # swtexdef.h
 )
-
-target_link_libraries(agisw hooking)

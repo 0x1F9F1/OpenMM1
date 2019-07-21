@@ -32,8 +32,6 @@
     0x590DB8 | const aiGoalRegainRail::`vftable' | ??_7aiGoalRegainRail@@6B@
 */
 
-#include "hooking.h"
-
 struct aiGoalRegainRail : aiGoal
 {
 public:

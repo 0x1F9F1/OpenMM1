@@ -69,8 +69,6 @@
     0x43A7E0 | public: class Vector3 * __thiscall aiPath::CenterVertice(int) | ?CenterVertice@aiPath@@QAEPAVVector3@@H@Z
 */
 
-#include "hooking.h"
-
 class aiPath
 {
 public:

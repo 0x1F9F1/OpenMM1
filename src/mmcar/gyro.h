@@ -35,8 +35,6 @@
     0x477C00 | void __cdecl delete_VehGyro(void *,int) | ?delete_VehGyro@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x60A4A8 | ?VehGyroMetaClass@@3VMetaClass@@A
 inline extern_var(0x60A4A8, class MetaClass, VehGyroMetaClass);
 

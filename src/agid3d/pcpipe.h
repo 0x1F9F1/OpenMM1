@@ -34,8 +34,6 @@
     0x6F2F20 | int DrawLabelPArg | ?DrawLabelPArg@@3HA
 */
 
-#include "hooking.h"
-
 // 0x516930 | ?d3dCreatePipeline@@YAPAVagiPipeline@@HPAPAD@Z
 inline class agiPipeline* d3dCreatePipeline(int32_t arg1, char** arg2)
 {

@@ -58,8 +58,6 @@
     0x590658 | const aiVehiclePolice::`vftable' | ??_7aiVehiclePolice@@6B@
 */
 
-#include "hooking.h"
-
 class aiVehiclePolice : aiVehicleSpline
 {
 public:

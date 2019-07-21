@@ -34,8 +34,6 @@
     0x49EAB0 | void __cdecl fix_lighting_lame(void) | ?fix_lighting_lame@@YAXXZ
 */
 
-#include "hooking.h"
-
 // 0x49EA60 | ?toggle_interlace@@YAXXZ
 inline void toggle_interlace()
 {

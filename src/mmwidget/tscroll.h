@@ -47,8 +47,6 @@
     0x5937F0 | const UITextScroll::`vftable' | ??_7UITextScroll@@6B@
 */
 
-#include "hooking.h"
-
 class UITextScroll : uiWidget
 {
 public:

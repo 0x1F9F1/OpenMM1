@@ -1,4 +1,4 @@
-add_library(eventq7 OBJECT
+arts_add_component(eventq7
     # event.cpp
     # event.h
     # eventq.cpp
@@ -10,5 +10,3 @@ add_library(eventq7 OBJECT
     # winevent.cpp
     # winevent.h
 )
-
-target_link_libraries(eventq7 hooking)

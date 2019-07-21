@@ -1,4 +1,4 @@
-add_library(agid3d OBJECT
+arts_add_component(agid3d
     # d3dlight.cpp
     # d3dlight.h
     # d3dmtldef.cpp
@@ -22,5 +22,3 @@ add_library(agid3d OBJECT
     pcpipe.cpp
     pcpipe.h
 )
-
-target_link_libraries(agid3d hooking)

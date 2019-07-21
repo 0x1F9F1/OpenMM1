@@ -32,8 +32,6 @@
     0x5941F0 | const mmAnimTrainCar::`vftable' | ??_7mmAnimTrainCar@@6B@
 */
 
-#include "hooking.h"
-
 struct mmAnimTrainCar : mmMatrixInstance
 {
 public:

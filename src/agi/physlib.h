@@ -26,7 +26,5 @@
     0x7024D8 | class agiLib<class agiPhysParameters,class agiPhysDef> agiPhysLib | ?agiPhysLib@@3V?$agiLib@VagiPhysParameters@@VagiPhysDef@@@@A
 */
 
-#include "hooking.h"
-
 // 0x7024D8 | ?agiPhysLib@@3V?$agiLib@VagiPhysParameters@@VagiPhysDef@@@@A
 inline extern_var(0x7024D8, class agiLib<class agiPhysParameters, class agiPhysDef>, agiPhysLib);

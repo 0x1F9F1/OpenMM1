@@ -35,8 +35,6 @@
     0x67B870 | public: static class agiTexDef * asMeshSetForm::SphMapTex | ?SphMapTex@asMeshSetForm@@2PAVagiTexDef@@A
 */
 
-#include "hooking.h"
-
 struct asMeshSetForm : asNode
 {
 public:

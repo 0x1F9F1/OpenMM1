@@ -45,8 +45,6 @@
     0x4C6050 | void __cdecl delete_mmRecord(void *,int) | ?delete_mmRecord@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x66A918 | ?mmRecordMetaClass@@3VMetaClass@@A
 inline extern_var(0x66A918, class MetaClass, mmRecordMetaClass);
 

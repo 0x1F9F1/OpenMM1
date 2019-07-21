@@ -65,8 +65,6 @@
     0x51C2D0 | void __cdecl zmemset(unsigned short *,unsigned int) | ?zmemset@@YAXPAGI@Z
 */
 
-#include "hooking.h"
-
 // 0x51C540 | ?swCreatePipeline@@YAPAVagiPipeline@@HPAPAD@Z
 inline class agiPipeline* swCreatePipeline(int32_t arg1, char** arg2)
 {

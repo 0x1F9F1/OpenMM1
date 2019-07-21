@@ -76,8 +76,6 @@
     0x4E61A0 | public: void __thiscall SoundObj::Disable3DMode(void) | ?Disable3DMode@SoundObj@@QAEXXZ
 */
 
-#include "hooking.h"
-
 class SoundObj
 {
 public:

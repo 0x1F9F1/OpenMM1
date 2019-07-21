@@ -31,8 +31,6 @@
     0x667AB4 | public: static int mmAnimInstState::FrameDelta | ?FrameDelta@mmAnimInstState@@2HA
 */
 
-#include "hooking.h"
-
 // 0x48BA20 | ?GetAnimation@@YAPAVmmAnimation@@PAD@Z
 inline class mmAnimation* GetAnimation(char* arg1)
 {

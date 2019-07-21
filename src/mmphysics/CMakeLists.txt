@@ -1,4 +1,4 @@
-add_library(mmphysics OBJECT
+arts_add_component(mmphysics
     # aero.cpp
     # aero.h
     # bound.cpp
@@ -12,5 +12,3 @@ add_library(mmphysics OBJECT
     # phys.cpp
     # phys.h
 )
-
-target_link_libraries(mmphysics hooking)

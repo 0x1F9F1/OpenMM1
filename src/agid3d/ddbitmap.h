@@ -33,8 +33,6 @@
     0x5958C0 | const agiDDBitmap::`vftable' | ??_7agiDDBitmap@@6B@
 */
 
-#include "hooking.h"
-
 // 0x51BDF0 | ?breakme@@YAXXZ
 inline void breakme()
 {

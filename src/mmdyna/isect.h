@@ -33,8 +33,6 @@
     0x506890 | public: void __thiscall mmEdgeBodyIsect::InitSegment(class Vector3 const &,class Vector3 const &,int,int,class Vector3 const &,float) | ?InitSegment@mmEdgeBodyIsect@@QAEXABVVector3@@0HH0M@Z
 */
 
-#include "hooking.h"
-
 class mmIntersection
 {
 public:

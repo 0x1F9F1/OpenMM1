@@ -30,8 +30,6 @@
     0x594808 | const mmEffectFF::`vftable' | ??_7mmEffectFF@@6B@
 */
 
-#include "hooking.h"
-
 // 0x4DA0B0 | ?inputEnumEffectTypeProc@@YGHPBUDIEFFECTINFOA@@PAX@Z
 inline int32_t __stdcall inputEnumEffectTypeProc(struct DIEFFECTINFOA const* arg1, void* arg2)
 {

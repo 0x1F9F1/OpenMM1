@@ -1,4 +1,4 @@
-add_library(mmbangers OBJECT
+arts_add_component(mmbangers
     # active.cpp
     # active.h
     # banger.cpp
@@ -8,5 +8,3 @@ add_library(mmbangers OBJECT
     # dof.cpp
     # dof.h
 )
-
-target_link_libraries(mmbangers hooking)

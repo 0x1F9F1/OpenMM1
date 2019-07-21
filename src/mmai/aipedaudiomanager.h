@@ -36,8 +36,6 @@
     0x609D4C | class aiPedAudioManager * AIPEDAUDMGRPTR | ?AIPEDAUDMGRPTR@@3PAVaiPedAudioManager@@A
 */
 
-#include "hooking.h"
-
 // 0x609D4C | ?AIPEDAUDMGRPTR@@3PAVaiPedAudioManager@@A
 inline extern_var(0x609D4C, class aiPedAudioManager*, AIPEDAUDMGRPTR);
 

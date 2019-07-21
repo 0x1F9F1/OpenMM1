@@ -24,8 +24,6 @@
     0x4C8000 | unsigned long __cdecl UpdateCrc(unsigned char *,unsigned int) | ?UpdateCrc@@YAKPAEI@Z
 */
 
-#include "hooking.h"
-
 // 0x4C8000 | ?UpdateCrc@@YAKPAEI@Z
 inline uint32_t UpdateCrc(uint8_t* arg1, uint32_t arg2)
 {

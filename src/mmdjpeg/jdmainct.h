@@ -31,8 +31,6 @@
     0x562F00 | void __cdecl set_bottom_pointers(struct jpeg_decompress_struct *) | ?set_bottom_pointers@@YAXPAUjpeg_decompress_struct@@@Z
 */
 
-#include "hooking.h"
-
 // 0x5628F0 | ?jinit_d_main_controller@@YAXPAUjpeg_decompress_struct@@E@Z
 inline void jinit_d_main_controller(struct jpeg_decompress_struct* arg1, uint8_t arg2)
 {

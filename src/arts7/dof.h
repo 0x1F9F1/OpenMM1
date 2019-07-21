@@ -37,8 +37,6 @@
     0x515390 | void __cdecl delete_asDofCS(void *,int) | ?delete_asDofCS@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x6F2C40 | ?asDofCSMetaClass@@3VMetaClass@@A
 inline extern_var(0x6F2C40, class MetaClass, asDofCSMetaClass);
 

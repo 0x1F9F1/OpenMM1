@@ -31,8 +31,6 @@
     0x60A20C | float EggFriction | ?EggFriction@@3MA
 */
 
-#include "hooking.h"
-
 // 0x60A20C | ?EggFriction@@3MA
 inline extern_var(0x60A20C, float, EggFriction);
 

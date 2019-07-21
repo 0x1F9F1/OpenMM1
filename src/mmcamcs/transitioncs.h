@@ -37,8 +37,6 @@
     0x594E68 | const TransitionCS::`vftable' | ??_7TransitionCS@@6B@
 */
 
-#include "hooking.h"
-
 struct TransitionCS : CarCamCS
 {
 public:

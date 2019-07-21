@@ -58,8 +58,6 @@
     0x6E17A8 | public: static class mmBoundTemplate * mmBoundTemplate::BoundPtr | ?BoundPtr@mmBoundTemplate@@2PAV1@A
 */
 
-#include "hooking.h"
-
 // 0x6E16B0 | ?CollidedLines@@3PAPAHA
 inline extern_var(0x6E16B0, int32_t**, CollidedLines);
 

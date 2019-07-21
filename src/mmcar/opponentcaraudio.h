@@ -46,8 +46,6 @@
     0x473B60 | void __cdecl delete_mmOpponentCarAudio(void *,int) | ?delete_mmOpponentCarAudio@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x60A388 | ?mmOpponentCarAudioMetaClass@@3VMetaClass@@A
 inline extern_var(0x60A388, class MetaClass, mmOpponentCarAudioMetaClass);
 

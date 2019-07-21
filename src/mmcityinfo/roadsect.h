@@ -84,8 +84,6 @@
     0x4C7640 | void __cdecl delete_mmRoadSect(void *,int) | ?delete_mmRoadSect@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x66A940 | ?mmPropInfoMetaClass@@3VMetaClass@@A
 inline extern_var(0x66A940, class MetaClass, mmPropInfoMetaClass);
 

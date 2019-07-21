@@ -27,8 +27,6 @@
     0x55CE90 | unsigned int __cdecl PerfGetValue(int) | ?PerfGetValue@@YAIH@Z
 */
 
-#include "hooking.h"
-
 // 0x55CD70 | ?PerfInit@@YAXXZ
 inline void PerfInit()
 {

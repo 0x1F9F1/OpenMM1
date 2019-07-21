@@ -31,8 +31,6 @@
     0x67B5F8 | class DupBuffCreator * DUPBUFCREATORPTR | ?DUPBUFCREATORPTR@@3PAVDupBuffCreator@@A
 */
 
-#include "hooking.h"
-
 // 0x67B5F8 | ?DUPBUFCREATORPTR@@3PAVDupBuffCreator@@A
 inline extern_var(0x67B5F8, class DupBuffCreator*, DUPBUFCREATORPTR);
 

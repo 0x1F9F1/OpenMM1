@@ -43,8 +43,6 @@
     0x516130 | void __cdecl delete_asViewCS(void *,int) | ?delete_asViewCS@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x6F2C68 | ?asViewCSMetaClass@@3VMetaClass@@A
 inline extern_var(0x6F2C68, class MetaClass, asViewCSMetaClass);
 

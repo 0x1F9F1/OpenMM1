@@ -64,8 +64,6 @@
     0x42D2C0 | void __cdecl delete_mmGameMulti(void *,int) | ?delete_mmGameMulti@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x609B08 | ?mmGameMultiMetaClass@@3VMetaClass@@A
 inline extern_var(0x609B08, class MetaClass, mmGameMultiMetaClass);
 

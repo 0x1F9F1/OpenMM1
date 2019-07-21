@@ -28,8 +28,6 @@
     0x592E50 | const PUExit::`vftable' | ??_7PUExit@@6B@
 */
 
-#include "hooking.h"
-
 struct PUExit : PUMenuBase
 {
 public:

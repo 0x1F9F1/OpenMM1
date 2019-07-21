@@ -31,8 +31,6 @@
     0x6F29F8 | class asSafeHeap SAFEHEAP | ?SAFEHEAP@@3VasSafeHeap@@A
 */
 
-#include "hooking.h"
-
 // 0x6F29F8 | ?SAFEHEAP@@3VasSafeHeap@@A
 inline extern_var(0x6F29F8, class asSafeHeap, SAFEHEAP);
 

@@ -57,8 +57,6 @@
     0x7124E8 | char * ExecPath | ?ExecPath@@3PADA
 */
 
-#include "hooking.h"
-
 // 0x712320 | ?ProjPath@@3PADA
 inline extern_var(0x712320, char*, ProjPath);
 

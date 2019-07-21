@@ -33,8 +33,6 @@
     0x595810 | const agiD3DViewport::`vftable' | ??_7agiD3DViewport@@6B@
 */
 
-#include "hooking.h"
-
 struct agiD3DViewport : agiViewport
 {
 public:

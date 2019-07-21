@@ -51,8 +51,6 @@
     0x463060 | void __cdecl delete_aiGoalFollowWayPts(void *,int) | ?delete_aiGoalFollowWayPts@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x609FA0 | ?aiGoalFollowWayPtsMetaClass@@3VMetaClass@@A
 inline extern_var(0x609FA0, class MetaClass, aiGoalFollowWayPtsMetaClass);
 

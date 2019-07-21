@@ -139,8 +139,6 @@
     0x48A6B0 | void __cdecl delete_mmFacadeInstance(void *,int) | ?delete_mmFacadeInstance@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x488100 | ?formatf@@YAPADPBDZZ
 // Skipped (Variable Arguments)
 

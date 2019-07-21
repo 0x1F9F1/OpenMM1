@@ -20,9 +20,6 @@
 
 #include "sdlinit.h"
 
-#include "data7/assert.h"
-#include "data7/printer.h"
-
 #include <SDL_filesystem.h>
 #include <SDL_ttf.h>
 

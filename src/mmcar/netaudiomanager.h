@@ -48,8 +48,6 @@
     0x60A228 | class NetAudioManager * NETAUDMGRPTR | ?NETAUDMGRPTR@@3PAVNetAudioManager@@A
 */
 
-#include "hooking.h"
-
 // 0x60A228 | ?NETAUDMGRPTR@@3PAVNetAudioManager@@A
 inline extern_var(0x60A228, class NetAudioManager*, NETAUDMGRPTR);
 

@@ -32,8 +32,6 @@
     0x478120 | void __cdecl SplashCB(class mmSplash *) | ?SplashCB@@YAXPAVmmSplash@@@Z
 */
 
-#include "hooking.h"
-
 // 0x478120 | ?SplashCB@@YAXPAVmmSplash@@@Z
 inline void SplashCB(class mmSplash* arg1)
 {

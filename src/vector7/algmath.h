@@ -30,8 +30,6 @@
     0x552BE0 | float __cdecl expf_faster(float) | ?expf_faster@@YAMM@Z
 */
 
-#include "hooking.h"
-
 // 0x552900 | ?Bias@@YAMMM@Z
 inline float Bias(float arg1, float arg2)
 {

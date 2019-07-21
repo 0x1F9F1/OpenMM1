@@ -36,8 +36,6 @@
     0x4EF3F0 | void __cdecl delete_AppCamCS(void *,int) | ?delete_AppCamCS@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x67B7E8 | ?AppCamCSMetaClass@@3VMetaClass@@A
 inline extern_var(0x67B7E8, class MetaClass, AppCamCSMetaClass);
 

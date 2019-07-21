@@ -28,8 +28,6 @@
     0x6E10F4 | int MeshesPaged | ?MeshesPaged@@3HA
 */
 
-#include "hooking.h"
-
 // 0x6E10F0 | ?MeshBytesPaged@@3HA
 inline extern_var(0x6E10F0, int32_t, MeshBytesPaged);
 

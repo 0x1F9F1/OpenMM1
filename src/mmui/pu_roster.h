@@ -39,8 +39,6 @@
     0x592BA8 | const PURoster::`vftable' | ??_7PURoster@@6B@
 */
 
-#include "hooking.h"
-
 struct PURoster : PUMenuBase
 {
 public:

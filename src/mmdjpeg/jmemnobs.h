@@ -32,8 +32,6 @@
     0x7125D4 | int jpeg_allocated | ?jpeg_allocated@@3HA
 */
 
-#include "hooking.h"
-
 // 0x562820 | ?jpeg_get_small@@YAPAXPAUjpeg_common_struct@@I@Z
 inline void* jpeg_get_small(struct jpeg_common_struct* arg1, uint32_t arg2)
 {

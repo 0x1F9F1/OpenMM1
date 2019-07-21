@@ -1,8 +1,31 @@
 cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake/CMakePCHCompiler)
+
+project(Midtown CXX CXXPCH)
+
 if (USE_SDL2)
     include_directories(${GLEW_INCLUDE_DIRS} ${SDL2_INCLUDE_DIRS} ${SDL2_TTF_INCLUDE_DIRS})
 endif()
+
+add_library(midtown STATIC
+    midtown.cpp
+    midtown.h
+
+    hooking.cpp
+    hooking.h
+)
+
+target_link_libraries(midtown mem)
+target_precompiled_header(midtown pch.h)
+
+set(ARTS_COMPONENTS)
+
+macro(arts_add_component name)
+    add_library(${name} OBJECT ${ARGN})
+    list(APPEND ARTS_COMPONENTS ${name})
+    set(ARTS_COMPONENTS ${ARTS_COMPONENTS} PARENT_SCOPE)
+endmacro(arts_add_component)
 
 add_subdirectory(agi)
 add_subdirectory(agid3d)
@@ -40,59 +63,10 @@ if (USE_SDL2)
     add_subdirectory(agisdl)
 endif()
 
-add_library(hooking STATIC
-    hooking.cpp
-    hooking.h
-)
-
-target_link_libraries(hooking mem)
-
-add_library(midtown STATIC
-    midtown.cpp
-    midtown.h
-
-    $<TARGET_OBJECTS:agi>
-    $<TARGET_OBJECTS:agid3d>
-    # $<TARGET_OBJECTS:agisw>
-    # $<TARGET_OBJECTS:agiworld>
-    $<TARGET_OBJECTS:arts7>
-    $<TARGET_OBJECTS:data7>
-    $<TARGET_OBJECTS:dyna7>
-    # $<TARGET_OBJECTS:eventq7>
-    $<TARGET_OBJECTS:localize>
-    $<TARGET_OBJECTS:memory>
-    # $<TARGET_OBJECTS:mmai>
-    # $<TARGET_OBJECTS:mmanim>
-    # $<TARGET_OBJECTS:mmaudio>
-    # $<TARGET_OBJECTS:mmbangers>
-    # $<TARGET_OBJECTS:mmcamcs>
-    # $<TARGET_OBJECTS:mmcar>
-    # $<TARGET_OBJECTS:mmcity>
-    # $<TARGET_OBJECTS:mmcityinfo>
-    # $<TARGET_OBJECTS:mmdjpeg>
-    # $<TARGET_OBJECTS:mmdyna>
-    $<TARGET_OBJECTS:mmeffects>
-    # $<TARGET_OBJECTS:mmgame>
-    # $<TARGET_OBJECTS:mminput>
-    # $<TARGET_OBJECTS:mmnetwork>
-    # $<TARGET_OBJECTS:mmphysics>
-    # $<TARGET_OBJECTS:mmui>
-    # $<TARGET_OBJECTS:mmwidget>
-    $<TARGET_OBJECTS:pcwindis>
-    $<TARGET_OBJECTS:stream>
-    $<TARGET_OBJECTS:vector7>
-
-
-)
-
-target_link_libraries(midtown hooking)
+target_link_libraries(midtown ${ARTS_COMPONENTS})
+target_precompiled_header(${ARTS_COMPONENTS} pch.h REUSE midtown)
 
 if (USE_SDL2)
-    target_sources(midtown PRIVATE
-        $<TARGET_OBJECTS:agigl>
-        $<TARGET_OBJECTS:agisdl>
-    )
-
     target_link_libraries(midtown
         opengl32
         glu32

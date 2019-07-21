@@ -24,7 +24,5 @@
     0x55E640 | void __cdecl GetMachineName(char *,int) | ?GetMachineName@@YAXPADH@Z
 */
 
-#include "hooking.h"
-
 // 0x55E640 | ?GetMachineName@@YAXPADH@Z
 void GetMachineName(char* buffer, int32_t length);

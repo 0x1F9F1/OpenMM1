@@ -57,8 +57,6 @@
     0x46AEA0 | void __cdecl delete_mmCarModel(void *,int) | ?delete_mmCarModel@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x60A198 | ?mmCarModelMetaClass@@3VMetaClass@@A
 inline extern_var(0x60A198, class MetaClass, mmCarModelMetaClass);
 

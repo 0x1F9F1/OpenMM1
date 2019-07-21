@@ -28,8 +28,6 @@
     0x6F7DD4 | int DDNeedRestore | ?DDNeedRestore@@3HA
 */
 
-#include "hooking.h"
-
 // 0x51A6F0 | ?DDErrorToString@@YAPADJ@Z
 inline char* DDErrorToString(int32_t arg1)
 {

@@ -31,8 +31,6 @@
     0x47D2E0 | public: void __thiscall mmOpponentSurfaceAudio::Disable3DMode(void) | ?Disable3DMode@mmOpponentSurfaceAudio@@QAEXXZ
 */
 
-#include "hooking.h"
-
 struct mmOpponentSurfaceAudio
 {
 public:

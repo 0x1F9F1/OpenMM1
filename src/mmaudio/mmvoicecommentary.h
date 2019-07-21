@@ -73,8 +73,6 @@
     0x4DF150 | public: void __thiscall mmVoiceCommentary::Update(void) | ?Update@mmVoiceCommentary@@QAEXXZ
 */
 
-#include "hooking.h"
-
 class mmVoiceCommentary
 {
 public:

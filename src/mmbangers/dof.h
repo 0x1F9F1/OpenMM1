@@ -27,5 +27,3 @@
     0x4BFE80 | public: virtual class Vector3 & __fastcall mmFacadeBangerInstance::GetPos(void) | ?GetPos@mmFacadeBangerInstance@@UAIAAVVector3@@XZ
     0x4BFF00 | private: virtual void __fastcall mmGlassBangerInstance::Draw(int) | ?Draw@mmGlassBangerInstance@@EAIXH@Z
 */
-
-#include "hooking.h"

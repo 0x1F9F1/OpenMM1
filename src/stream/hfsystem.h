@@ -42,8 +42,6 @@
     0x70F014 | int LogOpenOn | ?LogOpenOn@@3HA
 */
 
-#include "hooking.h"
-
 #include "fsystem.h"
 
 // 0x541B10 | ?FQN@@YAPADPAD@Z

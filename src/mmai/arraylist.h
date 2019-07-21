@@ -24,5 +24,3 @@
     0x441040 | public: __thiscall CArrayList::~CArrayList(void) | ??1CArrayList@@QAE@XZ
     0x441060 | public: void __thiscall CArrayList::Append(int) | ?Append@CArrayList@@QAEXH@Z
 */
-
-#include "hooking.h"

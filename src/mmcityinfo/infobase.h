@@ -33,8 +33,6 @@
     0x4C5AD0 | void __cdecl delete_mmInfoBase(void *,int) | ?delete_mmInfoBase@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x66A8F0 | ?mmInfoBaseMetaClass@@3VMetaClass@@A
 inline extern_var(0x66A8F0, class MetaClass, mmInfoBaseMetaClass);
 

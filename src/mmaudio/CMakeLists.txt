@@ -1,4 +1,4 @@
-add_library(mmaudio OBJECT
+arts_add_component(mmaudio
     # audstream.cpp
     # audstream.h
     # cd.cpp
@@ -28,5 +28,3 @@ add_library(mmaudio OBJECT
     # streamobj.cpp
     # streamobj.h
 )
-
-target_link_libraries(mmaudio hooking)

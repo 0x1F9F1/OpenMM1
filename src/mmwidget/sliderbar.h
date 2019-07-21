@@ -48,8 +48,6 @@
     0x4B3F60 | void __cdecl delete_mmSlider(void *,int) | ?delete_mmSlider@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x667FC8 | ?mmSliderMetaClass@@3VMetaClass@@A
 inline extern_var(0x667FC8, class MetaClass, mmSliderMetaClass);
 

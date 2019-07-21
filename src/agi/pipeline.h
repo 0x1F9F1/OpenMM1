@@ -72,8 +72,6 @@
     0x7021D4 | int DrawModeAnd | ?DrawModeAnd@@3HA
 */
 
-#include "hooking.h"
-
 #include "data7/cstr.h"
 #include "surface.h"
 

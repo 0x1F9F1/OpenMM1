@@ -30,8 +30,6 @@
     0x595F18 | const StreamMiniParser::`vftable' | ??_7StreamMiniParser@@6B@
 */
 
-#include "hooking.h"
-
 #include "data7/miniparser.h"
 #include "data7/ptr.h"
 

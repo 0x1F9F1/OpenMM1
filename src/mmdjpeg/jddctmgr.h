@@ -25,8 +25,6 @@
     0x563EF0 | void __cdecl start_pass(struct jpeg_decompress_struct *) | ?start_pass@@YAXPAUjpeg_decompress_struct@@@Z
 */
 
-#include "hooking.h"
-
 // 0x563E60 | ?jinit_inverse_dct@@YAXPAUjpeg_decompress_struct@@@Z
 inline void jinit_inverse_dct(struct jpeg_decompress_struct* arg1)
 {

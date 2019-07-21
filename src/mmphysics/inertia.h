@@ -64,8 +64,6 @@
     0x4CEC80 | void __cdecl delete_asInertialCS(void *,int) | ?delete_asInertialCS@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x4CE790 | ?InertiaAxis@@YAMABVVector3@@0@Z
 inline float InertiaAxis(class Vector3 const& arg1, class Vector3 const& arg2)
 {

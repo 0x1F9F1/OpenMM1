@@ -32,8 +32,6 @@
     0x55ABA0 | void __cdecl delete_Base(void *,int) | ?delete_Base@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x712218 | ?BaseMetaClass@@3VMetaClass@@A
 inline extern_var(0x712218, class MetaClass, BaseMetaClass);
 

@@ -38,8 +38,6 @@
     0x593670 | const mmCompCRPlayer::`vftable' | ??_7mmCompCRPlayer@@6B@
 */
 
-#include "hooking.h"
-
 struct mmCompCRPlayer : mmCompBase
 {
 public:

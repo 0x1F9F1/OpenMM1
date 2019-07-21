@@ -29,8 +29,6 @@
     0x595C90 | const agiColorModel::`vftable' | ??_7agiColorModel@@6B@
 */
 
-#include "hooking.h"
-
 #include "rgba.h"
 
 class agiColorModel

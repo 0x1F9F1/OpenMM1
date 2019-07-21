@@ -29,8 +29,6 @@
     0x712008 | class ArgSet GBArgs | ?GBArgs@@3VArgSet@@A
 */
 
-#include "hooking.h"
-
 // 0x712008 | ?GBArgs@@3VArgSet@@A
 inline extern_var(0x712008, class ArgSet, GBArgs);
 

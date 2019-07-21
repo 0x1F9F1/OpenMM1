@@ -34,8 +34,6 @@
     0x512DE0 | void __cdecl delete_asLinearCS(void *,int) | ?delete_asLinearCS@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x6F2BC0 | ?asLinearCSMetaClass@@3VMetaClass@@A
 inline extern_var(0x6F2BC0, class MetaClass, asLinearCSMetaClass);
 

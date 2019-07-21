@@ -59,8 +59,6 @@
     0x471A00 | void __cdecl delete_mmTrailer(void *,int) | ?delete_mmTrailer@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x60A328 | ?mmTrailerMetaClass@@3VMetaClass@@A
 inline extern_var(0x60A328, class MetaClass, mmTrailerMetaClass);
 

@@ -25,8 +25,6 @@
     0x711B30 | int EnablePaging | ?EnablePaging@@3HA
 */
 
-#include "hooking.h"
-
 // 0x711B08 | ?PAGER@@3VipcMessageQueue@@A
 inline extern_var(0x711B08, class ipcMessageQueue, PAGER);
 

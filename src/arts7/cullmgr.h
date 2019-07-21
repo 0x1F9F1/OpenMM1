@@ -46,8 +46,6 @@
     0x5123F0 | void __cdecl delete_asCullManager(void *,int) | ?delete_asCullManager@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x511B40 | ?Statsf@@YAXPBDZZ
 // Skipped (Variable Arguments)
 

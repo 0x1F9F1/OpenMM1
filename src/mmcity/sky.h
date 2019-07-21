@@ -33,8 +33,6 @@
     0x667A3C | private: static class mmSky * mmSky::Instance | ?Instance@mmSky@@0PAV1@A
 */
 
-#include "hooking.h"
-
 // 0x5AE310 | ?SkyScale@@3MA
 inline extern_var(0x5AE310, float, SkyScale);
 

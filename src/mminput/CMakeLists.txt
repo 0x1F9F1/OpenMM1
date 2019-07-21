@@ -1,4 +1,4 @@
-add_library(mminput OBJECT
+arts_add_component(mminput
     # collide.cpp
     # collide.h
     # effect.cpp
@@ -22,5 +22,3 @@ add_library(mminput OBJECT
     # spring.cpp
     # spring.h
 )
-
-target_link_libraries(mminput hooking)

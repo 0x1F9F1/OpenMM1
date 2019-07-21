@@ -28,8 +28,6 @@
     0x55DCC0 | public: int __thiscall List::Delete(int) | ?Delete@List@@QAEHH@Z
 */
 
-#include "hooking.h"
-
 struct ListEntry
 {
     void* m_pValue {nullptr};

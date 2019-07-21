@@ -125,8 +125,6 @@
     0x4DCEA0 | void __cdecl delete_AudManager(void *,int) | ?delete_AudManager@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x4DCCE0 | ?DeactivateApplication@@YAXXZ
 inline void DeactivateApplication()
 {

@@ -43,8 +43,6 @@
     0x710048 | class FileStream __stdin | ?__stdin@@3VFileStream@@A
 */
 
-#include "hooking.h"
-
 #include "stream.h"
 
 // 0x710020 | ?__stdout@@3VFileStream@@A

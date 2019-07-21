@@ -27,8 +27,6 @@
     0x55EE90 | unsigned char __cdecl output_pass_setup(struct jpeg_decompress_struct *) | ?output_pass_setup@@YAEPAUjpeg_decompress_struct@@@Z
 */
 
-#include "hooking.h"
-
 // 0x55EDF0 | ?jpeg_start_decompress@@YAEPAUjpeg_decompress_struct@@@Z
 inline uint8_t jpeg_start_decompress(struct jpeg_decompress_struct* arg1)
 {

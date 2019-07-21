@@ -28,8 +28,6 @@
     0x592DB8 | const PUOptions::`vftable' | ??_7PUOptions@@6B@
 */
 
-#include "hooking.h"
-
 struct PUOptions : PUMenuBase
 {
 public:

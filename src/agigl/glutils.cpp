@@ -18,8 +18,6 @@
 
 #include "glutils.h"
 
-#include "data7/printer.h"
-
 #include <GL/glew.h>
 
 void PrintGlErrors()

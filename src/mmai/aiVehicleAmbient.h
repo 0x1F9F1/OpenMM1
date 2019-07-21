@@ -66,8 +66,6 @@
     0x609E70 | private: static short aiVehicleAmbient::s_iPrevSoundObjIndex | ?s_iPrevSoundObjIndex@aiVehicleAmbient@@0FA
 */
 
-#include "hooking.h"
-
 class aiVehicleAmbient : aiVehicleSpline
 {
 public:

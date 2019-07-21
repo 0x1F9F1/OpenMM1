@@ -26,8 +26,6 @@
     0x5580F0 | void __cdecl UnregisterMap(char *) | ?UnregisterMap@@YAXPAD@Z
 */
 
-#include "hooking.h"
-
 // 0x557F90 | ?MasterWindowProc@@YGJPAUHWND__@@IIJ@Z
 inline int32_t __stdcall MasterWindowProc(struct HWND__* arg1, uint32_t arg2, uint32_t arg3, int32_t arg4)
 {

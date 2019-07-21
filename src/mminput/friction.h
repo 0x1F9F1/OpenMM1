@@ -28,8 +28,6 @@
     0x4DAA70 | public: virtual int __thiscall mmFrictionFF::Stop(void) | ?Stop@mmFrictionFF@@UAEHXZ
 */
 
-#include "hooking.h"
-
 struct mmFrictionFF
 {
 public:

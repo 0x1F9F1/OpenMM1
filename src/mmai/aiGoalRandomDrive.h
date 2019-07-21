@@ -43,8 +43,6 @@
     0x590B80 | const aiGoal::`vftable' | ??_7aiGoal@@6B@
 */
 
-#include "hooking.h"
-
 struct aiGoalRandomDrive : aiGoal
 {
 public:

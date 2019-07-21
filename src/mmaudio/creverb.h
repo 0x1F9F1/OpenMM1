@@ -39,8 +39,6 @@
     0x4E76A0 | public: void __thiscall CReverb::GetAll(struct EAX_REVERBPROPERTIES *) | ?GetAll@CReverb@@QAEXPAUEAX_REVERBPROPERTIES@@@Z
 */
 
-#include "hooking.h"
-
 class CReverb
 {
 public:

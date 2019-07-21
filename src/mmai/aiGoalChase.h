@@ -57,8 +57,6 @@
     0x590CB0 | const aiGoalChase::`vftable' | ??_7aiGoalChase@@6B@
 */
 
-#include "hooking.h"
-
 struct aiGoalChase : aiGoal
 {
 public:

@@ -71,8 +71,6 @@
     0x5A6618 | float fontscalar | ?fontscalar@@3MA
 */
 
-#include "hooking.h"
-
 // 0x5A6618 | ?fontscalar@@3MA
 inline extern_var(0x5A6618, float, fontscalar);
 

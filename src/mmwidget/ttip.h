@@ -32,8 +32,6 @@
     0x593E00 | const mmToolTip::`vftable' | ??_7mmToolTip@@6B@
 */
 
-#include "hooking.h"
-
 struct mmToolTip : asNode
 {
 public:

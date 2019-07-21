@@ -40,8 +40,6 @@
     0x5959E8 | const agiSWRasterizer::`vftable' | ??_7agiSWRasterizer@@6B@
 */
 
-#include "hooking.h"
-
 struct agiSWRasterizer : agiRasterizer
 {
 public:

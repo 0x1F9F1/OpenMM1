@@ -24,5 +24,3 @@
     0x4B4C40 | public: virtual void __thiscall mmCompBase::Reset(void) | ?Reset@mmCompBase@@UAEXXZ
     0x4B4C50 | public: virtual void __thiscall mmCompBase::Update(void) | ?Update@mmCompBase@@UAEXXZ
 */
-
-#include "hooking.h"

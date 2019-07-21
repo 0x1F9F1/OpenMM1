@@ -30,8 +30,6 @@
     0x592420 | const Dialog_Password::`vftable' | ??_7Dialog_Password@@6B@
 */
 
-#include "hooking.h"
-
 struct Dialog_Password : PUMenuBase
 {
 public:

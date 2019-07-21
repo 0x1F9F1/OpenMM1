@@ -33,8 +33,6 @@
     0x590DA0 | const aiGoalAvoidPlayer::`vftable' | ??_7aiGoalAvoidPlayer@@6B@
 */
 
-#include "hooking.h"
-
 struct aiGoalAvoidPlayer : aiGoal
 {
 public:

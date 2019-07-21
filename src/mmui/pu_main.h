@@ -28,8 +28,6 @@
     0x592EE0 | const PUMain::`vftable' | ??_7PUMain@@6B@
 */
 
-#include "hooking.h"
-
 struct PUMain : PUMenuBase
 {
 public:

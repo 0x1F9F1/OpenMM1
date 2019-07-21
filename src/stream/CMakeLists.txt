@@ -1,4 +1,4 @@
-add_library(stream OBJECT
+arts_add_component(stream
     filestream.cpp
     filestream.h
     fsystem.cpp
@@ -18,5 +18,3 @@ add_library(stream OBJECT
     vstream.cpp
     vstream.h
 )
-
-target_link_libraries(stream hooking)

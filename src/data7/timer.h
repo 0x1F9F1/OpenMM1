@@ -31,8 +31,6 @@
     0x711AAC | public: static float Timer::TicksToSeconds | ?TicksToSeconds@Timer@@2MA
 */
 
-#include "hooking.h"
-
 class Timer
 {
 public:

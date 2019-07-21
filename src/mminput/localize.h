@@ -24,8 +24,6 @@
     0x4DA070 | struct LocString * __cdecl AngelReadKeyString(unsigned int) | ?AngelReadKeyString@@YAPAULocString@@I@Z
 */
 
-#include "hooking.h"
-
 // 0x4DA070 | ?AngelReadKeyString@@YAPAULocString@@I@Z
 inline struct LocString* AngelReadKeyString(uint32_t arg1)
 {

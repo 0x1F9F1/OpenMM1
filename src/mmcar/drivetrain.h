@@ -37,8 +37,6 @@
     0x477700 | void __cdecl delete_mmDrivetrain(void *,int) | ?delete_mmDrivetrain@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x60A480 | ?mmDrivetrainMetaClass@@3VMetaClass@@A
 inline extern_var(0x60A480, class MetaClass, mmDrivetrainMetaClass);
 

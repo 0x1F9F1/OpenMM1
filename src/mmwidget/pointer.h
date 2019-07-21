@@ -39,8 +39,6 @@
     0x4B2E20 | void __cdecl delete_sfPointer(void *,int) | ?delete_sfPointer@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x667F78 | ?sfPointerMetaClass@@3VMetaClass@@A
 inline extern_var(0x667F78, class MetaClass, sfPointerMetaClass);
 

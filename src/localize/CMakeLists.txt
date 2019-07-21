@@ -1,6 +1,4 @@
-add_library(localize OBJECT
+arts_add_component(localize
     localize.cpp
     localize.h
 )
-
-target_link_libraries(localize hooking)

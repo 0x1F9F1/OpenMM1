@@ -57,8 +57,6 @@
     0x593170 | const uiWidget::`vftable' | ??_7uiWidget@@6B@
 */
 
-#include "hooking.h"
-
 class uiWidget : asNode
 {
 public:

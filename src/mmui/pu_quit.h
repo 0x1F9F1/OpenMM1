@@ -28,8 +28,6 @@
     0x592E98 | const PUQuit::`vftable' | ??_7PUQuit@@6B@
 */
 
-#include "hooking.h"
-
 struct PUQuit : PUMenuBase
 {
 public:

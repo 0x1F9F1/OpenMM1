@@ -33,8 +33,6 @@
     0x595C70 | const agiLight::`vftable' | ??_7agiLight@@6B@
 */
 
-#include "hooking.h"
-
 #include "refresh.h"
 #include "vector7/vector4.h"
 

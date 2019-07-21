@@ -37,8 +37,6 @@
     0x667ADC | int CRPass3Only | ?CRPass3Only@@3HA
 */
 
-#include "hooking.h"
-
 // 0x5AE490 | ?StaticTerrainLodTable@@3PAY01MA
 inline extern_var(0x5AE490, float (*)[2], StaticTerrainLodTable);
 

@@ -30,8 +30,6 @@
     0x592578 | const Dialog_Message::`vftable' | ??_7Dialog_Message@@6B@
 */
 
-#include "hooking.h"
-
 struct Dialog_Message : PUMenuBase
 {
 public:

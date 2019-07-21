@@ -43,8 +43,6 @@
     0x595738 | const agiDDPipeline::`vftable' | ??_7agiDDPipeline@@6B@
 */
 
-#include "hooking.h"
-
 // 0x518690 | ?DDCallback@@YGHPAU_GUID@@PAD1PAX@Z
 inline int32_t __stdcall DDCallback(struct _GUID* arg1, char* arg2, char* arg3, void* arg4)
 {

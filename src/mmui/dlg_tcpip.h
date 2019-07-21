@@ -30,8 +30,6 @@
     0x5926A0 | const Dialog_TCPIP::`vftable' | ??_7Dialog_TCPIP@@6B@
 */
 
-#include "hooking.h"
-
 struct Dialog_TCPIP : PUMenuBase
 {
 public:

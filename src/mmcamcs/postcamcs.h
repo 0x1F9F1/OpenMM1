@@ -36,8 +36,6 @@
     0x4EBEC0 | void __cdecl delete_PostCamCS(void *,int) | ?delete_PostCamCS@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x67B6A0 | ?PostCamCSMetaClass@@3VMetaClass@@A
 inline extern_var(0x67B6A0, class MetaClass, PostCamCSMetaClass);
 

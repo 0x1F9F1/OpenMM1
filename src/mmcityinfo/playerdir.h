@@ -51,8 +51,6 @@
     0x4C4080 | void __cdecl delete_mmPlayerDirectory(void *,int) | ?delete_mmPlayerDirectory@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x4C40E0 | ?RefTo@@YAPAUMetaType@@PAU1@HPAH@Z
 inline struct MetaType* RefTo(struct MetaType* arg1, int32_t arg2, int32_t* arg3)
 {

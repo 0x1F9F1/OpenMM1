@@ -64,8 +64,6 @@
     0x7024B8 | int TexsPaged | ?TexsPaged@@3HA
 */
 
-#include "hooking.h"
-
 #include "data7/cstr.h"
 #include "data7/pager.h"
 #include "refresh.h"

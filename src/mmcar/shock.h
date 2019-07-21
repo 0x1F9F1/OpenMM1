@@ -33,8 +33,6 @@
     0x474A20 | void __cdecl delete_mmShock(void *,int) | ?delete_mmShock@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x60A3E8 | ?mmShockMetaClass@@3VMetaClass@@A
 inline extern_var(0x60A3E8, class MetaClass, mmShockMetaClass);
 

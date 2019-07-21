@@ -114,8 +114,6 @@
     0x7125B0 | struct SignedInt64Type SignedInt64Inst | ?SignedInt64Inst@@3USignedInt64Type@@A
 */
 
-#include "hooking.h"
-
 // 0x71258C | ?UnsignedCharInst@@3UUnsignedCharType@@A
 inline extern_var(0x71258C, struct UnsignedCharType, UnsignedCharInst);
 

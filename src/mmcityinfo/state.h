@@ -30,8 +30,6 @@
     0x66A808 | int CHICAGO | ?CHICAGO@@3HA
 */
 
-#include "hooking.h"
-
 // 0x668390 | ?MMSTATE@@3UmmStatePack@@A
 inline extern_var(0x668390, struct mmStatePack, MMSTATE);
 

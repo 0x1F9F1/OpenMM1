@@ -19,7 +19,6 @@
 #pragma once
 
 #include "data7/hash.h"
-#include "hooking.h"
 
 constexpr size_t agiLibMax = 2048;
 

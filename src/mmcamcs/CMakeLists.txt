@@ -1,4 +1,4 @@
-add_library(mmcamcs OBJECT
+arts_add_component(mmcamcs
     # aicamcs.cpp
     # aicamcs.h
     # appcamcs.cpp
@@ -26,5 +26,3 @@ add_library(mmcamcs OBJECT
     # viewcs.cpp
     # viewcs.h
 )
-
-target_link_libraries(mmcamcs hooking)

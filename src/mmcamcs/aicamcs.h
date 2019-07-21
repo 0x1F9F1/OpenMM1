@@ -35,8 +35,6 @@
     0x4ECF60 | void __cdecl delete_AICamCS(void *,int) | ?delete_AICamCS@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x67B730 | ?AICamCSMetaClass@@3VMetaClass@@A
 inline extern_var(0x67B730, class MetaClass, AICamCSMetaClass);
 

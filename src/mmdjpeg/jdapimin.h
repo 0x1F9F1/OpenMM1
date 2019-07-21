@@ -32,8 +32,6 @@
     0x55EAF0 | void __cdecl default_decompress_parms(struct jpeg_decompress_struct *) | ?default_decompress_parms@@YAXPAUjpeg_decompress_struct@@@Z
 */
 
-#include "hooking.h"
-
 // 0x55E880 | ?jpeg_CreateDecompress@@YAXPAUjpeg_decompress_struct@@HI@Z
 inline void jpeg_CreateDecompress(struct jpeg_decompress_struct* arg1, int32_t arg2, uint32_t arg3)
 {

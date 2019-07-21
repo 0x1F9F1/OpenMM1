@@ -64,8 +64,6 @@
     0x423A10 | void __cdecl delete_mmPlayer(void *,int) | ?delete_mmPlayer@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x609A38 | ?XcamCheat@@3HA
 inline extern_var(0x609A38, int32_t, XcamCheat);
 

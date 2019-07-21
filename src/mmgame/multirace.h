@@ -45,8 +45,6 @@
     0x41D2B0 | void __cdecl delete_mmMultiRace(void *,int) | ?delete_mmMultiRace@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x6095B8 | ?mmMultiRaceMetaClass@@3VMetaClass@@A
 inline extern_var(0x6095B8, class MetaClass, mmMultiRaceMetaClass);
 

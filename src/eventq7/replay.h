@@ -40,8 +40,6 @@
     0x710884 | public: static int eqReplay::Recording | ?Recording@eqReplay@@2HA
 */
 
-#include "hooking.h"
-
 class eqReplayChannel
 {
 public:

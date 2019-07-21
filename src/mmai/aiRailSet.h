@@ -48,8 +48,6 @@
     0x452B50 | public: class Vector3 * __thiscall aiPath::LBoundary(int) | ?LBoundary@aiPath@@QAEPAVVector3@@H@Z
 */
 
-#include "hooking.h"
-
 // 0x452AC0 | ??D@YA?AVVector3@@MABV0@@Z
 inline class Vector3 operator*(float arg1, class Vector3 const& arg2)
 {

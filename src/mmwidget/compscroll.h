@@ -49,8 +49,6 @@
     0x5933B0 | const UICompositeScroll::`vftable' | ??_7UICompositeScroll@@6B@
 */
 
-#include "hooking.h"
-
 class UICompositeScroll : uiWidget
 {
 public:

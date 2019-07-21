@@ -29,8 +29,6 @@
     0x592A70 | const MainMenu::`vftable' | ??_7MainMenu@@6B@
 */
 
-#include "hooking.h"
-
 struct MainMenu : UIMenu
 {
 public:

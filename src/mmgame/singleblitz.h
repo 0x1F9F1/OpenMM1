@@ -64,8 +64,6 @@
     0x410A70 | void __cdecl delete_mmSingleBlitz(void *,int) | ?delete_mmSingleBlitz@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x609378 | ?mmSingleBlitzMetaClass@@3VMetaClass@@A
 inline extern_var(0x609378, class MetaClass, mmSingleBlitzMetaClass);
 

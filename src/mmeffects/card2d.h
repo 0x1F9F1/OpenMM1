@@ -34,8 +34,6 @@
     0x594FA0 | const Card2D::`vftable' | ??_7Card2D@@6B@
 */
 
-#include "hooking.h"
-
 #include "arts7/node.h"
 #include "vector7/vector4.h"
 

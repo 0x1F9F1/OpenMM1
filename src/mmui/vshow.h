@@ -30,8 +30,6 @@
     0x592968 | const VehShowcase::`vftable' | ??_7VehShowcase@@6B@
 */
 
-#include "hooking.h"
-
 struct VehShowcase : UIMenu
 {
 public:

@@ -31,8 +31,6 @@
     0x595158 | const mmMouseSteerBar::`vftable' | ??_7mmMouseSteerBar@@6B@
 */
 
-#include "hooking.h"
-
 struct mmMouseSteerBar : asNode
 {
 public:

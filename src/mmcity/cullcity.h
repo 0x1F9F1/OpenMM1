@@ -99,8 +99,6 @@
     0x485340 | void __cdecl delete_mmCullCity(void *,int) | ?delete_mmCullCity@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x4847D0 | ?fix_clip@@YAXXZ
 inline void fix_clip()
 {

@@ -29,8 +29,6 @@
     0x563310 | int __cdecl dummy_consume_data(struct jpeg_decompress_struct *) | ?dummy_consume_data@@YAHPAUjpeg_decompress_struct@@@Z
 */
 
-#include "hooking.h"
-
 // 0x562FB0 | ?jinit_d_coef_controller@@YAXPAUjpeg_decompress_struct@@E@Z
 inline void jinit_d_coef_controller(struct jpeg_decompress_struct* arg1, uint8_t arg2)
 {

@@ -31,8 +31,6 @@
     0x55F980 | void __cdecl reset_input_controller(struct jpeg_decompress_struct *) | ?reset_input_controller@@YAXPAUjpeg_decompress_struct@@@Z
 */
 
-#include "hooking.h"
-
 // 0x55F390 | ?jinit_input_controller@@YAXPAUjpeg_decompress_struct@@@Z
 inline void jinit_input_controller(struct jpeg_decompress_struct* arg1)
 {

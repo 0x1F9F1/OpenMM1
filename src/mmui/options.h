@@ -30,8 +30,6 @@
     0x592868 | const OptionsMenu::`vftable' | ??_7OptionsMenu@@6B@
 */
 
-#include "hooking.h"
-
 struct OptionsMenu : UIMenu
 {
 public:

@@ -84,8 +84,6 @@
     0x4680C0 | void __cdecl delete_mmCarSim(void *,int) | ?delete_mmCarSim@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x4645B0 | ?IMPACTCB@@YAXPAVmmCarSim@@PAVasBound@@PAVmmIntersection@@PAVVector3@@M3@Z
 inline void IMPACTCB(class mmCarSim* arg1, class asBound* arg2, class mmIntersection* arg3, class Vector3* arg4,
     float arg5, class Vector3* arg6)

@@ -50,8 +50,6 @@
     0x592380 | const AudioOptions::`vftable' | ??_7AudioOptions@@6B@
 */
 
-#include "hooking.h"
-
 struct AudioOptions : OptionsBase
 {
 public:

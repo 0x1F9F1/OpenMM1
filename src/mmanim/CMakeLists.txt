@@ -1,4 +1,4 @@
-add_library(mmanim OBJECT
+arts_add_component(mmanim
     # AnimDOF.cpp
     # AnimDOF.h
     # AnimMgr.cpp
@@ -22,5 +22,3 @@ add_library(mmanim OBJECT
     # traincar.cpp
     # traincar.h
 )
-
-target_link_libraries(mmanim hooking)

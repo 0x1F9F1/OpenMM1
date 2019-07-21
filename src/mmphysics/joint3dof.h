@@ -65,8 +65,6 @@
     0x4D1CB0 | void __cdecl delete_Joint3Dof(void *,int) | ?delete_Joint3Dof@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x4D1EB0 | ?CrossProdMatrix@@YAXPAVMatrix34@@ABVVector3@@@Z
 inline void CrossProdMatrix(class Matrix34* arg1, class Vector3 const& arg2)
 {

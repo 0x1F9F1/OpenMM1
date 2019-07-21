@@ -25,8 +25,6 @@
     0x706668 | class agiLib<class agiTexParameters,class agiTexDef> agiTexLib | ?agiTexLib@@3V?$agiLib@VagiTexParameters@@VagiTexDef@@@@A
 */
 
-#include "hooking.h"
-
 #include "agilib.h"
 
 class agiTexParameters;

@@ -44,8 +44,6 @@
     0x55A410 | int __fastcall compareExchange(unsigned int *,int) | ?compareExchange@@YIHPAIH@Z
 */
 
-#include "hooking.h"
-
 struct ipcMessage
 {
     void(__cdecl* m_pHandler)(void*) {nullptr};

@@ -63,8 +63,6 @@
     0x609AF0 | class Vector3 Size | ?Size@@3VVector3@@A
 */
 
-#include "hooking.h"
-
 // 0x609AF0 | ?Size@@3VVector3@@A
 inline extern_var(0x609AF0, class Vector3, Size);
 

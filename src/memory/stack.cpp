@@ -18,8 +18,6 @@
 
 #include "stack.h"
 
-#include "data7/assert.h"
-#include "data7/printer.h"
 #include "minwin.h"
 
 #include <algorithm>

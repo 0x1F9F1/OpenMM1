@@ -28,8 +28,6 @@
     0x4DAD40 | public: virtual int __thiscall mmSpringFF::Stop(void) | ?Stop@mmSpringFF@@UAEHXZ
 */
 
-#include "hooking.h"
-
 struct mmSpringFF
 {
 public:

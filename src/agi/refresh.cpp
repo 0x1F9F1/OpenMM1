@@ -20,9 +20,6 @@
 
 #include "pipeline.h"
 
-#include "data7/printer.h"
-#include "data7/quitf.h"
-
 agiRefreshable::agiRefreshable(class agiPipeline* pipe)
     : m_pPipeline(pipe)
 {

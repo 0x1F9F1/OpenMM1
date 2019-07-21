@@ -44,8 +44,6 @@
     0x60A35C | private: static float mmOpponentImpactAudio::m_fHugeVolumeMultiplier | ?m_fHugeVolumeMultiplier@mmOpponentImpactAudio@@0MA
 */
 
-#include "hooking.h"
-
 class mmOpponentImpactAudio
 {
 public:

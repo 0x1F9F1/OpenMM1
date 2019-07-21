@@ -41,8 +41,6 @@
     0x609B50 | float time_delta | ?time_delta@@3MA
 */
 
-#include "hooking.h"
-
 // 0x609B50 | ?time_delta@@3MA
 inline extern_var(0x609B50, float, time_delta);
 

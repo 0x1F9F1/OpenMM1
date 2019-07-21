@@ -61,8 +61,6 @@
     0x5947F8 | const mmRoadFF::`vftable' | ??_7mmRoadFF@@6B@
 */
 
-#include "hooking.h"
-
 // 0x4D9D10 | ?DecodeDIErrorMFlag@@YAXJ@Z
 inline void DecodeDIErrorMFlag(int32_t arg1)
 {

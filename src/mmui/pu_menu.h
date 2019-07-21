@@ -37,8 +37,6 @@
     0x592F40 | const PUMenuBase::`vftable' | ??_7PUMenuBase@@6B@
 */
 
-#include "hooking.h"
-
 struct PUMenuBase : UIMenu
 {
 public:

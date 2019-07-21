@@ -55,8 +55,6 @@
     0x501760 | void __cdecl agiInitCones(class Matrix34 &,float) | ?agiInitCones@@YAXAAVMatrix34@@M@Z
 */
 
-#include "hooking.h"
-
 // 0x500700 | ?agiMeshLighterReset@@YAXXZ
 inline void agiMeshLighterReset()
 {

@@ -39,8 +39,6 @@
     0x5936E8 | const mmCompRoster::`vftable' | ??_7mmCompRoster@@6B@
 */
 
-#include "hooking.h"
-
 struct mmCompRoster : mmCompBase
 {
 public:

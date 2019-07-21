@@ -33,8 +33,6 @@
     0x593FB8 | const mmAnimExcel::`vftable' | ??_7mmAnimExcel@@6B@
 */
 
-#include "hooking.h"
-
 struct mmAnimExcel
 {
 public:

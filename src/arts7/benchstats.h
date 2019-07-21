@@ -27,8 +27,6 @@
     0x516370 | public: void __thiscall asBenchStats::Current(class asBenchStats *) | ?Current@asBenchStats@@QAEXPAV1@@Z
 */
 
-#include "hooking.h"
-
 class asBenchStats
 {
 public:

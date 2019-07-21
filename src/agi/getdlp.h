@@ -30,8 +30,6 @@
     0x538D50 | int __cdecl LibOutOfDate(char *,char *) | ?LibOutOfDate@@YAHPAD0@Z
 */
 
-#include "hooking.h"
-
 // 0x538C50 | ?OutOfDate@@YAHPAD0@Z
 inline int32_t OutOfDate(char* arg1, char* arg2)
 {

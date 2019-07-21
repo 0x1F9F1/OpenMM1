@@ -24,8 +24,6 @@
     0x556B90 | void __cdecl dxiPlayMovie(char *) | ?dxiPlayMovie@@YAXPAD@Z
 */
 
-#include "hooking.h"
-
 // 0x556B90 | ?dxiPlayMovie@@YAXPAD@Z
 inline void dxiPlayMovie(char* arg1)
 {

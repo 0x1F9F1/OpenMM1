@@ -33,8 +33,6 @@
     0x595CB0 | const agiLightModel::`vftable' | ??_7agiLightModel@@6B@
 */
 
-#include "hooking.h"
-
 class agiLightModelParameters
 {
 public:

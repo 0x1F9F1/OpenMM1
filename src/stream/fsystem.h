@@ -43,8 +43,6 @@
     0x5417A0 | void __cdecl ExpandEnvs(char *) | ?ExpandEnvs@@YAXPAD@Z
 */
 
-#include "hooking.h"
-
 #include "data7/base.h"
 
 // 0x5418B0 | ?FindFile@@YAPAVFileSystem@@PAD00H0@Z

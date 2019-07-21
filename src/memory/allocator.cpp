@@ -18,9 +18,6 @@
 
 #include "allocator.h"
 
-#include "data7/assert.h"
-#include "data7/printer.h"
-
 #include "stack.h"
 
 #include <intrin.h>

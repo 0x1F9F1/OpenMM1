@@ -29,8 +29,6 @@
     0x543350 | public: void __thiscall Tokenizer::IgnoreToken(void) | ?IgnoreToken@Tokenizer@@QAEXXZ
 */
 
-#include "hooking.h"
-
 class Stream;
 
 class Tokenizer

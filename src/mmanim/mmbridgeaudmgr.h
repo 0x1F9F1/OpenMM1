@@ -35,8 +35,6 @@
     0x668144 | class mmBridgeAudMgr * MMBRIDGEAUDMGRPTR | ?MMBRIDGEAUDMGRPTR@@3PAVmmBridgeAudMgr@@A
 */
 
-#include "hooking.h"
-
 // 0x668144 | ?MMBRIDGEAUDMGRPTR@@3PAVmmBridgeAudMgr@@A
 inline extern_var(0x668144, class mmBridgeAudMgr*, MMBRIDGEAUDMGRPTR);
 

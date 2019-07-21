@@ -30,8 +30,6 @@
     0x591AB0 | const asNetObject::`vftable' | ??_7asNetObject@@6B@
 */
 
-#include "hooking.h"
-
 struct asNetObject : asNode
 {
 public:

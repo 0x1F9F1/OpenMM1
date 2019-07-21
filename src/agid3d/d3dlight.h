@@ -31,8 +31,6 @@
     0x595898 | const agiD3DLight::`vftable' | ??_7agiD3DLight@@6B@
 */
 
-#include "hooking.h"
-
 struct agiD3DLight : agiLight
 {
 public:

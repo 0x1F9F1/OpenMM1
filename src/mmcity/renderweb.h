@@ -57,8 +57,6 @@
     0x487E20 | void __cdecl delete_asRenderWeb(void *,int) | ?delete_asRenderWeb@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x4877D0 | ?DrawMirrorBorder@@YAXXZ
 inline void DrawMirrorBorder()
 {

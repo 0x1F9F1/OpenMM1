@@ -1,4 +1,4 @@
-add_library(mmwidget OBJECT
+arts_add_component(mmwidget
     # bm_button.cpp
     # bm_button.h
     # bm_label.cpp
@@ -78,5 +78,3 @@ add_library(mmwidget OBJECT
     # wstore.cpp
     # wstore.h
 )
-
-target_link_libraries(mmwidget hooking)

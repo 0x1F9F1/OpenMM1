@@ -39,8 +39,6 @@
     0x53D800 | void __cdecl copyrow4444_to_5551(void *,void *,unsigned int,unsigned int) | ?copyrow4444_to_5551@@YAXPAX0II@Z
 */
 
-#include "hooking.h"
-
 // 0x70A67C | ?AnnotateTextures@@3HA
 inline extern_var(0x70A67C, int32_t, AnnotateTextures);
 

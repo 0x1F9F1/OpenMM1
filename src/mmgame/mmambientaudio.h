@@ -26,8 +26,6 @@
     0x41EFC0 | public: void __thiscall mmAmbientAudio::Update(void) | ?Update@mmAmbientAudio@@QAEXXZ
 */
 
-#include "hooking.h"
-
 struct mmAmbientAudio
 {
 public:

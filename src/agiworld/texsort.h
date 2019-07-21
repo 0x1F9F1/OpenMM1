@@ -54,8 +54,6 @@
     0x67BB00 | int DisableFogOnAlphaGlow | ?DisableFogOnAlphaGlow@@3HA
 */
 
-#include "hooking.h"
-
 // 0x4F4920 | ?GetPackedTexture@@YAPAVagiTexDef@@PADH@Z
 inline class agiTexDef* GetPackedTexture(char* arg1, int32_t arg2)
 {

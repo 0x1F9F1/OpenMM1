@@ -44,7 +44,6 @@
 */
 
 #include "cstr.h"
-#include "hooking.h"
 
 class MiniParser
 {

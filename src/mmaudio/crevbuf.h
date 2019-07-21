@@ -31,8 +31,6 @@
     0x4E7810 | public: void __thiscall CReverbBuffer::GetAll(struct EAXBUFFER_REVERBPROPERTIES *) | ?GetAll@CReverbBuffer@@QAEXPAUEAXBUFFER_REVERBPROPERTIES@@@Z
 */
 
-#include "hooking.h"
-
 class CReverbBuffer
 {
 public:

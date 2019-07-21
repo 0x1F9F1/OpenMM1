@@ -30,8 +30,6 @@
     0x55DD60 | int __cdecl cpuid(void) | ?cpuid@@YAHXZ
 */
 
-#include "hooking.h"
-
 // 0x7125B8 | ?UseKNI@@3HA
 inline extern_var(0x7125B8, int32_t, UseKNI);
 

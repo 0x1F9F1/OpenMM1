@@ -32,8 +32,6 @@
     0x556B20 | void __cdecl guidtostr(char *,struct _GUID *) | ?guidtostr@@YAXPADPAU_GUID@@@Z
 */
 
-#include "hooking.h"
-
 #include <rpc.h>
 
 // 0x556460 | ?dxiResClosestMatch@@YAHHHH@Z

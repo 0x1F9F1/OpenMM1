@@ -30,8 +30,6 @@
     0x70E720 | class agiPalette agiPal | ?agiPal@@3VagiPalette@@A
 */
 
-#include "hooking.h"
-
 #include "rgba.h"
 
 // 0x70E720 | ?agiPal@@3VagiPalette@@A

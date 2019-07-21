@@ -34,8 +34,6 @@
     0x5923D8 | const Dialog_City2::`vftable' | ??_7Dialog_City2@@6B@
 */
 
-#include "hooking.h"
-
 struct Dialog_City2 : PUMenuBase
 {
 public:

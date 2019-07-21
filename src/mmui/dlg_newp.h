@@ -30,8 +30,6 @@
     0x5925C8 | const Dialog_NewPlayer::`vftable' | ??_7Dialog_NewPlayer@@6B@
 */
 
-#include "hooking.h"
-
 struct Dialog_NewPlayer : PUMenuBase
 {
 public:

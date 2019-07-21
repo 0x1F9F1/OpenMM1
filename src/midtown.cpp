@@ -18,8 +18,6 @@
 
 #include "midtown.h"
 
-#include "data7/assert.h"
-#include "data7/printer.h"
 #include "data7/timer.h"
 
 #include "pcwindis/dxinit.h"
@@ -60,7 +58,7 @@ void Application(int32_t argc, char** argv)
 static char Main_ExecPath[1024] {};
 static char* Main_ArgV[128] {};
 
-int CALLBACK MidtownMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+int CALLBACK MidtownMain(HINSTANCE /*hInstance*/, HINSTANCE /*hPrevInstance*/, LPSTR lpCmdLine, int /*nCmdShow*/)
 {
     GetModuleFileNameA(0, Main_ExecPath, 1024);
 

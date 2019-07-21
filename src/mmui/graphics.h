@@ -49,8 +49,6 @@
     0x48EA70 | void __cdecl SetTexQualString(void) | ?SetTexQualString@@YAXXZ
 */
 
-#include "hooking.h"
-
 // 0x48E130 | ?AutoDetect@@YAXHH@Z
 inline void AutoDetect(int32_t arg1, int32_t arg2)
 {

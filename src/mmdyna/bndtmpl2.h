@@ -50,8 +50,6 @@
     0x6E1858 | class Stream * MakeTableStats | ?MakeTableStats@@3PAVStream@@A
 */
 
-#include "hooking.h"
-
 // 0x50C120 | ?EdgeInList@@YA_NHHJPAH0@Z
 inline bool EdgeInList(int32_t arg1, int32_t arg2, int32_t arg3, int32_t* arg4, int32_t* arg5)
 {

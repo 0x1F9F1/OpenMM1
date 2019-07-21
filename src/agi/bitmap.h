@@ -34,8 +34,6 @@
     0x706618 | class HashTable BitmapHash | ?BitmapHash@@3VHashTable@@A
 */
 
-#include "hooking.h"
-
 #include "data7/cstr.h"
 #include "refresh.h"
 

@@ -51,8 +51,6 @@
     0x668180 | private: static float mmAnimPlane::s_fAudioAttenuationMult | ?s_fAudioAttenuationMult@mmAnimPlane@@0MA
 */
 
-#include "hooking.h"
-
 struct mmAnimPlane : mmMatrixInstance
 {
 public:

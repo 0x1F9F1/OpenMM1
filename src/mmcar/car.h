@@ -51,8 +51,6 @@
     0x46C330 | void __cdecl delete_mmCar(void *,int) | ?delete_mmCar@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x46BF10 | ?EggNameIndex@@YAHPAD@Z
 inline int32_t EggNameIndex(char* arg1)
 {

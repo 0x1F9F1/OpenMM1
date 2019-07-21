@@ -47,8 +47,6 @@
     0x48B090 | void __cdecl delete_mmPedManager(void *,int) | ?delete_mmPedManager@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x667A40 | ?mmPedManagerMetaClass@@3VMetaClass@@A
 inline extern_var(0x667A40, class MetaClass, mmPedManagerMetaClass);
 

@@ -46,8 +46,6 @@
     0x4B4B80 | void __cdecl delete_VSWidget(void *,int) | ?delete_VSWidget@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x667FF0 | ?VSWidgetMetaClass@@3VMetaClass@@A
 inline extern_var(0x667FF0, class MetaClass, VSWidgetMetaClass);
 

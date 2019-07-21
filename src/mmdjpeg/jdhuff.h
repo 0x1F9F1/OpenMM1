@@ -30,8 +30,6 @@
     0x563DD0 | unsigned char __cdecl process_restart(struct jpeg_decompress_struct *) | ?process_restart@@YAEPAUjpeg_decompress_struct@@@Z
 */
 
-#include "hooking.h"
-
 // 0x563320 | ?jpeg_make_d_derived_tbl@@YAXPAUjpeg_decompress_struct@@EHPAPAUd_derived_tbl@@@Z
 inline void jpeg_make_d_derived_tbl(
     struct jpeg_decompress_struct* arg1, uint8_t arg2, int32_t arg3, struct d_derived_tbl** arg4)

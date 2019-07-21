@@ -1,4 +1,4 @@
-add_library(mmui OBJECT
+arts_add_component(mmui
     # about.cpp
     # about.h
     # audio.cpp
@@ -82,5 +82,3 @@ add_library(mmui OBJECT
     # vshow.cpp
     # vshow.h
 )
-
-target_link_libraries(mmui hooking)

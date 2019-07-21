@@ -1,4 +1,4 @@
-add_library(agiworld OBJECT
+arts_add_component(agiworld
     # bone.cpp
     # bone.h
     # getmesh.cpp
@@ -28,5 +28,3 @@ add_library(agiworld OBJECT
     # texsort.cpp
     # texsort.h
 )
-
-target_link_libraries(agiworld hooking)

@@ -36,8 +36,6 @@
     0x667CC8 | public: static float UILabel::TextHeight | ?TextHeight@UILabel@@2MA
 */
 
-#include "hooking.h"
-
 class UILabel : uiWidget
 {
 public:

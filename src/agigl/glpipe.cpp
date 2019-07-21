@@ -19,8 +19,6 @@
 #include "glpipe.h"
 
 #include "agi/cmodel.h"
-#include "data7/assert.h"
-#include "data7/printer.h"
 
 #include <GL/glew.h>
 

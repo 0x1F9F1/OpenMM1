@@ -49,8 +49,6 @@
     0x593758 | const UICWArray::`vftable' | ??_7UICWArray@@6B@
 */
 
-#include "hooking.h"
-
 class UICWArray : uiWidget
 {
 public:

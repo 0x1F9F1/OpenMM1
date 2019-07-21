@@ -26,8 +26,6 @@
     0x70E718 | int agiVerbose | ?agiVerbose@@3HA
 */
 
-#include "hooking.h"
-
 // 0x53DD40 | ?agiGetError@@YAPADH@Z
 inline char* agiGetError(int32_t arg1)
 {

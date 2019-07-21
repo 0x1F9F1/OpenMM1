@@ -54,8 +54,6 @@
     0x4C3370 | void __cdecl delete_mmPlayerConfig(void *,int) | ?delete_mmPlayerConfig@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x66A848 | ?mmPlayerConfigMetaClass@@3VMetaClass@@A
 inline extern_var(0x66A848, class MetaClass, mmPlayerConfigMetaClass);
 

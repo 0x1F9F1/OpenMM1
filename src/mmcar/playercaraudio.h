@@ -46,8 +46,6 @@
     0x47A160 | void __cdecl delete_mmPlayerCarAudio(void *,int) | ?delete_mmPlayerCarAudio@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x60A520 | ?mmPlayerCarAudioMetaClass@@3VMetaClass@@A
 inline extern_var(0x60A520, class MetaClass, mmPlayerCarAudioMetaClass);
 

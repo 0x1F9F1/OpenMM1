@@ -38,8 +38,6 @@
     0x5621A0 | void __cdecl self_destruct(struct jpeg_common_struct *) | ?self_destruct@@YAXPAUjpeg_common_struct@@@Z
 */
 
-#include "hooking.h"
-
 // 0x561590 | ?jinit_memory_mgr@@YAXPAUjpeg_common_struct@@@Z
 inline void jinit_memory_mgr(struct jpeg_common_struct* arg1)
 {

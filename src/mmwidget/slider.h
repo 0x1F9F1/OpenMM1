@@ -44,8 +44,6 @@
     0x5932D8 | const UISlider::`vftable' | ??_7UISlider@@6B@
 */
 
-#include "hooking.h"
-
 class UISlider : uiWidget
 {
 public:

@@ -48,8 +48,6 @@
     0x4B3520 | void __cdecl delete_TextDropWidget(void *,int) | ?delete_TextDropWidget@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x667FA0 | ?TextDropWidgetMetaClass@@3VMetaClass@@A
 inline extern_var(0x667FA0, class MetaClass, TextDropWidgetMetaClass);
 

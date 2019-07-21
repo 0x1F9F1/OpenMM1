@@ -40,8 +40,6 @@
     0x711F48 | public: static class MetaClass MetaClass::RootMetaClass | ?RootMetaClass@MetaClass@@2V1@A
 */
 
-#include "hooking.h"
-
 // 0x5595B0 | ?__BadSafeCall@@YAXPADPAVBase@@@Z
 inline void __BadSafeCall(char* arg1, class Base* arg2)
 {

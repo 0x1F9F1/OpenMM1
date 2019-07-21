@@ -52,8 +52,6 @@
     0x414B80 | void __cdecl delete_mmGameSingle(void *,int) | ?delete_mmGameSingle@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x412D00 | ?ThreadFunc@@YGKPAX@Z
 inline uint32_t __stdcall ThreadFunc(void* arg1)
 {

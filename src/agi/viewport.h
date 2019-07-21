@@ -42,8 +42,6 @@
     0x706538 | protected: static class agiViewport * agiViewport::Active | ?Active@agiViewport@@1PAV1@A
 */
 
-#include "hooking.h"
-
 #include "refresh.h"
 #include "vector7/matrix34.h"
 

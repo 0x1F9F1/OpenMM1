@@ -44,8 +44,6 @@
     0x468900 | void __cdecl delete_mmTransmission(void *,int) | ?delete_mmTransmission@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x468990 | ?ArrayOf@@YAPAUMetaType@@PAU1@H@Z
 inline struct MetaType* ArrayOf(struct MetaType* arg1, int32_t arg2)
 {

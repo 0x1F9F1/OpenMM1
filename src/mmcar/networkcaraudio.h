@@ -48,8 +48,6 @@
     0x47B470 | void __cdecl delete_mmNetworkCarAudio(void *,int) | ?delete_mmNetworkCarAudio@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x60A578 | ?mmNetworkCarAudioMetaClass@@3VMetaClass@@A
 inline extern_var(0x60A578, class MetaClass, mmNetworkCarAudioMetaClass);
 

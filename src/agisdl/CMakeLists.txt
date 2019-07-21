@@ -1,8 +1,6 @@
-add_library(agisdl OBJECT
+arts_add_component(agisdl
     sdlinit.cpp
     sdlinit.h
     sdlfont.cpp
     sdlfont.h
 )
-
-target_link_libraries(agisdl hooking)

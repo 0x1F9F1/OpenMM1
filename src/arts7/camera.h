@@ -55,8 +55,6 @@
     0x514230 | void __cdecl delete_asCamera(void *,int) | ?delete_asCamera@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x6F2BE8 | ?asCameraMetaClass@@3VMetaClass@@A
 inline extern_var(0x6F2BE8, class MetaClass, asCameraMetaClass);
 

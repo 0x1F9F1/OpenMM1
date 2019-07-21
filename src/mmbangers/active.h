@@ -47,8 +47,6 @@
     0x668388 | protected: static class mmBangerActiveManager * mmBangerActiveManager::Instance | ?Instance@mmBangerActiveManager@@1PAV1@A
 */
 
-#include "hooking.h"
-
 // 0x5B118C | ?ParticleMultiplier@@3MA
 inline extern_var(0x5B118C, float, ParticleMultiplier);
 

@@ -41,8 +41,6 @@
     0x4EFD60 | void __cdecl delete_Spline(void *,int) | ?delete_Spline@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x67B810 | ?SplineMetaClass@@3VMetaClass@@A
 inline extern_var(0x67B810, class MetaClass, SplineMetaClass);
 

@@ -122,8 +122,6 @@
     0x51F310 | unsigned int __fastcall swClampAdd555(unsigned int,unsigned int) | ?swClampAdd555@@YIIII@Z
 */
 
-#include "hooking.h"
-
 // 0x51CE30 | ?__emitDebug@@YIXPAUswSurface@@H@Z
 inline void __emitDebug(struct swSurface* arg1, int32_t arg2)
 {

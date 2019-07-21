@@ -24,7 +24,5 @@
     0x5CE928 | float * ByteToFloatTable | ?ByteToFloatTable@@3PAMA
 */
 
-#include "hooking.h"
-
 // 0x5CE928 | ?ByteToFloatTable@@3PAMA
 inline extern_var(0x5CE928, float*, ByteToFloatTable);

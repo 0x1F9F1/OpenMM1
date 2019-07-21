@@ -29,8 +29,6 @@
     0x47C720 | public: void __thiscall NetAddOnCarAudio::Update(void) | ?Update@NetAddOnCarAudio@@QAEXXZ
 */
 
-#include "hooking.h"
-
 struct NetAddOnCarAudio
 {
 public:

@@ -30,8 +30,6 @@
     0x592BF0 | const PUKey::`vftable' | ??_7PUKey@@6B@
 */
 
-#include "hooking.h"
-
 struct PUKey : PUMenuBase
 {
 public:

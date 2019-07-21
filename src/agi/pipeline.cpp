@@ -18,7 +18,6 @@
 
 #include "pipeline.h"
 
-#include "data7/printer.h"
 #include "error.h"
 #include "refresh.h"
 

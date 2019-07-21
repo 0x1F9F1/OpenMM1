@@ -31,8 +31,6 @@
     0x506330 | void __cdecl Matrix34__FromEulersXZY(class Matrix34 &,class Vector3 const &) | ?Matrix34__FromEulersXZY@@YAXAAVMatrix34@@ABVVector3@@@Z
 */
 
-#include "hooking.h"
-
 // 0x506330 | ?Matrix34__FromEulersXZY@@YAXAAVMatrix34@@ABVVector3@@@Z
 inline void Matrix34__FromEulersXZY(class Matrix34& arg1, class Vector3 const& arg2)
 {

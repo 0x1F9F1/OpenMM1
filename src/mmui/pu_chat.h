@@ -30,8 +30,6 @@
     0x592C60 | const PUChat::`vftable' | ??_7PUChat@@6B@
 */
 
-#include "hooking.h"
-
 struct PUChat : PUMenuBase
 {
 public:

@@ -29,8 +29,6 @@
     0x55F370 | void __cdecl reset_error_mgr(struct jpeg_common_struct *) | ?reset_error_mgr@@YAXPAUjpeg_common_struct@@@Z
 */
 
-#include "hooking.h"
-
 // 0x55F1B0 | ?jpeg_std_error@@YAPAUjpeg_error_mgr@@PAU1@@Z
 inline struct jpeg_error_mgr* jpeg_std_error(struct jpeg_error_mgr* arg1)
 {

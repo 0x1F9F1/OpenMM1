@@ -1,4 +1,4 @@
-add_library(pcwindis OBJECT
+arts_add_component(pcwindis
     dxinit.cpp
     dxinit.h
     dxmovie.cpp
@@ -10,5 +10,3 @@ add_library(pcwindis OBJECT
     setupdata.cpp
     setupdata.h
 )
-
-target_link_libraries(pcwindis hooking)

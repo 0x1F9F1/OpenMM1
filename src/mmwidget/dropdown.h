@@ -41,8 +41,6 @@
     0x4B5F60 | void __cdecl delete_mmDropDown(void *,int) | ?delete_mmDropDown@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x668068 | ?mmDropDownMetaClass@@3VMetaClass@@A
 inline extern_var(0x668068, class MetaClass, mmDropDownMetaClass);
 

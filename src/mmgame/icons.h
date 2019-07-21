@@ -32,8 +32,6 @@
     0x58FC70 | const mmIcons::`vftable' | ??_7mmIcons@@6B@
 */
 
-#include "hooking.h"
-
 struct mmIcons : asNode
 {
 public:

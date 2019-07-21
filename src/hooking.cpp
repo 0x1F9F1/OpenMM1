@@ -16,10 +16,6 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "hooking.h"
-
-#include "data7/printer.h"
-
 #include <mem/protect.h>
 
 void write_protected(mem::pointer dest, mem::pointer src, size_t length)

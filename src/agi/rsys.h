@@ -39,8 +39,6 @@
     0x7065C0 | class agiRasterizer * RAST | ?RAST@@3PAVagiRasterizer@@A
 */
 
-#include "hooking.h"
-
 #include "refresh.h"
 
 // 0x5C3018 | ?ROPTS@@3UagiRenderOpts@@A

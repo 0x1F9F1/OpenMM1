@@ -27,5 +27,3 @@
     0x4AA850 | public: void __thiscall uiWidget::ResetToolTip(void) | ?ResetToolTip@uiWidget@@QAEXXZ
     0x4AA860 | public: void __thiscall uiWidget::SetToolTipText(struct LocString *) | ?SetToolTipText@uiWidget@@QAEXPAULocString@@@Z
 */
-
-#include "hooking.h"

@@ -36,8 +36,6 @@
     0x594888 | const AudHead::`vftable' | ??_7AudHead@@6B@
 */
 
-#include "hooking.h"
-
 struct AudHead : asNode
 {
 public:

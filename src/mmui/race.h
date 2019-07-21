@@ -35,8 +35,6 @@
     0x592920 | const RaceMenu::`vftable' | ??_7RaceMenu@@6B@
 */
 
-#include "hooking.h"
-
 struct RaceMenu : RaceMenuBase
 {
 public:

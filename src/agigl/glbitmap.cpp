@@ -20,7 +20,6 @@
 
 #include "agi/pipeline.h"
 #include "agi/surface.h"
-#include "data7/assert.h"
 
 agiGLBitmap::agiGLBitmap(agiPipeline* pipe)
     : agiBitmap(pipe)

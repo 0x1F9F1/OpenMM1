@@ -68,8 +68,6 @@
     0x510A40 | void __cdecl delete_asSimulation(void *,int) | ?delete_asSimulation@@YAXPAXH@Z
 */
 
-#include "hooking.h"
-
 // 0x510600 | ?InitPipeline@@YAHPADHPAPAD@Z
 inline int32_t InitPipeline(char* arg1, int32_t arg2, char** arg3)
 {

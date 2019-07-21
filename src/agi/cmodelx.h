@@ -135,8 +135,6 @@
     0x70ECE0 | class agiColorModelRGB555 ColorModelRGB555 | ?ColorModelRGB555@@3VagiColorModelRGB555@@A
 */
 
-#include "hooking.h"
-
 #include "cmodel.h"
 
 // 0x70EB30 | ?ColorModelARGB@@3VagiColorModelARGB@@A

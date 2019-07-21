@@ -128,8 +128,6 @@
     0x4F7340 | int __cdecl ZClipOnly(struct CV *,struct CV *,int) | ?ZClipOnly@@YAHPAUCV@@0H@Z
 */
 
-#include "hooking.h"
-
 // 0x4F4B60 | ?SetClipMode@@YAXH@Z
 inline void SetClipMode(int32_t arg1)
 {

@@ -29,8 +29,6 @@
     0x592D70 | const PUDebug::`vftable' | ??_7PUDebug@@6B@
 */
 
-#include "hooking.h"
-
 struct PUDebug : PUMenuBase
 {
 public:

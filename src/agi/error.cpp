@@ -18,8 +18,6 @@
 
 #include "error.h"
 
-#include "data7/printer.h"
-
 #include <stdarg.h>
 
 void agiDisplayf(const char* format, ...)

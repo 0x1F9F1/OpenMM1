@@ -88,8 +88,6 @@
     0x4A6560 | unsigned long __stdcall HelpWatcher(void *) | ?HelpWatcher@@YGKPAX@Z
 */
 
-#include "hooking.h"
-
 // 0x5AFE34 | ?DELAYTTIME@@3MA
 inline extern_var(0x5AFE34, float, DELAYTTIME);
 
