@@ -686,7 +686,7 @@ view = BinaryViewType.get_view_of_file('midtown.bndb')
 
 print('Got View', view)
 
-function_libs = map_to_symbols(open('../extra/midtown.MAP', 'r').readlines(), None)
+function_libs = map_to_symbols(open('midtown.map', 'r').readlines(), None)
 all_symbols = collect_symbols(view, function_libs)
 name_to_type = collect_types(all_symbols)
 
