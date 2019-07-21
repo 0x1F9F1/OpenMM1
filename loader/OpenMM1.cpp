@@ -91,7 +91,7 @@ void InitExportHooks(HMODULE instance)
         uint32_t target;
         char name[256];
 
-        if (sscanf_s(self.start.add(names[i]).as<const char[]>(), "Hook_0x%X_%s", &target, name, 256) == 2)
+        if (sscanf_s(self.start.add(names[i]).as<const char[]>(), "Hook_%x_%s", &target, name, 256) == 2)
         {
             name[255] = '\0';
 
