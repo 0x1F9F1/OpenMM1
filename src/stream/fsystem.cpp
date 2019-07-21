@@ -18,7 +18,7 @@
 
 #include "fsystem.h"
 
-constexpr size_t MAX_FILESYSTEMS = 256;
+constexpr int32_t MAX_FILESYSTEMS = 256;
 
 FileSystem* FileSystem::FS[MAX_FILESYSTEMS] {};
 

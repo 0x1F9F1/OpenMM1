@@ -90,7 +90,7 @@ public:
     }
 
     // 0x567350 | __purecall
-    virtual inline ~agiColorModel() = 0;
+    virtual ~agiColorModel() = 0;
 
     // 0x567350 | __purecall
     virtual inline uint32_t GetColor(struct agiRgba arg1) = 0;
@@ -107,5 +107,7 @@ public:
     // 0x567350 | __purecall
     virtual inline uint32_t GetPixel(class agiSurfaceDesc* arg1, int32_t arg2, int32_t arg3) = 0;
 };
+
+inline agiColorModel::~agiColorModel() = default;
 
 check_size(agiColorModel, 0x2C);

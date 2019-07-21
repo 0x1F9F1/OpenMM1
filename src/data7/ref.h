@@ -35,7 +35,7 @@ public:
     constexpr Ref<T>& operator=(const Ref<T>& other);
     constexpr Ref<T>& operator=(Ref<T>&& other);
 
-    constexpr [[nodiscard]] T* Release();
+    [[nodiscard]] constexpr T* Release();
 
     constexpr void Reset(T* value = nullptr);
 

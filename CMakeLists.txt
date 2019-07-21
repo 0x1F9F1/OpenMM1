@@ -22,6 +22,9 @@ add_link_options(/IGNORE:4099 /NODEFAULTLIB:LIBCMT)
 
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} /DEBUG /OPT:REF")
 
+# This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+set(CMAKE_STATIC_LINKER_FLAGS "${CMAKE_STATIC_LINKER_FLAGS} /IGNORE:4221")
+
 if (USE_SDL2)
     add_definitions(-DUSE_SDL2=1)
 endif()

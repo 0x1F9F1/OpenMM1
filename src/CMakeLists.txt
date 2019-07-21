@@ -23,6 +23,7 @@ set(ARTS_COMPONENTS)
 
 macro(arts_add_component name)
     add_library(${name} OBJECT ${ARGN})
+    target_link_libraries(${name} mem)
     list(APPEND ARTS_COMPONENTS ${name})
     set(ARTS_COMPONENTS ${ARTS_COMPONENTS} PARENT_SCOPE)
 endmacro(arts_add_component)

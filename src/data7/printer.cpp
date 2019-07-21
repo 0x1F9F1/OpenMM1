@@ -67,7 +67,7 @@ void Errorf(char const* arg1, ...)
     Printer(4, arg1, va);
     va_end(va);
 
-    *static_cast<uint32_t*>(nullptr) = 0xDEADBEEF;
+    *static_cast<volatile uint32_t*>(nullptr) = 0xDEADBEEF;
 
     exit(1);
 }
