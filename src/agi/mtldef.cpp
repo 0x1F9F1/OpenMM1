@@ -17,3 +17,7 @@
 */
 
 #include "mtldef.h"
+
+agiMtlDef::agiMtlDef(agiPipeline* pipe)
+    : agiRefreshable(pipe)
+{}

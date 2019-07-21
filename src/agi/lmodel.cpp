@@ -17,3 +17,7 @@
 */
 
 #include "lmodel.h"
+
+agiLightModel::agiLightModel(agiPipeline* pipe)
+    : agiRefreshable(pipe)
+{}

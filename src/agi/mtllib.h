@@ -25,5 +25,10 @@
     0x70A6C0 | class agiLib<class agiMtlParameters,class agiMtlDef> agiMtlLib | ?agiMtlLib@@3V?$agiLib@VagiMtlParameters@@VagiMtlDef@@@@A
 */
 
+#include "agilib.h"
+
+class agiMtlParameters;
+class agiMtlDef;
+
 // 0x70A6C0 | ?agiMtlLib@@3V?$agiLib@VagiMtlParameters@@VagiMtlDef@@@@A
-inline extern_var(0x70A6C0, class agiLib<class agiMtlParameters, class agiMtlDef>, agiMtlLib);
+inline extern_var(0x70A6C0, Ty(agiLib<agiMtlParameters, agiMtlDef>), agiMtlLib);

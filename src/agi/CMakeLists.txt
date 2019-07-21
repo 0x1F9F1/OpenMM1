@@ -17,18 +17,18 @@ arts_add_component(agi
     getdlp.h
     light.cpp
     light.h
-    # lmodel.cpp
-    # lmodel.h
-    # mtldef.cpp
-    # mtldef.h
-    # mtllib.cpp
-    # mtllib.h
+    lmodel.cpp
+    lmodel.h
+    mtldef.cpp
+    mtldef.h
+    mtllib.cpp
+    mtllib.h
     palette.cpp
     palette.h
-    # physdef.cpp
-    # physdef.h
-    # physlib.cpp
-    # physlib.h
+    physdef.cpp
+    physdef.h
+    physlib.cpp
+    physlib.h
     pipeline.cpp
     pipeline.h
     print.cpp
@@ -41,8 +41,8 @@ arts_add_component(agi
     surface.h
     texdef.cpp
     texdef.h
-    # texlib.cpp
-    # texlib.h
+    texlib.cpp
+    texlib.h
     viewport.cpp
     viewport.h
 

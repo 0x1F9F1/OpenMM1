@@ -28,6 +28,19 @@
 class agiPhysParameters
 {
 public:
+    char m_Name[32] {};
+    float m_dword20 {0.0f};
+    float m_dword24 {0.0f};
+    float m_dword28 {0.0f};
+    float m_dword2C {0.0f};
+    float m_dword30 {0.0f};
+    float m_dword34 {0.0f};
+    float m_dword38 {0.0f};
+    uint32_t m_dword3C {0};
+    uint32_t m_dword40 {0};
+    uint32_t m_dword44[2] {};
+    uint32_t m_dword4C[3] {};
+
     // 0x539090 | ?Load@agiPhysParameters@@QAEXPAVStream@@@Z
     inline void Load(class Stream* arg1)
     {
@@ -40,3 +53,5 @@ public:
         return stub<member_func_t<void, agiPhysParameters, class Stream*>>(0x539140, this, arg1);
     }
 };
+
+check_size(agiPhysParameters, 0x58);

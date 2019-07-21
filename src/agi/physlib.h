@@ -26,5 +26,10 @@
     0x7024D8 | class agiLib<class agiPhysParameters,class agiPhysDef> agiPhysLib | ?agiPhysLib@@3V?$agiLib@VagiPhysParameters@@VagiPhysDef@@@@A
 */
 
+#include "agilib.h"
+
+class agiPhysParameters;
+class agiPhysDef;
+
 // 0x7024D8 | ?agiPhysLib@@3V?$agiLib@VagiPhysParameters@@VagiPhysDef@@@@A
-inline extern_var(0x7024D8, class agiLib<class agiPhysParameters, class agiPhysDef>, agiPhysLib);
+inline extern_var(0x7024D8, Ty(agiLib<agiPhysParameters, agiPhysDef>), agiPhysLib);

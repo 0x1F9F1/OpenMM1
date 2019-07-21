@@ -18,6 +18,8 @@
 
 #pragma once
 
+#include "refresh.h"
+
 /*
     agi:mtldef
 
@@ -37,6 +39,14 @@
 class agiMtlParameters
 {
 public:
+    char m_Name[32] {};
+    float m_float20[4] {};
+    float m_float30[4] {};
+    float m_float40[4] {};
+    float m_float50[4] {};
+    float m_float60 {0.0f};
+    uint16_t m_word64 {0};
+
     // 0x53F9D0 | ??0agiMtlParameters@@QAE@XZ
     inline agiMtlParameters()
     {
@@ -64,18 +74,17 @@ public:
     }
 };
 
+check_size(agiMtlParameters, 0x68);
+
 class agiMtlDef : agiRefreshable
 {
 public:
+    agiMtlParameters m_Parameters {};
+
     // agiMtlDef::`vftable' @ 0x595DD8
 
     // 0x53FB20 | ??0agiMtlDef@@IAE@PAVagiPipeline@@@Z
-    inline agiMtlDef(class agiPipeline* arg1)
-    {
-        // stub<member_func_t<void, agiMtlDef, class agiPipeline*>>(0x53FB20, this, arg1);
-
-        unimplemented();
-    }
+    agiMtlDef(class agiPipeline* pipe);
 
     // 0x53FB70 | ?Init@agiMtlDef@@QAEHABVagiMtlParameters@@@Z
     inline int32_t Init(class agiMtlParameters const& arg1)
@@ -97,3 +106,5 @@ public:
         unimplemented();
     }
 };
+
+check_size(agiMtlDef, 0x80);

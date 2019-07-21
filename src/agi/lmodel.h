@@ -33,9 +33,20 @@
     0x595CB0 | const agiLightModel::`vftable' | ??_7agiLightModel@@6B@
 */
 
+#include "refresh.h"
+#include "vector7/vector4.h"
+
 class agiLightModelParameters
 {
 public:
+    Vector4 m_Ambient {};
+    uint32_t m_dword10 {0};
+    uint32_t m_dword14 {0};
+    uint32_t m_dword18 {0};
+    uint32_t m_Lighting {0};
+    uint32_t m_Monochrome {0};
+    uint32_t m_CustomLighting {0};
+
     // 0x53DBC0 | ??0agiLightModelParameters@@QAE@XZ
     inline agiLightModelParameters()
     {
@@ -58,18 +69,17 @@ public:
     }
 };
 
+check_size(agiLightModelParameters, 0x28);
+
 class agiLightModel : agiRefreshable
 {
 public:
+    agiLightModelParameters m_Parameters {};
+
     // agiLightModel::`vftable' @ 0x595CB0
 
     // 0x53DC20 | ??0agiLightModel@@IAE@PAVagiPipeline@@@Z
-    inline agiLightModel(class agiPipeline* arg1)
-    {
-        // stub<member_func_t<void, agiLightModel, class agiPipeline*>>(0x53DC20, this, arg1);
-
-        unimplemented();
-    }
+    agiLightModel(class agiPipeline* pipe);
 
     // 0x53DC70 | ?Init@agiLightModel@@QAEHABVagiLightModelParameters@@@Z
     inline int32_t Init(class agiLightModelParameters const& arg1)
@@ -91,3 +101,5 @@ public:
         unimplemented();
     }
 };
+
+check_size(agiLightModel, 0x40);
