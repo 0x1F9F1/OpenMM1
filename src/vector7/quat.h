@@ -37,6 +37,8 @@
 class Quaternion
 {
 public:
+    float x {0.0f}, y {0.0f}, z {0.0f}, w {1.0f};
+
     // 0x5540A0 | ?Init@Quaternion@@QAEXMMMM@Z
     inline void Init(float arg1, float arg2, float arg3, float arg4)
     {
@@ -110,3 +112,5 @@ public:
             class Quaternion const&, class Quaternion const&>>(0x554CF0, this, arg1, arg2, arg3, arg4, arg5);
     }
 };
+
+check_size(Quaternion, 16);

@@ -151,7 +151,7 @@ int32_t GetBlendFuncS()
     return GL_SRC_ALPHA;
 }
 
-GLenum PolygonModes[4] = {GL_POINTS, GL_POINT, GL_LINE, GL_FILL};
+const GLenum PolygonModes[4] {GL_POINTS, GL_POINT, GL_LINE, GL_FILL};
 
 void agiGLRasterizer::FlushState()
 {

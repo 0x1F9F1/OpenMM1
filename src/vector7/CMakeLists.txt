@@ -7,10 +7,10 @@ arts_add_component(vector7
     geomath.h
     matrix34.cpp
     matrix34.h
-    # matrix44.cpp
-    # matrix44.h
-    # quat.cpp
-    # quat.h
+    matrix44.cpp
+    matrix44.h
+    quat.cpp
+    quat.h
     randmath.cpp
     randmath.h
     random.cpp

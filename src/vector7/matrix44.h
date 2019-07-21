@@ -63,6 +63,7 @@
     0x710A30 | class Matrix44 Identity | ?Identity@@3VMatrix44@@A
 */
 
+#include "vector3.h"
 #include "vector4.h"
 
 // 0x5C5288 | ?id@@3PAMA
@@ -98,22 +99,10 @@ inline extern_var(0x710A30, class Matrix44, Identity);
 class Matrix44
 {
 public:
-    float m00 {0.0f};
-    float m01 {0.0f};
-    float m02 {0.0f};
-    float m03 {0.0f};
-    float m10 {0.0f};
-    float m11 {0.0f};
-    float m12 {0.0f};
-    float m13 {0.0f};
-    float m20 {0.0f};
-    float m21 {0.0f};
-    float m22 {0.0f};
-    float m23 {0.0f};
-    float m30 {0.0f};
-    float m31 {0.0f};
-    float m32 {0.0f};
-    float m33 {0.0f};
+    float m00 {1.0f}, m01 {0.0f}, m02 {0.0f}, m03 {0.0f};
+    float m10 {0.0f}, m11 {1.0f}, m12 {0.0f}, m13 {0.0f};
+    float m20 {0.0f}, m21 {0.0f}, m22 {1.0f}, m23 {0.0f};
+    float m30 {0.0f}, m31 {0.0f}, m32 {0.0f}, m33 {1.0f};
 
     // 0x550050 | ??0Matrix44@@QAE@ABVMatrix34@@@Z
     inline Matrix44(class Matrix34 const& arg1)
@@ -266,6 +255,8 @@ public:
         unimplemented(arg1);
     }
 };
+
+check_size(Matrix44, 0x40);
 
 // 0x550480 | ??D@YA?AVMatrix44@@MABV0@@Z
 inline class Matrix44 operator*(float arg1, class Matrix44 const& arg2)

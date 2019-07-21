@@ -72,8 +72,8 @@ void Errorf(char const* arg1, ...)
     exit(1);
 }
 
-const char* const PrinterPrefixes[5] = {"", "WARNING: ", "ERROR: ", "FATAL ERROR: ", "ABORT: "};
-const uint8_t PrinterColors[5] = {7u, 14u, 12u, 12u, 12u};
+const char* const PrinterPrefixes[5] {"", "WARNING: ", "ERROR: ", "FATAL ERROR: ", "ABORT: "};
+const uint8_t PrinterColors[5] {7u, 14u, 12u, 12u, 12u};
 
 static extern_var(0x5CDF50, HANDLE, DebugLogFile);
 
