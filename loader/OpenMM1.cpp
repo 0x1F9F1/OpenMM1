@@ -68,18 +68,6 @@ extern "C" HRESULT WINAPI DirectInputCreateA_Impl(
     return DirectInputCreateA_Orig(hinst, dwVersion, ppDI, punkOuter);
 }
 
-include_dummy_symbol(dxinit);
-include_dummy_symbol(dxsetup);
-include_dummy_symbol(allocator);
-include_dummy_symbol(machname);
-include_dummy_symbol(stream);
-include_dummy_symbol(fsystem);
-include_dummy_symbol(hfsystem);
-include_dummy_symbol(vfsystem);
-include_dummy_symbol(stack);
-include_dummy_symbol(midtown);
-include_dummy_symbol(mmtext);
-
 void InitExportHooks(HMODULE instance)
 {
     mem::module self = mem::module::nt(instance);
@@ -118,6 +106,18 @@ void InitExportHooks(HMODULE instance)
         }
     }
 }
+
+include_dummy_symbol(dxinit);
+include_dummy_symbol(dxsetup);
+include_dummy_symbol(allocator);
+include_dummy_symbol(machname);
+include_dummy_symbol(stream);
+include_dummy_symbol(fsystem);
+include_dummy_symbol(hfsystem);
+include_dummy_symbol(vfsystem);
+include_dummy_symbol(stack);
+include_dummy_symbol(midtown);
+include_dummy_symbol(mmtext);
 
 BOOL APIENTRY DllMain(HMODULE hinstDLL, DWORD fdwReason, LPVOID /*lpvReserved*/)
 {

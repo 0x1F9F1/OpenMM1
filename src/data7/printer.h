@@ -64,9 +64,9 @@ inline void LogToMonochromeMonitor()
 }
 
 // 0x558810 | ?LogToFile@@YAXPAD@Z
-inline void LogToFile(char* arg1)
+inline void LogToFile(const char* arg1)
 {
-    return stub<cdecl_t<void, char*>>(0x558810, arg1);
+    return stub<cdecl_t<void, const char*>>(0x558810, arg1);
 }
 
 // 0x558870 | ?LogToFile@@YAXXZ

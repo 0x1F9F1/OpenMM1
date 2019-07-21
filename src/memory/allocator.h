@@ -54,9 +54,9 @@ inline extern_var(0x6E2958, class asMemoryAllocator, CRTALLOCATOR);
 inline extern_var(0x6E29F8, uint8_t*, CRTHEAP);
 
 // 0x50F210 | ?HeapAssert@@YAHPAXHPADH@Z
-inline int32_t HeapAssert(void* arg1, int32_t arg2, char* arg3, int32_t arg4)
+inline int32_t HeapAssert(void* arg1, int32_t arg2, const char* arg3, int32_t arg4)
 {
-    return stub<cdecl_t<int32_t, void*, int32_t, char*, int32_t>>(0x50F210, arg1, arg2, arg3, arg4);
+    return stub<cdecl_t<int32_t, void*, int32_t, const char*, int32_t>>(0x50F210, arg1, arg2, arg3, arg4);
 }
 
 struct asMemStats

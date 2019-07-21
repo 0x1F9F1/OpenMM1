@@ -13,7 +13,7 @@ project(OpenMM1 CXX)
 option(MM1_GAME_DIRECTORY "MM1 Game Directory")
 option(MM1_COMMAND_LINE "MM1 Command Line")
 
-add_compile_options(/MP /arch:SSE2)
+add_compile_options(/MP /arch:SSE2 /permissive-)
 
 add_subdirectory(vendor EXCLUDE_FROM_ALL)
 
