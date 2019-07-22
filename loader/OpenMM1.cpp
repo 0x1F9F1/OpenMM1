@@ -71,40 +71,29 @@ extern "C" HRESULT WINAPI DirectInputCreateA_Impl(
 void InitExportHooks(HMODULE instance)
 {
     mem::module self = mem::module::nt(instance);
-    IMAGE_DATA_DIRECTORY export_dir = self.nt_headers().OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT];
 
-    if (export_dir.Size < sizeof(IMAGE_EXPORT_DIRECTORY))
-    {
-        MessageBoxA(NULL, "Invalid Export Directory Size", "Invalid Export Directory", MB_OK);
-
-        exit(1);
-    }
-
-    IMAGE_EXPORT_DIRECTORY& exports = self.start.add(export_dir.VirtualAddress).as<IMAGE_EXPORT_DIRECTORY&>();
-
-    uint32_t* names = self.start.add(exports.AddressOfNames).as<uint32_t[]>();
-    uint16_t* ords = self.start.add(exports.AddressOfNameOrdinals).as<uint16_t[]>();
-    uint32_t* addrs = self.start.add(exports.AddressOfFunctions).as<uint32_t[]>();
-
-    for (uint32_t i = 0; i < exports.NumberOfNames; ++i)
-    {
-        uint32_t target;
-        char name[256];
-
-        if (sscanf_s(self.start.add(names[i]).as<const char[]>(), "Hook_%x_%s", &target, name, 256) == 2)
+    self.enum_exports([](const char* name, uint32_t /*ordinal*/, mem::pointer address) {
+        if (name != nullptr)
         {
-            name[255] = '\0';
+            uint32_t target;
+            char hook_name[256];
 
-            uintptr_t detour = self.start.add(addrs[ords[i]]).as<uintptr_t>();
+            if (sscanf_s(name, "Hook_%x_%s", &target, hook_name, 256) == 2)
+            {
+                hook_name[255] = '\0';
 
-            char undName[256];
+                char undName[256];
 
-            const char* function_name =
-                UnDecorateSymbolName(name, undName, std::size(undName), UNDNAME_NAME_ONLY) ? undName : name;
+                const char* function_name =
+                    UnDecorateSymbolName(hook_name, undName, std::size(undName), UNDNAME_NAME_ONLY) ? undName
+                                                                                                    : hook_name;
 
-            create_hook(function_name, "", target, detour);
+                create_hook(function_name, "", target, address);
+            }
         }
-    }
+
+        return false;
+    });
 }
 
 include_dummy_symbol(dxinit);
