@@ -22,7 +22,55 @@
 
 #include <intrin.h>
 
-static inline uint32_t Align8(uint32_t value) noexcept
+static constexpr const char HexCharTable[16 + 1] = "0123456789ABCDEF";
+
+static void HexDump16(char* buffer, const uint8_t* data)
+{
+    for (uint32_t i = 0; i < 16; ++i)
+    {
+        uint8_t v = data[i];
+
+        const uint32_t j = (i * 3);
+
+        buffer[j + 0] = HexCharTable[v >> 4];
+        buffer[j + 1] = HexCharTable[v & 0xF];
+        buffer[j + 2] = ' ';
+
+        if (v < 0x20 || v >= 0x7F)
+            v = '.';
+
+        buffer[i + 48] = v;
+    }
+
+    buffer[64] = '\0';
+}
+
+// 0x50F210 | ?HeapAssert@@YAHPAXHPADH@Z
+static int32_t HeapAssert(void* address, int32_t value, const char* message, int32_t source)
+{
+    if (value)
+    {
+        return 0;
+    }
+
+    char address_string[128];
+    LookupAddress(address_string, source);
+    Errorf("Heap node @ 0x%08X: %s (allocated by %s).", reinterpret_cast<uintptr_t>(address), message, address_string);
+
+    char hex_string[65];
+    const uint8_t* current = reinterpret_cast<const uint8_t*>(address) - 64;
+
+    for (uint32_t pending = 144; pending != 0; pending -= 16, current += 16)
+    {
+        HexDump16(hex_string, current);
+
+        Displayf((pending != 80) ? " %08X : %s" : "[%08X]: %s", reinterpret_cast<uintptr_t>(current), hex_string);
+    }
+
+    return 1;
+}
+
+static constexpr inline uint32_t Align8(uint32_t value) noexcept
 {
     return (value + 7) & 0xFFFFFFF8;
 }
@@ -56,66 +104,66 @@ private:
     static constexpr uint32_t UPPER_GUARD = 0xAAAAAAAA;
 
 public:
-    inline void Clear()
+    inline void Clear() noexcept
     {
         uStatus = 0;
         nSize = 0;
     }
 
     // Only aligned when free
-    inline uint32_t GetSize() const
+    inline uint32_t GetSize() const noexcept
     {
         return nSize;
     }
 
-    inline void SetSize(uint32_t size)
+    inline void SetSize(uint32_t size) noexcept
     {
         nSize = size;
     }
 
-    inline node* GetPrev() const
+    inline node* GetPrev() const noexcept
     {
         return reinterpret_cast<node*>(uStatus & 0xFFFFFFF8);
     }
 
-    inline void SetPrev(node* n)
+    inline void SetPrev(node* n) noexcept
     {
         uStatus = reinterpret_cast<uint32_t>(n) | (uStatus & 0x7);
     }
 
-    inline node* GetNext() const
+    inline node* GetNext() const noexcept
     {
         return reinterpret_cast<node*>(const_cast<uint8_t*>(Data) + Align8(nSize));
     }
 
-    inline uint8_t* GetData()
+    inline uint8_t* GetData() noexcept
     {
         return Data;
     }
 
     // Only valid while not in use
-    inline node* GetPrevFree() const
+    inline node* GetPrevFree() const noexcept
     {
         return Free.Prev;
     }
 
     // Only valid while not in use
-    inline node* GetNextFree() const
+    inline node* GetNextFree() const noexcept
     {
         return Free.Next;
     }
 
-    inline void SetPrevFree(node* n)
+    inline void SetPrevFree(node* n) noexcept
     {
         Free.Prev = n;
     }
 
-    inline void SetNextFree(node* n)
+    inline void SetNextFree(node* n) noexcept
     {
         Free.Next = n;
     }
 
-    inline void SetAllocated(bool allocated)
+    inline void SetAllocated(bool allocated) noexcept
     {
         uStatus &= 0xFFFFFFFE;
 
@@ -123,13 +171,13 @@ public:
             uStatus |= 1;
     }
 
-    inline bool IsAllocated() const
+    inline bool IsAllocated() const noexcept
     {
         return (uStatus & 0x1) == 0x1;
     }
 
     // Used in SanityCheck
-    inline void SetPendingSanity(bool pending)
+    inline void SetPendingSanity(bool pending) noexcept
     {
         uStatus &= 0xFFFFFFFB;
 
@@ -138,13 +186,13 @@ public:
     }
 
     // Used in SanityCheck
-    inline bool IsPendingSanity() const
+    inline bool IsPendingSanity() const noexcept
     {
         return (uStatus & 0x4) == 0x4;
     }
 
     // Only valid for debug allocators
-    inline int32_t GetAllocSource() const
+    inline int32_t GetAllocSource() const noexcept
     {
         uint32_t source = 0;
         memcpy(&source, Data, 4);
@@ -152,7 +200,7 @@ public:
     }
 
     // Only valid for debug allocators
-    inline bool CheckLowerGuard() const
+    inline bool CheckLowerGuard() const noexcept
     {
         uint32_t lower = 0;
         memcpy(&lower, Data + 4, 4);
@@ -160,14 +208,14 @@ public:
     }
 
     // Only valid for debug allocators
-    inline bool CheckUpperGuard() const
+    inline bool CheckUpperGuard() const noexcept
     {
         uint32_t upper = 0;
         memcpy(&upper, Data + nSize - 4, 4);
         return upper == UPPER_GUARD;
     }
 
-    inline void SetDebugGuard(uint32_t source)
+    inline void SetDebugGuards(uint32_t source) noexcept
     {
         memcpy(Data, &source, 4);
         memcpy(Data + 4, &LOWER_GUARD, 4);
@@ -182,6 +230,11 @@ public:
 
 static inline uint32_t GetBucketIndex(uint32_t size) noexcept
 {
+#if 1
+    unsigned long index;
+    _BitScanReverse(&index, size + 7);
+    return index;
+#else
     uint32_t bucket = 3;
 
     for (uint32_t i = (size + 7) >> 4; i; i >>= 1)
@@ -190,6 +243,7 @@ static inline uint32_t GetBucketIndex(uint32_t size) noexcept
     }
 
     return bucket;
+#endif
 }
 
 void asMemoryAllocator::Init(void* heap_data, uint32_t heap_size, int32_t use_nodes)
@@ -235,13 +289,13 @@ __declspec(noinline) void* asMemoryAllocator::Allocate(uint32_t size)
 
     node* n = nullptr;
 
-    uint32_t asize = Align8(size);
+    const uint32_t asize = Align8(size);
 
     for (uint32_t i = GetBucketIndex(size); i < 32; ++i)
     {
         for (n = m_Buckets[i]; n; n = n->GetNextFree())
         {
-            uint32_t nsize = n->GetSize();
+            const uint32_t nsize = n->GetSize();
 
             if ((nsize == asize) || (nsize > asize + 8))
             {
@@ -272,13 +326,13 @@ __declspec(noinline) void* asMemoryAllocator::Allocate(uint32_t size)
         {
             split_size -= 8;
 
-            node* m = n->GetNext();
+            node* const m = n->GetNext();
 
             m->Clear();
             m->SetPrev(n);
             m->SetSize(split_size);
 
-            node* o = m->GetNext();
+            node* const o = m->GetNext();
 
             if (reinterpret_cast<uint8_t*>(o) < (m_pHeap + m_HeapOffset))
             {
@@ -323,7 +377,7 @@ __declspec(noinline) void* asMemoryAllocator::Allocate(uint32_t size)
     {
         void** ebp = static_cast<void***>(_AddressOfReturnAddress())[-1];
         ebp = static_cast<void**>(*ebp);
-        n->SetDebugGuard(reinterpret_cast<uint32_t>(ebp[1]));
+        n->SetDebugGuards(reinterpret_cast<uint32_t>(ebp[1]));
 
         result += 8;
     }
@@ -335,7 +389,7 @@ void asMemoryAllocator::CheckPointer(void* ptr)
 {
     if (m_Initialized && m_Debug && ptr)
     {
-        node* n = node::From(ptr, true);
+        node* const n = node::From(ptr, true);
 
         if (!n->CheckLowerGuard() || !n->CheckUpperGuard())
         {
@@ -370,7 +424,7 @@ __declspec(noinline) void asMemoryAllocator::Free(void* ptr)
     n->SetAllocated(false);
     n->SetSize(Align8(n->GetSize()));
 
-    node* prev = n->GetPrev();
+    node* const prev = n->GetPrev();
 
     if (prev && !prev->IsAllocated()) // Merge previous node, if free
     {
@@ -387,7 +441,7 @@ __declspec(noinline) void asMemoryAllocator::Free(void* ptr)
         n->GetNext()->SetPrev(n);
     }
 
-    node* next = n->GetNext();
+    node* const next = n->GetNext();
 
     if ((reinterpret_cast<uint8_t*>(next) < (m_pHeap + m_HeapOffset)) &&
         !next->IsAllocated()) // Merge next node, if free
@@ -407,37 +461,36 @@ __declspec(noinline) void asMemoryAllocator::Free(void* ptr)
     Link(n);
 }
 
-void asMemoryAllocator::Unlink(asMemoryAllocator::node* n)
+void asMemoryAllocator::Unlink(node* n)
 {
-    uint32_t bucket = GetBucketIndex(n->GetSize());
-
-    node* prev = n->GetPrevFree();
+    node* const prev = n->GetPrevFree();
+    node* const next = n->GetNextFree();
 
     if (prev)
     {
-        prev->SetNextFree(n->GetNextFree());
+        prev->SetNextFree(next);
     }
     else
     {
-        m_Buckets[bucket] = n->GetNextFree();
-    }
+        const uint32_t bucket = GetBucketIndex(n->GetSize());
 
-    node* next = n->GetNextFree();
+        m_Buckets[bucket] = next;
+    }
 
     if (next)
     {
-        next->SetPrevFree(n->GetPrevFree());
+        next->SetPrevFree(prev);
     }
 
     n->SetPrevFree(nullptr);
     n->SetNextFree(nullptr);
 }
 
-void asMemoryAllocator::Link(asMemoryAllocator::node* n)
+void asMemoryAllocator::Link(node* n)
 {
-    uint32_t bucket = GetBucketIndex(n->GetSize());
+    const uint32_t bucket = GetBucketIndex(n->GetSize());
 
-    node* next = m_Buckets[bucket];
+    node* const next = m_Buckets[bucket];
 
     n->SetPrevFree(nullptr);
     n->SetNextFree(next);
@@ -457,7 +510,7 @@ void* asMemoryAllocator::Reallocate(void* ptr, uint32_t size)
         Verify(ptr);
     }
 
-    void* result = Allocate(size);
+    void* const result = Allocate(size);
 
     if (ptr && result)
     {
@@ -473,7 +526,7 @@ void asMemoryAllocator::Verify(void* ptr)
 {
     Assert(m_pHeap && m_HeapSize);
 
-    uint32_t lock_count = m_LockCount;
+    const uint32_t lock_count = m_LockCount;
 
     if (lock_count)
     {
@@ -505,7 +558,7 @@ void asMemoryAllocator::GetStats(asMemStats* stats)
     {
         ++stats->nTotalNodes;
 
-        uint32_t size = n->GetSize();
+        const uint32_t size = n->GetSize();
 
         stats->cbOverhead += (Align8(size) - size) + 8;
 
@@ -604,51 +657,3 @@ run_once([] {
 
     auto_hook(0x50F550, msize);
 });
-
-static constexpr const char HexCharTable[16 + 1] = "0123456789ABCDEF";
-
-static void HexDump16(char* buffer, const uint8_t* data)
-{
-    for (uint32_t i = 0; i < 16; ++i)
-    {
-        uint8_t v = data[i];
-
-        uint32_t j = (i * 3);
-
-        buffer[j + 0] = HexCharTable[v >> 4];
-        buffer[j + 1] = HexCharTable[v & 0xF];
-        buffer[j + 2] = ' ';
-
-        if (v < 0x20 || v >= 0x7F)
-            v = '.';
-
-        buffer[i + 48] = v;
-    }
-
-    buffer[64] = '\0';
-}
-
-int32_t HeapAssert(void* address, int32_t value, const char* message, int32_t source)
-{
-    if (value)
-    {
-        return 0;
-    }
-
-    char address_string[128];
-    LookupAddress(address_string, source);
-    Errorf("Heap node @ 0x%08X: %s (allocated by %s).", reinterpret_cast<uintptr_t>(address), message, address_string);
-
-    char hex_string[65];
-
-    const uint8_t* current = reinterpret_cast<const uint8_t*>(address) - 64;
-
-    for (uint32_t pending = 144; pending != 0; pending -= 16, current += 16)
-    {
-        HexDump16(hex_string, current);
-
-        Displayf((pending != 80) ? " %08X : %s" : "[%08X]: %s", reinterpret_cast<uintptr_t>(current), hex_string);
-    }
-
-    return 1;
-}

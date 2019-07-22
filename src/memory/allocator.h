@@ -41,21 +41,6 @@
     0x50F210 | int __cdecl HeapAssert(void *,int,char *,int) | ?HeapAssert@@YAHPAXHPADH@Z
 */
 
-// 0x6E28B0 | ?ALLOCATOR@@3VasMemoryAllocator@@A
-inline extern_var(0x6E28B0, class asMemoryAllocator, ALLOCATOR);
-
-// 0x6E2950 | ?CURHEAP@@3PAVasMemoryAllocator@@A
-inline extern_var(0x6E2950, class asMemoryAllocator*, CURHEAP);
-
-// 0x6E2958 | ?CRTALLOCATOR@@3VasMemoryAllocator@@A
-inline extern_var(0x6E2958, class asMemoryAllocator, CRTALLOCATOR);
-
-// 0x6E29F8 | ?CRTHEAP@@3PAEA
-inline extern_var(0x6E29F8, uint8_t[0x10000], CRTHEAP);
-
-// 0x50F210 | ?HeapAssert@@YAHPAXHPADH@Z
-int32_t HeapAssert(void* address, int32_t value, const char* message, int32_t source);
-
 struct asMemStats
 {
     uint32_t nTotalNodes {0};
@@ -82,10 +67,10 @@ private:
     node* m_Nodes {nullptr};
 
     // 0x50EDB0 | ?Unlink@asMemoryAllocator@@AAEXPAUnode@1@@Z
-    void Unlink(struct asMemoryAllocator::node* n);
+    void Unlink(node* n);
 
     // 0x50EE10 | ?Link@asMemoryAllocator@@AAEXPAUnode@1@@Z
-    void Link(struct asMemoryAllocator::node* n);
+    void Link(node* n);
 
     // 0x50EEC0 | ?Verify@asMemoryAllocator@@AAEXPAX@Z
     void Verify(void* ptr);
@@ -116,7 +101,7 @@ public:
     void* Reallocate(void* ptr, uint32_t size);
 
     // 0x50EF80 | ?GetStats@asMemoryAllocator@@QAEXPAUasMemStats@@@Z
-    void GetStats(struct asMemStats* stats);
+    void GetStats(asMemStats* stats);
 
     // 0x50F050 | ?SanityCheck@asMemoryAllocator@@QAEXXZ
     void SanityCheck();
@@ -125,3 +110,15 @@ public:
 };
 
 check_size(asMemoryAllocator, 0xA0);
+
+// 0x6E28B0 | ?ALLOCATOR@@3VasMemoryAllocator@@A
+inline extern_var(0x6E28B0, asMemoryAllocator, ALLOCATOR);
+
+// 0x6E2950 | ?CURHEAP@@3PAVasMemoryAllocator@@A
+inline extern_var(0x6E2950, asMemoryAllocator*, CURHEAP);
+
+// 0x6E2958 | ?CRTALLOCATOR@@3VasMemoryAllocator@@A
+inline extern_var(0x6E2958, asMemoryAllocator, CRTALLOCATOR);
+
+// 0x6E29F8 | ?CRTHEAP@@3PAEA
+inline extern_var(0x6E29F8, uint8_t[0x10000], CRTHEAP);
