@@ -605,3 +605,51 @@ run_once([] {
 
     auto_hook(0x50F550, msize);
 });
+
+static constexpr const char HexCharTable[16 + 1] = "0123456789ABCDEF";
+
+static void HexDump16(char* buffer, const uint8_t* data)
+{
+    for (uint32_t i = 0; i < 16; ++i)
+    {
+        uint8_t v = data[i];
+
+        uint32_t j = (i * 3);
+
+        buffer[j + 0] = HexCharTable[v >> 4];
+        buffer[j + 1] = HexCharTable[v & 0xF];
+        buffer[j + 2] = ' ';
+
+        if (v < 0x20 || v >= 0x7F)
+            v = '.';
+
+        buffer[i + 48] = v;
+    }
+
+    buffer[64] = '\0';
+}
+
+int32_t HeapAssert(void* address, int32_t value, const char* message, int32_t source)
+{
+    if (value)
+    {
+        return 0;
+    }
+
+    char address_string[128];
+    LookupAddress(address_string, source);
+    Errorf("Heap node @ 0x%08X: %s (allocated by %s).", reinterpret_cast<uintptr_t>(address), message, address_string);
+
+    char hex_string[65];
+
+    const uint8_t* current = reinterpret_cast<const uint8_t*>(address) - 64;
+
+    for (uint32_t pending = 144; pending != 0; pending -= 16, current += 16)
+    {
+        HexDump16(hex_string, current);
+
+        Displayf((pending != 80) ? " %08X : %s" : "[%08X]: %s", reinterpret_cast<uintptr_t>(current), hex_string);
+    }
+
+    return 1;
+}
