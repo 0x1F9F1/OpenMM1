@@ -610,7 +610,6 @@ run_once([] {
 
     auto_hook(0x540E10, Stream::GetShort);
     auto_hook(0x540E30, Stream::GetLong);
-    auto_hook(0x540920, Stream::GetPagingInfo);
 
     auto_hook_typed(0x540E50, fprintf, void (*)(Stream*, const char*, ...));
     auto_hook_typed(0x540E70, fopen, Stream * (*) (char*, char*) );
