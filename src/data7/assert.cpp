@@ -16,9 +16,10 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <stdarg.h>
+#include "assert.cpp"
 
 #include "minwin.h"
+#include <stdarg.h>
 
 #pragma intrinsic(__debugbreak)
 

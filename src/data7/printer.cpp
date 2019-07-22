@@ -16,55 +16,56 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <stdarg.h>
+#include "printer.cpp"
 
 #include "minwin.h"
+#include <stdarg.h>
 
-void Displayf(char const* arg1, ...)
+void Displayf(char const* format, ...)
 {
     va_list va;
-    va_start(va, arg1);
-    Printer(0, arg1, va);
+    va_start(va, format);
+    Printer(0, format, va);
     va_end(va);
 }
 
-void Printf(char const* arg1, ...)
+void Printf(char const* format, ...)
 {
     va_list va;
-    va_start(va, arg1);
-    Printer(0, arg1, va);
+    va_start(va, format);
+    Printer(0, format, va);
     va_end(va);
 }
 
-void Debugf(char const* arg1, ...)
+void Debugf(char const* format, ...)
 {
     va_list va;
-    va_start(va, arg1);
-    Printer(0, arg1, va);
+    va_start(va, format);
+    Printer(0, format, va);
     va_end(va);
 }
 
-void Warningf(char const* arg1, ...)
+void Warningf(char const* format, ...)
 {
     va_list va;
-    va_start(va, arg1);
-    Printer(1, arg1, va);
+    va_start(va, format);
+    Printer(1, format, va);
     va_end(va);
 }
 
-void Errorf(char const* arg1, ...)
+void Errorf(char const* format, ...)
 {
     va_list va;
-    va_start(va, arg1);
-    Printer(2, arg1, va);
+    va_start(va, format);
+    Printer(2, format, va);
     va_end(va);
 }
 
-[[noreturn]] void Abortf(char const* arg1, ...)
+[[noreturn]] void Abortf(char const* format, ...)
 {
     va_list va;
-    va_start(va, arg1);
-    Printer(4, arg1, va);
+    va_start(va, format);
+    Printer(4, format, va);
     va_end(va);
 
     *static_cast<volatile uint32_t*>(nullptr) = 0xDEADBEEF;
@@ -134,4 +135,30 @@ void DefaultPrinter(int32_t level, const char* format, va_list args)
             *static_cast<volatile uint32_t*>(0) = 0xDEADBEEF;
         }
     }
+}
+
+void LogToFile(const char* file)
+{
+    if (DebugLogFile != INVALID_HANDLE_VALUE)
+    {
+        CloseHandle(DebugLogFile);
+    }
+
+    DebugLogFile = CreateFileA(file, GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
+
+    if (DebugLogFile != INVALID_HANDLE_VALUE)
+    {
+        OutputDebugStringA("Logging output to file '");
+        OutputDebugStringA(file);
+        OutputDebugStringA("'.\n");
+    }
+    else
+    {
+        OutputDebugStringA("OUTPUT LOG FILE CREATE FAILED.\n");
+    }
+}
+
+void LogToFile()
+{
+    LogToFile("OpenMM1.log");
 }

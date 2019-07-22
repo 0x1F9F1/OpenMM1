@@ -16,10 +16,25 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "quitf.cpp"
+
 #include "minwin.h"
 #include <stdarg.h>
 
-// 0x5588F0 | ?Quitf@@YAXPBDZZ
+const char _UnimplFunction[] = "Unimplemented function %s in %s (%i)";
+
+[[noreturn]] void Quit(char const* message)
+{
+    if (message)
+    {
+        Quitf("%s", message);
+    }
+    else
+    {
+        exit(0);
+    }
+}
+
 [[noreturn]] void Quitf(char const* format, ...)
 {
     va_list va;

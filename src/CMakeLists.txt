@@ -8,6 +8,17 @@ if (USE_SDL2)
     include_directories(${GLEW_INCLUDE_DIRS} ${SDL2_INCLUDE_DIRS} ${SDL2_TTF_INCLUDE_DIRS})
 endif()
 
+add_library(midtown STATIC
+    midtown.cpp
+    midtown.h
+
+    hooking.cpp
+    hooking.h
+)
+
+target_link_libraries(midtown mem)
+target_precompiled_header(midtown pch.h)
+
 set(ARTS_COMPONENTS)
 
 macro(arts_add_component name)
@@ -52,17 +63,6 @@ if (USE_SDL2)
     add_subdirectory(agigl)
     add_subdirectory(agisdl)
 endif()
-
-add_library(midtown STATIC
-    midtown.cpp
-    midtown.h
-
-    hooking.cpp
-    hooking.h
-)
-
-target_link_libraries(midtown mem)
-target_precompiled_header(midtown pch.h)
 
 target_link_libraries(midtown ${ARTS_COMPONENTS})
 target_precompiled_header(${ARTS_COMPONENTS} pch.h REUSE midtown)

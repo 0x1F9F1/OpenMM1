@@ -24,9 +24,14 @@
     0x5588F0 | void __cdecl Quitf(char const *,...) | ?Quitf@@YAXPBDZZ
 */
 
+// 0x558740 | ?Quit@@YAXPBD@Z
+[[noreturn]] void Quit(char const* message);
+
 // 0x5588F0 | ?Quitf@@YAXPBDZZ
 [[noreturn]] void Quitf(char const* format, ...);
 
+extern const char _UnimplFunction[];
+
 #define unimplemented(...)   \
     (void) (0, __VA_ARGS__); \
-    Quitf("Error calling unimplemented function %s in %s (%i)", __FUNCTION__, __FILE__, __LINE__)
+    Quitf(_UnimplFunction, __FUNCTION__, __FILE__, __LINE__)

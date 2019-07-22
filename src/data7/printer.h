@@ -45,35 +45,41 @@
 // 0x558360 | ?DefaultPrinter@@YAXHPBDPAD@Z
 void DefaultPrinter(int32_t level, char const* format, va_list args);
 
-// 0x558740 | ?Quit@@YAXPBD@Z
-inline void Quit(char const* arg1)
-{
-    return stub<cdecl_t<void, char const*>>(0x558740, arg1);
-}
-
 // 0x558770 | ?LogToCommPort@@YAHHH@Z
-inline int32_t LogToCommPort(int32_t arg1, int32_t arg2)
-{
-    return stub<cdecl_t<int32_t, int32_t, int32_t>>(0x558770, arg1, arg2);
-}
+int32_t LogToCommPort(int32_t port, int32_t rate) = delete;
 
 // 0x558800 | ?LogToMonochromeMonitor@@YAXXZ
-inline void LogToMonochromeMonitor()
-{
-    return stub<cdecl_t<void>>(0x558800);
-}
+void LogToMonochromeMonitor() = delete;
 
 // 0x558810 | ?LogToFile@@YAXPAD@Z
-inline void LogToFile(const char* arg1)
-{
-    return stub<cdecl_t<void, const char*>>(0x558810, arg1);
-}
+void LogToFile(const char* file);
 
 // 0x558870 | ?LogToFile@@YAXXZ
-inline void LogToFile()
-{
-    return stub<cdecl_t<void>>(0x558870);
-}
+void LogToFile();
+
+// 0x5585E0 | ?Displayf@@YAXPBDZZ
+void Displayf(char const* format, ...);
+
+// 0x558600 | ?Printf@@YAXPBDZZ
+void Printf(char const* format, ...);
+
+// 0x558620 | ?Debugf@@YAXPBDZZ
+void Debugf(char const* format, ...);
+
+// 0x558640 | ?Warningf@@YAXPBDZZ
+void Warningf(char const* format, ...);
+
+// 0x558660 | ?Errorf@@YAXPBDZZ
+void Errorf(char const* format, ...);
+
+// 0x558720 | ?Abortf@@YAXPBDZZ
+[[noreturn]] void Abortf(char const* format, ...);
+
+// 0x5CDF70 | ?__assertFailed@@3PADA
+// inline extern_var(0x5CDF70, char*, __assertFailed);
+
+// 0x711ABC | ?MonoPointer@@3PAGA
+// inline extern_var(0x711ABC, uint16_t*, MonoPointer);
 
 // 0x5CDF54 | ?EnableNormalOutput@@3HA
 inline extern_var(0x5CDF54, int32_t, EnableNormalOutput);
@@ -82,28 +88,4 @@ inline extern_var(0x5CDF54, int32_t, EnableNormalOutput);
 inline extern_var(0x5CDF58, int32_t, EnableDebugOutput);
 
 // 0x5CDF68 | ?Printer@@3P6AXHPBDPAD@ZA
-inline extern_var(0x5CDF68, void(__cdecl*)(int32_t, char const*, char*), Printer);
-
-// 0x5CDF70 | ?__assertFailed@@3PADA
-inline extern_var(0x5CDF70, char*, __assertFailed);
-
-// 0x711ABC | ?MonoPointer@@3PAGA
-inline extern_var(0x711ABC, uint16_t*, MonoPointer);
-
-// 0x5585E0 | ?Displayf@@YAXPBDZZ
-void Displayf(char const* arg1, ...);
-
-// 0x558600 | ?Printf@@YAXPBDZZ
-void Printf(char const* arg1, ...);
-
-// 0x558620 | ?Debugf@@YAXPBDZZ
-void Debugf(char const* arg1, ...);
-
-// 0x558640 | ?Warningf@@YAXPBDZZ
-void Warningf(char const* arg1, ...);
-
-// 0x558660 | ?Errorf@@YAXPBDZZ
-void Errorf(char const* arg1, ...);
-
-// 0x558720 | ?Abortf@@YAXPBDZZ
-[[noreturn]] void Abortf(char const* arg1, ...);
+inline extern_var(0x5CDF68, void (*)(int32_t, char const*, va_list), Printer);

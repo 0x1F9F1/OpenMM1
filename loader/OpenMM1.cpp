@@ -126,7 +126,7 @@ BOOL APIENTRY DllMain(HMODULE hinstDLL, DWORD fdwReason, LPVOID /*lpvReserved*/)
             SetConsoleTitleA("OpenMM1");
         }
 
-        LogToFile("OpenMM1.txt");
+        LogToFile();
 
         create_hook("DefaultPrinter", "Use a custom printer", 0x558360, DefaultPrinter);
 
