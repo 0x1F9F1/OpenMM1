@@ -17,3 +17,28 @@
 */
 
 #include "base.h"
+#include "metaclass.h"
+
+const char* Base::GetTypeName()
+{
+    return this ? GetTypeNameV() : "*NULL";
+}
+
+MetaClass* Base::GetClass()
+{
+    return &BaseMetaClass;
+}
+
+const char* Base::GetTypeNameV()
+{
+    return GetClass()->m_Name;
+}
+
+void Base::DeclareFields()
+{}
+
+void Base::BeforeSave()
+{}
+
+void Base::AfterLoad()
+{}

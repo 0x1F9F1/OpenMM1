@@ -32,8 +32,10 @@
     0x55ABA0 | void __cdecl delete_Base(void *,int) | ?delete_Base@@YAXPAXH@Z
 */
 
+class MetaClass;
+
 // 0x712218 | ?BaseMetaClass@@3VMetaClass@@A
-inline extern_var(0x712218, class MetaClass, BaseMetaClass);
+inline extern_var(0x712218, MetaClass, BaseMetaClass);
 
 // 0x55ABA0 | ?delete_Base@@YAXPAXH@Z
 inline void delete_Base(void* arg1, int32_t arg2)
@@ -47,43 +49,25 @@ public:
     // Base::`vftable' @ 0x58F808
 
     // 0x55AB10 | ?GetTypeName@Base@@QAEPADXZ
-    inline char* GetTypeName()
-    {
-        return stub<member_func_t<char*, Base>>(0x55AB10, this);
-    }
+    const char* GetTypeName();
 
     // 0x55AB50 | ?DeclareFields@Base@@SAXXZ
-    static inline void DeclareFields()
-    {
-        return stub<cdecl_t<void>>(0x55AB50);
-    }
+    static void DeclareFields();
 
     // 0x55AB40 | ??1Base@@UAE@XZ
     virtual ~Base() = 0;
 
     // 0x55ABF0 | ?GetClass@Base@@UAEPAVMetaClass@@XZ
-    virtual inline class MetaClass* GetClass()
-    {
-        return stub<member_func_t<class MetaClass*, Base>>(0x55ABF0, this);
-    }
+    virtual MetaClass* GetClass();
 
     // 0x55AB00 | ?GetTypeNameV@Base@@UAEPADXZ
-    virtual inline char* GetTypeNameV()
-    {
-        return stub<member_func_t<char*, Base>>(0x55AB00, this);
-    }
+    virtual const char* GetTypeNameV();
 
     // 0x55AB20 | ?BeforeSave@Base@@UAEXXZ
-    virtual inline void BeforeSave()
-    {
-        return stub<member_func_t<void, Base>>(0x55AB20, this);
-    }
+    virtual void BeforeSave();
 
     // 0x55AB30 | ?AfterLoad@Base@@UAEXXZ
-    virtual inline void AfterLoad()
-    {
-        return stub<member_func_t<void, Base>>(0x55AB30, this);
-    }
+    virtual void AfterLoad();
 };
 
 inline Base::~Base() = default;
