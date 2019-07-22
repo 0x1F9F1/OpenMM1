@@ -52,8 +52,8 @@ private:
         } Free;
     };
 
-    static const uint32_t LOWER_GUARD = 0x55555555;
-    static const uint32_t UPPER_GUARD = 0xAAAAAAAA;
+    static constexpr uint32_t LOWER_GUARD = 0x55555555;
+    static constexpr uint32_t UPPER_GUARD = 0xAAAAAAAA;
 
 public:
     inline void Clear()
@@ -62,7 +62,7 @@ public:
         nSize = 0;
     }
 
-    // Unaligned size of allocation size
+    // Only aligned when free
     inline uint32_t GetSize() const
     {
         return nSize;
@@ -151,7 +151,6 @@ public:
         return source;
     }
 
-public:
     // Only valid for debug allocators
     inline bool CheckLowerGuard() const
     {
@@ -174,12 +173,12 @@ public:
         memcpy(Data + 4, &LOWER_GUARD, 4);
         memcpy(Data + nSize - 4, &UPPER_GUARD, 4);
     }
-};
 
-static inline asMemoryAllocator::node* GetNode(void* ptr, bool debug) noexcept
-{
-    return reinterpret_cast<asMemoryAllocator::node*>(static_cast<uint8_t*>(ptr) - (debug ? 16 : 8));
-}
+    static inline node* From(void* ptr, bool debug) noexcept
+    {
+        return reinterpret_cast<node*>(static_cast<uint8_t*>(ptr) - (debug ? 16 : 8));
+    }
+};
 
 static inline uint32_t GetBucketIndex(uint32_t size) noexcept
 {
@@ -336,7 +335,7 @@ void asMemoryAllocator::CheckPointer(void* ptr)
 {
     if (m_Initialized && m_Debug && ptr)
     {
-        node* n = GetNode(ptr, true);
+        node* n = node::From(ptr, true);
 
         if (!n->CheckLowerGuard() || !n->CheckUpperGuard())
         {
@@ -358,7 +357,7 @@ __declspec(noinline) void asMemoryAllocator::Free(void* ptr)
 
     Verify(ptr);
 
-    node* n = GetNode(ptr, m_Debug);
+    node* n = node::From(ptr, m_Debug);
 
     if (m_Debug)
     {
@@ -491,7 +490,7 @@ void asMemoryAllocator::Verify(void* ptr)
     {
         Assert(static_cast<uint8_t*>(ptr) >= m_pHeap);
         Assert(static_cast<uint8_t*>(ptr) < (m_pHeap + m_HeapSize));
-        Assert(GetNode(ptr, m_Debug)->IsAllocated());
+        Assert(node::From(ptr, m_Debug)->IsAllocated());
     }
 }
 
@@ -577,7 +576,7 @@ void asMemoryAllocator::SanityCheck()
 
 uint32_t asMemoryAllocator::GetSize(void* ptr)
 {
-    uint32_t size = GetNode(ptr, m_Debug)->GetSize();
+    uint32_t size = node::From(ptr, m_Debug)->GetSize();
 
     if (m_Debug)
     {
@@ -596,12 +595,12 @@ define_dummy_symbol(allocator);
 
 run_once([] {
     auto_hook(0x50E990, asMemoryAllocator::Init);
+
     auto_hook(0x50E9E0, asMemoryAllocator::Allocate);
     auto_hook(0x50EC50, asMemoryAllocator::Free);
-    auto_hook(0x50EE10, asMemoryAllocator::Link);
-    auto_hook(0x50EDB0, asMemoryAllocator::Unlink);
-    auto_hook(0x50F050, asMemoryAllocator::SanityCheck);
     auto_hook(0x50EE60, asMemoryAllocator::Reallocate);
+
+    auto_hook(0x50F050, asMemoryAllocator::SanityCheck);
 
     auto_hook(0x50F550, msize);
 });

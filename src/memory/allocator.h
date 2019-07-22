@@ -51,7 +51,7 @@ inline extern_var(0x6E2950, class asMemoryAllocator*, CURHEAP);
 inline extern_var(0x6E2958, class asMemoryAllocator, CRTALLOCATOR);
 
 // 0x6E29F8 | ?CRTHEAP@@3PAEA
-inline extern_var(0x6E29F8, uint8_t*, CRTHEAP);
+inline extern_var(0x6E29F8, uint8_t[0x10000], CRTHEAP);
 
 // 0x50F210 | ?HeapAssert@@YAHPAXHPADH@Z
 int32_t HeapAssert(void* address, int32_t value, const char* message, int32_t source);
@@ -68,7 +68,7 @@ struct asMemStats
 
 class asMemoryAllocator
 {
-public:
+private:
     struct node;
 
     uint32_t m_Initialized {0};
@@ -81,6 +81,16 @@ public:
     node* m_Buckets[32] {};
     node* m_Nodes {nullptr};
 
+    // 0x50EDB0 | ?Unlink@asMemoryAllocator@@AAEXPAUnode@1@@Z
+    void Unlink(struct asMemoryAllocator::node* n);
+
+    // 0x50EE10 | ?Link@asMemoryAllocator@@AAEXPAUnode@1@@Z
+    void Link(struct asMemoryAllocator::node* n);
+
+    // 0x50EEC0 | ?Verify@asMemoryAllocator@@AAEXPAX@Z
+    void Verify(void* ptr);
+
+public:
     // 0x50E970 | ??0asMemoryAllocator@@QAE@XZ
     inline asMemoryAllocator() noexcept = default;
 
@@ -102,17 +112,8 @@ public:
     // 0x50EC50 | ?Free@asMemoryAllocator@@QAEXPAX@Z
     void Free(void* ptr);
 
-    // 0x50EDB0 | ?Unlink@asMemoryAllocator@@AAEXPAUnode@1@@Z
-    void Unlink(struct asMemoryAllocator::node* n);
-
-    // 0x50EE10 | ?Link@asMemoryAllocator@@AAEXPAUnode@1@@Z
-    void Link(struct asMemoryAllocator::node* n);
-
     // 0x50EE60 | ?Reallocate@asMemoryAllocator@@QAEPAXPAXI@Z
     void* Reallocate(void* ptr, uint32_t size);
-
-    // 0x50EEC0 | ?Verify@asMemoryAllocator@@AAEXPAX@Z
-    void Verify(void* ptr);
 
     // 0x50EF80 | ?GetStats@asMemoryAllocator@@QAEXPAUasMemStats@@@Z
     void GetStats(struct asMemStats* stats);
