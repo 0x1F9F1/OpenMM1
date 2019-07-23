@@ -16,7 +16,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "printer.cpp"
+#include "printer.h"
 
 #include "minwin.h"
 #include <stdarg.h>
