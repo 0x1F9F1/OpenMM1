@@ -40,82 +40,58 @@
     0x711F48 | public: static class MetaClass MetaClass::RootMetaClass | ?RootMetaClass@MetaClass@@2V1@A
 */
 
-// 0x5595B0 | ?__BadSafeCall@@YAXPADPAVBase@@@Z
-inline void __BadSafeCall(char* arg1, class Base* arg2)
-{
-    return stub<cdecl_t<void, char*, class Base*>>(0x5595B0, arg1, arg2);
-}
-
 // 0x5CE3B0 | ?NoDefault@@3HA
 inline extern_var(0x5CE3B0, int32_t, NoDefault);
 
 struct MetaType;
+class Base;
+class MiniParser;
 
 struct MetaField
 {
-    MetaField* m_NextField {nullptr};
+    MetaField* m_Next {nullptr};
     const char* m_Name {nullptr};
     uint32_t m_Offset {0};
     MetaType* m_pType {nullptr};
 };
+
+constexpr const size_t MAX_CLASSES = 256;
 
 class MetaClass
 {
 public:
     const char* m_Name {nullptr};
     uint32_t m_Size {0};
-    void* (*m_Allocator)(int32_t) {nullptr};
-    void (*m_Deallocator)(void*, int32_t) {nullptr};
-    void (*m_DeclareFields)() {nullptr};
+    void* (*m_Allocate)(int32_t) {nullptr};
+    void (*m_Free)(void*, int32_t) {nullptr};
+    void (*m_Declare)() {nullptr};
     MetaClass* m_Parent {nullptr};
-    MetaClass* m_Child {nullptr};
+    MetaClass* m_Children {nullptr};
     MetaClass* m_Next {nullptr};
     MetaField* m_pFields {nullptr};
-    uint32_t m_Index {0};
+    int32_t m_Index {0};
 
     // 0x559400 | ??0MetaClass@@QAE@PADIP6APAXH@ZP6AXPAXH@ZP6AXXZPAV0@@Z
-    inline MetaClass(char* arg1, uint32_t arg2, void*(__cdecl* arg3)(int32_t), void(__cdecl* arg4)(void*, int32_t),
-        void(__cdecl* arg5)(void), class MetaClass* arg6)
-    {
-        stub<member_func_t<void, MetaClass, char*, uint32_t, void*(__cdecl*) (int32_t), void(__cdecl*)(void*, int32_t),
-            void(__cdecl*)(void), class MetaClass*>>(0x559400, this, arg1, arg2, arg3, arg4, arg5, arg6);
-    }
+    MetaClass(const char* name, uint32_t size, void* (*allocate)(int32_t), void (*free)(void*, int32_t),
+        void (*declare)(void), MetaClass* parent);
 
     // 0x559480 | ??1MetaClass@@QAE@XZ
-    inline ~MetaClass()
-    {
-        stub<member_func_t<void, MetaClass>>(0x559480, this);
-    }
+    ~MetaClass();
 
     // 0x5594E0 | ?UndeclareAll@MetaClass@@SAXXZ
-    static inline void UndeclareAll()
-    {
-        return stub<cdecl_t<void>>(0x5594E0);
-    }
+    static void UndeclareAll();
 
     // 0x559510 | ?IsSubclassOf@MetaClass@@QAEHPAV1@@Z
-    inline int32_t IsSubclassOf(class MetaClass* arg1)
-    {
-        return stub<member_func_t<int32_t, MetaClass, class MetaClass*>>(0x559510, this, arg1);
-    }
+    int32_t IsSubclassOf(class MetaClass* parent);
 
     // 0x559540 | ?FindByName@MetaClass@@SAPAV1@PADPAV1@@Z
-    static inline class MetaClass* FindByName(char* arg1, class MetaClass* arg2)
-    {
-        return stub<cdecl_t<class MetaClass*, char*, class MetaClass*>>(0x559540, arg1, arg2);
-    }
+    static class MetaClass* FindByName(const char* name, class MetaClass* classes);
 
     // 0x5595D0 | ?InitFields@MetaClass@@QAEXXZ
-    inline void InitFields()
-    {
-        return stub<member_func_t<void, MetaClass>>(0x5595D0, this);
-    }
+    void InitFields();
 
     // 0x5595F0 | ?Save@MetaClass@@QAEXPAVMiniParser@@PAX@Z
-    inline void Save(class MiniParser* arg1, void* arg2)
-    {
-        return stub<member_func_t<void, MetaClass, class MiniParser*, void*>>(0x5595F0, this, arg1, arg2);
-    }
+    void Save(class MiniParser* parser, void* ptr);
 
     // 0x559740 | ?SkipBlock@MetaClass@@QAEXPAVMiniParser@@@Z
     inline void SkipBlock(class MiniParser* arg1)
@@ -130,16 +106,13 @@ public:
     }
 
     // 0x559960 | ?DeclareNamedTypedField@MetaClass@@SAXPADIPAUMetaType@@@Z
-    static inline void DeclareNamedTypedField(char* arg1, uint32_t arg2, struct MetaType* arg3)
-    {
-        return stub<cdecl_t<void, char*, uint32_t, struct MetaType*>>(0x559960, arg1, arg2, arg3);
-    }
+    static void DeclareNamedTypedField(const char* name, uint32_t offset, struct MetaType* type);
 
     // 0x711B38 | ?NextSerial@MetaClass@@2HA
     static inline extern_var(0x711B38, int32_t, NextSerial);
 
     // 0x711B40 | ?ClassIndex@MetaClass@@2PAPAV1@A
-    static inline extern_var(0x711B40, class MetaClass**, ClassIndex);
+    static inline extern_var(0x711B40, class MetaClass * [256], ClassIndex);
 
     // 0x711F40 | ?Current@MetaClass@@2PAV1@A
     static inline extern_var(0x711F40, class MetaClass*, Current);
@@ -153,3 +126,25 @@ public:
 
 check_size(MetaField, 0x10);
 check_size(MetaClass, 0x28);
+
+// 0x5595B0 | ?__BadSafeCall@@YAXPADPAVBase@@@Z
+void _BadSafeCall(char* name, Base* ptr);
+
+template <typename T>
+void* meta_new(int32_t count)
+{
+    return static_cast<void*>(count ? new T() : new T[count]());
+}
+
+template <typename T>
+void meta_delete(void* ptr, int32_t count)
+{
+    if (count)
+    {
+        delete[] static_cast<T*>(ptr);
+    }
+    else
+    {
+        delete static_cast<T*>(ptr);
+    }
+}

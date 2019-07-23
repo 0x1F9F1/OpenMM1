@@ -47,7 +47,7 @@
 
 class MiniParser
 {
-private:
+public:
     // MiniParser::`vftable' @ 0x5963E0
 
     char m_Buffer[256] {};

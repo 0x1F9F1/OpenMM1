@@ -17,3 +17,173 @@
 */
 
 #include "metaclass.h"
+
+#include "base.h"
+#include "metatype.h"
+#include "miniparser.h"
+
+MetaClass::MetaClass(const char* name, uint32_t size, void* (*allocate)(int32_t), void (*free)(void*, int32_t),
+    void (*declare)(void), MetaClass* parent)
+    : m_Name(name)
+    , m_Size(size)
+    , m_Allocate(allocate)
+    , m_Free(free)
+    , m_Declare(declare)
+    , m_Parent(parent)
+{
+    if (parent)
+    {
+        m_Next = parent->m_Children;
+        parent->m_Children = this;
+    }
+
+    if (NextSerial == MAX_CLASSES)
+    {
+        Quitf("Too many classes, raise MAX_CLASSES");
+    }
+
+    ++NextSerial;
+    ClassIndex[NextSerial] = this;
+
+    m_Index = NextSerial;
+}
+
+MetaClass::~MetaClass()
+{
+    if (m_Index != NextSerial)
+    {
+        Abortf("MetaClass '%s' destructed in wrong order", m_Name ? m_Name : "<Invalid>");
+    }
+
+    ClassIndex[NextSerial] = nullptr;
+    --NextSerial;
+
+    if (m_Parent)
+    {
+        MetaClass** i = &m_Parent->m_Children;
+
+        for (; *i; i = &(*i)->m_Next)
+        {
+            if (*i == this)
+            {
+                *i = m_Next;
+
+                break;
+            }
+        }
+    }
+}
+
+void MetaClass::UndeclareAll()
+{
+    for (int32_t i = 1; i <= NextSerial; ++i)
+    {
+        if (ClassIndex[i])
+        {
+            ClassIndex[i]->m_pFields = nullptr;
+        }
+    }
+}
+
+int32_t MetaClass::IsSubclassOf(MetaClass* parent)
+{
+    for (MetaClass* i = this; i; i = i->m_Parent)
+    {
+        if (i == parent)
+        {
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
+MetaClass* MetaClass::FindByName(const char* name, MetaClass* root)
+{
+    for (MetaClass* i = root; i; i = i->m_Next)
+    {
+        if (!i->m_Name || !strcmp(i->m_Name, name))
+        {
+            return i;
+        }
+
+        if (MetaClass* j = FindByName(name, i->m_Children))
+        {
+            return j;
+        }
+    }
+
+    return nullptr;
+}
+
+void MetaClass::InitFields()
+{
+    Current = this;
+    ppField = &m_pFields;
+    m_Declare();
+}
+
+void MetaClass::Save(MiniParser* parser, void* ptr)
+{
+    if (!m_pFields)
+    {
+        InitFields();
+    }
+
+    if (IsSubclassOf(&BaseMetaClass))
+    {
+        static_cast<Base*>(ptr)->BeforeSave();
+    }
+
+    void* default_ptr = nullptr;
+
+    if (!NoDefault)
+    {
+        default_ptr = m_Allocate(0);
+    }
+
+    parser->Printf("%s ", m_Name);
+    parser->PlaceLabel(ptr);
+    parser->Printf(" {\n");
+    parser->Indent(4);
+
+    for (MetaField* i = m_pFields; i; i = i->m_Next)
+    {
+        void* member = static_cast<uint8_t*>(ptr) + i->m_Offset;
+
+        if (NoDefault || memcmp(member, static_cast<uint8_t*>(default_ptr) + i->m_Offset, i->m_pType->SizeOf()) != 0)
+        {
+            parser->Printf("%s ", i->m_Name);
+            parser->Indent(4);
+            i->m_pType->Save(parser, member);
+            parser->Indent(-4);
+            parser->Printf("\n");
+        }
+    }
+
+    parser->Indent(-4);
+    parser->Printf("}");
+
+    if (!NoDefault)
+    {
+        m_Free(default_ptr, 0);
+    }
+}
+
+void MetaClass::DeclareNamedTypedField(const char* name, uint32_t offset, MetaType* type)
+{
+    MetaField* field = new MetaField();
+
+    field->m_Name = name;
+    field->m_Next = nullptr;
+    field->m_Offset = offset;
+    field->m_pType = type;
+
+    *ppField = field;
+    ppField = &field->m_Next;
+}
+
+void _BadSafeCall(char* name, Base* ptr)
+{
+    Quitf("SafeCall failed: '%s' is not a '%s'.", ptr->GetTypeName(), name);
+}
