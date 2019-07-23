@@ -74,11 +74,13 @@ function(target_precompiled_header) # target [...] header
 		endif()
 
 		__compute_pch_build_path(header_build_path "${header}")
-		set(target_dir_header "${target_dir}/${header_build_path}")
 
 		if(MSVC)
+			set(target_dir_header "${target_dir}/$(Configuration)-$(Platform)/${header_build_path}")
 			get_filename_component(abs_pch "${target_dir_header}.pch" ABSOLUTE)
 			get_filename_component(abs_header "${header}" ABSOLUTE)
+		else()
+			set(target_dir_header "${target_dir}/${header_build_path}")
 		endif()
 
 		# add precompiled header creation flags to PCH target
