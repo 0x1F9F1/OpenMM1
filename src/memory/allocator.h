@@ -54,7 +54,8 @@ struct asMemStats
 class asMemoryAllocator
 {
 private:
-    struct node;
+    struct Node;
+    struct FreeNode;
 
     uint32_t m_Initialized {0};
     uint32_t m_Debug {0};
@@ -63,14 +64,14 @@ private:
     uint32_t m_HeapOffset {0};
     uint32_t m_LockCount {0};
     uint32_t m_UseNodes {0};
-    node* m_Buckets[32] {};
-    node* m_Nodes {nullptr};
+    FreeNode* m_Buckets[32] {};
+    Node* m_Nodes {nullptr};
 
     // 0x50EDB0 | ?Unlink@asMemoryAllocator@@AAEXPAUnode@1@@Z
-    void Unlink(node* n);
+    void Unlink(FreeNode* n);
 
     // 0x50EE10 | ?Link@asMemoryAllocator@@AAEXPAUnode@1@@Z
-    void Link(node* n);
+    void Link(FreeNode* n);
 
     // 0x50EEC0 | ?Verify@asMemoryAllocator@@AAEXPAX@Z
     void Verify(void* ptr);

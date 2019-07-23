@@ -75,7 +75,7 @@ static constexpr inline uint32_t Align8(uint32_t value) noexcept
     return (value + 7) & 0xFFFFFFF8;
 }
 
-struct asMemoryAllocator::node
+struct asMemoryAllocator::Node
 {
 private:
     // Requires 8-byte alignment
@@ -88,17 +88,6 @@ private:
 
     // Unaligned size of Data
     uint32_t nSize;
-
-    union
-    {
-        uint8_t Data[1];
-
-        struct
-        {
-            node* Prev; // Prev free node in bucket
-            node* Next; // Next free node in bucket
-        } Free;
-    };
 
     static constexpr uint32_t LOWER_GUARD = 0x55555555;
     static constexpr uint32_t UPPER_GUARD = 0xAAAAAAAA;
@@ -121,46 +110,24 @@ public:
         nSize = size;
     }
 
-    inline node* GetPrev() const noexcept
+    inline Node* GetPrev() const noexcept
     {
-        return reinterpret_cast<node*>(uStatus & 0xFFFFFFF8);
+        return reinterpret_cast<Node*>(uStatus & 0xFFFFFFF8);
     }
 
-    inline void SetPrev(node* n) noexcept
+    inline void SetPrev(Node* n) noexcept
     {
         uStatus = reinterpret_cast<uint32_t>(n) | (uStatus & 0x7);
     }
 
-    inline node* GetNext() const noexcept
+    inline uint8_t* GetData() const noexcept
     {
-        return reinterpret_cast<node*>(const_cast<uint8_t*>(Data) + Align8(nSize));
+        return reinterpret_cast<uint8_t*>(const_cast<Node*>(this + 1));
     }
 
-    inline uint8_t* GetData() noexcept
+    inline Node* GetNext() const noexcept
     {
-        return Data;
-    }
-
-    // Only valid while not in use
-    inline node* GetPrevFree() const noexcept
-    {
-        return Free.Prev;
-    }
-
-    // Only valid while not in use
-    inline node* GetNextFree() const noexcept
-    {
-        return Free.Next;
-    }
-
-    inline void SetPrevFree(node* n) noexcept
-    {
-        Free.Prev = n;
-    }
-
-    inline void SetNextFree(node* n) noexcept
-    {
-        Free.Next = n;
+        return reinterpret_cast<Node*>(GetData() + Align8(nSize));
     }
 
     inline void SetAllocated(bool allocated) noexcept
@@ -194,37 +161,74 @@ public:
     // Only valid for debug allocators
     inline int32_t GetAllocSource() const noexcept
     {
+        uint8_t* const data = GetData();
         uint32_t source = 0;
-        memcpy(&source, Data, 4);
+        memcpy(&source, data, 4);
         return source;
     }
 
     // Only valid for debug allocators
     inline bool CheckLowerGuard() const noexcept
     {
+        uint8_t* const data = GetData();
         uint32_t lower = 0;
-        memcpy(&lower, Data + 4, 4);
+        memcpy(&lower, data + 4, 4);
         return lower == LOWER_GUARD;
     }
 
     // Only valid for debug allocators
     inline bool CheckUpperGuard() const noexcept
     {
+        uint8_t* const data = GetData();
         uint32_t upper = 0;
-        memcpy(&upper, Data + nSize - 4, 4);
+        memcpy(&upper, data + nSize - 4, 4);
         return upper == UPPER_GUARD;
     }
 
     inline void SetDebugGuards(uint32_t source) noexcept
     {
-        memcpy(Data, &source, 4);
-        memcpy(Data + 4, &LOWER_GUARD, 4);
-        memcpy(Data + nSize - 4, &UPPER_GUARD, 4);
+        uint8_t* const data = GetData();
+        memcpy(data, &source, 4);
+        memcpy(data + 4, &LOWER_GUARD, 4);
+        memcpy(data + nSize - 4, &UPPER_GUARD, 4);
     }
 
-    static inline node* From(void* ptr, bool debug) noexcept
+    static inline Node* From(void* ptr, bool debug) noexcept
     {
-        return reinterpret_cast<node*>(static_cast<uint8_t*>(ptr) - (debug ? 16 : 8));
+        return reinterpret_cast<Node*>(static_cast<uint8_t*>(ptr) - (debug ? (sizeof(Node) + 8) : sizeof(Node)));
+    }
+};
+
+struct asMemoryAllocator::FreeNode : asMemoryAllocator::Node
+{
+    FreeNode* PrevFree; // Prev free node in bucket
+    FreeNode* NextFree; // Next free node in bucket
+
+    inline FreeNode* GetPrevFree() const noexcept
+    {
+        return PrevFree;
+    }
+
+    inline FreeNode* GetNextFree() const noexcept
+    {
+        return NextFree;
+    }
+
+    inline void SetPrevFree(FreeNode* n) noexcept
+    {
+        PrevFree = n;
+    }
+
+    inline void SetNextFree(FreeNode* n) noexcept
+    {
+        NextFree = n;
+    }
+
+    inline void MergeNext()
+    {
+        Node* const next = GetNext();
+        SetSize(next->GetSize() + reinterpret_cast<uint8_t*>(next) - reinterpret_cast<uint8_t*>(this));
+        GetNext()->SetPrev(this);
     }
 };
 
@@ -287,7 +291,7 @@ __declspec(noinline) void* asMemoryAllocator::Allocate(uint32_t size)
         size += 12;
     }
 
-    node* n = nullptr;
+    FreeNode* n = nullptr;
 
     const uint32_t asize = Align8(size);
 
@@ -297,7 +301,7 @@ __declspec(noinline) void* asMemoryAllocator::Allocate(uint32_t size)
         {
             const uint32_t nsize = n->GetSize();
 
-            if ((nsize == asize) || (nsize > asize + 8))
+            if ((nsize == asize) || (nsize > asize + sizeof(Node)))
             {
                 break;
             }
@@ -313,33 +317,31 @@ __declspec(noinline) void* asMemoryAllocator::Allocate(uint32_t size)
     {
         Assert(!n->IsAllocated());
 
-        uint32_t split_size = n->GetSize() - asize;
+        const uint32_t split_size = n->GetSize() - asize;
 
-        Assert(split_size == 0 || split_size > 8);
+        DebugAssert(split_size == 0 || split_size > sizeof(Node));
 
         Unlink(n);
 
         n->SetAllocated(true);
         n->SetSize(size);
 
-        if (split_size > 8)
+        if (split_size > sizeof(Node))
         {
-            split_size -= 8;
-
-            node* const m = n->GetNext();
+            Node* const m = n->GetNext();
 
             m->Clear();
             m->SetPrev(n);
-            m->SetSize(split_size);
+            m->SetSize(split_size - sizeof(Node));
 
-            node* const o = m->GetNext();
+            Node* const o = m->GetNext();
 
             if (reinterpret_cast<uint8_t*>(o) < (m_pHeap + m_HeapOffset))
             {
                 o->SetPrev(m);
             }
 
-            Link(m);
+            Link(static_cast<FreeNode*>(m));
 
             if (m_Nodes == n)
             {
@@ -353,7 +355,7 @@ __declspec(noinline) void* asMemoryAllocator::Allocate(uint32_t size)
     }
     else
     {
-        n = reinterpret_cast<node*>(m_pHeap + m_HeapOffset);
+        n = reinterpret_cast<FreeNode*>(m_pHeap + m_HeapOffset);
         m_HeapOffset += asize + 8;
 
         if (m_HeapOffset > m_HeapSize)
@@ -389,7 +391,7 @@ void asMemoryAllocator::CheckPointer(void* ptr)
 {
     if (m_Initialized && m_Debug && ptr)
     {
-        node* const n = node::From(ptr, true);
+        Node* const n = Node::From(ptr, true);
 
         if (!n->CheckLowerGuard() || !n->CheckUpperGuard())
         {
@@ -410,61 +412,51 @@ __declspec(noinline) void asMemoryAllocator::Free(void* ptr)
     Assert(m_UseNodes);
 
     Verify(ptr);
+    CheckPointer(ptr);
 
-    node* n = node::From(ptr, m_Debug);
-
-    if (m_Debug)
-    {
-        if (!n->CheckLowerGuard() || !n->CheckUpperGuard())
-        {
-            SanityCheck();
-        }
-    }
+    FreeNode* n = static_cast<FreeNode*>(Node::From(ptr, m_Debug));
 
     n->SetAllocated(false);
     n->SetSize(Align8(n->GetSize()));
 
-    node* const prev = n->GetPrev();
+    FreeNode* const prev = static_cast<FreeNode*>(n->GetPrev());
 
     if (prev && !prev->IsAllocated()) // Merge previous node, if free
     {
         Unlink(prev);
-
-        prev->SetSize(n->GetSize() + reinterpret_cast<uint8_t*>(n) - reinterpret_cast<uint8_t*>(prev));
 
         if (m_Nodes == n)
         {
             m_Nodes = prev;
         }
 
+        prev->MergeNext();
+
         n = prev;
-        n->GetNext()->SetPrev(n);
     }
 
-    node* const next = n->GetNext();
+    FreeNode* const next = static_cast<FreeNode*>(n->GetNext());
 
     if ((reinterpret_cast<uint8_t*>(next) < (m_pHeap + m_HeapOffset)) &&
         !next->IsAllocated()) // Merge next node, if free
     {
         Unlink(next);
 
-        n->SetSize(next->GetSize() + reinterpret_cast<uint8_t*>(next) - reinterpret_cast<uint8_t*>(n));
-
-        n->GetNext()->SetPrev(n);
-
         if (m_Nodes == next)
         {
             m_Nodes = n;
         }
+
+        n->MergeNext();
     }
 
     Link(n);
 }
 
-void asMemoryAllocator::Unlink(node* n)
+void asMemoryAllocator::Unlink(FreeNode* n)
 {
-    node* const prev = n->GetPrevFree();
-    node* const next = n->GetNextFree();
+    FreeNode* const prev = n->GetPrevFree();
+    FreeNode* const next = n->GetNextFree();
 
     if (prev)
     {
@@ -486,11 +478,11 @@ void asMemoryAllocator::Unlink(node* n)
     n->SetNextFree(nullptr);
 }
 
-void asMemoryAllocator::Link(node* n)
+void asMemoryAllocator::Link(FreeNode* n)
 {
     const uint32_t bucket = GetBucketIndex(n->GetSize());
 
-    node* const next = m_Buckets[bucket];
+    FreeNode* const next = m_Buckets[bucket];
 
     n->SetPrevFree(nullptr);
     n->SetNextFree(next);
@@ -543,7 +535,7 @@ void asMemoryAllocator::Verify(void* ptr)
     {
         Assert(static_cast<uint8_t*>(ptr) >= m_pHeap);
         Assert(static_cast<uint8_t*>(ptr) < (m_pHeap + m_HeapSize));
-        Assert(node::From(ptr, m_Debug)->IsAllocated());
+        Assert(Node::From(ptr, m_Debug)->IsAllocated());
     }
 }
 
@@ -554,13 +546,13 @@ void asMemoryAllocator::GetStats(asMemStats* stats)
 
     memset(stats, 0, sizeof(asMemStats));
 
-    for (node *n = reinterpret_cast<node*>(heap), *prev = nullptr; n->GetData() < heap_end; prev = n, n = n->GetNext())
+    for (Node *n = reinterpret_cast<Node*>(heap), *prev = nullptr; n->GetData() < heap_end; prev = n, n = n->GetNext())
     {
         ++stats->nTotalNodes;
 
         const uint32_t size = n->GetSize();
 
-        stats->cbOverhead += (Align8(size) - size) + 8;
+        stats->cbOverhead += (Align8(size) - size) + sizeof(Node);
 
         if (n->IsAllocated())
         {
@@ -589,7 +581,7 @@ void asMemoryAllocator::SanityCheck()
 
     int32_t is_invalid = 0;
 
-    for (node *n = reinterpret_cast<node*>(heap), *prev = nullptr; n->GetData() < heap_end; prev = n, n = n->GetNext())
+    for (Node *n = reinterpret_cast<Node*>(heap), *prev = nullptr; n->GetData() < heap_end; prev = n, n = n->GetNext())
     {
         if (m_Debug && n->IsAllocated())
         {
@@ -598,6 +590,8 @@ void asMemoryAllocator::SanityCheck()
         }
 
         is_invalid |= HeapAssert(n, n->GetPrev() == prev, "Linked list", 0);
+
+        Assert(!n->IsPendingSanity());
 
         if (!n->IsAllocated())
         {
@@ -610,26 +604,55 @@ void asMemoryAllocator::SanityCheck()
         Abortf("Memory Allocator Corrupted");
     }
 
+    size_t total = 0;
+    size_t total_linked = 0;
+
+    size_t total_used = 0;
+    size_t total_free = 0;
+
     for (size_t i = 3; i < 32; ++i)
     {
-        for (node *n = m_Buckets[i], *prev = nullptr; n; prev = n, n = n->GetNextFree())
+        for (FreeNode *n = m_Buckets[i], *prev = nullptr; n; prev = n, n = n->GetNextFree())
         {
             Assert(n->GetPrevFree() == prev);
             Assert(n->IsPendingSanity());
 
             n->SetPendingSanity(false);
+
+            ++total_free;
         }
     }
 
-    for (node *n = reinterpret_cast<node*>(heap), *prev = nullptr; n->GetData() < heap_end; prev = n, n = n->GetNext())
+    for (Node* n = m_Nodes; n; n = n->GetPrev())
     {
         Assert(!n->IsPendingSanity());
+
+        n->SetPendingSanity(true);
+
+        ++total_linked;
+
+        if (n->IsAllocated())
+        {
+            ++total_used;
+        }
     }
+
+    for (Node* n = reinterpret_cast<Node*>(heap); n->GetData() < heap_end; n = n->GetNext())
+    {
+        Assert(n->IsPendingSanity());
+
+        n->SetPendingSanity(false);
+
+        ++total;
+    }
+
+    Assert(total == total_linked);
+    Assert(total_used + total_free == total);
 }
 
 uint32_t asMemoryAllocator::GetSize(void* ptr)
 {
-    uint32_t size = node::From(ptr, m_Debug)->GetSize();
+    uint32_t size = Node::From(ptr, m_Debug)->GetSize();
 
     if (m_Debug)
     {
