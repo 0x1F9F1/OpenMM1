@@ -47,8 +47,10 @@
 
 class MiniParser
 {
-public:
-    char m_TokenBuffer[256] {};
+private:
+    // MiniParser::`vftable' @ 0x5963E0
+
+    char m_Buffer[256] {};
     uint32_t m_LastError {0};
     cstring_t m_Name {};
     uint32_t m_CurrentToken = ' ';
@@ -56,8 +58,7 @@ public:
     uint32_t m_CurrentLine {1};
     uint32_t m_PutBack {0};
 
-    // MiniParser::`vftable' @ 0x5963E0
-
+public:
     // 0x55DE60 | ??0MiniParser@@QAE@PAD@Z
     MiniParser(const char* name);
 
@@ -65,73 +66,43 @@ public:
     ~MiniParser();
 
     // 0x55DEE0 | ?Printf@MiniParser@@QAAXPBDZZ
-    // Skipped (Variable Arguments)
+    void Printf(char const* format, ...);
 
     // 0x55DF30 | ?PrintString@MiniParser@@QAEXPADH@Z
-    inline void PrintString(char* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<void, MiniParser, char*, int32_t>>(0x55DF30, this, arg1, arg2);
-    }
+    void PrintString(const char* string, int32_t length);
 
     // 0x55DF90 | ?Errorf@MiniParser@@QAAXPBDZZ
-    // Skipped (Variable Arguments)
+    void Errorf(char const* format, ...);
 
     // 0x55E030 | ?Commentf@MiniParser@@QAAXPBDZZ
-    // Skipped (Variable Arguments)
+    void Commentf(char const* format, ...);
 
     // 0x55E090 | ?GetCh@MiniParser@@QAEHXZ
-    inline int32_t GetCh()
-    {
-        return stub<member_func_t<int32_t, MiniParser>>(0x55E090, this);
-    }
+    int32_t GetCh();
 
     // 0x55E0B0 | ?PutCh@MiniParser@@QAEXH@Z
-    inline void PutCh(int32_t arg1)
-    {
-        return stub<member_func_t<void, MiniParser, int32_t>>(0x55E0B0, this, arg1);
-    }
+    void PutCh(int32_t value);
 
     // 0x55E100 | ?Indent@MiniParser@@QAEXH@Z
-    inline void Indent(int32_t arg1)
-    {
-        return stub<member_func_t<void, MiniParser, int32_t>>(0x55E100, this, arg1);
-    }
+    void Indent(int32_t amount);
 
     // 0x55E120 | ?Match@MiniParser@@QAEXH@Z
-    inline void Match(int32_t arg1)
-    {
-        return stub<member_func_t<void, MiniParser, int32_t>>(0x55E120, this, arg1);
-    }
+    void Match(int32_t expected);
 
     // 0x55E160 | ?TokenName@MiniParser@@SAPADH@Z
-    static inline char* TokenName(int32_t arg1)
-    {
-        return stub<cdecl_t<char*, int32_t>>(0x55E160, arg1);
-    }
+    static const char* TokenName(int32_t token);
 
     // 0x55E300 | ?PlaceLabel@MiniParser@@QAEXPAX@Z
-    inline void PlaceLabel(void* arg1)
-    {
-        return stub<member_func_t<void, MiniParser, void*>>(0x55E300, this, arg1);
-    }
+    void PlaceLabel(void* ptr);
 
     // 0x55E320 | ?PlaceLabelRef@MiniParser@@QAEXPAX@Z
-    inline void PlaceLabelRef(void* arg1)
-    {
-        return stub<member_func_t<void, MiniParser, void*>>(0x55E320, this, arg1);
-    }
+    void PlaceLabelRef(void* ptr);
 
     // 0x55E340 | ?ResolveLabel@MiniParser@@QAEPAXPADPAPAX@Z
-    inline void* ResolveLabel(char* arg1, void** arg2)
-    {
-        return stub<member_func_t<void*, MiniParser, char*, void**>>(0x55E340, this, arg1, arg2);
-    }
+    void* ResolveLabel(char* arg1, void** arg2);
 
     // 0x55E350 | ?PutBack@MiniParser@@QAEXH@Z
-    inline void PutBack(int32_t arg1)
-    {
-        return stub<member_func_t<void, MiniParser, int32_t>>(0x55E350, this, arg1);
-    }
+    void PutBack(int32_t token);
 
     // 0x55E380 | ?NextToken@MiniParser@@QAEHXZ
     inline int32_t NextToken()
@@ -140,28 +111,19 @@ public:
     }
 
     // 0x55E580 | ?IntVal@MiniParser@@QAEHXZ
-    inline int32_t IntVal()
-    {
-        return stub<member_func_t<int32_t, MiniParser>>(0x55E580, this);
-    }
+    int32_t IntVal();
 
     // 0x55E5C0 | ?Int64Val@MiniParser@@QAE_JXZ
-    inline int64_t Int64Val()
-    {
-        return stub<member_func_t<int64_t, MiniParser>>(0x55E5C0, this);
-    }
+    int64_t Int64Val();
 
     // 0x55E600 | ?FloatVal@MiniParser@@QAEMXZ
-    inline float FloatVal()
-    {
-        return stub<member_func_t<float, MiniParser>>(0x55E600, this);
-    }
+    float FloatVal();
 
     // 0x567350 | __purecall
-    virtual inline int32_t RawGetCh() = 0;
+    virtual int32_t RawGetCh() = 0;
 
     // 0x567350 | __purecall
-    virtual inline void RawPutCh(int32_t arg1) = 0;
+    virtual void RawPutCh(int32_t arg1) = 0;
 };
 
 check_size(MiniParser, 0x11C);
