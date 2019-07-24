@@ -112,17 +112,39 @@ public:
 
     inline Node* GetPrev() const noexcept
     {
+#if 1
         return reinterpret_cast<Node*>(uStatus & 0xFFFFFFF8);
+#else
+        const uint32_t dist = uStatus & 0xFFFFFFF8;
+
+        if (dist)
+        {
+            return reinterpret_cast<Node*>(reinterpret_cast<uint8_t*>(const_cast<Node*>(this)) - dist);
+        }
+
+        return nullptr;
+#endif
     }
 
     inline void SetPrev(Node* n) noexcept
     {
+#if 1
         uStatus = reinterpret_cast<uint32_t>(n) | (uStatus & 0x7);
+#else
+        uStatus &= 0x7;
+
+        if (n)
+        {
+            const uint32_t dist = reinterpret_cast<uint8_t*>(this) - reinterpret_cast<uint8_t*>(n);
+            DebugAssert((dist & 0x7) == 0);
+            uStatus |= dist;
+        }
+#endif
     }
 
     inline uint8_t* GetData() const noexcept
     {
-        return reinterpret_cast<uint8_t*>(const_cast<Node*>(this + 1));
+        return reinterpret_cast<uint8_t*>(const_cast<Node*>(this)) + sizeof(Node);
     }
 
     inline Node* GetNext() const noexcept
@@ -257,7 +279,7 @@ void asMemoryAllocator::Init(void* heap_data, uint32_t heap_size, int32_t use_no
     m_HeapOffset = 0;
     m_Initialized = 1;
     m_UseNodes = use_nodes;
-    m_Nodes = nullptr;
+    m_Last = nullptr;
 
 #ifdef _DEBUG
     m_Debug = 1;
@@ -343,9 +365,9 @@ __declspec(noinline) void* asMemoryAllocator::Allocate(uint32_t size)
 
             Link(static_cast<FreeNode*>(m));
 
-            if (m_Nodes == n)
+            if (m_Last == n)
             {
-                m_Nodes = m;
+                m_Last = m;
             }
         }
         else
@@ -364,11 +386,11 @@ __declspec(noinline) void* asMemoryAllocator::Allocate(uint32_t size)
         }
 
         n->Clear();
-        n->SetPrev(m_Nodes);
+        n->SetPrev(m_Last);
         n->SetSize(size);
         n->SetAllocated(true);
 
-        m_Nodes = n;
+        m_Last = n;
     }
 
     uint8_t* result = n->GetData();
@@ -425,9 +447,9 @@ __declspec(noinline) void asMemoryAllocator::Free(void* ptr)
     {
         Unlink(prev);
 
-        if (m_Nodes == n)
+        if (m_Last == n)
         {
-            m_Nodes = prev;
+            m_Last = prev;
         }
 
         prev->MergeNext();
@@ -442,9 +464,9 @@ __declspec(noinline) void asMemoryAllocator::Free(void* ptr)
     {
         Unlink(next);
 
-        if (m_Nodes == next)
+        if (m_Last == next)
         {
-            m_Nodes = n;
+            m_Last = n;
         }
 
         n->MergeNext();
@@ -581,7 +603,11 @@ void asMemoryAllocator::SanityCheck()
 
     int32_t is_invalid = 0;
 
-    for (Node *n = reinterpret_cast<Node*>(heap), *prev = nullptr; n->GetData() < heap_end; prev = n, n = n->GetNext())
+    Node* last = nullptr;
+    size_t total = 0;
+    size_t total_used = 0;
+
+    for (Node* n = reinterpret_cast<Node*>(heap); n->GetData() < heap_end; last = n, n = n->GetNext())
     {
         if (m_Debug && n->IsAllocated())
         {
@@ -589,14 +615,19 @@ void asMemoryAllocator::SanityCheck()
             is_invalid |= HeapAssert(n, n->CheckUpperGuard(), "Upper guard word", n->GetAllocSource());
         }
 
-        is_invalid |= HeapAssert(n, n->GetPrev() == prev, "Linked list", 0);
+        is_invalid |= HeapAssert(n, n->GetPrev() == last, "Linked list", 0);
+        is_invalid |= HeapAssert(n, !n->IsPendingSanity(), "Pendig sanity", 0);
 
-        Assert(!n->IsPendingSanity());
-
-        if (!n->IsAllocated())
+        if (n->IsAllocated())
+        {
+            ++total_used;
+        }
+        else
         {
             n->SetPendingSanity(true);
         }
+
+        ++total;
     }
 
     if (is_invalid)
@@ -604,10 +635,9 @@ void asMemoryAllocator::SanityCheck()
         Abortf("Memory Allocator Corrupted");
     }
 
-    size_t total = 0;
-    size_t total_linked = 0;
+    Assert(last == m_Last);
+    Assert(reinterpret_cast<uint8_t*>(last->GetNext()) == heap_end);
 
-    size_t total_used = 0;
     size_t total_free = 0;
 
     for (size_t i = 3; i < 32; ++i)
@@ -623,31 +653,14 @@ void asMemoryAllocator::SanityCheck()
         }
     }
 
-    for (Node* n = m_Nodes; n; n = n->GetPrev())
-    {
-        Assert(!n->IsPendingSanity());
-
-        n->SetPendingSanity(true);
-
-        ++total_linked;
-
-        if (n->IsAllocated())
-        {
-            ++total_used;
-        }
-    }
-
     for (Node* n = reinterpret_cast<Node*>(heap); n->GetData() < heap_end; n = n->GetNext())
     {
-        Assert(n->IsPendingSanity());
-
-        n->SetPendingSanity(false);
-
-        ++total;
+        Assert(!n->IsPendingSanity());
     }
 
-    Assert(total == total_linked);
     Assert(total_used + total_free == total);
+
+    Displayf("Sanity Checked %u nodes (%u used, %u free)", total, total_used, total_free);
 }
 
 uint32_t asMemoryAllocator::GetSize(void* ptr)

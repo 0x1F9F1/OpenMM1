@@ -65,7 +65,7 @@ private:
     uint32_t m_LockCount {0};
     uint32_t m_UseNodes {0};
     FreeNode* m_Buckets[32] {};
-    Node* m_Nodes {nullptr};
+    Node* m_Last {nullptr};
 
     // 0x50EDB0 | ?Unlink@asMemoryAllocator@@AAEXPAUnode@1@@Z
     void Unlink(FreeNode* n);
