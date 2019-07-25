@@ -37,38 +37,23 @@ struct ListEntry
 struct List
 {
 public:
-    uint32_t m_Size {0};
+    int32_t m_Size {0};
     ListEntry* m_First {nullptr};
 
     // 0x55DBE0 | ??1List@@QAE@XZ
-    inline ~List()
-    {
-        stub<member_func_t<void, List>>(0x55DBE0, this);
-    }
+    ~List();
 
     // 0x55DBF0 | ?Kill@List@@QAEXXZ
-    inline void Kill()
-    {
-        return stub<member_func_t<void, List>>(0x55DBF0, this);
-    }
+    void Kill();
 
     // 0x55DC10 | ?Insert@List@@QAEHHPAX@Z
-    inline int32_t Insert(int32_t arg1, void* arg2)
-    {
-        return stub<member_func_t<int32_t, List, int32_t, void*>>(0x55DC10, this, arg1, arg2);
-    }
+    int32_t Insert(int32_t index, void* value);
 
     // 0x55DC90 | ?Access@List@@QAEPAXH@Z
-    inline void* Access(int32_t arg1)
-    {
-        return stub<member_func_t<void*, List, int32_t>>(0x55DC90, this, arg1);
-    }
+    void* Access(int32_t index);
 
     // 0x55DCC0 | ?Delete@List@@QAEHH@Z
-    inline int32_t Delete(int32_t arg1)
-    {
-        return stub<member_func_t<int32_t, List, int32_t>>(0x55DCC0, this, arg1);
-    }
+    int32_t Delete(int32_t index);
 };
 
 check_size(List, 8);
