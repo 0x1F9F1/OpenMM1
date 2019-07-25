@@ -18,9 +18,4 @@
 
 #pragma once
 
-#include "hooking.h"
-
-#include "data7/assert.h"
-#include "data7/bool32.h"
-#include "data7/printer.h"
-#include "data7/quitf.h"
+using bool32_t = int32_t;
