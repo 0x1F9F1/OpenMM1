@@ -44,10 +44,12 @@
     0x55A410 | int __fastcall compareExchange(unsigned int *,int) | ?compareExchange@@YIHPAIH@Z
 */
 
+#include "data7/ptr.h"
+
 struct ipcMessage
 {
-    void(__cdecl* m_pHandler)(void*) {nullptr};
-    void* m_pParameter {nullptr};
+    void (*m_pCallback)(void*) {nullptr};
+    void* m_Context {nullptr};
 };
 
 check_size(ipcMessage, 8);
@@ -55,45 +57,33 @@ check_size(ipcMessage, 8);
 class ipcMessageQueue
 {
 public:
-    uint32_t m_Initialized {0};
+    bool32_t m_Initialized {0};
     uint32_t m_SendIndex {0};
     uint32_t m_ReadIndex {0};
     uint32_t m_nMaxMessages {0};
-    uint32_t m_WaitAfterSend {0};
-    ipcMessage* m_pMessages {nullptr};
-    void* m_SendEvent {nullptr};
-    void* m_WaitEvent {nullptr};
-    void* m_hMutex {nullptr};
-    void* m_hQueueThread {nullptr};
+    bool32_t m_Blocking {0};
+    Ptr<ipcMessage[]> m_pMessages {nullptr};
+    uint32_t m_SendEvent {0};
+    uint32_t m_WaitEvent {0};
+    uint32_t m_hMutex {0};
+    uint32_t m_hQueueThread {0};
 
     // 0x55A0E0 | ?Proc@ipcMessageQueue@@CGKPAX@Z
-    static inline uint32_t __stdcall Proc(void* arg1)
-    {
-        return stub<stdcall_t<uint32_t, void*>>(0x55A0E0, arg1);
-    }
+    static uint32_t __stdcall Proc(void* param);
 
     // 0x55A0F0 | ?MessageLoop@ipcMessageQueue@@AAEHXZ
-    inline int32_t MessageLoop()
-    {
-        return stub<member_func_t<int32_t, ipcMessageQueue>>(0x55A0F0, this);
-    }
+    int32_t MessageLoop();
 
     // 0x55A1D0 | ?Init@ipcMessageQueue@@QAEXHH@Z
-    inline void Init(int32_t arg1, int32_t arg2)
-    {
-        return stub<member_func_t<void, ipcMessageQueue, int32_t, int32_t>>(0x55A1D0, this, arg1, arg2);
-    }
+    void Init(int32_t capacity, bool32_t blocking);
 
     // 0x55A280 | ?Shutdown@ipcMessageQueue@@QAEXXZ
-    inline void Shutdown()
-    {
-        return stub<member_func_t<void, ipcMessageQueue>>(0x55A280, this);
-    }
+    void Shutdown();
 
     // 0x55A2E0 | ?Send@ipcMessageQueue@@QAEXP6AXPAX@Z0@Z
-    inline void Send(void(__cdecl* arg1)(void*), void* arg2)
+    inline void Send(void (*callback)(void*), void* context)
     {
-        return stub<member_func_t<void, ipcMessageQueue, void(__cdecl*)(void*), void*>>(0x55A2E0, this, arg1, arg2);
+        return stub<member_func_t<void, ipcMessageQueue, void (*)(void*), void*>>(0x55A2E0, this, callback, context);
     }
 };
 
