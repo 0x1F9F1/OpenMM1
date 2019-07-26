@@ -43,74 +43,37 @@ public:
     Stream* m_pBaseStream {nullptr};
     uint32_t m_DataOffset {0};
     uint32_t m_FileSize {0};
-    void* m_Mutex {nullptr};
+    uint32_t m_Mutex {0};
 
     // VirtualStream::`vftable' @ 0x595F68
 
     // 0x5436C0 | ??0VirtualStream@@QAE@PAVStream@@PAUVirtualFileInode@@PAXHPAVFileSystem@@@Z
-    inline VirtualStream(
-        class Stream* arg1, struct VirtualFileInode* arg2, void* arg3, int32_t arg4, class FileSystem* arg5)
-        : Stream(arg3, arg4, arg5)
-    {
-        // stub<member_func_t<void, VirtualStream, class Stream*, struct VirtualFileInode*, void*, int32_t,
-        //     class FileSystem*>>(0x5436C0, this, arg1, arg2, arg3, arg4, arg5);
-
-        (void) arg1;
-        (void) arg2;
-
-        unimplemented();
-    }
+    VirtualStream(class Stream* stream, struct VirtualFileInode* file, void* buffer, int32_t buffer_size,
+        class FileSystem* file_system);
 
     // 0x543780 | ??1VirtualStream@@UAE@XZ
-    inline ~VirtualStream() override = 0
-    {
-        // stub<member_func_t<void, VirtualStream>>(0x543780, this);
-
-        unimplemented();
-    }
+    ~VirtualStream() override;
 
     // 0x5438C0 | ?GetMapping@VirtualStream@@UAEPAXXZ
-    inline void* GetMapping() override
-    {
-        return stub<member_func_t<void*, VirtualStream>>(0x5438C0, this);
-    }
+    void* GetMapping() override;
 
     // 0x543750 | ?GetPagingInfo@VirtualStream@@UAEHAAI00@Z
-    inline int32_t GetPagingInfo(uint32_t& arg1, uint32_t& arg2, uint32_t& arg3) override
-    {
-        return stub<member_func_t<int32_t, VirtualStream, uint32_t&, uint32_t&, uint32_t&>>(
-            0x543750, this, arg1, arg2, arg3);
-    }
+    int32_t GetPagingInfo(uint32_t& handle, uint32_t& offset, uint32_t& size) override;
 
     // 0x5437E0 | ?RawRead@VirtualStream@@UAEHPAXH@Z
-    inline int32_t RawRead(void* arg1, int32_t arg2) override
-    {
-        return stub<member_func_t<int32_t, VirtualStream, void*, int32_t>>(0x5437E0, this, arg1, arg2);
-    }
+    int32_t RawRead(void* data, int32_t size) override;
 
     // 0x543850 | ?RawWrite@VirtualStream@@UAEHPAXH@Z
-    inline int32_t RawWrite(void* arg1, int32_t arg2) override
-    {
-        return stub<member_func_t<int32_t, VirtualStream, void*, int32_t>>(0x543850, this, arg1, arg2);
-    }
+    int32_t RawWrite(void* data, int32_t size) override;
 
     // 0x543860 | ?RawSeek@VirtualStream@@UAEHH@Z
-    inline int32_t RawSeek(int32_t arg1) override
-    {
-        return stub<member_func_t<int32_t, VirtualStream, int32_t>>(0x543860, this, arg1);
-    }
+    int32_t RawSeek(int32_t offset) override;
 
     // 0x543890 | ?RawTell@VirtualStream@@UAEHXZ
-    inline int32_t RawTell() override
-    {
-        return stub<member_func_t<int32_t, VirtualStream>>(0x543890, this);
-    }
+    int32_t RawTell() override;
 
     // 0x5438B0 | ?RawSize@VirtualStream@@UAEHXZ
-    inline int32_t RawSize() override
-    {
-        return stub<member_func_t<int32_t, VirtualStream>>(0x5438B0, this);
-    }
+    int32_t RawSize() override;
 };
 
 check_size(VirtualStream, 0x30);

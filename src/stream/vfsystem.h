@@ -48,6 +48,16 @@ struct VirtualFileInode
     uint32_t m_DataOffset;
     uint32_t m_Flags1;
     uint32_t m_Flags2;
+
+    inline uint32_t GetOffset() const noexcept
+    {
+        return m_DataOffset;
+    }
+
+    inline uint32_t GetSize() const noexcept
+    {
+        return m_Flags1 & 0x7FFFFFF;
+    }
 };
 
 check_size(VirtualFileInode, 12);
