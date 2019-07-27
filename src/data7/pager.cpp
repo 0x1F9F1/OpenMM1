@@ -17,3 +17,18 @@
 */
 
 #include "pager.h"
+
+#include "minwin.h"
+
+void PagerInfo_t::Read(void* buffer, uint32_t offset, uint32_t size)
+{
+    SetFilePointer(static_cast<HANDLE>(m_PagerHandle), offset + m_Offset, nullptr, FILE_BEGIN);
+
+    if (!size)
+    {
+        size = m_Size - offset;
+    }
+
+    DWORD read = 0;
+    ReadFile(static_cast<HANDLE>(m_PagerHandle), buffer, size, &read, nullptr);
+}
