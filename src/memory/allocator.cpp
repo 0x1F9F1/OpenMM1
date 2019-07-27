@@ -599,6 +599,12 @@ void asMemoryAllocator::SanityCheck()
     }
 
     uint8_t* const heap = m_pHeap;
+
+    if (!heap)
+    {
+        return;
+    }
+
     uint8_t* const heap_end = heap + m_HeapOffset;
 
     int32_t is_invalid = 0;
@@ -636,7 +642,11 @@ void asMemoryAllocator::SanityCheck()
     }
 
     Assert(last == m_Last);
-    Assert(reinterpret_cast<uint8_t*>(last->GetNext()) == heap_end);
+
+    if (last)
+    {
+        Assert(reinterpret_cast<uint8_t*>(last->GetNext()) == heap_end);
+    }
 
     size_t total_free = 0;
 
