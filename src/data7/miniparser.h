@@ -50,6 +50,16 @@ class MiniParser
 public:
     // MiniParser::`vftable' @ 0x5963E0
 
+    enum Token : int32_t
+    {
+        Integer = 256,
+        String = 257,
+        Ident = 258,
+        Label = 259,
+        LabelRef = 260,
+        Float = 261,
+    };
+
     char m_Buffer[256] {};
     uint32_t m_LastError {0};
     cstring_t m_Name {};

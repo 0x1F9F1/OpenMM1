@@ -21,19 +21,6 @@
 #include <cstdarg>
 #include <cstdlib>
 
-namespace ParserToken
-{
-    enum ParserToken_ : int32_t
-    {
-        Integer = 256,
-        String = 257,
-        Ident = 258,
-        Label = 259,
-        LabelRef = 260,
-        Float = 261,
-    };
-}
-
 MiniParser::MiniParser(const char* name)
     : m_Name(name)
 {}
@@ -191,12 +178,12 @@ const char* MiniParser::TokenName(int32_t token)
         case '}': return "}";
         case ',': return ",";
 
-        case ParserToken::Integer: return "integer literal";
-        case ParserToken::String: return "string literal";
-        case ParserToken::Ident: return "identifier";
-        case ParserToken::Label: return "label definition";
-        case ParserToken::LabelRef: return "reference to label";
-        case ParserToken::Float: return "float literal";
+        case Token::Integer: return "integer literal";
+        case Token::String: return "string literal";
+        case Token::Ident: return "identifier";
+        case Token::Label: return "label definition";
+        case Token::LabelRef: return "reference to label";
+        case Token::Float: return "float literal";
 
         default:
         {
@@ -238,7 +225,7 @@ int32_t MiniParser::IntVal()
 {
     int32_t token = NextToken();
 
-    if (token != ParserToken::Integer && token != ParserToken::Float)
+    if (token != Token::Integer && token != Token::Float)
     {
         Errorf("Expected integer or floating-point literal");
     }
@@ -250,7 +237,7 @@ int64_t MiniParser::Int64Val()
 {
     int32_t token = NextToken();
 
-    if (token != ParserToken::Integer && token != ParserToken::Float)
+    if (token != Token::Integer && token != Token::Float)
     {
         Errorf("Expected integer or floating-point literal");
     }
@@ -262,7 +249,7 @@ float MiniParser::FloatVal()
 {
     int32_t token = NextToken();
 
-    if (token != ParserToken::Integer && token != ParserToken::Float)
+    if (token != Token::Integer && token != Token::Float)
     {
         Errorf("Expected integer or floating-point literal");
     }

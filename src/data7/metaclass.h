@@ -94,16 +94,10 @@ public:
     void Save(class MiniParser* parser, void* ptr);
 
     // 0x559740 | ?SkipBlock@MetaClass@@QAEXPAVMiniParser@@@Z
-    inline void SkipBlock(class MiniParser* arg1)
-    {
-        return stub<member_func_t<void, MetaClass, class MiniParser*>>(0x559740, this, arg1);
-    }
+    void SkipBlock(class MiniParser* parser);
 
     // 0x5597F0 | ?Load@MetaClass@@QAEXPAVMiniParser@@PAX@Z
-    inline void Load(class MiniParser* arg1, void* arg2)
-    {
-        return stub<member_func_t<void, MetaClass, class MiniParser*, void*>>(0x5597F0, this, arg1, arg2);
-    }
+    void Load(class MiniParser* parser, void* ptr);
 
     // 0x559960 | ?DeclareNamedTypedField@MetaClass@@SAXPADIPAUMetaType@@@Z
     static void DeclareNamedTypedField(const char* name, uint32_t offset, struct MetaType* type);

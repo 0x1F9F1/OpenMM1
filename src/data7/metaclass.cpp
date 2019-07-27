@@ -170,6 +170,110 @@ void MetaClass::Save(MiniParser* parser, void* ptr)
     }
 }
 
+void MetaClass::SkipBlock(MiniParser* parser)
+{
+    parser->Errorf("'%s' is not a valid field name in %s.", parser->m_Buffer, m_Name);
+
+    bool has_values = false;
+    int32_t depth = 0;
+
+    int32_t token;
+    while ((token = parser->NextToken()) != '\0')
+    {
+        if (token == '{' || token == '[')
+        {
+            ++depth;
+        }
+        else if (token == '}' || token == ']')
+        {
+            if (!depth)
+            {
+                break;
+            }
+
+            --depth;
+        }
+        else if (token == MiniParser::Integer || token == MiniParser::String || token == MiniParser::Float)
+        {
+            has_values = true;
+        }
+        else if (token == MiniParser::Ident && has_values && !depth)
+        {
+            break;
+        }
+    }
+
+    if (token)
+    {
+        parser->PutBack(token);
+    }
+
+    parser->Errorf("Resuming parsing here.");
+}
+
+void MetaClass::Load(MiniParser* parser, void* ptr)
+{
+    if (!m_pFields)
+    {
+        InitFields();
+    }
+
+    parser->Match(MiniParser::Ident);
+
+    MetaClass* type = FindByName(parser->m_Buffer, &RootMetaClass);
+
+    if (!type)
+    {
+        parser->Errorf("Unknown metaclass name '%s', skipping block", parser->m_Buffer);
+        SkipBlock(parser);
+        return;
+    }
+
+    if (!type->IsSubclassOf(this))
+    {
+        parser->Errorf("Expected subclass of '%s', got '%s' instead, skipping block", m_Name, parser->m_Buffer);
+        SkipBlock(parser);
+        return;
+    }
+
+    parser->Match(MiniParser::Label);
+    parser->Match('{');
+
+    for (int32_t i = parser->NextToken(); i && i != '}'; i = parser->NextToken())
+    {
+        if (i != MiniParser::Ident)
+        {
+            parser->Errorf("Expected field name here.");
+
+            continue;
+        }
+
+        bool found = false;
+
+        for (MetaField* j = m_pFields; j; j = j->m_Next)
+        {
+            if (!strcmp(j->m_Name, parser->m_Buffer))
+            {
+                j->m_pType->Load(parser, static_cast<uint8_t*>(ptr) + j->m_Offset);
+
+                found = true;
+
+                break;
+            }
+        }
+
+        if (!found)
+        {
+            SkipBlock(parser);
+        }
+    }
+
+    if (IsSubclassOf(&BaseMetaClass))
+    {
+        static_cast<Base*>(ptr)->AfterLoad();
+    }
+}
+
 void MetaClass::DeclareNamedTypedField(const char* name, uint32_t offset, MetaType* type)
 {
     MetaField* field = new MetaField();
