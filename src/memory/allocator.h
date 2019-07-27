@@ -108,6 +108,8 @@ public:
     void SanityCheck();
 
     uint32_t GetSize(void* ptr);
+
+    uint32_t GetCurrentTotal() const noexcept;
 };
 
 check_size(asMemoryAllocator, 0xA0);

@@ -17,3 +17,51 @@
 */
 
 #include "memstat.h"
+#include "memory/allocator.h"
+
+static constexpr const size_t MAX_CHECK = 16;
+
+static int32_t MemStatValues[MAX_CHECK];
+static const char* MemStatNames[MAX_CHECK];
+static uint32_t MemStatCount = 0;
+
+static int32_t getMem()
+{
+    return ALLOCATOR.GetCurrentTotal();
+}
+
+void BeginMemStat(char const* name)
+{
+    if (EnableMemStat)
+    {
+        Assert(MemStatCount < MAX_CHECK);
+
+        MemStatValues[MemStatCount] = getMem();
+        MemStatNames[MemStatCount] = name;
+
+        MemStatCount++;
+    }
+}
+
+void EndMemStat()
+{
+    if (EnableMemStat)
+    {
+        Assert(MemStatCount);
+
+        --MemStatCount;
+
+        int32_t prev = MemStatValues[MemStatCount];
+        int32_t current = getMem();
+
+        Warningf("%*sMemStat: '%s' %dK before, %dK after, %dK difference", MemStatCount, "", MemStatNames[MemStatCount],
+            prev >> 10, current >> 10, (current - prev) >> 10);
+    }
+}
+
+define_dummy_symbol(memstat);
+
+run_once([] {
+    auto_hook(0x55A480, BeginMemStat);
+    auto_hook(0x55A510, EndMemStat);
+});

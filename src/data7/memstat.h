@@ -29,25 +29,16 @@
 */
 
 // 0x55A480 | ?BeginMemStat@@YAXPBD@Z
-inline void BeginMemStat(char const* arg1)
-{
-    return stub<cdecl_t<void, char const*>>(0x55A480, arg1);
-}
+void BeginMemStat(char const* name);
 
 // 0x55A510 | ?EndMemStat@@YAXXZ
-inline void EndMemStat()
-{
-    return stub<cdecl_t<void>>(0x55A510);
-}
+void EndMemStat();
 
 // 0x5CE560 | ?EnableMemStat@@3HA
-inline extern_var(0x5CE560, int32_t, EnableMemStat);
+inline extern_var(0x5CE560, bool32_t, EnableMemStat);
 
 // 0x711FC0 | ?beginStackCount@@3HA
-inline extern_var(0x711FC0, int32_t, beginStackCount);
+// inline extern_var(0x711FC0, int32_t, beginStackCount);
 
 // 0x55A4E0 | ?getMem@@YAHXZ
-inline int32_t getMem()
-{
-    return stub<cdecl_t<int32_t>>(0x55A4E0);
-}
+// int32_t getMem();
