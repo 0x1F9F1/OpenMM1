@@ -17,3 +17,33 @@
 */
 
 #include "args.h"
+
+void ArgSet::Print(const char* title)
+{
+    Displayf("%s:", title ? title : "ARGSET");
+
+    for (asArg* arg : m_pArgs)
+    {
+        if (arg)
+        {
+            arg->Print("\n");
+        }
+    }
+}
+
+asArg::asArg(char flag, const char* usage)
+    : m_Flag(flag)
+    , m_Usage(usage)
+{}
+
+void asArg::Print(const char* name)
+{
+    Displayf("%s: Found: %d Flag: %c Msg: (%s)", name ? name : "ARG", m_Found, m_Flag, m_Usage.get());
+
+    Displayf("\tContents:");
+
+    for (size_t i = 0; i < 5; ++i)
+    {
+        Displayf("\t\t[%d] IVal: %d FVal: %f SVal: (%s)", i, m_iValues[i], m_fValues[i], m_sValues[i]);
+    }
+}

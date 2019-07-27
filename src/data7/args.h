@@ -29,6 +29,8 @@
     0x712008 | class ArgSet GBArgs | ?GBArgs@@3VArgSet@@A
 */
 
+#include "cstr.h"
+
 // 0x712008 | ?GBArgs@@3VArgSet@@A
 inline extern_var(0x712008, class ArgSet, GBArgs);
 
@@ -42,10 +44,7 @@ public:
     char* m_Path {nullptr};
 
     // 0x55A6E0 | ?Print@ArgSet@@QAEXPAD@Z
-    inline void Print(char* arg1)
-    {
-        return stub<member_func_t<void, ArgSet, char*>>(0x55A6E0, this, arg1);
-    }
+    void Print(const char* title);
 
     // 0x55A730 | ?ParseArgs@ArgSet@@QAEXHPAPAD@Z
     inline void ParseArgs(int32_t arg1, char** arg2)
@@ -64,25 +63,17 @@ struct asArg
 {
 public:
     uint32_t m_Found {0};
-    uint8_t m_Flag {0};
-    char* m_Usage {nullptr};
+    char m_Flag {0};
+    cstring_t m_Usage {};
     int m_iValues[5] {};
     float m_fValues[5] {};
     char* m_sValues[5] {};
 
     // 0x55A590 | ??0asArg@@QAE@DPAD@Z
-    inline asArg(char arg1, char* arg2)
-    {
-        // stub<member_func_t<void, asArg, char, char*>>(0x55A590, this, arg1, arg2);
-
-        unimplemented(arg1, arg2);
-    }
+    asArg(char flag, const char* usage);
 
     // 0x55A5E0 | ?Print@asArg@@QAEXPAD@Z
-    inline void Print(char* arg1)
-    {
-        return stub<member_func_t<void, asArg, char*>>(0x55A5E0, this, arg1);
-    }
+    void Print(const char* name);
 };
 
 check_size(ArgSet, 0x208);

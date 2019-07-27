@@ -74,7 +74,7 @@ struct cstring_t
     inline void assign(const char* value)
     {
         delete[] m_pData;
-        m_pData = StringDuplicate(value);
+        m_pData = value ? StringDuplicate(value) : nullptr;
     }
 
     inline operator char*() noexcept
