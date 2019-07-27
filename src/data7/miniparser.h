@@ -52,6 +52,7 @@ public:
 
     enum Token : int32_t
     {
+        End = -1,
         Integer = 256,
         String = 257,
         Ident = 258,
@@ -115,10 +116,7 @@ public:
     void PutBack(int32_t token);
 
     // 0x55E380 | ?NextToken@MiniParser@@QAEHXZ
-    inline int32_t NextToken()
-    {
-        return stub<member_func_t<int32_t, MiniParser>>(0x55E380, this);
-    }
+    int32_t NextToken();
 
     // 0x55E580 | ?IntVal@MiniParser@@QAEHXZ
     int32_t IntVal();

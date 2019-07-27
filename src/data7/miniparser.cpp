@@ -221,6 +221,145 @@ void MiniParser::PutBack(int32_t token)
     m_PutBack = token;
 }
 
+int32_t MiniParser::NextToken()
+{
+    if (m_PutBack)
+    {
+        int32_t result = m_PutBack;
+        m_PutBack = 0;
+        return result;
+    }
+
+    int32_t v = m_CurrentToken;
+
+    while (true)
+    {
+        while (v == '\t' || v == '\n' || v == '\r' || v == ' ')
+        {
+            v = GetCh();
+        }
+
+        if (v == Token::End)
+        {
+            return '\0';
+        }
+
+        if (v != ';')
+        {
+            break;
+        }
+
+        do
+        {
+            v = GetCh();
+        } while (v != Token::End && v != '\n');
+    }
+
+    int32_t result = 0;
+
+    if (v == '\'')
+    {
+        GetCh();
+        v = GetCh();
+        sprintf_s(m_Buffer, "%d", v);
+
+        return Token::Integer;
+    }
+    else if (v == '"')
+    {
+        int32_t len = 0;
+
+        while (true)
+        {
+            v = GetCh();
+
+            if (v != '"')
+            {
+                break;
+            }
+
+            if (v == Token::End)
+            {
+                Errorf("EOF in string");
+
+                break;
+            }
+
+            if (v == '\n')
+            {
+                Errorf("Newline in string.");
+
+                break;
+            }
+
+            if (v == '\\')
+            {
+                v = GetCh();
+            }
+
+            if (v == Token::End)
+            {
+                break;
+            }
+
+            if (len < 255)
+            {
+                m_Buffer[len++] = static_cast<char>(v);
+            }
+        }
+
+        GetCh();
+        m_Buffer[len] = '\0';
+
+        return Token::String;
+    }
+    else if (v == '$')
+    {
+        result = Token::LabelRef;
+    }
+    else if (v == ':')
+    {
+        result = Token::Label;
+    }
+    else if (v == '.')
+    {
+        result = Token::Float;
+    }
+    else if (v == '-' || v >= '0' && v <= '9')
+    {
+        result = Token::Integer;
+    }
+    else if (v >= 'A' && v <= 'Z' || v >= 'a' && v <= 'z' || v == '_')
+    {
+        result = Token::Ident;
+    }
+    else
+    {
+        m_Buffer[0] = static_cast<char>(v);
+        m_Buffer[1] = '\0';
+
+        GetCh();
+
+        return v;
+    }
+
+    Assert(result != 0);
+
+    int32_t len = 0;
+
+    for (; v != '\t' && v != ' ' && v != '\n' && v != '\r' && v != ';'; v = GetCh())
+    {
+        if (len < 255)
+        {
+            m_Buffer[len++] = static_cast<char>(v);
+        }
+    }
+
+    m_Buffer[len] = '\0';
+
+    return result;
+}
+
 int32_t MiniParser::IntVal()
 {
     int32_t token = NextToken();
@@ -256,3 +395,5 @@ float MiniParser::FloatVal()
 
     return static_cast<float>(std::atof(m_Buffer));
 }
+
+run_once([] { auto_hook(0x55E380, MiniParser::NextToken); });
