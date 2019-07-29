@@ -17,3 +17,12 @@
 */
 
 #include "speed.h"
+
+uint32_t ComputeCpuSpeed()
+{
+    return 1000;
+}
+
+define_dummy_symbol(speed);
+
+run_once([] { auto_hook(0x55E7D0, ComputeCpuSpeed); });

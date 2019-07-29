@@ -27,19 +27,8 @@
 */
 
 // 0x55E710 | ?__ComputeCpuSpeed@@YAIXZ
-inline uint32_t __ComputeCpuSpeed()
-{
-    return stub<cdecl_t<uint32_t>>(0x55E710);
-}
 
 // 0x55E7D0 | ?ComputeCpuSpeed@@YAIXZ
-inline uint32_t ComputeCpuSpeed()
-{
-    return stub<cdecl_t<uint32_t>>(0x55E7D0);
-}
+uint32_t ComputeCpuSpeed();
 
 // 0x55E7C0 | ?rdtsc@@YAIXZ
-inline uint32_t rdtsc()
-{
-    return stub<cdecl_t<uint32_t>>(0x55E7C0);
-}
