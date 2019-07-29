@@ -17,3 +17,49 @@
 */
 
 #include "vector2.h"
+
+#include "data7/metatype.h"
+#include "data7/miniparser.h"
+
+struct Vector2Type : MetaType
+{
+public:
+    // Vector2Type::`vftable' @ 0x596218
+
+    // 0x553FB0 | ?Save@Vector2Type@@UAEXPAVMiniParser@@PAX@Z
+    void Save(class MiniParser* parser, void* ptr) override
+    {
+        Vector2 val = *static_cast<Vector2*>(ptr);
+
+        parser->Printf("%.4g %.4g", val.x, val.y);
+    }
+
+    // 0x553FE0 | ?Load@Vector2Type@@UAEXPAVMiniParser@@PAX@Z
+    void Load(class MiniParser* parser, void* ptr) override
+    {
+        Vector2& val = *static_cast<Vector2*>(ptr);
+
+        val.x = parser->FloatVal();
+        val.y = parser->FloatVal();
+    }
+
+    // 0x554010 | ?SizeOf@Vector2Type@@UAEIXZ
+    uint32_t SizeOf() override
+    {
+        return sizeof(Vector2);
+    }
+
+    // 0x554020 | ?New@Vector2Type@@UAEPAXH@Z
+    void* New(int32_t count) override
+    {
+        return ptrCreator<Vector2>(count);
+    }
+
+    // 0x554070 | ?Delete@Vector2Type@@UAEXPAXH@Z
+    void Delete(void* ptr, int32_t count) override
+    {
+        ptrDestructor<Vector2>(ptr, count);
+    }
+};
+
+Vector2Type Vector2Inst;

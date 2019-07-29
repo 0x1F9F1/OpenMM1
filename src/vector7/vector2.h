@@ -41,43 +41,7 @@
 */
 
 // 0x710A84 | ?Vector2Inst@@3UVector2Type@@A
-inline extern_var(0x710A84, struct Vector2Type, Vector2Inst);
-
-struct Vector2Type
-{
-public:
-    // Vector2Type::`vftable' @ 0x596218
-
-    // 0x553FB0 | ?Save@Vector2Type@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Save(class MiniParser* arg1, void* arg2)
-    {
-        return stub<member_func_t<void, Vector2Type, class MiniParser*, void*>>(0x553FB0, this, arg1, arg2);
-    }
-
-    // 0x553FE0 | ?Load@Vector2Type@@UAEXPAVMiniParser@@PAX@Z
-    virtual inline void Load(class MiniParser* arg1, void* arg2)
-    {
-        return stub<member_func_t<void, Vector2Type, class MiniParser*, void*>>(0x553FE0, this, arg1, arg2);
-    }
-
-    // 0x554010 | ?SizeOf@Vector2Type@@UAEIXZ
-    virtual inline uint32_t SizeOf()
-    {
-        return stub<member_func_t<uint32_t, Vector2Type>>(0x554010, this);
-    }
-
-    // 0x554020 | ?New@Vector2Type@@UAEPAXH@Z
-    virtual inline void* New(int32_t arg1)
-    {
-        return stub<member_func_t<void*, Vector2Type, int32_t>>(0x554020, this, arg1);
-    }
-
-    // 0x554070 | ?Delete@Vector2Type@@UAEXPAXH@Z
-    virtual inline void Delete(void* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<void, Vector2Type, void*, int32_t>>(0x554070, this, arg1, arg2);
-    }
-};
+extern struct Vector2Type Vector2Inst;
 
 class Vector2Array
 {

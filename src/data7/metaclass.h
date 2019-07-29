@@ -123,22 +123,3 @@ check_size(MetaClass, 0x28);
 
 // 0x5595B0 | ?__BadSafeCall@@YAXPADPAVBase@@@Z
 void _BadSafeCall(char* name, Base* ptr);
-
-template <typename T>
-inline void* ptrCreator(int32_t count)
-{
-    return static_cast<void*>(count ? new T[count]() : new T());
-}
-
-template <typename T>
-inline void ptrDestructor(void* ptr, int32_t count)
-{
-    if (count)
-    {
-        delete[] static_cast<T*>(ptr);
-    }
-    else
-    {
-        delete static_cast<T*>(ptr);
-    }
-}
