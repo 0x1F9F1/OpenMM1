@@ -129,22 +129,13 @@ public:
     inline constexpr void Scale(Vector3 const& other, float scale) noexcept;
 
     // 0x5153F0 | ?Add@Vector3@@QAEXABV1@0@Z
-    inline void Add(Vector3 const& arg1, Vector3 const& arg2)
-    {
-        return stub<member_func_t<void, Vector3, Vector3 const&, Vector3 const&>>(0x5153F0, this, arg1, arg2);
-    }
+    inline constexpr void Add(Vector3 const& lhs, Vector3 const& rhs) noexcept;
 
     // 0x546580 | ?Dot@Vector3@@QAIXABV1@ABVMatrix34@@@Z
-    inline void Dot(Vector3 const& arg1, class Matrix34 const& arg2)
-    {
-        return stub<member_func_t<void, Vector3, Vector3 const&, class Matrix34 const&>>(0x546580, this, arg1, arg2);
-    }
+    void Dot(Vector3 const& other, class Matrix34 const& transform) noexcept;
 
     // 0x5465F0 | ?Dot3x3@Vector3@@QAIXABV1@ABVMatrix34@@@Z
-    inline void Dot3x3(Vector3 const& arg1, class Matrix34 const& arg2)
-    {
-        return stub<member_func_t<void, Vector3, Vector3 const&, class Matrix34 const&>>(0x5465F0, this, arg1, arg2);
-    }
+    void Dot3x3(Vector3 const& other, class Matrix34 const& transform);
 
     // 0x546650 | ?Cos@Vector3@@QBEMABV1@@Z
     inline float Cos(Vector3 const& arg1)
@@ -396,6 +387,13 @@ inline constexpr void Vector3::Scale(Vector3 const& other, float scale) noexcept
     x = other.x * scale;
     y = other.y * scale;
     z = other.z * scale;
+}
+
+inline constexpr void Vector3::Add(Vector3 const& lhs, Vector3 const& rhs) noexcept
+{
+    x = lhs.x + rhs.x;
+    y = lhs.y + rhs.y;
+    z = lhs.z + rhs.z;
 }
 
 inline constexpr Vector3 Vector3::operator/(float value) noexcept

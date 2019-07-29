@@ -18,12 +18,28 @@
 
 #include "vector3.h"
 
+#include "matrix34.h"
+
 #include "data7/metatype.h"
 #include "data7/miniparser.h"
 
-class Vector3 Vector3::operator%(class Vector3 const& other) noexcept
+Vector3 Vector3::operator%(Vector3 const& other) noexcept
 {
     return {(y * other.z) - (z * other.y), (z * other.x) - (x * other.z), (x * other.y) - (y * other.x)};
+}
+
+void Vector3::Dot(Vector3 const& other, Matrix34 const& transform) noexcept
+{
+    x = other.x * transform.m00 + other.y * transform.m10 + other.z * transform.m20 + transform.m30;
+    y = other.x * transform.m01 + other.y * transform.m11 + other.z * transform.m21 + transform.m31;
+    z = other.x * transform.m02 + other.y * transform.m12 + other.z * transform.m22 + transform.m32;
+}
+
+void Vector3::Dot3x3(Vector3 const& other, class Matrix34 const& transform)
+{
+    x = other.x * transform.m00 + other.y * transform.m10 + other.z * transform.m20;
+    y = other.x * transform.m01 + other.y * transform.m11 + other.z * transform.m21;
+    z = other.x * transform.m02 + other.y * transform.m12 + other.z * transform.m22;
 }
 
 struct Vector3Type : MetaType
