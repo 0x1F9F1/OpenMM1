@@ -30,5 +30,5 @@ void PagerInfo_t::Read(void* buffer, uint32_t offset, uint32_t size)
     }
 
     DWORD read = 0;
-    ReadFile(static_cast<HANDLE>(m_PagerHandle), buffer, size, &read, nullptr);
+    Assert(ReadFile(static_cast<HANDLE>(m_PagerHandle), buffer, size, &read, nullptr));
 }

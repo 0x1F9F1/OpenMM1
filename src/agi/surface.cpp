@@ -50,6 +50,8 @@ void agiSurfaceDesc::Unload()
     lpSurface = nullptr;
 }
 
+define_dummy_symbol(surface);
+
 run_once([] {
     auto_hook(0x53C760, agiSurfaceDesc::Init);
     create_patch("agiSurfaceDesc::CopyFrom", "Fix Input Pitch Calculation", 0x53D0AE, "\x8b\x4f\x54", 3);
