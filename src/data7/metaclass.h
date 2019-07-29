@@ -125,13 +125,13 @@ check_size(MetaClass, 0x28);
 void _BadSafeCall(char* name, Base* ptr);
 
 template <typename T>
-void* meta_new(int32_t count)
+inline void* ptrCreator(int32_t count)
 {
     return static_cast<void*>(count ? new T() : new T[count]());
 }
 
 template <typename T>
-void meta_delete(void* ptr, int32_t count)
+inline void ptrDestructor(void* ptr, int32_t count)
 {
     if (count)
     {
