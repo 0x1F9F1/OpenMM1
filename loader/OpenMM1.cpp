@@ -112,6 +112,7 @@ include_dummy_symbol(surface);
 include_dummy_symbol(problems);
 include_dummy_symbol(timer);
 include_dummy_symbol(speed);
+include_dummy_symbol(dxmovie);
 
 BOOL APIENTRY DllMain(HMODULE hinstDLL, DWORD fdwReason, LPVOID /*lpvReserved*/)
 {

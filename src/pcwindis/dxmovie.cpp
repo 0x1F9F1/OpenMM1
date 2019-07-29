@@ -17,3 +17,10 @@
 */
 
 #include "dxmovie.h"
+
+void dxiPlayMovie(char* /*path*/)
+{}
+
+define_dummy_symbol(dxmovie);
+
+run_once([] { auto_hook(0x556B90, dxiPlayMovie); });

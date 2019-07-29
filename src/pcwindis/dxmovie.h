@@ -25,7 +25,4 @@
 */
 
 // 0x556B90 | ?dxiPlayMovie@@YAXPAD@Z
-inline void dxiPlayMovie(char* arg1)
-{
-    return stub<cdecl_t<void, char*>>(0x556B90, arg1);
-}
+void dxiPlayMovie(char* path);
