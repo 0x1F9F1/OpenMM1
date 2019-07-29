@@ -51,3 +51,5 @@ arts_add_component(data7
     ptr.h
     ref.h
 )
+
+target_link_libraries(data7 winmm)

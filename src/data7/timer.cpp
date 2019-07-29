@@ -17,3 +17,103 @@
 */
 
 #include "timer.h"
+
+#include "minwin.h"
+#include <timeapi.h>
+
+static int32_t TimerMode {0}; // 0x711AB4
+
+float Timer::TicksToSeconds {0.0f};
+
+uint32_t Timer::Ticks()
+{
+    if (TimerMode == 1)
+    {
+        return timeGetTime();
+    }
+    else
+    {
+        LARGE_INTEGER perf;
+        QueryPerformanceCounter(&perf);
+        return perf.LowPart;
+    }
+}
+
+void Timer::Sleep(int32_t ms)
+{
+    ::Sleep(static_cast<uint32_t>(ms));
+}
+
+Timer::Timer()
+{
+    if (TicksToSeconds == 0.0)
+    {
+        LARGE_INTEGER freq;
+        if (QueryPerformanceFrequency(&freq))
+        {
+            TimerMode = 2;
+        }
+        else
+        {
+            TimerMode = 1;
+        }
+
+        if (TimerMode == 1)
+        {
+            TicksToSeconds = 0.001f;
+        }
+        else
+        {
+            TicksToSeconds = 1.0f / freq.QuadPart;
+        }
+
+        Reset();
+    }
+}
+
+void Timer::Reset()
+{
+    m_Start = Ticks();
+}
+
+float Timer::Time()
+{
+    return (Ticks() - m_Start) * TicksToSeconds;
+}
+
+static uint32_t OldProcessPriority {0};
+static uint32_t OldThreadPriority {0};
+
+void Timer::BeginBenchmark()
+{
+    OldProcessPriority = GetPriorityClass(GetCurrentProcess());
+    OldThreadPriority = GetThreadPriority(GetCurrentThread());
+
+    if (!SetPriorityClass(GetCurrentProcess(), REALTIME_PRIORITY_CLASS))
+    {
+        Errorf("SetPriorityClass failed.");
+    }
+
+    if (!SetThreadPriority(GetCurrentThread(), THREAD_PRIORITY_TIME_CRITICAL))
+    {
+        Errorf("SetThreadPriority failed.");
+    }
+}
+
+void Timer::EndBenchmark()
+{
+    SetPriorityClass(GetCurrentProcess(), OldProcessPriority);
+    SetThreadPriority(GetCurrentThread(), OldThreadPriority);
+}
+
+define_dummy_symbol(timer);
+
+run_once([] {
+    auto_hook(0x5581D0, Timer::Ticks);
+    auto_hook(0x558200, Timer::Sleep);
+    auto_hook_ctor(0x558210, Timer);
+    auto_hook(0x558280, Timer::Reset);
+    auto_hook(0x558290, Timer::Time);
+    auto_hook(0x5582C0, Timer::BeginBenchmark);
+    auto_hook(0x558330, Timer::EndBenchmark);
+});

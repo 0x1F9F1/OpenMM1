@@ -37,51 +37,28 @@ public:
     uint32_t m_Start {0};
 
     // 0x5581D0 | ?Ticks@Timer@@SAKXZ
-    static inline uint32_t Ticks()
-    {
-        return stub<cdecl_t<uint32_t>>(0x5581D0);
-    }
+    static uint32_t Ticks();
 
     // 0x558200 | ?Sleep@Timer@@SAXH@Z
-    static inline void Sleep(int32_t arg1)
-    {
-        return stub<cdecl_t<void, int32_t>>(0x558200, arg1);
-    }
+    static void Sleep(int32_t ms);
 
     // 0x558210 | ??0Timer@@QAE@XZ
-    inline Timer()
-    {
-        // stub<member_func_t<void, Timer>>(0x558210, this);
-
-        unimplemented();
-    }
+    Timer();
 
     // 0x558280 | ?Reset@Timer@@QAEXXZ
-    inline void Reset()
-    {
-        return stub<member_func_t<void, Timer>>(0x558280, this);
-    }
+    void Reset();
 
     // 0x558290 | ?Time@Timer@@QAEMXZ
-    inline float Time()
-    {
-        return stub<member_func_t<float, Timer>>(0x558290, this);
-    }
+    float Time();
 
     // 0x5582C0 | ?BeginBenchmark@Timer@@SAXXZ
-    static inline void BeginBenchmark()
-    {
-        return stub<cdecl_t<void>>(0x5582C0);
-    }
+    static void BeginBenchmark();
 
     // 0x558330 | ?EndBenchmark@Timer@@SAXXZ
-    static inline void EndBenchmark()
-    {
-        return stub<cdecl_t<void>>(0x558330);
-    }
+    static void EndBenchmark();
 
     // 0x711AAC | ?TicksToSeconds@Timer@@2MA
-    static inline extern_var(0x711AAC, float, TicksToSeconds);
+    static float TicksToSeconds;
 };
 
 check_size(Timer, 4);
