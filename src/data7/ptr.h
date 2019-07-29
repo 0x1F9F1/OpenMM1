@@ -84,12 +84,12 @@ public:
 };
 
 template <typename T>
-constexpr inline Ptr<T>::Ptr(T* value) noexcept
+inline constexpr Ptr<T>::Ptr(T* value) noexcept
     : m_Value(value)
 {}
 
 template <typename T>
-constexpr inline Ptr<T>::Ptr(Ptr<T>&& other) noexcept
+inline constexpr Ptr<T>::Ptr(Ptr<T>&& other) noexcept
     : m_Value(other.m_Value)
 {
     other.m_Value = nullptr;
@@ -102,7 +102,7 @@ inline Ptr<T>::~Ptr()
 }
 
 template <typename T>
-constexpr inline Ptr<T>& Ptr<T>::operator=(Ptr<T>&& other)
+inline constexpr Ptr<T>& Ptr<T>::operator=(Ptr<T>&& other)
 {
     delete m_Value;
     m_Value = other.m_Value;
@@ -112,7 +112,7 @@ constexpr inline Ptr<T>& Ptr<T>::operator=(Ptr<T>&& other)
 }
 
 template <typename T>
-constexpr inline T* Ptr<T>::Release() noexcept
+inline constexpr T* Ptr<T>::Release() noexcept
 {
     T* result = m_Value;
     m_Value = nullptr;
@@ -120,61 +120,61 @@ constexpr inline T* Ptr<T>::Release() noexcept
 }
 
 template <typename T>
-constexpr inline void Ptr<T>::Reset(T* value)
+inline constexpr void Ptr<T>::Reset(T* value)
 {
     delete m_Value;
     m_Value = value;
 }
 
 template <typename T>
-constexpr inline T* Ptr<T>::Get() noexcept
+inline constexpr T* Ptr<T>::Get() noexcept
 {
     return m_Value;
 }
 
 template <typename T>
-constexpr inline const T* Ptr<T>::Get() const noexcept
+inline constexpr const T* Ptr<T>::Get() const noexcept
 {
     return m_Value;
 }
 
 template <typename T>
-constexpr inline T* Ptr<T>::operator->() noexcept
+inline constexpr T* Ptr<T>::operator->() noexcept
 {
     return m_Value;
 }
 
 template <typename T>
-constexpr inline const T* Ptr<T>::operator->() const noexcept
+inline constexpr const T* Ptr<T>::operator->() const noexcept
 {
     return m_Value;
 }
 
 template <typename T>
-constexpr inline T& Ptr<T>::operator*() noexcept
+inline constexpr T& Ptr<T>::operator*() noexcept
 {
     return *m_Value;
 }
 
 template <typename T>
-constexpr inline const T& Ptr<T>::operator*() const noexcept
+inline constexpr const T& Ptr<T>::operator*() const noexcept
 {
     return *m_Value;
 }
 
 template <typename T>
-constexpr inline Ptr<T>::operator bool() const noexcept
+inline constexpr Ptr<T>::operator bool() const noexcept
 {
     return m_Value != nullptr;
 }
 
 template <typename T>
-constexpr inline Ptr<T[]>::Ptr(T* value) noexcept
+inline constexpr Ptr<T[]>::Ptr(T* value) noexcept
     : m_Value(value)
 {}
 
 template <typename T>
-constexpr inline Ptr<T[]>::Ptr(Ptr<T[]>&& other) noexcept
+inline constexpr Ptr<T[]>::Ptr(Ptr<T[]>&& other) noexcept
     : m_Value(other.m_Value)
 {
     other.m_Value = nullptr;
@@ -187,7 +187,7 @@ inline Ptr<T[]>::~Ptr()
 }
 
 template <typename T>
-constexpr inline Ptr<T[]>& Ptr<T[]>::operator=(Ptr<T[]>&& other)
+inline constexpr Ptr<T[]>& Ptr<T[]>::operator=(Ptr<T[]>&& other)
 {
     delete[] m_Value;
 
@@ -198,7 +198,7 @@ constexpr inline Ptr<T[]>& Ptr<T[]>::operator=(Ptr<T[]>&& other)
 }
 
 template <typename T>
-constexpr inline T* Ptr<T[]>::Release() noexcept
+inline constexpr T* Ptr<T[]>::Release() noexcept
 {
     T* result = m_Value;
     m_Value = nullptr;
@@ -206,38 +206,38 @@ constexpr inline T* Ptr<T[]>::Release() noexcept
 }
 
 template <typename T>
-constexpr inline void Ptr<T[]>::Reset(T* value)
+inline constexpr void Ptr<T[]>::Reset(T* value)
 {
     delete[] m_Value;
     m_Value = value;
 }
 
 template <typename T>
-constexpr inline T* Ptr<T[]>::Get() noexcept
+inline constexpr T* Ptr<T[]>::Get() noexcept
 {
     return m_Value;
 }
 
 template <typename T>
-constexpr inline const T* Ptr<T[]>::Get() const noexcept
+inline constexpr const T* Ptr<T[]>::Get() const noexcept
 {
     return m_Value;
 }
 
 template <typename T>
-constexpr inline T& Ptr<T[]>::operator[](size_t index) noexcept
+inline constexpr T& Ptr<T[]>::operator[](size_t index) noexcept
 {
     return m_Value[index];
 }
 
 template <typename T>
-constexpr inline const T& Ptr<T[]>::operator[](size_t index) const noexcept
+inline constexpr const T& Ptr<T[]>::operator[](size_t index) const noexcept
 {
     return m_Value[index];
 }
 
 template <typename T>
-constexpr inline Ptr<T[]>::operator bool() const noexcept
+inline constexpr Ptr<T[]>::operator bool() const noexcept
 {
     return m_Value != nullptr;
 }

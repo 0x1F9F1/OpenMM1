@@ -70,7 +70,7 @@ static int32_t HeapAssert(void* address, int32_t value, const char* message, int
     return 1;
 }
 
-static constexpr inline uint32_t Align8(uint32_t value) noexcept
+static inline constexpr uint32_t Align8(uint32_t value) noexcept
 {
     return (value + 7) & 0xFFFFFFF8;
 }

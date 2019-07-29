@@ -24,7 +24,7 @@ struct cstring_t
 {
     char* m_pData {nullptr};
 
-    constexpr inline cstring_t() noexcept
+    inline constexpr cstring_t() noexcept
         : m_pData(nullptr)
     {}
 

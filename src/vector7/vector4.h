@@ -55,7 +55,7 @@ public:
     float z {0.0f};
     float w {0.0f};
 
-    constexpr inline Vector4() noexcept = default;
+    inline constexpr Vector4() noexcept = default;
 
     // 0x549140 | ?Mag@Vector4@@QBEMXZ
     inline float Mag()

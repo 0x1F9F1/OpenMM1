@@ -91,7 +91,7 @@ public:
     float x {0.0f};
     float y {0.0f};
 
-    constexpr inline Vector2() noexcept = default;
+    inline constexpr Vector2() noexcept = default;
 
     // 0x42B330 | ??0Vector2@@QAE@ABV0@@Z
 
