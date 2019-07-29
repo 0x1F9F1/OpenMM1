@@ -220,7 +220,7 @@ public:
 void fprintf(Stream* stream, const char* format, ...);
 
 // 0x540E70 | ?fopen@@YAPAVStream@@PAD0@Z
-class Stream* fopen(char* filename, char* mode);
+class Stream* s_fopen(const char* filename, const char* mode);
 
 // 0x540EB0 | ?fseek@@YAHPAVStream@@HH@Z
 int32_t fseek(class Stream* stream, int32_t offset, int32_t origin);

@@ -107,22 +107,22 @@ public:
     }
 
     // 0x542580 | ?QueryOn@VirtualFileSystem@@UAEHPAD@Z
-    inline int32_t QueryOn(char* arg1) override
+    inline int32_t QueryOn(const char* arg1) override
     {
-        return stub<member_func_t<int32_t, VirtualFileSystem, char*>>(0x542580, this, arg1);
+        return stub<member_func_t<int32_t, VirtualFileSystem, const char*>>(0x542580, this, arg1);
     }
 
     // 0x542650 | ?OpenOn@VirtualFileSystem@@UAEPAVStream@@PADHPAXH@Z
-    inline class Stream* OpenOn(char* arg1, int32_t arg2, void* arg3, int32_t arg4) override
+    inline class Stream* OpenOn(const char* arg1, int32_t arg2, void* arg3, int32_t arg4) override
     {
-        return stub<member_func_t<class Stream*, VirtualFileSystem, char*, int32_t, void*, int32_t>>(
+        return stub<member_func_t<class Stream*, VirtualFileSystem, const char*, int32_t, void*, int32_t>>(
             0x542650, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x542700 | ?CreateOn@VirtualFileSystem@@UAEPAVStream@@PADPAXH@Z
-    inline class Stream* CreateOn(char* arg1, void* arg2, int32_t arg3) override
+    inline class Stream* CreateOn(const char* arg1, void* arg2, int32_t arg3) override
     {
-        return stub<member_func_t<class Stream*, VirtualFileSystem, char*, void*, int32_t>>(
+        return stub<member_func_t<class Stream*, VirtualFileSystem, const char*, void*, int32_t>>(
             0x542700, this, arg1, arg2, arg3);
     }
 

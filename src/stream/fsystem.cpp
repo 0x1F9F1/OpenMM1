@@ -46,7 +46,7 @@ FileSystem* FileSystem::SearchAll(char* arg1, char* arg2, char* arg3, int32_t ar
     return nullptr;
 }
 
-Stream* FileSystem::OpenAny(char* arg1, int32_t arg2, void* arg3, int32_t arg4)
+Stream* FileSystem::OpenAny(const char* arg1, int32_t arg2, void* arg3, int32_t arg4)
 {
     for (int32_t i = 0; i < FSCount; ++i)
     {

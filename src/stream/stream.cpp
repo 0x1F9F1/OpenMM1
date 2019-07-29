@@ -490,7 +490,7 @@ void fprintf(Stream* stream, const char* format, ...)
     va_end(va);
 }
 
-Stream* fopen(char* filename, char* mode)
+Stream* s_fopen(const char* filename, const char* mode)
 {
     if (*mode == 'r')
     {
@@ -612,7 +612,7 @@ run_once([] {
     auto_hook(0x540E30, Stream::GetLong);
 
     auto_hook_typed(0x540E50, fprintf, void (*)(Stream*, const char*, ...));
-    auto_hook_typed(0x540E70, fopen, Stream * (*) (char*, char*) );
+    auto_hook_typed(0x540E70, s_fopen, Stream * (*) (const char*, const char*) );
     auto_hook_typed(0x540EB0, fseek, int32_t(*)(Stream*, int32_t, int32_t));
     auto_hook_typed(0x540F60, fgets, int32_t(*)(char*, int32_t, Stream*));
     auto_hook_typed(0x540FD0, fscanf, int32_t(*)(Stream*, const char*, ...));

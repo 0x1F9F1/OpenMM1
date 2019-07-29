@@ -29,42 +29,13 @@
 */
 
 // 0x542930 | ?InitProblems@@YAXXZ
-inline void InitProblems()
-{
-    return stub<cdecl_t<void>>(0x542930);
-}
+void InitProblems();
 
 // 0x542990 | ?DumpProblems@@YAXXZ
-inline void DumpProblems()
-{
-    return stub<cdecl_t<void>>(0x542990);
-}
+void DumpProblems();
 
 // 0x542C80 | ?RegisterProblem@@YAXPAD00@Z
-inline void RegisterProblem(char* arg1, char* arg2, char* arg3)
-{
-    return stub<cdecl_t<void, char*, char*, char*>>(0x542C80, arg1, arg2, arg3);
-}
+void RegisterProblem(const char* message, const char* problem, const char* additional);
 
 // 0x542BD0 | ?cmpProblem@@YAHPBX0@Z
-inline int32_t cmpProblem(void const* arg1, void const* arg2)
-{
-    return stub<cdecl_t<int32_t, void const*, void const*>>(0x542BD0, arg1, arg2);
-}
-
-struct problem_t
-{
-public:
-    const char* m_Message;
-    const char* m_Problem;
-    const char* m_Additional;
-    uint32_t m_Count;
-
-    // 0x542EC0 | ??1problem_t@@QAE@XZ
-    inline ~problem_t()
-    {
-        stub<member_func_t<void, problem_t>>(0x542EC0, this);
-    }
-};
-
-check_size(problem_t, 0x10);
+int32_t cmpProblem(void const* lhs, void const* rhs);

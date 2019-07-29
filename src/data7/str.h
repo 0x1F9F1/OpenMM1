@@ -58,13 +58,13 @@
 */
 
 // 0x712320 | ?ProjPath@@3PADA
-inline extern_var(0x712320, char*, ProjPath);
+inline extern_var(0x712320, char[128], ProjPath);
 
 // 0x7123A0 | ?ImageExts@@3PADA
-inline extern_var(0x7123A0, char*, ImageExts);
+inline extern_var(0x7123A0, char[128], ImageExts);
 
 // 0x7124E8 | ?ExecPath@@3PADA
-inline extern_var(0x7124E8, char*, ExecPath);
+inline extern_var(0x7124E8, char[128], ExecPath);
 
 class string
 {

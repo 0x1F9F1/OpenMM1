@@ -109,7 +109,7 @@ public:
     }
 
     // 0x5419E0 | ?OpenAny@FileSystem@@SAPAVStream@@PADHPAXH@Z
-    static class Stream* OpenAny(char* arg1, int32_t arg2, void* arg3, int32_t arg4);
+    static class Stream* OpenAny(const char* arg1, int32_t arg2, void* arg3, int32_t arg4);
 
     // 0x541A50 | ?PagerInfoAny@FileSystem@@SAHPADAAUPagerInfo_t@@@Z
     static int32_t PagerInfoAny(char* arg1, struct PagerInfo_t& arg2);
@@ -127,13 +127,13 @@ public:
     virtual inline int32_t ValidPath(char* arg1) = 0;
 
     // 0x567350 | __purecall
-    virtual inline int32_t QueryOn(char* arg1) = 0;
+    virtual inline int32_t QueryOn(const char* arg1) = 0;
 
     // 0x567350 | __purecall
-    virtual inline class Stream* OpenOn(char* arg1, int32_t arg2, void* arg3, int32_t arg4) = 0;
+    virtual inline class Stream* OpenOn(const char* arg1, int32_t arg2, void* arg3, int32_t arg4) = 0;
 
     // 0x567350 | __purecall
-    virtual inline class Stream* CreateOn(char* arg1, void* arg2, int32_t arg3) = 0;
+    virtual inline class Stream* CreateOn(const char* arg1, void* arg2, int32_t arg3) = 0;
 
     // 0x541A40 | ?PagerInfo@FileSystem@@UAEHPADAAUPagerInfo_t@@@Z
     virtual int32_t PagerInfo(char* arg1, struct PagerInfo_t& arg2);

@@ -109,6 +109,7 @@ include_dummy_symbol(midtown);
 include_dummy_symbol(mmtext);
 include_dummy_symbol(memstat);
 include_dummy_symbol(surface);
+include_dummy_symbol(problems);
 
 BOOL APIENTRY DllMain(HMODULE hinstDLL, DWORD fdwReason, LPVOID /*lpvReserved*/)
 {

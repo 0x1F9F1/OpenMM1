@@ -80,22 +80,22 @@ public:
     }
 
     // 0x541BC0 | ?QueryOn@HierFileSystem@@UAEHPAD@Z
-    inline int32_t QueryOn(char* arg1) override
+    inline int32_t QueryOn(const char* arg1) override
     {
-        return stub<member_func_t<int32_t, HierFileSystem, char*>>(0x541BC0, this, arg1);
+        return stub<member_func_t<int32_t, HierFileSystem, const char*>>(0x541BC0, this, arg1);
     }
 
     // 0x541C80 | ?OpenOn@HierFileSystem@@UAEPAVStream@@PADHPAXH@Z
-    inline class Stream* OpenOn(char* arg1, int32_t arg2, void* arg3, int32_t arg4) override
+    inline class Stream* OpenOn(const char* arg1, int32_t arg2, void* arg3, int32_t arg4) override
     {
-        return stub<member_func_t<class Stream*, HierFileSystem, char*, int32_t, void*, int32_t>>(
+        return stub<member_func_t<class Stream*, HierFileSystem, const char*, int32_t, void*, int32_t>>(
             0x541C80, this, arg1, arg2, arg3, arg4);
     }
 
     // 0x541E20 | ?CreateOn@HierFileSystem@@UAEPAVStream@@PADPAXH@Z
-    inline class Stream* CreateOn(char* arg1, void* arg2, int32_t arg3) override
+    inline class Stream* CreateOn(const char* arg1, void* arg2, int32_t arg3) override
     {
-        return stub<member_func_t<class Stream*, HierFileSystem, char*, void*, int32_t>>(
+        return stub<member_func_t<class Stream*, HierFileSystem, const char*, void*, int32_t>>(
             0x541E20, this, arg1, arg2, arg3);
     }
 
