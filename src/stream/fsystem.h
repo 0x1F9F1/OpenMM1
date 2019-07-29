@@ -86,6 +86,8 @@ inline void ExpandEnvs(char* arg1)
     return stub<cdecl_t<void, char*>>(0x5417A0, arg1);
 }
 
+constexpr int32_t MAX_FILESYSTEMS = 256;
+
 class FileSystem : Base
 {
 public:
@@ -116,7 +118,7 @@ public:
     static inline extern_var(0x70EE70, int32_t, FSCount);
 
     // 0x70EE78 | ?FS@FileSystem@@2PAPAV1@A
-    static FileSystem* FS[];
+    static FileSystem* FS[MAX_FILESYSTEMS];
 
     // 0x541120 | ??1FileSystem@@UAE@XZ
     ~FileSystem() override;
