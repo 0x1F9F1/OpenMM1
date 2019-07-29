@@ -20,7 +20,7 @@
 
 void GetMachineName(char* buffer, int32_t length)
 {
-    strcpy_s(buffer, length, "OpenMM2");
+    strcpy_s(buffer, length, "OpenMM1");
 }
 
 define_dummy_symbol(machname);
