@@ -17,3 +17,158 @@
 */
 
 #include "filestream.h"
+
+#include "minwin.h"
+#include <fcntl.h>
+#include <io.h>
+#include <sys/stat.h>
+
+int32_t FileStream::Create(char* path)
+{
+    int32_t result = -1;
+
+    if (m_FileHandle == -1)
+    {
+        if (_sopen_s(&m_FileHandle, path, _O_WRONLY | _O_TRUNC | _O_CREAT | _O_BINARY, _SH_DENYNO,
+                _S_IREAD | _S_IWRITE) != 0)
+        {
+            m_FileHandle = -1;
+        }
+
+        result = m_FileHandle;
+    }
+
+    return result;
+}
+
+int32_t FileStream::Open(char* path, int32_t paged)
+{
+    int32_t result = -1;
+
+    if (m_FileHandle == -1)
+    {
+        if (paged)
+        {
+            Assert(m_PagerHandle == nullptr);
+
+            m_PagerHandle = CreateFileA(
+                path, GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+        }
+        else
+        {
+            m_PagerHandle = nullptr;
+        }
+
+        if (_sopen_s(
+                &m_FileHandle, path, (paged ? _O_RDONLY : _O_RDWR) | _O_BINARY, _SH_DENYNO, _S_IREAD | _S_IWRITE) != 0)
+        {
+            m_FileHandle = -1;
+        }
+
+        result = m_FileHandle;
+    }
+
+    return result;
+}
+
+int32_t FileStream::Stdin()
+{
+    int32_t result = -1;
+
+    if (m_FileHandle)
+    {
+        result = m_FileHandle = 0;
+    }
+
+    return result;
+}
+
+int32_t FileStream::Stdout()
+{
+    int32_t result = -1;
+
+    if (m_FileHandle)
+    {
+        result = m_FileHandle = 1;
+    }
+
+    return result;
+}
+
+int32_t FileStream::Stderr()
+{
+    int32_t result = -1;
+
+    if (m_FileHandle)
+    {
+        result = m_FileHandle = 2;
+    }
+
+    return result;
+}
+
+int32_t FileStream::Close()
+{
+    Flush();
+
+    int32_t result = -1;
+
+    if (m_FileHandle != -1)
+    {
+        result = _close(m_FileHandle);
+
+        m_FileHandle = -1;
+    }
+
+    if (m_PagerHandle)
+    {
+        CloseHandle(m_PagerHandle);
+
+        m_PagerHandle = nullptr;
+    }
+
+    return result;
+}
+
+FileStream::~FileStream()
+{
+    Close();
+}
+
+uint32_t FileStream::GetPagerHandle()
+{
+    return reinterpret_cast<uint32_t>(m_PagerHandle);
+}
+
+int32_t FileStream::RawRead(void* data, int32_t length)
+{
+    return _read(m_FileHandle, data, length);
+}
+
+int32_t FileStream::RawWrite(void* data, int32_t length)
+{
+    return _write(m_FileHandle, data, length);
+}
+
+int32_t FileStream::RawSeek(int32_t pos)
+{
+    return _lseek(m_FileHandle, pos, SEEK_SET);
+}
+
+int32_t FileStream::RawTell()
+{
+    return _lseek(m_FileHandle, 0, SEEK_CUR);
+}
+
+int32_t FileStream::RawSize()
+{
+    int32_t pos = RawTell();
+    int32_t end = _lseek(m_FileHandle, 0, SEEK_END);
+
+    if (pos != end)
+    {
+        RawSeek(pos);
+    }
+
+    return end;
+}

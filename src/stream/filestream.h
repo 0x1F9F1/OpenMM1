@@ -55,26 +55,18 @@ class FileStream : Stream
 {
 public:
     int32_t m_FileHandle {-1};
-    void* m_PagerHandler {nullptr};
+    void* m_PagerHandle {nullptr};
 
     // FileStream::`vftable' @ 0x595F28
 
     // 0x543370 | ??0FileStream@@QAE@PAXHPAVFileSystem@@@Z
-    inline FileStream(void* arg1, int32_t arg2, class FileSystem* arg3)
-        : Stream(arg1, arg2, arg3)
-    {}
+    using Stream::Stream;
 
     // 0x5433C0 | ?Create@FileStream@@QAEHPAD@Z
-    inline int32_t Create(char* arg1)
-    {
-        return stub<member_func_t<int32_t, FileStream, char*>>(0x5433C0, this, arg1);
-    }
+    int32_t Create(char* path);
 
     // 0x5433F0 | ?Open@FileStream@@QAEHPADH@Z
-    inline int32_t Open(char* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<int32_t, FileStream, char*, int32_t>>(0x5433F0, this, arg1, arg2);
-    }
+    int32_t Open(char* path, int32_t paged);
 
     // 0x543460 | ??0FileStream@@QAE@H@Z
     inline FileStream(int32_t arg1)
@@ -83,72 +75,37 @@ public:
     {}
 
     // 0x543490 | ?Stdin@FileStream@@QAEHXZ
-    inline int32_t Stdin()
-    {
-        return stub<member_func_t<int32_t, FileStream>>(0x543490, this);
-    }
+    int32_t Stdin();
 
     // 0x5434B0 | ?Stdout@FileStream@@QAEHXZ
-    inline int32_t Stdout()
-    {
-        return stub<member_func_t<int32_t, FileStream>>(0x5434B0, this);
-    }
+    int32_t Stdout();
 
     // 0x5434D0 | ?Stderr@FileStream@@QAEHXZ
-    inline int32_t Stderr()
-    {
-        return stub<member_func_t<int32_t, FileStream>>(0x5434D0, this);
-    }
+    int32_t Stderr();
 
     // 0x5435A0 | ?Close@FileStream@@QAEHXZ
-    inline int32_t Close()
-    {
-        return stub<member_func_t<int32_t, FileStream>>(0x5435A0, this);
-    }
+    int32_t Close();
 
     // 0x5435E0 | ??1FileStream@@UAE@XZ
-    inline ~FileStream() override = 0
-    {
-        // stub<member_func_t<void, FileStream>>(0x5435E0, this);
-
-        unimplemented();
-    }
+    ~FileStream() override;
 
     // 0x5433B0 | ?GetPagerHandle@FileStream@@UAEIXZ
-    inline uint32_t GetPagerHandle() override
-    {
-        return stub<member_func_t<uint32_t, FileStream>>(0x5433B0, this);
-    }
+    uint32_t GetPagerHandle() override;
 
     // 0x5434F0 | ?RawRead@FileStream@@UAEHPAXH@Z
-    inline int32_t RawRead(void* arg1, int32_t arg2) override
-    {
-        return stub<member_func_t<int32_t, FileStream, void*, int32_t>>(0x5434F0, this, arg1, arg2);
-    }
+    int32_t RawRead(void* data, int32_t length) override;
 
     // 0x543510 | ?RawWrite@FileStream@@UAEHPAXH@Z
-    inline int32_t RawWrite(void* arg1, int32_t arg2) override
-    {
-        return stub<member_func_t<int32_t, FileStream, void*, int32_t>>(0x543510, this, arg1, arg2);
-    }
+    int32_t RawWrite(void* data, int32_t length) override;
 
     // 0x543530 | ?RawSeek@FileStream@@UAEHH@Z
-    inline int32_t RawSeek(int32_t arg1) override
-    {
-        return stub<member_func_t<int32_t, FileStream, int32_t>>(0x543530, this, arg1);
-    }
+    int32_t RawSeek(int32_t pos) override;
 
     // 0x543550 | ?RawTell@FileStream@@UAEHXZ
-    inline int32_t RawTell() override
-    {
-        return stub<member_func_t<int32_t, FileStream>>(0x543550, this);
-    }
+    int32_t RawTell() override;
 
     // 0x543570 | ?RawSize@FileStream@@UAEHXZ
-    inline int32_t RawSize() override
-    {
-        return stub<member_func_t<int32_t, FileStream>>(0x543570, this);
-    }
+    int32_t RawSize() override;
 };
 
 check_size(FileStream, 0x28);
