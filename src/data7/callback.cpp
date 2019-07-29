@@ -17,3 +17,98 @@
 */
 
 #include "callback.h"
+
+#include "base.h"
+#include <mem/mem.h>
+
+using mem::bit_cast;
+
+Callback::Callback(void (*func)()) noexcept
+    : m_Type(1)
+    , m_pFunc(func)
+{}
+
+Callback::Callback(void (*func)(void*), void* param) noexcept
+    : m_Type(2)
+    , m_pFunc(func)
+    , m_FirstParam(param)
+{}
+
+Callback::Callback(void (*func)(void*, void*), void* param) noexcept
+    : m_Type(3)
+    , m_pFunc(func)
+    , m_FirstParam(param)
+{}
+
+Callback::Callback(void (Base::*func)(), Base* param) noexcept
+    : m_Type(1)
+    , m_pFunc(bit_cast<void*>(func))
+    , m_pThis(param)
+{
+    if (!param)
+    {
+        Quitf("Can't have callback to member function with nil 'this'");
+    }
+}
+
+Callback::Callback(void (Base::*func)(void*), Base* param1, void* param2) noexcept
+    : m_Type(2)
+    , m_pFunc(bit_cast<void*>(func))
+    , m_pThis(param1)
+    , m_FirstParam(param2)
+{
+    if (!param1)
+    {
+        Quitf("Can't have callback to member function with nil 'this'");
+    }
+}
+
+Callback::Callback(void (Base::*func)(void*, void*), Base* param1, void* param2) noexcept
+    : m_Type(3)
+    , m_pFunc(bit_cast<void*>(func))
+    , m_pThis(param1)
+    , m_FirstParam(param2)
+{
+    if (!param1)
+    {
+        Quitf("Can't have callback to member function with nil 'this'");
+    }
+}
+
+Callback::Callback(void (Base::*func)(void*, void*), Base* param1, void* param2, void* param3) noexcept
+    : m_Type(4)
+    , m_pFunc(bit_cast<void*>(func))
+    , m_pThis(param1)
+    , m_FirstParam(param2)
+    , m_SecondParam(param3)
+{}
+
+void Callback::Call(void* param)
+{
+    if (m_Type)
+    {
+        if (m_pThis)
+        {
+            switch (m_Type)
+            {
+                case 1: return (m_pThis->*bit_cast<void (Base::*)()>(m_pFunc))();
+                case 2: return (m_pThis->*bit_cast<void (Base::*)(void*)>(m_pFunc))(m_FirstParam);
+                case 3: return (m_pThis->*bit_cast<void (Base::*)(void*, void*)>(m_pFunc))(m_FirstParam, param);
+                case 4: return (m_pThis->*bit_cast<void (Base::*)(void*, void*)>(m_pFunc))(m_FirstParam, m_SecondParam);
+
+                default: Quit("Invalid Callback");
+            }
+        }
+        else
+        {
+            switch (m_Type)
+            {
+                case 1: return static_cast<void (*)()>(m_pFunc)();
+                case 2: return static_cast<void (*)(void*)>(m_pFunc)(m_FirstParam);
+                case 3: return static_cast<void (*)(void*, void*)>(m_pFunc)(m_FirstParam, param);
+
+                default: Quit("Invalid Callback");
+            }
+        }
+    }
+}

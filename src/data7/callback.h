@@ -33,13 +33,7 @@
     0x712240 | class Callback NullCallback | ?NullCallback@@3VCallback@@A
 */
 
-// 0x55AC30 | ??0Callback@@QAE@P8Base@@AEXXZPAV1@@Z
-
-// 0x55AC70 | ??0Callback@@QAE@P8Base@@AEXPAX@ZPAV1@0@Z
-
-// 0x55ACB0 | ??0Callback@@QAE@P8Base@@AEXPAX0@ZPAV1@0@Z
-
-// 0x55ACF0 | ??0Callback@@QAE@P8Base@@AEXPAX0@ZPAV1@00@Z
+#include "base.h"
 
 // 0x712240 | ?NullCallback@@3VCallback@@A
 inline extern_var(0x712240, class Callback, NullCallback);
@@ -49,49 +43,39 @@ class Base;
 class Callback
 {
 public:
-    int32_t m_Type {-1};
-    Base* m_pClass {nullptr};
+    int32_t m_Type {0};
+    Base* m_pThis {nullptr};
     void* m_pFunc {nullptr};
-    void* m_pFirstParam {nullptr};
-    void* m_pSecondParam {nullptr};
+    void* m_FirstParam {nullptr};
+    void* m_SecondParam {nullptr};
 
+public:
     // 0x55AC20 | ??0Callback@@QAE@XZ
-    inline Callback()
-    {
-        // stub<member_func_t<void, Callback>>(0x55AC20, this);
-
-        unimplemented();
-    }
+    constexpr Callback() noexcept = default;
 
     // 0x55AD30 | ??0Callback@@QAE@P6AXXZ@Z
-    inline Callback(void(__cdecl* arg1)(void))
-    {
-        // stub<member_func_t<void, Callback, void(__cdecl*)(void)>>(0x55AD30, this, arg1);
-
-        unimplemented(arg1);
-    }
+    Callback(void (*func)()) noexcept;
 
     // 0x55AD50 | ??0Callback@@QAE@P6AXPAX@Z0@Z
-    inline Callback(void(__cdecl* arg1)(void*), void* arg2)
-    {
-        // stub<member_func_t<void, Callback, void(__cdecl*)(void*), void*>>(0x55AD50, this, arg1, arg2);
-
-        unimplemented(arg1, arg2);
-    }
+    Callback(void (*func)(void*), void* param) noexcept;
 
     // 0x55AD80 | ??0Callback@@QAE@P6AXPAX0@Z0@Z
-    inline Callback(void(__cdecl* arg1)(void*, void*), void* arg2)
-    {
-        // stub<member_func_t<void, Callback, void(__cdecl*)(void*, void*), void*>>(0x55AD80, this, arg1, arg2);
+    Callback(void (*func)(void*, void*), void* param) noexcept;
 
-        unimplemented(arg1, arg2);
-    }
+    // 0x55AC30 | ??0Callback@@QAE@P8Base@@AEXXZPAV1@@Z
+    Callback(void (Base::*func)(), class Base* param) noexcept;
+
+    // 0x55AC70 | ??0Callback@@QAE@P8Base@@AEXPAX@ZPAV1@0@Z
+    Callback(void (Base::*func)(void*), class Base* param1, void* param2) noexcept;
+
+    // 0x55ACB0 | ??0Callback@@QAE@P8Base@@AEXPAX0@ZPAV1@0@Z
+    Callback(void (Base::*func)(void*, void*), class Base* param1, void* param2) noexcept;
+
+    // 0x55ACF0 | ??0Callback@@QAE@P8Base@@AEXPAX0@ZPAV1@00@Z
+    Callback(void (Base::*func)(void*, void*), class Base* param1, void* param2, void* param3) noexcept;
 
     // 0x55ADB0 | ?Call@Callback@@QAEXPAX@Z
-    inline void Call(void* arg1)
-    {
-        return stub<member_func_t<void, Callback, void*>>(0x55ADB0, this, arg1);
-    }
+    void Call(void* param);
 };
 
 check_size(Callback, 0x14);
