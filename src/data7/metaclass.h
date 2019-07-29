@@ -127,7 +127,7 @@ void _BadSafeCall(char* name, Base* ptr);
 template <typename T>
 inline void* ptrCreator(int32_t count)
 {
-    return static_cast<void*>(count ? new T() : new T[count]());
+    return static_cast<void*>(count ? new T[count]() : new T());
 }
 
 template <typename T>
