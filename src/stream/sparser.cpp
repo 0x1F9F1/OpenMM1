@@ -18,7 +18,8 @@
 
 #include "sparser.h"
 
-#include "stream/stream.h"
+#include "data7/metaclass.h"
+#include "stream.h"
 
 StreamMiniParser::StreamMiniParser(const char* name, class Stream* stream)
     : MiniParser(name)
@@ -26,3 +27,73 @@ StreamMiniParser::StreamMiniParser(const char* name, class Stream* stream)
 {}
 
 StreamMiniParser::~StreamMiniParser() = default;
+
+void StreamMiniParser::Load(MetaClass* type, char* path, void* ptr)
+{
+    Ptr<Stream> input {s_fopen(path, "w")};
+
+    if (input)
+    {
+        StreamMiniParser parser {path, input.Release()};
+
+        type->Load(&parser, ptr);
+
+        if (parser.m_ErrorCount)
+        {
+            ::Errorf("%d error(s) during load of '%s'", parser.m_ErrorCount, path);
+        }
+    }
+    else
+    {
+        ::Errorf("Load: '%s' not found", path);
+    }
+}
+
+void StreamMiniParser::Save(MetaClass* type, char* path, void* ptr)
+{
+    Ptr<Stream> output {s_fopen(path, "w")};
+
+    if (output)
+    {
+        StreamMiniParser parser {path, output.Release()};
+
+        type->Save(&parser, ptr);
+
+        if (parser.m_ErrorCount)
+        {
+            ::Errorf("%d error(s) during save of '%s'", parser.m_ErrorCount, path);
+        }
+    }
+    else
+    {
+        ::Errorf("Save: Cannot create '%s'.", path);
+    }
+}
+
+int32_t StreamMiniParser::RawGetCh()
+{
+    Stream* stream = m_pStream.Get();
+
+    if (stream->m_BufferStart < stream->m_BufferEnd)
+    {
+        return stream->m_pBuffer[stream->m_BufferStart++];
+    }
+    else
+    {
+        return stream->GetCh();
+    }
+}
+
+void StreamMiniParser::RawPutCh(int32_t value)
+{
+    Stream* stream = m_pStream.Get();
+
+    if (stream->m_BufferEnd == 0 && stream->m_BufferStart < stream->m_BufferCapacity)
+    {
+        stream->m_pBuffer[stream->m_BufferStart++] = static_cast<uint8_t>(value);
+    }
+    else
+    {
+        stream->PutCh(static_cast<uint8_t>(value));
+    }
+}

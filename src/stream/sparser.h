@@ -49,26 +49,14 @@ public:
     ~StreamMiniParser();
 
     // 0x542FF0 | ?Load@StreamMiniParser@@SAXPAVMetaClass@@PADPAX@Z
-    static inline void Load(class MetaClass* arg1, char* arg2, void* arg3)
-    {
-        return stub<cdecl_t<void, class MetaClass*, char*, void*>>(0x542FF0, arg1, arg2, arg3);
-    }
+    static void Load(class MetaClass* type, char* path, void* ptr);
 
     // 0x5430A0 | ?Save@StreamMiniParser@@SAXPAVMetaClass@@PADPAX@Z
-    static inline void Save(class MetaClass* arg1, char* arg2, void* arg3)
-    {
-        return stub<cdecl_t<void, class MetaClass*, char*, void*>>(0x5430A0, arg1, arg2, arg3);
-    }
+    static void Save(class MetaClass* type, char* path, void* ptr);
 
     // 0x542FC0 | ?RawGetCh@StreamMiniParser@@UAEHXZ
-    inline int32_t RawGetCh() override
-    {
-        return stub<member_func_t<int32_t, StreamMiniParser>>(0x542FC0, this);
-    }
+    int32_t RawGetCh() override;
 
     // 0x542F80 | ?RawPutCh@StreamMiniParser@@UAEXH@Z
-    inline void RawPutCh(int32_t arg1) override
-    {
-        return stub<member_func_t<void, StreamMiniParser, int32_t>>(0x542F80, this, arg1);
-    }
+    void RawPutCh(int32_t value) override;
 };

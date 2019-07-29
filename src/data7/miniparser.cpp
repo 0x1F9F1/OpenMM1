@@ -86,13 +86,13 @@ void MiniParser::Errorf(char const* format, ...)
         vsprintf_s(buffer, format, va);
         va_end(va);
 
-        ++m_LastError;
+        ++m_ErrorCount;
 
-        if (m_LastError < 10)
+        if (m_ErrorCount < 10)
         {
             Errorf("Parser(%s,%d): %s", m_Name.get(), m_CurrentLine, buffer);
         }
-        else if (m_LastError == 10)
+        else if (m_ErrorCount == 10)
         {
             Errorf("This file sucks, change it!");
         }

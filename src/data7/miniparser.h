@@ -62,7 +62,7 @@ public:
     };
 
     char m_Buffer[256] {};
-    uint32_t m_LastError {0};
+    int32_t m_ErrorCount {0};
     cstring_t m_Name {};
     uint32_t m_CurrentToken = ' ';
     uint32_t m_Identation {0};
