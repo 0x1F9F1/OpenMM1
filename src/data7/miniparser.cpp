@@ -269,15 +269,8 @@ int32_t MiniParser::NextToken()
     {
         int32_t len = 0;
 
-        while (true)
+        while ((v = GetCh()) != '"')
         {
-            v = GetCh();
-
-            if (v != '"')
-            {
-                break;
-            }
-
             if (v == Token::End)
             {
                 Errorf("EOF in string");
@@ -395,5 +388,7 @@ float MiniParser::FloatVal()
 
     return static_cast<float>(std::atof(m_Buffer));
 }
+
+define_dummy_symbol(miniparser);
 
 run_once([] { auto_hook(0x55E380, MiniParser::NextToken); });
