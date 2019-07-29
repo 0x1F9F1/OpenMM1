@@ -62,7 +62,7 @@ inline void dxiWriteConfigFile()
 inline extern_var(0x5CD880, int32_t, dxiRendererChoice);
 
 // 0x710AC0 | ?dxiInfo@@3PAUdxiRendererInfo_t@@A
-inline extern_var(0x710AC0, struct dxiRendererInfo_t*, dxiInfo);
+inline extern_var(0x710AC0, struct dxiRendererInfo_t[8], dxiInfo);
 
 // 0x711790 | ?dxiRendererCount@@3HA
 inline extern_var(0x711790, int32_t, dxiRendererCount);
@@ -78,6 +78,7 @@ inline void guidtostr(char* arg1, struct _GUID* arg2)
 {
     return stub<cdecl_t<void, char*, struct _GUID*>>(0x556B20, arg1, arg2);
 }
+
 struct dxiResolution
 {
     uint16_t uWidth;

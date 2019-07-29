@@ -66,7 +66,9 @@ public:
     void (*m_Free)(void*, int32_t) {nullptr};
     void (*m_Declare)() {nullptr};
     MetaClass* m_Parent {nullptr};
-    MetaClass* m_Children {nullptr};
+
+    // FIXME: If a child class is constructed before the parent, initializing m_Children will reset it back to null (which breaks stuff).
+    MetaClass* m_Children /*{nullptr}*/;
     MetaClass* m_Next {nullptr};
     MetaField* m_pFields {nullptr};
     int32_t m_Index {0};

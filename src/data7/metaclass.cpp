@@ -42,10 +42,8 @@ MetaClass::MetaClass(const char* name, uint32_t size, void* (*allocate)(int32_t)
         Quitf("Too many classes, raise MAX_CLASSES");
     }
 
-    ++NextSerial;
+    m_Index = ++NextSerial;
     ClassIndex[NextSerial] = this;
-
-    m_Index = NextSerial;
 }
 
 MetaClass::~MetaClass()
@@ -276,12 +274,7 @@ void MetaClass::Load(MiniParser* parser, void* ptr)
 
 void MetaClass::DeclareNamedTypedField(const char* name, uint32_t offset, MetaType* type)
 {
-    MetaField* field = new MetaField();
-
-    field->m_Name = name;
-    field->m_Next = nullptr;
-    field->m_Offset = offset;
-    field->m_pType = type;
+    MetaField* field = new MetaField {nullptr, name, offset, type};
 
     *ppField = field;
     ppField = &field->m_Next;
@@ -291,3 +284,19 @@ void _BadSafeCall(char* name, Base* ptr)
 {
     Quitf("SafeCall failed: '%s' is not a '%s'.", ptr->GetTypeName(), name);
 }
+
+define_dummy_symbol(metaclass);
+
+run_once([] {
+    auto_hook_ctor(0x559400, MetaClass, const char*, uint32_t, void* (*) (int32_t), void (*)(void*, int32_t),
+        void (*)(void), MetaClass*);
+    auto_hook_dtor(0x559480, MetaClass);
+    auto_hook(0x5594E0, MetaClass::UndeclareAll);
+    auto_hook(0x559510, MetaClass::IsSubclassOf);
+    auto_hook(0x559540, MetaClass::FindByName);
+    auto_hook(0x5595D0, MetaClass::InitFields);
+    auto_hook(0x5595F0, MetaClass::Save);
+    auto_hook(0x559740, MetaClass::SkipBlock);
+    auto_hook(0x5597F0, MetaClass::Load);
+    auto_hook(0x559960, MetaClass::DeclareNamedTypedField);
+});
