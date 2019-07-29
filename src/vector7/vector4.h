@@ -153,6 +153,7 @@ public:
     }
 };
 
+#if 0
 class Vector4Array
 {
 public:
@@ -192,5 +193,6 @@ public:
         return stub<member_func_t<void, Vector4Array, class Vector4Array&>>(0x549890, this, arg1);
     }
 };
+#endif
 
 check_size(Vector4, 16);

@@ -502,6 +502,7 @@ public:
     }
 };
 
+#if 0
 class Vector3Array
 {
 public:
@@ -541,5 +542,6 @@ public:
         return stub<member_func_t<void, Vector3Array, class Vector3Array&>>(0x548BB0, this, arg1);
     }
 };
+#endif
 
 check_size(Vector3, 12);

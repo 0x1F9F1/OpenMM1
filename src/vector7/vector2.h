@@ -43,6 +43,7 @@
 // 0x710A84 | ?Vector2Inst@@3UVector2Type@@A
 extern struct Vector2Type Vector2Inst;
 
+#if 0
 class Vector2Array
 {
 public:
@@ -82,6 +83,7 @@ public:
         return stub<member_func_t<void, Vector2Array, class Vector2Array&>>(0x553EB0, this, arg1);
     }
 };
+#endif
 
 class Vector2
 {

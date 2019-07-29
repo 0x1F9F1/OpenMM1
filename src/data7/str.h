@@ -249,6 +249,7 @@ inline class string operator+(char const* arg1, class string const& arg2)
     return stub<cdecl_t<class string, char const*, class string const&>>(0x55AFA0, arg1, arg2);
 }
 
+#if 0
 class StringArray
 {
 public:
@@ -295,5 +296,7 @@ public:
     }
 };
 
-check_size(string, 8);
 check_size(StringArray, 20);
+#endif
+
+check_size(string, 8);
