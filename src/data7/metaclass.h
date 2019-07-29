@@ -106,7 +106,7 @@ public:
     static inline extern_var(0x711B38, int32_t, NextSerial);
 
     // 0x711B40 | ?ClassIndex@MetaClass@@2PAPAV1@A
-    static inline extern_var(0x711B40, class MetaClass * [256], ClassIndex);
+    static inline extern_var(0x711B40, class MetaClass * [MAX_CLASSES], ClassIndex);
 
     // 0x711F40 | ?Current@MetaClass@@2PAV1@A
     static inline extern_var(0x711F40, class MetaClass*, Current);
