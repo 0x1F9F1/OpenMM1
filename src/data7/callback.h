@@ -35,9 +35,6 @@
 
 #include "base.h"
 
-// 0x712240 | ?NullCallback@@3VCallback@@A
-inline extern_var(0x712240, class Callback, NullCallback);
-
 class Base;
 
 class Callback
@@ -77,5 +74,8 @@ public:
     // 0x55ADB0 | ?Call@Callback@@QAEXPAX@Z
     void Call(void* param);
 };
+
+// 0x712240 | ?NullCallback@@3VCallback@@A
+constexpr Callback NullCallback;
 
 check_size(Callback, 0x14);
