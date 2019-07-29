@@ -338,12 +338,52 @@ void Stream::Debug()
 
 int32_t Stream::PutString(const char* value)
 {
-    unimplemented(value);
+    uint32_t length = strlen(value) + 1;
+
+    Put(length);
+
+    return Put(reinterpret_cast<const uint8_t*>(value), length);
 }
 
 int32_t Stream::GetString(char* buffer, int32_t length)
 {
-    unimplemented(buffer, length);
+    uint32_t len = GetLong();
+
+    if (len <= static_cast<uint32_t>(length))
+    {
+        return GetUnchecked(reinterpret_cast<uint8_t*>(buffer), len);
+    }
+
+    GetUnchecked(reinterpret_cast<uint8_t*>(buffer), length - 1);
+    buffer[length - 1] = '\0';
+
+    len -= length - 1;
+
+    if (len)
+    {
+        if (m_BufferStart < m_BufferEnd)
+        {
+            uint32_t diff = m_BufferEnd - m_BufferStart;
+
+            if (diff > len)
+                diff = len;
+
+            m_BufferStart += len;
+            diff -= len;
+        }
+
+        if (len)
+        {
+            Seek(Tell() + len);
+        }
+
+        for (uint32_t i = 0; i < len; ++i)
+        {
+            GetCh();
+        }
+    }
+
+    return length;
 }
 
 int32_t Stream::Put(uint8_t value)
