@@ -37,43 +37,25 @@ public:
     const char* m_Name {nullptr};
     uint32_t m_CurrentLine {0};
     Stream* m_pStream {nullptr};
-    uint32_t m_CurrentChar {0};
+    int32_t m_CurrentChar {0};
 
     // 0x543150 | ??0Tokenizer@@QAE@PBDPAVStream@@@Z
-    inline Tokenizer(char const* arg1, class Stream* arg2)
-        : m_Name(arg1)
-        , m_pStream(arg2)
-    {}
+    Tokenizer(char const* name, class Stream* stream);
 
     // 0x543180 | ?GetToken@Tokenizer@@QAEHPADH@Z
-    inline int32_t GetToken(char* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<int32_t, Tokenizer, char*, int32_t>>(0x543180, this, arg1, arg2);
-    }
+    int32_t GetToken(char* buffer, int32_t length);
 
     // 0x543210 | ?MatchToken@Tokenizer@@QAEXPAD@Z
-    inline void MatchToken(char* arg1)
-    {
-        return stub<member_func_t<void, Tokenizer, char*>>(0x543210, this, arg1);
-    }
+    void MatchToken(char* token);
 
     // 0x543290 | ?GetInt@Tokenizer@@QAEHXZ
-    inline int32_t GetInt()
-    {
-        return stub<member_func_t<int32_t, Tokenizer>>(0x543290, this);
-    }
+    int32_t GetInt();
 
     // 0x5432F0 | ?GetFloat@Tokenizer@@QAEMXZ
-    inline float GetFloat()
-    {
-        return stub<member_func_t<float, Tokenizer>>(0x5432F0, this);
-    }
+    float GetFloat();
 
     // 0x543350 | ?IgnoreToken@Tokenizer@@QAEXXZ
-    inline void IgnoreToken()
-    {
-        return stub<member_func_t<void, Tokenizer>>(0x543350, this);
-    }
+    void IgnoreToken();
 };
 
 check_size(Tokenizer, 0x10);
