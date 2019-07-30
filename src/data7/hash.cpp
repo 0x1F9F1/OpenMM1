@@ -66,7 +66,7 @@ static inline uint32_t IntegerLiteralHash(uint32_t value) noexcept
     h *= 0xc2b2ae35;
     h ^= h >> 16;
 
-    return value;
+    return h;
 }
 
 HashTable::HashTable()
