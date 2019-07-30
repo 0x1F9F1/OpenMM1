@@ -228,7 +228,6 @@ void HashTable::Recompute(int32_t capacity)
     DebugAssert(IsPow2(capacity));
 
     int32_t old_bucket_count = m_nBucketCount;
-    m_nEntryCount = 0;
 
     Ptr<Entry*[]> buckets(new Entry*[capacity]());
 
@@ -237,11 +236,14 @@ void HashTable::Recompute(int32_t capacity)
 
     for (int32_t i = 0; i < old_bucket_count; ++i)
     {
-        for (Entry* j = buckets[i]; j; j = j->m_pNext)
+        for (Entry *j = buckets[i], *next = nullptr; j; j = next)
         {
-            Insert(j->m_Key, j->m_Value);
+            next = j->m_pNext;
 
-            delete j;
+            uint32_t bucket = Hash(j->m_Key);
+
+            j->m_pNext = m_pBuckets[bucket];
+            m_pBuckets[bucket] = j;
         }
     }
 }
