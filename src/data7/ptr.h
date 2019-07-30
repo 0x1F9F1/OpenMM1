@@ -40,6 +40,8 @@ public:
 
     constexpr void Reset(T* value = nullptr);
 
+    constexpr void Swap(Ptr& other) noexcept;
+
     constexpr T* Get() noexcept;
     constexpr const T* Get() const noexcept;
 
@@ -73,6 +75,8 @@ public:
     [[nodiscard]] constexpr T* Release() noexcept;
 
     constexpr void Reset(T* value = nullptr);
+
+    constexpr void Swap(Ptr& other) noexcept;
 
     constexpr T* Get() noexcept;
     constexpr const T* Get() const noexcept;
@@ -124,6 +128,14 @@ inline constexpr void Ptr<T>::Reset(T* value)
 {
     delete m_Value;
     m_Value = value;
+}
+
+template <typename T>
+inline constexpr void Ptr<T>::Swap(Ptr& other) noexcept
+{
+    T* value = m_Value;
+    m_Value = other.m_Value;
+    other.m_Value = value;
 }
 
 template <typename T>
@@ -210,6 +222,14 @@ inline constexpr void Ptr<T[]>::Reset(T* value)
 {
     delete[] m_Value;
     m_Value = value;
+}
+
+template <typename T>
+inline constexpr void Ptr<T[]>::Swap(Ptr& other) noexcept
+{
+    T* value = m_Value;
+    m_Value = other.m_Value;
+    other.m_Value = value;
 }
 
 template <typename T>

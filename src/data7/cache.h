@@ -83,8 +83,8 @@ public:
     uint32_t m_nAge {0};
     uint32_t m_nLockCount {0};
 
-    uint32_t m_hWriteMutex {0};
-    uint32_t m_hAccessMutex {0};
+    uint32_t m_WriteMutex {0};
+    uint32_t m_ReadMutex {0};
 
     const char* m_Name {nullptr};
 

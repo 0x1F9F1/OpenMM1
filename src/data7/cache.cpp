@@ -45,8 +45,8 @@ void DataCache::Init(uint32_t heap_size, int32_t capacity, const char* name)
 
     m_Name = name;
 
-    m_hWriteMutex = ipcCreateMutex(0);
-    m_hAccessMutex = ipcCreateMutex(0);
+    m_WriteMutex = ipcCreateMutex(0);
+    m_ReadMutex = ipcCreateMutex(0);
 
     m_nAgedObjects = 0;
     m_nAged = 0;
@@ -54,13 +54,13 @@ void DataCache::Init(uint32_t heap_size, int32_t capacity, const char* name)
 
 void DataCache::Shutdown()
 {
-    ipcWaitSingle(m_hWriteMutex);
-    ipcWaitSingle(m_hAccessMutex);
+    ipcWaitSingle(m_WriteMutex);
+    ipcWaitSingle(m_ReadMutex);
 
     Flush();
 
-    ipcCloseHandle(m_hWriteMutex);
-    ipcCloseHandle(m_hAccessMutex);
+    ipcCloseHandle(m_WriteMutex);
+    ipcCloseHandle(m_ReadMutex);
 }
 
 void DataCache::Unload(int32_t handle)
@@ -113,7 +113,7 @@ int32_t DataCache::Lock(int32_t* handle)
 {
     Assert(*handle);
 
-    ipcWaitSingle(m_hWriteMutex);
+    ipcWaitSingle(m_WriteMutex);
 
     if (*handle != -1)
     {
@@ -123,18 +123,18 @@ int32_t DataCache::Lock(int32_t* handle)
 
         if (!m_nLockCount++)
         {
-            ipcWaitSingle(m_hAccessMutex);
+            ipcWaitSingle(m_ReadMutex);
         }
 
         dco->m_nAge = m_nAge;
 
-        ipcReleaseMutex(m_hWriteMutex);
+        ipcReleaseMutex(m_WriteMutex);
 
         return 1;
     }
     else
     {
-        ipcReleaseMutex(m_hWriteMutex);
+        ipcReleaseMutex(m_WriteMutex);
 
         return 0;
     }
@@ -142,7 +142,7 @@ int32_t DataCache::Lock(int32_t* handle)
 
 void DataCache::Unlock(int32_t handle)
 {
-    ipcWaitSingle(m_hWriteMutex);
+    ipcWaitSingle(m_WriteMutex);
 
     Assert(handle > 0);
 
@@ -150,15 +150,15 @@ void DataCache::Unlock(int32_t handle)
 
     if (!--m_nLockCount)
     {
-        ipcReleaseMutex(m_hAccessMutex);
+        ipcReleaseMutex(m_ReadMutex);
     }
 
-    ipcReleaseMutex(m_hWriteMutex);
+    ipcReleaseMutex(m_WriteMutex);
 }
 
 void DataCache::UnlockAndFree(int32_t handle)
 {
-    ipcWaitSingle(m_hWriteMutex);
+    ipcWaitSingle(m_WriteMutex);
 
     Assert(handle > 0);
 
@@ -166,14 +166,14 @@ void DataCache::UnlockAndFree(int32_t handle)
 
     if (!--m_nLockCount)
     {
-        ipcReleaseMutex(m_hAccessMutex);
+        ipcReleaseMutex(m_ReadMutex);
     }
 
     m_nWaste += m_pObjects[handle].m_nMaxSize;
 
     Unload(handle);
     CleanEndOfHeap();
-    ipcReleaseMutex(m_hWriteMutex);
+    ipcReleaseMutex(m_WriteMutex);
 }
 
 void DataCache::CleanEndOfHeap()
@@ -198,7 +198,7 @@ void DataCache::CleanEndOfHeap()
 
 int32_t DataCache::BeginObject(int32_t* handle, DataCacheCallback callback, void* context, uint32_t size)
 {
-    ipcWaitSingle(m_hWriteMutex);
+    ipcWaitSingle(m_WriteMutex);
 
     size = Align8(size);
 
@@ -241,7 +241,7 @@ int32_t DataCache::BeginObject(int32_t* handle, DataCacheCallback callback, void
 
             m_bNeedsDefrag = 1;
 
-            ipcReleaseMutex(m_hWriteMutex);
+            ipcReleaseMutex(m_WriteMutex);
 
             return 0;
         }
@@ -295,7 +295,7 @@ void DataCache::InitObject(
 
     if (!m_nLockCount++)
     {
-        ipcWaitSingle(m_hAccessMutex);
+        ipcWaitSingle(m_ReadMutex);
     }
 }
 
@@ -305,16 +305,16 @@ void DataCache::EndObject(int32_t handle)
 
     if (!--m_nLockCount)
     {
-        ipcReleaseMutex(m_hAccessMutex);
+        ipcReleaseMutex(m_ReadMutex);
     }
 
-    ipcReleaseMutex(m_hWriteMutex);
+    ipcReleaseMutex(m_WriteMutex);
 }
 
 void DataCache::Flush()
 {
-    ipcWaitSingle(m_hWriteMutex);
-    ipcWaitSingle(m_hAccessMutex);
+    ipcWaitSingle(m_WriteMutex);
+    ipcWaitSingle(m_ReadMutex);
 
     for (int32_t i = 1; i <= m_nMaxHandles; ++i)
     {
@@ -330,13 +330,13 @@ void DataCache::Flush()
 
     m_nUsed = 0;
 
-    ipcReleaseMutex(m_hAccessMutex);
-    ipcReleaseMutex(m_hWriteMutex);
+    ipcReleaseMutex(m_ReadMutex);
+    ipcReleaseMutex(m_WriteMutex);
 }
 
 void DataCache::Age()
 {
-    ipcWaitSingle(m_hWriteMutex);
+    ipcWaitSingle(m_WriteMutex);
 
     ++m_nAge;
 
@@ -411,7 +411,7 @@ void DataCache::Age()
         }
     }
 
-    ipcReleaseMutex(m_hWriteMutex);
+    ipcReleaseMutex(m_WriteMutex);
 }
 
 void* DataCache::Allocate(int32_t handle, uint32_t size)

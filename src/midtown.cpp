@@ -106,7 +106,7 @@ int CALLBACK MidtownMain(HINSTANCE /*hInstance*/, HINSTANCE /*hPrevInstance*/, L
 
     Application(argc, Main_ArgV);
 
-    Timer::Sleep(500);
+    // Timer::Sleep(500);
 
     return 0;
 }

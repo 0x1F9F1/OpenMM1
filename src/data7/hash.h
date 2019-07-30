@@ -40,22 +40,27 @@
 
 #include "cstr.h"
 
+#include "ptr.h"
+
 class HashTable
 {
-public:
+private:
     struct Entry
     {
-        cstring_t m_Name;
-        void* m_pData {nullptr};
+        cstring_t m_Key {};
+        void* m_Value {nullptr};
         Entry* m_pNext {nullptr};
     };
 
     check_size(Entry, 12);
 
-    int32_t m_BucketCount {0};
-    int32_t m_EntryCount {0};
-    Entry** m_pBuckets {nullptr};
+    int32_t m_nBucketCount {0};
+    int32_t m_nEntryCount {0};
+    Ptr<Entry* []> m_pBuckets { nullptr };
     HashTable* m_pNext {nullptr};
+
+public:
+    friend struct HashIterator;
 
     HashTable();
 
@@ -72,43 +77,25 @@ public:
     void operator=(class HashTable& other);
 
     // 0x559B30 | ?Insert@HashTable@@QAEHPADPAX@Z
-    inline int32_t Insert(const char* arg1, void* arg2)
-    {
-        return stub<member_func_t<int32_t, HashTable, const char*, void*>>(0x559B30, this, arg1, arg2);
-    }
+    int32_t Insert(const char* key, void* value);
 
     // 0x559C10 | ?Delete@HashTable@@QAEHPAD@Z
-    inline int32_t Delete(char* arg1)
-    {
-        return stub<member_func_t<int32_t, HashTable, char*>>(0x559C10, this, arg1);
-    }
+    int32_t Delete(const char* key);
 
     // 0x559D50 | ?Change@HashTable@@QAEHPAD0@Z
-    inline int32_t Change(char* arg1, char* arg2)
-    {
-        return stub<member_func_t<int32_t, HashTable, char*, char*>>(0x559D50, this, arg1, arg2);
-    }
+    int32_t Change(const char* old_key, const char* new_key);
 
     // 0x559D90 | ?Access@HashTable@@QAEPAXPAD@Z
-    inline void* Access(char* arg1)
-    {
-        return stub<member_func_t<void*, HashTable, char*>>(0x559D90, this, arg1);
-    }
+    void* Access(const char* key);
 
     // 0x559E20 | ?Hash@HashTable@@AAEHPAD@Z
     uint32_t Hash(const char* value);
 
     // 0x559E60 | ?ComputePrime@HashTable@@AAEHH@Z
-    inline int32_t ComputePrime(int32_t arg1)
-    {
-        return stub<member_func_t<int32_t, HashTable, int32_t>>(0x559E60, this, arg1);
-    }
+    int32_t ComputePrime(int32_t value);
 
     // 0x559EB0 | ?Recompute@HashTable@@AAEXH@Z
-    inline void Recompute(int32_t arg1)
-    {
-        return stub<member_func_t<void, HashTable, int32_t>>(0x559EB0, this, arg1);
-    }
+    void Recompute(int32_t capacity);
 
     // 0x559F70 | ?KillAll@HashTable@@SAXXZ
     static void KillAll();
@@ -126,20 +113,14 @@ struct HashIterator
 {
 public:
     HashTable* m_pTable {nullptr};
-    int32_t m_Index {0};
+    int32_t m_Index {-1};
     HashTable::Entry* m_pEntry {nullptr};
 
     // 0x5599A0 | ?Begin@HashIterator@@QAEXXZ
-    inline void Begin()
-    {
-        return stub<member_func_t<void, HashIterator>>(0x5599A0, this);
-    }
+    void Begin();
 
     // 0x5599B0 | ?Next@HashIterator@@QAEHXZ
-    inline int32_t Next()
-    {
-        return stub<member_func_t<int32_t, HashIterator>>(0x5599B0, this);
-    }
+    int32_t Next();
 };
 
 check_size(HashIterator, 12);
