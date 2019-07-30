@@ -43,141 +43,99 @@
 // 0x711AC8 | ?CACHE@@3VDataCache@@A
 inline extern_var(0x711AC8, class DataCache, CACHE);
 
+using PageOutCallback = void (*)(void* context, int32_t delta);
+
 struct DataCacheObject
 {
-    uint32_t m_LastAgeAccess {0};
-    uint8_t* m_pData {nullptr};
-    uint32_t* m_Status {nullptr};
+    uint32_t m_nAge {0};
+
+    uint8_t* m_pBase {nullptr};
+    int32_t* m_pHandle {nullptr};
+
     uint8_t m_bUsed {0};
     uint8_t m_nLockCount {0};
-    uint8_t m_byteE {0};
-    uint8_t m_byteF {0};
-    uint32_t m_nTotalSize {0};
+
+    uint32_t m_nUsed {0};
     uint32_t m_nMaxSize {0};
-    void (*m_Callback)(void*, uint32_t) {nullptr};
-    void* m_pValue {nullptr};
+
+    PageOutCallback m_Callback {nullptr};
+    void* m_Context {nullptr};
 };
 
 class DataCache
 {
 public:
-    uint32_t m_AgedObjectsCount {0};
-    uint32_t m_AgedObjectsSize {0};
+    uint32_t m_nAgedObjects {0};
+    uint32_t m_nAged {0};
+
     DataCacheObject* m_pObjects {nullptr};
-    uint32_t m_nMaxObjects {0};
-    uint32_t m_nCurrentObjects {0};
-    uint32_t m_nHeapObjects {0};
-    uint32_t m_nMaxHeapObjects {0};
-    uint32_t m_HasError {0};
+    int32_t m_nHandleCap {0};
+    int32_t m_nMaxHandles {0};
+
+    uint32_t m_nWaste {0};
+    uint32_t m_nMaxWaste {0};
+    bool32_t m_bNeedsDefrag {0};
+
     uint8_t* m_pHeap {nullptr};
-    uint32_t m_nHeapSize {0};
-    uint32_t m_nTotalAllocated {0};
-    uint32_t m_AgeChecks {0};
-    uint32_t m_LockCount {0};
-    void* m_hWriteMutex {nullptr};
-    void* m_hAccessMutex {nullptr};
+    uint32_t m_nHeapCap {0};
+    uint32_t m_nUsed {0};
+
+    uint32_t m_nAge {0};
+    uint32_t m_nLockCount {0};
+
+    uint32_t m_hWriteMutex {0};
+    uint32_t m_hAccessMutex {0};
+
     const char* m_Name {nullptr};
 
     // 0x558930 | ??0DataCache@@QAE@XZ
-    inline DataCache()
-    {
-        // stub<member_func_t<void, DataCache>>(0x558930, this);
-
-        unimplemented();
-    }
+    DataCache();
 
     // 0x558940 | ?Init@DataCache@@QAEXIHPAD@Z
-    inline void Init(uint32_t arg1, int32_t arg2, char* arg3)
-    {
-        return stub<member_func_t<void, DataCache, uint32_t, int32_t, char*>>(0x558940, this, arg1, arg2, arg3);
-    }
+    void Init(uint32_t heap_size, int32_t capacity, const char* name);
 
     // 0x5589E0 | ?Shutdown@DataCache@@QAEXXZ
-    inline void Shutdown()
-    {
-        return stub<member_func_t<void, DataCache>>(0x5589E0, this);
-    }
+    void Shutdown();
 
     // 0x558A20 | ?Unload@DataCache@@AAEXH@Z
-    inline void Unload(int32_t arg1)
-    {
-        return stub<member_func_t<void, DataCache, int32_t>>(0x558A20, this, arg1);
-    }
+    void Unload(int32_t handle);
 
     // 0x558B00 | ?Relocate@DataCache@@AAEXPAUDataCacheObject@@PAE@Z
-    inline void Relocate(struct DataCacheObject* arg1, uint8_t* arg2)
-    {
-        return stub<member_func_t<void, DataCache, struct DataCacheObject*, uint8_t*>>(0x558B00, this, arg1, arg2);
-    }
+    void Relocate(struct DataCacheObject* dco, uint8_t* ptr);
 
     // 0x558B50 | ?Lock@DataCache@@QAEHPAH@Z
-    inline int32_t Lock(int32_t* arg1)
-    {
-        return stub<member_func_t<int32_t, DataCache, int32_t*>>(0x558B50, this, arg1);
-    }
+    int32_t Lock(int32_t* handle);
 
     // 0x558BF0 | ?Unlock@DataCache@@QAEXH@Z
-    inline void Unlock(int32_t arg1)
-    {
-        return stub<member_func_t<void, DataCache, int32_t>>(0x558BF0, this, arg1);
-    }
+    void Unlock(int32_t handle);
 
     // 0x558C60 | ?UnlockAndFree@DataCache@@QAEXH@Z
-    inline void UnlockAndFree(int32_t arg1)
-    {
-        return stub<member_func_t<void, DataCache, int32_t>>(0x558C60, this, arg1);
-    }
+    void UnlockAndFree(int32_t handle);
 
     // 0x558D00 | ?CleanEndOfHeap@DataCache@@AAEXXZ
-    inline void CleanEndOfHeap()
-    {
-        return stub<member_func_t<void, DataCache>>(0x558D00, this);
-    }
+    void CleanEndOfHeap();
 
     // 0x558D70 | ?BeginObject@DataCache@@QAEHPAHP6AXPAXH@Z1I@Z
-    inline int32_t BeginObject(int32_t* arg1, void(__cdecl* arg2)(void*, int32_t), void* arg3, uint32_t arg4)
-    {
-        return stub<member_func_t<int32_t, DataCache, int32_t*, void(__cdecl*)(void*, int32_t), void*, uint32_t>>(
-            0x558D70, this, arg1, arg2, arg3, arg4);
-    }
+    int32_t BeginObject(int32_t* handle, PageOutCallback callback, void* context, uint32_t size);
 
     // 0x558F20 | ?InitObject@DataCache@@AAEXHPAHP6AXPAXH@Z1PAEI@Z
-    inline void InitObject(
-        int32_t arg1, int32_t* arg2, void(__cdecl* arg3)(void*, int32_t), void* arg4, uint8_t* arg5, uint32_t arg6)
-    {
-        return stub<member_func_t<void, DataCache, int32_t, int32_t*, void(__cdecl*)(void*, int32_t), void*, uint8_t*,
-            uint32_t>>(0x558F20, this, arg1, arg2, arg3, arg4, arg5, arg6);
-    }
+    void InitObject(
+        int32_t handle, int32_t* out_handle, PageOutCallback callback, void* context, uint8_t* ptr, uint32_t maxsize);
 
     // 0x558FF0 | ?EndObject@DataCache@@QAEXH@Z
-    inline void EndObject(int32_t arg1)
-    {
-        return stub<member_func_t<void, DataCache, int32_t>>(0x558FF0, this, arg1);
-    }
+    void EndObject(int32_t handle);
 
     // 0x559030 | ?Flush@DataCache@@QAEXXZ
-    inline void Flush()
-    {
-        return stub<member_func_t<void, DataCache>>(0x559030, this);
-    }
+    void Flush();
 
     // 0x5590B0 | ?Age@DataCache@@QAEXXZ
-    inline void Age()
-    {
-        return stub<member_func_t<void, DataCache>>(0x5590B0, this);
-    }
+    void Age();
 
     // 0x559280 | ?Allocate@DataCache@@QAEPAXHI@Z
-    inline void* Allocate(int32_t arg1, uint32_t arg2)
-    {
-        return stub<member_func_t<void*, DataCache, int32_t, uint32_t>>(0x559280, this, arg1, arg2);
-    }
+    void* Allocate(int32_t handle, uint32_t size);
 
     // 0x559330 | ?GetStatus@DataCache@@QAEXAAI00@Z
-    inline void GetStatus(uint32_t& arg1, uint32_t& arg2, uint32_t& arg3)
-    {
-        return stub<member_func_t<void, DataCache, uint32_t&, uint32_t&, uint32_t&>>(0x559330, this, arg1, arg2, arg3);
-    }
+    void GetStatus(uint32_t& used_handles, uint32_t& used_bytes, uint32_t& free_bytes);
 };
 
 check_size(DataCache, 0x40);

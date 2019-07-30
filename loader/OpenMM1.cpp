@@ -115,6 +115,7 @@ include_dummy_symbol(speed);
 include_dummy_symbol(dxmovie);
 include_dummy_symbol(miniparser);
 include_dummy_symbol(metaclass);
+include_dummy_symbol(datacache);
 
 BOOL APIENTRY DllMain(HMODULE hinstDLL, DWORD fdwReason, LPVOID /*lpvReserved*/)
 {
