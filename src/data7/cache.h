@@ -43,7 +43,7 @@
 // 0x711AC8 | ?CACHE@@3VDataCache@@A
 inline extern_var(0x711AC8, class DataCache, CACHE);
 
-using PageOutCallback = void (*)(void* context, int32_t delta);
+using DataCacheCallback = void (*)(void* context, int32_t delta);
 
 struct DataCacheObject
 {
@@ -58,7 +58,7 @@ struct DataCacheObject
     uint32_t m_nUsed {0};
     uint32_t m_nMaxSize {0};
 
-    PageOutCallback m_Callback {nullptr};
+    DataCacheCallback m_Callback {nullptr};
     void* m_Context {nullptr};
 };
 
@@ -116,11 +116,11 @@ public:
     void CleanEndOfHeap();
 
     // 0x558D70 | ?BeginObject@DataCache@@QAEHPAHP6AXPAXH@Z1I@Z
-    int32_t BeginObject(int32_t* handle, PageOutCallback callback, void* context, uint32_t size);
+    int32_t BeginObject(int32_t* handle, DataCacheCallback callback, void* context, uint32_t size);
 
     // 0x558F20 | ?InitObject@DataCache@@AAEXHPAHP6AXPAXH@Z1PAEI@Z
     void InitObject(
-        int32_t handle, int32_t* out_handle, PageOutCallback callback, void* context, uint8_t* ptr, uint32_t maxsize);
+        int32_t handle, int32_t* out_handle, DataCacheCallback callback, void* context, uint8_t* ptr, uint32_t maxsize);
 
     // 0x558FF0 | ?EndObject@DataCache@@QAEXH@Z
     void EndObject(int32_t handle);

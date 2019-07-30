@@ -196,7 +196,7 @@ void DataCache::CleanEndOfHeap()
     }
 }
 
-int32_t DataCache::BeginObject(int32_t* handle, PageOutCallback callback, void* context, uint32_t size)
+int32_t DataCache::BeginObject(int32_t* handle, DataCacheCallback callback, void* context, uint32_t size)
 {
     ipcWaitSingle(m_hWriteMutex);
 
@@ -270,7 +270,7 @@ int32_t DataCache::BeginObject(int32_t* handle, PageOutCallback callback, void* 
 }
 
 void DataCache::InitObject(
-    int32_t handle, int32_t* out_handle, PageOutCallback callback, void* context, uint8_t* ptr, uint32_t maxsize)
+    int32_t handle, int32_t* out_handle, DataCacheCallback callback, void* context, uint8_t* ptr, uint32_t maxsize)
 {
     DataCacheObject* dco = &m_pObjects[handle];
 
