@@ -15,7 +15,7 @@ features and porting to platforms unsupported by the original.
 3. Download [dgVoodoo 2](http://www.dege.freeweb.hu/dgVoodoo2/dgVoodoo2.html) and extract `DDraw.dll` and `D3DImm.dll` from `MS/x86` into your MM1 directory.
 
 ## Compatability
-* OpenMM1 requires the original release (`Angel: 1588 / Apr 14 1999 15:07:10`), not the XP patch (`Angel: 1589 / Sep 16 1999 11:00:21`).
+* OpenMM1 requires the original release (`Angel: 1588 / Apr 14 1999 15:07:10`, `1,927 KB`), not the XP patch (`Angel: 1589 / Sep 16 1999 11:00:21`, `1,959 KB`).
 * OpenMM1 is intended to run on modern hardware, using `dgVoodoo`.
 
 ## dgVoodoo Settings
