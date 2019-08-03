@@ -401,10 +401,8 @@ void DataCache::Age()
 
         m_nMaxHandles = j;
 
-        for (; j <= i;)
+        while (++j < i)
         {
-            ++j;
-
             DataCacheObject* dco = &m_pObjects[j];
 
             dco->m_bUsed = 0;
