@@ -30,6 +30,8 @@ void asCamera::SetView(float hfov, float vfov, float near, float far)
     float fov_scale =
         (agiPipeline::CurrentPipe->m_Width * hfov_scale) / (agiPipeline::CurrentPipe->m_Height * vfov_scale);
 
+    fov_scale *= 0.75f;
+
     hfov *= (fov_scale / vfov);
 
     mem::field<float>(this, 0x6C) = hfov; // Horizontal FOV
