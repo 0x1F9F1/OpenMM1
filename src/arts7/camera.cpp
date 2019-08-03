@@ -24,6 +24,18 @@ void asCamera::SetView(float hfov, float vfov, float near, float far)
 {
     // See asCamera::Update
 
+#if 0
+    if (vfov == 1.25f)
+    {
+        float hfov_scale = mem::field<float>(this, 0x38);
+        float vfov_scale = mem::field<float>(this, 0x3C);
+
+        float fov_scale =
+            (agiPipeline::CurrentPipe->m_Width * hfov_scale) / (agiPipeline::CurrentPipe->m_Height * vfov_scale);
+
+        hfov *= (fov_scale * 0.75f);
+    }
+#else
     float hfov_scale = mem::field<float>(this, 0x38);
     float vfov_scale = mem::field<float>(this, 0x3C);
 
@@ -31,6 +43,7 @@ void asCamera::SetView(float hfov, float vfov, float near, float far)
         (agiPipeline::CurrentPipe->m_Width * hfov_scale) / (agiPipeline::CurrentPipe->m_Height * vfov_scale);
 
     hfov *= ((fov_scale * 0.75f) / (vfov / 1.25f));
+#endif
 
     mem::field<float>(this, 0x6C) = hfov; // Horizontal FOV
 
