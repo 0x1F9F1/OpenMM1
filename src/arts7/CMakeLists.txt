@@ -1,8 +1,8 @@
 arts_add_component(arts7
     # benchstats.cpp
     # benchstats.h
-    # camera.cpp
-    # camera.h
+    camera.cpp
+    camera.h
     cullable.cpp
     cullable.h
     # cullmgr.cpp

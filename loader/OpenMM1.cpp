@@ -117,6 +117,7 @@ include_dummy_symbol(miniparser);
 include_dummy_symbol(metaclass);
 include_dummy_symbol(datacache);
 include_dummy_symbol(hashtable);
+include_dummy_symbol(ascamera);
 
 BOOL APIENTRY DllMain(HMODULE hinstDLL, DWORD fdwReason, LPVOID /*lpvReserved*/)
 {

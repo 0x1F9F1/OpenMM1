@@ -55,6 +55,8 @@
     0x514230 | void __cdecl delete_asCamera(void *,int) | ?delete_asCamera@@YAXPAXH@Z
 */
 
+#include "node.h"
+
 // 0x6F2BE8 | ?asCameraMetaClass@@3VMetaClass@@A
 inline extern_var(0x6F2BE8, class MetaClass, asCameraMetaClass);
 
@@ -76,7 +78,18 @@ inline void delete_asCamera(void* arg1, int32_t arg2)
 class asCamera : asNode
 {
 public:
+    enum kNearClip
+    {
+        NearClipValue0,
+        NearClipValue1,
+        NearClipValue2,
+        NearClipValue3,
+        NearClipValue4,
+    };
+
     // asCamera::`vftable' @ 0x5954B8
+
+    char pad1C[0x16C];
 
     // 0x512ED0 | ??0asCamera@@QAE@XZ
     inline asCamera()
@@ -131,10 +144,7 @@ public:
     }
 
     // 0x513D00 | ?SetView@asCamera@@QAEXMMMM@Z
-    inline void SetView(float arg1, float arg2, float arg3, float arg4)
-    {
-        return stub<member_func_t<void, asCamera, float, float, float, float>>(0x513D00, this, arg1, arg2, arg3, arg4);
-    }
+    void SetView(float arg1, float arg2, float arg3, float arg4);
 
     // 0x513D50 | ?SetFog@asCamera@@QAEXMMMM@Z
     inline void SetFog(float arg1, float arg2, float arg3, float arg4)
@@ -241,3 +251,5 @@ public:
         return stub<member_func_t<void, asCamera>>(0x513080, this);
     }
 };
+
+check_size(asCamera, 0x188);

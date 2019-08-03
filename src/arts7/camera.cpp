@@ -17,3 +17,32 @@
 */
 
 #include "camera.h"
+
+#include "agi/pipeline.h"
+
+void asCamera::SetView(float hfov, float vfov, float near, float far)
+{
+    // See asCamera::Update
+
+    float hfov_scale = mem::field<float>(this, 0x38); // Should be 1.0
+    float vfov_scale = mem::field<float>(this, 0x3C); // Should be 1.0
+
+    float fov_scale =
+        (agiPipeline::CurrentPipe->m_Width * hfov_scale) / (agiPipeline::CurrentPipe->m_Height * vfov_scale);
+
+    hfov *= (fov_scale / vfov);
+
+    mem::field<float>(this, 0x6C) = hfov; // Horizontal FOV
+
+    // mem::field<float>(this, 0x74) = 1.0f; // Vertical FOV
+    mem::field<bool32_t>(this, 0xB8) = 1; // Dynamically calculate vertical FOV
+
+    mem::field<float>(this, 0x78) = near; // Near Clip
+    mem::field<float>(this, 0x7C) = far;  // Far Clip
+}
+
+define_dummy_symbol(ascamera);
+
+run_once([] {
+    auto_hook(0x513D00, asCamera::SetView);
+});
