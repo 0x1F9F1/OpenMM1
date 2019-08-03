@@ -54,6 +54,8 @@
     0x67BB00 | int DisableFogOnAlphaGlow | ?DisableFogOnAlphaGlow@@3HA
 */
 
+#include "agi/vertex.h"
+
 // 0x4F4920 | ?GetPackedTexture@@YAPAVagiTexDef@@PADH@Z
 inline class agiTexDef* GetPackedTexture(char* arg1, int32_t arg2)
 {
@@ -75,6 +77,19 @@ inline extern_var(0x67BB00, int32_t, DisableFogOnAlphaGlow);
 class agiPolySet
 {
 public:
+    uint16_t* Indices {nullptr};
+    agiVtx* Verts2 {nullptr};
+    agiVtx* Verts {nullptr};
+    agiTexDef* Textures[2] {};
+    int32_t VertCount {0};
+    int32_t CurrentIndices {0};
+    int32_t BaseIndex {0};
+    int32_t MaxVerts {0};
+    int32_t MaxIndices {0};
+    int32_t MultiTex {0};
+
+    void Init(int32_t verts, int32_t indices);
+
     // 0x67BA00 | ?TriCount@agiPolySet@@2HA
     static inline extern_var(0x67BA00, int32_t, TriCount);
 
@@ -85,16 +100,13 @@ public:
     }
 };
 
+check_size(agiPolySet, 0x2C);
+
 class agiTexSorter
 {
 public:
     // 0x4F3DA0 | ??0agiTexSorter@@QAE@XZ
-    inline agiTexSorter()
-    {
-        // stub<member_func_t<void, agiTexSorter>>(0x4F3DA0, this);
-
-        unimplemented();
-    }
+    agiTexSorter();
 
     // 0x4F3FC0 | ??1agiTexSorter@@QAE@XZ
     inline ~agiTexSorter()
@@ -168,7 +180,7 @@ public:
     static inline extern_var(0x67B8EC, class agiTexSorter*, Instance);
 
     // 0x67B8F8 | ?OpaquePolySets@agiTexSorter@@2PAPAVagiPolySet@@A
-    static inline extern_var(0x67B8F8, class agiPolySet**, OpaquePolySets);
+    static inline extern_var(0x67B8F8, class agiPolySet * [64], OpaquePolySets);
 
     // 0x67B9F8 | ?OutOfPoolFlushes@agiTexSorter@@2HA
     static inline extern_var(0x67B9F8, int32_t, OutOfPoolFlushes);
@@ -192,5 +204,7 @@ public:
     static inline extern_var(0x67BA48, int32_t, AlphaSetCount);
 
     // 0x67BA50 | ?AlphaPolySets@agiTexSorter@@2PAPAVagiPolySet@@A
-    static inline extern_var(0x67BA50, class agiPolySet**, AlphaPolySets);
+    static inline extern_var(0x67BA50, class agiPolySet * [32], AlphaPolySets);
 };
+
+check_size(agiTexSorter, 1);

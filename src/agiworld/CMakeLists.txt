@@ -25,6 +25,6 @@ arts_add_component(agiworld
     # skeleton.h
     # texsheet.cpp
     # texsheet.h
-    # texsort.cpp
-    # texsort.h
+    texsort.cpp
+    texsort.h
 )

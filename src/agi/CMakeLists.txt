@@ -47,6 +47,8 @@ arts_add_component(agi
     viewport.h
 
     rgba.h
+    vertex.h
+
     agilib.cpp
     agilib.h
 )

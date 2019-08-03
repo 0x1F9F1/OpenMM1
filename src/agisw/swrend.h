@@ -122,19 +122,7 @@
     0x51F310 | unsigned int __fastcall swClampAdd555(unsigned int,unsigned int) | ?swClampAdd555@@YIIII@Z
 */
 
-struct agiScreenVtx
-{
-    float x;
-    float y;
-    float z;
-    float w;
-    uint32_t specular;
-    uint32_t diffuse;
-    float tu;
-    float tv;
-};
-
-check_size(agiScreenVtx, 0x20);
+#include "agi/vertex.h"
 
 // 0x51CE30 | ?__emitDebug@@YIXPAUswSurface@@H@Z
 inline void __emitDebug(struct swSurface* arg1, int32_t arg2)

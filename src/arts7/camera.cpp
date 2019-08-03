@@ -45,6 +45,4 @@ void asCamera::SetView(float hfov, float vfov, float near, float far)
 
 define_dummy_symbol(ascamera);
 
-run_once([] {
-    auto_hook(0x513D00, asCamera::SetView);
-});
+run_once([] { auto_hook(0x513D00, asCamera::SetView); });

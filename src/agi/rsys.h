@@ -171,7 +171,7 @@ public:
     uint8_t byte2E;
     uint8_t byte2F;
     uint8_t byte30;
-    uint8_t byte31;
+    uint8_t VertType;
     uint8_t byte32;
     uint8_t byte33;
     float float34;
@@ -220,6 +220,7 @@ public:
     X(TexFilter, uint8_t, TexFilter);
     X(ShaderModel, uint8_t, ShaderModel);
     X(AlphaMode, uint8_t, AlphaMode);
+    X(VertType, uint8_t, VertType);
 
 #undef X
 
