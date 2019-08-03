@@ -218,10 +218,10 @@ public:
 
     // 0x53CE30 | ?Reload@agiSurfaceDesc@@QAEXPAD0HHPAVStream@@HH@Z
     inline void Reload(
-        char* arg1, char* arg2, int32_t arg3, int32_t arg4, class Stream* arg5, int32_t arg6, int32_t arg7)
+        const char* arg1, const char* arg2, int32_t arg3, int32_t arg4, class Stream* arg5, int32_t arg6, int32_t arg7)
     {
         return stub<
-            member_func_t<void, agiSurfaceDesc, char*, char*, int32_t, int32_t, class Stream*, int32_t, int32_t>>(
+            member_func_t<void, agiSurfaceDesc, const char*, const char*, int32_t, int32_t, class Stream*, int32_t, int32_t>>(
             0x53CE30, this, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
     }
 
