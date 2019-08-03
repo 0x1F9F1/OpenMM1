@@ -401,14 +401,20 @@ void DataCache::Age()
 
         m_nMaxHandles = j;
 
-        for (; j < i; ++j)
+        for (; j <= i;)
         {
+            ++j;
+
             DataCacheObject* dco = &m_pObjects[j];
 
             dco->m_bUsed = 0;
             dco->m_nUsed = 0;
             dco->m_pBase = nullptr;
         }
+
+        m_bNeedsDefrag = 0;
+        m_nWaste = 0;
+        m_nUsed = heap - m_pHeap;
     }
 
     ipcReleaseMutex(m_WriteMutex);
