@@ -140,16 +140,10 @@ public:
     char* GetNodeType();
 
     // 0x511140 | ?Load@asNode@@QAEHPAD@Z
-    inline int32_t Load(char* arg1)
-    {
-        return stub<member_func_t<int32_t, asNode, char*>>(0x511140, this, arg1);
-    }
+    int32_t Load(const char* path);
 
     // 0x511230 | ?Save@asNode@@QAEHPAD@Z
-    inline int32_t Save(char* arg1)
-    {
-        return stub<member_func_t<int32_t, asNode, char*>>(0x511230, this, arg1);
-    }
+    int32_t Save(const char* path);
 
     // 0x5116A0 | ?DeclareFields@asNode@@SAXXZ
     static inline void DeclareFields()

@@ -17,3 +17,41 @@
 */
 
 #include "str.h"
+
+string::~string()
+{
+    delete[] m_pData;
+}
+
+void string::Init(int32_t capacity)
+{
+    capacity += 50;
+
+    if (capacity > m_Capacity)
+    {
+        delete[] m_pData;
+        m_Capacity = capacity;
+        m_pData = new char[m_Capacity];
+    }
+}
+
+string::string(string const& other)
+    : string(other.m_pData)
+{}
+
+string::string(char const* value)
+{
+    int32_t length = static_cast<int32_t>(strlen(value));
+
+    m_Capacity = length + 50;
+    m_pData = new char[m_Capacity];
+
+    memcpy(m_pData, value, length + 1);
+}
+
+string::string()
+{
+    m_Capacity = 51;
+    m_pData = new char[m_Capacity];
+    m_pData[0] = '\0';
+}

@@ -20,6 +20,9 @@
 
 #include "arts7/sim.h"
 #include "data7/metaclass.h"
+#include "data7/str.h"
+#include "stream/sparser.h"
+#include "stream/stream.h"
 
 // 0x510900 | ?IsValidPointer@@YAHPAXIH@Z
 inline int32_t IsValidPointer(void* ptr, uint32_t size, int32_t writable)
@@ -365,12 +368,89 @@ void asNode::ResChange(int32_t arg1, int32_t arg2)
 void asNode::UpdatePaused()
 {}
 
+int32_t asNode::Load(const char* path)
+{
+    export_hook(0x511140);
+
+    Ptr<Stream> input(s_fopen(path, "r"));
+
+    if (!input)
+    {
+        Errorf("asNode::Load(%s) failed.", path);
+
+        return 0;
+    }
+
+    StreamMiniParser parser(path, input.Release());
+
+    GetClass()->Load(&parser, this);
+
+    if (parser.m_ErrorCount)
+    {
+        m_Flags |= 4u;
+
+        return 0;
+    }
+    else
+    {
+        m_Flags &= ~4u;
+
+        return 1;
+    }
+}
+
+int32_t asNode::Save(const char* path)
+{
+    export_hook(0x511230);
+
+    Ptr<Stream> output(s_fopen(path, "w"));
+
+    if (!output)
+    {
+        Errorf("asNode::Save(%s) failed.", path);
+
+        return 0;
+    }
+
+    StreamMiniParser parser(path, output.Release());
+
+    GetClass()->Save(&parser, this);
+
+    return 1;
+}
+
 void asNode::Load()
 {
-    return stub<member_func_t<void, asNode>>(0x5114C0, this);
+    const char* name = m_Name;
+
+    if (!name || !strcmp(name, "_"))
+    {
+        name = "default";
+    }
+
+    char buffer[100];
+    sprintf_s(buffer, ".%s", GetClass()->m_Name);
+
+    string path;
+    path.SaveName(name, 0, "tune", buffer);
+
+    Load(path.m_pData);
 }
 
 void asNode::Save()
 {
-    return stub<member_func_t<void, asNode>>(0x5112E0, this);
+    const char* name = m_Name;
+
+    if (!name || !strcmp(name, "_"))
+    {
+        name = "default";
+    }
+
+    char buffer[100];
+    sprintf_s(buffer, ".%s", GetClass()->m_Name);
+
+    string path;
+    path.SaveName(name, 0, "tune", buffer);
+
+    Save(path.m_pData);
 }

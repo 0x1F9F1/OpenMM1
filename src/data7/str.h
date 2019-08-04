@@ -73,34 +73,19 @@ public:
     int32_t m_Capacity {0};
 
     // 0x40B7C0 | ??1string@@QAE@XZ
-    inline ~string()
-    {
-        stub<member_func_t<void, string>>(0x40B7C0, this);
-    }
+    ~string();
 
     // 0x48F110 | ?Init@string@@QAEXH@Z
-    inline void Init(int32_t arg1)
-    {
-        return stub<member_func_t<void, string, int32_t>>(0x48F110, this, arg1);
-    }
+    void Init(int32_t capacity);
 
     // 0x48F150 | ??0string@@QAE@ABV0@@Z
-    inline string(class string const& arg1)
-    {
-        stub<member_func_t<void, string, class string const&>>(0x48F150, this, arg1);
-    }
+    string(class string const& other);
 
     // 0x499B10 | ??0string@@QAE@PBD@Z
-    inline string(char const* arg1)
-    {
-        stub<member_func_t<void, string, char const*>>(0x499B10, this, arg1);
-    }
+    string(char const* value);
 
     // 0x55AE40 | ??0string@@QAE@XZ
-    inline string()
-    {
-        stub<member_func_t<void, string>>(0x55AE40, this);
-    }
+    string();
 
     // 0x55AE70 | ??Hstring@@QBE?AV0@PBD@Z
     inline class string operator+(char const* arg1)
