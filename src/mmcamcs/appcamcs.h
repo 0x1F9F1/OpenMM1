@@ -40,16 +40,7 @@
 inline extern_var(0x67B7E8, class MetaClass, AppCamCSMetaClass);
 
 // 0x4EF320 | ?new_AppCamCS@@YAPAXH@Z
-inline void* new_AppCamCS(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4EF320, arg1);
-}
-
 // 0x4EF3F0 | ?delete_AppCamCS@@YAXPAXH@Z
-inline void delete_AppCamCS(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4EF3F0, arg1, arg2);
-}
 
 struct AppCamCS : BaseCamCS
 {

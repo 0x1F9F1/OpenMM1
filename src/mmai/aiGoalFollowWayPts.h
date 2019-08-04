@@ -55,16 +55,7 @@
 inline extern_var(0x609FA0, class MetaClass, aiGoalFollowWayPtsMetaClass);
 
 // 0x462F90 | ?new_aiGoalFollowWayPts@@YAPAXH@Z
-inline void* new_aiGoalFollowWayPts(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x462F90, arg1);
-}
-
 // 0x463060 | ?delete_aiGoalFollowWayPts@@YAXPAXH@Z
-inline void delete_aiGoalFollowWayPts(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x463060, arg1, arg2);
-}
 
 struct aiGoalFollowWayPts : aiGoal
 {

@@ -50,16 +50,7 @@
 inline extern_var(0x6094A8, class MetaClass, mmMultiBlitzMetaClass);
 
 // 0x416470 | ?new_mmMultiBlitz@@YAPAXH@Z
-inline void* new_mmMultiBlitz(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x416470, arg1);
-}
-
 // 0x416550 | ?delete_mmMultiBlitz@@YAXPAXH@Z
-inline void delete_mmMultiBlitz(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x416550, arg1, arg2);
-}
 
 struct mmMultiBlitz : mmGameMulti
 {

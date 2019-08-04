@@ -181,16 +181,7 @@ inline void parseARGB(uint32_t& arg1)
 }
 
 // 0x485270 | ?new_mmCullCity@@YAPAXH@Z
-inline void* new_mmCullCity(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x485270, arg1);
-}
-
 // 0x485340 | ?delete_mmCullCity@@YAXPAXH@Z
-inline void delete_mmCullCity(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x485340, arg1, arg2);
-}
 
 class mmCullCity : asNode
 {

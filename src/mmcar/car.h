@@ -64,16 +64,7 @@ inline extern_var(0x60A1D4, float, ffval);
 inline extern_var(0x60A1D8, class MetaClass, mmCarMetaClass);
 
 // 0x46C260 | ?new_mmCar@@YAPAXH@Z
-inline void* new_mmCar(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x46C260, arg1);
-}
-
 // 0x46C330 | ?delete_mmCar@@YAXPAXH@Z
-inline void delete_mmCar(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x46C330, arg1, arg2);
-}
 
 class mmCar : mmPhysEntity
 {

@@ -49,16 +49,7 @@
 inline extern_var(0x6095B8, class MetaClass, mmMultiRaceMetaClass);
 
 // 0x41D1E0 | ?new_mmMultiRace@@YAPAXH@Z
-inline void* new_mmMultiRace(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x41D1E0, arg1);
-}
-
 // 0x41D2B0 | ?delete_mmMultiRace@@YAXPAXH@Z
-inline void delete_mmMultiRace(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x41D2B0, arg1, arg2);
-}
 
 struct mmMultiRace : mmGameMulti
 {

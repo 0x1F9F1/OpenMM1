@@ -47,16 +47,7 @@
 inline extern_var(0x6F2C18, class MetaClass, asFormMetaClass);
 
 // 0x514800 | ?new_asForm@@YAPAXH@Z
-inline void* new_asForm(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x514800, arg1);
-}
-
 // 0x5148C0 | ?delete_asForm@@YAXPAXH@Z
-inline void delete_asForm(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x5148C0, arg1, arg2);
-}
 
 struct asForm : asNode
 {

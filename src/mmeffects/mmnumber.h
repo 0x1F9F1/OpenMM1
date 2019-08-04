@@ -45,16 +45,7 @@
 inline extern_var(0x67B848, class MetaClass, mmNumberMetaClass);
 
 // 0x4F17A0 | ?new_mmNumber@@YAPAXH@Z
-inline void* new_mmNumber(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4F17A0, arg1);
-}
-
 // 0x4F1860 | ?delete_mmNumber@@YAXPAXH@Z
-inline void delete_mmNumber(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4F1860, arg1, arg2);
-}
 
 class mmNumberFont
 {

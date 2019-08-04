@@ -43,16 +43,7 @@
 inline extern_var(0x6F2B98, class MetaClass, asLampMetaClass);
 
 // 0x512A00 | ?new_asLamp@@YAPAXH@Z
-inline void* new_asLamp(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x512A00, arg1);
-}
-
 // 0x512AC0 | ?delete_asLamp@@YAXPAXH@Z
-inline void delete_asLamp(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x512AC0, arg1, arg2);
-}
 
 struct asLamp : asNode
 {

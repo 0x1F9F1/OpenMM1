@@ -49,16 +49,7 @@
 inline extern_var(0x6094F0, class MetaClass, mmMultiCircuitMetaClass);
 
 // 0x417B80 | ?new_mmMultiCircuit@@YAPAXH@Z
-inline void* new_mmMultiCircuit(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x417B80, arg1);
-}
-
 // 0x417C50 | ?delete_mmMultiCircuit@@YAXPAXH@Z
-inline void delete_mmMultiCircuit(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x417C50, arg1, arg2);
-}
 
 struct mmMultiCircuit : mmGameMulti
 {

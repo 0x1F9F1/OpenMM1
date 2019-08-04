@@ -37,16 +37,7 @@
 inline extern_var(0x60A410, class MetaClass, mmAxleMetaClass);
 
 // 0x474C40 | ?new_mmAxle@@YAPAXH@Z
-inline void* new_mmAxle(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x474C40, arg1);
-}
-
 // 0x474D10 | ?delete_mmAxle@@YAXPAXH@Z
-inline void delete_mmAxle(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x474D10, arg1, arg2);
-}
 
 struct mmAxle : asLinearCS
 {

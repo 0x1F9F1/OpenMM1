@@ -47,16 +47,7 @@
 inline extern_var(0x6F2C68, class MetaClass, asViewCSMetaClass);
 
 // 0x516060 | ?new_asViewCS@@YAPAXH@Z
-inline void* new_asViewCS(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x516060, arg1);
-}
-
 // 0x516130 | ?delete_asViewCS@@YAXPAXH@Z
-inline void delete_asViewCS(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x516130, arg1, arg2);
-}
 
 struct asViewCS : asLinearCS
 {

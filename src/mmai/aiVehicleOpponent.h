@@ -54,16 +54,7 @@
 inline extern_var(0x609DF8, class MetaClass, aiVehicleOpponentMetaClass);
 
 // 0x4485E0 | ?new_aiVehicleOpponent@@YAPAXH@Z
-inline void* new_aiVehicleOpponent(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4485E0, arg1);
-}
-
 // 0x4486B0 | ?delete_aiVehicleOpponent@@YAXPAXH@Z
-inline void delete_aiVehicleOpponent(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4486B0, arg1, arg2);
-}
 
 class aiVehicleOpponent : aiVehicle
 {

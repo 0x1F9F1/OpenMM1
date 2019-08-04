@@ -53,16 +53,7 @@ inline int32_t ConvertDItoString(int32_t arg1, char* arg2, int32_t arg3)
 inline extern_var(0x67B558, class MetaClass, mmIODevMetaClass);
 
 // 0x4D8690 | ?new_mmIODev@@YAPAXH@Z
-inline void* new_mmIODev(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4D8690, arg1);
-}
-
 // 0x4D8760 | ?delete_mmIODev@@YAXPAXH@Z
-inline void delete_mmIODev(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4D8760, arg1, arg2);
-}
 
 class mmIODev : mmInfoBase
 {

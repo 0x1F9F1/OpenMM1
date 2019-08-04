@@ -64,16 +64,7 @@
 inline extern_var(0x609F40, class MetaClass, aiVehicleSplineMetaClass);
 
 // 0x454F20 | ?new_aiVehicleSpline@@YAPAXH@Z
-inline void* new_aiVehicleSpline(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x454F20, arg1);
-}
-
 // 0x454FF0 | ?delete_aiVehicleSpline@@YAXPAXH@Z
-inline void delete_aiVehicleSpline(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x454FF0, arg1, arg2);
-}
 
 class aiVehicleSpline : aiVehicle
 {

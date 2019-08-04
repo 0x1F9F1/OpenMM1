@@ -45,16 +45,7 @@
 inline extern_var(0x67B700, class MetaClass, PointCamCSMetaClass);
 
 // 0x4EC7C0 | ?new_PointCamCS@@YAPAXH@Z
-inline void* new_PointCamCS(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4EC7C0, arg1);
-}
-
 // 0x4EC890 | ?delete_PointCamCS@@YAXPAXH@Z
-inline void delete_PointCamCS(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4EC890, arg1, arg2);
-}
 
 struct PointCamCS : CarCamCS
 {

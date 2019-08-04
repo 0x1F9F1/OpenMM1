@@ -54,16 +54,7 @@ inline extern_var(0x60A448, class MetaClass, mmWheelMetaClass);
 inline extern_var(0x60A47C, float, DispLatZeroThresh);
 
 // 0x476E80 | ?new_mmWheel@@YAPAXH@Z
-inline void* new_mmWheel(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x476E80, arg1);
-}
-
 // 0x476F50 | ?delete_mmWheel@@YAXPAXH@Z
-inline void delete_mmWheel(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x476F50, arg1, arg2);
-}
 
 class mmWheel : asLinearCS
 {

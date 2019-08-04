@@ -38,16 +38,7 @@
 inline extern_var(0x6F2BC0, class MetaClass, asLinearCSMetaClass);
 
 // 0x512D10 | ?new_asLinearCS@@YAPAXH@Z
-inline void* new_asLinearCS(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x512D10, arg1);
-}
-
 // 0x512DE0 | ?delete_asLinearCS@@YAXPAXH@Z
-inline void delete_asLinearCS(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x512DE0, arg1, arg2);
-}
 
 class asLinearCS : asNode
 {

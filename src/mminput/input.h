@@ -151,16 +151,7 @@ inline extern_var(0x67B53C, struct IDirectInputA*, gpdi);
 inline extern_var(0x67B540, float, testValue);
 
 // 0x4D6ED0 | ?new_mmInput@@YAPAXH@Z
-inline void* new_mmInput(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4D6ED0, arg1);
-}
-
 // 0x4D6FA0 | ?delete_mmInput@@YAXPAXH@Z
-inline void delete_mmInput(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4D6FA0, arg1, arg2);
-}
 
 class mmInput : asNode
 {

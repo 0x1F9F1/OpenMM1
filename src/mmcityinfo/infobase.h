@@ -37,16 +37,7 @@
 inline extern_var(0x66A8F0, class MetaClass, mmInfoBaseMetaClass);
 
 // 0x4C5A00 | ?new_mmInfoBase@@YAPAXH@Z
-inline void* new_mmInfoBase(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4C5A00, arg1);
-}
-
 // 0x4C5AD0 | ?delete_mmInfoBase@@YAXPAXH@Z
-inline void delete_mmInfoBase(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4C5AD0, arg1, arg2);
-}
 
 struct mmInfoBase : Base
 {

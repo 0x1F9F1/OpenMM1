@@ -84,16 +84,7 @@ inline extern_var(0x609548, class MetaClass, mmMultiCRMetaClass);
 inline extern_var(0x609578, int32_t, TwoPlayers);
 
 // 0x41B530 | ?new_mmMultiCR@@YAPAXH@Z
-inline void* new_mmMultiCR(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x41B530, arg1);
-}
-
 // 0x41B600 | ?delete_mmMultiCR@@YAXPAXH@Z
-inline void delete_mmMultiCR(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x41B600, arg1, arg2);
-}
 
 struct mmMultiCR : mmGameMulti
 {

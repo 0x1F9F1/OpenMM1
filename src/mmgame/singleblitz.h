@@ -68,16 +68,7 @@
 inline extern_var(0x609378, class MetaClass, mmSingleBlitzMetaClass);
 
 // 0x410990 | ?new_mmSingleBlitz@@YAPAXH@Z
-inline void* new_mmSingleBlitz(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x410990, arg1);
-}
-
 // 0x410A70 | ?delete_mmSingleBlitz@@YAXPAXH@Z
-inline void delete_mmSingleBlitz(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x410A70, arg1, arg2);
-}
 
 struct foobar : asNode
 {

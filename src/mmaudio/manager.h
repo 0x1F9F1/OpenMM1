@@ -147,16 +147,7 @@ inline extern_var(0x67B5F0, class AudManager*, AUDMGRPTR);
 // Skipped (Variable Arguments)
 
 // 0x4DCDD0 | ?new_AudManager@@YAPAXH@Z
-inline void* new_AudManager(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4DCDD0, arg1);
-}
-
 // 0x4DCEA0 | ?delete_AudManager@@YAXPAXH@Z
-inline void delete_AudManager(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4DCEA0, arg1, arg2);
-}
 
 class AudManager : asNode
 {

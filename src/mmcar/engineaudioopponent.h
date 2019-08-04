@@ -42,16 +42,7 @@
 inline extern_var(0x60A5D0, class MetaClass, EngineAudioOpponentMetaClass);
 
 // 0x47CAA0 | ?new_EngineAudioOpponent@@YAPAXH@Z
-inline void* new_EngineAudioOpponent(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x47CAA0, arg1);
-}
-
 // 0x47CB60 | ?delete_EngineAudioOpponent@@YAXPAXH@Z
-inline void delete_EngineAudioOpponent(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x47CB60, arg1, arg2);
-}
 
 struct EngineAudioOpponent : asNode
 {

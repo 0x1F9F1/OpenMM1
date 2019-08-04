@@ -44,16 +44,7 @@
 inline extern_var(0x60A4F8, class MetaClass, mmCarRoadFFMetaClass);
 
 // 0x4788C0 | ?new_mmCarRoadFF@@YAPAXH@Z
-inline void* new_mmCarRoadFF(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4788C0, arg1);
-}
-
 // 0x478980 | ?delete_mmCarRoadFF@@YAXPAXH@Z
-inline void delete_mmCarRoadFF(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x478980, arg1, arg2);
-}
 
 struct mmCarRoadFF : asNode
 {

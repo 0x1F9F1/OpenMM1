@@ -42,16 +42,7 @@
 inline extern_var(0x668090, class MetaClass, mmAnimMgrMetaClass);
 
 // 0x4B63A0 | ?new_mmAnimMgr@@YAPAXH@Z
-inline void* new_mmAnimMgr(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4B63A0, arg1);
-}
-
 // 0x4B6470 | ?delete_mmAnimMgr@@YAXPAXH@Z
-inline void delete_mmAnimMgr(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4B6470, arg1, arg2);
-}
 
 struct mmAnimMgr : asNode
 {

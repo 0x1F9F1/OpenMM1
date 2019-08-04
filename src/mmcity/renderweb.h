@@ -112,16 +112,7 @@ inline extern_var(0x64F828, int32_t, PopupEnabled);
 inline extern_var(0x64F82C, int32_t, Front2Back);
 
 // 0x487D40 | ?new_asRenderWeb@@YAPAXH@Z
-inline void* new_asRenderWeb(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x487D40, arg1);
-}
-
 // 0x487E20 | ?delete_asRenderWeb@@YAXPAXH@Z
-inline void delete_asRenderWeb(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x487E20, arg1, arg2);
-}
 
 struct asRenderWeb : asPortalWeb
 {

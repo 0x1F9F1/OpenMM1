@@ -39,16 +39,7 @@
 inline extern_var(0x67B4C8, class MetaClass, asAeroMetaClass);
 
 // 0x4D34F0 | ?new_asAero@@YAPAXH@Z
-inline void* new_asAero(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4D34F0, arg1);
-}
-
 // 0x4D35B0 | ?delete_asAero@@YAXPAXH@Z
-inline void delete_asAero(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4D35B0, arg1, arg2);
-}
 
 struct asAero : asNode
 {

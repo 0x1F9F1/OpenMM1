@@ -68,28 +68,10 @@ inline extern_var(0x6682D8, class MetaClass, mmBangerDataMetaClass);
 inline extern_var(0x668330, class MetaClass, mmBangerDataManagerMetaClass);
 
 // 0x4BDD00 | ?new_mmBangerData@@YAPAXH@Z
-inline void* new_mmBangerData(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4BDD00, arg1);
-}
-
 // 0x4BDE30 | ?delete_mmBangerData@@YAXPAXH@Z
-inline void delete_mmBangerData(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4BDE30, arg1, arg2);
-}
 
 // 0x4BDEE0 | ?new_mmBangerDataManager@@YAPAXH@Z
-inline void* new_mmBangerDataManager(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4BDEE0, arg1);
-}
-
 // 0x4BDFB0 | ?delete_mmBangerDataManager@@YAXPAXH@Z
-inline void delete_mmBangerDataManager(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4BDFB0, arg1, arg2);
-}
 
 class mmBangerData : asNode
 {

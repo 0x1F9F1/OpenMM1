@@ -49,16 +49,7 @@
 inline extern_var(0x66A918, class MetaClass, mmRecordMetaClass);
 
 // 0x4C5F80 | ?new_mmRecord@@YAPAXH@Z
-inline void* new_mmRecord(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4C5F80, arg1);
-}
-
 // 0x4C6050 | ?delete_mmRecord@@YAXPAXH@Z
-inline void delete_mmRecord(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4C6050, arg1, arg2);
-}
 
 class mmRecord : mmInfoBase
 {

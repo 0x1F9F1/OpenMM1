@@ -61,28 +61,10 @@ inline extern_var(0x60A280, class MetaClass, mmShardManagerMetaClass);
 inline extern_var(0x60A2F8, class MetaClass, mmShardMetaClass);
 
 // 0x470890 | ?new_mmShard@@YAPAXH@Z
-inline void* new_mmShard(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x470890, arg1);
-}
-
 // 0x470970 | ?delete_mmShard@@YAXPAXH@Z
-inline void delete_mmShard(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x470970, arg1, arg2);
-}
 
 // 0x470A80 | ?new_mmShardManager@@YAPAXH@Z
-inline void* new_mmShardManager(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x470A80, arg1);
-}
-
 // 0x470B40 | ?delete_mmShardManager@@YAXPAXH@Z
-inline void delete_mmShardManager(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x470B40, arg1, arg2);
-}
 
 class mmShardManager : asNode
 {

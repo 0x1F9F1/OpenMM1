@@ -64,16 +64,7 @@ inline extern_var(0x60A198, class MetaClass, mmCarModelMetaClass);
 inline extern_var(0x60A1CC, int32_t, IsPlayerAutoCam);
 
 // 0x46ADC0 | ?new_mmCarModel@@YAPAXH@Z
-inline void* new_mmCarModel(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x46ADC0, arg1);
-}
-
 // 0x46AEA0 | ?delete_mmCarModel@@YAXPAXH@Z
-inline void delete_mmCarModel(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x46AEA0, arg1, arg2);
-}
 
 struct mmCarModel : mmInstance
 {

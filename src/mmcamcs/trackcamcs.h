@@ -52,16 +52,7 @@
 inline extern_var(0x67B648, class MetaClass, TrackCamCSMetaClass);
 
 // 0x4EB410 | ?new_TrackCamCS@@YAPAXH@Z
-inline void* new_TrackCamCS(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4EB410, arg1);
-}
-
 // 0x4EB4E0 | ?delete_TrackCamCS@@YAXPAXH@Z
-inline void delete_TrackCamCS(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4EB4E0, arg1, arg2);
-}
 
 struct TrackCamCS : CarCamCS
 {

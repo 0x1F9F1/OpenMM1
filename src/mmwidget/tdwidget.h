@@ -52,16 +52,7 @@
 inline extern_var(0x667FA0, class MetaClass, TextDropWidgetMetaClass);
 
 // 0x4B3460 | ?new_TextDropWidget@@YAPAXH@Z
-inline void* new_TextDropWidget(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4B3460, arg1);
-}
-
 // 0x4B3520 | ?delete_TextDropWidget@@YAXPAXH@Z
-inline void delete_TextDropWidget(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4B3520, arg1, arg2);
-}
 
 struct TextDropWidget : asNode
 {

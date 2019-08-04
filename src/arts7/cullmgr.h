@@ -59,16 +59,7 @@ inline extern_var(0x6F2B40, class MetaClass, asCullManagerMetaClass);
 inline extern_var(0x6F2B68, float, Update3D);
 
 // 0x512310 | ?new_asCullManager@@YAPAXH@Z
-inline void* new_asCullManager(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x512310, arg1);
-}
-
 // 0x5123F0 | ?delete_asCullManager@@YAXPAXH@Z
-inline void delete_asCullManager(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x5123F0, arg1, arg2);
-}
 
 class asCullManager : asNode
 {

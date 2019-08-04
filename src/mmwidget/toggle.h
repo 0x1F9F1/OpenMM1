@@ -41,16 +41,7 @@
 inline extern_var(0x668040, class MetaClass, mmToggleMetaClass);
 
 // 0x4B55C0 | ?new_mmToggle@@YAPAXH@Z
-inline void* new_mmToggle(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4B55C0, arg1);
-}
-
 // 0x4B5680 | ?delete_mmToggle@@YAXPAXH@Z
-inline void delete_mmToggle(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4B5680, arg1, arg2);
-}
 
 struct mmToggle : asNode
 {

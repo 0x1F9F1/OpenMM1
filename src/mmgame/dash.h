@@ -61,16 +61,7 @@ inline extern_var(0x5A6AAC, float, MAX_SPEED);
 inline extern_var(0x609B60, class MetaClass, mmDashViewMetaClass);
 
 // 0x42F500 | ?new_mmDashView@@YAPAXH@Z
-inline void* new_mmDashView(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x42F500, arg1);
-}
-
 // 0x42F5D0 | ?delete_mmDashView@@YAXPAXH@Z
-inline void delete_mmDashView(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x42F5D0, arg1, arg2);
-}
 
 class mmExternalView : asNode
 {

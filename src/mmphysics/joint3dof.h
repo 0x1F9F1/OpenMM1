@@ -81,16 +81,7 @@ inline extern_var(0x67B418, class Vector3, Veldiscrepancy);
 inline extern_var(0x67B428, class Vector3, discrepancy);
 
 // 0x4D1BE0 | ?new_Joint3Dof@@YAPAXH@Z
-inline void* new_Joint3Dof(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4D1BE0, arg1);
-}
-
 // 0x4D1CB0 | ?delete_Joint3Dof@@YAXPAXH@Z
-inline void delete_Joint3Dof(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4D1CB0, arg1, arg2);
-}
 
 struct Joint3Dof : asNode
 {

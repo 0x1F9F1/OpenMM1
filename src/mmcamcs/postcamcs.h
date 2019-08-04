@@ -40,16 +40,7 @@
 inline extern_var(0x67B6A0, class MetaClass, PostCamCSMetaClass);
 
 // 0x4EBDF0 | ?new_PostCamCS@@YAPAXH@Z
-inline void* new_PostCamCS(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4EBDF0, arg1);
-}
-
 // 0x4EBEC0 | ?delete_PostCamCS@@YAXPAXH@Z
-inline void delete_PostCamCS(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4EBEC0, arg1, arg2);
-}
 
 struct PostCamCS : CarCamCS
 {

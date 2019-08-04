@@ -49,16 +49,7 @@
 inline extern_var(0x609318, class MetaClass, mmGameEditMetaClass);
 
 // 0x40EE00 | ?new_mmGameEdit@@YAPAXH@Z
-inline void* new_mmGameEdit(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x40EE00, arg1);
-}
-
 // 0x40EED0 | ?delete_mmGameEdit@@YAXPAXH@Z
-inline void delete_mmGameEdit(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x40EED0, arg1, arg2);
-}
 
 struct mmGameEdit : mmGame
 {

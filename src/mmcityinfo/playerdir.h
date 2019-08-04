@@ -61,16 +61,7 @@ inline struct MetaType* RefTo(struct MetaType* arg1, int32_t arg2, int32_t* arg3
 inline extern_var(0x66A870, class MetaClass, mmPlayerDirectoryMetaClass);
 
 // 0x4C3FB0 | ?new_mmPlayerDirectory@@YAPAXH@Z
-inline void* new_mmPlayerDirectory(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4C3FB0, arg1);
-}
-
 // 0x4C4080 | ?delete_mmPlayerDirectory@@YAXPAXH@Z
-inline void delete_mmPlayerDirectory(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4C4080, arg1, arg2);
-}
 
 struct mmPlayerDirectory : mmInfoBase
 {

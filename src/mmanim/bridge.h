@@ -71,28 +71,10 @@ inline extern_var(0x6680C8, class MetaClass, mmBridgeMgrMetaClass);
 inline extern_var(0x6680F8, class MetaClass, mmBridgeSetMetaClass);
 
 // 0x4B79C0 | ?new_mmBridgeSet@@YAPAXH@Z
-inline void* new_mmBridgeSet(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4B79C0, arg1);
-}
-
 // 0x4B7A90 | ?delete_mmBridgeSet@@YAXPAXH@Z
-inline void delete_mmBridgeSet(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4B7A90, arg1, arg2);
-}
 
 // 0x4B7C40 | ?new_mmBridgeMgr@@YAPAXH@Z
-inline void* new_mmBridgeMgr(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4B7C40, arg1);
-}
-
 // 0x4B7D20 | ?delete_mmBridgeMgr@@YAXPAXH@Z
-inline void delete_mmBridgeMgr(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4B7D20, arg1, arg2);
-}
 
 class mmBridgeSet : asNode
 {

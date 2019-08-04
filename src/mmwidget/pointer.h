@@ -43,16 +43,7 @@
 inline extern_var(0x667F78, class MetaClass, sfPointerMetaClass);
 
 // 0x4B2D60 | ?new_sfPointer@@YAPAXH@Z
-inline void* new_sfPointer(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4B2D60, arg1);
-}
-
 // 0x4B2E20 | ?delete_sfPointer@@YAXPAXH@Z
-inline void delete_sfPointer(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4B2E20, arg1, arg2);
-}
 
 struct sfPointer : asNode
 {

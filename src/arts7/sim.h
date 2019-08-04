@@ -115,16 +115,7 @@ inline void QuietPrinter(int32_t arg1, char const* arg2, char* arg3)
 }
 
 // 0x510970 | ?new_asSimulation@@YAPAXH@Z
-inline void* new_asSimulation(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x510970, arg1);
-}
-
 // 0x510A40 | ?delete_asSimulation@@YAXPAXH@Z
-inline void delete_asSimulation(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x510A40, arg1, arg2);
-}
 
 #if 0
 class agiLib<class agiPhysParameters, class agiPhysDef>

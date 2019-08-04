@@ -60,16 +60,7 @@
 inline extern_var(0x667D00, class MetaClass, UIBMButtonMetaClass);
 
 // 0x4AC420 | ?new_UIBMButton@@YAPAXH@Z
-inline void* new_UIBMButton(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4AC420, arg1);
-}
-
 // 0x4AC4F0 | ?delete_UIBMButton@@YAXPAXH@Z
-inline void delete_UIBMButton(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4AC4F0, arg1, arg2);
-}
 
 class UIBMButton : uiWidget
 {

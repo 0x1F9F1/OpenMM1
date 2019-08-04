@@ -38,10 +38,6 @@ class MetaClass;
 inline extern_var(0x712218, MetaClass, BaseMetaClass);
 
 // 0x55ABA0 | ?delete_Base@@YAXPAXH@Z
-inline void delete_Base(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x55ABA0, arg1, arg2);
-}
 
 class Base
 {

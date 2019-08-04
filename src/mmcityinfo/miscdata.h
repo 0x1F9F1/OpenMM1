@@ -51,16 +51,7 @@
 inline extern_var(0x66A820, class MetaClass, mmMiscDataMetaClass);
 
 // 0x4C1D80 | ?new_mmMiscData@@YAPAXH@Z
-inline void* new_mmMiscData(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4C1D80, arg1);
-}
-
 // 0x4C1E60 | ?delete_mmMiscData@@YAXPAXH@Z
-inline void delete_mmMiscData(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4C1E60, arg1, arg2);
-}
 
 struct mmMiscData : mmInfoBase
 {

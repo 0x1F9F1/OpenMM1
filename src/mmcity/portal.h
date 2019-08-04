@@ -62,10 +62,6 @@ inline struct asPortalCell* LookupEdge(char* arg1)
 inline extern_var(0x667AE8, class MetaClass, asPortalWebMetaClass);
 
 // 0x48E050 | ?delete_asPortalWeb@@YAXPAXH@Z
-inline void delete_asPortalWeb(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x48E050, arg1, arg2);
-}
 
 struct asPortalPVS
 {

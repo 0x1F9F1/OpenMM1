@@ -45,16 +45,7 @@
 inline extern_var(0x668068, class MetaClass, mmDropDownMetaClass);
 
 // 0x4B5E90 | ?new_mmDropDown@@YAPAXH@Z
-inline void* new_mmDropDown(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4B5E90, arg1);
-}
-
 // 0x4B5F60 | ?delete_mmDropDown@@YAXPAXH@Z
-inline void delete_mmDropDown(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4B5F60, arg1, arg2);
-}
 
 struct mmDropDown : asNode
 {

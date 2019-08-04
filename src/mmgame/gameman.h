@@ -80,16 +80,7 @@ inline void DoScan(void* arg1)
 }
 
 // 0x4035E0 | ?new_mmGameManager@@YAPAXH@Z
-inline void* new_mmGameManager(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4035E0, arg1);
-}
-
 // 0x4036B0 | ?delete_mmGameManager@@YAXPAXH@Z
-inline void delete_mmGameManager(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4036B0, arg1, arg2);
-}
 
 class mmGameManager : asNode
 {

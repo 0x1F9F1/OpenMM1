@@ -63,28 +63,10 @@ inline extern_var(0x60A230, class MetaClass, mmSkidMetaClass);
 inline extern_var(0x60A258, class MetaClass, mmSkidManagerMetaClass);
 
 // 0x46FDA0 | ?new_mmSkid@@YAPAXH@Z
-inline void* new_mmSkid(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x46FDA0, arg1);
-}
-
 // 0x46FE80 | ?delete_mmSkid@@YAXPAXH@Z
-inline void delete_mmSkid(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x46FE80, arg1, arg2);
-}
 
 // 0x46FF30 | ?new_mmSkidManager@@YAPAXH@Z
-inline void* new_mmSkidManager(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x46FF30, arg1);
-}
-
 // 0x46FFF0 | ?delete_mmSkidManager@@YAXPAXH@Z
-inline void delete_mmSkidManager(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x46FFF0, arg1, arg2);
-}
 
 struct mmSkid : mmInstance
 {

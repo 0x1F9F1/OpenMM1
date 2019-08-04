@@ -46,16 +46,7 @@
 inline extern_var(0x609BA0, class MetaClass, mmWaypointInstanceMetaClass);
 
 // 0x430550 | ?new_mmWaypointInstance@@YAPAXH@Z
-inline void* new_mmWaypointInstance(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x430550, arg1);
-}
-
 // 0x430630 | ?delete_mmWaypointInstance@@YAXPAXH@Z
-inline void delete_mmWaypointInstance(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x430630, arg1, arg2);
-}
 
 struct mmWaypointInstance : mmStaticInstance
 {

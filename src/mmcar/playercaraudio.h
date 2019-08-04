@@ -50,16 +50,7 @@
 inline extern_var(0x60A520, class MetaClass, mmPlayerCarAudioMetaClass);
 
 // 0x47A070 | ?new_mmPlayerCarAudio@@YAPAXH@Z
-inline void* new_mmPlayerCarAudio(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x47A070, arg1);
-}
-
 // 0x47A160 | ?delete_mmPlayerCarAudio@@YAXPAXH@Z
-inline void delete_mmPlayerCarAudio(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x47A160, arg1, arg2);
-}
 
 struct mmPlayerCarAudio : asNode
 {

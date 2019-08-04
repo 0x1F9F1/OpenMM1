@@ -147,16 +147,7 @@ inline extern_var(0x679288, class mmIntersection*, ISECTS);
 inline extern_var(0x67A988, class mmPhysicsMGR, PHYS);
 
 // 0x4CCC70 | ?new_mmPhysicsMGR@@YAPAXH@Z
-inline void* new_mmPhysicsMGR(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4CCC70, arg1);
-}
-
 // 0x4CCD40 | ?delete_mmPhysicsMGR@@YAXPAXH@Z
-inline void delete_mmPhysicsMGR(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4CCD40, arg1, arg2);
-}
 
 class mmPhysicsMGR : asNode
 {

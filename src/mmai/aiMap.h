@@ -140,16 +140,7 @@ inline extern_var(0x609CDC, int32_t, _nAmbientQty);
 inline extern_var(0x609CE8, float, _fTotUpdate);
 
 // 0x4369C0 | ?new_aiMap@@YAPAXH@Z
-inline void* new_aiMap(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4369C0, arg1);
-}
-
 // 0x436A90 | ?delete_aiMap@@YAXPAXH@Z
-inline void delete_aiMap(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x436A90, arg1, arg2);
-}
 
 class aiMap : asNode
 {

@@ -37,16 +37,7 @@
 inline extern_var(0x6F2B70, class MetaClass, asCullableMetaClass);
 
 // 0x512520 | ?new_asCullable@@YAPAXH@Z
-inline void* new_asCullable(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x512520, arg1);
-}
-
 // 0x5125D0 | ?delete_asCullable@@YAXPAXH@Z
-inline void delete_asCullable(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x5125D0, arg1, arg2);
-}
 
 class asCullable : Base
 {

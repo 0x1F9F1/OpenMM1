@@ -180,76 +180,23 @@ inline void MatrixFromPoints(class Matrix34& arg1, class Vector3& arg2, class Ve
 }
 
 // 0x489E10 | ?delete_mmInstance@@YAXPAXH@Z
-inline void delete_mmInstance(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x489E10, arg1, arg2);
-}
 
 // 0x489EC0 | ?delete_mmYInstance@@YAXPAXH@Z
-inline void delete_mmYInstance(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x489EC0, arg1, arg2);
-}
 
 // 0x489F70 | ?new_mmMatrixInstance@@YAPAXH@Z
-inline void* new_mmMatrixInstance(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x489F70, arg1);
-}
-
 // 0x48A050 | ?delete_mmMatrixInstance@@YAXPAXH@Z
-inline void delete_mmMatrixInstance(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x48A050, arg1, arg2);
-}
 
 // 0x48A100 | ?new_mmShearInstance@@YAPAXH@Z
-inline void* new_mmShearInstance(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x48A100, arg1);
-}
-
 // 0x48A1F0 | ?delete_mmShearInstance@@YAXPAXH@Z
-inline void delete_mmShearInstance(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x48A1F0, arg1, arg2);
-}
 
 // 0x48A2A0 | ?new_mmBuildingInstance@@YAPAXH@Z
-inline void* new_mmBuildingInstance(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x48A2A0, arg1);
-}
-
 // 0x48A390 | ?delete_mmBuildingInstance@@YAXPAXH@Z
-inline void delete_mmBuildingInstance(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x48A390, arg1, arg2);
-}
 
 // 0x48A440 | ?new_mmStaticInstance@@YAPAXH@Z
-inline void* new_mmStaticInstance(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x48A440, arg1);
-}
-
 // 0x48A520 | ?delete_mmStaticInstance@@YAXPAXH@Z
-inline void delete_mmStaticInstance(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x48A520, arg1, arg2);
-}
 
 // 0x48A5D0 | ?new_mmFacadeInstance@@YAPAXH@Z
-inline void* new_mmFacadeInstance(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x48A5D0, arg1);
-}
-
 // 0x48A6B0 | ?delete_mmFacadeInstance@@YAXPAXH@Z
-inline void delete_mmFacadeInstance(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x48A6B0, arg1, arg2);
-}
 
 class mmInstance : Base
 {

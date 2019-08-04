@@ -112,16 +112,7 @@ inline extern_var(0x7108D0, class Matrix34, IDENTITY);
 inline extern_var(0x710900, class MetaClass, Matrix34MetaClass);
 
 // 0x54FE60 | ?new_Matrix34@@YAPAXH@Z
-inline void* new_Matrix34(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x54FE60, arg1);
-}
-
 // 0x54FEB0 | ?delete_Matrix34@@YAXPAXH@Z
-inline void delete_Matrix34(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x54FEB0, arg1, arg2);
-}
 
 class Matrix34
 {

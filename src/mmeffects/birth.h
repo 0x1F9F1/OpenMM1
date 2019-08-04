@@ -37,16 +37,7 @@
 inline extern_var(0x67B8A8, class MetaClass, asBirthRuleMetaClass);
 
 // 0x4F28F0 | ?new_asBirthRule@@YAPAXH@Z
-inline void* new_asBirthRule(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4F28F0, arg1);
-}
-
 // 0x4F29C0 | ?delete_asBirthRule@@YAXPAXH@Z
-inline void delete_asBirthRule(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4F29C0, arg1, arg2);
-}
 
 class asBirthRule : asNode
 {

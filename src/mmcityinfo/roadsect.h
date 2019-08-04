@@ -94,40 +94,13 @@ inline extern_var(0x66A968, class MetaClass, mmRoadSideMetaClass);
 inline extern_var(0x66A990, class MetaClass, mmRoadSectMetaClass);
 
 // 0x4C6F90 | ?new_mmPropInfo@@YAPAXH@Z
-inline void* new_mmPropInfo(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4C6F90, arg1);
-}
-
 // 0x4C7060 | ?delete_mmPropInfo@@YAXPAXH@Z
-inline void delete_mmPropInfo(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4C7060, arg1, arg2);
-}
 
 // 0x4C71B0 | ?new_mmRoadSide@@YAPAXH@Z
-inline void* new_mmRoadSide(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4C71B0, arg1);
-}
-
 // 0x4C7280 | ?delete_mmRoadSide@@YAXPAXH@Z
-inline void delete_mmRoadSide(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4C7280, arg1, arg2);
-}
 
 // 0x4C7570 | ?new_mmRoadSect@@YAPAXH@Z
-inline void* new_mmRoadSect(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4C7570, arg1);
-}
-
 // 0x4C7640 | ?delete_mmRoadSect@@YAXPAXH@Z
-inline void delete_mmRoadSect(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4C7640, arg1, arg2);
-}
 
 class mmRoadSect : mmInfoBase
 {

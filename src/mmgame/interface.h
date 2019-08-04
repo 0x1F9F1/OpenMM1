@@ -139,16 +139,7 @@ inline uint32_t __stdcall ZoneWatcher(void* arg1)
 }
 
 // 0x40B690 | ?new_mmInterface@@YAPAXH@Z
-inline void* new_mmInterface(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x40B690, arg1);
-}
-
 // 0x40B760 | ?delete_mmInterface@@YAXPAXH@Z
-inline void delete_mmInterface(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x40B760, arg1, arg2);
-}
 
 class mmInterface : asNode
 {

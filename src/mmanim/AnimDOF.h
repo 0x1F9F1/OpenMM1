@@ -55,16 +55,7 @@
 inline extern_var(0x668148, class MetaClass, mmAnimDOFMetaClass);
 
 // 0x4B96E0 | ?new_mmAnimDOF@@YAPAXH@Z
-inline void* new_mmAnimDOF(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4B96E0, arg1);
-}
-
 // 0x4B97B0 | ?delete_mmAnimDOF@@YAXPAXH@Z
-inline void delete_mmAnimDOF(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4B97B0, arg1, arg2);
-}
 
 struct mmDrawbridgeInstance : mmDofBangerInstance
 {

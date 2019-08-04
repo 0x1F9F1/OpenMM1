@@ -83,10 +83,6 @@ inline extern_var(0x6092EC, int32_t, masscycle);
 inline extern_var(0x6092F0, class mmBangerData*, BangerProjectile);
 
 // 0x40E6D0 | ?delete_mmGame@@YAXPAXH@Z
-inline void delete_mmGame(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x40E6D0, arg1, arg2);
-}
 
 class mmGame : asNode
 {

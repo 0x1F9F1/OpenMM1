@@ -52,16 +52,7 @@
 inline extern_var(0x667F50, class MetaClass, UIVScrollBarMetaClass);
 
 // 0x4B26E0 | ?new_UIVScrollBar@@YAPAXH@Z
-inline void* new_UIVScrollBar(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4B26E0, arg1);
-}
-
 // 0x4B27B0 | ?delete_UIVScrollBar@@YAXPAXH@Z
-inline void delete_UIVScrollBar(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4B27B0, arg1, arg2);
-}
 
 class UIVScrollBar : uiWidget
 {

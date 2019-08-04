@@ -113,22 +113,9 @@ inline extern_var(0x609EB8, class MetaClass, aiVehicleInstanceMetaClass);
 inline extern_var(0x609EE0, class HashTable, NoDataWhined);
 
 // 0x44D090 | ?delete_aiVehicleInstance@@YAXPAXH@Z
-inline void delete_aiVehicleInstance(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x44D090, arg1, arg2);
-}
 
 // 0x44D300 | ?new_aiVehicleData@@YAPAXH@Z
-inline void* new_aiVehicleData(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x44D300, arg1);
-}
-
 // 0x44D3E0 | ?delete_aiVehicleData@@YAXPAXH@Z
-inline void delete_aiVehicleData(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x44D3E0, arg1, arg2);
-}
 
 class mmPhysEntity : asNode
 {

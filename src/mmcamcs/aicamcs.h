@@ -39,16 +39,7 @@
 inline extern_var(0x67B730, class MetaClass, AICamCSMetaClass);
 
 // 0x4ECE90 | ?new_AICamCS@@YAPAXH@Z
-inline void* new_AICamCS(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4ECE90, arg1);
-}
-
 // 0x4ECF60 | ?delete_AICamCS@@YAXPAXH@Z
-inline void delete_AICamCS(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4ECF60, arg1, arg2);
-}
 
 struct AICamCS : CarCamCS
 {

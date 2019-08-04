@@ -39,16 +39,7 @@
 inline extern_var(0x60A4A8, class MetaClass, VehGyroMetaClass);
 
 // 0x477B40 | ?new_VehGyro@@YAPAXH@Z
-inline void* new_VehGyro(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x477B40, arg1);
-}
-
 // 0x477C00 | ?delete_VehGyro@@YAXPAXH@Z
-inline void delete_VehGyro(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x477C00, arg1, arg2);
-}
 
 struct VehGyro : asNode
 {

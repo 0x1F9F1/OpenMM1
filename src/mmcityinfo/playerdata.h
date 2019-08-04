@@ -75,28 +75,10 @@ inline extern_var(0x66A898, class MetaClass, mmPlayerDataMetaClass);
 inline extern_var(0x66A8C0, class MetaClass, mmPlayerRecordMetaClass);
 
 // 0x4C4440 | ?new_mmPlayerRecord@@YAPAXH@Z
-inline void* new_mmPlayerRecord(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4C4440, arg1);
-}
-
 // 0x4C4510 | ?delete_mmPlayerRecord@@YAXPAXH@Z
-inline void delete_mmPlayerRecord(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4C4510, arg1, arg2);
-}
 
 // 0x4C5610 | ?new_mmPlayerData@@YAPAXH@Z
-inline void* new_mmPlayerData(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4C5610, arg1);
-}
-
 // 0x4C56E0 | ?delete_mmPlayerData@@YAXPAXH@Z
-inline void delete_mmPlayerData(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4C56E0, arg1, arg2);
-}
 
 class mmPlayerRecord : mmInfoBase
 {

@@ -58,16 +58,7 @@
 inline extern_var(0x66A848, class MetaClass, mmPlayerConfigMetaClass);
 
 // 0x4C32A0 | ?new_mmPlayerConfig@@YAPAXH@Z
-inline void* new_mmPlayerConfig(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4C32A0, arg1);
-}
-
 // 0x4C3370 | ?delete_mmPlayerConfig@@YAXPAXH@Z
-inline void delete_mmPlayerConfig(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4C3370, arg1, arg2);
-}
 
 class mmPlayerConfig : mmInfoBase
 {

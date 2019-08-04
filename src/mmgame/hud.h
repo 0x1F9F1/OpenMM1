@@ -112,16 +112,7 @@ inline extern_var(0x609A80, class MetaClass, mmHUDMetaClass);
 inline extern_var(0x609AA8, float, LastResetTime);
 
 // 0x425820 | ?new_mmHUD@@YAPAXH@Z
-inline void* new_mmHUD(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x425820, arg1);
-}
-
 // 0x4258F0 | ?delete_mmHUD@@YAXPAXH@Z
-inline void delete_mmHUD(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4258F0, arg1, arg2);
-}
 
 class mmHUD : asNode
 {

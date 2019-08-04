@@ -41,16 +41,7 @@
 inline extern_var(0x60A480, class MetaClass, mmDrivetrainMetaClass);
 
 // 0x477630 | ?new_mmDrivetrain@@YAPAXH@Z
-inline void* new_mmDrivetrain(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x477630, arg1);
-}
-
 // 0x477700 | ?delete_mmDrivetrain@@YAXPAXH@Z
-inline void delete_mmDrivetrain(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x477700, arg1, arg2);
-}
 
 struct mmDrivetrain : asNode
 {

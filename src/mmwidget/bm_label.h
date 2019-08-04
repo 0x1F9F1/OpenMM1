@@ -42,16 +42,7 @@
 inline extern_var(0x667CD0, class MetaClass, UIBMLabelMetaClass);
 
 // 0x4A9390 | ?new_UIBMLabel@@YAPAXH@Z
-inline void* new_UIBMLabel(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4A9390, arg1);
-}
-
 // 0x4A9460 | ?delete_UIBMLabel@@YAXPAXH@Z
-inline void delete_UIBMLabel(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4A9460, arg1, arg2);
-}
 
 class UIBMLabel : uiWidget
 {

@@ -70,16 +70,7 @@ inline extern_var(0x609638, class MetaClass, mmHudMapMetaClass);
 inline extern_var(0x609660, union agiVtx*, Tris);
 
 // 0x420ED0 | ?new_mmHudMap@@YAPAXH@Z
-inline void* new_mmHudMap(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x420ED0, arg1);
-}
-
 // 0x420FA0 | ?delete_mmHudMap@@YAXPAXH@Z
-inline void delete_mmHudMap(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x420FA0, arg1, arg2);
-}
 
 struct mmHudMap : asNode
 {

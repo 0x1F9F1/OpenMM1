@@ -54,16 +54,7 @@ inline struct MetaType* ArrayOf(struct MetaType* arg1, int32_t arg2)
 inline extern_var(0x60A058, class MetaClass, mmTransmissionMetaClass);
 
 // 0x468830 | ?new_mmTransmission@@YAPAXH@Z
-inline void* new_mmTransmission(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x468830, arg1);
-}
-
 // 0x468900 | ?delete_mmTransmission@@YAXPAXH@Z
-inline void delete_mmTransmission(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x468900, arg1, arg2);
-}
 
 struct mmTransmission : asNode
 {

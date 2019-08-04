@@ -46,16 +46,7 @@
 inline extern_var(0x60A3C0, class MetaClass, mmEngineMetaClass);
 
 // 0x4746F0 | ?new_mmEngine@@YAPAXH@Z
-inline void* new_mmEngine(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4746F0, arg1);
-}
-
 // 0x4747B0 | ?delete_mmEngine@@YAXPAXH@Z
-inline void delete_mmEngine(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4747B0, arg1, arg2);
-}
 
 struct mmEngine : asNode
 {

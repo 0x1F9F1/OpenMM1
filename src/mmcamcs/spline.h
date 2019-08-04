@@ -45,16 +45,7 @@
 inline extern_var(0x67B810, class MetaClass, SplineMetaClass);
 
 // 0x4EFCA0 | ?new_Spline@@YAPAXH@Z
-inline void* new_Spline(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4EFCA0, arg1);
-}
-
 // 0x4EFD60 | ?delete_Spline@@YAXPAXH@Z
-inline void delete_Spline(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4EFD60, arg1, arg2);
-}
 
 struct Spline : asNode
 {

@@ -40,16 +40,7 @@
 inline extern_var(0x67B7C0, class MetaClass, BaseCamCSMetaClass);
 
 // 0x4EE570 | ?new_BaseCamCS@@YAPAXH@Z
-inline void* new_BaseCamCS(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4EE570, arg1);
-}
-
 // 0x4EE640 | ?delete_BaseCamCS@@YAXPAXH@Z
-inline void delete_BaseCamCS(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4EE640, arg1, arg2);
-}
 
 struct BaseCamCS : asNode
 {

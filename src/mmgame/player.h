@@ -74,16 +74,7 @@ inline extern_var(0x609A40, class MetaClass, mmPlayerMetaClass);
 inline extern_var(0x609A68, int32_t, RestoreCityCam);
 
 // 0x423930 | ?new_mmPlayer@@YAPAXH@Z
-inline void* new_mmPlayer(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x423930, arg1);
-}
-
 // 0x423A10 | ?delete_mmPlayer@@YAXPAXH@Z
-inline void delete_mmPlayer(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x423A10, arg1, arg2);
-}
 
 class mmPlayer : asNode
 {

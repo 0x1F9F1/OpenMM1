@@ -54,28 +54,10 @@ inline extern_var(0x667A40, class MetaClass, mmPedManagerMetaClass);
 inline extern_var(0x667A68, class MetaClass, mmPedMetaClass);
 
 // 0x48AE40 | ?new_mmPed@@YAPAXH@Z
-inline void* new_mmPed(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x48AE40, arg1);
-}
-
 // 0x48AF20 | ?delete_mmPed@@YAXPAXH@Z
-inline void delete_mmPed(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x48AF20, arg1, arg2);
-}
 
 // 0x48AFD0 | ?new_mmPedManager@@YAPAXH@Z
-inline void* new_mmPedManager(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x48AFD0, arg1);
-}
-
 // 0x48B090 | ?delete_mmPedManager@@YAXPAXH@Z
-inline void delete_mmPedManager(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x48B090, arg1, arg2);
-}
 
 struct mmPed : mmYInstance
 {

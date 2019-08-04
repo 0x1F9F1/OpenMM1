@@ -42,16 +42,7 @@ inline extern_var(0x67B438, class MetaClass, asOverSampleMetaClass);
 inline extern_var(0x67B460, int32_t, BenchOSample);
 
 // 0x4D2090 | ?new_asOverSample@@YAPAXH@Z
-inline void* new_asOverSample(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4D2090, arg1);
-}
-
 // 0x4D2150 | ?delete_asOverSample@@YAXPAXH@Z
-inline void delete_asOverSample(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4D2150, arg1, arg2);
-}
 
 struct asOverSample : asNode
 {

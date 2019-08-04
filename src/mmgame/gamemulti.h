@@ -71,10 +71,6 @@ inline extern_var(0x609B08, class MetaClass, mmGameMultiMetaClass);
 // Skipped (Variable Arguments)
 
 // 0x42D2C0 | ?delete_mmGameMulti@@YAXPAXH@Z
-inline void delete_mmGameMulti(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x42D2C0, arg1, arg2);
-}
 
 struct mmGameMulti : mmGame
 {

@@ -50,16 +50,7 @@
 inline extern_var(0x60A388, class MetaClass, mmOpponentCarAudioMetaClass);
 
 // 0x473A70 | ?new_mmOpponentCarAudio@@YAPAXH@Z
-inline void* new_mmOpponentCarAudio(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x473A70, arg1);
-}
-
 // 0x473B60 | ?delete_mmOpponentCarAudio@@YAXPAXH@Z
-inline void delete_mmOpponentCarAudio(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x473B60, arg1, arg2);
-}
 
 class mmOpponentCarAudio : asNode
 {

@@ -46,16 +46,7 @@
 inline extern_var(0x67B670, class MetaClass, mmViewCSMetaClass);
 
 // 0x4EB9E0 | ?new_mmViewCS@@YAPAXH@Z
-inline void* new_mmViewCS(int32_t arg1)
-{
-    return stub<cdecl_t<void*, int32_t>>(0x4EB9E0, arg1);
-}
-
 // 0x4EBAB0 | ?delete_mmViewCS@@YAXPAXH@Z
-inline void delete_mmViewCS(void* arg1, int32_t arg2)
-{
-    return stub<cdecl_t<void, void*, int32_t>>(0x4EBAB0, arg1, arg2);
-}
 
 class mmViewCS : asLinearCS
 {
