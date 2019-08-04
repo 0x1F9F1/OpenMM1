@@ -73,16 +73,10 @@
 #include "eventq7/replay.h"
 
 // 0x510600 | ?InitPipeline@@YAHPADHPAPAD@Z
-inline int32_t InitPipeline(char* arg1, int32_t arg2, char** arg3)
-{
-    return stub<cdecl_t<int32_t, char*, int32_t, char**>>(0x510600, arg1, arg2, arg3);
-}
+int32_t InitPipeline(const char* title, int32_t argc, char** argv);
 
 // 0x5106C0 | ?ShutdownPipeline@@YAXXZ
-inline void ShutdownPipeline()
-{
-    return stub<cdecl_t<void>>(0x5106C0);
-}
+void ShutdownPipeline();
 
 // 0x510730 | ?RestartPipeline@@YAHHHHHH@Z
 inline int32_t RestartPipeline(int32_t arg1, int32_t arg2, int32_t arg3, int32_t arg4, int32_t arg5)

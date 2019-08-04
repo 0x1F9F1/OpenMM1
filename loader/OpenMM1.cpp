@@ -119,6 +119,7 @@ include_dummy_symbol(datacache);
 include_dummy_symbol(hashtable);
 include_dummy_symbol(ascamera);
 include_dummy_symbol(texsort);
+include_dummy_symbol(sim);
 
 BOOL APIENTRY DllMain(HMODULE hinstDLL, DWORD fdwReason, LPVOID /*lpvReserved*/)
 {

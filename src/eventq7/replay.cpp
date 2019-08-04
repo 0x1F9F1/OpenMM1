@@ -18,6 +18,8 @@
 
 #include "replay.h"
 
+#include "stream/stream.h"
+
 eqReplayChannel::eqReplayChannel(uint32_t magic)
     : m_Magic(magic)
 {
@@ -46,3 +48,17 @@ void eqReplayChannel::ShutdownRecord()
 
 void eqReplayChannel::ShutdownPlayback()
 {}
+
+void eqReplay::ShutdownRecord()
+{
+    Assert(Recording);
+
+    delete ReplayStream;
+
+    Recording = 0;
+
+    for (eqReplayChannel* i = eqReplayChannel::First; i; i = i->m_Next)
+    {
+        i->ShutdownRecord();
+    }
+}

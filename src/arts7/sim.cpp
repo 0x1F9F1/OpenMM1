@@ -18,8 +18,96 @@
 
 #include "sim.h"
 
+#include "agi/light.h"
+#include "agi/pipeline.h"
+#include "agi/print.h"
+#include "eventq7/replay.h"
+#include "midtown.h"
+
 artsReplayChannel::artsReplayChannel()
     : eqReplayChannel('SIM0')
 {}
 
 artsReplayChannel::~artsReplayChannel() = default;
+
+static extern_var(0x6F2AB8, bool32_t, s_bPipeInit);
+
+static extern_var(0x6F2ACC, int32_t, s_nCurrentPipeWidth);
+static extern_var(0x6F2ABC, int32_t, s_nCurrentPipeHeight);
+
+static extern_var(0x6F2A40, agiLight*, s_pSunLight);
+
+int32_t InitPipeline(const char* /*title*/, int32_t argc, char** argv)
+{
+    if (s_bPipeInit)
+    {
+        Quitf("Tried to InitPipeline twice.");
+    }
+
+    s_bPipeInit = 1;
+
+    Argc = argc;
+    Argv = argv;
+
+    agiPipeline::CurrentPipe = CreatePipeline(argc, argv);
+
+    if (agiPipeline::CurrentPipe->Validate())
+    {
+        Quit("Couldn't start renderer");
+    }
+
+    s_nCurrentPipeWidth = agiPipeline::CurrentPipe->m_Width;
+    s_nCurrentPipeHeight = agiPipeline::CurrentPipe->m_Height;
+
+    agiPipeline::CurrentPipe->m_hWnd = CreatePipelineAttachableWindow(
+        APPTITLE, 0, 0, agiPipeline::CurrentPipe->m_Width, agiPipeline::CurrentPipe->m_Height, 0);
+
+    int32_t result = agiPipeline::CurrentPipe->BeginAllGfx();
+
+    if (!result)
+    {
+        agiPrintInit();
+
+        agiPipeline::CurrentPipe->ClearAll(0);
+    }
+
+    return result;
+}
+
+void ShutdownPipeline()
+{
+    if (s_bPipeInit)
+    {
+        s_bPipeInit = 0;
+
+        if (s_pSunLight)
+        {
+            s_pSunLight->Release();
+        }
+
+        agiPrintShutdown();
+
+        agiPipeline::CurrentPipe->EndAllGfx();
+
+        delete agiPipeline::CurrentPipe;
+        agiPipeline::CurrentPipe = 0;
+
+        DestroyPipelineAttachableWindow();
+
+        if (eqReplay::Recording)
+        {
+            eqReplay::ShutdownRecord();
+        }
+    }
+    else
+    {
+        Errorf("ShutdownPipeline w/out InitPipeline.");
+    }
+}
+
+define_dummy_symbol(sim);
+
+run_once([] {
+    auto_hook(0x510600, InitPipeline);
+    auto_hook(0x5106C0, ShutdownPipeline);
+});

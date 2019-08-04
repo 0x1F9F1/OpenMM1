@@ -42,6 +42,22 @@
 
 class Stream;
 
+class eqReplay
+{
+public:
+    // 0x546380 | ?ShutdownRecord@eqReplay@@SAXXZ
+    static void ShutdownRecord();
+
+    // 0x71087C | ?ReplayStream@eqReplay@@0PAVStream@@A
+    static inline extern_var(0x71087C, Stream*, ReplayStream);
+
+    // 0x710880 | ?Playback@eqReplay@@2HA
+    static inline extern_var(0x710880, bool32_t, Playback);
+
+    // 0x710884 | ?Recording@eqReplay@@2HA
+    static inline extern_var(0x710884, bool32_t, Recording);
+};
+
 class eqReplayChannel
 {
 public:

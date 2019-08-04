@@ -28,12 +28,14 @@
 #    include "agigl/glpipe.h"
 #endif
 
-#ifdef USE_SDL2
 agiPipeline* CreatePipeline(int32_t argc, char** argv)
 {
+#ifdef USE_SDL2
     return glCreatePipeline(argc, argv);
-}
+#else
+    return stub<cdecl_t<agiPipeline*, int32_t, char**>>(0x401030, argc, argv);
 #endif
+}
 
 void Application(int32_t argc, char** argv)
 {
