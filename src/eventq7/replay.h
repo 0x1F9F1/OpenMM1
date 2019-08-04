@@ -40,6 +40,8 @@
     0x710884 | public: static int eqReplay::Recording | ?Recording@eqReplay@@2HA
 */
 
+class Stream;
+
 class eqReplayChannel
 {
 public:
@@ -49,49 +51,31 @@ public:
     // eqReplayChannel::`vftable' @ 0x596050
 
     // 0x5461A0 | ??0eqReplayChannel@@IAE@K@Z
-    inline eqReplayChannel(uint32_t arg1)
-    {
-        // stub<member_func_t<void, eqReplayChannel, uint32_t>>(0x5461A0, this, arg1);
-
-        unimplemented();
-    }
+    eqReplayChannel(uint32_t magic);
 
     // 0x5461D0 | ??1eqReplayChannel@@QAE@XZ
-    inline ~eqReplayChannel()
-    {
-        stub<member_func_t<void, eqReplayChannel>>(0x5461D0, this);
-    }
+    ~eqReplayChannel();
 
     // 0x710878 | ?First@eqReplayChannel@@0PAV1@A
-    static inline extern_var(0x710878, class eqReplayChannel*, First);
+    static inline extern_var(0x710878, eqReplayChannel*, First);
 
     // 0x546200 | ?InitRecord@eqReplayChannel@@UAEXXZ
-    virtual inline void InitRecord()
-    {
-        return stub<member_func_t<void, eqReplayChannel>>(0x546200, this);
-    }
+    virtual void InitRecord();
 
     // 0x546210 | ?InitPlayback@eqReplayChannel@@UAEXXZ
-    virtual inline void InitPlayback()
-    {
-        return stub<member_func_t<void, eqReplayChannel>>(0x546210, this);
-    }
+    virtual void InitPlayback();
 
     // 0x567350 | __purecall
-    virtual inline void DoRecord(class Stream* arg1) = 0;
+    virtual void DoRecord(Stream* output) = 0;
 
     // 0x567350 | __purecall
-    virtual inline void DoPlayback(class Stream* arg1) = 0;
+    virtual void DoPlayback(Stream* input) = 0;
 
     // 0x546220 | ?ShutdownRecord@eqReplayChannel@@UAEXXZ
-    virtual inline void ShutdownRecord()
-    {
-        return stub<member_func_t<void, eqReplayChannel>>(0x546220, this);
-    }
+    virtual void ShutdownRecord();
 
     // 0x546230 | ?ShutdownPlayback@eqReplayChannel@@UAEXXZ
-    virtual inline void ShutdownPlayback()
-    {
-        return stub<member_func_t<void, eqReplayChannel>>(0x546230, this);
-    }
+    virtual void ShutdownPlayback();
 };
+
+check_size(eqReplayChannel, 0xC);

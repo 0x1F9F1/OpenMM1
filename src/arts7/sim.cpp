@@ -17,3 +17,9 @@
 */
 
 #include "sim.h"
+
+artsReplayChannel::artsReplayChannel()
+    : eqReplayChannel('SIM0')
+{}
+
+artsReplayChannel::~artsReplayChannel() = default;

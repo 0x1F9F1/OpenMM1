@@ -17,3 +17,32 @@
 */
 
 #include "replay.h"
+
+eqReplayChannel::eqReplayChannel(uint32_t magic)
+    : m_Magic(magic)
+{
+    m_Next = First;
+    First = this;
+}
+
+eqReplayChannel::~eqReplayChannel()
+{
+    if (this != First)
+    {
+        Errorf("eqReplayChannel destructed, not top of stack!");
+    }
+
+    First = m_Next;
+}
+
+void eqReplayChannel::InitRecord()
+{}
+
+void eqReplayChannel::InitPlayback()
+{}
+
+void eqReplayChannel::ShutdownRecord()
+{}
+
+void eqReplayChannel::ShutdownPlayback()
+{}

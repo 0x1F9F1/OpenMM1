@@ -17,8 +17,8 @@ arts_add_component(arts7
     # linear.h
     node.cpp
     node.h
-    # sim.cpp
-    # sim.h
+    sim.cpp
+    sim.h
     # view.cpp
     # view.h
 )

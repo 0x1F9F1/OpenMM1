@@ -5,8 +5,8 @@ arts_add_component(eventq7
     # eventq.h
     # geinputLib.cpp
     # geinputLib.h
-    # replay.cpp
-    # replay.h
+    replay.cpp
+    replay.h
     # winevent.cpp
     # winevent.h
 )

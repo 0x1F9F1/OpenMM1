@@ -95,10 +95,7 @@ public:
     // asNode::`vftable' @ 0x5953B0
 
     // 0x510830 | ?VerifyTree@asNode@@QAEPADXZ
-    inline char* VerifyTree()
-    {
-        return stub<member_func_t<char*, asNode>>(0x510830, this);
-    }
+    const char* VerifyTree();
 
     // 0x510C60 | ??0asNode@@QAE@XZ
     inline asNode() = default;

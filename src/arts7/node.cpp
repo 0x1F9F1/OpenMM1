@@ -18,7 +18,50 @@
 
 #include "node.h"
 
+#include "arts7/sim.h"
 #include "data7/metaclass.h"
+
+// 0x510900 | ?IsValidPointer@@YAHPAXIH@Z
+inline int32_t IsValidPointer(void* ptr, uint32_t size, int32_t writable)
+{
+    return stub<cdecl_t<int32_t, void*, uint32_t, int32_t>>(0x510900, ptr, size, writable);
+}
+
+const char* asNode::VerifyTree()
+{
+    if (!IsValidPointer(this, sizeof(*this), 1))
+    {
+        return "Bad 'this'";
+    }
+
+    if (!IsValidPointer(*reinterpret_cast<void**>(this), 8 * sizeof(void*), 0))
+    {
+        return "Bad virtual table";
+    }
+
+    if (!IsValidPointer(m_Parent, sizeof(*this), 1) && this != ARTSPTR)
+    {
+        return "Bad parent";
+    }
+
+    const char* result = nullptr;
+
+    int32_t index = 1;
+
+    for (asNode* i = m_Children; i; i = i->m_Next, ++index)
+    {
+        result = i->VerifyTree();
+
+        if (result)
+        {
+            Errorf("Kid %d(%x) of type %s name %s: %s", index, i, GetClass()->m_Name, m_Name.get(), result);
+
+            break;
+        }
+    }
+
+    return result;
+}
 
 void asNode::SetName(char* arg1)
 {
@@ -276,7 +319,7 @@ void asNode::Update()
 {
     if (DebugMemory & 4)
     {
-        char* verify_msg = VerifyTree();
+        const char* verify_msg = VerifyTree();
 
         if (verify_msg)
         {
@@ -294,7 +337,7 @@ void asNode::Update()
 
     if (DebugMemory & 4)
     {
-        char* verify_msg = VerifyTree();
+        const char* verify_msg = VerifyTree();
 
         if (verify_msg)
         {

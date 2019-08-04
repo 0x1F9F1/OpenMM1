@@ -68,6 +68,10 @@
     0x510A40 | void __cdecl delete_asSimulation(void *,int) | ?delete_asSimulation@@YAXPAXH@Z
 */
 
+#include "node.h"
+
+#include "eventq7/replay.h"
+
 // 0x510600 | ?InitPipeline@@YAHPADHPAPAD@Z
 inline int32_t InitPipeline(char* arg1, int32_t arg2, char** arg3)
 {
@@ -110,12 +114,6 @@ inline void QuietPrinter(int32_t arg1, char const* arg2, char* arg3)
     return stub<cdecl_t<void, int32_t, char const*, char*>>(0x50FAE0, arg1, arg2, arg3);
 }
 
-// 0x510900 | ?IsValidPointer@@YAHPAXIH@Z
-inline int32_t IsValidPointer(void* arg1, uint32_t arg2, int32_t arg3)
-{
-    return stub<cdecl_t<int32_t, void*, uint32_t, int32_t>>(0x510900, arg1, arg2, arg3);
-}
-
 // 0x510970 | ?new_asSimulation@@YAPAXH@Z
 inline void* new_asSimulation(int32_t arg1)
 {
@@ -128,6 +126,7 @@ inline void delete_asSimulation(void* arg1, int32_t arg2)
     return stub<cdecl_t<void, void*, int32_t>>(0x510A40, arg1, arg2);
 }
 
+#if 0
 class agiLib<class agiPhysParameters, class agiPhysDef>
 {
 public:
@@ -164,11 +163,14 @@ public:
             0x53BF80, this, arg1);
     }
 };
+#endif
 
-class asSimulation : asNode
+class asSimulation : public asNode
 {
 public:
     // asSimulation::`vftable' @ 0x595358
+
+    char pad1C[0x270];
 
     // 0x50F7C0 | ??0asSimulation@@QAE@XZ
     inline asSimulation()
@@ -307,24 +309,18 @@ public:
     }
 };
 
+check_size(asSimulation, 0x28C);
+
 struct artsReplayChannel : eqReplayChannel
 {
 public:
     // artsReplayChannel::`vftable' @ 0x595398
 
     // 0x510AA0 | ??0artsReplayChannel@@QAE@XZ
-    inline artsReplayChannel()
-    {
-        // stub<member_func_t<void, artsReplayChannel>>(0x510AA0, this);
-
-        unimplemented();
-    }
+    artsReplayChannel();
 
     // 0x510B30 | ??1artsReplayChannel@@QAE@XZ
-    inline ~artsReplayChannel()
-    {
-        stub<member_func_t<void, artsReplayChannel>>(0x510B30, this);
-    }
+    ~artsReplayChannel();
 
     // 0x510AC0 | ?DoRecord@artsReplayChannel@@UAEXPAVStream@@@Z
     inline void DoRecord(class Stream* arg1) override
@@ -338,3 +334,5 @@ public:
         return stub<member_func_t<void, artsReplayChannel, class Stream*>>(0x510B00, this, arg1);
     }
 };
+
+check_size(artsReplayChannel, 0xC);
