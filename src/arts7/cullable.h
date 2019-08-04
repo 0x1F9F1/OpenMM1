@@ -54,28 +54,22 @@ public:
     // asCullable::`vftable' @ 0x591B00
 
     // 0x5124D0 | ?DeclareFields@asCullable@@SAXXZ
-    static inline void DeclareFields()
-    {
-        return stub<cdecl_t<void>>(0x5124D0);
-    }
+    static void DeclareFields();
 
     // 0x512690 | ??0asCullable@@QAE@XZ
-    inline asCullable() = default;
+    asCullable();
 
     // 0x482B30 | ??1asCullable@@UAE@XZ
-    inline ~asCullable() override = default;
+    ~asCullable() override;
 
     // 0x512620 | ?GetClass@asCullable@@UAEPAVMetaClass@@XZ
-    inline class MetaClass* GetClass() override
-    {
-        return stub<member_func_t<class MetaClass*, asCullable>>(0x512620, this);
-    }
+    class MetaClass* GetClass() override;
 
     // 0x5124C0 | ?Cull@asCullable@@UAEXXZ
-    virtual inline void Cull()
-    {
-        return stub<member_func_t<void, asCullable>>(0x5124C0, this);
-    }
+    virtual void Cull();
 };
+
+inline asCullable::asCullable() = default;
+inline asCullable::~asCullable() = default;
 
 check_size(asCullable, 4);

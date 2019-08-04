@@ -17,3 +17,16 @@
 */
 
 #include "cullable.h"
+
+void asCullable::DeclareFields()
+{
+    Base::DeclareFields();
+}
+
+MetaClass* asCullable::GetClass()
+{
+    return &asCullableMetaClass;
+}
+
+void asCullable::Cull()
+{}
