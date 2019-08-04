@@ -42,3 +42,17 @@ __declspec(noinline) void operator delete[](void* ptr) noexcept
 {
     CURHEAP->Free(ptr);
 }
+
+__declspec(noinline) void operator delete(void* ptr, [[maybe_unused]] size_t sz) noexcept
+{
+    DebugAssert(CURHEAP->GetSize(ptr) == sz);
+
+    CURHEAP->Free(ptr);
+}
+
+__declspec(noinline) void operator delete[](void* ptr, [[maybe_unused]] size_t sz) noexcept
+{
+    DebugAssert(CURHEAP->GetSize(ptr) == sz);
+
+    CURHEAP->Free(ptr);
+}
