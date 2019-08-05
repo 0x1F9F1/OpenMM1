@@ -165,7 +165,7 @@ struct agiPixelFormat // DDPIXELFORMAT
     agiPixelFormat();
 };
 
-class agiSurfaceDesc // DDSURFACEDESC2
+class agiSurfaceDesc // DDSURFACEDESC2, DDS_HEADER
 {
 public:
     uint32_t dwSize;

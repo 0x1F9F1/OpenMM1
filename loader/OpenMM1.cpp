@@ -156,6 +156,7 @@ BOOL APIENTRY DllMain(HMODULE hinstDLL, DWORD fdwReason, LPVOID /*lpvReserved*/)
         }
 
         create_patch("PolarCamCS", "Increase Max XCAM Distance", 0x594D84, "\x00\x00\x7A\x43", 4);
+        // create_patch("PolarCamCS", "No Collision", 0x4ED51E, "\xEB", 1);
 
         mem::init_function::init();
 
