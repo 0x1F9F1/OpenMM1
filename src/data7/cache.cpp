@@ -41,6 +41,7 @@ void DataCache::Init(uint32_t heap_size, int32_t capacity, const char* name)
     m_bNeedsDefrag = 0;
 
     m_pObjects = new DataCacheObject[capacity];
+
     --m_pObjects;
 
     m_Name = name;
@@ -453,6 +454,7 @@ define_dummy_symbol(datacache);
 
 run_once([] {
     auto_hook_ctor(0x558930, DataCache);
+
     auto_hook(0x558940, DataCache::Init);
     auto_hook(0x5589E0, DataCache::Shutdown);
     auto_hook(0x558A20, DataCache::Unload);
@@ -467,4 +469,10 @@ run_once([] {
     auto_hook(0x559030, DataCache::Flush);
     auto_hook(0x5590B0, DataCache::Age);
     auto_hook(0x559280, DataCache::Allocate);
+
+    create_patch("CACHE", "Capacity", 0x4020CC + 1, "\x00\x10\x00\x00", 4);
+    create_patch("CACHE", "HeapSize", 0x4020D1 + 1, "\x00\x00\x20\x00", 4);
+
+    create_patch("TEXCACHE", "Capacity", 0x4020E5 + 1, "\x00\x02\x00\x00", 4);
+    create_patch("TEXCACHE", "HeapSize", 0x4020EA + 1, "\x00\x00\x00\x02", 4);
 });
