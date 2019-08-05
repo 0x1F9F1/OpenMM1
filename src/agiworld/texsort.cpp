@@ -18,10 +18,11 @@
 
 #include "texsort.h"
 
-static constexpr const int32_t BigVtxSize = 12000;
+// TODO: Use CMD arguments
+static constexpr const int32_t BigVtxSize = 65536;
 static constexpr const int32_t BigIdxSize = BigVtxSize * 3;
 
-static constexpr const int32_t EnvVtxSize = 2048;
+static constexpr const int32_t EnvVtxSize = 32768;
 static constexpr const int32_t EnvIdxSize = EnvVtxSize * 3;
 
 static extern_var(0x67BAD0, agiPolySet, BigPolySet);
@@ -37,9 +38,9 @@ void agiPolySet::Init(int32_t verts, int32_t indices)
     else
     {
         Verts = reinterpret_cast<agiVtx*>(new agiScreenVtx2[verts]);
+        Verts2 = &Verts->Vtx2;
     }
 
-    Verts2 = Verts;
     MaxVerts = verts;
     MaxIndices = indices;
     Indices = new uint16_t[indices];
@@ -54,7 +55,7 @@ agiTexSorter::agiTexSorter()
 
     Instance = this;
 
-    MaxVertsPerSet = 512;
+    MaxVertsPerSet = 2048;
     MaxIndicesPerSet = MaxVertsPerSet * 3;
 
     BigPolySet.Init(BigVtxSize, BigIdxSize);
@@ -84,7 +85,7 @@ run_once([] {
     create_patch("BigVtxSize", "agiTexSorter::BeginVerts", 0x4F4099 + 2, &BigVtxSize, 4);
     create_patch("BigIdxSize", "agiTexSorter::BeginVerts", 0x4F40A1 + 3, &BigIdxSize, 4);
 
-    create_patch("BigVtxSize", "agiTexSorter::BeginVerts2", 0x4F42F1 + 3, &BigVtxSize, 4);
+    create_patch("BigVtxSize", "agiTexSorter::BeginVerts2", 0x4F42E9 + 2, &BigVtxSize, 4);
     create_patch("BigIdxSize", "agiTexSorter::BeginVerts2", 0x4F42F1 + 3, &BigIdxSize, 4);
 
     create_patch("EnvVtxSize", "agiTexSorter::GetEnv", 0x4F4029 + 2, &EnvVtxSize, 4);

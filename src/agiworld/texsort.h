@@ -78,11 +78,11 @@ class agiPolySet
 {
 public:
     uint16_t* Indices {nullptr};
-    agiVtx* Verts2 {nullptr};
     agiVtx* Verts {nullptr};
+    agiScreenVtx2* Verts2 {nullptr};
     agiTexDef* Textures[2] {};
     int32_t VertCount {0};
-    int32_t CurrentIndices {0};
+    int32_t IndexCount {0};
     int32_t BaseIndex {0};
     int32_t MaxVerts {0};
     int32_t MaxIndices {0};

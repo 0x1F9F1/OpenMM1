@@ -123,6 +123,11 @@ void DefaultPrinter(int32_t level, const char* format, va_list args)
 
     if (level >= 3)
     {
+        if (IsDebuggerPresent())
+        {
+            DebugBreak();
+        }
+
         MessageBoxA(NULL, buffer, "Fatal Error", MB_OK);
 
         if (level == 3)
