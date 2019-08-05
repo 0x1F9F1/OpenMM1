@@ -17,3 +17,7 @@
 */
 
 #include "physlib.h"
+
+#include "physdef.h"
+
+template struct agiLib<agiPhysParameters, agiPhysDef>;

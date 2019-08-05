@@ -76,7 +76,7 @@ public:
 
 check_size(agiMtlParameters, 0x68);
 
-class agiMtlDef : agiRefreshable
+class agiMtlDef : public agiRefreshable
 {
 public:
     agiMtlParameters m_Parameters {};

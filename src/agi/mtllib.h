@@ -30,5 +30,7 @@
 class agiMtlParameters;
 class agiMtlDef;
 
+extern template agiLib<agiMtlParameters, agiMtlDef>;
+
 // 0x70A6C0 | ?agiMtlLib@@3V?$agiLib@VagiMtlParameters@@VagiMtlDef@@@@A
 inline extern_var(0x70A6C0, Ty(agiLib<agiMtlParameters, agiMtlDef>), agiMtlLib);

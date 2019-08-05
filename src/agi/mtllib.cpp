@@ -17,3 +17,7 @@
 */
 
 #include "mtllib.h"
+
+#include "mtldef.h"
+
+template struct agiLib<agiMtlParameters, agiMtlDef>;

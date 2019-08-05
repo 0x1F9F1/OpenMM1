@@ -17,3 +17,7 @@
 */
 
 #include "texlib.h"
+
+#include "texdef.h"
+
+template struct agiLib<agiTexParameters, agiTexDef>;
