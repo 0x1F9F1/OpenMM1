@@ -39,6 +39,20 @@ VirtualFileSystem::VirtualFileSystem(Stream* stream)
 
     m_pNameData.Reset(new uint8_t[m_NameDataSize]);
     m_pFileStream->Read(m_pNameData.Get(), m_NameDataSize);
+
+    size_t file_size = stream->Size();
+
+    for (int32_t i = 0; i < m_NodeCount; ++i)
+    {
+        VirtualFileInode* node = &m_pNodes[i];
+
+        if ((node->GetSize() == 0x4DCDCD) || ((node->GetOffset() + node->GetSize()) > file_size))
+        {
+            char buffer[256];
+            ExpandName(buffer, node, reinterpret_cast<char*>(m_pNameData.Get()));
+            Errorf("Invalid/Corrupt Archive Entry '%s'", buffer);
+        }
+    }
 }
 
 VirtualFileSystem::~VirtualFileSystem() = default;

@@ -56,7 +56,7 @@ struct VirtualFileInode
 
     inline uint32_t GetSize() const noexcept
     {
-        return m_Flags1 & 0x7FFFFFF;
+        return m_Flags1 & 0x7FFFFF;
     }
 };
 
@@ -67,9 +67,9 @@ class VirtualFileSystem : FileSystem
 public:
     Ptr<Stream> m_pFileStream {nullptr};
     uint32_t m_Magic {0};
-    uint32_t m_NodeCount {0};
-    uint32_t m_DirectoryCount {0};
-    uint32_t m_NameDataSize {0};
+    int32_t m_NodeCount {0};
+    int32_t m_DirectoryCount {0};
+    int32_t m_NameDataSize {0};
     Ptr<VirtualFileInode[]> m_pNodes {nullptr};
     Ptr<uint8_t[]> m_pNameData {nullptr};
 
