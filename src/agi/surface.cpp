@@ -52,15 +52,15 @@ void agiSurfaceDesc::Unload()
 
 void agiSurfaceDesc::CopyFrom(agiSurfaceDesc* input, int32_t lod)
 {
-    int32_t output_width = dwWidth;
-    int32_t output_height = dwHeight;
-    int32_t output_pitch = lPitch;
+    uint32_t output_width = dwWidth;
+    uint32_t output_height = dwHeight;
+    uint32_t output_pitch = lPitch;
     uint8_t* output_surface = static_cast<uint8_t*>(lpSurface);
 
-    int32_t input_width = input->dwWidth;
-    int32_t input_height = input->dwHeight;
-    int32_t input_bytes_per_pixel = (input->ddpfPixelFormat.dwRGBBitCount + 7) >> 3;
-    int32_t input_pitch = input_bytes_per_pixel * input->dwWidth;
+    uint32_t input_width = input->dwWidth;
+    uint32_t input_height = input->dwHeight;
+    uint32_t input_bytes_per_pixel = (input->ddpfPixelFormat.dwRGBBitCount + 7) >> 3;
+    uint32_t input_pitch = input_bytes_per_pixel * input->dwWidth;
     uint8_t* input_surface = static_cast<uint8_t*>(input->lpSurface);
 
 #if 0
@@ -86,8 +86,8 @@ void agiSurfaceDesc::CopyFrom(agiSurfaceDesc* input, int32_t lod)
     }
 #endif
 
-    int32_t width_step = (input_width << 16) / output_width;
-    int32_t height_step = (input_height << 16) / output_height;
+    uint32_t width_step = (input_width << 16) / output_width;
+    uint32_t height_step = (input_height << 16) / output_height;
 
     if (!memcmp(&ddpfPixelFormat, &input->ddpfPixelFormat, sizeof(ddpfPixelFormat)))
     {
@@ -97,12 +97,12 @@ void agiSurfaceDesc::CopyFrom(agiSurfaceDesc* input, int32_t lod)
             {
 #define X(TYPE)                                                                                 \
     case sizeof(TYPE):                                                                          \
-        for (int32_t i = 0, j = 0; i < output_height; ++i, j += height_step)                    \
+        for (uint32_t i = 0, j = 0; i < output_height; ++i, j += height_step)                   \
         {                                                                                       \
             TYPE* output_row = reinterpret_cast<TYPE*>(output_surface + output_pitch * i);      \
             TYPE* input_row = reinterpret_cast<TYPE*>(input_surface + input_pitch * (j >> 16)); \
                                                                                                 \
-            for (int32_t k = 0, l = 0; k < output_width; ++k, l += width_step)                  \
+            for (uint32_t k = 0, l = 0; k < output_width; ++k, l += width_step)                 \
             {                                                                                   \
                 output_row[k] = input_row[l >> 16];                                             \
             }                                                                                   \
@@ -177,7 +177,7 @@ void agiSurfaceDesc::CopyFrom(agiSurfaceDesc* input, int32_t lod)
                 ddpfPixelFormat.dwBBitMask, ddpfPixelFormat.dwRGBAlphaBitMask);
         }
 
-        for (int32_t i = 0, j = 0; i < output_height; ++i, j += height_step)
+        for (uint32_t i = 0, j = 0; i < output_height; ++i, j += height_step)
         {
             copy_row(
                 output_surface + output_pitch * i, input_surface + input_pitch * (j >> 16), output_width, width_step);
