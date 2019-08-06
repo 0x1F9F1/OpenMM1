@@ -122,45 +122,13 @@ struct agiPixelFormat // DDPIXELFORMAT
     uint32_t dwSize;
     uint32_t dwFlags;
     uint32_t dwFourCC;
-    union
-    {
-        uint32_t dwRGBBitCount;
-        uint32_t dwYUVBitCount;
-        uint32_t dwZBufferBitDepth;
-        uint32_t dwAlphaBitDepth;
-        uint32_t dwLuminanceBitCount;
-        uint32_t dwBumpBitCount;
-    };
-    union
-    {
-        uint32_t dwRBitMask;
-        uint32_t dwYBitMask;
-        uint32_t dwStencilBitDepth;
-        uint32_t dwLuminanceBitMask;
-        uint32_t dwBumpDuBitMask;
-    };
-    union
-    {
-        uint32_t dwGBitMask;
-        uint32_t dwUBitMask;
-        uint32_t dwZBitMask;
-        uint32_t dwBumpDvBitMask;
-    };
-    union
-    {
-        uint32_t dwBBitMask;
-        uint32_t dwVBitMask;
-        uint32_t dwStencilBitMask;
-        uint32_t dwBumpLuminanceBitMask;
-    };
-    union
-    {
-        uint32_t dwRGBAlphaBitMask;
-        uint32_t dwYUVAlphaBitMask;
-        uint32_t dwLuminanceAlphaBitMask;
-        uint32_t dwRGBZBitMask;
-        uint32_t dwYUVZBitMask;
-    };
+
+    uint32_t dwRGBBitCount;
+
+    uint32_t dwRBitMask;
+    uint32_t dwGBitMask;
+    uint32_t dwBBitMask;
+    uint32_t dwRGBAlphaBitMask;
 
     agiPixelFormat();
 };
@@ -172,34 +140,17 @@ public:
     uint32_t dwFlags;
     uint32_t dwHeight;
     uint32_t dwWidth;
-    union
-    {
-        int32_t lPitch;
-        uint32_t dwLinearSize;
-    };
+    int32_t lPitch;
     uint32_t dwBackBufferCount;
-    union
-    {
-        uint32_t dwMipMapCount;
-        uint32_t dwRefreshRate;
-        uint32_t dwSrcVBHandle;
-    };
+    uint32_t dwMipMapCount;
     uint32_t dwAlphaBitDepth;
     uint32_t dwReserved;
     void* lpSurface;
-    union
-    {
-        agiColorKey ddckCKDestOverlay;
-        uint32_t dwEmptyFaceColor;
-    };
+    agiColorKey ddckCKDestOverlay;
     agiColorKey ddckCKDestBlt;
     agiColorKey ddckCKSrcOverlay;
     agiColorKey ddckCKSrcBlt;
-    union
-    {
-        agiPixelFormat ddpfPixelFormat;
-        uint32_t dwFVF;
-    };
+    agiPixelFormat ddpfPixelFormat;
     agiDDSCAPS2 ddsCaps;
     uint32_t dwTextureStage;
 
@@ -228,10 +179,7 @@ public:
     void Unload();
 
     // 0x53D0A0 | ?CopyFrom@agiSurfaceDesc@@QAEXPAV1@H@Z
-    inline void CopyFrom(class agiSurfaceDesc* arg1, int32_t arg2)
-    {
-        return stub<member_func_t<void, agiSurfaceDesc, class agiSurfaceDesc*, int32_t>>(0x53D0A0, this, arg1, arg2);
-    }
+    void CopyFrom(class agiSurfaceDesc* input, int32_t lod);
 };
 
 check_size(agiSurfaceDesc, 0x7C);
