@@ -139,9 +139,13 @@ BOOL APIENTRY DllMain(HMODULE hinstDLL, DWORD fdwReason, LPVOID /*lpvReserved*/)
             SetConsoleTitleA("OpenMM1");
         }
 
+        create_hook("DefaultPrinter", "Use a custom printer", 0x558360, DefaultPrinter);
+
         LogToFile();
 
-        create_hook("DefaultPrinter", "Use a custom printer", 0x558360, DefaultPrinter);
+#if defined(CI_BUILD_STRING)
+        Displayf("Build: %s", CI_BUILD_STRING " / " __DATE__ " " __TIME__);
+#endif
 
         create_hook("WinMain", "Entry Point", 0x566DEA, &MidtownMain, hook_type::call);
         create_patch("HW Menu", "Enable HW Menu Rendering", 0x401A1E, "\xEB", 1);

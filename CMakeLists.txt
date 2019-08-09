@@ -29,6 +29,10 @@ if (USE_SDL2)
     add_definitions(-DUSE_SDL2=1)
 endif()
 
+if (DEFINED ENV{APPVEYOR})
+    add_definitions(-DCI_BUILD_STRING="\\"$ENV{APPVEYOR_BUILD_VERSION}-$ENV{APPVEYOR_REPO_COMMIT}\\"")
+endif()
+
 include_directories(src)
 add_subdirectory(src)
 
