@@ -44,10 +44,12 @@ arts_add_component(data7
     timer.cpp
     timer.h
 
-    assert.h
     assert.cpp
-    cstr.h
+    assert.h
     cstr.cpp
+    cstr.h
+    format.cpp
+    format.h
     ptr.h
     ref.h
 )

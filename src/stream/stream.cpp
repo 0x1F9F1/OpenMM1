@@ -18,11 +18,9 @@
 
 #include "stream.h"
 
+#include "data7/format.h"
 #include "fsystem.h"
 #include "hfsystem.h"
-
-#include <cstdarg>
-#include <cstdlib>
 
 bool CheckLittleEndian()
 {
@@ -316,7 +314,7 @@ void Stream::Error(const char* location)
 
 int32_t Stream::Printf(const char* format, ...)
 {
-    va_list va;
+    std::va_list va;
     va_start(va, format);
 
     int32_t result = Vprintf(format, va);
@@ -326,10 +324,10 @@ int32_t Stream::Printf(const char* format, ...)
     return result;
 }
 
-int32_t Stream::Vprintf(char const* format, va_list args)
+int32_t Stream::Vprintf(char const* format, std::va_list args)
 {
     char buffer[256];
-    vsprintf_s(buffer, format, args);
+    vformatf(buffer, format, args);
     return Write(buffer, strlen(buffer));
 }
 
@@ -524,7 +522,7 @@ uint32_t Stream::GetLong()
 
 void fprintf(Stream* stream, const char* format, ...)
 {
-    va_list va;
+    std::va_list va;
     va_start(va, format);
     stream->Vprintf(format, va);
     va_end(va);
@@ -604,7 +602,7 @@ int32_t fscanf(Stream* stream, const char* format, ...)
         return 0;
     }
 
-    va_list va;
+    std::va_list va;
     va_start(va, format);
     int32_t result = vsscanf(buffer, format, va);
     va_end(va);

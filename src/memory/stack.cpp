@@ -18,6 +18,7 @@
 
 #include "stack.h"
 
+#include "data7/format.h"
 #include "minwin.h"
 
 #include <algorithm>
@@ -91,7 +92,7 @@ void LookupAddress(char* buffer, uint32_t address)
                 strcpy_s(pSymbol->Name + 61, 4, "...");
             }
 
-            sprintf_s(buffer, 128, "0x%X (%s.%s + 0x%X)", address, module.ModuleName, pSymbol->Name,
+            formatf(buffer, 128, "0x%X (%s.%s + 0x%X)", address, module.ModuleName, pSymbol->Name,
                 static_cast<uint32_t>(dwDisplacement));
 
             return;
@@ -109,12 +110,12 @@ void LookupAddress(char* buffer, uint32_t address)
         const char* function_name =
             UnDecorateSymbolName(entry->Name, undName, std::size(undName), UNDNAME_NAME_ONLY) ? undName : entry->Name;
 
-        sprintf_s(buffer, 128, "0x%X (%s + 0x%X)", address, function_name, offset);
+        formatf(buffer, 128, "0x%X (%s + 0x%X)", address, function_name, offset);
 
         return;
     }
 
-    sprintf_s(buffer, 128, "0x%X (Unknown)", address);
+    formatf(buffer, 128, "0x%X (Unknown)", address);
 }
 
 void InitMap()

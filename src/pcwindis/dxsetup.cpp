@@ -58,5 +58,6 @@ run_once([] {
     create_patch("TestResolution", "Unsigned Comparison", 0x5577E8, "\x72", 1);
 
     create_patch("Res String", "Unsigned Printf", 0x5CDD54, "res %d x %d: %u %u / %u %u", 27);
-    create_patch("EliminatingRes String", "Unsigned Printf", 0x5CDD70, "Eliminating res %d x %d; texmem=%u, vidmem=%u", 46);
+    create_patch(
+        "EliminatingRes String", "Unsigned Printf", 0x5CDD70, "Eliminating res %d x %d; texmem=%u, vidmem=%u", 46);
 });

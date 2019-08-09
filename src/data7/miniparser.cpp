@@ -18,8 +18,7 @@
 
 #include "miniparser.h"
 
-#include <cstdarg>
-#include <cstdlib>
+#include "format.h"
 
 MiniParser::MiniParser(const char* name)
     : m_Name(name)
@@ -31,9 +30,9 @@ void MiniParser::Printf(char const* format, ...)
 {
     char buffer[1024];
 
-    va_list va;
+    std::va_list va;
     va_start(va, format);
-    vsprintf_s(buffer, format, va);
+    vformatf(buffer, format, va);
     va_end(va);
 
     for (const char* i = buffer; *i; ++i)
@@ -81,9 +80,9 @@ void MiniParser::Errorf(char const* format, ...)
     {
         char buffer[1024];
 
-        va_list va;
+        std::va_list va;
         va_start(va, format);
-        vsprintf_s(buffer, format, va);
+        vformatf(buffer, format, va);
         va_end(va);
 
         ++m_ErrorCount;
@@ -107,9 +106,9 @@ void MiniParser::Commentf(char const* format, ...)
 {
     char buffer[1024];
 
-    va_list va;
+    std::va_list va;
     va_start(va, format);
-    vsprintf_s(buffer, format, va);
+    vformatf(buffer, format, va);
     va_end(va);
 
     PutCh(';');
@@ -261,7 +260,7 @@ int32_t MiniParser::NextToken()
     {
         GetCh();
         v = GetCh();
-        sprintf_s(m_Buffer, "%d", v);
+        formatf(m_Buffer, "%d", v);
 
         return Token::Integer;
     }

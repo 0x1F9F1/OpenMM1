@@ -18,12 +18,12 @@
 
 #include "printer.h"
 
+#include "data7/format.h"
 #include "minwin.h"
-#include <stdarg.h>
 
 void Displayf(char const* format, ...)
 {
-    va_list va;
+    std::va_list va;
     va_start(va, format);
     Printer(0, format, va);
     va_end(va);
@@ -31,7 +31,7 @@ void Displayf(char const* format, ...)
 
 void Printf(char const* format, ...)
 {
-    va_list va;
+    std::va_list va;
     va_start(va, format);
     Printer(0, format, va);
     va_end(va);
@@ -39,7 +39,7 @@ void Printf(char const* format, ...)
 
 void Debugf(char const* format, ...)
 {
-    va_list va;
+    std::va_list va;
     va_start(va, format);
     Printer(0, format, va);
     va_end(va);
@@ -47,7 +47,7 @@ void Debugf(char const* format, ...)
 
 void Warningf(char const* format, ...)
 {
-    va_list va;
+    std::va_list va;
     va_start(va, format);
     Printer(1, format, va);
     va_end(va);
@@ -55,7 +55,7 @@ void Warningf(char const* format, ...)
 
 void Errorf(char const* format, ...)
 {
-    va_list va;
+    std::va_list va;
     va_start(va, format);
     Printer(2, format, va);
     va_end(va);
@@ -63,7 +63,7 @@ void Errorf(char const* format, ...)
 
 [[noreturn]] void Abortf(char const* format, ...)
 {
-    va_list va;
+    std::va_list va;
     va_start(va, format);
     Printer(4, format, va);
     va_end(va);
@@ -78,14 +78,14 @@ const uint8_t PrinterColors[5] {7u, 14u, 12u, 12u, 12u};
 
 static extern_var(0x5CDF50, HANDLE, DebugLogFile);
 
-void DefaultPrinter(int32_t level, const char* format, va_list args)
+void DefaultPrinter(int32_t level, const char* format, std::va_list args)
 {
     char buffer[512];
     strcpy_s(buffer, PrinterPrefixes[level]);
 
     {
         char buffer2[512];
-        vsprintf_s(buffer2, format, args);
+        vformatf(buffer2, format, args);
 
         if (!strcmp(buffer2, "DirectInput problem, code = -2147024884(8007000c) [not acquired]"))
             return;

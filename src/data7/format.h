@@ -16,41 +16,24 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "quitf.h"
+#pragma once
 
-#include "minwin.h"
 #include <cstdarg>
 
-const char _UnimplFunction[] = "Unimplemented function %s in %s (%i)";
+void formatf(char* buffer, size_t bufsz, const char* format, ...);
+void vformatf(char* buffer, size_t bufsz, const char* format, std::va_list args);
 
-[[noreturn]] void Quit(char const* message)
-{
-    if (message)
-    {
-        Quitf("%s", message);
-    }
-    else
-    {
-        exit(0);
-    }
-}
-
-[[noreturn]] void Quitf(char const* format, ...)
+template <size_t N>
+inline void formatf(char (&buffer)[N], const char* format, ...)
 {
     std::va_list va;
     va_start(va, format);
-
-    if (IsDebuggerPresent())
-    {
-        Printer(2, format, va);
-        __debugbreak();
-    }
-    else
-    {
-        Printer(3, format, va);
-    }
-
+    vformatf(buffer, N, format, va);
     va_end(va);
+}
 
-    exit(1);
+template <size_t N>
+inline void vformatf(char (&buffer)[N], const char* format, std::va_list args)
+{
+    return vformatf(buffer, N, format, args);
 }

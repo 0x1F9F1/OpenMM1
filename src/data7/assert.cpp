@@ -19,7 +19,7 @@
 #include "assert.h"
 
 #include "minwin.h"
-#include <stdarg.h>
+#include <cstdarg>
 
 #pragma intrinsic(__debugbreak)
 
@@ -27,7 +27,7 @@ const char _AssertFailed[] = "Assertion failed (%s,%d): '%s'";
 
 void Assertf(const char* format, ...)
 {
-    va_list va;
+    std::va_list va;
     va_start(va, format);
 
     if (IsDebuggerPresent())

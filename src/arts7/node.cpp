@@ -19,6 +19,7 @@
 #include "node.h"
 
 #include "arts7/sim.h"
+#include "data7/format.h"
 #include "data7/metaclass.h"
 #include "data7/str.h"
 #include "stream/sparser.h"
@@ -429,7 +430,7 @@ void asNode::Load()
     }
 
     char buffer[100];
-    sprintf_s(buffer, ".%s", GetClass()->m_Name);
+    formatf(buffer, ".%s", GetClass()->m_Name);
 
     string path;
     path.SaveName(name, 0, "tune", buffer);
@@ -447,7 +448,7 @@ void asNode::Save()
     }
 
     char buffer[100];
-    sprintf_s(buffer, ".%s", GetClass()->m_Name);
+    formatf(buffer, ".%s", GetClass()->m_Name);
 
     string path;
     path.SaveName(name, 0, "tune", buffer);

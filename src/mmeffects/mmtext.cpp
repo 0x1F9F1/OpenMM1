@@ -34,7 +34,7 @@ void mmTextNode::Init(float arg1, float arg2, float arg3, float arg4, int32_t ar
 
     m_Bitmap.Reset(agiPipeline::CurrentPipe->CreateBitmap());
     char name[128];
-    sprintf_s(name, "*TextNode:%08x", (uint32_t) this);
+    formatf(name, "*TextNode:%08x", (uint32_t) this);
     m_Bitmap->Init(name, 2.0f, 2.0f, arg6);
 
     m_dword50 = 0xFFFFFF00;
@@ -79,7 +79,7 @@ agiBitmap* mmText::CreateFitBitmap(char* text, void* font, int32_t fg_color, int
     agiBitmap* result = agiPipeline::CurrentPipe->CreateBitmap();
 
     char name[128];
-    sprintf_s(name, "*FitBitmap:%08x", (uint32_t) result);
+    formatf(name, "*FitBitmap:%08x", (uint32_t) result);
 
     result->Init(name, 2.0f, 2.0f, 3);
 

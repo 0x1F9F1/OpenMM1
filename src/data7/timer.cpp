@@ -52,19 +52,12 @@ Timer::Timer()
         if (QueryPerformanceFrequency(&freq))
         {
             TimerMode = 2;
+            TicksToSeconds = 1.0f / freq.QuadPart;
         }
         else
         {
             TimerMode = 1;
-        }
-
-        if (TimerMode == 1)
-        {
             TicksToSeconds = 0.001f;
-        }
-        else
-        {
-            TicksToSeconds = 1.0f / freq.QuadPart;
         }
 
         Reset();

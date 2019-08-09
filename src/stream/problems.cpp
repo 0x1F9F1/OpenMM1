@@ -19,6 +19,7 @@
 #include "problems.h"
 
 #include "data7/cstr.h"
+#include "data7/format.h"
 #include "data7/global.h"
 #include "data7/ptr.h"
 #include "data7/str.h"
@@ -55,7 +56,7 @@ void DumpProblems()
         qsort(Problems, ProblemCount, sizeof(*Problems), cmpProblem);
 
         char path[1024];
-        sprintf_s(path, "%s/problems.txt", ProjPath);
+        formatf(path, "%s/problems.txt", ProjPath);
 
         Ptr<Stream> output {s_fopen(path, "w")};
 

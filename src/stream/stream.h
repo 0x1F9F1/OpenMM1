@@ -126,7 +126,7 @@ public:
     int32_t Printf(const char* format, ...);
 
     // 0x5409C0 | ?Vprintf@Stream@@QAEHPBDPAD@Z
-    int32_t Vprintf(char const* format, va_list args);
+    int32_t Vprintf(char const* format, std::va_list args);
 
     // 0x540A20 | ?Debug@Stream@@QAEXXZ
     void Debug();

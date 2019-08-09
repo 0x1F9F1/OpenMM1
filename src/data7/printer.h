@@ -42,8 +42,10 @@
     0x711ABC | unsigned short * MonoPointer | ?MonoPointer@@3PAGA
 */
 
+#include <cstdarg>
+
 // 0x558360 | ?DefaultPrinter@@YAXHPBDPAD@Z
-void DefaultPrinter(int32_t level, char const* format, va_list args);
+void DefaultPrinter(int32_t level, char const* format, std::va_list args);
 
 // 0x558770 | ?LogToCommPort@@YAHHH@Z
 int32_t LogToCommPort(int32_t port, int32_t rate) = delete;
@@ -88,4 +90,4 @@ inline extern_var(0x5CDF54, int32_t, EnableNormalOutput);
 inline extern_var(0x5CDF58, int32_t, EnableDebugOutput);
 
 // 0x5CDF68 | ?Printer@@3P6AXHPBDPAD@ZA
-inline extern_var(0x5CDF68, void (*)(int32_t, char const*, va_list), Printer);
+inline extern_var(0x5CDF68, void (*)(int32_t, char const*, std::va_list), Printer);

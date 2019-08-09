@@ -37,7 +37,7 @@ void* sdlLoadFont(const char* name, int ptsize)
 {
     char path[1024];
 
-    sprintf_s(path, "%s%s", SDL_GetBasePath(), "GILI____.TTF");
+    formatf(path, "%s%s", SDL_GetBasePath(), "GILI____.TTF");
 
     return TTF_OpenFont(path, ptsize);
 }

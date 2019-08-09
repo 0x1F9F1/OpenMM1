@@ -18,6 +18,7 @@
 
 #include "bitmap.h"
 
+#include "data7/format.h"
 #include "data7/hash.h"
 
 agiBitmap::agiBitmap(class agiPipeline* pipe)
@@ -28,7 +29,7 @@ agiBitmap::~agiBitmap()
 {
     char buffer[128];
     // TODO: Should be m_Width and m_Height?
-    sprintf_s(buffer, "%s.%x.%x.%d", m_Name.get(), *reinterpret_cast<uint32_t*>(&m_ScaleW_640),
+    formatf(buffer, "%s.%x.%x.%d", m_Name.get(), *reinterpret_cast<uint32_t*>(&m_ScaleW_640),
         *reinterpret_cast<uint32_t*>(&m_ScaleH_480), m_Transparency);
     BitmapHash.Delete(buffer);
 }
