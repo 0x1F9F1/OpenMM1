@@ -51,7 +51,7 @@ endif()
 
 if(MM1_GAME_DIRECTORY)
     set_target_properties(OpenMM1 PROPERTIES
-        VS_DEBUGGER_COMMAND "${MM1_GAME_DIRECTORY}/midtown1.exe"
+        VS_DEBUGGER_COMMAND "${MM1_GAME_DIRECTORY}/OpenMM1.exe"
         VS_DEBUGGER_WORKING_DIRECTORY "${MM1_GAME_DIRECTORY}"
     )
 
@@ -66,7 +66,13 @@ if(MM1_GAME_DIRECTORY)
     endif()
 
     install(TARGETS OpenMM1 RUNTIME DESTINATION ${MM1_GAME_DIRECTORY})
-    install(FILES "extra/midtown.map" DESTINATION ${MM1_GAME_DIRECTORY})
+
+    install(FILES
+        extra/OpenMM1.exe
+        extra/OpenMM1.pdb
+        extra/midtown.map
+        DESTINATION ${MM1_GAME_DIRECTORY})
+
     install(FILES $<TARGET_PDB_FILE:OpenMM1> DESTINATION ${MM1_GAME_DIRECTORY} OPTIONAL)
 
     if(USE_SDL2)
