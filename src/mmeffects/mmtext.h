@@ -123,7 +123,7 @@ public:
     int32_t m_Count {0};
     int32_t m_Max {0};
     int32_t m_dword2C {-1};
-    mmText m_text30 {0};
+    mmText m_text30 {};
     mmTextData* m_Text {nullptr};
     Ref<agiBitmap> m_Bitmap {};
     uint32_t m_HasText {1};
