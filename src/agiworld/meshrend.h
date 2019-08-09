@@ -591,13 +591,13 @@ public:
     static inline extern_var(0x5B80A8, struct agiMeshCardVertex*, DefaultQuad);
 
     // 0x67BF10 | ?indexCounts@agiMeshSet@@1PAFA
-    static inline extern_var(0x67BF10, int16_t*, indexCounts);
+    static inline extern_var(0x67BF10, int16_t[256], indexCounts);
 
     // 0x67C114 | ?MtxSerial@agiMeshSet@@1IA
     static inline extern_var(0x67C114, uint32_t, MtxSerial);
 
     // 0x67C118 | ?codes@agiMeshSet@@2PAEA
-    static inline extern_var(0x67C118, uint8_t*, codes);
+    static inline extern_var(0x67C118, uint8_t[16384], codes);
 
     // 0x680118 | ?EyePos@agiMeshSet@@2VVector3@@A
     static inline extern_var(0x680118, class Vector3, EyePos);
@@ -612,7 +612,7 @@ public:
     static inline extern_var(0x683160, float, MaxY);
 
     // 0x683180 | ?HitEyePlanes@agiMeshSet@@2PAVVector4@@A
-    static inline extern_var(0x683180, class Vector4*, HitEyePlanes);
+    static inline extern_var(0x683180, class Vector4[2], HitEyePlanes);
 
     // 0x6831A0 | ?EyePlaneCount@agiMeshSet@@2HA
     static inline extern_var(0x6831A0, int32_t, EyePlaneCount);
@@ -621,7 +621,7 @@ public:
     static inline extern_var(0x6831A4, float, MaxX);
 
     // 0x6831A8 | ?vertCounts@agiMeshSet@@1PAFA
-    static inline extern_var(0x6831A8, int16_t*, vertCounts);
+    static inline extern_var(0x6831A8, int16_t[256], vertCounts);
 
     // 0x6833A8 | ?MinY@agiMeshSet@@1MA
     static inline extern_var(0x6833A8, float, MinY);
@@ -630,7 +630,7 @@ public:
     static inline extern_var(0x6833AC, int32_t, MirrorMode);
 
     // 0x6833F0 | ?fogout@agiMeshSet@@1PAEA
-    static inline extern_var(0x6833F0, uint8_t*, fogout);
+    static inline extern_var(0x6833F0, uint8_t[16384], fogout);
 
     // 0x6873F0 | ?ViewSerial@agiMeshSet@@1IA
     static inline extern_var(0x6873F0, uint32_t, ViewSerial);
@@ -645,7 +645,7 @@ public:
     static inline extern_var(0x687404, float, HalfWidth);
 
     // 0x687408 | ?nextFacet@agiMeshSet@@1PAFA
-    static inline extern_var(0x687408, int16_t*, nextFacet);
+    static inline extern_var(0x687408, int16_t[16384], nextFacet);
 
     // 0x68F408 | ?ProjZZ@agiMeshSet@@1MA
     static inline extern_var(0x68F408, float, ProjZZ);
@@ -660,13 +660,13 @@ public:
     static inline extern_var(0x68F420, float, FogValue);
 
     // 0x68F428 | ?firstFacet@agiMeshSet@@1PAFA
-    static inline extern_var(0x68F428, int16_t*, firstFacet);
+    static inline extern_var(0x68F428, int16_t[256], firstFacet);
 
     // 0x69F658 | ?MinX@agiMeshSet@@1MA
     static inline extern_var(0x69F658, float, MinX);
 
     // 0x69F660 | ?EyePlanes@agiMeshSet@@2PAVVector4@@A
-    static inline extern_var(0x69F660, class Vector4*, EyePlanes);
+    static inline extern_var(0x69F660, class Vector4[2], EyePlanes);
 
     // 0x69F680 | ?OffsY@agiMeshSet@@1MA
     static inline extern_var(0x69F680, float, OffsY);
@@ -752,7 +752,7 @@ public:
     }
 
     // 0x6A10F0 | ?out@agiMeshSet@@1PAVVector4@@A
-    static inline extern_var(0x6A10F0, class Vector4*, out);
+    static inline extern_var(0x6A10F0, class Vector4[16384], out);
 
     // 0x50505E | ?ToScreen$$1@agiMeshSet@@KIXPAEPAVVector4@@H@Z
     static inline void ToScreen$$1(uint8_t* arg1, class Vector4* arg2, int32_t arg3)

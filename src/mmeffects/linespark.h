@@ -51,7 +51,7 @@ public:
     }
 
     // 0x5B7B30 | ?BuiltinClut@asSparkLut@@0PAIA
-    static inline extern_var(0x5B7B30, uint32_t*, BuiltinClut);
+    static inline extern_var(0x5B7B30, uint32_t[32], BuiltinClut);
 };
 
 struct asLineSparks

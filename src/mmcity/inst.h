@@ -264,17 +264,17 @@ public:
     }
 
     // 0x5ADF08 | ?LodTable@mmInstance@@2PAY132MA
-    static inline extern_var(0x5ADF08, float (*)[3][4], LodTable);
+    static inline extern_var(0x5ADF08, float[3][3][4], LodTable);
 
     // 0x64F830 | ?MeshSetNames@mmInstance@@2PAPADA
-    static inline extern_var(0x64F830, char**, MeshSetNames);
+    static inline extern_var(0x64F830, char * [4096], MeshSetNames);
 
     // 0x653830 | ?DynamicLighter@mmInstance@@2P6AXPAEPAI1PAVagiMeshSet@@@ZA
     static inline extern_var(
         0x653830, void(__cdecl*)(uint8_t*, uint32_t*, uint32_t*, class agiMeshSet*), DynamicLighter);
 
     // 0x653870 | ?MeshSetTable@mmInstance@@2PAUMeshSetTableEntry@1@A
-    static inline extern_var(0x653870, struct mmInstance::MeshSetTableEntry*, MeshSetTable);
+    static inline extern_var(0x653870, struct mmInstance::MeshSetTableEntry[4096], MeshSetTable);
 
     // 0x667898 | ?ShowLights@mmInstance@@2HA
     static inline extern_var(0x667898, int32_t, ShowLights);

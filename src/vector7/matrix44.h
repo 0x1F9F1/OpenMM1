@@ -67,19 +67,19 @@
 #include "vector4.h"
 
 // 0x5C5288 | ?id@@3PAMA
-inline extern_var(0x5C5288, float*, id);
+inline extern_var(0x5C5288, float[16], id);
 
 // 0x5C52C8 | ?bb@@3PAMA
-inline extern_var(0x5C52C8, float*, bb);
+inline extern_var(0x5C52C8, float[16], bb);
 
 // 0x5C5308 | ?bt@@3PAMA
-inline extern_var(0x5C5308, float*, bt);
+inline extern_var(0x5C5308, float[16], bt);
 
 // 0x5C5348 | ?hb@@3PAMA
-inline extern_var(0x5C5348, float*, hb);
+inline extern_var(0x5C5348, float[16], hb);
 
 // 0x5C5388 | ?ht@@3PAMA
-inline extern_var(0x5C5388, float*, ht);
+inline extern_var(0x5C5388, float[16], ht);
 
 // 0x710930 | ?HermiteBasis@@3VMatrix44@@A
 inline extern_var(0x710930, class Matrix44, HermiteBasis);

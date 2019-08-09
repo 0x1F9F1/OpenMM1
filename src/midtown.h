@@ -113,7 +113,7 @@ inline extern_var(0x5A47D0, char*, VERSION_STRING);
 inline extern_var(0x5D3E64, int32_t, bHaveIME);
 
 // 0x5D3E68 | ?LoadScreen@@3PADA
-inline extern_var(0x5D3E68, char*, LoadScreen);
+inline extern_var(0x5D3E68, char[40], LoadScreen);
 
 // 0x5D3E90 | ?__VtResumeSampling@@3P6AHXZA
 inline extern_var(0x5D3E90, int32_t(__cdecl*)(void), __VtResumeSampling);
@@ -131,7 +131,7 @@ inline extern_var(0x5D44A4, class mmGameRecord*, SystemStatsRecord);
 inline extern_var(0x5D44A8, uint32_t, hImmContext);
 
 // 0x5D44B0 | ?CityName@@3PADA
-inline extern_var(0x5D44B0, char*, CityName);
+inline extern_var(0x5D44B0, char[40], CityName);
 
 // 0x5D44D8 | ?CycleState@@3HA
 inline extern_var(0x5D44D8, int32_t, CycleState);

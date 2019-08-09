@@ -78,7 +78,7 @@ void Errorf(char const* format, ...);
 [[noreturn]] void Abortf(char const* format, ...);
 
 // 0x5CDF70 | ?__assertFailed@@3PADA
-// inline extern_var(0x5CDF70, char*, __assertFailed);
+// inline extern_var(0x5CDF70, char[], __assertFailed);
 
 // 0x711ABC | ?MonoPointer@@3PAGA
 // inline extern_var(0x711ABC, uint16_t*, MonoPointer);

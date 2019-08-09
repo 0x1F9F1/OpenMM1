@@ -65,10 +65,10 @@
 inline extern_var(0x5A56B8, float, ProjectileY);
 
 // 0x5A56C0 | ?IconColor@@3PAIA
-inline extern_var(0x5A56C0, uint32_t*, IconColor);
+inline extern_var(0x5A56C0, uint32_t[8], IconColor);
 
 // 0x609268 | ?LocPlayerName@@3PADA
-inline extern_var(0x609268, char*, LocPlayerName);
+inline extern_var(0x609268, char[20], LocPlayerName);
 
 // 0x609298 | ?mmGameMetaClass@@3VMetaClass@@A
 inline extern_var(0x609298, class MetaClass, mmGameMetaClass);

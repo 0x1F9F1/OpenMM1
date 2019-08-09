@@ -38,7 +38,7 @@
 */
 
 // 0x5AE490 | ?StaticTerrainLodTable@@3PAY01MA
-inline extern_var(0x5AE490, float (*)[2], StaticTerrainLodTable);
+inline extern_var(0x5AE490, float[4][2], StaticTerrainLodTable);
 
 // 0x5AE4B0 | ?ObjectMaxDist@@3MA
 inline extern_var(0x5AE4B0, float, ObjectMaxDist);
@@ -53,10 +53,10 @@ inline extern_var(0x667AB8, int32_t, CRPassBoth);
 inline extern_var(0x667ABC, int32_t, CRPass1Only);
 
 // 0x667AC0 | ?CellTriCount@@3PAHA
-inline extern_var(0x667AC0, int32_t*, CellTriCount);
+inline extern_var(0x667AC0, int32_t[3], CellTriCount);
 
 // 0x667AD0 | ?CellTypeCount@@3PAHA
-inline extern_var(0x667AD0, int32_t*, CellTypeCount);
+inline extern_var(0x667AD0, int32_t[3], CellTypeCount);
 
 // 0x667ADC | ?CRPass3Only@@3HA
 inline extern_var(0x667ADC, int32_t, CRPass3Only);

@@ -62,7 +62,7 @@ inline void agiPrintShutdown()
 }
 
 // 0x5C3078 | ?CharSet@@3PAEA
-inline extern_var(0x5C3078, uint8_t*, CharSet);
+inline extern_var(0x5C3078, uint8_t[768], CharSet);
 
 // 0x539F20 | ?InitBuiltin@@YAXXZ
 inline void InitBuiltin()

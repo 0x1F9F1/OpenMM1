@@ -43,7 +43,7 @@ inline void ddAttach(int32_t arg1, int32_t arg2)
 inline extern_var(0x6F7DE0, class agiSurfaceDesc, swScreenDesc);
 
 // 0x6F7E68 | ?swNibbleLut@@3PAEA
-inline extern_var(0x6F7E68, uint8_t*, swNibbleLut);
+inline extern_var(0x6F7E68, uint8_t[512], swNibbleLut);
 
 // 0x6F8070 | ?bRenderToSystem@@3HA
 inline extern_var(0x6F8070, int32_t, bRenderToSystem);

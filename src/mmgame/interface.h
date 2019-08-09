@@ -118,10 +118,10 @@ inline void ReportTimeAlloc(float arg1)
 inline extern_var(0x609150, class MetaClass, mmInterfaceMetaClass);
 
 // 0x609178 | ?szSearchPath@@3PADA
-inline extern_var(0x609178, char*, szSearchPath);
+inline extern_var(0x609178, char[128], szSearchPath);
 
 // 0x609200 | ?defcarname@@3PADA
-inline extern_var(0x609200, char*, defcarname);
+inline extern_var(0x609200, char[80], defcarname);
 
 // 0x4053F0 | ?Debugf@@YAXPBDZZ
 // Skipped (Variable Arguments)

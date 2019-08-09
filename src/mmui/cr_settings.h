@@ -50,10 +50,10 @@
 */
 
 // 0x5AF040 | ?GameType_PenaltyTable@@3PAHA
-inline extern_var(0x5AF040, int32_t*, GameType_PenaltyTable);
+inline extern_var(0x5AF040, int32_t[10], GameType_PenaltyTable);
 
 // 0x5AF068 | ?Limit_ValueTable@@3PAHA
-inline extern_var(0x5AF068, int32_t*, Limit_ValueTable);
+inline extern_var(0x5AF068, int32_t[12], Limit_ValueTable);
 
 struct CRSettings : UIMenu
 {

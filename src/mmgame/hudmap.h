@@ -67,7 +67,7 @@
 inline extern_var(0x609638, class MetaClass, mmHudMapMetaClass);
 
 // 0x609660 | ?Tris@@3PATagiVtx@@A
-inline extern_var(0x609660, union agiVtx*, Tris);
+// inline extern_var(0x609660, union agiVtx*, Tris);
 
 // 0x420ED0 | ?new_mmHudMap@@YAPAXH@Z
 // 0x420FA0 | ?delete_mmHudMap@@YAXPAXH@Z

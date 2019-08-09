@@ -59,10 +59,10 @@
 */
 
 // 0x6E16B0 | ?CollidedLines@@3PAPAHA
-inline extern_var(0x6E16B0, int32_t**, CollidedLines);
+inline extern_var(0x6E16B0, int32_t * [30], CollidedLines);
 
 // 0x6E1728 | ?InsideVerts@@3PAHA
-inline extern_var(0x6E1728, int32_t*, InsideVerts);
+inline extern_var(0x6E1728, int32_t[30], InsideVerts);
 
 class mmBoundTemplate
 {

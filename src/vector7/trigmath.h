@@ -70,13 +70,13 @@ inline float atan2f_faster(float arg1, float arg2)
 }
 
 // 0x5C6A60 | ?asintable@@3PAMA
-inline extern_var(0x5C6A60, float*, asintable);
+// inline extern_var(0x5C6A60, float*, asintable);
 
 // 0x5CAD90 | ?TRIGMATH_COSTABLE@@3PAMA
-inline extern_var(0x5CAD90, float*, TRIGMATH_COSTABLE);
+// inline extern_var(0x5CAD90, float*, TRIGMATH_COSTABLE);
 
 // 0x5CBDB8 | ?TRIGMATH_TANTABLE@@3PAMA
-inline extern_var(0x5CBDB8, float*, TRIGMATH_TANTABLE);
+// inline extern_var(0x5CBDB8, float*, TRIGMATH_TANTABLE);
 
 // 0x5CCDE0 | ?TRIGMATH_ATANTABLE@@3PAMA
-inline extern_var(0x5CCDE0, float*, TRIGMATH_ATANTABLE);
+// inline extern_var(0x5CCDE0, float*, TRIGMATH_ATANTABLE);

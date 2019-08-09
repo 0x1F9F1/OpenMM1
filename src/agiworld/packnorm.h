@@ -40,7 +40,7 @@ inline uint8_t PackNormal(class Vector3& arg1)
 }
 
 // 0x5B8BF0 | ?UnpackNormal@@3PAVVector3@@A
-inline extern_var(0x5B8BF0, class Vector3*, UnpackNormal);
+inline extern_var(0x5B8BF0, class Vector3[198], UnpackNormal);
 
 // 0x6A0A00 | ?UnpackNormalMMX@@3PATmmx@@A
-inline extern_var(0x6A0A00, union mmx*, UnpackNormalMMX);
+inline extern_var(0x6A0A00, union mmx[198], UnpackNormalMMX);

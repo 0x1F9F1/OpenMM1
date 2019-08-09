@@ -51,7 +51,7 @@
 */
 
 // 0x5B0C78 | ?cb@@3PAMA
-inline extern_var(0x5B0C78, float*, cb);
+inline extern_var(0x5B0C78, float[16], cb);
 
 // 0x5B0CB8 | ?GSFDef@@3MA
 inline extern_var(0x5B0CB8, float, GSFDef);

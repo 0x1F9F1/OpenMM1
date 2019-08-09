@@ -112,7 +112,7 @@ inline void fix_lighting()
 }
 
 // 0x5AD110 | ?mmEnvSetup@@3PAY03Ut_mmEnvSetup@@A
-inline extern_var(0x5AD110, struct t_mmEnvSetup (*)[4], mmEnvSetup);
+// inline extern_var(0x5AD110, struct t_mmEnvSetup (*)[4], mmEnvSetup);
 
 // 0x5AD394 | ?BoneScale@@3MA
 inline extern_var(0x5AD394, float, BoneScale);

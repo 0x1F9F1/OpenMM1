@@ -104,7 +104,7 @@ inline int32_t FormatCodeToWFX(uint32_t arg1, struct tWAVEFORMATEX* arg2)
 }
 
 // 0x5B5C70 | ?aOutputFormats@@3PAUtag_fd@@A
-inline extern_var(0x5B5C70, struct tag_fd*, aOutputFormats);
+inline extern_var(0x5B5C70, struct tag_fd[16], aOutputFormats);
 
 // 0x67B5FC | ?DSGlobalPtr@@3PAVDSGlobal@@A
 inline extern_var(0x67B5FC, class DSGlobal*, DSGlobalPtr);
