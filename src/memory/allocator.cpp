@@ -81,7 +81,7 @@ private:
     // Requires 8-byte alignment
 
     // 0:1 - In Use
-    // 0x2 - Unknown
+    // 0x2 - Is Array
     // 0x4 - Sanity Check Pending
     // 0xFFFFFFF8 - Next
     uint32_t uStatus;
@@ -154,7 +154,7 @@ public:
 
     inline void SetAllocated(bool allocated) noexcept
     {
-        uStatus &= 0xFFFFFFFE;
+        uStatus &= 0xFFFFFFF8;
 
         if (allocated)
             uStatus |= 1;
@@ -163,6 +163,19 @@ public:
     inline bool IsAllocated() const noexcept
     {
         return (uStatus & 0x1) == 0x1;
+    }
+
+    inline void SetIsArray(bool array) noexcept
+    {
+        uStatus &= 0XFFFFFFFD;
+
+        if (array)
+            uStatus |= 0x2;
+    }
+
+    inline bool IsArray() const noexcept
+    {
+        return (uStatus & 0x2) == 0x2;
     }
 
     // Used in SanityCheck
