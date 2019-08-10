@@ -1,4 +1,5 @@
 add_subdirectory(mem)
+add_subdirectory(lua)
 
 set(SDL2_INCLUDE_DIRS "${CMAKE_CURRENT_LIST_DIR}/sdl2/include" CACHE PATH "")
 set(SDL2_LIBRARIES "${CMAKE_CURRENT_LIST_DIR}/sdl2/lib/SDL2.lib;${CMAKE_CURRENT_LIST_DIR}/sdl2/lib/SDL2main.lib" CACHE PATH "")
