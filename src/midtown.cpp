@@ -18,10 +18,20 @@
 
 #include "midtown.h"
 
+#include "agi/pipeline.h"
+#include "agid3d/pcpipe.h"
+#include "agisw/swddraw.h"
+#include "agisw/swpipe.h"
 #include "data7/cstr.h"
+#include "data7/ptr.h"
 #include "data7/timer.h"
+#include "eventq7/winevent.h"
+#include "localize/localize.h"
 #include "memory/allocator.h"
+#include "mmcityinfo/state.h"
+#include "mmui/graphics.h"
 #include "pcwindis/dxinit.h"
+#include "pcwindis/setupdata.h"
 
 #ifdef USE_SDL2
 #    include "agigl/glpipe.h"
@@ -30,12 +40,103 @@
 #include <cstring>
 #include <mem/cmd_param-inl.h>
 
+static mem::cmd_param PARAM_width {"width"};
+static mem::cmd_param PARAM_height {"height"};
+
 agiPipeline* CreatePipeline(int32_t argc, char** argv)
 {
 #ifdef USE_SDL2
     return glCreatePipeline(argc, argv);
 #else
-    return stub<cdecl_t<agiPipeline*, int32_t, char**>>(0x401030, argc, argv);
+    dxiRendererInfo_t* info = &dxiInfo[dxiRendererChoice];
+    Ptr<agiPipeline> result;
+
+    if (bHaveIME)
+    {
+        dxiShutdown();
+
+        if (MMSTATE.InGame)
+        {
+            InitialCursorState = -1;
+
+            dxiFlags = dxiFlags & 0xFFFFFFFD | 5;
+        }
+        else
+        {
+            dxiFlags = dxiFlags & 0xFFFFFFFA | 2;
+
+            if (dxiChangeDisplaySettings(640, 480, 16))
+            {
+                MessageBoxA(NULL, LANG_STRING(0xC6), APPTITLE, MB_ICONERROR);
+
+                Quit(0);
+            }
+
+            InitialCursorState = 0;
+        }
+
+        dxiInit(APPTITLE, 0, 0);
+    }
+
+    if (MMSTATE.InGame)
+    {
+        bRenderToSystem = RenderToSystemMemory;
+
+        if (info->m_UseHardware)
+        {
+            result.Reset(d3dCreatePipeline(argc, argv));
+        }
+        else
+        {
+            result.Reset(swCreatePipeline(argc, argv));
+        }
+
+        if (info->m_ResCount)
+        {
+            dxiResolution* res = &info->m_Resolutions[info->m_ResolutionIndex];
+
+            result->m_Width = PARAM_width.get_or(res->uWidth);
+            result->m_Height = PARAM_height.get_or(res->uHeight);
+        }
+
+        if (result->Validate())
+        {
+            result->EndAllGfx();
+            result.Reset();
+
+            MessageBoxA(NULL, LANG_STRING(0xC8), APPTITLE, MB_ICONERROR);
+
+            result.Reset(swCreatePipeline(argc, argv));
+
+            result->m_Width = 640;
+            result->m_Height = 480;
+        }
+    }
+    else
+    {
+        bRenderToSystem = 1;
+
+        if (!info->m_UseHardware || bHaveIME)
+        {
+            result.Reset(swCreatePipeline(argc, argv));
+        }
+        else
+        {
+            result.Reset(d3dCreatePipeline(argc, argv));
+        }
+
+        result->m_Width = 640;
+        result->m_Height = 480;
+
+        if (result->Validate())
+        {
+            MessageBoxA(0, LANG_STRING(0xC7), APPTITLE, MB_ICONERROR);
+
+            Quit(0);
+        }
+    }
+
+    return result.Release();
 #endif
 }
 

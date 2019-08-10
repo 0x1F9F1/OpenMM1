@@ -27,17 +27,23 @@ int32_t dxiChangeDisplaySettings(int32_t /*width*/, int32_t /*height*/, int32_t 
     return 0;
 }
 
-#ifdef USE_SDL2
-void dxiInit(char* window_title, int32_t /*argc*/, char** /*argv*/)
+void dxiInit(char* window_title, [[maybe_unused]] int32_t argc, [[maybe_unused]] char** argv)
 {
+#ifdef USE_SDL2
     sdlInit(window_title);
+#else
+    return stub<cdecl_t<void, char*, int32_t, char**>>(0x5560A0, window_title, argc, argv);
+#endif
 }
 
 void dxiShutdown()
 {
+#ifdef USE_SDL2
     sdlShutdown();
-}
+#else
+    return stub<cdecl_t<void>>(0x555D90);
 #endif
+}
 
 define_dummy_symbol(dxinit);
 

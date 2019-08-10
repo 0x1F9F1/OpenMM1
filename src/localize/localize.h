@@ -46,3 +46,5 @@ inline struct LocString* AngelReadString(uint32_t arg1)
 {
     return stub<cdecl_t<struct LocString*, uint32_t>>(0x50E090, arg1);
 }
+
+#define LANG_STRING(index) (AngelReadString(index)->Data)

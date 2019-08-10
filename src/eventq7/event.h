@@ -189,7 +189,7 @@ public:
     {
         // stub<member_func_t<void, eqEventMonitor, int32_t>>(0x544E20, this, arg1);
 
-        unimplemented();
+        unimplemented(arg1);
     }
 
     // 0x545060 | ?SetWantMotion@eqEventMonitor@@QAEXH@Z

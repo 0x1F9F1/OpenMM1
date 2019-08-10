@@ -85,6 +85,7 @@ inline void SetTexQualString()
     return stub<cdecl_t<void>>(0x48EA70);
 }
 
+#if 0
 struct GraphicsOptions : OptionsBase
 {
 public:
@@ -148,3 +149,4 @@ public:
         return stub<member_func_t<void, GraphicsOptions>>(0x48EFE0, this);
     }
 };
+#endif
