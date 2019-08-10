@@ -20,10 +20,14 @@
 
 #include "setupdata.h"
 
+#include <mem/cmd_param.h>
+
 #ifdef USE_SDL2
 void dxiConfig(int32_t /*argc*/, char** /*argv*/)
 {}
 #endif
+
+static mem::cmd_param PARAM_widescreen {"widescreen"};
 
 int32_t __stdcall ModeCallback(DDSURFACEDESC2* sd, void* context)
 {
@@ -33,7 +37,8 @@ int32_t __stdcall ModeCallback(DDSURFACEDESC2* sd, void* context)
     {
         float ar = static_cast<float>(sd->dwWidth) / static_cast<float>(sd->dwHeight);
 
-        if ((ar > 1.6f) && (sd->ddpfPixelFormat.dwRGBBitCount == 32))
+        if (sd->dwWidth >= 640 && sd->dwHeight >= 480 && sd->ddpfPixelFormat.dwRGBBitCount == 32 &&
+            (ar > 1.6f) == PARAM_widescreen.get_or(true))
         {
             info->m_Resolutions[info->m_ResCount].uWidth = static_cast<uint16_t>(sd->dwWidth);
             info->m_Resolutions[info->m_ResCount].uHeight = static_cast<uint16_t>(sd->dwHeight);

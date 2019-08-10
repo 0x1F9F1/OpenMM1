@@ -18,15 +18,17 @@
 
 #include "midtown.h"
 
+#include "data7/cstr.h"
 #include "data7/timer.h"
-
+#include "memory/allocator.h"
 #include "pcwindis/dxinit.h"
-
-#include <cstring>
 
 #ifdef USE_SDL2
 #    include "agigl/glpipe.h"
 #endif
+
+#include <cstring>
+#include <mem/cmd_param-inl.h>
 
 agiPipeline* CreatePipeline(int32_t argc, char** argv)
 {
@@ -60,8 +62,14 @@ void Application(int32_t argc, char** argv)
 static char Main_ExecPath[1024] {};
 static char* Main_ArgV[128] {};
 
+alignas(std::max_align_t) static char InitHeap[0x10000];
+
 int CALLBACK MidtownMain(HINSTANCE /*hInstance*/, HINSTANCE /*hPrevInstance*/, LPSTR lpCmdLine, int /*nCmdShow*/)
 {
+    asMemoryAllocator init_alloc;
+    init_alloc.Init(InitHeap, 0x10000, 1);
+    CURHEAP = &init_alloc;
+
     GetModuleFileNameA(0, Main_ExecPath, 1024);
 
     int argc = 0;
@@ -96,15 +104,19 @@ int CALLBACK MidtownMain(HINSTANCE /*hInstance*/, HINSTANCE /*hPrevInstance*/, L
             break;
         }
 
-        Main_ArgV[argc++] = cmd_start;
-
         if (*current)
         {
             *current++ = '\0';
         }
+
+        Assert(argc < 128);
+        Main_ArgV[argc++] = cmd_start;
     }
 
+    Assert(argc < 128);
     Main_ArgV[argc] = nullptr;
+
+    mem::cmd_param::init(argc, Main_ArgV);
 
     Application(argc, Main_ArgV);
 
