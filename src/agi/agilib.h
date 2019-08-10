@@ -73,7 +73,7 @@ inline void agiLib<Params, Defs>::Init(int32_t ct)
 }
 
 template <typename Params, typename Defs>
-void agiLib<Params, Defs>::Kill()
+inline void agiLib<Params, Defs>::Kill()
 {
     while (m_Count--)
     {

@@ -1,7 +1,7 @@
 # OpenMM1
 
 [![Build status](https://ci.appveyor.com/api/projects/status/61emkjr3xrxngjke/branch/master?svg=true)](https://ci.appveyor.com/project/0x1F9F1/openmm1/branch/master)
-[![Chat On Discord](https://img.shields.io/badge/chat-on%20discord-7289DA?logo=discord)](https://discord.gg/ykT7PT4)
+[![Chat On Discord](https://img.shields.io/discord/239900961731117059?color=7289DA&logo=discord)](https://discord.gg/ykT7PT4)
 
 OpenMM1 is an open source re-implementation of Midtown Madness 1.
 

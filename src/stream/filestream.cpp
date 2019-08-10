@@ -130,6 +130,11 @@ int32_t FileStream::Close()
     return result;
 }
 
+FileStream::FileStream(int32_t handle)
+    : Stream(nullptr, 0, nullptr)
+    , m_FileHandle(handle)
+{}
+
 FileStream::~FileStream()
 {
     Close();

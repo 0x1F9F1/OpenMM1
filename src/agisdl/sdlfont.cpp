@@ -18,6 +18,7 @@
 
 #include "sdlfont.h"
 
+#include "data7/format.h"
 #include "sdlinit.h"
 
 #include <SDL_filesystem.h>

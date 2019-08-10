@@ -20,6 +20,7 @@
 
 #include "agi/bitmap.h"
 #include "agi/pipeline.h"
+#include "data7/format.h"
 
 #ifdef USE_SDL2
 #    include "agisdl/sdlfont.h"

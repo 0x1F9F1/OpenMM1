@@ -62,17 +62,14 @@ public:
     // 0x543370 | ??0FileStream@@QAE@PAXHPAVFileSystem@@@Z
     using Stream::Stream;
 
+    // 0x543460 | ??0FileStream@@QAE@H@Z
+    FileStream(int32_t handle);
+
     // 0x5433C0 | ?Create@FileStream@@QAEHPAD@Z
     int32_t Create(char* path);
 
     // 0x5433F0 | ?Open@FileStream@@QAEHPADH@Z
     int32_t Open(char* path, int32_t paged);
-
-    // 0x543460 | ??0FileStream@@QAE@H@Z
-    inline FileStream(int32_t arg1)
-        : Stream(nullptr, 0, nullptr)
-        , m_FileHandle(arg1)
-    {}
 
     // 0x543490 | ?Stdin@FileStream@@QAEHXZ
     int32_t Stdin();
