@@ -18,6 +18,7 @@
 
 #include "physlib.h"
 
+#include "agilib.inl"
 #include "physdef.h"
 
 template struct agiLib<agiPhysParameters, agiPhysDef>;

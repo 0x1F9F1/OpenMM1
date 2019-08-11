@@ -145,9 +145,9 @@ public:
     }
 
     // 0x542730 | ?FirstEntry@VirtualFileSystem@@UAEPAUFileInfo@@PAD@Z
-    inline struct FileInfo* FirstEntry(char* arg1) override
+    inline struct FileInfo* FirstEntry(const char* arg1) override
     {
-        return stub<member_func_t<struct FileInfo*, VirtualFileSystem, char*>>(0x542730, this, arg1);
+        return stub<member_func_t<struct FileInfo*, VirtualFileSystem, const char*>>(0x542730, this, arg1);
     }
 
     // 0x542880 | ?NextEntry@VirtualFileSystem@@UAEPAUFileInfo@@PAU2@@Z

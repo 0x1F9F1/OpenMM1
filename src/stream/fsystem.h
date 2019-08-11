@@ -88,6 +88,15 @@ inline void ExpandEnvs(char* arg1)
 
 constexpr int32_t MAX_FILESYSTEMS = 256;
 
+struct FileInfo
+{
+    char Path[1024] {};
+    bool32_t IsDirectory {0};
+    void* Context {nullptr};
+};
+
+check_size(FileInfo, 0x408);
+
 class FileSystem : Base
 {
 public:
@@ -145,7 +154,7 @@ public:
     virtual inline int32_t GetDir(char* arg1, int32_t arg2) = 0;
 
     // 0x567350 | __purecall
-    virtual inline struct FileInfo* FirstEntry(char* arg1) = 0;
+    virtual inline struct FileInfo* FirstEntry(const char* arg1) = 0;
 
     // 0x567350 | __purecall
     virtual inline struct FileInfo* NextEntry(struct FileInfo* arg1) = 0;

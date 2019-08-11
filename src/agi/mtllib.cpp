@@ -18,6 +18,7 @@
 
 #include "mtllib.h"
 
+#include "agilib.inl"
 #include "mtldef.h"
 
 template struct agiLib<agiMtlParameters, agiMtlDef>;

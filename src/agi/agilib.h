@@ -20,6 +20,8 @@
 
 #include "data7/hash.h"
 
+class Stream;
+
 constexpr size_t agiLibMax = 2048;
 
 /*
@@ -45,80 +47,6 @@ struct agiLib
     int32_t Add(Params& params);
     int32_t GetIndex(const char* key);
     void Remove(uint32_t index);
+
+    void Load(Stream* stream);
 };
-
-template <typename Params, typename Defs>
-inline agiLib<Params, Defs>::agiLib() = default;
-
-template <typename Params, typename Defs>
-inline agiLib<Params, Defs>::~agiLib()
-{
-    Kill();
-}
-
-template <typename Params, typename Defs>
-inline void agiLib<Params, Defs>::Init(int32_t ct)
-{
-    m_LookupTable.Init(64);
-
-    Assert(ct <= agiLibMax);
-
-    m_Count = ct;
-
-    for (int32_t i = 0; i < ct; ++i)
-    {
-        m_Params[i] = new Params();
-        m_Defs[i] = nullptr;
-    }
-}
-
-template <typename Params, typename Defs>
-inline void agiLib<Params, Defs>::Kill()
-{
-    while (m_Count--)
-    {
-        delete m_Params[m_Count];
-        m_Defs[m_Count]->Release();
-    }
-
-    m_LookupTable.Kill();
-}
-
-template <typename Params, typename Defs>
-inline int32_t agiLib<Params, Defs>::Add(Params& params)
-{
-    int32_t result = GetIndex(params.m_Name);
-
-    if (!result)
-    {
-        Assert(m_Count < agiLibMax);
-
-        m_Params[m_Count] = new Params(params);
-        m_Defs[m_Count] = 0;
-
-        result = ++m_Count;
-
-        m_LookupTable.Insert(params.m_Name, reinterpret_cast<void*>(result));
-    }
-
-    return result;
-}
-
-template <typename Params, typename Defs>
-inline int32_t agiLib<Params, Defs>::GetIndex(const char* key)
-{
-    char buffer[128];
-    strcpy_s(buffer, key);
-    _strupr_s(buffer, 128);
-
-    return reinterpret_cast<uint32_t>(m_LookupTable.Access(buffer));
-}
-
-template <typename Params, typename Defs>
-inline void agiLib<Params, Defs>::Remove(uint32_t index)
-{
-    if (index)
-    {
-        m_Params[index - 1] = 0;
-    }
-}

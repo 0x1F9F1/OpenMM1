@@ -703,6 +703,11 @@ uint32_t asMemoryAllocator::GetCurrentTotal() const noexcept
     return m_HeapOffset;
 }
 
+bool asMemoryAllocator::DebugEnabled() const noexcept
+{
+    return m_Debug;
+}
+
 static uint32_t msize(void* ptr)
 {
     return CRTALLOCATOR.GetSize(ptr);

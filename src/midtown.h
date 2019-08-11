@@ -77,10 +77,7 @@ inline void GameLoop(class mmInterface* arg1, class mmGameManager* arg2, char* a
 }
 
 // 0x401670 | ?ApplicationHelper@@YAXHPAPAD@Z
-inline void ApplicationHelper(int32_t arg1, char** arg2)
-{
-    return stub<cdecl_t<void, int32_t, char**>>(0x401670, arg1, arg2);
-}
+void ApplicationHelper(int32_t argc, char** argv);
 
 // 0x402550 | ?InitAudioManager@@YAXXZ
 inline void InitAudioManager()

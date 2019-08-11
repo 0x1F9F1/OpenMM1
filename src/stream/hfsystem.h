@@ -57,7 +57,7 @@ inline extern_var(0x70EF80, char*, HierPrefix);
 inline extern_var(0x70F008, class HierFileSystem, HFS);
 
 // 0x70F010 | ?HierAllowPath@@3PADA
-inline extern_var(0x70F010, char*, HierAllowPath);
+inline extern_var(0x70F010, const char*, HierAllowPath);
 
 // 0x70F014 | ?LogOpenOn@@3HA
 inline extern_var(0x70F014, int32_t, LogOpenOn);
@@ -112,9 +112,9 @@ public:
     }
 
     // 0x541F40 | ?FirstEntry@HierFileSystem@@UAEPAUFileInfo@@PAD@Z
-    inline struct FileInfo* FirstEntry(char* arg1) override
+    inline struct FileInfo* FirstEntry(const char* arg1) override
     {
-        return stub<member_func_t<struct FileInfo*, HierFileSystem, char*>>(0x541F40, this, arg1);
+        return stub<member_func_t<struct FileInfo*, HierFileSystem, const char*>>(0x541F40, this, arg1);
     }
 
     // 0x542080 | ?NextEntry@HierFileSystem@@UAEPAUFileInfo@@PAU2@@Z
