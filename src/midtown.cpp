@@ -148,6 +148,11 @@ agiPipeline* CreatePipeline(int32_t argc, char** argv)
     return result.Release();
 }
 
+void ApplicationHelper(int32_t argc, char** argv)
+{
+    return stub<cdecl_t<void, int32_t, char**>>(0x401670, argc, argv);
+}
+
 void Application(int32_t argc, char** argv)
 {
     dxiIcon = 111;
