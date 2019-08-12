@@ -146,7 +146,6 @@ agiPipeline* CreatePipeline(int32_t argc, char** argv)
     }
 
     return result.Release();
-#endif
 }
 
 void Application(int32_t argc, char** argv)
