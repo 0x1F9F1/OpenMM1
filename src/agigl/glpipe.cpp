@@ -38,8 +38,8 @@ agiPipeline* glCreatePipeline(int32_t /*argc*/, char** /*argv*/)
 {
     agiGLPipeline* result = new agiGLPipeline();
 
-    result->m_Width = dxiWidth;
-    result->m_Height = dxiHeight;
+    result->m_Width = 640;
+    result->m_Height = 480;
     result->m_BitDepth = 32;
 
     return result;
@@ -70,12 +70,18 @@ int32_t agiGLPipeline::BeginGfx()
     m_VertRes = GetDeviceCaps(hdc, VERTRES);
     ReleaseDC(GetDesktopWindow(), hdc);
 
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_COMPATIBILITY);
+
     SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
     SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
     SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
     SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
 
-    SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
+    SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 32);
+
+    SDL_SetWindowSize(s_Window, m_Width, m_Height);
 
     m_GL = SDL_GL_CreateContext(s_Window);
 

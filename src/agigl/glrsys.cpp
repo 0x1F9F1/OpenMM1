@@ -19,31 +19,15 @@
 #include "glrsys.h"
 
 #include "agi/pipeline.h"
+#include "agi/vertex.h"
 #include "gltexdef.h"
 #include "glutils.h"
 
 #include <GL/glew.h>
 
-union agiVtx
-{
-    struct
-    {
-        float x;
-        float y;
-        float z;
-        float Scale;
-        unsigned int Color;
-        float float14;
-        float TexS;
-        float TexT;
-    } GL;
-};
-
-check_size(agiVtx, 0x20);
-
 static uint32_t CurrentPipeHeight = 0;
 static int32_t UseTriangles = 1;
-static agiVtx* VtxBase = nullptr;
+static agiScreenVtx* VtxBase = nullptr;
 static int32_t VtxCount = 0;
 static int32_t VtxIndexCount = 0;
 static uint16_t* VtxIndex = nullptr;
@@ -80,7 +64,7 @@ void agiGLRasterizer::Verts(agiVtxType type, agiVtx* verts, int32_t count)
     if (VtxIndexCount || agiCurState.IsTouched())
         FlushState();
 
-    VtxBase = verts;
+    VtxBase = &verts->Vtx;
     VtxCount = count;
     VtxIndexCount = 0;
     VtxIndex = Vertices;
@@ -134,7 +118,7 @@ void agiGLRasterizer::Mesh(agiVtxType type, agiVtx* verts, int32_t vtx_count, ui
 
     agiGLRasterizer::FlushState();
     UseTriangles = 1;
-    VtxBase = verts;
+    VtxBase = &verts->Vtx;
     VtxCount = vtx_count;
     VtxIndex = indices;
     VtxIndexCount = index_count;
@@ -168,61 +152,58 @@ void agiGLRasterizer::FlushState()
                 {
                     if (agiCurState.GetPerspectiveCorrection())
                     {
-                        glTexCoord4f(VtxBase[VtxIndex[i]].GL.TexS * VtxBase[VtxIndex[i]].GL.Scale,
-                            VtxBase[VtxIndex[i]].GL.TexT * VtxBase[VtxIndex[i]].GL.Scale, 0.0,
-                            VtxBase[VtxIndex[i]].GL.Scale);
+                        glTexCoord4f(VtxBase[VtxIndex[i]].tu * VtxBase[VtxIndex[i]].w,
+                            VtxBase[VtxIndex[i]].tv * VtxBase[VtxIndex[i]].w, 0.0, VtxBase[VtxIndex[i]].w);
                     }
                     else
                     {
-                        glTexCoord2fv(&VtxBase[VtxIndex[i]].GL.TexS);
+                        glTexCoord2fv(&VtxBase[VtxIndex[i]].tu);
                     }
                 }
                 if (agiCurState.GetPolyMode() != 3)
-                    glColor4ub(VtxBase[VtxIndex[i]].GL.Color >> 16, VtxBase[VtxIndex[i]].GL.Color >> 8,
-                        VtxBase[VtxIndex[i]].GL.Color, VtxBase[VtxIndex[i]].GL.Color >> 24);
+                    glColor4ub(VtxBase[VtxIndex[i]].color >> 16, VtxBase[VtxIndex[i]].color >> 8,
+                        VtxBase[VtxIndex[i]].color, VtxBase[VtxIndex[i]].color >> 24);
 
-                glVertex3f(VtxBase[VtxIndex[i]].GL.x, CurrentPipeHeight - VtxBase[VtxIndex[i]].GL.y,
-                    1.0 - VtxBase[VtxIndex[i]].GL.z);
+                glVertex3f(
+                    VtxBase[VtxIndex[i]].x, CurrentPipeHeight - VtxBase[VtxIndex[i]].y, 1.0 - VtxBase[VtxIndex[i]].z);
 
                 if (agiCurState.GetPolyMode() == 15)
                 {
                     if (agiCurState.GetPerspectiveCorrection())
                     {
-                        glTexCoord4f(VtxBase[VtxIndex[i + 1]].GL.TexS * VtxBase[VtxIndex[i + 1]].GL.Scale,
-                            VtxBase[VtxIndex[i + 1]].GL.TexT * VtxBase[VtxIndex[i + 1]].GL.Scale, 0.0,
-                            VtxBase[VtxIndex[i + 1]].GL.Scale);
+                        glTexCoord4f(VtxBase[VtxIndex[i + 1]].tu * VtxBase[VtxIndex[i + 1]].w,
+                            VtxBase[VtxIndex[i + 1]].tv * VtxBase[VtxIndex[i + 1]].w, 0.0, VtxBase[VtxIndex[i + 1]].w);
                     }
                     else
                     {
-                        glTexCoord2fv(&VtxBase[VtxIndex[i + 1]].GL.TexS);
+                        glTexCoord2fv(&VtxBase[VtxIndex[i + 1]].tu);
                     }
                 }
                 if (agiCurState.GetPolyMode() != 3)
-                    glColor4ub(VtxBase[VtxIndex[i + 1]].GL.Color >> 16, VtxBase[VtxIndex[i + 1]].GL.Color >> 8,
-                        VtxBase[VtxIndex[i + 1]].GL.Color, VtxBase[VtxIndex[i + 1]].GL.Color >> 24);
+                    glColor4ub(VtxBase[VtxIndex[i + 1]].color >> 16, VtxBase[VtxIndex[i + 1]].color >> 8,
+                        VtxBase[VtxIndex[i + 1]].color, VtxBase[VtxIndex[i + 1]].color >> 24);
 
-                glVertex3f(VtxBase[VtxIndex[i + 1]].GL.x, CurrentPipeHeight - VtxBase[VtxIndex[i + 1]].GL.y,
-                    1.0 - VtxBase[VtxIndex[i + 1]].GL.z);
+                glVertex3f(VtxBase[VtxIndex[i + 1]].x, CurrentPipeHeight - VtxBase[VtxIndex[i + 1]].y,
+                    1.0 - VtxBase[VtxIndex[i + 1]].z);
 
                 if (agiCurState.GetPolyMode() == 15)
                 {
                     if (agiCurState.GetPerspectiveCorrection())
                     {
-                        glTexCoord4f(VtxBase[VtxIndex[i + 2]].GL.TexS * VtxBase[VtxIndex[i + 2]].GL.Scale,
-                            VtxBase[VtxIndex[i + 2]].GL.TexT * VtxBase[VtxIndex[i + 2]].GL.Scale, 0.0,
-                            VtxBase[VtxIndex[i + 2]].GL.Scale);
+                        glTexCoord4f(VtxBase[VtxIndex[i + 2]].tu * VtxBase[VtxIndex[i + 2]].w,
+                            VtxBase[VtxIndex[i + 2]].tv * VtxBase[VtxIndex[i + 2]].w, 0.0, VtxBase[VtxIndex[i + 2]].w);
                     }
                     else
                     {
-                        glTexCoord2fv(&VtxBase[VtxIndex[i + 2]].GL.TexS);
+                        glTexCoord2fv(&VtxBase[VtxIndex[i + 2]].tu);
                     }
                 }
                 if (agiCurState.GetPolyMode() != 3)
-                    glColor4ub(VtxBase[VtxIndex[i + 2]].GL.Color >> 16, VtxBase[VtxIndex[i + 2]].GL.Color >> 8,
-                        VtxBase[VtxIndex[i + 2]].GL.Color, VtxBase[VtxIndex[i + 2]].GL.Color >> 24);
+                    glColor4ub(VtxBase[VtxIndex[i + 2]].color >> 16, VtxBase[VtxIndex[i + 2]].color >> 8,
+                        VtxBase[VtxIndex[i + 2]].color, VtxBase[VtxIndex[i + 2]].color >> 24);
 
-                glVertex3f(VtxBase[VtxIndex[i + 2]].GL.x, CurrentPipeHeight - VtxBase[VtxIndex[i + 2]].GL.y,
-                    1.0 - VtxBase[VtxIndex[i + 2]].GL.z);
+                glVertex3f(VtxBase[VtxIndex[i + 2]].x, CurrentPipeHeight - VtxBase[VtxIndex[i + 2]].y,
+                    1.0 - VtxBase[VtxIndex[i + 2]].z);
             }
             glEnd();
         }
@@ -235,41 +216,39 @@ void agiGLRasterizer::FlushState()
                 {
                     if (agiCurState.GetPerspectiveCorrection())
                     {
-                        glTexCoord4f(VtxBase[VtxIndex[j]].GL.TexS * VtxBase[VtxIndex[j]].GL.Scale,
-                            VtxBase[VtxIndex[j]].GL.TexT * VtxBase[VtxIndex[j]].GL.Scale, 0.0,
-                            VtxBase[VtxIndex[j]].GL.Scale);
+                        glTexCoord4f(VtxBase[VtxIndex[j]].tu * VtxBase[VtxIndex[j]].w,
+                            VtxBase[VtxIndex[j]].tv * VtxBase[VtxIndex[j]].w, 0.0, VtxBase[VtxIndex[j]].w);
                     }
                     else
                     {
-                        glTexCoord2fv(&VtxBase[VtxIndex[j]].GL.TexS);
+                        glTexCoord2fv(&VtxBase[VtxIndex[j]].tu);
                     }
                 }
                 if (agiCurState.GetPolyMode() != 3)
-                    glColor4ub(VtxBase[VtxIndex[j]].GL.Color >> 16, VtxBase[VtxIndex[j]].GL.Color >> 8,
-                        VtxBase[VtxIndex[j]].GL.Color, VtxBase[VtxIndex[j]].GL.Color >> 24);
+                    glColor4ub(VtxBase[VtxIndex[j]].color >> 16, VtxBase[VtxIndex[j]].color >> 8,
+                        VtxBase[VtxIndex[j]].color, VtxBase[VtxIndex[j]].color >> 24);
 
-                glVertex3f(VtxBase[VtxIndex[j]].GL.x, CurrentPipeHeight - VtxBase[VtxIndex[j]].GL.y,
-                    1.0 - VtxBase[VtxIndex[j]].GL.z);
+                glVertex3f(
+                    VtxBase[VtxIndex[j]].x, CurrentPipeHeight - VtxBase[VtxIndex[j]].y, 1.0 - VtxBase[VtxIndex[j]].z);
 
                 if (agiCurState.GetPolyMode() == 15)
                 {
                     if (agiCurState.GetPerspectiveCorrection())
                     {
-                        glTexCoord4f(VtxBase[VtxIndex[j + 1]].GL.TexS * VtxBase[VtxIndex[j + 1]].GL.Scale,
-                            VtxBase[VtxIndex[j + 1]].GL.TexT * VtxBase[VtxIndex[j + 1]].GL.Scale, 0.0,
-                            VtxBase[VtxIndex[j + 1]].GL.Scale);
+                        glTexCoord4f(VtxBase[VtxIndex[j + 1]].tu * VtxBase[VtxIndex[j + 1]].w,
+                            VtxBase[VtxIndex[j + 1]].tv * VtxBase[VtxIndex[j + 1]].w, 0.0, VtxBase[VtxIndex[j + 1]].w);
                     }
                     else
                     {
-                        glTexCoord2fv(&VtxBase[VtxIndex[j + 1]].GL.TexS);
+                        glTexCoord2fv(&VtxBase[VtxIndex[j + 1]].tu);
                     }
                 }
                 if (agiCurState.GetPolyMode() != 3)
-                    glColor4ub(VtxBase[VtxIndex[j + 1]].GL.Color >> 16, VtxBase[VtxIndex[j + 1]].GL.Color >> 8,
-                        VtxBase[VtxIndex[j + 1]].GL.Color, VtxBase[VtxIndex[j + 1]].GL.Color >> 24);
+                    glColor4ub(VtxBase[VtxIndex[j + 1]].color >> 16, VtxBase[VtxIndex[j + 1]].color >> 8,
+                        VtxBase[VtxIndex[j + 1]].color, VtxBase[VtxIndex[j + 1]].color >> 24);
 
-                glVertex3f(VtxBase[VtxIndex[j + 1]].GL.x, CurrentPipeHeight - VtxBase[VtxIndex[j + 1]].GL.y,
-                    1.0 - VtxBase[VtxIndex[j + 1]].GL.z);
+                glVertex3f(VtxBase[VtxIndex[j + 1]].x, CurrentPipeHeight - VtxBase[VtxIndex[j + 1]].y,
+                    1.0 - VtxBase[VtxIndex[j + 1]].z);
             }
             glEnd();
         }

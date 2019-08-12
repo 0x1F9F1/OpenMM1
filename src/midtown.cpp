@@ -45,9 +45,6 @@ static mem::cmd_param PARAM_height {"height"};
 
 agiPipeline* CreatePipeline(int32_t argc, char** argv)
 {
-#ifdef USE_SDL2
-    return glCreatePipeline(argc, argv);
-#else
     dxiRendererInfo_t* info = &dxiInfo[dxiRendererChoice];
     Ptr<agiPipeline> result;
 
@@ -82,9 +79,15 @@ agiPipeline* CreatePipeline(int32_t argc, char** argv)
     {
         bRenderToSystem = RenderToSystemMemory;
 
-        if (info->m_UseHardware)
+        if (info->m_Type)
         {
-            result.Reset(d3dCreatePipeline(argc, argv));
+            result.Reset(
+#ifdef USE_SDL2
+                glCreatePipeline(argc, argv)
+#else
+                d3dCreatePipeline(argc, argv)
+#endif
+            );
         }
         else
         {
@@ -116,13 +119,19 @@ agiPipeline* CreatePipeline(int32_t argc, char** argv)
     {
         bRenderToSystem = 1;
 
-        if (!info->m_UseHardware || bHaveIME)
+        if (!info->m_Type || bHaveIME)
         {
             result.Reset(swCreatePipeline(argc, argv));
         }
         else
         {
-            result.Reset(d3dCreatePipeline(argc, argv));
+            result.Reset(
+#ifdef USE_SDL2
+                glCreatePipeline(argc, argv)
+#else
+                d3dCreatePipeline(argc, argv)
+#endif
+            );
         }
 
         result->m_Width = 640;

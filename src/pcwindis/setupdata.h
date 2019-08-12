@@ -83,32 +83,28 @@ struct dxiResolution
 {
     uint16_t uWidth;
     uint16_t uHeight;
-    uint32_t dword4;
+    uint32_t uTexMem;
 };
 
 check_size(dxiResolution, 8);
 
 struct dxiRendererInfo_t
 {
-    uint16_t m_Width;
-    uint16_t m_word2;
+    bool32_t m_Valid;
     int32_t m_CurrentIndex;
     int32_t m_Hardware2;
     int32_t m_field_C;
-    int32_t m_field_10;
-    int32_t m_field_14;
-    int32_t m_field_18;
-    int32_t m_field_1C;
-    int32_t m_field_20;
-    int32_t m_field_24;
-    int32_t m_field_28;
+    int32_t m_bSmoothAlpha;
+    int32_t m_bAdditiveBlending;
+    int32_t m_bVertexFog;
+    int32_t m_bMultiTexture;
+    int32_t m_bTexturePalette;
+    int32_t m_bHaveMipmaps;
+    int32_t m_uSpecialFlags;
     char m_Name[64];
-    int32_t m_field_6C;
-    int32_t m_field_70;
-    int32_t m_field_74;
-    int32_t m_field_78;
-    GUID m_GUID;
-    uint32_t m_UseHardware;
+    GUID m_InterfaceGuid;
+    GUID m_DriverGuid;
+    uint32_t m_Type;
     dxiResolution m_Resolutions[32];
     int32_t m_ResCount;
     uint32_t m_ResolutionIndex;

@@ -18,14 +18,45 @@
 
 #include "dxsetup.h"
 
+#include "data7/speed.h"
 #include "setupdata.h"
 
 #include <mem/cmd_param.h>
 
+void dxiConfig(int32_t argc, char** argv)
+{
 #ifdef USE_SDL2
-void dxiConfig(int32_t /*argc*/, char** /*argv*/)
-{}
+    dxiCpuSpeed = ComputeCpuSpeed();
+
+    dxiRendererChoice = 0;
+    dxiRendererInfo_t& info = dxiInfo[dxiRendererCount++];
+
+    info.m_Valid = 1;
+    info.m_CurrentIndex = 1;
+    info.m_Hardware2 = 2;
+    info.m_field_C = 0;
+    info.m_bSmoothAlpha = 1;
+    info.m_bAdditiveBlending = 1;
+    info.m_bVertexFog = 1;
+    info.m_bMultiTexture = 1;
+    info.m_bTexturePalette = 1;
+    info.m_bHaveMipmaps = 1;
+    info.m_uSpecialFlags = 0;
+    strcpy_s(info.m_Name, "OpenGL");
+    memset(&info.m_InterfaceGuid, 0x11, sizeof(info.m_InterfaceGuid));
+    memset(&info.m_DriverGuid, 0x22, sizeof(info.m_DriverGuid));
+    info.m_Type = 2;
+    info.m_ResCount = 0;
+    info.m_ResolutionIndex = 0;
+
+    dxiResolution& res = info.m_Resolutions[info.m_ResCount++];
+    res.uWidth = 1920;
+    res.uHeight = 1080;
+    res.uTexMem = 0x40000000;
+#else
+    stub<cdecl_t<void, int32_t, char**>>(0x556DF0, argc, argv);
 #endif
+}
 
 static mem::cmd_param PARAM_widescreen {"widescreen"};
 
