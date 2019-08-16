@@ -20,10 +20,16 @@
 
 #include "agi/pipeline.h"
 
+#include <mem/cmd_param.h>
+
+static mem::cmd_param PARAM_fovfix {"fovfix"};
+
 void asCamera::SetView(float hfov, float vfov, float near, float far)
 {
     // See asCamera::Update
 
+    if (PARAM_fovfix.get_or(true))
+    {
 #if 0
     if (vfov == 1.25f)
     {
@@ -36,14 +42,15 @@ void asCamera::SetView(float hfov, float vfov, float near, float far)
         hfov *= (fov_scale * 0.75f);
     }
 #else
-    float hfov_scale = mem::field<float>(this, 0x38);
-    float vfov_scale = mem::field<float>(this, 0x3C);
+        float hfov_scale = mem::field<float>(this, 0x38);
+        float vfov_scale = mem::field<float>(this, 0x3C);
 
-    float fov_scale =
-        (agiPipeline::CurrentPipe->m_Width * hfov_scale) / (agiPipeline::CurrentPipe->m_Height * vfov_scale);
+        float fov_scale =
+            (agiPipeline::CurrentPipe->m_Width * hfov_scale) / (agiPipeline::CurrentPipe->m_Height * vfov_scale);
 
-    hfov *= ((fov_scale * 0.75f) / (vfov / 1.25f));
+        hfov *= ((fov_scale * 0.75f) / (vfov / 1.25f));
 #endif
+    }
 
     mem::field<float>(this, 0x6C) = hfov; // Horizontal FOV
 
