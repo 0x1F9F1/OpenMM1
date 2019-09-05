@@ -22,8 +22,9 @@
 #include "setupdata.h"
 
 #include <mem/cmd_param.h>
+#include <mem/module.h>
 
-void dxiConfig(int32_t argc, char** argv)
+void dxiConfig([[maybe_unused]] int32_t argc, [[maybe_unused]] char** argv)
 {
 #ifdef USE_SDL2
     dxiCpuSpeed = ComputeCpuSpeed();
@@ -58,6 +59,32 @@ void dxiConfig(int32_t argc, char** argv)
 #endif
 }
 
+HMODULE g_DirectDrawDll = nullptr;
+
+static extern_var(0x711798, int32_t(__stdcall*)(_GUID*, char*, char*, void*), CurrentDirectDrawEnumerator);
+
+void MyDirectDrawEnumerate(int32_t(__stdcall* callback)(_GUID*, char*, char*, void*), void* context)
+{
+    if (auto pDirectDrawEnumerateExA = reinterpret_cast<decltype(&DirectDrawEnumerateExA)>(
+            GetProcAddress(g_DirectDrawDll, "DirectDrawEnumerateExA")))
+    {
+        Displayf("using DirectDrawEnumerateEx...");
+
+        CurrentDirectDrawEnumerator = callback;
+
+        pDirectDrawEnumerateExA(MultiMonCallback, context, 7);
+    }
+    else if (auto pDirectDrawEnumerateA = reinterpret_cast<decltype(&DirectDrawEnumerateA)>(
+                 GetProcAddress(g_DirectDrawDll, "DirectDrawEnumerateA")))
+    {
+        pDirectDrawEnumerateA(callback, context);
+    }
+    else
+    {
+        Quitf("Invalid/Corrupt DirectDraw DLL");
+    }
+}
+
 static mem::cmd_param PARAM_widescreen {"widescreen"};
 
 int32_t __stdcall ModeCallback(DDSURFACEDESC2* sd, void* context)
@@ -81,10 +108,47 @@ int32_t __stdcall ModeCallback(DDSURFACEDESC2* sd, void* context)
     return 1;
 }
 
+void UseLocalDirectDraw()
+{
+    //SystemParametersInfo(SPI_SETCLEARTYPE, 0, (void*) (size_t) TRUE, 0);
+    //SystemParametersInfo(SPI_SETFONTSMOOTHING, 0, (void*) (size_t) TRUE, 0);
+    //SystemParametersInfo(SPI_SETFONTSMOOTHINGTYPE, 0, (void*) (size_t) FE_FONTSMOOTHINGCLEARTYPE, 0);
+
+    HMODULE ddraw = GetModuleHandleA("DDRAW.DLL");
+    HMODULE ddraw_local = LoadLibraryA(".\\DDRAW.DLL");
+
+    g_DirectDrawDll = ddraw;
+
+    if (ddraw_local)
+    {
+        if (ddraw != ddraw_local)
+        {
+            g_DirectDrawDll = ddraw_local;
+
+            Displayf("Use local DirectDraw DLL");
+
+            create_hook("DirectDrawCreate", "Use Local DDRAW", 0x58F014,
+                GetProcAddress(ddraw_local, "DirectDrawCreate"), hook_type::pointer);
+
+            create_hook("DirectDrawEnumerateA", "Use Local DDRAW", 0x58F018,
+                GetProcAddress(ddraw_local, "DirectDrawEnumerateA"), hook_type::pointer);
+
+            FreeLibrary(ddraw);
+        }
+        else
+        {
+            FreeLibrary(ddraw_local);
+        }
+    }
+}
+
 define_dummy_symbol(dxsetup);
 
 run_once([] {
+    UseLocalDirectDraw();
+
     auto_hook(0x5578F0, ModeCallback);
+    auto_hook(0x557110, MyDirectDrawEnumerate);
 
 #ifdef USE_SDL2
     auto_hook(0x556DF0, dxiConfig);

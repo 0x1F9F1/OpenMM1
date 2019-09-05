@@ -44,9 +44,9 @@
 #include <ddraw.h>
 
 // 0x556DB0 | ?MultiMonCallback@@YGHPAU_GUID@@PAD1PAX2@Z
-inline int32_t __stdcall MultiMonCallback(struct _GUID* arg1, char* arg2, char* arg3, void* arg4, void* arg5)
+inline BOOL __stdcall MultiMonCallback(GUID* arg1, LPSTR arg2, LPSTR arg3, LPVOID arg4, HMONITOR arg5)
 {
-    return stub<stdcall_t<int32_t, struct _GUID*, char*, char*, void*, void*>>(0x556DB0, arg1, arg2, arg3, arg4, arg5);
+    return stub<stdcall_t<BOOL, GUID*, LPSTR, LPSTR, LPVOID, HMONITOR>>(0x556DB0, arg1, arg2, arg3, arg4, arg5);
 }
 
 // 0x556DF0 | ?dxiConfig@@YAXHPAPAD@Z
@@ -68,10 +68,7 @@ inline int32_t __stdcall EnumCounter(struct _GUID* arg1, char* arg2, char* arg3,
 }
 
 // 0x557110 | ?MyDirectDrawEnumerate@@YAXP6GHPAU_GUID@@PAD1PAX@Z2@Z
-inline void MyDirectDrawEnumerate(int32_t(__stdcall* arg1)(struct _GUID*, char*, char*, void*), void* arg2)
-{
-    return stub<cdecl_t<void, int32_t(__stdcall*)(struct _GUID*, char*, char*, void*), void*>>(0x557110, arg1, arg2);
-}
+void MyDirectDrawEnumerate(int32_t(__stdcall* callback)(struct _GUID*, char*, char*, void*), void* context);
 
 // 0x557180 | ?EnumerateRenderers2@@YAXXZ
 inline void EnumerateRenderers2()

@@ -29,6 +29,7 @@ const char* const HookTypeNames[static_cast<size_t>(hook_type::count)] = {
     "jmp",
     "call",
     "push",
+    "pointer",
 };
 
 size_t HookCount = 0;
@@ -46,8 +47,9 @@ void create_hook(const char* name, const char* description, mem::pointer pHook, 
             reinterpret_cast<int&>(buffer[1]) = rva;
 
             write_protected(pHook, buffer, sizeof(buffer));
+
+            break;
         }
-        break;
 
         case hook_type::call:
         {
@@ -55,8 +57,9 @@ void create_hook(const char* name, const char* description, mem::pointer pHook, 
             reinterpret_cast<int&>(buffer[1]) = rva;
 
             write_protected(pHook, buffer, sizeof(buffer));
+
+            break;
         }
-        break;
 
         case hook_type::push:
         {
@@ -64,8 +67,16 @@ void create_hook(const char* name, const char* description, mem::pointer pHook, 
             reinterpret_cast<int&>(buffer[1]) = pDetour.as<int>();
 
             write_protected(pHook, buffer, sizeof(buffer));
+
+            break;
         }
-        break;
+
+        case hook_type::pointer:
+        {
+            write_protected(pHook, &pDetour, sizeof(pDetour));
+
+            break;
+        }
     }
 
     Displayf("Created %s hook '%s' from 0x%zX to 0x%zX: %s", HookTypeNames[static_cast<size_t>(type)], name,

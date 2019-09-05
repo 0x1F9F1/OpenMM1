@@ -38,6 +38,7 @@ enum class hook_type
     jmp,
     call,
     push,
+    pointer,
 
     count
 };
