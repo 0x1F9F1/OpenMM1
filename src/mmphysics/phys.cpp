@@ -17,3 +17,58 @@
 */
 
 #include "phys.h"
+
+#include "mmcity/renderweb.h"
+
+#include <algorithm>
+
+static constexpr size_t MAX_MOVERS = 128;
+
+class mmPhysEntity;
+
+struct PhysMover
+{
+    mmInstance* m_pInst {nullptr};
+    mmPhysEntity* m_pEntity {nullptr};
+    int32_t m_Count1 {0};
+    int32_t m_Count2 {0};
+    uint32_t Val1Toggles[32] {};
+    mmInstance* Vals1[32] {};
+    mmInstance* Vals2[32] {};
+    uint32_t byte190 {0};
+};
+
+static extern_var(0x66C870, PhysMover[MAX_MOVERS], Movers);
+static extern_var(0x66C840, int32_t, CurrentMovers);
+
+mmPhysExec::mmPhysExec() = default;
+mmPhysExec::~mmPhysExec() = default;
+
+mmPhysicsMGR::mmPhysicsMGR()
+{
+    if (Instance)
+    {
+        Quitf("Can only have one physmgr at a time");
+    }
+
+    Instance = this;
+    AddChild(&OverSample);
+    OverSample.AddChild(&PhysExec);
+    OverSample.RealTime(35.0f);
+    EnableCachedPoly = 1;
+
+    for (PhysMover& mover : Movers)
+    {
+        mover.m_Count1 = 0;
+        mover.m_Count2 = 0;
+
+        for (uint32_t& toggle : mover.Val1Toggles)
+        {
+            toggle = 0;
+        }
+    }
+
+    CurrentMovers = 0;
+
+    Reset();
+}

@@ -18,6 +18,8 @@
 
 #pragma once
 
+#include "arts7/node.h"
+
 /*
     mmphysics:osample
 
@@ -44,18 +46,18 @@ inline extern_var(0x67B460, int32_t, BenchOSample);
 // 0x4D2090 | ?new_asOverSample@@YAPAXH@Z
 // 0x4D2150 | ?delete_asOverSample@@YAXPAXH@Z
 
-struct asOverSample : asNode
+struct asOverSample : public asNode
 {
 public:
     // asOverSample::`vftable' @ 0x594650
 
-    // 0x4D1F00 | ??0asOverSample@@QAE@XZ
-    inline asOverSample()
-    {
-        // stub<member_func_t<void, asOverSample>>(0x4D1F00, this);
+    float m_SampleStep {0.04f};
+    int32_t m_MaxSamples {20};
+    int32_t m_dword24 {0};
+    int32_t m_dword28 {1};
 
-        unimplemented();
-    }
+    // 0x4D1F00 | ??0asOverSample@@QAE@XZ
+    asOverSample();
 
     // 0x4D1F30 | ?RealTime@asOverSample@@QAEXM@Z
     inline void RealTime(float arg1)
@@ -76,12 +78,7 @@ public:
     }
 
     // 0x423BB0 | ??1asOverSample@@UAE@XZ
-    inline ~asOverSample() override = 0
-    {
-        // stub<member_func_t<void, asOverSample>>(0x423BB0, this);
-
-        unimplemented();
-    }
+    ~asOverSample() override;
 
     // 0x4D21A0 | ?GetClass@asOverSample@@UAEPAVMetaClass@@XZ
     inline class MetaClass* GetClass() override

@@ -75,6 +75,10 @@
     0x4CCD40 | void __cdecl delete_mmPhysicsMGR(void *,int) | ?delete_mmPhysicsMGR@@YAXPAXH@Z
 */
 
+#include "arts7/node.h"
+
+#include "osample.h"
+
 // 0x4CA4F0 | ?FindIntersections@@YAHPAVmmIntersection@@HPAVasBound@@1PAVmmBoundTemplate@@2PAVmmEdgeBodyIsect@@H3H@Z
 inline int32_t FindIntersections(class mmIntersection* arg1, int32_t arg2, class asBound* arg3, class asBound* arg4,
     class mmBoundTemplate* arg5, class mmBoundTemplate* arg6, class mmEdgeBodyIsect* arg7, int32_t arg8,
@@ -149,18 +153,65 @@ inline extern_var(0x67A988, class mmPhysicsMGR, PHYS);
 // 0x4CCC70 | ?new_mmPhysicsMGR@@YAPAXH@Z
 // 0x4CCD40 | ?delete_mmPhysicsMGR@@YAXPAXH@Z
 
+struct mmPhysExec : asNode
+{
+public:
+    // mmPhysExec::`vftable' @ 0x594530
+
+    bool32_t m_PlayerOnly {0};
+
+    mmPhysExec();
+
+    // 0x4C80E0 | ?DoUpdateAll@mmPhysExec@@QAEXXZ
+    inline void DoUpdateAll()
+    {
+        return stub<member_func_t<void, mmPhysExec>>(0x4C80E0, this);
+    }
+
+    // 0x4C82D0 | ?DoUpdatePlayerOnly@mmPhysExec@@QAEXXZ
+    inline void DoUpdatePlayerOnly()
+    {
+        return stub<member_func_t<void, mmPhysExec>>(0x4C82D0, this);
+    }
+
+    // 0x4CCF00 | ??1mmPhysExec@@UAE@XZ
+    ~mmPhysExec() override;
+
+    // 0x4CCEB0 | ?Update@mmPhysExec@@UAEXXZ
+    inline void Update() override
+    {
+        return stub<member_func_t<void, mmPhysExec>>(0x4CCEB0, this);
+    }
+};
+
+check_size(mmPhysExec, 0x20);
+
+class mmInstance;
+
 class mmPhysicsMGR : asNode
 {
 public:
     // mmPhysicsMGR::`vftable' @ 0x594500
 
-    // 0x4C8510 | ??0mmPhysicsMGR@@QAE@XZ
-    inline mmPhysicsMGR()
-    {
-        // stub<member_func_t<void, mmPhysicsMGR>>(0x4C8510, this);
+    uint32_t dword1C {0};
+    uint32_t dword20 {0};
+    void* dword24 {nullptr};
+    uint32_t dword28 {0};
+    float Gravity {-9.8f};
+    uint32_t dword30 {1};
+    uint8_t gap34[260] {};
+    uint32_t dword138 {1};
+    mmPhysExec PhysExec {};
+    asOverSample OverSample {};
+    void* gap188 {nullptr};
+    int16_t Values[64] {};
+    int16_t ValueCount {0};
+    int16_t field_20E {0};
+    mmBoundTemplate* pBoundTemplate {nullptr};
+    mmInstance*** dword214 {nullptr};
 
-        unimplemented();
-    }
+    // 0x4C8510 | ??0mmPhysicsMGR@@QAE@XZ
+    mmPhysicsMGR();
 
     // 0x4C86A0 | ?Init@mmPhysicsMGR@@QAEXPAVasInertialCS@@PAVmmViewCS@@@Z
     inline void Init(class asInertialCS* arg1, class mmViewCS* arg2)
@@ -333,34 +384,4 @@ public:
     }
 };
 
-struct mmPhysExec : asNode
-{
-public:
-    // mmPhysExec::`vftable' @ 0x594530
-
-    // 0x4C80E0 | ?DoUpdateAll@mmPhysExec@@QAEXXZ
-    inline void DoUpdateAll()
-    {
-        return stub<member_func_t<void, mmPhysExec>>(0x4C80E0, this);
-    }
-
-    // 0x4C82D0 | ?DoUpdatePlayerOnly@mmPhysExec@@QAEXXZ
-    inline void DoUpdatePlayerOnly()
-    {
-        return stub<member_func_t<void, mmPhysExec>>(0x4C82D0, this);
-    }
-
-    // 0x4CCF00 | ??1mmPhysExec@@UAE@XZ
-    inline ~mmPhysExec() override = 0
-    {
-        // stub<member_func_t<void, mmPhysExec>>(0x4CCF00, this);
-
-        unimplemented();
-    }
-
-    // 0x4CCEB0 | ?Update@mmPhysExec@@UAEXXZ
-    inline void Update() override
-    {
-        return stub<member_func_t<void, mmPhysExec>>(0x4CCEB0, this);
-    }
-};
+check_size(mmPhysicsMGR, 0x218);

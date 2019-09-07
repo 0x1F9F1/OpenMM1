@@ -17,3 +17,6 @@
 */
 
 #include "osample.h"
+
+asOverSample::asOverSample() = default;
+asOverSample::~asOverSample() = default;

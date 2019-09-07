@@ -20,7 +20,7 @@
 
 #include "ipc.h"
 
-static inline constexpr uint32_t Align8(uint32_t value) noexcept
+static inline constexpr uint32_t AlignSize(uint32_t value) noexcept
 {
     return (value + 7) & 0xFFFFFFF8;
 }
@@ -201,7 +201,7 @@ int32_t DataCache::BeginObject(int32_t* handle, DataCacheCallback callback, void
 {
     ipcWaitSingle(m_WriteMutex);
 
-    size = Align8(size);
+    size = AlignSize(size);
 
     if ((m_nMaxHandles >= m_nHandleCap) || (size + m_nUsed > m_nHeapCap))
     {
@@ -210,7 +210,7 @@ int32_t DataCache::BeginObject(int32_t* handle, DataCacheCallback callback, void
         for (int32_t i = 3; i >= 0; --i)
         {
             uint32_t oldest = m_nAge;
-            uint32_t max_size = Align8(size + (size >> i));
+            uint32_t max_size = AlignSize(size + (size >> i));
 
             for (int32_t j = 1; j <= m_nMaxHandles; ++j)
             {
@@ -432,7 +432,7 @@ void* DataCache::Allocate(int32_t handle, uint32_t size)
 
     Assert(dco->m_nLockCount);
 
-    size = Align8(size);
+    size = AlignSize(size);
 
     Assert(dco->m_nUsed + size <= dco->m_nMaxSize);
 

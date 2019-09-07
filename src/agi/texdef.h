@@ -184,7 +184,7 @@ public:
     agiTexParameters m_Params {};
     agiPolySet* m_pPolySet {nullptr};
     uint32_t m_dword50 {0};
-    uint32_t m_dword54 {0};
+    uint32_t m_Pitch {0};
     uint32_t m_dword58 {0};
     PagerInfo_t m_PagerInfo {};
     int32_t m_CacheHandle {0};

@@ -11,18 +11,18 @@ arts_add_component(mmcity
     # inst.h
     # instchn.cpp
     # instchn.h
-    # loader.cpp
-    # loader.h
+    loader.cpp
+    loader.h
     # ped.cpp
     # ped.h
-    # portal.cpp
-    # portal.h
+    portal.cpp
+    portal.h
     # position.cpp
     # position.h
     # positions.cpp
     # positions.h
-    # renderweb.cpp
-    # renderweb.h
+    renderweb.cpp
+    renderweb.h
     # sky.cpp
     # sky.h
 )

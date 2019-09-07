@@ -57,6 +57,8 @@
     0x487E20 | void __cdecl delete_asRenderWeb(void *,int) | ?delete_asRenderWeb@@YAXPAXH@Z
 */
 
+#include "portal.h"
+
 // 0x4877D0 | ?DrawMirrorBorder@@YAXXZ
 inline void DrawMirrorBorder()
 {
@@ -118,6 +120,8 @@ struct asRenderWeb : asPortalWeb
 {
 public:
     // asRenderWeb::`vftable' @ 0x591E58
+
+    char pad8844[0x12C];
 
     // 0x486550 | ??0asRenderWeb@@QAE@XZ
     inline asRenderWeb()
@@ -200,3 +204,5 @@ public:
             0x486660, this, arg1, arg2, arg3);
     }
 };
+
+check_size(asRenderWeb, 0x8970);

@@ -110,10 +110,6 @@ int32_t __stdcall ModeCallback(DDSURFACEDESC2* sd, void* context)
 
 void UseLocalDirectDraw()
 {
-    //SystemParametersInfo(SPI_SETCLEARTYPE, 0, (void*) (size_t) TRUE, 0);
-    //SystemParametersInfo(SPI_SETFONTSMOOTHING, 0, (void*) (size_t) TRUE, 0);
-    //SystemParametersInfo(SPI_SETFONTSMOOTHINGTYPE, 0, (void*) (size_t) FE_FONTSMOOTHINGCLEARTYPE, 0);
-
     HMODULE ddraw = GetModuleHandleA("DDRAW.DLL");
     HMODULE ddraw_local = LoadLibraryA(".\\DDRAW.DLL");
 

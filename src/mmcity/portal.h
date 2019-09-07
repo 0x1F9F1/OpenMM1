@@ -46,6 +46,8 @@
     0x48E050 | void __cdecl delete_asPortalWeb(void *,int) | ?delete_asPortalWeb@@YAXPAXH@Z
 */
 
+#include "arts7/node.h"
+
 // 0x48CB40 | ?LookupCell@@YAPAUasPortalCell@@PAD@Z
 inline struct asPortalCell* LookupCell(char* arg1)
 {
@@ -66,6 +68,10 @@ inline extern_var(0x667AE8, class MetaClass, asPortalWebMetaClass);
 struct asPortalPVS
 {
 public:
+    uint16_t word0;
+    uint16_t word2;
+    uint32_t dword4;
+
     // 0x48CB60 | ?Init@asPortalPVS@@QAEXHH@Z
     inline void Init(int32_t arg1, int32_t arg2)
     {
@@ -82,9 +88,13 @@ public:
     }
 };
 
+check_size(asPortalPVS, 0x8);
+
 struct asPortalEdge
 {
 public:
+    char pad0[0x30];
+
     // 0x48E0E0 | ??0asPortalEdge@@QAE@PAUasPortalCell@@0H@Z
     inline asPortalEdge(struct asPortalCell* arg1, struct asPortalCell* arg2, int32_t arg3)
     {
@@ -93,10 +103,30 @@ public:
     }
 };
 
+check_size(asPortalEdge, 0x30);
+
+struct asPortalEntry
+{
+    char pad0[0x4400];
+};
+
+check_size(asPortalEntry, 0x4400);
+
 struct asPortalWeb : asNode
 {
 public:
     // asPortalWeb::`vftable' @ 0x592188
+
+    uint32_t m_dword1C {0};
+    asPortalCell* m_pCellList {nullptr};
+    asPortalCell* m_pCell {nullptr};
+    asPortalEdge* m_pEdges {nullptr};
+    uint32_t m_dword2C {0};
+    uint32_t m_dword30 {0};
+    uint32_t m_dword34 {0};
+    uint32_t m_CurrentCell {0};
+    uint32_t m_Dwords[2] {};
+    asPortalEntry m_Entrys[2] {};
 
     // 0x48C970 | ?AddCell@asPortalWeb@@QAEPAUasPortalCell@@PADPAVasPortalRenderable@@I@Z
     inline struct asPortalCell* AddCell(char* arg1, class asPortalRenderable* arg2, uint32_t arg3)
@@ -177,3 +207,5 @@ public:
     virtual inline struct asPortalCell* GetStartCell(
         class Vector3& arg1, struct asPortalCell* arg2, class mmPolygon** arg3) = 0;
 };
+
+check_size(asPortalWeb, 0x8844);

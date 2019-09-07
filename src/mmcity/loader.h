@@ -43,6 +43,8 @@
     0x60B134 | void * myFont | ?myFont@@3PAXA
 */
 
+#include "arts7/cullable.h"
+
 // 0x60B130 | ?IntroFont@@3PAXA
 inline extern_var(0x60B130, void*, IntroFont);
 
@@ -127,3 +129,5 @@ public:
         return stub<member_func_t<void, mmLoader>>(0x482A20, this);
     }
 };
+
+// check_size(mmLoader, 0x2C0);

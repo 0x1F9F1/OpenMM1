@@ -7,8 +7,8 @@ arts_add_component(mmphysics
     # inertia.h
     # joint3dof.cpp
     # joint3dof.h
-    # osample.cpp
-    # osample.h
-    # phys.cpp
-    # phys.h
+    osample.cpp
+    osample.h
+    phys.cpp
+    phys.h
 )

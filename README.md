@@ -36,5 +36,3 @@ For the best experience, it is recommended to use the following settings in dgVo
     * You are using an incorrect version of Midtown Madness 1. See [Compatibility](#Compatibility).
 * `Login with administrator privileges and try again`:
     * Your OS doesn't support SafeDisc. See [Compatibility](#Compatibility).
-* `Click OK to have Midtown Madness detect the presense of a hardware accelerator card`:
-    * If happening every launch, rename `midtown.exe` to something else (e.g. `midtown1.exe`).

@@ -51,6 +51,8 @@ struct asMemStats
     uint32_t cbUsed {0};
 };
 
+static constexpr size_t DefaultNewAlignment = __STDCPP_DEFAULT_NEW_ALIGNMENT__;
+
 // TODO: Stored asMemoryAllocator* m_Next to support multiple allocators
 // TODO: Use asMemoryAllocator::Node::uStatus & 0x2 to determine if a node was allocator with new or new[]
 class asMemoryAllocator

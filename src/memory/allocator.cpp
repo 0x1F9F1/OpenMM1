@@ -70,7 +70,7 @@ static int32_t HeapAssert(void* address, int32_t value, const char* message, int
     return 1;
 }
 
-static inline constexpr uint32_t Align8(uint32_t value) noexcept
+static inline constexpr uint32_t AlignSize(uint32_t value) noexcept
 {
     return (value + 7) & 0xFFFFFFF8;
 }
@@ -149,7 +149,7 @@ public:
 
     inline Node* GetNext() const noexcept
     {
-        return reinterpret_cast<Node*>(GetData() + Align8(nSize));
+        return reinterpret_cast<Node*>(GetData() + AlignSize(nSize));
     }
 
     inline void SetAllocated(bool allocated) noexcept
@@ -328,7 +328,7 @@ __declspec(noinline) void* asMemoryAllocator::Allocate(uint32_t size)
 
     FreeNode* n = nullptr;
 
-    const uint32_t asize = Align8(size);
+    uint32_t const asize = AlignSize(size);
 
     for (uint32_t i = GetBucketIndex(size); i < 32; ++i)
     {
@@ -391,7 +391,7 @@ __declspec(noinline) void* asMemoryAllocator::Allocate(uint32_t size)
     else
     {
         n = reinterpret_cast<FreeNode*>(m_pHeap + m_HeapOffset);
-        m_HeapOffset += asize + 8;
+        m_HeapOffset += sizeof(Node) + asize;
 
         if (m_HeapOffset > m_HeapSize)
         {
@@ -408,7 +408,7 @@ __declspec(noinline) void* asMemoryAllocator::Allocate(uint32_t size)
 
     uint8_t* result = n->GetData();
 
-    memset(result, 0, size);
+    std::memset(result, 0x0, size);
 
     if (m_Debug)
     {
@@ -452,7 +452,7 @@ __declspec(noinline) void asMemoryAllocator::Free(void* ptr)
     FreeNode* n = static_cast<FreeNode*>(Node::From(ptr, m_Debug));
 
     n->SetAllocated(false);
-    n->SetSize(Align8(n->GetSize()));
+    n->SetSize(AlignSize(n->GetSize()));
 
     FreeNode* const prev = static_cast<FreeNode*>(n->GetPrev());
 
@@ -470,22 +470,32 @@ __declspec(noinline) void asMemoryAllocator::Free(void* ptr)
         n = prev;
     }
 
-    FreeNode* const next = static_cast<FreeNode*>(n->GetNext());
-
-    if ((reinterpret_cast<uint8_t*>(next) < (m_pHeap + m_HeapOffset)) &&
-        !next->IsAllocated()) // Merge next node, if free
+    if (m_Last == n)
     {
-        Unlink(next);
+        m_Last = n->GetPrev();
 
-        if (m_Last == next)
+        m_HeapOffset = reinterpret_cast<uint8_t*>(n) - reinterpret_cast<uint8_t*>(m_pHeap);
+    }
+    else
+    {
+        FreeNode* const next = static_cast<FreeNode*>(n->GetNext());
+
+        DebugAssert(reinterpret_cast<uint8_t*>(next) < (m_pHeap + m_HeapOffset));
+
+        if (!next->IsAllocated()) // Merge next node, if free
         {
-            m_Last = n;
+            Unlink(next);
+
+            if (m_Last == next)
+            {
+                m_Last = n;
+            }
+
+            n->MergeNext();
         }
 
-        n->MergeNext();
+        Link(n);
     }
-
-    Link(n);
 }
 
 void asMemoryAllocator::Unlink(FreeNode* n)
@@ -587,7 +597,7 @@ void asMemoryAllocator::GetStats(asMemStats* stats)
 
         const uint32_t size = n->GetSize();
 
-        stats->cbOverhead += (Align8(size) - size) + sizeof(Node);
+        stats->cbOverhead += (AlignSize(size) - size) + sizeof(Node);
 
         if (n->IsAllocated())
         {
