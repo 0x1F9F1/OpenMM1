@@ -30,7 +30,7 @@ StreamMiniParser::~StreamMiniParser() = default;
 
 void StreamMiniParser::Load(MetaClass* type, char* path, void* ptr)
 {
-    Ptr<Stream> input {s_fopen(path, "w")};
+    Ptr<Stream> input {s_fopen(path, "r")};
 
     if (input)
     {

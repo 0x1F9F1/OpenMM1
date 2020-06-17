@@ -113,8 +113,10 @@ public:
     // 0x1 | Alpha
     // 0x2 | Wrap X/U/S
     // 0x4 | Wrap Y/V/T
-    // 0x40 | Color Key Enable
-    // 0x80 | Second
+    // 0x8 | Should Reload (Hot Reload, or Modified - Snow)
+    // 0x10 | Mipmap thing
+    // 0x40 | Color Key Enable (chromakey)
+    // 0x80 | Second (agiTexParameters::Second)
     uint8_t m_Flags;
     uint8_t m_LOD;
     uint8_t m_MaxLOD;

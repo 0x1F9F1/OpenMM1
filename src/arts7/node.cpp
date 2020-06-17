@@ -424,7 +424,7 @@ void asNode::Load()
 {
     const char* name = m_Name;
 
-    if (!name || !strcmp(name, "_"))
+    if (!name || !std::strncmp(name, "_", 1))
     {
         name = "default";
     }
@@ -442,7 +442,7 @@ void asNode::Save()
 {
     const char* name = m_Name;
 
-    if (!name || !strcmp(name, "_"))
+    if (!name || !std::strncmp(name, "_", 1))
     {
         name = "default";
     }

@@ -145,7 +145,25 @@ public:
     uint32_t dword8;
     uint8_t BlendMode;
     uint8_t ShaderModel;
-    uint8_t PolyMode;
+
+    // DrawMode & 3 = FillMode
+    // 0x0: None
+    // 0x1: Point
+    // 0x2: Line (Wireframe)
+    // 0x3: Fill (Depth)
+
+    // if (DrawMode == 3): DepthTest=0, ZWriteEnable=0, AlphaEnable=1, BlendMode=5, specular=0xFF202020
+
+    // if (DrawMode == 15): TexCoord
+    // if (DrawMode != 3) Color
+
+    //
+
+    // 0x4: Enable Textures?
+
+    // 0xB: Solid, No EnvMap,SphereMap
+    // 0xF: Tex
+    uint8_t PolyMode; // DrawMode
     uint8_t TexFilter;
     uint8_t byte10;
     uint8_t CullMode;
