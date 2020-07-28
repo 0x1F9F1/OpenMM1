@@ -18,6 +18,7 @@
 
 #pragma once
 
+// D3DFVF_TLVERTEX
 struct agiScreenVtx
 {
     float x;
@@ -32,6 +33,7 @@ struct agiScreenVtx
 
 check_size(agiScreenVtx, 0x20);
 
+// (D3DFVF_TLVERTEX | D3DFVF_TEX2) & ~D3DFVF_TEX1
 struct agiScreenVtx2
 {
     float x;
