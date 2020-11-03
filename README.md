@@ -1,5 +1,7 @@
 # OpenMM1
 
+## This project has been superseded by [Open1560](https://github.com/0x1F9F1/Open1560), so it is recommended to use that instead.
+
 [![Build status](https://ci.appveyor.com/api/projects/status/61emkjr3xrxngjke/branch/master?svg=true)](https://ci.appveyor.com/project/0x1F9F1/openmm1/branch/master)
 [![Chat On Discord](https://img.shields.io/discord/239900961731117059?color=7289DA&logo=discord)](https://discord.gg/ykT7PT4)
 
